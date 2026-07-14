@@ -24,6 +24,18 @@ updated: "2026-07-14"
 | AC-011 | A program nem írja át a bemeneti CSV-t explicit `--apply` nélkül. H-001-ben `--apply` nem szükséges. | fájlhash előtte/utána |
 | AC-012 | A parancsok nem hívnak külső hálózatot és nem kérnek API-kulcsot. | kódreview + tesztkörnyezet |
 
+## Programszintű kötelező elvárás – H-002 és későbbi munkacsomagok
+
+| ID | Elvárás | Elfogadási bizonyíték |
+|---|---|---|
+| PR-001 | Készüljön folyamatos auditfelkészültségi ügynök, amely jóváhagyott, lehetőleg read-only logokból és exportokból karbantartja a kontroll-, feladat- és evidencia-nyilvántartásokat. | jóváhagyott architektúra, adatforráslista és pilot futási napló |
+| PR-002 | Az ügynök forráshivatkozott jegyzőkönyv-, evidencia-, eltérés- és intézkedéstervezeteket készít, valamint emberi jóváhagyási sort kezel. | visszakövethető mintacsomag source_ref, confidence, feltételezés és review státusszal |
+| PR-003 | Az automatizálás célja a rutinszerű emberi munka mérhető csökkentése; az ember kivételeket és kötelező döntési pontokat kezel. | pilot előtti/utáni munkaidő, lefedettség, téves riasztás és feldolgozási SLA |
+| PR-004 | Evidenciaelfogadás, akciólezárás, külső benyújtás, költés és éles változtatás emberi kapu nélkül tiltott. | negatív tesztek és jóváhagyási auditlog |
+| PR-005 | Az ügynök működése teljesen naplózott, minimális jogosultságú, leállítható és hibánál biztonságosan függő állapotba kerül. | jogosultsági review, kill switch teszt, hibatűrési és visszaállítási jegyzőkönyv |
+
+Ezek a programkövetelmények nem bővítik visszamenőleg a H-001 definition of done-ját; a következő munkacsomagok tervezésénél kötelező bemenetek.
+
 # 2. Minőségi kritériumok
 
 - A domainlogika és a CLI külön modulban van.

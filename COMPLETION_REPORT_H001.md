@@ -8,6 +8,11 @@
     "CODEX_HANDOFF.md:H-001",
     "ACCEPTANCE_CRITERIA.md:AC-001–AC-012",
     "DECISIONS.md:D-020",
+    "DECISIONS.md:D-021",
+    "DECISIONS.md:D-022",
+    "DECISIONS.md:D-023",
+    "DECISIONS.md:D-024",
+    "ACCEPTANCE_CRITERIA.md:PR-001–PR-005",
     "data/project_dates.json",
     "data/actions.csv"
   ],
@@ -34,7 +39,7 @@
 
 ## Eredmény
 
-A H-001 determinisztikus, helyi Python core elkészült. A 41 tételes kanonikus akcióregiszter validációja 0 hard errort és 4 warningot ad. Mind a 41 akció felelőse Pásztor András, jóváhagyója Lángi Zoltán a D-020 emberi döntési rekord alapján. A fennmaradó warningok javasolt dátumhoz, forráskonfliktushoz, kézbesítési evidenciához és határidő-reviewhoz kapcsolódnak; akciót nem zárnak le és evidenciát nem fogadnak el.
+A H-001 determinisztikus, helyi Python core elkészült. A 42 tételes kanonikus akcióregiszter validációja 0 hard errort és 3 warningot ad. Mind a 42 akció felelőse Pásztor András, jóváhagyója Lángi Zoltán a D-020 emberi döntési rekord alapján. A 2027-09-30-i belső repeat-audit céldátum a D-021 alapján jóváhagyott. Az A-042 és a D-024 kötelező hosszú távú programcélként rögzíti a folyamatos auditfelkészültségi ügynököt. A fennmaradó warningok forráskonfliktushoz, kézbesítési evidenciához és határidő-reviewhoz kapcsolódnak; akciót nem zárnak le és evidenciát nem fogadnak el.
 
 ## Létrehozott vagy módosított fájlok
 
@@ -44,15 +49,20 @@ A H-001 determinisztikus, helyi Python core elkészült. A 41 tételes kanonikus
 - `config/project.example.json`: nem érzékeny projektkonfiguráció-minta.
 - `src/nis2_harness/`: domainlogika, registry I/O, validáció, határidő, riport és CLI.
 - `nis2_harness/`: installálás nélküli source-tree CLI shim.
-- `tests/`: 18 célzott standard-library `unittest` teszt.
+- `tests/`: 19 célzott standard-library `unittest` teszt.
 - `README.md`: cél, nem-cél, parancsok, adatmezők, hibaszintek, biztonsági korlátok és H-002 irány.
-- `DECISIONS.md`: D-020 emberi hozzárendelési és repository-adatkezelési döntési rekord.
-- `data/actions.csv`: mind a 41 akció emberi felelőse és jóváhagyója kitöltve.
+- `DECISIONS.md`: emberi döntési rekordok, köztük a D-024 folyamatos auditfelkészültségi programcél.
+- `ACCEPTANCE_CRITERIA.md`: a H-001 kritériumok mellett a H-002+ munkacsomagokra kötelező PR-001–PR-005 programelvárások.
+- `data/actions.csv`: mind a 42 akció emberi felelőse és jóváhagyója kitöltve; A-042 a folyamatos auditfelkészültségi ügynök pilotja.
 - `generated/action_plan.md`: determinisztikus, 19 követelménycsaládos PROPOSAL mintatervezet.
+- `SOURCE_REVIEW_2026-07-14.md`: az SRC-001/SRC-002/SRC-007 helyi metaadat-, szöveg- és vizuális review-jának proposal jegyzőkönyve.
+- `data/source_register.json`: az SRC-007 mentett belső levelezés hash-alapú forrásrekordja.
+- `AUDITOR_VERSION_CONFIRMATION_REQUEST.md`: ember által felülvizsgálandó és elküldendő auditor-megerősítési levéltervezet.
+- `generated/G2_G4_hatarido_jovahagyas_2026-07-14.docx`: aláírásra előkészített G2/G4 határidő-jóváhagyás; lokális generált dokumentum, Gitbe nem kerül.
 - `MANIFEST_H001.sha256`: a H-001 átadási állapot technikai ellenőrzőösszegei; az eredeti `MANIFEST.sha256` handoff-baseline változatlan maradt.
 - `COMPLETION_REPORT_H001.md`: ez a completion report.
 
-A `data/project_dates.json` és a jóváhagyott szakmai baseline-ok nem módosultak; a `DECISIONS.md` meglévő döntései felülírás nélkül, új D-020 rekorddal bővültek.
+A `data/project_dates.json` a D-022 emberi döntés alapján rögzíti, hogy a 2026-06-26-i kézhezvételi baseline külön átvételi igazolás nélkül elfogadott. Ez a bizonyítékhiányt nem minősíti evidenciává. A `DECISIONS.md` meglévő döntései felülírás nélkül, új döntési rekordokkal bővültek.
 
 ## Futtatott ellenőrzések
 
@@ -69,14 +79,16 @@ Kiegészítő ellenőrzés történt az input hash változatlanságára, a ripor
 
 ## Teszteredmény és validáció
 
-- Unit teszt: **18/18 sikeres**.
+- Unit teszt: **19/19 sikeres**.
 - Fordítási ellenőrzés: **sikeres**.
-- Kanonikus regiszter: **0 hard error, 4 warning**.
+- Kanonikus regiszter: **0 hard error, 3 warning**.
 - Kanonikus határidő: **2026-09-24**.
 - Input a validáció és riportgenerálás alatt változatlan: **igen**.
 - Riport determinisztikus: **igen**.
-- `data/actions.csv` SHA-256: `489EAE75D5F2C0A963A84C6D2BEA825D735D8C302213F8375BF7E6FF1197B8FE`.
-- `generated/action_plan.md` SHA-256: `256D4D2ACE8CFA62AE49C5E6CB8B722C82D7963DF7933E6354CB1B9F0E331BD6`.
+- G2/G4 DOCX szerkezeti és kétoldalas vizuális render-QA: **sikeres**.
+- G2/G4 DOCX SHA-256: `20A0E0A302A59CDEB7BE88B2D39AED70639D624C2ADA53F5DC2FF05E68EDA287`.
+- `data/actions.csv` SHA-256: `CDB46B4DCDF2F86B85B94571F1B40A9D74B910AEDB4B0534EB22FE74379073F2`.
+- `generated/action_plan.md` SHA-256: `708F5C78B180AF6F46717DA0D6881C75E8EAD9B20A36FE4AF55864FAF4791358`.
 - Tesztelt interpreter: Python 3.14.3, a forrás Python 3.11-kompatibilis nyelvi elemeket használ.
 
 ## Biztonsági ellenőrzés
@@ -91,18 +103,17 @@ Kiegészítő ellenőrzés történt az input hash változatlanságára, a ripor
 
 ## Ismert korlátok és nyitott emberi döntések
 
-1. A 2026-06-26-i kézbesítési bizonyíték védett tárhivatkozása hiányzik.
-2. A határidő G2/G4 felülvizsgálata függőben van.
+1. Külön 2026-06-26-i címzetti kézbesítési igazolás nem áll rendelkezésre; a dátumot a D-022 emberi döntés elfogadja és az SRC-007 belső levelezés alátámasztja, de a primer bizonyíték hiánya warningként megmarad.
+2. A határidő G2/G4 felülvizsgálata függőben van; az aláírandó nyilatkozat elkészült.
 3. A 2026-06-05 és 2026-05-04 dátumú auditforrás-változatok konfliktusa nincs feloldva.
-4. A 2027-09-30-i belső repeat-audit dátum továbbra is PROPOSED.
-5. A negyedéves dátumok kizárólag `DRAFT_SCHEDULE` értékek.
-6. A külön `production_change` mező nincs jelen a kanonikus CSV-ben. Emiatt a meglévő adatok G3-besorolása továbbra is a jóváhagyott `human_gate` metaadatra támaszkodik.
-7. Windows alatt történt futtatás; Linux útvonal-kompatibilitást kódreview támogatja, de külön Linux futtatás nem történt.
+4. A negyedéves dátumok kizárólag `DRAFT_SCHEDULE` értékek.
+5. A külön `production_change` mező nincs jelen a kanonikus CSV-ben. Emiatt a meglévő adatok G3-besorolása továbbra is a jóváhagyott `human_gate` metaadatra támaszkodik.
+6. Windows alatt történt futtatás; Linux útvonal-kompatibilitást kódreview támogatja, de külön Linux futtatás nem történt.
 
 ## Git állapot
 
-A `C:\NIS2` mappa helyi Git-repositoryként inicializálva lett `main` ággal. Az `origin` értéke `https://github.com/langizolihma/mc_nis2.git`. Commit és push nem történt.
+A `C:\NIS2` helyi Git-repository `main` ága az `origin/main` ágat követi. Commit és push kizárólag a projektgazda kifejezett utasítására végezhető; az átadási állapotot a művelet előtt teljes validációval és érzékenyfájl-kizárási ellenőrzéssel kell igazolni.
 
 ## Javasolt H-002 – implementáció nélkül
 
-Külön emberi jóváhagyás után készülhet agent job packaging a H-001 stabil sémájára: szerepkör-specifikus, helyi input/output csomagok, kötelező proposal-only JSON-szerződés, forrás- és review-metaadat, valamint lokális gold-case eval. Külső LLM/API vagy érzékeny adatfeldolgozás továbbra sem kerülhet bele G2 döntés nélkül.
+Külön emberi jóváhagyás után készülhet agent job packaging a H-001 stabil sémájára: szerepkör-specifikus, helyi input/output csomagok, kötelező proposal-only JSON-szerződés, forrás- és review-metaadat, valamint lokális gold-case eval. A D-024 és PR-001–PR-005 alapján ennek kötelező iránya a folyamatos auditfelkészültségi ügynök fájlalapú pilotja, mérhető emberimunka-csökkentéssel, negatív tesztekkel és kill switch mechanizmussal. Külső LLM/API, érzékeny adatfeldolgozás vagy éles integráció továbbra sem kerülhet bele G2/G3 döntés nélkül.

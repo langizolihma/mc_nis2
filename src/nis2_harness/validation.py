@@ -196,8 +196,18 @@ def validate_project_dates(data: dict[str, Any], path: str | Path) -> Validation
                 ))
         except ValueError as exc:
             issues.append(Issue("ERROR", "E_DEADLINE_DATE", str(exc), source))
-    if not data.get("receipt_evidence_reference") or str(data.get("receipt_evidence_reference", "")).startswith("TBD"):
-        issues.append(Issue("WARNING", "W_RECEIPT_EVIDENCE", "a kézbesítési bizonyíték hivatkozása még hiányzik", source))
+    evidence_reference = str(data.get("receipt_evidence_reference", ""))
+    if (
+        not evidence_reference
+        or evidence_reference.startswith("TBD")
+        or evidence_reference.startswith("NOT_AVAILABLE")
+    ):
+        issues.append(Issue(
+            "WARNING",
+            "W_RECEIPT_EVIDENCE",
+            "elsődleges kézbesítési bizonyíték nem áll rendelkezésre; az emberi dátumelfogadás nem helyettesíti az evidenciát",
+            source,
+        ))
     if str(data.get("deadline_review_status", "")).startswith("PENDING"):
         issues.append(Issue("WARNING", "W_DEADLINE_REVIEW", "a G2/G4 határidő-felülvizsgálat függőben van", source))
     return ValidationResult(tuple(issues))
@@ -206,4 +216,3 @@ def validate_project_dates(data: dict[str, Any], path: str | Path) -> Validation
 def combine_results(*results: ValidationResult) -> ValidationResult:
     """Combine validation results while retaining deterministic order."""
     return ValidationResult(tuple(issue for result in results for issue in result.issues))
-

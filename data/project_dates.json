@@ -1,12 +1,15 @@
 {
   "receipt_date": "2026-06-26",
-  "receipt_date_source": "USER_CONFIRMED_PROVEN",
-  "receipt_evidence_reference": "TBD-EVIDENCE-REPOSITORY-REF",
+  "receipt_date_source": "HUMAN_ACCEPTED_WITH_INTERNAL_EMAIL_SUPPORT_NO_PRIMARY_RECEIPT",
+  "receipt_evidence_reference": "NOT_AVAILABLE; human acceptance: DECISIONS.md:D-022",
+  "receipt_evidence_status": "NO_PRIMARY_RECEIPT_INTERNAL_EMAIL_SUPPORT",
+  "receipt_supporting_reference": "SRC-007; DECISIONS.md:D-023",
+  "receipt_acceptance_record": "DECISIONS.md:D-022",
   "recorded_on": "2026-07-14",
   "calculation_method": "receipt_date + 90 calendar days",
   "action_plan_deadline": "2026-09-24",
   "action_plan_deadline_weekday_hu": "csütörtök",
   "repeat_audit_latest": "2027-12-31",
   "deadline_review_status": "PENDING_G2_G4_REVIEW",
-  "notes": "A Codex nem módosíthatja önállóan. Külső benyújtás előtt a kézbesítési bizonyíték hivatkozása és emberi határidő-felülvizsgálat szükséges."
+  "notes": "A 2026-06-26-i dátum külön átvételi igazolás nélkül, a D-022 emberi döntéssel elfogadott projektbaseline. Az SRC-007 belső levelezés a dátumot alátámasztja, de nem elsődleges cégkapus kézbesítési igazolás. Külső benyújtás előtt aláírt G2/G4 határidő-felülvizsgálat szükséges."
 }

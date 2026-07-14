@@ -6,7 +6,8 @@ status: DRAFT_FOR_HUMAN_APPROVAL
 created: "2026-07-13"
 updated: "2026-07-14"
 receipt_date: "2026-06-26"
-receipt_evidence_status: USER_CONFIRMED_PROVEN
+receipt_evidence_status: HUMAN_ACCEPTED_WITH_INTERNAL_EMAIL_SUPPORT_NO_PRIMARY_RECEIPT
+receipt_supporting_source: SRC-007
 action_plan_deadline: "2026-09-24"
 deadline_review_status: PENDING_G2_G4_REVIEW
 project_sponsor: TBD-HUMAN
@@ -22,7 +23,10 @@ A projekt célja egy alacsony induló költségű, helyben működtethető, audi
 2. előállítja a hatósági cselekvési terv és a negyedéves beszámolók **ember által jóváhagyandó tervezeteit**;
 3. a lehető legtöbb elemző, dokumentáló, ellenőrző és riportáló feladatot AI-ügynökökre bízza;
 4. minden jogi, vezetői, költési, éles rendszer- és külső benyújtási döntést emberi jóváhagyási kapu mögött tart;
-5. a pénzbeli ráfordítást először nulla többletköltségű intézkedésekkel, meglévő licencekkel és kapacitással csökkenti, és csak igazolt kockázat vagy képességhiány esetén indít beszerzést.
+5. a pénzbeli ráfordítást először nulla többletköltségű intézkedésekkel, meglévő licencekkel és kapacitással csökkenti, és csak igazolt kockázat vagy képességhiány esetén indít beszerzést;
+6. hosszú távon folyamatos auditfelkészültségi ügynököt működtet, amely jóváhagyott, lehetőleg read-only adatforrásokból karbantartja a nyilvántartásokat, naplókat és exportokat értelmez, jegyzőkönyv-, evidencia- és intézkedéstervezetet készít, majd csak a szükséges döntéseket és kivételeket terjeszti ember elé.
+
+**Célállapot:** az ismétlődő adminisztratív és ellenőrzési munka lehető legnagyobb része automatizált legyen. Az ember elsősorban bizonytalan, kockázatos vagy jogilag kötelező döntési pontokon avatkozzon be; evidenciaelfogadás, feladatzárás, külső benyújtás, költés és éles változtatás nem automatizálható emberi kapu nélkül.
 
 # 2. Kötelező külső keret
 
@@ -94,6 +98,7 @@ Védett evidenciatár / hatósági benyújtás ember által
 | Cost Guard | meglévő licencek/kapacitás, halasztás, beszerzési trigger | költségdöntési csomag | G5 |
 | QA Auditor | forrás-, lefedettség-, guardrail- és regresszióellenőrzés | QA-jegyzőkönyv | G1 |
 | Report Writer | cselekvési terv és beszámoló tervezete | külső dokumentumtervezet | G4 |
+| Continuous Assurance Operator | jóváhagyott logok/exportok figyelése, nyilvántartások karbantartása, jegyzőkönyv- és intézkedéstervezet, kivétel-előterjesztés | forráshivatkozott review-csomag és emberi jóváhagyási sor | G1/G2/G3 |
 
 Az alapértelmezett végrehajtás **szekvenciális**, nem párhuzamos agent-swarm. Ez csökkenti a költséget, a kontextusvesztést és a felülvizsgálati terhet.
 
@@ -109,6 +114,7 @@ Az alapértelmezett végrehajtás **szekvenciális**, nem párhuzamos agent-swar
 - forráskövetés, bizonytalanságjelölés, emberi jóváhagyási kapuk;
 - helyi validáció, egységteszt és agent-eval;
 - később jóváhagyott, read-only adatgyűjtési integrációk.
+- folyamatos auditfelkészültségi ügynök pilotja, mérhető emberimunka-csökkentéssel, teljes futási naplóval és leállítható működéssel.
 
 ## Nincs benne az első szakaszban
 
@@ -165,6 +171,7 @@ Fizetős megoldás csak akkor kerülhet előre, ha dokumentáltan megtörtént:
 4. `SRC-003` – stratégiai irány.
 5. `SRC-004` – belső munkadokumentum, minden állítása validálandó.
 6. `SRC-005`/`SRC-006` – másodlagos összefoglaló.
+7. `SRC-007` – mentett belső levelezés: a kézhezvételi dátum kiegészítő alátámasztása, nem hivatalos cégkapus kézbesítési igazolás.
 
 | ID | Fájl | Típus | Bizalmi szint | SHA-256 |
 |---|---|---|---|---|
@@ -174,6 +181,7 @@ Fizetős megoldás csak akkor kerülhet előre, ha dokumentáltan megtörtént:
 | SRC-004 | `METALCOM_Alternativ_IT_Strategia_2026_2028_1(1).docx` | internal_working_document | unverified_internal | `40b263e65df13169617ef35eb956aa7fbde4cb6f33d0d8097e079e3dd862b68d` |
 | SRC-005 | `NIS2_audit_összefoglaló(1).pdf` | secondary_summary | secondary | `f2476762e42c6f2a73126181a0b97c6da5fcbcaf1e9f5dbbe5df83e46bcbd01b` |
 | SRC-006 | `NIS2_audit_osszefoglalo_folytatashoz.md` | conversation_continuation_summary | secondary | `76754455b17fe434759d6a534cac71e5f1b15e1f690d24329bca6099c0a94bcc` |
+| SRC-007 | `Re Cégkapura érkezett.msg` | internal_email_correspondence | unverified_internal | `007ac14c724f4293e662d7580c952c14b52035db76f67a392bbc3d050a348a9d` |
 
 ## Ismert forrásellentmondás
 

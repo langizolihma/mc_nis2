@@ -34,7 +34,7 @@ A `validate` és `status` automatikusan az akciófájl melletti `project_dates.j
 Mintakimenet:
 
 ```text
-Összesítés: 0 hard error, 4 warning
+Összesítés: 0 hard error, 3 warning
 Kézhezvétel: 2026-06-26
 Számított cselekvésiterv-határidő: 2026-09-24
 ```
@@ -68,8 +68,10 @@ Az engedélyezett enumokat a [CODEX_HANDOFF.md](CODEX_HANDOFF.md) és a `validat
 - A bemeneti CSV és JSON nem módosul.
 - Eredeti auditanyag, secret, személyes adat és nyers infrastruktúra-export nem kerülhet Gitbe.
 - A generált riport kötelezően `PROPOSAL`, és nem nyújtható be G4 jóváhagyás nélkül.
-- A kézbesítési bizonyíték hivatkozása és a határidő G2/G4 review-ja jelenleg nyitott emberi feladat.
+- Külön elsődleges kézbesítési igazolás nem áll rendelkezésre. A 2026-06-26-i baseline-t a D-022 emberi elfogadás mellett az SRC-007 mentett belső levelezés is alátámasztja, de nem helyettesíti a cégkapus bizonylatot. A határidő G2/G4 review-ja az aláírásig nyitott emberi feladat.
 
-## Következő munkacsomag
+## Következő munkacsomag és célállapot
 
-A javasolt H-002 az agent job packaging lehet: a stabil H-001 sémára épülő, szerepkörönként elkülönített helyi job-input/output csomagok és proposal-only kimeneti szerződés. H-002 nem része ennek az implementációnak, és külön emberi jóváhagyást igényel.
+A H-002 agent job packaging a stabil H-001 sémára épülő, szerepkörönként elkülönített helyi job-input/output csomagokat és proposal-only kimeneti szerződést készítheti el. Kötelező hosszú távú iránya egy folyamatos auditfelkészültségi ügynök: jóváhagyott logokat és exportokat értelmez, karbantartja a nyilvántartásokat, jegyzőkönyv- és intézkedéstervezeteket készít, figyeli a határidőket, és a kivételeket emberi elfogadásra előterjeszti.
+
+A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.

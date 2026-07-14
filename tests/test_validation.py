@@ -93,6 +93,16 @@ class ValidationTests(unittest.TestCase):
         result = validate_project_dates({"receipt_date": "not-a-date"}, "project_dates.json")
         self.assertIn("E_RECEIPT_DATE", {issue.code for issue in result.errors})
 
+    def test_human_acceptance_without_receipt_evidence_remains_warning(self) -> None:
+        result = validate_project_dates(
+            {
+                "receipt_date": "2026-06-26",
+                "receipt_evidence_reference": "NOT_AVAILABLE; human acceptance: D-022",
+            },
+            "project_dates.json",
+        )
+        self.assertIn("W_RECEIPT_EVIDENCE", {issue.code for issue in result.warnings})
+
 
 if __name__ == "__main__":
     unittest.main()

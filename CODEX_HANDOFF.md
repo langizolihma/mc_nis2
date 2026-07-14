@@ -184,6 +184,12 @@ Frissítsd a repository `README.md` fájlját az alábbiakkal:
 - biztonsági korlát;
 - hogyan következik a H-002 agent job packaging.
 
+## Kötelező H-002+ programirány
+
+A H-002 agent job packaging ne csak egyszeri feladatcsomagokat készítsen elő. A D-024 és a `PR-001`–`PR-005` alapján készítse elő egy folyamatos auditfelkészültségi ügynök fokozatos, pilot-alapú megvalósítását is. Az ügynök jóváhagyott, lehetőleg read-only logokat és exportokat dolgozzon fel, tartsa karban a nyilvántartásokat, készítsen jegyzőkönyv- és intézkedéstervezeteket, és csak a szükséges döntéseket terjessze ember elé.
+
+A H-002-ben még nem engedélyezett éles integráció. Először fájlalapú fixture-ökkel, gold case-ekkel, negatív tesztekkel, emberimunka-csökkentési mérőszámokkal, jogosultsági tervvel és leállítási mechanizmussal kell igazolni a működést.
+
 # 9. Kifejezetten nem végezhető el
 
 - OpenAI API vagy más LLM-hívás;

@@ -55,5 +55,14 @@
     "confidence": "secondary",
     "purpose": "Korábbi munka összefoglalója; nem helyettesíti az eredeti dokumentumokat.",
     "sha256": "76754455b17fe434759d6a534cac71e5f1b15e1f690d24329bca6099c0a94bcc"
+  },
+  {
+    "id": "SRC-007",
+    "file": "Re Cégkapura érkezett.msg",
+    "type": "internal_email_correspondence",
+    "date": "2026-06-26 (a legkorábbi beágyazott üzenet szerint)",
+    "confidence": "unverified_internal",
+    "purpose": "A 2026-06-26-i cégkapus érkezés belső levelezési alátámasztása; nem hivatalos kézbesítési igazolás.",
+    "sha256": "007ac14c724f4293e662d7580c952c14b52035db76f67a392bbc3d050a348a9d"
   }
 ]
