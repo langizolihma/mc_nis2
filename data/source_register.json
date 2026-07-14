@@ -1,0 +1,59 @@
+[
+  {
+    "id": "SRC-001",
+    "file": "06-26-Audit_elrendelese_es_kapcsolodo_intezkedesek_20260626_06512779_alairt.pdf",
+    "type": "signed_authority_decision",
+    "date": "2026-06-26",
+    "confidence": "authority",
+    "purpose": "Kötelező határidők, benyújtási és beszámolási kötelezettségek.",
+    "sha256": "9ecc9ac1761dc9a02c61a8b015b83b215312053c76194f088bea8ee89e1109f3",
+    "received_date": "2026-06-26",
+    "received_date_confidence": "user_confirmed_proven",
+    "received_evidence_reference": "TBD-EVIDENCE-REPOSITORY-REF"
+  },
+  {
+    "id": "SRC-002",
+    "file": "ALVERAD_Audit_metALCOM Zrt._20260504_jelentes.pdf",
+    "type": "audit_report",
+    "date": "2026-05-04 (a borító szerint)",
+    "confidence": "audited",
+    "purpose": "Auditmegállapítások, követelménycsaládok, EIR-ek, VMI/SZEKI és evidenciák.",
+    "sha256": "f0d48aa53c07330d5a9088aec5479ca1c1675c5ec33d4a0726df76d77588f5a6"
+  },
+  {
+    "id": "SRC-003",
+    "file": "IT_strategia_2026-28_1.pdf",
+    "type": "it_strategy",
+    "date": "2026–2028 (pontos jóváhagyási dátum nincs megadva)",
+    "confidence": "strategy_input",
+    "purpose": "Tervezett fejlesztési irányok; nem önmagukban kötelező auditintézkedések.",
+    "sha256": "0cd6de6bd85a78361f11fa55c4a5d4c6cd31ada8a439f221532caf0e3a07cafd"
+  },
+  {
+    "id": "SRC-004",
+    "file": "METALCOM_Alternativ_IT_Strategia_2026_2028_1(1).docx",
+    "type": "internal_working_document",
+    "date": "2026–2028 (munkadokumentum)",
+    "confidence": "unverified_internal",
+    "purpose": "Költségoptimalizálási ötletek és műszaki állítások; minden technikai adat validálandó.",
+    "sha256": "40b263e65df13169617ef35eb956aa7fbde4cb6f33d0d8097e079e3dd862b68d"
+  },
+  {
+    "id": "SRC-005",
+    "file": "NIS2_audit_összefoglaló(1).pdf",
+    "type": "secondary_summary",
+    "date": "nincs egyértelműen megadva",
+    "confidence": "secondary",
+    "purpose": "Tájékozódási összefoglaló; eltérés esetén SRC-001/SRC-002 az irányadó.",
+    "sha256": "f2476762e42c6f2a73126181a0b97c6da5fcbcaf1e9f5dbbe5df83e46bcbd01b"
+  },
+  {
+    "id": "SRC-006",
+    "file": "NIS2_audit_osszefoglalo_folytatashoz.md",
+    "type": "conversation_continuation_summary",
+    "date": "nincs egyértelműen megadva",
+    "confidence": "secondary",
+    "purpose": "Korábbi munka összefoglalója; nem helyettesíti az eredeti dokumentumokat.",
+    "sha256": "76754455b17fe434759d6a534cac71e5f1b15e1f690d24329bca6099c0a94bcc"
+  }
+]

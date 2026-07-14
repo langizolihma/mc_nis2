@@ -1,0 +1,12 @@
+{
+  "receipt_date": "2026-06-26",
+  "receipt_date_source": "USER_CONFIRMED_PROVEN",
+  "receipt_evidence_reference": "TBD-EVIDENCE-REPOSITORY-REF",
+  "recorded_on": "2026-07-14",
+  "calculation_method": "receipt_date + 90 calendar days",
+  "action_plan_deadline": "2026-09-24",
+  "action_plan_deadline_weekday_hu": "csütörtök",
+  "repeat_audit_latest": "2027-12-31",
+  "deadline_review_status": "PENDING_G2_G4_REVIEW",
+  "notes": "A Codex nem módosíthatja önállóan. Külső benyújtás előtt a kézbesítési bizonyíték hivatkozása és emberi határidő-felülvizsgálat szükséges."
+}

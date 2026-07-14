@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.coverage
+.env
+.venv/
+venv/
+secrets/
+staging/
+raw_exports/
+generated/*
+!generated/.gitkeep
+!generated/action_plan.md
+alapadatok/
+
