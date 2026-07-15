@@ -32,7 +32,7 @@ updated: "2026-07-14"
 | D-013 | PROPOSED | Exchange/BLADE5/RDS/AD-DHCP változás csak függőség-, megőrzési-, licenc- és rollback-elemzés után. |
 | D-014 | APPROVED_BASELINE | Eredeti audit- és evidenciabinaris nem kerül Gitbe; csak hivatkozás, metaadat és hash. |
 | D-015 | OPEN | B1/B2/B3 forintküszöb és jóváhagyó szervezeti szint. |
-| D-016 | OPEN | Kanonikus auditjelentés dátuma és változata. |
+| D-016 | SUPERSEDED | A kanonikus auditjelentés korábbi nyitott kérdését a D-025 lezárta. |
 | D-017 | OPEN | Engedélyezett AI-futtatási környezet és adatminősítési szabály. |
 | D-018 | CONFIRMED_INPUT | A határozat bizonyított kézhezvételi dátuma 2026.06.26.; a számított 90 napos határidő 2026.09.24. |
 | D-019 | APPROVED_BASELINE | A harness termékfüggetlen; a hivatalos és bináris evidenciák meglévő, jóváhagyott védett fájlmegosztáson vagy SharePoint-tárban kezelhetők. |
@@ -41,6 +41,7 @@ updated: "2026-07-14"
 | D-022 | APPROVED_BASELINE | A 2026.06.26-i kézhezvételi dátum külön átvételi igazolás hiányában is elfogadott projektbaseline; a bizonyítékhiány transzparensen fennmarad. |
 | D-023 | CONFIRMED_INPUT | Az SRC-007 mentett belső levelezés a 2026.06.26-i cégkapus érkezést alátámasztja, de nem helyettesíti a rendszer által kiállított kézbesítési igazolást. |
 | D-024 | APPROVED_BASELINE | A program célállapota egy folyamatos auditfelkészültségi ügynök, amely minimalizálja a rutinszerű emberi munkát, de a kötelező döntéseket emberi kapun hagyja. |
+| D-025 | CONFIRMED_INPUT | Az SRC-008 a hatóság felé beadott, 2026.06.05-i aláírt kanonikus auditjelentés; az SRC-002 korábbi változatát felváltja. |
 
 # Részletes döntések
 
@@ -234,6 +235,24 @@ A program hosszú távú célja olyan local-first, auditálható ügynök kialak
 **Elvárt működési modell:** a rutinszerű emberi munka a lehető legkisebb legyen, az ember elsősorban kivétel, bizonytalanság, jelentős kockázat vagy kötelező jóváhagyási kapu esetén avatkozzon be.
 
 **Kontrollkorlát:** az ügynök nem fogadhat el evidenciát, nem zárhat le akciót, nem nyújthat be külső dokumentumot, nem indíthat költést és nem hajthat végre éles változtatást emberi jóváhagyás nélkül. Adatforrás-integráció csak jóváhagyott scope-pal, minimális jogosultsággal, lehetőleg read-only módban, teljes futási naplóval és leállítási lehetőséggel készülhet.
+
+## D-025 – A hatósághoz beadott kanonikus auditjelentés azonosítása
+
+**Státusz:** `CONFIRMED_INPUT`
+
+**Rögzítés dátuma:** 2026-07-15
+
+**Emberi forrásállítás:** a projektgazda szerint az `Audit_Cert_metLACOM Zrt._20260603_signed.pdf` a hatóság felé beadott példány.
+
+Az SRC-008 388 oldalas, borítója, PDF-metaadata és beágyazott aláírásmezője **2026. június 5.** dátumú, ezért megfelel az SRC-001 hatósági határozatban hivatkozott jelentésdátumnak. SHA-256 értéke: `c347dc3139dd433ace098b6145f1ea5d043614dcfcbf7ed46f71e1b405c5058f`.
+
+Az SRC-002 és SRC-008 első 386 oldalának oldalankénti összevetése során a lábléc oldalszámának semlegesítése után 381 oldal pontos szövegegyezést adott. Az öt eltérő oldal a május 4-ről június 5-re változó dokumentumdátumot és a 7–9. oldal tördelési átrendeződését tartalmazza; megváltozott auditmegállapítást nem azonosítottunk. Az SRC-008 két további, magyar és angol auditigazolási oldalt tartalmaz.
+
+**Döntési hatás:** az SRC-008 a további munkában kanonikus auditforrás, az SRC-002 történeti, felülírt változat. A D-016 nyitott kérdését és az A-035 forrásverzió-konfliktusát ez a rekord feloldja.
+
+**Kontrollkorlát:** a PDF-ben `Adobe.PPKLite` / `adbe.pkcs7.detached` aláírásstruktúra, aláírói név, időpont, aláírástartalom és ByteRange található, de a tanúsítvány bizalmi láncát külön kriptográfiai eszközzel nem validáltuk. Az angol auditigazolás 388. oldalán egyes mezőértékek Poppler-renderben nem láthatók, noha szövegként kinyerhetők; szükség esetén emberi PDF-megjelenítőben ellenőrizendő.
+
+**Felülírja:** D-016 nyitott kérdését és az SRC-002 kanonikus használatát.
 
 # Nyitott döntési sablon
 

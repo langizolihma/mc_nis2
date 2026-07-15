@@ -1,14 +1,18 @@
-# TERVEZET – auditor-megerősítési kérés
+# ARCHIVÁLT TERVEZET – auditor-megerősítés már nem szükséges
+
+**Állapot:** `NOT_REQUIRED_AFTER_D-025`
+
+Az SRC-008 hatósághoz beadott, 2026.06.05-i aláírt auditjelentés rendelkezésre áll, ezért ezt a levéltervezetet nem kell elküldeni. A dokumentum kizárólag a korábbi verziótisztázási folyamat nyomaként marad a repositoryban.
 
 ```json
 {
-  "status": "PROPOSAL",
+  "status": "ARCHIVED_NOT_REQUIRED",
   "agent_role": "evidence_curator",
   "source_refs": ["SRC-001:p1", "SRC-002:p1"],
   "assumptions": [],
   "confidence": "high",
-  "proposed_changes": ["request canonical audit report version confirmation"],
-  "required_human_gate": "G2_SECURITY_LEGAL",
+  "proposed_changes": [],
+  "required_human_gate": "NONE_AFTER_D-025",
   "forbidden_automatic_actions": ["send_external", "replace_canonical_source", "close_action"]
 }
 ```

@@ -41,11 +41,11 @@ A hatósági döntés alapján:
 
 # 3. Auditált kiinduló állapot
 
-- Öt EIR került azonosításra; a Vezetéstámogató, Irodai és Termelés EIR került audit alá, a Hálózat-kommunikációs és a Biztonsági EIR nem. [SRC-002, 6. oldal]
-- A három auditált EIR VMI-értéke 30; a szervezeti SZEKI 30, az eredmény „nem megfelelt”. [SRC-002, 7–8. oldal]
-- Az auditor a végső eredmény fő okaként a biztonsági követelmények gyakorlati megvalósulását igazoló evidenciák nagyfokú hiányát jelölte meg. [SRC-002, 7. oldal]
-- A jelentés 19 követelménycsaládot értékel; a különösen alacsony összesített értékek között szerepel a rendszer- és szolgáltatásbeszerzés, a tudatosság és képzés, a karbantartás, a fizikai és környezeti védelem, valamint a biztonsági események kezelése. [SRC-002, 9–10. oldal]
-- A 82 szervezeti kontrollcsoportból 3 teljesült teljeskörűen; a jelentés ezt 3%-os teljes megfelelésként összegzi. [SRC-002, 11–12. oldal]
+- Öt EIR került azonosításra; a Vezetéstámogató, Irodai és Termelés EIR került audit alá, a Hálózat-kommunikációs és a Biztonsági EIR nem. [SRC-008, 6. oldal]
+- A három auditált EIR VMI-értéke 30; a szervezeti SZEKI 30, az eredmény „nem megfelelt”. [SRC-008, 7–8. oldal]
+- Az auditor a végső eredmény fő okaként a biztonsági követelmények gyakorlati megvalósulását igazoló evidenciák nagyfokú hiányát jelölte meg. [SRC-008, 7. oldal]
+- A jelentés 19 követelménycsaládot értékel; a különösen alacsony összesített értékek között szerepel a rendszer- és szolgáltatásbeszerzés, a tudatosság és képzés, a karbantartás, a fizikai és környezeti védelem, valamint a biztonsági események kezelése. [SRC-008, 9–10. oldal]
+- A 82 szervezeti kontrollcsoportból 3 teljesült teljeskörűen; a jelentés ezt 3%-os teljes megfelelésként összegzi. [SRC-008, 11–12. oldal]
 
 # 4. Problémameghatározás
 
@@ -166,7 +166,7 @@ Fizetős megoldás csak akkor kerülhet előre, ha dokumentáltan megtörtént:
 # 11. Forráshierarchia
 
 1. `SRC-001` – aláírt hatósági döntés: külső kötelezettségekben elsődleges.
-2. `SRC-002` – auditjelentés: auditmegállapításokban elsődleges.
+2. `SRC-008` – a hatósághoz beadott, aláírt auditjelentés: auditmegállapításokban elsődleges; `SRC-002` történeti előzmény.
 3. jóváhagyott vezetői/jogi döntés és tényleges rendszerexport.
 4. `SRC-003` – stratégiai irány.
 5. `SRC-004` – belső munkadokumentum, minden állítása validálandó.
@@ -182,7 +182,8 @@ Fizetős megoldás csak akkor kerülhet előre, ha dokumentáltan megtörtént:
 | SRC-005 | `NIS2_audit_összefoglaló(1).pdf` | secondary_summary | secondary | `f2476762e42c6f2a73126181a0b97c6da5fcbcaf1e9f5dbbe5df83e46bcbd01b` |
 | SRC-006 | `NIS2_audit_osszefoglalo_folytatashoz.md` | conversation_continuation_summary | secondary | `76754455b17fe434759d6a534cac71e5f1b15e1f690d24329bca6099c0a94bcc` |
 | SRC-007 | `Re Cégkapura érkezett.msg` | internal_email_correspondence | unverified_internal | `007ac14c724f4293e662d7580c952c14b52035db76f67a392bbc3d050a348a9d` |
+| SRC-008 | `Audit_Cert_metLACOM Zrt._20260603_signed.pdf` | signed_submitted_audit_report | audited | `c347dc3139dd433ace098b6145f1ea5d043614dcfcbf7ed46f71e1b405c5058f` |
 
-## Ismert forrásellentmondás
+## Feloldott forrásellentmondás
 
-A `SRC-001` 2026.06.05-i auditjelentésre hivatkozik, míg a rendelkezésre álló `SRC-002` borítóján 2026.05.04. szerepel. A külső cselekvési terv elkészítése előtt a kanonikus, aláírt auditváltozatot azonosítani és hash-sel rögzíteni kell.
+Az `SRC-001` 2026.06.05-i auditjelentésre hivatkozik. A D-025 alapján az ugyanezen dátumú, aláírt és a hatóság felé beadott `SRC-008` a kanonikus változat. Az `SRC-002` május 4-i korábbi példány történeti forrásként marad meg; az oldalankénti összevetés nem azonosított eltérő auditmegállapítást.
