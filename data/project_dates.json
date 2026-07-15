@@ -10,6 +10,8 @@
   "action_plan_deadline": "2026-09-24",
   "action_plan_deadline_weekday_hu": "csütörtök",
   "repeat_audit_latest": "2027-12-31",
-  "deadline_review_status": "PENDING_G2_G4_REVIEW",
-  "notes": "A 2026-06-26-i dátum külön átvételi igazolás nélkül, a D-022 emberi döntéssel elfogadott projektbaseline. Az SRC-007 belső levelezés a dátumot alátámasztja, de nem elsődleges cégkapus kézbesítési igazolás. Külső benyújtás előtt aláírt G2/G4 határidő-felülvizsgálat szükséges."
+  "deadline_review_status": "PROCESS_ACCEPTED_EVIDENCE_DEFERRED_D026",
+  "deadline_review_record": "DECISIONS.md:D-026",
+  "deferred_evidence_reference": "DEFERRED_EVIDENCE_LOG.md:DEF-001;DEF-003",
+  "notes": "A 2026-06-26-i dátum külön átvételi igazolás nélkül, a D-022 emberi döntéssel elfogadott projektbaseline. Az SRC-007 belső levelezés a dátumot alátámasztja, de nem elsődleges cégkapus kézbesítési igazolás. A D-026 alapján a projekt folyamat szempontjából továbbhaladhat; a tényleges aláírt G2/G4 rekordot és kapcsolódó evidenciát külső benyújtás előtt pótolni kell."
 }

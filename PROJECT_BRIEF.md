@@ -9,7 +9,7 @@ receipt_date: "2026-06-26"
 receipt_evidence_status: HUMAN_ACCEPTED_WITH_INTERNAL_EMAIL_SUPPORT_NO_PRIMARY_RECEIPT
 receipt_supporting_source: SRC-007
 action_plan_deadline: "2026-09-24"
-deadline_review_status: PENDING_G2_G4_REVIEW
+deadline_review_status: PROCESS_ACCEPTED_EVIDENCE_DEFERRED_D026
 project_sponsor: TBD-HUMAN
 project_manager: TBD-HUMAN
 information_security_owner: TBD-HUMAN
@@ -37,7 +37,7 @@ A hatósági döntés alapján:
 - a benyújtást követően a megismételt auditig negyedéves beszámoló szükséges;
 - a megismételt audit legkésőbbi időpontja 2027. december 31. [SRC-001, 1–2. oldal]
 
-**Rögzített határidőalap:** a határozat bizonyított kézhezvételi dátuma **2026. június 26.** A projekt alapértelmezett, 90 naptári napos számítása szerint a cselekvési terv benyújtási határideje **2026. szeptember 24. (csütörtök)**. A kézbesítési bizonyíték védett evidenciatári vagy iratkezelési hivatkozásját és a határidőszámítás G2/G4 emberi felülvizsgálatát még rögzíteni kell.
+**Rögzített határidőalap:** a határozat elfogadott kézhezvételi dátuma **2026. június 26.** A projekt alapértelmezett, 90 naptári napos számítása szerint a cselekvési terv benyújtási határideje **2026. szeptember 24. (csütörtök)**. A D-026 alapján a projekt folyamat szempontjából továbbhaladhat; a tényleges G2/G4 aláírás, védett tárhivatkozás és reviewer-rekord a `DEFERRED_EVIDENCE_LOG.md` szerint külső benyújtás előtt pótlandó.
 
 # 3. Auditált kiinduló állapot
 

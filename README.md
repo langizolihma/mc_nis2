@@ -34,7 +34,7 @@ A `validate` és `status` automatikusan az akciófájl melletti `project_dates.j
 Mintakimenet:
 
 ```text
-Összesítés: 0 hard error, 2 warning
+Összesítés: 0 hard error, 1 warning
 Kézhezvétel: 2026-06-26
 Számított cselekvésiterv-határidő: 2026-09-24
 ```
@@ -68,7 +68,7 @@ Az engedélyezett enumokat a [CODEX_HANDOFF.md](CODEX_HANDOFF.md) és a `validat
 - A bemeneti CSV és JSON nem módosul.
 - Eredeti auditanyag, secret, személyes adat és nyers infrastruktúra-export nem kerülhet Gitbe.
 - A generált riport kötelezően `PROPOSAL`, és nem nyújtható be G4 jóváhagyás nélkül.
-- Külön elsődleges kézbesítési igazolás nem áll rendelkezésre. A 2026-06-26-i baseline-t a D-022 emberi elfogadás mellett az SRC-007 mentett belső levelezés is alátámasztja, de nem helyettesíti a cégkapus bizonylatot. A határidő G2/G4 review-ja az aláírásig nyitott emberi feladat.
+- Külön elsődleges kézbesítési igazolás nem áll rendelkezésre. A 2026-06-26-i baseline-t a D-022 emberi elfogadás mellett az SRC-007 mentett belső levelezés is alátámasztja, de nem helyettesíti a cégkapus bizonylatot. A D-026 engedélyezi a folyamat továbbhaladását; a tényleges G2/G4 aláírás, tárhivatkozás és reviewer-rekord a `DEFERRED_EVIDENCE_LOG.md` szerint külső benyújtás előtt pótlandó.
 
 ## Következő munkacsomag és célállapot
 

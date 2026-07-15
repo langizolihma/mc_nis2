@@ -6,5 +6,7 @@
   "receipt_supporting_reference": "TBD-SOURCE-REF",
   "receipt_acceptance_record": "TBD-DECISION-REF",
   "repeat_audit_latest": "2027-12-31",
-  "deadline_review_status": "PENDING_G2_G4_REVIEW"
+  "deadline_review_status": "PENDING_G2_G4_REVIEW",
+  "deadline_review_record": "TBD-DECISION-REF",
+  "deferred_evidence_reference": "TBD-DEFERRED-EVIDENCE-REF"
 }

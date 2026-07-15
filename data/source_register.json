@@ -75,7 +75,7 @@
     "purpose": "A hatóság felé beadott kanonikus auditjelentés; auditmegállapítások, követelménycsaládok, EIR-ek, VMI/SZEKI, evidencialista és auditigazolás.",
     "pages": 388,
     "signature_field": "Signature2; Adobe.PPKLite; adbe.pkcs7.detached; Hinkel Attila; 2026-06-05 15:39:43 +02:00",
-    "signature_validation": "STRUCTURE_AND_BYTE_RANGE_PRESENT; certificate trust chain not independently validated",
+    "signature_validation": "HUMAN_VALIDATED_VALID_ON_2026-07-15; structure and ByteRange present; automated certificate trust chain not independently validated",
     "sha256": "c347dc3139dd433ace098b6145f1ea5d043614dcfcbf7ed46f71e1b405c5058f"
   }
 ]

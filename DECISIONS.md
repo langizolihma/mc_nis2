@@ -42,6 +42,7 @@ updated: "2026-07-14"
 | D-023 | CONFIRMED_INPUT | Az SRC-007 mentett belső levelezés a 2026.06.26-i cégkapus érkezést alátámasztja, de nem helyettesíti a rendszer által kiállított kézbesítési igazolást. |
 | D-024 | APPROVED_BASELINE | A program célállapota egy folyamatos auditfelkészültségi ügynök, amely minimalizálja a rutinszerű emberi munkát, de a kötelező döntéseket emberi kapun hagyja. |
 | D-025 | CONFIRMED_INPUT | Az SRC-008 a hatóság felé beadott, 2026.06.05-i aláírt kanonikus auditjelentés; az SRC-002 korábbi változatát felváltja. |
+| D-026 | APPROVED_BASELINE | A projekt a G2/G4 aláírás és védett tárhivatkozások ideiglenes hiánya mellett továbbhaladhat, ha minden hiány a pótlandó evidencia naplóban nyitva marad. |
 
 # Részletes döntések
 
@@ -253,6 +254,22 @@ Az SRC-002 és SRC-008 első 386 oldalának oldalankénti összevetése során a
 **Kontrollkorlát:** a PDF-ben `Adobe.PPKLite` / `adbe.pkcs7.detached` aláírásstruktúra, aláírói név, időpont, aláírástartalom és ByteRange található, de a tanúsítvány bizalmi láncát külön kriptográfiai eszközzel nem validáltuk. Az angol auditigazolás 388. oldalán egyes mezőértékek Poppler-renderben nem láthatók, noha szövegként kinyerhetők; szükség esetén emberi PDF-megjelenítőben ellenőrizendő.
 
 **Felülírja:** D-016 nyitott kérdését és az SRC-002 kanonikus használatát.
+
+## D-026 – Folyamatfolytatás pótlandó evidencia mellett
+
+**Státusz:** `APPROVED_BASELINE`
+
+**Rögzítés dátuma:** 2026-07-15
+
+**Jóváhagyó:** Lángi Zoltán
+
+**Felelős:** Pásztor András
+
+A projektgazda engedélyezte, hogy a projekt folyamat szempontjából továbbhaladjon úgy, mintha a G2/G4 nyilatkozat aláírási lépése és az SRC-008 védett evidenciatári elhelyezése megtörtént volna. A tényleges aláírt példány, hash, tárhivatkozás és reviewer-rekord azonban még nem áll rendelkezésre, ezért ezeket a `DEFERRED_EVIDENCE_LOG.md` naplóban nyitott pótlandó tételként kell kezelni.
+
+A projektgazda emberileg megerősítette, hogy az SRC-008 PDF aláírása az általa használt PDF-megjelenítőben érvényes.
+
+**Kontrollkorlát:** ez folyamatfolytatási és ütemezési engedmény, nem evidenciaelfogadás. Az érintett akciók nem jelölhetők `DONE` státuszúra, a hiányzó dokumentumok nem tüntethetők fel létezőként, és külső benyújtás előtt a `DEF-001` és `DEF-002` tételeket tényleges evidenciával kell lezárni.
 
 # Nyitott döntési sablon
 
