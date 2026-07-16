@@ -26,6 +26,7 @@ from .registry import (
     load_project_dates,
 )
 from .reports import render_action_plan, render_status
+from .repeat_audit import validate_repeat_audit_roadmap
 from .validation import (
     combine_results,
     validate_actions,
@@ -68,6 +69,8 @@ def _parser() -> argparse.ArgumentParser:
     evals.add_argument("--defects", required=True, type=Path)
     ai_policy = subparsers.add_parser("validate-ai-policy")
     ai_policy.add_argument("--policy", required=True, type=Path)
+    repeat_audit = subparsers.add_parser("validate-repeat-audit")
+    repeat_audit.add_argument("--roadmap", required=True, type=Path)
     return parser
 
 
@@ -83,6 +86,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-repeat-audit":
+            roadmap = load_json_object(args.roadmap, "repeat-audit roadmap")
+            result = validate_repeat_audit_roadmap(roadmap, args.roadmap)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Repeat audit: {len(roadmap.get('milestones', []))} milestone; "
+                f"target={roadmap.get('approved_internal_target', 'UNKNOWN')}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-ai-policy":
             policy = load_json_object(args.policy, "AI használati policy")
             result = validate_ai_policy(policy, args.policy)

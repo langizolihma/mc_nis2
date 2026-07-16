@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-030",
+  "source_refs": [
+    "SRC-001:p1-2",
+    "DECISIONS.md:D-021"
+  ],
+  "approved_internal_target": "2027-09-30",
+  "authority_latest_date": "2027-12-31",
+  "assumptions": [
+    "A köztes dátumok belső tervezési javaslatok, és csak G4 emberi jóváhagyás után válnak baseline-ná.",
+    "Az auditor-procurement mérföldkő döntési kapu; nem jelent megrendelést vagy költségvállalást."
+  ],
+  "human_gates": [
+    "G1_DOMAIN_REVIEW",
+    "G4_EXTERNAL_SUBMISSION",
+    "G5_PURCHASE"
+  ],
+  "milestones": [
+    {
+      "milestone_id": "QG-2026-Q3",
+      "type": "QUARTERLY_READINESS_GATE",
+      "date": "2026-09-30",
+      "status": "PROPOSED",
+      "required_output": "Akció-, evidencia- és döntési backlog negyedéves emberi review-ja.",
+      "required_gate": "G1_DOMAIN_REVIEW"
+    },
+    {
+      "milestone_id": "QG-2026-Q4",
+      "type": "QUARTERLY_READINESS_GATE",
+      "date": "2026-12-31",
+      "status": "PROPOSED",
+      "required_output": "Kontrollcsaládonkénti readiness és lejárt feladatok jóváhagyott felülvizsgálata.",
+      "required_gate": "G1_DOMAIN_REVIEW"
+    },
+    {
+      "milestone_id": "QG-2027-Q1",
+      "type": "QUARTERLY_READINESS_GATE",
+      "date": "2027-03-31",
+      "status": "PROPOSED",
+      "required_output": "Evidenciaminta és nyitott kockázatok tulajdonosi felülvizsgálata.",
+      "required_gate": "G1_DOMAIN_REVIEW"
+    },
+    {
+      "milestone_id": "AUDITOR-G5-2027",
+      "type": "AUDITOR_PROCUREMENT_GATE",
+      "date": "2027-03-31",
+      "status": "PROPOSED",
+      "required_output": "Entitlement, kapacitás, B0 alternatíva, pilot, acceptance criterion, purchase trigger és halasztási kockázat dokumentált döntési csomagja.",
+      "required_gate": "G5_PURCHASE"
+    },
+    {
+      "milestone_id": "QG-2027-Q2",
+      "type": "QUARTERLY_READINESS_GATE",
+      "date": "2027-06-30",
+      "status": "PROPOSED",
+      "required_output": "Mock audit előtti scope-, kontroll- és evidenciakészültségi review.",
+      "required_gate": "G1_DOMAIN_REVIEW"
+    },
+    {
+      "milestone_id": "MOCK-001",
+      "type": "MOCK_AUDIT",
+      "date": "2027-07-31",
+      "status": "PROPOSED",
+      "required_output": "Jegyzőkönyvezett mock audit, findinglista, felelősök és céldátumok; scope emberi jóváhagyással.",
+      "required_gate": "G1_DOMAIN_REVIEW"
+    },
+    {
+      "milestone_id": "REMEDIATION-BUFFER-END",
+      "type": "REMEDIATION_BUFFER_END",
+      "date": "2027-08-31",
+      "status": "PROPOSED",
+      "required_output": "Mock findingok javításának és evidenciáinak emberi ellenőrzése, nyitott eltérések kockázati döntése.",
+      "required_gate": "G1_DOMAIN_REVIEW"
+    },
+    {
+      "milestone_id": "INTERNAL-TARGET-D021",
+      "type": "INTERNAL_REPEAT_AUDIT_TARGET",
+      "date": "2027-09-30",
+      "status": "APPROVED_BASELINE",
+      "decision_ref": "D-021",
+      "required_output": "A megismételt audit végrehajtása és az eredmények emberi jóváhagyása.",
+      "required_gate": "G4_EXTERNAL_SUBMISSION"
+    }
+  ],
+  "mock_audit_scope": {
+    "status": "TBD_HUMAN",
+    "minimum_proposal": "A jóváhagyott NIS2 scope, a 19 kontrollcsalád és az A-034 scope-döntés eredményének lefedése.",
+    "related_actions": ["A-034"]
+  },
+  "human_approval": {
+    "reviewer": "",
+    "approved_at": "",
+    "decision_ref": ""
+  }
+}
