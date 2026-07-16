@@ -265,6 +265,19 @@ def load_project_dates(path: str | Path) -> dict[str, Any]:
     return value
 
 
+def load_json_object(path: str | Path, label: str) -> dict[str, Any]:
+    """Load a generic UTF-8 JSON object without mutating the source."""
+    source = Path(path)
+    try:
+        with source.open("r", encoding="utf-8-sig") as handle:
+            value = json.load(handle)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise RegistryLoadError(f"{source}: hibás {label} JSON: {exc}") from exc
+    if not isinstance(value, dict):
+        raise RegistryLoadError(f"{source}: a(z) {label} gyökérelemnek objektumnak kell lennie")
+    return value
+
+
 def default_project_dates_path(actions_path: str | Path) -> Path:
     """Return the project_dates.json next to an action registry."""
     return Path(actions_path).resolve().parent / "project_dates.json"

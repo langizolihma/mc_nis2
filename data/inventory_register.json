@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-011",
+  "source_refs": [
+    "SRC-008:p6",
+    "SRC-008:p25",
+    "SRC-008:p153-154",
+    "SRC-008:p242-243",
+    "SRC-008:p332-333"
+  ],
+  "assumptions": [],
+  "human_review": {
+    "status": "PENDING",
+    "reviewer": "",
+    "reviewed_at": "",
+    "decision_ref": ""
+  },
+  "eir_records": [
+    {
+      "eir_id": "EIR-001",
+      "name": "Vezetéstámogató",
+      "audit_scope": "AUDITED",
+      "owner": "TBD-HUMAN",
+      "source_ref": "SRC-008:p6",
+      "source_confidence": "audited",
+      "record_status": "PROPOSED",
+      "notes": "Belső azonosító-javaslat; az EIR-tulajdonost embernek kell kijelölnie."
+    },
+    {
+      "eir_id": "EIR-002",
+      "name": "Irodai",
+      "audit_scope": "AUDITED",
+      "owner": "TBD-HUMAN",
+      "source_ref": "SRC-008:p6",
+      "source_confidence": "audited",
+      "record_status": "PROPOSED",
+      "notes": "Belső azonosító-javaslat; az EIR-tulajdonost embernek kell kijelölnie."
+    },
+    {
+      "eir_id": "EIR-003",
+      "name": "Termelés",
+      "audit_scope": "AUDITED",
+      "owner": "TBD-HUMAN",
+      "source_ref": "SRC-008:p6",
+      "source_confidence": "audited",
+      "record_status": "PROPOSED",
+      "notes": "Belső azonosító-javaslat; az EIR-tulajdonost embernek kell kijelölnie."
+    },
+    {
+      "eir_id": "EIR-004",
+      "name": "Hálózat-kommunikációs",
+      "audit_scope": "NOT_AUDITED",
+      "owner": "TBD-HUMAN",
+      "source_ref": "SRC-008:p6",
+      "source_confidence": "audited",
+      "record_status": "PROPOSED",
+      "notes": "Az auditban azonosított, de nem auditált EIR; scope és owner G1 review szükséges."
+    },
+    {
+      "eir_id": "EIR-005",
+      "name": "Biztonsági",
+      "audit_scope": "NOT_AUDITED",
+      "owner": "TBD-HUMAN",
+      "source_ref": "SRC-008:p6",
+      "source_confidence": "audited",
+      "record_status": "PROPOSED",
+      "notes": "Az auditban azonosított, de nem auditált EIR; scope és owner G1 review szükséges."
+    }
+  ],
+  "assets": [],
+  "data_sets": [],
+  "locations": [],
+  "dependencies": []
+}

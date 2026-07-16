@@ -15,6 +15,7 @@ from .registry import (
     load_control_action_mapping,
     load_evidence,
     load_findings,
+    load_json_object,
     load_project_dates,
 )
 from .reports import render_action_plan, render_status
@@ -24,6 +25,8 @@ from .validation import (
     validate_control_action_mapping,
     validate_evidence,
     validate_findings,
+    validate_inventory_export_plan,
+    validate_inventory_register,
     validate_project_dates,
 )
 
@@ -48,6 +51,9 @@ def _parser() -> argparse.ArgumentParser:
     findings.add_argument("--findings", required=True, type=Path)
     findings.add_argument("--mapping", required=True, type=Path)
     findings.add_argument("--actions", required=True, type=Path)
+    inventory = subparsers.add_parser("validate-inventory")
+    inventory.add_argument("--inventory", required=True, type=Path)
+    inventory.add_argument("--export-plan", required=True, type=Path)
     return parser
 
 
@@ -63,6 +69,22 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-inventory":
+            inventory_data = load_json_object(args.inventory, "inventory")
+            export_plan = load_json_object(args.export_plan, "inventory exportterv")
+            result = combine_results(
+                validate_inventory_register(inventory_data, args.inventory),
+                validate_inventory_export_plan(export_plan, args.export_plan),
+            )
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Inventory: {len(inventory_data.get('eir_records', []))} EIR, "
+                f"{len(inventory_data.get('assets', []))} asset, "
+                f"{len(inventory_data.get('dependencies', []))} dependency; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-findings":
             actions = load_actions(args.actions)
             finding_records = load_findings(args.findings)

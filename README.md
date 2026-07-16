@@ -28,6 +28,7 @@ python -m nis2_harness deadlines --received 2026-06-26
 python -m nis2_harness draft-action-plan --actions data/actions.csv --output generated/action_plan.md
 python -m nis2_harness validate-evidence --evidence data/evidence_register.csv --actions data/actions.csv
 python -m nis2_harness validate-findings --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
+python -m nis2_harness validate-inventory --inventory data/inventory_register.json --export-plan config/inventory_export_plan.json
 python -m unittest discover -s tests -v
 ```
 
@@ -52,6 +53,8 @@ A warning emberi döntést vagy kiegészítést igényel, de nem teszi szerkezet
 Az evidencia-metaadatok külön `data/evidence_register.csv` fájlban szerepelnek. A `validate-evidence` ellenőrzi az akcióhivatkozást, az időzónás időbélyeget, a SHA-256 alakját és az emberi elfogadási előfeltételeket. Az üres induló regiszter warning, nem elfogadott evidencia. A működési és hozzáférési szabályokat az [EVIDENCE_STORAGE.md](EVIDENCE_STORAGE.md) tartalmazza.
 
 Az audit 328 gépi finding-rekordja a `data/audit_findings.csv`, a javasolt kontroll–akció–evidencia kapcsolatok a `data/control_action_mapping.csv` fájlban találhatók. A `validate-findings` szerkezeti és hivatkozási ellenőrzést végez, de nem helyettesíti a G1 szakmai review-t. A rétegzett mintát, parser-kivételeket és jóváhagyási blokkot a [FINDING_REVIEW_2026-07-15.md](FINDING_REVIEW_2026-07-15.md) tartalmazza.
+
+Az A-011 öt EIR-t tartalmazó proposal baseline-ja a `data/inventory_register.json`, a jóváhagyandó read-only források a `config/inventory_export_plan.json` fájlban vannak. A `validate-inventory` megakadályozza a hibás hivatkozást, duplikált azonosítót, nem read-only gyűjtési módot és emberi metaadat nélküli jóváhagyást. A végrehajtási sorrendet az [A011_READONLY_INVENTORY_PLAN.md](A011_READONLY_INVENTORY_PLAN.md) tartalmazza.
 
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
@@ -84,6 +87,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az operatív következő lépés az A-011 read-only EIR-, eszköz-, adat-, tulajdonos- és függőségi leltárfrissítési terve, miközben az A-004/A-005 G1 review-ja kísérő emberi feladat marad. A későbbi H-002 agent job packaging a stabil H-001 sémára épülő, szerepkörönként elkülönített helyi job-input/output csomagokat és proposal-only kimeneti szerződést készítheti el. Kötelező hosszú távú iránya egy folyamatos auditfelkészültségi ügynök: jóváhagyott logokat és exportokat értelmez, karbantartja a nyilvántartásokat, jegyzőkönyv- és intézkedéstervezeteket készít, figyeli a határidőket, és a kivételeket emberi elfogadásra előterjeszti.
+Az A-011 read-only terve és JSON baseline-ja elkészült; következő emberi lépése az EIR-ownerek, forrásrendszerek, adatminősítés és exportengedélyek megadása. Párhuzamos kísérő feladat az A-004/A-005 G1 review. A következő önálló agent-munkacsomag az A-032 helyi eval-harness minimuma lehet, miközben a későbbi H-002 agent job packaging a stabil H-001 sémára épülő, szerepkörönként elkülönített helyi job-input/output csomagokat és proposal-only kimeneti szerződést készítheti el.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.

@@ -37,6 +37,10 @@ FINDING_RATINGS = {
 FINDING_MAPPING_STATUSES = {"DIRECT", "FAMILY_ONLY", "UNMAPPED"}
 MAPPING_BASES = {"EXACT_CONTROL", "FAMILY_CONTEXT"}
 HUMAN_REVIEW_STATUSES = {"PROPOSED", "APPROVED", "REJECTED"}
+INVENTORY_STATUSES = {"PROPOSAL", "REVIEWED", "APPROVED"}
+INVENTORY_RECORD_STATUSES = {"PROPOSED", "VERIFIED", "RETIRED"}
+AUDIT_SCOPES = {"AUDITED", "NOT_AUDITED"}
+READ_ONLY_MODES = {"EXPORT", "REPORT", "API_READ_ONLY", "MANUAL_OWNER_ATTESTATION"}
 
 REQUIRED_FIELDS = (
     "action_id", "requirement_family", "scope_eir", "workstream", "source_ref",
@@ -507,6 +511,318 @@ def validate_control_action_mapping(
             "WARNING", "W_MAPPING_REVIEW_PENDING",
             "a control-action-evidence mapping még PROPOSED; G1 owner sign-off szükséges",
             records[0].source_path,
+        ))
+    return ValidationResult(tuple(issues))
+
+
+def _json_issue(
+    path: str | Path, severity: str, code: str, message: str, identity: str = ""
+) -> Issue:
+    return Issue(severity, code, message, str(path), action_id=identity)
+
+
+def _required_dict_fields(
+    value: dict[str, Any], fields: tuple[str, ...], path: str | Path,
+    identity: str, code: str,
+) -> list[Issue]:
+    return [
+        _json_issue(path, "ERROR", code, f"hiányzó kötelező mező: {field}", identity)
+        for field in fields if field not in value or value[field] in (None, "")
+    ]
+
+
+def validate_inventory_register(data: dict[str, Any], path: str | Path) -> ValidationResult:
+    """Validate the proposal-only EIR, asset, data, location and dependency register."""
+    issues: list[Issue] = []
+    required_top = (
+        "schema_version", "status", "action_id", "source_refs", "human_review",
+        "eir_records", "assets", "data_sets", "locations", "dependencies",
+    )
+    issues.extend(_required_dict_fields(data, required_top, path, "A-011", "E_INVENTORY_REQUIRED"))
+    status = data.get("status")
+    if status and status not in INVENTORY_STATUSES:
+        issues.append(_json_issue(
+            path, "ERROR", "E_INVENTORY_STATUS", f"ismeretlen inventory status: {status!r}"
+        ))
+    if data.get("action_id") != "A-011":
+        issues.append(_json_issue(
+            path, "ERROR", "E_INVENTORY_ACTION", "az inventory action_id értéke A-011 kell legyen"
+        ))
+
+    review = data.get("human_review", {})
+    if not isinstance(review, dict):
+        issues.append(_json_issue(
+            path, "ERROR", "E_INVENTORY_REVIEW", "human_review objektum szükséges"
+        ))
+        review = {}
+    review_status = review.get("status")
+    if review_status not in {"PENDING", "APPROVED", "REJECTED"}:
+        issues.append(_json_issue(
+            path, "ERROR", "E_INVENTORY_REVIEW_STATUS",
+            f"ismeretlen human_review.status: {review_status!r}",
+        ))
+    if status == "APPROVED" or review_status == "APPROVED":
+        for field in ("reviewer", "reviewed_at", "decision_ref"):
+            if _missing_or_tbd(str(review.get(field, ""))):
+                issues.append(_json_issue(
+                    path, "ERROR", "E_INVENTORY_APPROVAL",
+                    f"APPROVED inventoryhoz valós human_review.{field} szükséges",
+                ))
+        reviewed_at = str(review.get("reviewed_at", ""))
+        if reviewed_at and not _valid_timestamp(reviewed_at):
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_REVIEW_TIMESTAMP",
+                "human_review.reviewed_at nem időzónás ISO-8601 időbélyeg",
+            ))
+    elif review_status == "PENDING":
+        issues.append(_json_issue(
+            path, "WARNING", "W_INVENTORY_REVIEW_PENDING",
+            "az inventory még PROPOSAL; G1 emberi review szükséges",
+        ))
+
+    collection_names = ("eir_records", "assets", "data_sets", "locations", "dependencies")
+    for name in collection_names:
+        if name in data and not isinstance(data[name], list):
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_COLLECTION", f"{name} csak lista lehet"
+            ))
+
+    eir_records = data.get("eir_records", []) if isinstance(data.get("eir_records"), list) else []
+    seen_eir_ids: set[str] = set()
+    seen_eir_names: set[str] = set()
+    for record in eir_records:
+        if not isinstance(record, dict):
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_EIR_TYPE", "minden EIR rekord objektum kell legyen"
+            ))
+            continue
+        identity = str(record.get("eir_id", ""))
+        issues.extend(_required_dict_fields(
+            record,
+            ("eir_id", "name", "audit_scope", "owner", "source_ref",
+             "source_confidence", "record_status"),
+            path, identity, "E_INVENTORY_EIR_REQUIRED",
+        ))
+        if identity in seen_eir_ids:
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_EIR_DUPLICATE", "duplikált eir_id", identity
+            ))
+        seen_eir_ids.add(identity)
+        name = str(record.get("name", ""))
+        if name in seen_eir_names:
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_EIR_DUPLICATE", "duplikált EIR név", identity
+            ))
+        seen_eir_names.add(name)
+        if record.get("audit_scope") not in AUDIT_SCOPES:
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_AUDIT_SCOPE",
+                f"ismeretlen audit_scope: {record.get('audit_scope')!r}", identity,
+            ))
+        if record.get("source_confidence") not in SOURCE_CONFIDENCES:
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_CONFIDENCE",
+                f"ismeretlen source_confidence: {record.get('source_confidence')!r}", identity,
+            ))
+        if record.get("record_status") not in INVENTORY_RECORD_STATUSES:
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_RECORD_STATUS",
+                f"ismeretlen record_status: {record.get('record_status')!r}", identity,
+            ))
+    if eir_records and len(eir_records) != 5:
+        issues.append(_json_issue(
+            path, "WARNING", "W_INVENTORY_EIR_COUNT",
+            f"az SRC-008 alapján 5 EIR várható, kapott: {len(eir_records)}",
+        ))
+    pending_owners = sum(
+        _missing_or_tbd(str(record.get("owner", "")))
+        for record in eir_records if isinstance(record, dict)
+    )
+    if pending_owners:
+        issues.append(_json_issue(
+            path, "WARNING", "W_INVENTORY_OWNER_PENDING",
+            f"{pending_owners} EIR tulajdonosa még nincs emberileg igazolva",
+        ))
+
+    assets = data.get("assets", []) if isinstance(data.get("assets"), list) else []
+    data_sets = data.get("data_sets", []) if isinstance(data.get("data_sets"), list) else []
+    locations = data.get("locations", []) if isinstance(data.get("locations"), list) else []
+    dependencies = data.get("dependencies", []) if isinstance(data.get("dependencies"), list) else []
+    for name, records in (
+        ("assets", assets), ("data_sets", data_sets),
+        ("locations", locations), ("dependencies", dependencies),
+    ):
+        if not records:
+            issues.append(_json_issue(
+                path, "WARNING", "W_INVENTORY_COLLECTION_EMPTY",
+                f"a(z) {name} lista üres; jóváhagyott read-only export szükséges",
+            ))
+
+    record_specs = (
+        ("ASSET", assets, "asset_id", (
+            "asset_id", "eir_id", "name", "asset_type", "owner", "location_id",
+            "source_ref", "source_confidence", "record_status",
+        )),
+        ("DATA", data_sets, "data_id", (
+            "data_id", "eir_id", "name", "classification", "owner",
+            "source_ref", "source_confidence", "record_status",
+        )),
+        ("LOCATION", locations, "location_id", (
+            "location_id", "name", "owner", "source_ref", "source_confidence",
+            "record_status",
+        )),
+    )
+    validated_ids: dict[str, set[str]] = {}
+    for record_type, records, id_field, required in record_specs:
+        seen_ids: set[str] = set()
+        validated_ids[record_type] = seen_ids
+        for record in records:
+            if not isinstance(record, dict):
+                issues.append(_json_issue(
+                    path, "ERROR", "E_INVENTORY_RECORD_TYPE",
+                    f"minden {record_type} rekord objektum kell legyen",
+                ))
+                continue
+            identity = str(record.get(id_field, ""))
+            issues.extend(_required_dict_fields(
+                record, required, path, identity, "E_INVENTORY_RECORD_REQUIRED"
+            ))
+            if identity in seen_ids:
+                issues.append(_json_issue(
+                    path, "ERROR", "E_INVENTORY_RECORD_DUPLICATE",
+                    f"duplikált {id_field}", identity,
+                ))
+            seen_ids.add(identity)
+            if "eir_id" in record and record.get("eir_id") not in seen_eir_ids:
+                issues.append(_json_issue(
+                    path, "ERROR", "E_INVENTORY_EIR_REF",
+                    f"ismeretlen eir_id: {record.get('eir_id')!r}", identity,
+                ))
+            if record.get("source_confidence") not in SOURCE_CONFIDENCES:
+                issues.append(_json_issue(
+                    path, "ERROR", "E_INVENTORY_CONFIDENCE",
+                    f"ismeretlen source_confidence: {record.get('source_confidence')!r}", identity,
+                ))
+            if record.get("record_status") not in INVENTORY_RECORD_STATUSES:
+                issues.append(_json_issue(
+                    path, "ERROR", "E_INVENTORY_RECORD_STATUS",
+                    f"ismeretlen record_status: {record.get('record_status')!r}", identity,
+                ))
+
+    id_sets = {
+        "EIR": seen_eir_ids,
+        **validated_ids,
+    }
+    seen_dependency_ids: set[str] = set()
+    for record in dependencies:
+        if not isinstance(record, dict):
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_DEPENDENCY_TYPE",
+                "minden dependency rekord objektum kell legyen",
+            ))
+            continue
+        identity = str(record.get("dependency_id", ""))
+        issues.extend(_required_dict_fields(
+            record,
+            ("dependency_id", "from_type", "from_id", "to_type", "to_id",
+             "dependency_type", "owner", "source_ref", "source_confidence", "record_status"),
+            path, identity, "E_INVENTORY_DEPENDENCY_REQUIRED",
+        ))
+        if identity in seen_dependency_ids:
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_DEPENDENCY_DUPLICATE",
+                "duplikált dependency_id", identity,
+            ))
+        seen_dependency_ids.add(identity)
+        for side in ("from", "to"):
+            record_type = str(record.get(f"{side}_type", ""))
+            record_id = str(record.get(f"{side}_id", ""))
+            if record_type not in id_sets or record_id not in id_sets.get(record_type, set()):
+                issues.append(_json_issue(
+                    path, "ERROR", "E_INVENTORY_DEPENDENCY_REF",
+                    f"ismeretlen {side} hivatkozás: {record_type}:{record_id}", identity,
+                ))
+    return ValidationResult(tuple(issues))
+
+
+def validate_inventory_export_plan(data: dict[str, Any], path: str | Path) -> ValidationResult:
+    """Ensure collection proposals are read-only and remain behind human approval."""
+    issues: list[Issue] = []
+    issues.extend(_required_dict_fields(
+        data, ("schema_version", "status", "action_id", "sources"),
+        path, "A-011", "E_EXPORT_PLAN_REQUIRED",
+    ))
+    if data.get("status") != "PROPOSAL":
+        issues.append(_json_issue(
+            path, "ERROR", "E_EXPORT_PLAN_STATUS", "az exportterv státusza csak PROPOSAL lehet"
+        ))
+    if data.get("action_id") != "A-011":
+        issues.append(_json_issue(
+            path, "ERROR", "E_EXPORT_PLAN_ACTION", "az exportterv action_id értéke A-011 kell legyen"
+        ))
+    sources = data.get("sources", [])
+    if not isinstance(sources, list) or not sources:
+        issues.append(_json_issue(
+            path, "ERROR", "E_EXPORT_PLAN_SOURCES", "legalább egy source terv szükséges"
+        ))
+        return ValidationResult(tuple(issues))
+    seen: set[str] = set()
+    pending_systems = 0
+    pending_approvals = 0
+    for source in sources:
+        if not isinstance(source, dict):
+            issues.append(_json_issue(
+                path, "ERROR", "E_EXPORT_SOURCE_TYPE", "minden source terv objektum kell legyen"
+            ))
+            continue
+        identity = str(source.get("source_id", ""))
+        issues.extend(_required_dict_fields(
+            source,
+            ("source_id", "category", "source_system", "source_owner", "scope_eir",
+             "acquisition_mode", "required_fields", "approval_status",
+             "output_classification", "evidence_output"),
+            path, identity, "E_EXPORT_SOURCE_REQUIRED",
+        ))
+        if identity in seen:
+            issues.append(_json_issue(
+                path, "ERROR", "E_EXPORT_SOURCE_DUPLICATE", "duplikált source_id", identity
+            ))
+        seen.add(identity)
+        if source.get("acquisition_mode") not in READ_ONLY_MODES:
+            issues.append(_json_issue(
+                path, "ERROR", "E_EXPORT_NOT_READ_ONLY",
+                f"nem engedélyezett acquisition_mode: {source.get('acquisition_mode')!r}", identity,
+            ))
+        if source.get("approval_status") not in {"PENDING", "APPROVED", "REJECTED"}:
+            issues.append(_json_issue(
+                path, "ERROR", "E_EXPORT_APPROVAL_STATUS",
+                f"ismeretlen approval_status: {source.get('approval_status')!r}", identity,
+            ))
+        if source.get("approval_status") == "APPROVED" and (
+            _missing_or_tbd(str(source.get("approved_by", "")))
+            or not source.get("approved_at")
+        ):
+            issues.append(_json_issue(
+                path, "ERROR", "E_EXPORT_APPROVAL",
+                "APPROVED source tervhez approved_by és approved_at szükséges", identity,
+            ))
+        approved_at = str(source.get("approved_at", ""))
+        if source.get("approval_status") == "APPROVED" and approved_at and not _valid_timestamp(approved_at):
+            issues.append(_json_issue(
+                path, "ERROR", "E_EXPORT_APPROVAL_TIMESTAMP",
+                "approved_at nem időzónás ISO-8601 időbélyeg", identity,
+            ))
+        pending_systems += _missing_or_tbd(str(source.get("source_system", "")))
+        pending_approvals += source.get("approval_status") == "PENDING"
+    if pending_systems:
+        issues.append(_json_issue(
+            path, "WARNING", "W_EXPORT_SYSTEM_PENDING",
+            f"{pending_systems} forrásrendszer pontos neve még TBD-HUMAN",
+        ))
+    if pending_approvals:
+        issues.append(_json_issue(
+            path, "WARNING", "W_EXPORT_APPROVAL_PENDING",
+            f"{pending_approvals} read-only export emberi jóváhagyása függőben van",
         ))
     return ValidationResult(tuple(issues))
 
