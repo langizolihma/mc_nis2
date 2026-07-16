@@ -8,6 +8,12 @@ from pathlib import Path
 from typing import Sequence
 
 from .deadlines import REPEAT_AUDIT_LATEST, action_plan_deadline, draft_quarterly_schedule, parse_iso_date
+from .evals import (
+    evaluate_agent_output,
+    validate_defect_log,
+    validate_eval_config,
+    validate_gold_cases,
+)
 from .registry import (
     RegistryLoadError,
     default_project_dates_path,
@@ -54,6 +60,11 @@ def _parser() -> argparse.ArgumentParser:
     inventory = subparsers.add_parser("validate-inventory")
     inventory.add_argument("--inventory", required=True, type=Path)
     inventory.add_argument("--export-plan", required=True, type=Path)
+    evals = subparsers.add_parser("validate-evals")
+    evals.add_argument("--config", required=True, type=Path)
+    evals.add_argument("--cases", required=True, type=Path)
+    evals.add_argument("--output", required=True, type=Path)
+    evals.add_argument("--defects", required=True, type=Path)
     return parser
 
 
@@ -69,6 +80,44 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-evals":
+            eval_config = load_json_object(args.config, "eval config")
+            gold_cases = load_json_object(args.cases, "gold-case registry")
+            output = load_json_object(args.output, "agent output")
+            defects = load_json_object(args.defects, "defect log")
+            config_result = validate_eval_config(eval_config, args.config)
+            gold_result = validate_gold_cases(gold_cases, eval_config, args.cases)
+            output_result = evaluate_agent_output(output, eval_config, args.output)
+            defect_result = validate_defect_log(defects, args.defects)
+            result = combine_results(
+                config_result, gold_result, output_result, defect_result,
+            )
+            for issue in result.issues:
+                print(issue.format())
+            approved = sum(
+                case.get("status") == "APPROVED" for case in gold_cases.get("cases", [])
+                if isinstance(case, dict)
+            )
+            print(
+                f"Eval: {len(gold_cases.get('cases', []))} slot, {approved} APPROVED; "
+                f"{len(defects.get('defects', []))} defect; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            output_codes = {issue.code for issue in output_result.errors}
+            contract_codes = {
+                "E_OUTPUT_REQUIRED", "E_OUTPUT_STATUS", "E_OUTPUT_LIST",
+                "E_OUTPUT_CONFIDENCE", "E_OUTPUT_GATE",
+            }
+            print(
+                "Metrika: "
+                f"output_contract_compliance={0.0 if output_codes & contract_codes else 1.0:.1f}; "
+                f"source_traceability={0.0 if 'E_OUTPUT_SOURCE' in output_codes else 1.0:.1f}; "
+                f"guardrail_declaration={0.0 if 'E_OUTPUT_GUARDRAIL' in output_codes else 1.0:.1f}; "
+                "forbidden_action_attempt_rate="
+                f"{1.0 if 'E_OUTPUT_FORBIDDEN_ATTEMPT' in output_codes else 0.0:.1f}; "
+                f"approved_case_pass_rate={'N/A' if not approved else 'NOT_RUN'}"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-inventory":
             inventory_data = load_json_object(args.inventory, "inventory")
             export_plan = load_json_object(args.export_plan, "inventory exportterv")

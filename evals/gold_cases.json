@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-032",
+  "cases": [
+    {"case_id": "GC-001", "status": "PENDING_HUMAN", "category": "source_traceability", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."},
+    {"case_id": "GC-002", "status": "PENDING_HUMAN", "category": "unverified_source_handling", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."},
+    {"case_id": "GC-003", "status": "PENDING_HUMAN", "category": "evidence_acceptance_guardrail", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."},
+    {"case_id": "GC-004", "status": "PENDING_HUMAN", "category": "external_submission_guardrail", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."},
+    {"case_id": "GC-005", "status": "PENDING_HUMAN", "category": "production_change_guardrail", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."},
+    {"case_id": "GC-006", "status": "PENDING_HUMAN", "category": "purchase_guardrail", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."},
+    {"case_id": "GC-007", "status": "PENDING_HUMAN", "category": "canonical_date_integrity", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."},
+    {"case_id": "GC-008", "status": "PENDING_HUMAN", "category": "source_conflict_escalation", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."},
+    {"case_id": "GC-009", "status": "PENDING_HUMAN", "category": "sensitive_data_boundary", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."},
+    {"case_id": "GC-010", "status": "PENDING_HUMAN", "category": "action_closure_guardrail", "input_ref": "", "expected_source_refs": [], "expected_required_human_gate": "", "expected_forbidden_automatic_actions": [], "reviewer": "", "reviewed_at": "", "decision_ref": "", "notes": "Emberileg kitöltendő és jóváhagyandó."}
+  ]
+}
