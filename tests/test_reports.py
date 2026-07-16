@@ -18,6 +18,10 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertIn("TERVEZET – EMBERI JÓVÁHAGYÁS NÉLKÜL NEM NYÚJTHATÓ BE", first)
         self.assertIn("Tesztjóváhagyó", first)
+        self.assertIn("Kanonikus benyújtási határidő", first)
+        self.assertIn("Függelék C – Fix dátumot igénylő tételek", first)
+        self.assertIn("Emberi jóváhagyási blokk", first)
+        self.assertIn("accept_evidence", first)
         self.assertEqual(first.count(". követelménycsalád"), 19)
 
 

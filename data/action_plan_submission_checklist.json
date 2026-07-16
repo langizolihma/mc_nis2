@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "status": "NOT_READY_FOR_G4",
+  "action_id": "A-006",
+  "source_refs": [
+    "SRC-001:p1-2",
+    "data/actions.csv",
+    "data/project_dates.json",
+    "generated/action_plan.md"
+  ],
+  "structural_readiness": {
+    "requirement_families": "19/19",
+    "named_owner": "Pásztor András",
+    "named_approver": "Lángi Zoltán",
+    "canonical_submission_deadline": "2026-09-24",
+    "hard_validation_errors": 0
+  },
+  "human_review_gates": [
+    {
+      "gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING",
+      "required_result": "A finding- és mapping-minta, a 19 család lefedettsége, a feladatok, dátumok, deliverable-ek és evidenciák szakmai elfogadása."
+    },
+    {
+      "gate": "G2_SECURITY_LEGAL",
+      "status": "PENDING",
+      "required_result": "A határidőalap, megfogalmazások, adatminősítés, személyes adatok és jogi megfelelőség írásos review-ja."
+    },
+    {
+      "gate": "G4_EXTERNAL_SUBMISSION",
+      "status": "PENDING",
+      "required_result": "A végleges csomag, aláírás, benyújtási csatorna és jogosult benyújtó vezetői jóváhagyása."
+    }
+  ],
+  "blocking_items": [
+    "A-004 gépi findingok G1 mintavétele és reviewer sign-offja.",
+    "A-005 mapping G1 owner review-ja és a 164 unmapped finding kezelési döntése.",
+    "A-036 formális szerep- és RACI-evidencia pótlása.",
+    "A relatív és eseményalapú végrehajtási határidők konkrét dátummá alakítása vagy emberileg jóváhagyott indoklása.",
+    "Az unverified_internal SRC-004 állítások read-only validációja vagy egyértelmű feltételes minősítése.",
+    "A végleges dokumentum verziója, hash-e, aláírása és védett tárhivatkozása."
+  ],
+  "submission_evidence_required": [
+    "G1/G2/G4 döntési rekord",
+    "aláírt végleges terv",
+    "védett URI és SHA-256",
+    "benyújtási visszaigazolás",
+    "címzetti vagy hatósági átvételi igazolás"
+  ],
+  "forbidden_automatic_actions": [
+    "close_action",
+    "accept_evidence",
+    "submit_external",
+    "change_production",
+    "purchase"
+  ]
+}

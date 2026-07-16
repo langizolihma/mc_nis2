@@ -9,6 +9,7 @@ from typing import Sequence
 
 from .deadlines import REPEAT_AUDIT_LATEST, action_plan_deadline, draft_quarterly_schedule, parse_iso_date
 from .ai_policy import validate_ai_policy
+from .action_plan_submission import validate_action_plan_submission
 from .evals import (
     evaluate_agent_output,
     validate_defect_log,
@@ -74,6 +75,9 @@ def _parser() -> argparse.ArgumentParser:
     repeat_audit.add_argument("--roadmap", required=True, type=Path)
     quarterly = subparsers.add_parser("validate-quarterly-reporting")
     quarterly.add_argument("--plan", required=True, type=Path)
+    submission = subparsers.add_parser("validate-action-plan-submission")
+    submission.add_argument("--actions", required=True, type=Path)
+    submission.add_argument("--project-dates", type=Path)
     return parser
 
 
@@ -89,6 +93,19 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-action-plan-submission":
+            actions, dates, base_result = _load_and_validate(args.actions, args.project_dates)
+            submission_result = validate_action_plan_submission(actions, dates, args.actions)
+            result = combine_results(base_result, submission_result)
+            for issue in result.issues:
+                print(issue.format())
+            covered = {family for action in actions for family in action.requirement_families}
+            print(
+                f"Action-plan submission: {len(actions)} action; "
+                f"{len(covered & {str(value) for value in range(1, 20)})}/19 family; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-quarterly-reporting":
             plan = load_json_object(args.plan, "negyedéves beszámolási terv")
             result = validate_quarterly_reporting_plan(plan, args.plan)

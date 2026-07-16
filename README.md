@@ -33,6 +33,7 @@ python -m nis2_harness validate-evals --config config/eval_config.json --cases e
 python -m nis2_harness validate-ai-policy --policy config/ai_usage_policy.json
 python -m nis2_harness validate-repeat-audit --roadmap data/repeat_audit_roadmap.json
 python -m nis2_harness validate-quarterly-reporting --plan data/quarterly_reporting_plan.json
+python -m nis2_harness validate-action-plan-submission --actions data/actions.csv --project-dates data/project_dates.json
 python -m unittest discover -s tests -v
 ```
 
@@ -68,6 +69,8 @@ Az A-030 megismételt audit ütemterve a [REPEAT_AUDIT_ROADMAP.md](REPEAT_AUDIT_
 
 Az A-008 negyedéves beszámolási csomagja a [QUARTERLY_REPORTING_KIT.md](QUARTERLY_REPORTING_KIT.md) dokumentumban, gépi naptára a `data/quarterly_reporting_plan.json`, kitölthető mintája pedig a `templates/quarterly_report_template.md` fájlban található. A `validate-quarterly-reporting` megakadályozza a határidő tényleges benyújtásként kezelését evidencia nélkül, ellenőrzi a háromhavi lépéseket, a cut-off–draft–review sorrendet, a kötelező sablonszakaszokat és a G1/G2/G4 kapukat.
 
+Az A-006 benyújtási readiness-csomagja az [ACTION_PLAN_SUBMISSION_READINESS.md](ACTION_PLAN_SUBMISSION_READINESS.md) dokumentumban és a `data/action_plan_submission_checklist.json` fájlban található. A `validate-action-plan-submission` ellenőrzi a 19 követelménycsalád lefedettségét, a kötelező külső tervmezőket, a név szerinti felelősöket, a fix/relatív dátumokat, a függőségeket, a forrásbizalmat és a G4 kaput. A 0 hard hiba nem jelent benyújtási jóváhagyást.
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők
@@ -99,6 +102,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap és az A-008 negyedéves beszámolási csomag tervezete elkészült. Következő emberi lépés az A-011 owner/export kapu, az A-032 tíz gold case, az A-031 G2 review, az A-030 G4/G5 review, valamint az A-008 tényleges benyújtási anchor- és naptárjóváhagyása. Következő önálló agent-munkacsomagként az A-006 hatósági cselekvésiterv-tervezet teljességi és benyújtás-előkészítő csomagja készíthető el; külső benyújtás nem végezhető.
+Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag és az A-006 cselekvésiterv-readiness tervezete elkészült. Következő emberi lépés az A-006 G1/G2/G4 review-ja és a `DEF-014` pontjainak pótlása. Következő önálló agent-munkacsomagként az A-017 backup scope/RPO/RTO és kontrollált restore-teszt előkészítő csomagja készíthető el; éles restore vagy rendszerváltozás nem végezhető.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.

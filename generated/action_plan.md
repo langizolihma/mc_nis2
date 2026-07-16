@@ -6,11 +6,12 @@
 - assumptions: `[]`
 - confidence: `medium`
 - required_human_gate: `G1_DOMAIN_REVIEW;G2_SECURITY_LEGAL;G4_EXTERNAL_SUBMISSION`
-- forbidden_automatic_actions: `close_action;submit_external;change_production`
+- forbidden_automatic_actions: `close_action;accept_evidence;submit_external;change_production;purchase`
 - generation_record_date: `2026-07-14`
 - generator: `nis2_harness/0.1.0`
 
 Kanonikus kézhezvételi dátum: **2026-06-26**. A kézbesítési evidencia és a G2/G4 review státusza a projektadat-rekord szerint még emberi ellenőrzést igényel.
+Kanonikus benyújtási határidő: **2026-09-24**. A relatív vagy eseményalapú végrehajtási határidőket a G1/G4 review során konkrét dátummá kell alakítani.
 
 ## 1. követelménycsalád
 
@@ -177,3 +178,27 @@ Kanonikus kézhezvételi dátum: **2026-06-26**. A kézbesítési evidencia és 
 ## Függelék B – PROPOSED döntésre támaszkodó tételek
 
 _Nincs ilyen tétel._
+
+## Függelék C – Fix dátumot igénylő tételek
+
+| ID | Feladat | Felelős | Jóváhagyó | Határidő / alap | Prioritás | Deliverable | Elvárt evidencia | Forrás és oldal | Forrásbizalom | Státusz | Human gate |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| A-008 | Hozza létre a beszámolási naptár, adatvágás, sablon, felelős és jóváhagyási workflow tervezetét. | Pásztor András | Lángi Zoltán | relative_to_action_plan_submission | P0 | Jóváhagyott riportnaptár és beszámolósablon. | Naptárbejegyzés, adatcut-off szabály, sablon, dry run és jóváhagyás. | SRC-001; oldal: 1–2 | authority | NEW | G4_EXTERNAL_SUBMISSION |
+| A-022 | Read-only módszerrel azonnal validálja a hivatkozott hostok, VM-ek, lemezek, RAID és backup állapotát; semmit ne módosítson. | Pásztor András | Lángi Zoltán | risk_trigger + 2 nap | P0 | Aláírt technikai health snapshot és eltéréslista. | Időbélyeges read-only export, RAID log, kapacitás, VM-lista, backup status és reviewer. | SRC-004; oldal: munkadokumentum 155–159. bekezdés | unverified_internal | NEW | G3_PRODUCTION_CHANGE |
+| A-023 | Készítsen freespace/backup-protection emergency change tervet; törlés vagy áthelyezés csak tulajdonosi jóváhagyással. | Pásztor András | Lángi Zoltán | after_dependency_completion + 1 nap | P0 | Jóváhagyott emergency change plan vagy dokumentált no-action döntés. | Pre/post metrika, backup proof, törlési/áthelyezési jóváhagyás, rollback. | SRC-004\|A-022; oldal: munkadokumentum; validációs eredmény | conditional | NEW | G3_PRODUCTION_CHANGE |
+| A-024 | Készítsen VM dependency-, placement-, capacity-, backup- és licence-tervet; végrehajtás nélkül. | Pásztor András | Lángi Zoltán | after_dependency_completion + 14 nap | P1 | Migration/containment decision package. | Kapacitásmodell, dependency map, test, rollback, licenc review és kockázatelfogadás. | SRC-004\|A-022\|A-029; oldal: munkadokumentum | unverified_internal | NEW | G3_PRODUCTION_CHANGE;G5_PURCHASE |
+| A-025 | Készítsen teljes SMTP relay/client dependency leltárt és teszttervet minden migrációs döntés előtt. | Pásztor András | Lángi Zoltán | management_schedule + 30 nap | P1 | Exchange dependency register és tesztterv. | SMTP log minta, eszköz-/alkalmazásgazda sign-off, teszteredmény és rollback. | SRC-003:p1,3,7\|SRC-004; oldal: stratégia 1.,3.,7. oldal; munkadokumentum | strategy_input | NEW | G1_DOMAIN_REVIEW |
+| A-026 | Készítsen jogi megőrzési, adat-, alkalmazás-, export-, restore/read-test és migrációs döntési csomagot. | Pásztor András | Lángi Zoltán | management_schedule + 45 nap | P1 | Jóváhagyott retention/migration decision. | Jogi állásfoglalás, adatlista, export/restore/read test, owner approval. | SRC-004; oldal: munkadokumentum 111–114., 165–166. bekezdés | unverified_internal | NEW | G2_SECURITY_LEGAL |
+| A-027 | Tartsa fenn a szeparációt, amíg licenc-, banki/könyvelési kulcs-, workload- és kockázatelemzés nem igazolja az összevonást. | Pásztor András | Lángi Zoltán | management_schedule + 60 nap | P2 | RDS decision record. | User/CAL mátrix, secret/key scope, teljesítményadat, kockázati sign-off. | SRC-004; oldal: munkadokumentum 133–137.,164. bekezdés | unverified_internal | NEW | G3_PRODUCTION_CHANGE |
+| A-028 | Csak assessmentet készítsen szerepkör, HA, site, DNS/DHCP, backup, licenc és rollback vizsgálattal. | Pásztor András | Lángi Zoltán | management_schedule + 60 nap | P2 | AD/DHCP consolidation assessment. | Current role export, failure scenario, test plan, licenc- és rollback-hatás. | SRC-004; oldal: munkadokumentum 34–36.,118–120.,172. bekezdés | unverified_internal | NEW | G3_PRODUCTION_CHANGE |
+| A-042 | Tervezzen, pilotoljon és fokozatosan vezessen be local-first folyamatos auditfelkészültségi ügynököt, amely jóváhagyott read-only forrásokat értelmez, karbantartja a nyilvántartásokat, jegyzőkönyv- és intézkedéstervezeteket készít, határidőt figyel és kivételt terjeszt ember elé. | Pásztor András | Lángi Zoltán | after_dependency_completion + 30 nap | P1 | Jóváhagyott agent-architektúra, fájlalapú pilot, runbook, approval queue és mérési riport. | Forrás- és jogosultságlista, futási auditlog, source_ref/confidence/review nyom, gold case és negatív teszt, téves riasztási és emberimunka-csökkentési metrika, kill switch próba. | DECISIONS.md:D-024\|DERIVED; oldal: n/a | derived | NEW | G1_DOMAIN_REVIEW;G2_SECURITY_LEGAL;G3_PRODUCTION_CHANGE |
+
+## Emberi jóváhagyási blokk
+
+| Kapu | Reviewer/jóváhagyó | Döntés | Időzónás időbélyeg | Döntési/evidenciahivatkozás |
+|---|---|---|---|---|
+| G1 szakmai review | `TBD-HUMAN` | `PENDING` |  |  |
+| G2 jogi/IBF review | `TBD-HUMAN` | `PENDING` |  |  |
+| G4 külső benyújtási jóváhagyás | Lángi Zoltán | `PENDING` |  |  |
+
+A dokumentumot kizárólag jogosult ember nyújthatja be. A benyújtási és átvételi igazolás védett evidenciatárba kerül; a Git csak URI-t, SHA-256 hash-t és review-metaadatot tartalmazhat.

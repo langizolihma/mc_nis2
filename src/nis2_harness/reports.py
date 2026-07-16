@@ -95,11 +95,12 @@ def render_action_plan(actions: list[Action], project_dates: dict[str, Any]) -> 
         "- assumptions: `[]`",
         "- confidence: `medium`",
         "- required_human_gate: `G1_DOMAIN_REVIEW;G2_SECURITY_LEGAL;G4_EXTERNAL_SUBMISSION`",
-        "- forbidden_automatic_actions: `close_action;submit_external;change_production`",
+        "- forbidden_automatic_actions: `close_action;accept_evidence;submit_external;change_production;purchase`",
         f"- generation_record_date: `{generation_date}`",
         "- generator: `nis2_harness/0.1.0`",
         "",
         f"Kanonikus kézhezvételi dátum: **{receipt}**. A kézbesítési evidencia és a G2/G4 review státusza a projektadat-rekord szerint még emberi ellenőrzést igényel.",
+        f"Kanonikus benyújtási határidő: **{project_dates.get('action_plan_deadline', 'TBD-HUMAN')}**. A relatív vagy eseményalapú végrehajtási határidőket a G1/G4 review során konkrét dátummá kell alakítani.",
         "",
     ]
     for family in range(1, 20):
@@ -125,5 +126,20 @@ def render_action_plan(actions: list[Action], project_dates: dict[str, Any]) -> 
     lines.extend(_action_table(unverified) if unverified else ["_Nincs ilyen tétel._"])
     lines.extend(("", "## Függelék B – PROPOSED döntésre támaszkodó tételek", ""))
     lines.extend(_action_table(proposed) if proposed else ["_Nincs ilyen tétel._"])
-    lines.append("")
+    relative = sorted((a for a in actions if not a.target_date), key=lambda action: action.action_id)
+    lines.extend(("", "## Függelék C – Fix dátumot igénylő tételek", ""))
+    lines.extend(_action_table(relative) if relative else ["_Nincs ilyen tétel._"])
+    lines.extend((
+        "",
+        "## Emberi jóváhagyási blokk",
+        "",
+        "| Kapu | Reviewer/jóváhagyó | Döntés | Időzónás időbélyeg | Döntési/evidenciahivatkozás |",
+        "|---|---|---|---|---|",
+        "| G1 szakmai review | `TBD-HUMAN` | `PENDING` |  |  |",
+        "| G2 jogi/IBF review | `TBD-HUMAN` | `PENDING` |  |  |",
+        "| G4 külső benyújtási jóváhagyás | Lángi Zoltán | `PENDING` |  |  |",
+        "",
+        "A dokumentumot kizárólag jogosult ember nyújthatja be. A benyújtási és átvételi igazolás védett evidenciatárba kerül; a Git csak URI-t, SHA-256 hash-t és review-metaadatot tartalmazhat.",
+        "",
+    ))
     return "\n".join(lines)
