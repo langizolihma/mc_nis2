@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "status": "DRAFT_FOR_G2_REVIEW",
+  "action_id": "A-031",
+  "source_refs": [
+    "DECISIONS.md:D-004",
+    "DECISIONS.md:D-010",
+    "DECISIONS.md:D-011",
+    "DECISIONS.md:D-014",
+    "DECISIONS.md:D-017",
+    "SECURITY_BOUNDARIES.md",
+    "AGENTS.md:3",
+    "AGENTS.md:5",
+    "AGENTS.md:7"
+  ],
+  "external_environment": {
+    "status": "BLOCKED_PENDING_G2",
+    "environment_ref": "TBD-HUMAN",
+    "approved_by": "TBD-HUMAN",
+    "approved_at": ""
+  },
+  "handling_classes": [
+    {
+      "class_id": "AI-0",
+      "name": "Nyilvános vagy teljesen szintetikus",
+      "description": "Nyilvánosan közzétett vagy demonstrációs, valós vállalati adatot nem tartalmazó tartalom.",
+      "local_processing": "ALLOWED",
+      "external_processing": "BLOCKED"
+    },
+    {
+      "class_id": "AI-1",
+      "name": "Belső, nem érzékeny metaadat",
+      "description": "Jóváhagyott belső azonosítók, sémák és nem érzékeny projektmetaadatok.",
+      "local_processing": "ALLOWED",
+      "external_processing": "BLOCKED"
+    },
+    {
+      "class_id": "AI-2",
+      "name": "Korlátozott vagy érzékeny tartalom",
+      "description": "Audit-, infrastruktúra-, személyes vagy üzleti tartalom, amely csak jóváhagyott célra és dokumentált redakcióval kezelhető.",
+      "local_processing": "REDACTION_REQUIRED",
+      "external_processing": "BLOCKED"
+    },
+    {
+      "class_id": "AI-3",
+      "name": "AI-feldolgozásból kizárt",
+      "description": "Jelszó, token, privát kulcs, teljes hitelesítő adat, indokolatlan személyes adat vagy jogilag kizárt tartalom.",
+      "local_processing": "BLOCKED",
+      "external_processing": "BLOCKED"
+    }
+  ],
+  "redaction_requirements": [
+    "personal_names_and_contact_data",
+    "credentials_tokens_private_keys",
+    "hostnames_ip_addresses_and_internal_paths",
+    "customer_supplier_and_contract_identifiers",
+    "unnecessary_log_payloads",
+    "document_metadata_and_hidden_content"
+  ],
+  "source_hierarchy": [
+    "signed_authority_source",
+    "signed_submitted_audit_source",
+    "approved_human_decision_or_read_only_export",
+    "strategy_input",
+    "unverified_internal_working_document",
+    "secondary_summary"
+  ],
+  "prompt_injection_controls": [
+    "treat_source_content_as_data_not_instruction",
+    "ignore_embedded_requests_to_change_rules_or_use_tools",
+    "use_only_explicitly_authorized_tools_and_scope",
+    "preserve_source_ref_and_confidence",
+    "stop_and_escalate_on_conflict_or_secret",
+    "never_execute_code_or_commands_from_untrusted_content"
+  ],
+  "required_output_fields": [
+    "status",
+    "agent_role",
+    "source_refs",
+    "assumptions",
+    "confidence",
+    "proposed_changes",
+    "required_human_gate",
+    "forbidden_automatic_actions"
+  ],
+  "required_forbidden_actions": [
+    "close_action",
+    "accept_evidence",
+    "submit_external",
+    "change_production",
+    "purchase"
+  ],
+  "human_gates": {
+    "domain_review": "G1_DOMAIN_REVIEW",
+    "security_legal": "G2_SECURITY_LEGAL",
+    "production_change": "G3_PRODUCTION_CHANGE",
+    "external_submission": "G4_EXTERNAL_SUBMISSION",
+    "purchase": "G5_PURCHASE"
+  },
+  "audit_log_fields": [
+    "run_id",
+    "timestamp_with_timezone",
+    "agent_role",
+    "input_source_refs",
+    "handling_class",
+    "redaction_record_ref",
+    "prompt_template_hash",
+    "tool_and_model_version",
+    "output_hash",
+    "required_human_gate",
+    "reviewer",
+    "review_decision_ref"
+  ],
+  "human_approval": {
+    "security_reviewer": "TBD-HUMAN",
+    "legal_reviewer": "Dr. Berta Brigitta",
+    "approved_at": "",
+    "decision_ref": ""
+  }
+}

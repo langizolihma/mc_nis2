@@ -30,6 +30,7 @@ python -m nis2_harness validate-evidence --evidence data/evidence_register.csv -
 python -m nis2_harness validate-findings --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
 python -m nis2_harness validate-inventory --inventory data/inventory_register.json --export-plan config/inventory_export_plan.json
 python -m nis2_harness validate-evals --config config/eval_config.json --cases evals/gold_cases.json --output evals/sample_proposal_output.json --defects evals/defect_log.json
+python -m nis2_harness validate-ai-policy --policy config/ai_usage_policy.json
 python -m unittest discover -s tests -v
 ```
 
@@ -58,6 +59,8 @@ Az audit 328 gépi finding-rekordja a `data/audit_findings.csv`, a javasolt kont
 Az A-011 öt EIR-t tartalmazó proposal baseline-ja a `data/inventory_register.json`, a jóváhagyandó read-only források a `config/inventory_export_plan.json` fájlban vannak. A `validate-inventory` megakadályozza a hibás hivatkozást, duplikált azonosítót, nem read-only gyűjtési módot és emberi metaadat nélküli jóváhagyást. A végrehajtási sorrendet az [A011_READONLY_INVENTORY_PLAN.md](A011_READONLY_INVENTORY_PLAN.md) tartalmazza.
 
 Az A-032 local-first eval minimuma a `config/eval_config.json` és `evals/` fájlokban található. A `validate-evals` ellenőrzi a proposal-only kimeneti szerződést, a forráskövetést, az emberi kapukat, az öt tiltott automatikus műveletet, a gold-case approval-metaadatokat és a defect logot. A tíz slot jelenleg `PENDING_HUMAN`; kitöltési rendjük az [A032_EVAL_BASELINE.md](A032_EVAL_BASELINE.md) dokumentumban szerepel.
+
+Az A-031 AI-használati tervezete az [AI_USAGE_POLICY_DRAFT.md](AI_USAGE_POLICY_DRAFT.md) dokumentumban, gépi megfelelője a `config/ai_usage_policy.json` fájlban található. A `validate-ai-policy` kikényszeríti a külső környezet default-deny állapotát, a tiltott adatosztályt, az öt emberi kaput, az öt kötelező automatikus tiltást és a valódi G2 approval-metaadatokat. A D-017 lezárásáig a külső AI-környezet `BLOCKED_PENDING_G2`.
 
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
@@ -90,6 +93,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az A-011 read-only terve és az A-032 eval infrastruktúrája elkészült. Következő emberi lépés az A-011 owner/export kapu és az A-032 tíz gold case kitöltése. A következő önálló agent-munkacsomag az A-031 AI-adatminősítési, redakciós és prompt-injection szabály tervezete lehet; ez szükséges a későbbi folyamatos auditfelkészültségi ügynök biztonságos pilotjához.
+Az A-011 read-only terve, az A-032 eval infrastruktúrája és az A-031 AI-policy tervezete elkészült. Következő emberi lépés az A-011 owner/export kapu, az A-032 tíz gold case és az A-031 G2 biztonsági/jogi review. Következő önálló agent-munkacsomagként az A-030 repeat-audit roadmap tervezete készíthető el külső benyújtás vagy beszerzés nélkül.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.

@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Sequence
 
 from .deadlines import REPEAT_AUDIT_LATEST, action_plan_deadline, draft_quarterly_schedule, parse_iso_date
+from .ai_policy import validate_ai_policy
 from .evals import (
     evaluate_agent_output,
     validate_defect_log,
@@ -65,6 +66,8 @@ def _parser() -> argparse.ArgumentParser:
     evals.add_argument("--cases", required=True, type=Path)
     evals.add_argument("--output", required=True, type=Path)
     evals.add_argument("--defects", required=True, type=Path)
+    ai_policy = subparsers.add_parser("validate-ai-policy")
+    ai_policy.add_argument("--policy", required=True, type=Path)
     return parser
 
 
@@ -80,6 +83,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-ai-policy":
+            policy = load_json_object(args.policy, "AI használati policy")
+            result = validate_ai_policy(policy, args.policy)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"AI policy: {len(policy.get('handling_classes', []))} handling class; "
+                f"environment={policy.get('external_environment', {}).get('status', 'UNKNOWN')}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-evals":
             eval_config = load_json_object(args.config, "eval config")
             gold_cases = load_json_object(args.cases, "gold-case registry")
