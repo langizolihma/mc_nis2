@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
+import re
 from typing import Any, Iterable
 
 from .deadlines import action_plan_deadline, parse_iso_date
-from .registry import Action
+from .registry import Action, ControlActionMapping, EvidenceRecord, FindingRecord
 
 
 PRIORITIES = {"P0", "P1", "P2", "P3"}
@@ -26,6 +28,15 @@ HUMAN_GATES = {
 }
 COST_BANDS = {"B0", "B1", "B2", "B3"}
 YES_NO = {"yes", "no"}
+EVIDENCE_STATUSES = {"DRAFT", "SUBMITTED", "NEEDS_CHANGES", "ACCEPTED", "SUPERSEDED"}
+SHA256_PATTERN = re.compile(r"^[0-9a-fA-F]{64}$")
+FINDING_RATINGS = {
+    "Megfelelt", "Elhanyagolható mértékű eltérés", "Kis mértékű eltérés",
+    "Kiemelt mértékű eltérés",
+}
+FINDING_MAPPING_STATUSES = {"DIRECT", "FAMILY_ONLY", "UNMAPPED"}
+MAPPING_BASES = {"EXACT_CONTROL", "FAMILY_CONTEXT"}
+HUMAN_REVIEW_STATUSES = {"PROPOSED", "APPROVED", "REJECTED"}
 
 REQUIRED_FIELDS = (
     "action_id", "requirement_family", "scope_eir", "workstream", "source_ref",
@@ -33,6 +44,12 @@ REQUIRED_FIELDS = (
     "evidence_required", "priority", "phase", "status", "human_owner",
     "human_approver", "deadline_basis", "cost_band", "spend_timing",
     "ai_eligibility", "ai_role", "human_gate", "external_submission",
+)
+
+EVIDENCE_REQUIRED_FIELDS = (
+    "evidence_id", "action_id", "requirement_family", "eir", "title",
+    "evidence_type", "source_ref", "source_confidence", "created_at",
+    "created_by", "review_status", "retention_class", "confidentiality",
 )
 
 
@@ -168,6 +185,329 @@ def validate_actions(actions: Iterable[Action]) -> ValidationResult:
         if action.deadline_basis == "receipt_date_plus_days" and not action.target_date:
             issues.append(_issue(action, "WARNING", "W_TARGET_EMPTY", "a receipt-alapú target_date üres"))
 
+    return ValidationResult(tuple(issues))
+
+
+def _evidence_issue(
+    record: EvidenceRecord, severity: str, code: str, message: str
+) -> Issue:
+    return Issue(
+        severity, code, message, record.source_path, record.row_number, record.evidence_id
+    )
+
+
+def _valid_timestamp(value: str) -> bool:
+    """Return true for ISO-8601 timestamps carrying an explicit UTC offset."""
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    return parsed.tzinfo is not None and parsed.utcoffset() is not None
+
+
+def _missing_or_tbd(value: str) -> bool:
+    return not value or value.upper().startswith("TBD")
+
+
+def validate_evidence(
+    evidence: Iterable[EvidenceRecord], valid_action_ids: set[str] | None = None
+) -> ValidationResult:
+    """Validate evidence metadata and enforce human acceptance prerequisites."""
+    records = list(evidence)
+    issues: list[Issue] = []
+    if not records:
+        return ValidationResult((Issue(
+            "WARNING", "W_EVIDENCE_EMPTY",
+            "az evidenciaregiszter még nem tartalmaz rekordot", "evidence_register",
+        ),))
+
+    seen: dict[str, EvidenceRecord] = {}
+    for record in records:
+        for field in EVIDENCE_REQUIRED_FIELDS:
+            if not getattr(record, field):
+                issues.append(_evidence_issue(
+                    record, "ERROR", "E_EVIDENCE_REQUIRED",
+                    f"hiányzó kötelező evidencia-metaadat: {field}",
+                ))
+        if record.evidence_id:
+            if record.evidence_id in seen:
+                first = seen[record.evidence_id]
+                issues.append(_evidence_issue(
+                    record, "ERROR", "E_EVIDENCE_DUPLICATE",
+                    f"duplikált evidence_id; első előfordulás: "
+                    f"{first.source_path}:{first.row_number}",
+                ))
+            else:
+                seen[record.evidence_id] = record
+
+        if record.review_status and record.review_status not in EVIDENCE_STATUSES:
+            issues.append(_evidence_issue(
+                record, "ERROR", "E_EVIDENCE_STATUS",
+                f"ismeretlen review_status={record.review_status!r}; engedélyezett: "
+                f"{', '.join(sorted(EVIDENCE_STATUSES))}",
+            ))
+        if record.source_confidence and record.source_confidence not in SOURCE_CONFIDENCES:
+            issues.append(_evidence_issue(
+                record, "ERROR", "E_EVIDENCE_CONFIDENCE",
+                f"ismeretlen source_confidence={record.source_confidence!r}",
+            ))
+        if valid_action_ids is not None and record.action_id not in valid_action_ids:
+            issues.append(_evidence_issue(
+                record, "ERROR", "E_EVIDENCE_ACTION_REF",
+                f"ismeretlen action_id hivatkozás: {record.action_id!r}",
+            ))
+        for field in ("created_at", "submitted_at", "reviewed_at"):
+            value = getattr(record, field)
+            if value and not _valid_timestamp(value):
+                issues.append(_evidence_issue(
+                    record, "ERROR", "E_EVIDENCE_TIMESTAMP",
+                    f"{field} nem időzónás ISO-8601 időbélyeg: {value!r}",
+                ))
+        if record.sha256 and not SHA256_PATTERN.fullmatch(record.sha256):
+            issues.append(_evidence_issue(
+                record, "ERROR", "E_EVIDENCE_HASH",
+                "a sha256 mezőnek 64 hexadecimális karaktert kell tartalmaznia",
+            ))
+
+        if record.review_status in {"SUBMITTED", "ACCEPTED", "SUPERSEDED"}:
+            for field in ("internal_uri", "sha256", "submitted_at"):
+                if _missing_or_tbd(getattr(record, field)):
+                    issues.append(_evidence_issue(
+                        record, "ERROR", "E_EVIDENCE_SUBMISSION",
+                        f"{record.review_status} státuszhoz valós {field} szükséges",
+                    ))
+        if record.review_status in {"ACCEPTED", "SUPERSEDED"}:
+            for field in (
+                "created_by", "retention_class", "confidentiality",
+                "reviewed_at", "reviewed_by", "review_decision_ref",
+            ):
+                if _missing_or_tbd(getattr(record, field)):
+                    issues.append(_evidence_issue(
+                        record, "ERROR", "E_EVIDENCE_ACCEPTANCE",
+                        f"{record.review_status} státuszhoz emberi {field} szükséges",
+                    ))
+            if record.source_confidence in {"unverified_internal", "machine_unvalidated", "conflict"}:
+                issues.append(_evidence_issue(
+                    record, "ERROR", "E_EVIDENCE_UNVERIFIED_ACCEPTANCE",
+                    "nem ellenőrzött vagy konfliktusos forrás nem jelölhető ACCEPTED/SUPERSEDED "
+                    "státuszúra forrásminősítés és emberi review nélkül",
+                ))
+            if record.created_by and record.created_by == record.reviewed_by:
+                issues.append(_evidence_issue(
+                    record, "WARNING", "W_EVIDENCE_SELF_REVIEW",
+                    "a készítő és a reviewer azonos; dokumentálja a szerepelválasztási kivételt",
+                ))
+        if record.review_status == "NEEDS_CHANGES":
+            for field in ("reviewed_at", "reviewed_by", "rejection_reason"):
+                if _missing_or_tbd(getattr(record, field)):
+                    issues.append(_evidence_issue(
+                        record, "ERROR", "E_EVIDENCE_REJECTION",
+                        f"NEEDS_CHANGES státuszhoz {field} szükséges",
+                    ))
+        if record.review_status == "SUPERSEDED" and _missing_or_tbd(record.superseded_by):
+            issues.append(_evidence_issue(
+                record, "ERROR", "E_EVIDENCE_SUPERSEDED",
+                "SUPERSEDED státuszhoz superseded_by szükséges",
+            ))
+        if record.review_status == "DRAFT" and (
+            _missing_or_tbd(record.internal_uri) or not record.sha256
+        ):
+            issues.append(_evidence_issue(
+                record, "WARNING", "W_EVIDENCE_DRAFT_INCOMPLETE",
+                "a DRAFT rekord még nem rendelkezik végleges védett URI-val és hash-sel",
+            ))
+
+    return ValidationResult(tuple(issues))
+
+
+def _record_issue(
+    record: FindingRecord | ControlActionMapping,
+    severity: str,
+    code: str,
+    message: str,
+) -> Issue:
+    identity = getattr(record, "finding_id", "") or getattr(record, "mapping_id", "")
+    return Issue(severity, code, message, record.source_path, record.row_number, identity)
+
+
+def _split_refs(value: str) -> tuple[str, ...]:
+    return tuple(part.strip() for part in value.split(";") if part.strip())
+
+
+def validate_findings(
+    findings: Iterable[FindingRecord], valid_action_ids: set[str] | None = None
+) -> ValidationResult:
+    """Validate the extracted finding register without promoting machine output."""
+    records = list(findings)
+    issues: list[Issue] = []
+    seen_ids: set[str] = set()
+    seen_sections: set[str] = set()
+    required = (
+        "finding_id", "section_ref", "scope_eir", "requirement_family",
+        "control_ref", "control_title", "rating", "assessment_method",
+        "finding_summary", "source_ref", "source_page_start", "source_page_end",
+        "source_confidence", "human_validated", "mapping_status",
+    )
+    for record in records:
+        for field in required:
+            if not getattr(record, field):
+                issues.append(_record_issue(
+                    record, "ERROR", "E_FINDING_REQUIRED", f"hiányzó finding mező: {field}"
+                ))
+        for value, seen, label in (
+            (record.finding_id, seen_ids, "finding_id"),
+            (record.section_ref, seen_sections, "section_ref"),
+        ):
+            if value in seen:
+                issues.append(_record_issue(
+                    record, "ERROR", "E_FINDING_DUPLICATE", f"duplikált {label}: {value}"
+                ))
+            seen.add(value)
+        if record.rating and record.rating not in FINDING_RATINGS:
+            issues.append(_record_issue(
+                record, "ERROR", "E_FINDING_RATING", f"ismeretlen értékelés: {record.rating!r}"
+            ))
+        if record.source_confidence not in SOURCE_CONFIDENCES:
+            issues.append(_record_issue(
+                record, "ERROR", "E_FINDING_CONFIDENCE",
+                f"ismeretlen source_confidence: {record.source_confidence!r}",
+            ))
+        if record.human_validated not in YES_NO:
+            issues.append(_record_issue(
+                record, "ERROR", "E_FINDING_REVIEW_FLAG", "human_validated csak yes/no lehet"
+            ))
+        if record.mapping_status not in FINDING_MAPPING_STATUSES:
+            issues.append(_record_issue(
+                record, "ERROR", "E_FINDING_MAPPING_STATUS",
+                f"ismeretlen mapping_status: {record.mapping_status!r}",
+            ))
+        try:
+            page_start = int(record.source_page_start)
+            page_end = int(record.source_page_end)
+            if page_start > page_end:
+                raise ValueError
+        except ValueError:
+            issues.append(_record_issue(
+                record, "ERROR", "E_FINDING_PAGE_RANGE", "érvénytelen forrásoldal-tartomány"
+            ))
+        if record.human_validated == "yes":
+            if _missing_or_tbd(record.reviewer) or not record.reviewed_at:
+                issues.append(_record_issue(
+                    record, "ERROR", "E_FINDING_HUMAN_REVIEW",
+                    "human_validated=yes értékhez reviewer és reviewed_at szükséges",
+                ))
+            elif not _valid_timestamp(record.reviewed_at):
+                issues.append(_record_issue(
+                    record, "ERROR", "E_FINDING_REVIEW_TIMESTAMP",
+                    "reviewed_at nem időzónás ISO-8601 időbélyeg",
+                ))
+            if record.source_confidence == "machine_unvalidated":
+                issues.append(_record_issue(
+                    record, "ERROR", "E_FINDING_UNVALIDATED_PROMOTION",
+                    "emberileg validált rekord nem maradhat machine_unvalidated minősítésű",
+                ))
+        elif record.reviewer or record.reviewed_at:
+            issues.append(_record_issue(
+                record, "ERROR", "E_FINDING_REVIEW_INCONSISTENT",
+                "reviewer/reviewed_at csak human_validated=yes mellett adható meg",
+            ))
+        action_refs = _split_refs(record.direct_action_ids) + _split_refs(record.family_action_ids)
+        if valid_action_ids is not None:
+            unknown = sorted(set(action_refs) - valid_action_ids)
+            if unknown:
+                issues.append(_record_issue(
+                    record, "ERROR", "E_FINDING_ACTION_REF",
+                    f"ismeretlen action_id hivatkozás: {', '.join(unknown)}",
+                ))
+        expected = "DIRECT" if record.direct_action_ids else (
+            "FAMILY_ONLY" if record.family_action_ids else "UNMAPPED"
+        )
+        if record.mapping_status != expected:
+            issues.append(_record_issue(
+                record, "ERROR", "E_FINDING_MAPPING_INCONSISTENT",
+                f"a mapping_status várható értéke: {expected}",
+            ))
+    if records and len(records) != 328:
+        issues.append(Issue(
+            "WARNING", "W_FINDING_COUNT", f"a kanonikus auditból 328 rekord várható, kapott: {len(records)}",
+            records[0].source_path,
+        ))
+    if any(record.human_validated == "no" for record in records):
+        issues.append(Issue(
+            "WARNING", "W_FINDING_HUMAN_REVIEW_PENDING",
+            "a finding-regiszter gépi rekordokat tartalmaz; G1 emberi review szükséges",
+            records[0].source_path if records else "finding_register",
+        ))
+    return ValidationResult(tuple(issues))
+
+
+def validate_control_action_mapping(
+    mappings: Iterable[ControlActionMapping],
+    valid_action_ids: set[str],
+    valid_finding_ids: set[str],
+) -> ValidationResult:
+    """Validate proposed mapping references and human approval metadata."""
+    records = list(mappings)
+    issues: list[Issue] = []
+    seen: set[str] = set()
+    required = (
+        "mapping_id", "action_id", "requirement_family", "scope_eir",
+        "mapping_basis", "human_owner", "evidence_required", "source_ref",
+        "source_confidence", "human_review_status",
+    )
+    for record in records:
+        for field in required:
+            if not getattr(record, field):
+                issues.append(_record_issue(
+                    record, "ERROR", "E_MAPPING_REQUIRED", f"hiányzó mapping mező: {field}"
+                ))
+        if record.mapping_id in seen:
+            issues.append(_record_issue(
+                record, "ERROR", "E_MAPPING_DUPLICATE", "duplikált mapping_id"
+            ))
+        seen.add(record.mapping_id)
+        if record.action_id not in valid_action_ids:
+            issues.append(_record_issue(
+                record, "ERROR", "E_MAPPING_ACTION_REF",
+                f"ismeretlen action_id: {record.action_id!r}",
+            ))
+        unknown_findings = sorted(set(_split_refs(record.matched_finding_ids)) - valid_finding_ids)
+        if unknown_findings:
+            issues.append(_record_issue(
+                record, "ERROR", "E_MAPPING_FINDING_REF",
+                f"ismeretlen finding hivatkozás: {', '.join(unknown_findings)}",
+            ))
+        if record.mapping_basis not in MAPPING_BASES:
+            issues.append(_record_issue(
+                record, "ERROR", "E_MAPPING_BASIS",
+                f"ismeretlen mapping_basis: {record.mapping_basis!r}",
+            ))
+        if record.mapping_basis == "EXACT_CONTROL" and not record.control_ref:
+            issues.append(_record_issue(
+                record, "ERROR", "E_MAPPING_CONTROL", "EXACT_CONTROL kapcsolathoz control_ref kell"
+            ))
+        if record.human_review_status not in HUMAN_REVIEW_STATUSES:
+            issues.append(_record_issue(
+                record, "ERROR", "E_MAPPING_REVIEW_STATUS",
+                f"ismeretlen human_review_status: {record.human_review_status!r}",
+            ))
+        if record.human_review_status == "APPROVED":
+            if _missing_or_tbd(record.reviewer) or not record.reviewed_at:
+                issues.append(_record_issue(
+                    record, "ERROR", "E_MAPPING_HUMAN_REVIEW",
+                    "APPROVED mappinghez reviewer és reviewed_at szükséges",
+                ))
+            elif not _valid_timestamp(record.reviewed_at):
+                issues.append(_record_issue(
+                    record, "ERROR", "E_MAPPING_REVIEW_TIMESTAMP",
+                    "reviewed_at nem időzónás ISO-8601 időbélyeg",
+                ))
+    if records and any(record.human_review_status == "PROPOSED" for record in records):
+        issues.append(Issue(
+            "WARNING", "W_MAPPING_REVIEW_PENDING",
+            "a control-action-evidence mapping még PROPOSED; G1 owner sign-off szükséges",
+            records[0].source_path,
+        ))
     return ValidationResult(tuple(issues))
 
 

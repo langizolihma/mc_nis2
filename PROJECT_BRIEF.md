@@ -4,15 +4,15 @@ project_name: metALCOM NIS2 helyreállítási és audit-evidencia harness
 version: "0.3"
 status: DRAFT_FOR_HUMAN_APPROVAL
 created: "2026-07-13"
-updated: "2026-07-14"
+updated: "2026-07-15"
 receipt_date: "2026-06-26"
 receipt_evidence_status: HUMAN_ACCEPTED_WITH_INTERNAL_EMAIL_SUPPORT_NO_PRIMARY_RECEIPT
 receipt_supporting_source: SRC-007
 action_plan_deadline: "2026-09-24"
 deadline_review_status: PROCESS_ACCEPTED_EVIDENCE_DEFERRED_D026
 project_sponsor: TBD-HUMAN
-project_manager: TBD-HUMAN
-information_security_owner: TBD-HUMAN
+project_manager: Kóczán Mónika
+information_security_owner: Lángi Zoltán
 ---
 
 # 1. Projektcél
@@ -155,7 +155,7 @@ Fizetős megoldás csak akkor kerülhet előre, ha dokumentáltan megtörtént:
 
 1. Mi a 2026.06.26-i kézhezvételt igazoló dokumentum védett evidenciatári vagy iratkezelési hivatkozásja, és ki végzi el a G2/G4 határidő-felülvizsgálatot?
 2. Melyik a kanonikus auditjelentés: a határozatban hivatkozott 2026.06.05-i vagy a rendelkezésre álló 2026.05.04-i borítójú változat?
-3. Ki a vezetői szponzor, projektvezető, IBF, jogi reviewer és az egyes kontrollgazda?
+3. Ki a vezetői szponzor és a belső infrastruktúra-/incidenskezelési kontrollgazda, továbbá milyen védett rekord igazolja az IBF alkalmasságát és a formális szerepkijelöléseket? A többi folyamatszerepet a D-027 és a `PROJECT_RACI.md` rögzíti.
 4. Milyen vállalati adatminősítést kapnak az audit- és infrastruktúra-adatok?
 5. Engedélyezett-e felhős Codex/AI használata, vagy kizárólag helyi munkamenet használható?
 6. Hol lesz a privát Git, melyik meglévő SharePoint- vagy fájlmegosztás lesz a védett evidenciatár, és mi annak pontos struktúrája?

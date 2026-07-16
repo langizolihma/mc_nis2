@@ -8,9 +8,24 @@ from pathlib import Path
 from typing import Sequence
 
 from .deadlines import REPEAT_AUDIT_LATEST, action_plan_deadline, draft_quarterly_schedule, parse_iso_date
-from .registry import RegistryLoadError, default_project_dates_path, load_actions, load_project_dates
+from .registry import (
+    RegistryLoadError,
+    default_project_dates_path,
+    load_actions,
+    load_control_action_mapping,
+    load_evidence,
+    load_findings,
+    load_project_dates,
+)
 from .reports import render_action_plan, render_status
-from .validation import combine_results, validate_actions, validate_project_dates
+from .validation import (
+    combine_results,
+    validate_actions,
+    validate_control_action_mapping,
+    validate_evidence,
+    validate_findings,
+    validate_project_dates,
+)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -26,6 +41,13 @@ def _parser() -> argparse.ArgumentParser:
     draft.add_argument("--actions", required=True, type=Path)
     draft.add_argument("--project-dates", type=Path)
     draft.add_argument("--output", required=True, type=Path)
+    evidence = subparsers.add_parser("validate-evidence")
+    evidence.add_argument("--evidence", required=True, type=Path)
+    evidence.add_argument("--actions", required=True, type=Path)
+    findings = subparsers.add_parser("validate-findings")
+    findings.add_argument("--findings", required=True, type=Path)
+    findings.add_argument("--mapping", required=True, type=Path)
+    findings.add_argument("--actions", required=True, type=Path)
     return parser
 
 
@@ -41,6 +63,41 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-findings":
+            actions = load_actions(args.actions)
+            finding_records = load_findings(args.findings)
+            mapping_records = load_control_action_mapping(args.mapping)
+            action_ids = {action.action_id for action in actions}
+            finding_ids = {record.finding_id for record in finding_records}
+            result = combine_results(
+                validate_actions(actions),
+                validate_findings(finding_records, action_ids),
+                validate_control_action_mapping(mapping_records, action_ids, finding_ids),
+            )
+            for issue in result.issues:
+                print(issue.format())
+            reviewed = sum(record.human_validated == "yes" for record in finding_records)
+            print(
+                f"Findingok: {len(finding_records)} rekord, {reviewed} human_validated; "
+                f"mapping: {len(mapping_records)} sor; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
+        if args.command == "validate-evidence":
+            actions = load_actions(args.actions)
+            records = load_evidence(args.evidence)
+            result = combine_results(
+                validate_actions(actions),
+                validate_evidence(records, {action.action_id for action in actions}),
+            )
+            for issue in result.issues:
+                print(issue.format())
+            accepted = sum(record.review_status == "ACCEPTED" for record in records)
+            print(
+                f"Evidencia: {len(records)} rekord, {accepted} ACCEPTED; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "deadlines":
             received = parse_iso_date(args.received, field_name="received")
             deadline = action_plan_deadline(received)
@@ -76,4 +133,3 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
     return 2
-

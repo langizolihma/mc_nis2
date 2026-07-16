@@ -8,8 +8,8 @@ venv/
 secrets/
 staging/
 raw_exports/
+tmp/
 generated/*
 !generated/.gitkeep
 !generated/action_plan.md
 alapadatok/
-

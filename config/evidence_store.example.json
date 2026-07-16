@@ -1,0 +1,19 @@
+{
+  "status": "PROPOSAL",
+  "store_type": "TBD-HUMAN",
+  "protected_root_uri": "TBD-HUMAN",
+  "access_groups": {
+    "administrators": "TBD-HUMAN",
+    "contributors": "TBD-HUMAN",
+    "reviewers": "TBD-HUMAN",
+    "readers": "TBD-HUMAN"
+  },
+  "store_owner": "TBD-HUMAN",
+  "backup_owner": "TBD-HUMAN",
+  "versioning_enabled": "TBD-HUMAN",
+  "audit_log_enabled": "TBD-HUMAN",
+  "backup_frequency": "TBD-HUMAN",
+  "restore_test_reference": "TBD-HUMAN",
+  "retention_taxonomy_reference": "TBD-HUMAN",
+  "confidentiality_taxonomy_reference": "TBD-HUMAN"
+}
