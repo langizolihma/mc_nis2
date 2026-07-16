@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-017",
+  "source_refs": [
+    "SRC-008:p158",
+    "SRC-008:p163-164",
+    "SRC-008:p247",
+    "SRC-008:p252-253",
+    "SRC-008:p337",
+    "SRC-008:p342-343",
+    "data/inventory_register.json"
+  ],
+  "assumptions": [
+    "A terv nem állítja, hogy bármely mentés sikeres, teljes vagy helyreállítható.",
+    "A restore teszt csak jóváhagyott izolált vagy alternatív célkörnyezetben, G3 után hajtható végre."
+  ],
+  "eir_backup_matrix": [
+    {
+      "eir_id": "EIR-001",
+      "eir_name": "Vezetéstámogató",
+      "business_owner": "TBD-HUMAN",
+      "system_scope": [],
+      "rpo_hours": "TBD-HUMAN",
+      "rto_hours": "TBD-HUMAN",
+      "backup_method": "TBD-HUMAN",
+      "retention": "TBD-HUMAN",
+      "offsite_or_separate_copy": "TBD-HUMAN",
+      "review_status": "PENDING_G1"
+    },
+    {
+      "eir_id": "EIR-002",
+      "eir_name": "Irodai",
+      "business_owner": "TBD-HUMAN",
+      "system_scope": [],
+      "rpo_hours": "TBD-HUMAN",
+      "rto_hours": "TBD-HUMAN",
+      "backup_method": "TBD-HUMAN",
+      "retention": "TBD-HUMAN",
+      "offsite_or_separate_copy": "TBD-HUMAN",
+      "review_status": "PENDING_G1"
+    },
+    {
+      "eir_id": "EIR-003",
+      "eir_name": "Termelés",
+      "business_owner": "TBD-HUMAN",
+      "system_scope": [],
+      "rpo_hours": "TBD-HUMAN",
+      "rto_hours": "TBD-HUMAN",
+      "backup_method": "TBD-HUMAN",
+      "retention": "TBD-HUMAN",
+      "offsite_or_separate_copy": "TBD-HUMAN",
+      "review_status": "PENDING_G1"
+    },
+    {
+      "eir_id": "EIR-004",
+      "eir_name": "Hálózat-kommunikációs",
+      "business_owner": "TBD-HUMAN",
+      "system_scope": [],
+      "rpo_hours": "TBD-HUMAN",
+      "rto_hours": "TBD-HUMAN",
+      "backup_method": "TBD-HUMAN",
+      "retention": "TBD-HUMAN",
+      "offsite_or_separate_copy": "TBD-HUMAN",
+      "review_status": "PENDING_G1"
+    },
+    {
+      "eir_id": "EIR-005",
+      "eir_name": "Biztonsági",
+      "business_owner": "TBD-HUMAN",
+      "system_scope": [],
+      "rpo_hours": "TBD-HUMAN",
+      "rto_hours": "TBD-HUMAN",
+      "backup_method": "TBD-HUMAN",
+      "retention": "TBD-HUMAN",
+      "offsite_or_separate_copy": "TBD-HUMAN",
+      "review_status": "PENDING_G1"
+    }
+  ],
+  "restore_test": {
+    "execution_status": "BLOCKED_PENDING_G3",
+    "sample_eir": "TBD-HUMAN",
+    "sample_system": "TBD-HUMAN",
+    "target_environment": "TBD-HUMAN",
+    "restore_mode": "ISOLATED_OR_ALTERNATE_LOCATION",
+    "required_gate": "G3_PRODUCTION_CHANGE",
+    "production_change_allowed": false,
+    "overwrite_existing": false,
+    "delete_allowed": false,
+    "rollback_plan": "A teszt megszakítása, az izolált cél leválasztása és a tesztadat jóváhagyott törlési eljárás szerinti kezelése; éles forrás nem változtatható.",
+    "stop_conditions": [
+      "Éles cél vagy névütközés észlelése.",
+      "Nem várt hálózati kapcsolat az éles környezettel.",
+      "Forrásmentés vagy éles rendszer módosításának kockázata.",
+      "Titok, személyes adat vagy nem jóváhagyott adat megjelenése.",
+      "A jóváhagyott időablak vagy erőforráskorlát túllépése."
+    ]
+  },
+  "required_evidence": [
+    "backup_job_log",
+    "restore_job_log",
+    "restored_object",
+    "integrity_check",
+    "elapsed_time",
+    "rpo_rto_comparison",
+    "cleanup_record",
+    "human_review"
+  ],
+  "human_approval": {
+    "business_owner": "",
+    "system_owner": "",
+    "change_approver": "",
+    "approved_at": "",
+    "decision_ref": ""
+  }
+}

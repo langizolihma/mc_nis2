@@ -109,3 +109,16 @@ Ha titok, személyes adat vagy engedély nélküli éles adat kerül a repositor
 4. a secretet vissza kell vonni vagy rotálni;
 5. dokumentálni kell az eseményt és a javítást;
 6. csak G2 jóváhagyás után folytatható a munka.
+
+# 11. Helyi belső portál
+
+A D-028 szerinti portál csak a helyi/belső hálózaton működhet. Tervezési alapkövetelmény:
+
+- nincs alapértelmezett internetes kitettség vagy névtelen hozzáférés;
+- vállalati vagy dokumentált helyi hitelesítés és szerepköralapú legkisebb jogosultság szükséges;
+- minden jóváhagyás, visszautasítás, státuszváltás és AI-futtatás időbélyeggel és felhasználói azonosítóval naplózandó;
+- érzékeny bináris evidencia nem kerülhet a portál Git-alapú adattárába;
+- feltöltésnél fájltípus-, méret-, kártevő- és adatminősítési kontrollt kell tervezni;
+- az AI-kimenet jól láthatóan `PROPOSAL`, és nem aktiválhat automatikusan G1–G5 kapus műveletet;
+- legyen dokumentált mentés, visszaállítás, hibakezelés és kill switch;
+- éles telepítés, hitelesítési integráció vagy hálózati megnyitás G2/G3 jóváhagyást igényel.

@@ -34,6 +34,7 @@ python -m nis2_harness validate-ai-policy --policy config/ai_usage_policy.json
 python -m nis2_harness validate-repeat-audit --roadmap data/repeat_audit_roadmap.json
 python -m nis2_harness validate-quarterly-reporting --plan data/quarterly_reporting_plan.json
 python -m nis2_harness validate-action-plan-submission --actions data/actions.csv --project-dates data/project_dates.json
+python -m nis2_harness validate-backup-restore --plan data/backup_restore_plan.json
 python -m unittest discover -s tests -v
 ```
 
@@ -71,6 +72,10 @@ Az A-008 negyedéves beszámolási csomagja a [QUARTERLY_REPORTING_KIT.md](QUART
 
 Az A-006 benyújtási readiness-csomagja az [ACTION_PLAN_SUBMISSION_READINESS.md](ACTION_PLAN_SUBMISSION_READINESS.md) dokumentumban és a `data/action_plan_submission_checklist.json` fájlban található. A `validate-action-plan-submission` ellenőrzi a 19 követelménycsalád lefedettségét, a kötelező külső tervmezőket, a név szerinti felelősöket, a fix/relatív dátumokat, a függőségeket, a forrásbizalmat és a G4 kaput. A 0 hard hiba nem jelent benyújtási jóváhagyást.
 
+A D-028 szerinti végfelhasználói célfelület egy helyi hálózaton, böngészőből elérhető belső portál. A [LOCAL_PORTAL_BASELINE.md](LOCAL_PORTAL_BASELINE.md) rögzíti a minimális funkciókat és biztonsági korlátokat. A portál tervezési baseline, nem éles deploy-engedély; a Git és a védett evidenciatár háttérrendszer marad.
+
+Az A-017 backup és restore-teszt csomagja a [BACKUP_RESTORE_TEST_PLAN.md](BACKUP_RESTORE_TEST_PLAN.md) dokumentumban, gépi mátrixa a `data/backup_restore_plan.json`, jegyzőkönyve a `templates/restore_test_record.md` fájlban található. A `validate-backup-restore` kikényszeríti az öt EIR lefedését, a pozitív vagy emberre váró RPO/RTO-t, az izolált restore-t, a G3 kaput, a felülírás/törlés tiltását és a szükséges evidenciákat.
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők
@@ -102,6 +107,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag és az A-006 cselekvésiterv-readiness tervezete elkészült. Következő emberi lépés az A-006 G1/G2/G4 review-ja és a `DEF-014` pontjainak pótlása. Következő önálló agent-munkacsomagként az A-017 backup scope/RPO/RTO és kontrollált restore-teszt előkészítő csomagja készíthető el; éles restore vagy rendszerváltozás nem végezhető.
+Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness és az A-017 backup/restore előkészítés elkészült. A D-028 helyi portál-baseline jóváhagyott, implementációja a DEF-015 kapui mögött marad. Következő emberi lépés az A-017 EIR-owner/scope/RPO/RTO input és G2/G3 döntés. Következő önálló agent-munkacsomagként az A-020 fizikai védelmi bejárási checklist és gap-register készíthető el; helyszíni tény vagy fotó nem található ki.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.

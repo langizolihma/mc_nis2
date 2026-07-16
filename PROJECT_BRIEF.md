@@ -4,7 +4,7 @@ project_name: metALCOM NIS2 helyreállítási és audit-evidencia harness
 version: "0.3"
 status: DRAFT_FOR_HUMAN_APPROVAL
 created: "2026-07-13"
-updated: "2026-07-15"
+updated: "2026-07-16"
 receipt_date: "2026-06-26"
 receipt_evidence_status: HUMAN_ACCEPTED_WITH_INTERNAL_EMAIL_SUPPORT_NO_PRIMARY_RECEIPT
 receipt_supporting_source: SRC-007
@@ -80,11 +80,14 @@ emberi felülvizsgálat és jóváhagyás
 Védett evidenciatár / hatósági benyújtás ember által
 ```
 
+A D-028 alapján a célállapot elsődleges ember–AI kommunikációs felülete egy helyi hálózaton, böngészőből elérhető belső portál. A VS Code + Codex a fejlesztés és műszaki adminisztráció eszköze marad; a résztvevők feladat-, döntési és jóváhagyási felületét a portál adja.
+
 ## Kanonikus tárolók
 
 - **Privát Git:** kód, sémák, promptok, tesztek, handoff dokumentumok, nem érzékeny mintaadat és evidencia-metaadat.
 - **Jóváhagyott védett evidenciatár:** meglévő SharePoint dokumentumtár vagy védett hálózati fájlmegosztás az eredeti auditanyagokhoz, aláírt döntésekhez, hivatalos dokumentumokhoz és bináris evidenciákhoz. A harness nem függ konkrét dokumentumkezelő terméktől.
 - **Chat:** tervezési munkatér; önmagában nem kanonikus nyilvántartás.
+- **Helyi belső portál:** a résztvevők feladat-, határidő-, jóváhagyási és AI-kommunikációs felülete; nem helyettesíti a védett evidenciatárat vagy az emberi felelősséget.
 
 # 6. Alapértelmezett AI-ügynökszerepek
 
@@ -115,6 +118,7 @@ Az alapértelmezett végrehajtás **szekvenciális**, nem párhuzamos agent-swar
 - helyi validáció, egységteszt és agent-eval;
 - később jóváhagyott, read-only adatgyűjtési integrációk.
 - folyamatos auditfelkészültségi ügynök pilotja, mérhető emberimunka-csökkentéssel, teljes futási naplóval és leállítható működéssel.
+- helyi hálózaton, böngészőből elérhető belső portál fokozatos kialakítása a D-028 biztonsági korlátaival.
 
 ## Nincs benne az első szakaszban
 

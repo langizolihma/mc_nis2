@@ -10,6 +10,7 @@ from typing import Sequence
 from .deadlines import REPEAT_AUDIT_LATEST, action_plan_deadline, draft_quarterly_schedule, parse_iso_date
 from .ai_policy import validate_ai_policy
 from .action_plan_submission import validate_action_plan_submission
+from .backup_restore import validate_backup_restore_plan
 from .evals import (
     evaluate_agent_output,
     validate_defect_log,
@@ -78,6 +79,8 @@ def _parser() -> argparse.ArgumentParser:
     submission = subparsers.add_parser("validate-action-plan-submission")
     submission.add_argument("--actions", required=True, type=Path)
     submission.add_argument("--project-dates", type=Path)
+    backup = subparsers.add_parser("validate-backup-restore")
+    backup.add_argument("--plan", required=True, type=Path)
     return parser
 
 
@@ -93,6 +96,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-backup-restore":
+            plan = load_json_object(args.plan, "backup és restore tesztterv")
+            result = validate_backup_restore_plan(plan, args.plan)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Backup/restore: {len(plan.get('eir_backup_matrix', []))} EIR; "
+                f"restore={plan.get('restore_test', {}).get('execution_status', 'UNKNOWN')}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-action-plan-submission":
             actions, dates, base_result = _load_and_validate(args.actions, args.project_dates)
             submission_result = validate_action_plan_submission(actions, dates, args.actions)

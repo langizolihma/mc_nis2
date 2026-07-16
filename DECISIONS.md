@@ -1,7 +1,7 @@
 ---
 version: "0.3"
 status: WORKING_DECISION_LOG
-updated: "2026-07-15"
+updated: "2026-07-16"
 ---
 
 # Döntési napló
@@ -44,6 +44,7 @@ updated: "2026-07-15"
 | D-025 | CONFIRMED_INPUT | Az SRC-008 a hatóság felé beadott, 2026.06.05-i aláírt kanonikus auditjelentés; az SRC-002 korábbi változatát felváltja. |
 | D-026 | APPROVED_BASELINE | A projekt a G2/G4 aláírás és védett tárhivatkozások ideiglenes hiánya mellett továbbhaladhat, ha minden hiány a pótlandó evidencia naplóban nyitva marad. |
 | D-027 | APPROVED_BASELINE | A projekt folyamatszerepei név szerint rögzítettek; az IBF-alkalmasság, a formális kijelölések, a vezetői szponzor és a belső infrastruktúra-/incidenskezelési kontrollgazda még pótlandó. |
+| D-028 | APPROVED_BASELINE | A résztvevők és az AI elsődleges felülete helyi hálózaton, böngészőből elérhető belső portál; a Git és a védett evidenciatár háttérrendszer marad. |
 
 # Részletes döntések
 
@@ -292,6 +293,22 @@ A projektgazda az alábbi folyamatszerepeket hagyta jóvá:
 **Nyitott korlátok:** Lángi Zoltánnak nincs informatikai végzettsége, ezért a metALCOM Kiberbiztonsági tv. 1. § (1) szerinti besorolási jogcímét és az abból következő IBF-alkalmassági követelmények teljesítését dokumentálni kell. Kollár Csaba technikai végrehajtó lehet, de szerződéses partnerként mellé belső, elszámoltatható metALCOM-kontrollgazdát kell kijelölni. A vezetői szponzor nincs megnevezve. Az aláírt kinevezések, feladat- és hatáskörök, RACI, helyettesítés és szükséges hatósági rekordok szintén pótlandók.
 
 **Kontrollkorlát:** a baseline a projekttervezéshez felhasználható, de nem helyettesíti a formális kijelölést vagy alkalmassági evidenciát, és nem teszi az A-001/A-036 akciókat `DONE` státuszúvá. A részletes felosztást a `PROJECT_RACI.md`, a hiányokat a `DEFERRED_EVIDENCE_LOG.md` tartalmazza.
+
+## D-028 – Helyi belső portál mint elsődleges felhasználói felület
+
+**Státusz:** `APPROVED_BASELINE`
+
+**Rögzítés dátuma:** 2026-07-16
+
+**Jóváhagyó:** Lángi Zoltán
+
+A projekt végfelhasználói felülete egy helyi hálózaton, böngészőből elérhető belső portál lesz. A résztvevők ezen tekintik meg a feladataikat, határidőket, jóváhagyási sorokat és összefoglalókat; ezen adnak meg döntést vagy visszajelzést, és ezen kezdeményeznek AI által készítendő tervezetet vagy elemzést.
+
+A portál nem válik önálló jogi döntéshozóvá vagy kanonikus bináris evidenciatárrá. A Git a kód, sémák és nem érzékeny metaadatok verziózott háttértára marad; az eredeti és érzékeny dokumentumok jóváhagyott védett fájlmegosztáson vagy más belső evidenciatárban maradnak.
+
+**Kötelező tervezési korlátok:** local-first működés, belső hálózati elérés, hitelesítés és szerepköralapú jogosultság, naplózott emberi döntések, érzékeny adat alapértelmezett tiltása, G1–G5 kapuk, kill switch, mentés és visszaállíthatóság. Külső hozzáférés, éles deploy vagy AI-környezet használata külön G2/G3 jóváhagyás nélkül nem engedélyezett.
+
+**Következmény:** a VS Code + Codex fejlesztői és adminisztrátori eszköz marad; a hétköznapi résztvevőknek nem kell Git-et, parancssort vagy fejlesztői felületet használniuk.
 
 # Nyitott döntési sablon
 
