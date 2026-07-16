@@ -27,6 +27,7 @@ from .registry import (
 )
 from .reports import render_action_plan, render_status
 from .repeat_audit import validate_repeat_audit_roadmap
+from .quarterly_reporting import validate_quarterly_reporting_plan
 from .validation import (
     combine_results,
     validate_actions,
@@ -71,6 +72,8 @@ def _parser() -> argparse.ArgumentParser:
     ai_policy.add_argument("--policy", required=True, type=Path)
     repeat_audit = subparsers.add_parser("validate-repeat-audit")
     repeat_audit.add_argument("--roadmap", required=True, type=Path)
+    quarterly = subparsers.add_parser("validate-quarterly-reporting")
+    quarterly.add_argument("--plan", required=True, type=Path)
     return parser
 
 
@@ -86,6 +89,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-quarterly-reporting":
+            plan = load_json_object(args.plan, "negyedéves beszámolási terv")
+            result = validate_quarterly_reporting_plan(plan, args.plan)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Quarterly reporting: {len(plan.get('reports', []))} report; "
+                f"anchor={plan.get('submission_anchor', {}).get('status', 'UNKNOWN')}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-repeat-audit":
             roadmap = load_json_object(args.roadmap, "repeat-audit roadmap")
             result = validate_repeat_audit_roadmap(roadmap, args.roadmap)
