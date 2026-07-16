@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-020",
+  "source_refs": [
+    "SRC-008:p65-75",
+    "DECISIONS.md:D-027"
+  ],
+  "assumptions": [
+    "A terv nem állít sem megfelelést, sem hiányosságot helyszíni megfigyelés és evidencia nélkül.",
+    "A telephelyek és védett területek pontos scope-ját Német Péter és az IBF hagyja jóvá."
+  ],
+  "site_scope": [],
+  "walkthrough": {
+    "status": "NOT_PERFORMED",
+    "coordinator": "Pásztor András",
+    "walkthrough_lead": "Német Péter",
+    "required_gate": "G2_SECURITY_LEGAL",
+    "performed_at": "",
+    "participants": []
+  },
+  "control_checks": [
+    {
+      "control_ref": "12.1",
+      "topic": "Fizikai hozzáférési jogosultság",
+      "question": "A védett területekhez való hozzáférés jóváhagyott, naprakész és rendszeresen felülvizsgált?",
+      "status": "NOT_ASSESSED",
+      "observation": "",
+      "evidence_refs": [],
+      "observed_by": "",
+      "observed_at": ""
+    },
+    {
+      "control_ref": "12.2",
+      "topic": "Belépés ellenőrzése",
+      "question": "A belépési pontok, kulcsok/kártyák, vendégek és kísérés ellenőrzése dokumentáltan működik?",
+      "status": "NOT_ASSESSED",
+      "observation": "",
+      "evidence_refs": [],
+      "observed_by": "",
+      "observed_at": ""
+    },
+    {
+      "control_ref": "12.6",
+      "topic": "Fizikai hozzáférési napló",
+      "question": "A fizikai belépések és kivételek naplója teljes, védett, megőrzött és felülvizsgált?",
+      "status": "NOT_ASSESSED",
+      "observation": "",
+      "evidence_refs": [],
+      "observed_by": "",
+      "observed_at": ""
+    },
+    {
+      "control_ref": "12.17",
+      "topic": "Fizikai felügyelet",
+      "question": "A szükséges fizikai felügyelet, riasztás vagy észlelés működése és kezelése bizonyítható?",
+      "status": "NOT_ASSESSED",
+      "observation": "",
+      "evidence_refs": [],
+      "observed_by": "",
+      "observed_at": ""
+    },
+    {
+      "control_ref": "12.22",
+      "topic": "Környezeti veszélyek",
+      "question": "A tűz-, víz-, hőmérséklet-, páratartalom- és más környezeti kockázatok kezelése megfelelően kialakított és tesztelt?",
+      "status": "NOT_ASSESSED",
+      "observation": "",
+      "evidence_refs": [],
+      "observed_by": "",
+      "observed_at": ""
+    },
+    {
+      "control_ref": "12.31",
+      "topic": "Áramellátás és segédközmű",
+      "question": "A kritikus eszközök áramellátása, szünetmentesítése és kapcsolódó próbája dokumentált?",
+      "status": "NOT_ASSESSED",
+      "observation": "",
+      "evidence_refs": [],
+      "observed_by": "",
+      "observed_at": ""
+    },
+    {
+      "control_ref": "12.33",
+      "topic": "Kábelezés védelme",
+      "question": "Az energia- és adatkábelezés hozzáférés, sérülés, lehallgatás és téves csatlakoztatás ellen megfelelően védett?",
+      "status": "NOT_ASSESSED",
+      "observation": "",
+      "evidence_refs": [],
+      "observed_by": "",
+      "observed_at": ""
+    },
+    {
+      "control_ref": "12.40",
+      "topic": "Berendezések elhelyezése és védelme",
+      "question": "A kritikus berendezések elhelyezése, rögzítése, hűtése és illetéktelen hozzáférés elleni védelme megfelelő?",
+      "status": "NOT_ASSESSED",
+      "observation": "",
+      "evidence_refs": [],
+      "observed_by": "",
+      "observed_at": ""
+    },
+    {
+      "control_ref": "12.42",
+      "topic": "Karbantartás és kivitel",
+      "question": "A berendezések helyszíni/külső karbantartása, kivitele, visszavétele és hozzáférése jóváhagyott és nyomon követett?",
+      "status": "NOT_ASSESSED",
+      "observation": "",
+      "evidence_refs": [],
+      "observed_by": "",
+      "observed_at": ""
+    }
+  ],
+  "gap_register": [],
+  "quick_fixes": [],
+  "photo_rules": [
+    "protected_store_only",
+    "metadata_only_in_git",
+    "avoid_people_and_badges",
+    "avoid_screens_secrets_and_access_codes",
+    "owner_authorization_required"
+  ],
+  "human_approval": {
+    "reviewer": "",
+    "approver": "",
+    "approved_at": "",
+    "decision_ref": ""
+  }
+}
