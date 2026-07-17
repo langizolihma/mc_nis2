@@ -1,16 +1,18 @@
 ---
 handoff_id: H-001
-version: "0.3"
-status: READY_AFTER_HUMAN_APPROVAL
+version: "0.4"
+status: PREPARATION_COMPLETE_HUMAN_EXECUTION_REQUIRED
 created: "2026-07-13"
-updated: "2026-07-14"
+updated: "2026-07-17"
 receipt_date: "2026-06-26"
 action_plan_deadline: "2026-09-24"
 deadline_review_status: PENDING_G2_G4_REVIEW
-requested_executor: VS_CODE_CODEX
+requested_executor: HUMAN_GATED_EXECUTION
 ---
 
 # H-001 – Determinisztikus helyi NIS2 core
+
+> **Aktuális állapot (2026-07-17):** a H-001 core és mind a 42 akció előkészítő munkacsomagja elkészült. A repository 203 teszttel, akciónkénti completion reporttal, pótlandó evidencia naplóval és A-042 local-only pilottal rendelkezik. A következő szakasz nem további autonóm előkészítés, hanem a `NEXT_EXECUTION_QUEUE_2026-07-16.md` szerinti emberi adatgyűjtés, review, aláírás és kontrollált végrehajtás. Egyetlen akció sincs automatikusan `DONE` státuszra állítva.
 
 # 1. Cél
 

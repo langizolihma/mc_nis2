@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "pilot_id": "CA-PILOT-001",
+  "generated_at": "2026-07-17T12:00:00+02:00",
+  "proposals": [
+    {
+      "proposal_id": "PROP-CA-PILOT-001-001",
+      "status": "PROPOSAL",
+      "agent_role": "evidence_curator",
+      "source_refs": [
+        "SYNTHETIC:log-exception-1"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Naplókivétel emberi vizsgálata"
+      ],
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-CA-PILOT-001-002",
+      "status": "PROPOSAL",
+      "agent_role": "orchestrator",
+      "source_refs": [
+        "SYNTHETIC:deadline-risk-1"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Határidőkockázat felülvizsgálata"
+      ],
+      "required_human_gate": "G2_SECURITY_LEGAL",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-CA-PILOT-001-003",
+      "status": "PROPOSAL",
+      "agent_role": "remediation_planner",
+      "source_refs": [
+        "SYNTHETIC:control-drift-1"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Kontrolleltérés javítási javaslata"
+      ],
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    }
+  ],
+  "approval_queue": [
+    {
+      "proposal_id": "PROP-CA-PILOT-001-001",
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-CA-PILOT-001-002",
+      "required_human_gate": "G2_SECURITY_LEGAL",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-CA-PILOT-001-003",
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING_HUMAN"
+    }
+  ],
+  "audit_log": [
+    {
+      "sequence": 1,
+      "event_id": "EVT-001",
+      "source_id": "SYNTHETIC-LOG",
+      "source_ref": "SYNTHETIC:log-exception-1",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-CA-PILOT-001-001",
+      "review_status": "PENDING_HUMAN"
+    },
+    {
+      "sequence": 2,
+      "event_id": "EVT-002",
+      "source_id": "SYNTHETIC-DEADLINE",
+      "source_ref": "SYNTHETIC:deadline-risk-1",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-CA-PILOT-001-002",
+      "review_status": "PENDING_HUMAN"
+    },
+    {
+      "sequence": 3,
+      "event_id": "EVT-003",
+      "source_id": "SYNTHETIC-CONTROL",
+      "source_ref": "SYNTHETIC:control-drift-1",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-CA-PILOT-001-003",
+      "review_status": "PENDING_HUMAN"
+    }
+  ],
+  "metrics": {
+    "events_seen": 3,
+    "proposals_created": 3,
+    "simulated_manual_steps_baseline": 9,
+    "simulated_pilot_human_steps": 3,
+    "simulated_manual_steps_saved": 6,
+    "false_alert_rate": "NOT_MEASURED_REQUIRES_HUMAN_GOLD_CASE_REVIEW"
+  }
+}

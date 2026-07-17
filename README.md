@@ -122,6 +122,10 @@ Az A-001/A-002/A-007/A-035/A-036 irányítási akciók jóváhagyott baseline-ja
 
 Az A-037–A-041 szabályozási baseline-ok a [POLICY_BASELINE_WORK_PACKAGES.md](POLICY_BASELINE_WORK_PACKAGES.md), a `data/policy_baseline_work_packages.json` és a `templates/control_policy_baseline.md` fájlokban találhatók. Ezek kitöltési és review-keretek, nem hatályos szabályzatok.
 
+Az A-042 fájlalapú, local-first pilotja a [CONTINUOUS_ASSURANCE_AGENT_PILOT.md](CONTINUOUS_ASSURANCE_AGENT_PILOT.md) szerint futtatható. Csak allowlistelt szintetikus metaadatot dolgoz fel, proposalokat, approval queue-t és auditlogot készít; minden automatikus elfogadó, lezáró, külső, fizetős vagy éles művelet tiltott.
+
+Az előkészítési állapot összesítése: [PREPARATION_COVERAGE_REPORT_2026-07-17.md](PREPARATION_COVERAGE_REPORT_2026-07-17.md). Mind a 42 akcióhoz van completion report; a következő szakasz emberi evidenciagyűjtés és kapus végrehajtás a [NEXT_EXECUTION_QUEUE_2026-07-16.md](NEXT_EXECUTION_QUEUE_2026-07-16.md) szerint.
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők

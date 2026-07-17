@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "pilot_id": "CA-PILOT-001",
+  "mode": "LOCAL_SYNTHETIC_ONLY",
+  "generated_at": "2026-07-17T12:00:00+02:00",
+  "allowed_sources": ["SYNTHETIC-LOG", "SYNTHETIC-DEADLINE", "SYNTHETIC-CONTROL"],
+  "safety": {
+    "network_allowed": false,
+    "production_connection_allowed": false,
+    "external_ai_allowed": false,
+    "raw_sensitive_data_allowed": false,
+    "forbidden_automatic_actions": ["close_action", "submit_external", "change_production", "purchase", "accept_evidence"]
+  },
+  "kill_switch": {
+    "engaged": false,
+    "control_file": "config/continuous_assurance_pilot.json",
+    "test_requirement": "Automated negative test must prove zero processed inputs when engaged."
+  },
+  "metrics": {
+    "manual_steps_per_event_baseline": 3,
+    "pilot_human_steps_per_event": 1,
+    "interpretation": "Szimulált munkafolyamat-becslés; nem tényleges megtakarítási állítás."
+  }
+}

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 from typing import Sequence
@@ -19,6 +20,7 @@ from .exchange_dependency import validate_exchange_dependency_plan
 from .legacy_retention import validate_legacy_retention_plan
 from .rds_separation import validate_rds_separation_plan
 from .work_packages import validate_work_packages
+from .continuous_assurance import build_pilot_output, validate_pilot
 from .supplier_risk import validate_supplier_risk_plan
 from .physical_security import validate_physical_security_plan
 from .evals import (
@@ -111,6 +113,10 @@ def _parser() -> argparse.ArgumentParser:
     rds_separation.add_argument("--plan", required=True, type=Path)
     work_packages = subparsers.add_parser("validate-work-packages")
     work_packages.add_argument("--registry", required=True, type=Path)
+    continuous = subparsers.add_parser("run-continuous-assurance-pilot")
+    continuous.add_argument("--config", required=True, type=Path)
+    continuous.add_argument("--input", required=True, type=Path)
+    continuous.add_argument("--output", required=True, type=Path)
     return parser
 
 
@@ -126,6 +132,22 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "run-continuous-assurance-pilot":
+            config = load_json_object(args.config, "continuous assurance pilot config")
+            inputs = load_json_object(args.input, "continuous assurance pilot input")
+            result = validate_pilot(config, inputs, args.input)
+            for issue in result.issues:
+                print(issue.format())
+            if result.errors:
+                return 1
+            output = build_pilot_output(config, inputs)
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            args.output.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(
+                f"Continuous assurance pilot: {len(output.get('proposals', []))} proposal; "
+                f"status={output.get('status')}; 0 hard error"
+            )
+            return 0
         if args.command == "validate-work-packages":
             registry = load_json_object(args.registry, "helyreállítási munkacsomag-regiszter")
             result = validate_work_packages(registry, args.registry)

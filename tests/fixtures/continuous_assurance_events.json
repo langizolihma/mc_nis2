@@ -1,0 +1,7 @@
+{
+  "events": [
+    {"event_id": "EVT-003", "source_id": "SYNTHETIC-CONTROL", "source_ref": "SYNTHETIC:control-drift-1", "source_confidence": "synthetic", "observed_at": "2026-07-17T10:03:00+02:00", "kind": "CONTROL_DRIFT", "summary": "Szintetikus kontroll-eltérés.", "contains_sensitive_data": false},
+    {"event_id": "EVT-001", "source_id": "SYNTHETIC-LOG", "source_ref": "SYNTHETIC:log-exception-1", "source_confidence": "synthetic", "observed_at": "2026-07-17T10:01:00+02:00", "kind": "LOG_EXCEPTION", "summary": "Szintetikus naplókivétel.", "contains_sensitive_data": false},
+    {"event_id": "EVT-002", "source_id": "SYNTHETIC-DEADLINE", "source_ref": "SYNTHETIC:deadline-risk-1", "source_confidence": "synthetic", "observed_at": "2026-07-17T10:02:00+02:00", "kind": "DEADLINE_RISK", "summary": "Szintetikus határidőkockázat.", "contains_sensitive_data": false}
+  ]
+}
