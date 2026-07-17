@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-029",
+  "source_refs": [
+    "SRC-008:p182,185,271,274,361,364",
+    "data/actions.csv:A-029",
+    "DECISIONS.md:D-005",
+    "DECISIONS.md:D-011"
+  ],
+  "assumptions": [
+    "A jelenlegi licencjogosultságok, használati mennyiségek és support-életciklusok bizonyíték hiányában ismeretlenek.",
+    "A szerződések, portál-exportok és részletes telepítési listák védett tárban maradnak; Git csak metaadatot kezel.",
+    "A fizetős javaslat nem vásárlási engedély, és mindaddig BLOCKED_BY_COST_GATE, amíg nincs teljes döntési csomag és G5 döntés."
+  ],
+  "records": [
+    {
+      "category": "WINDOWS_SERVER",
+      "scope_status": "PENDING_HUMAN",
+      "publisher": "TBD-HUMAN",
+      "product_or_service": "TBD-HUMAN",
+      "deployment_scope": "TBD-HUMAN",
+      "usage_metric": "TBD-HUMAN",
+      "entitlement_position": "UNKNOWN_PENDING_EVIDENCE",
+      "support_status": "UNKNOWN_PENDING_EVIDENCE",
+      "support_lifecycle_ref": "TBD-HUMAN",
+      "evidence_refs": [],
+      "reviewed_by": "",
+      "reviewed_at": ""
+    },
+    {
+      "category": "RDS",
+      "scope_status": "PENDING_HUMAN",
+      "publisher": "TBD-HUMAN",
+      "product_or_service": "TBD-HUMAN",
+      "deployment_scope": "TBD-HUMAN",
+      "usage_metric": "TBD-HUMAN",
+      "entitlement_position": "UNKNOWN_PENDING_EVIDENCE",
+      "support_status": "UNKNOWN_PENDING_EVIDENCE",
+      "support_lifecycle_ref": "TBD-HUMAN",
+      "evidence_refs": [],
+      "reviewed_by": "",
+      "reviewed_at": ""
+    },
+    {
+      "category": "M365",
+      "scope_status": "PENDING_HUMAN",
+      "publisher": "TBD-HUMAN",
+      "product_or_service": "TBD-HUMAN",
+      "deployment_scope": "TBD-HUMAN",
+      "usage_metric": "TBD-HUMAN",
+      "entitlement_position": "UNKNOWN_PENDING_EVIDENCE",
+      "support_status": "UNKNOWN_PENDING_EVIDENCE",
+      "support_lifecycle_ref": "TBD-HUMAN",
+      "evidence_refs": [],
+      "reviewed_by": "",
+      "reviewed_at": ""
+    },
+    {
+      "category": "DEFENDER",
+      "scope_status": "PENDING_HUMAN",
+      "publisher": "TBD-HUMAN",
+      "product_or_service": "TBD-HUMAN",
+      "deployment_scope": "TBD-HUMAN",
+      "usage_metric": "TBD-HUMAN",
+      "entitlement_position": "UNKNOWN_PENDING_EVIDENCE",
+      "support_status": "UNKNOWN_PENDING_EVIDENCE",
+      "support_lifecycle_ref": "TBD-HUMAN",
+      "evidence_refs": [],
+      "reviewed_by": "",
+      "reviewed_at": ""
+    },
+    {
+      "category": "VIRTUALIZATION",
+      "scope_status": "PENDING_HUMAN",
+      "publisher": "TBD-HUMAN",
+      "product_or_service": "TBD-HUMAN",
+      "deployment_scope": "TBD-HUMAN",
+      "usage_metric": "TBD-HUMAN",
+      "entitlement_position": "UNKNOWN_PENDING_EVIDENCE",
+      "support_status": "UNKNOWN_PENDING_EVIDENCE",
+      "support_lifecycle_ref": "TBD-HUMAN",
+      "evidence_refs": [],
+      "reviewed_by": "",
+      "reviewed_at": ""
+    },
+    {
+      "category": "RELEVANT_APPLICATIONS",
+      "scope_status": "PENDING_HUMAN",
+      "publisher": "TBD-HUMAN",
+      "product_or_service": "TBD-HUMAN",
+      "deployment_scope": "TBD-HUMAN",
+      "usage_metric": "TBD-HUMAN",
+      "entitlement_position": "UNKNOWN_PENDING_EVIDENCE",
+      "support_status": "UNKNOWN_PENDING_EVIDENCE",
+      "support_lifecycle_ref": "TBD-HUMAN",
+      "evidence_refs": [],
+      "reviewed_by": "",
+      "reviewed_at": ""
+    }
+  ],
+  "cost_gate_policy": {
+    "existing_entitlement_required": true,
+    "existing_capacity_required": true,
+    "b0_alternative_required": true,
+    "pilot_required": true,
+    "acceptance_criterion_required": true,
+    "purchase_trigger_required": true,
+    "deferral_risk_required": true,
+    "required_gate": "G5_PURCHASE",
+    "purchase_execution_allowed": false
+  },
+  "cost_decisions": [],
+  "human_review": {
+    "reviewer": "",
+    "reviewed_at": "",
+    "decision_ref": ""
+  }
+}

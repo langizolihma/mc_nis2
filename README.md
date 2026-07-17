@@ -37,8 +37,20 @@ python -m nis2_harness validate-action-plan-submission --actions data/actions.cs
 python -m nis2_harness validate-backup-restore --plan data/backup_restore_plan.json
 python -m nis2_harness validate-physical-security --plan data/physical_security_walkthrough.json
 python -m nis2_harness validate-infrastructure-health --plan data/infrastructure_health_snapshot_plan.json
+python -m nis2_harness validate-license-entitlement --plan data/license_entitlement_plan.json
 python -m unittest discover -s tests -v
 ```
+
+### Helyi prezentációs portál
+
+A D-028 célállapot bemutatására dependency-free, kizárólag helyi prezentációs prototípus található a `portal_demo/` könyvtárban. A felület a repository nem érzékeny metaadataiból épül, és demonstrálja az áttekintő dashboardot, feladatlistát, G1–G5 jóváhagyási sort, pótlandó evidenciákat és AI-javaslatokat. Nem éles rendszer, a gombok nem módosítanak adatot.
+
+```powershell
+python scripts\build_portal_demo.py --as-of 2026-07-17
+python -m http.server 8000 --directory portal_demo
+```
+
+Böngészőcím: `http://localhost:8000`. A prezentációs forgatókönyv és biztonsági korlátok a [portal_demo/README.md](portal_demo/README.md) fájlban találhatók.
 
 A `validate` és `status` automatikusan az akciófájl melletti `project_dates.json` rekordot használja. Másik rekord a `--project-dates PATH` argumentummal adható meg.
 
@@ -82,6 +94,8 @@ Az A-020 fizikai védelmi csomagja a [PHYSICAL_SECURITY_WALKTHROUGH_PLAN.md](PHY
 
 Az A-022 read-only infrastruktúra-felmérési kerete az [INFRASTRUCTURE_HEALTH_SNAPSHOT_PLAN.md](INFRASTRUCTURE_HEALTH_SNAPSHOT_PLAN.md) dokumentumban, gépi terve a `data/infrastructure_health_snapshot_plan.json`, emberi jegyzőkönyve a `templates/infrastructure_health_snapshot_record.md` fájlban található. A `validate-infrastructure-health` megőrzi az `SRC-004` állításainak `unverified_internal` minősítését, tiltja a távoli kapcsolatot és minden író/törlő/konfigurációs műveletet, valamint G2/G3 jóváhagyást és emberi review-t követel meg a tényként kezelés előtt.
 
+Az A-029 licenc- és supportaudit kerete a [LICENSE_ENTITLEMENT_SUPPORT_AUDIT_PLAN.md](LICENSE_ENTITLEMENT_SUPPORT_AUDIT_PLAN.md) dokumentumban, gépi mátrixa a `data/license_entitlement_plan.json`, emberi munkalapja a `templates/license_entitlement_review_record.md` fájlban található. A `validate-license-entitlement` nem engedi bizonyíték nélkül megfelelőnek vagy támogatottnak minősíteni a hat kötelező kategóriát, tiltja a vásárlás-végrehajtást, és fizetős javaslatnál kikényszeríti a hét költségvédelmi inputot, a `BLOCKED_BY_COST_GATE` státuszt és a G5 kaput.
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők
@@ -113,6 +127,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness, az A-017 backup/restore, az A-020 fizikai bejárási előkészítés és az A-022 infrastruktúra-health módszertan elkészült. A D-028 helyi portál-baseline jóváhagyott, implementációja a DEF-015 kapui mögött marad. Következő emberi lépés az A-020 helyszíni bejárása és az A-022 célpont-/hozzáférés-jóváhagyása. Következő önálló agent-munkacsomagként az A-029 licenc- és support-entitlement felmérés készíthető elő a költségkapu szabályai szerint.
+Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness, az A-017 backup/restore, az A-020 fizikai bejárás, az A-022 infrastruktúra-health és az A-029 licenc/support módszertana elkészült. A D-028 helyi portál-baseline jóváhagyott, implementációja a DEF-015 kapui mögött marad. Következő emberi lépés az A-020 helyszíni bejárása, az A-022 hozzáférés-jóváhagyása és az A-029 szerződés-/használati adatgyűjtése. Következő önálló agent-munkacsomagként az A-018 minimum naplóforrás-, retention- és review-mátrix készíthető elő.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Helyi NIS2 auditfelkészültségi portál – prezentációs prototípus">
+  <title>metALCOM NIS2 Control Center</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="prototype-bar">
+    <span class="prototype-dot"></span>
+    PREZENTÁCIÓS PROTOTÍPUS
+    <span>· nincs éles kapcsolat · minden művelet szimuláció</span>
+  </div>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Fő navigáció">
+      <div class="brand">
+        <div class="brand-mark">N2</div>
+        <div><strong>Audit Control</strong><span>metALCOM · local-first</span></div>
+      </div>
+      <nav>
+        <button class="nav-item active" data-view="overview"><span>01</span>Áttekintés</button>
+        <button class="nav-item" data-view="actions"><span>02</span>Feladatok</button>
+        <button class="nav-item" data-view="approvals"><span>03</span>Jóváhagyások<b id="approval-nav-count">0</b></button>
+        <button class="nav-item" data-view="evidence"><span>04</span>Evidenciák<b id="evidence-nav-count">0</b></button>
+        <button class="nav-item" data-view="ai"><span>05</span>AI-javaslatok</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="safety-label">BIZTONSÁGI MODELL</div>
+        <p>Az AI előkészít. Az ember dönt. A rendszer bizonyít.</p>
+        <div class="local-pill"><i></i> Helyi munkamenet</div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="page-eyebrow">PROGRAMVEZETŐI NÉZET</p>
+          <h1 id="page-title">Auditfelkészültség</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="as-of"><span>Állapot dátuma</span><strong id="as-of-date">–</strong></div>
+          <button class="ghost-button" id="presentation-button" type="button">Prezentációs mód</button>
+          <div class="avatar" title="Lángi Zoltán">LZ</div>
+        </div>
+      </header>
+
+      <section class="view active" id="view-overview" aria-labelledby="page-title">
+        <div class="hero-grid">
+          <article class="deadline-card">
+            <div>
+              <p class="section-kicker">KÖVETKEZŐ KÜLSŐ HATÁRIDŐ</p>
+              <h2>Cselekvési terv</h2>
+              <p class="deadline-date" id="deadline-date">–</p>
+              <div class="deadline-meta"><span>Forrás: SRC-001</span><span>Emberi kapu: G4</span></div>
+            </div>
+            <div class="countdown-ring" id="countdown-ring"><strong id="days-left">–</strong><span>nap van hátra</span></div>
+          </article>
+          <article class="mission-card">
+            <div class="mission-icon">AI</div>
+            <div><p class="section-kicker">CÉLÁLLAPOT</p><h2>Kevesebb adminisztráció,<br>több bizonyítható működés.</h2></div>
+            <p>A folyamatos ügynök read-only forrásokat értelmez, feljegyzést készít és csak a döntési pontokat terjeszti ember elé.</p>
+          </article>
+        </div>
+
+        <div class="metric-grid" id="metric-grid"></div>
+
+        <div class="content-grid">
+          <article class="panel progress-panel">
+            <div class="panel-heading"><div><p class="section-kicker">PROGRAMÁLLAPOT</p><h2>Feladatportfólió</h2></div><button class="text-button" data-go="actions">Összes feladat →</button></div>
+            <div class="priority-bars" id="priority-bars"></div>
+            <div class="status-note"><span class="pulse"></span><p><strong>Proposal-only működés.</strong> Feladat csak elfogadott evidenciával és emberi reviewerrel zárható le.</p></div>
+          </article>
+          <article class="panel gate-panel">
+            <div class="panel-heading"><div><p class="section-kicker">EMBERI KONTROLL</p><h2>G1–G5 döntési kapuk</h2></div></div>
+            <div class="gate-list" id="gate-list"></div>
+          </article>
+        </div>
+
+        <article class="panel next-panel">
+          <div class="panel-heading"><div><p class="section-kicker">MAI PREZENTÁCIÓ</p><h2>Mit mutat meg ez a prototípus?</h2></div></div>
+          <div class="story-steps">
+            <div><span>1</span><strong>Egy közös kép</strong><p>42 akció, határidők, felelősök és források egy helyen.</p></div>
+            <div><span>2</span><strong>Átlátható hiányok</strong><p>A pótlandó emberi feladatok nem tűnnek el egy zöld státusz mögött.</p></div>
+            <div><span>3</span><strong>Biztonságos AI</strong><p>Javaslatot készít, de nem hagy jóvá, nem költ és nem nyúl éles rendszerhez.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="view" id="view-actions">
+        <div class="view-intro"><div><p class="section-kicker">TELJES AKCIÓREGISZTER</p><h2>Feladatok és felelősségek</h2><p>Minden tétel forráshoz, deliverable-höz, evidenciához és emberi kapuhoz kötött.</p></div></div>
+        <div class="toolbar">
+          <label class="search"><span>⌕</span><input id="action-search" type="search" placeholder="Keresés azonosító, munkafolyam vagy feladat alapján…"></label>
+          <div class="filter-group" aria-label="Prioritásszűrő"><button class="filter active" data-priority="ALL">Mind</button><button class="filter" data-priority="P0">P0</button><button class="filter" data-priority="P1">P1</button><button class="filter" data-priority="P2">P2</button></div>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>Akció</th><th>Munkafolyam</th><th>Prioritás</th><th>Határidő</th><th>Felelős</th><th>Kapuk</th><th>Állapot</th><th></th></tr></thead><tbody id="actions-body"></tbody></table></div>
+      </section>
+
+      <section class="view" id="view-approvals">
+        <div class="view-intro"><div><p class="section-kicker">EMBERI DÖNTÉSI SOR</p><h2>Jóváhagyások</h2><p>Az AI összekészíti a döntési csomagot. Az elfogadás vagy elutasítás név szerinti ember feladata.</p></div><div class="big-count"><strong id="approval-count">0</strong><span>nyitott kapus tétel</span></div></div>
+        <div class="approval-layout"><div class="approval-list" id="approval-list"></div><aside class="principle-card"><p class="section-kicker">NEM ALKU TÁRGYA</p><h3>Öt művelet mindig embernél marad</h3><ul><li>Evidencia elfogadása</li><li>Akció lezárása</li><li>Külső benyújtás</li><li>Éles rendszer módosítása</li><li>Vásárlás vagy költés</li></ul></aside></div>
+      </section>
+
+      <section class="view" id="view-evidence">
+        <div class="view-intro"><div><p class="section-kicker">PÓTLANDÓ EVIDENCIA</p><h2>Nyitott emberi feladatok</h2><p>A folyamat haladhat, de ezek a tételek valódi dokumentum, tárhivatkozás, hash és reviewer nélkül nem zárhatók le.</p></div><div class="big-count amber"><strong id="deferred-count">0</strong><span>nyilvántartott tétel</span></div></div>
+        <div class="evidence-grid" id="evidence-grid"></div>
+      </section>
+
+      <section class="view" id="view-ai">
+        <div class="view-intro"><div><p class="section-kicker">FOLYAMATOS AUDITFELKÉSZÜLTSÉG</p><h2>AI-javaslati sor</h2><p>Minden kártya forráshivatkozott javaslat. Egyik sem jóváhagyás, evidencia vagy végrehajtási engedély.</p></div><div class="ai-status"><span></span><div><strong>Local-first</strong><small>Külső AI-kapcsolat nélkül</small></div></div></div>
+        <div class="ai-grid" id="ai-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer" id="action-drawer" aria-label="Feladat részletei" aria-hidden="true"><button class="drawer-close" id="drawer-close" aria-label="Bezárás">×</button><div id="drawer-content"></div></aside>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="data/demo_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -35,3 +35,7 @@ A portál nem fogadhat el evidenciát, nem zárhat le akciót, nem küldhet kül
 ## Következő tervezési kapu
 
 A technikai architektúra előtt fel kell mérni a rendelkezésre álló belső szervert, hitelesítést, hálózati zónát, mentést, TLS/tanúsítványkezelést és üzemeltetői felelőst. Ezek nélkül a portál nem deployolható.
+
+## Prezentációs prototípus – 2026-07-17
+
+A `portal_demo/` könyvtárban elkészült a célállapot dependency-free, helyben futó vizuális prototípusa. A dashboard, feladatlista, G1–G5 jóváhagyási sor, evidenciahiányok és AI-javaslatok kizárólag nem érzékeny repository-metaadatot mutatnak. A felület nem ír vissza adatot, nincs hitelesítése vagy éles integrációja, ezért nem minősül az első kiadás megvalósításának vagy deployengedélynek. A továbblépési feladatokat a DEF-015 és DEF-020 tartja nyitva.
