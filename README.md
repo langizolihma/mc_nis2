@@ -116,6 +116,8 @@ Az A-023/A-024/A-028/A-033/A-034 technikai döntés-előkészítő csomagjai a [
 python -m nis2_harness validate-work-packages --registry data/technical_work_packages.json
 ```
 
+Az A-009/A-010/A-013–A-016 szervezeti és működési kontrollok előkészítése az [OPERATIONAL_CONTROL_WORK_PACKAGES.md](OPERATIONAL_CONTROL_WORK_PACKAGES.md) útmutatóban és a `data/operational_control_work_packages.json` regiszterben található. A regiszter ugyanazzal a `validate-work-packages` paranccsal ellenőrizhető.
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők

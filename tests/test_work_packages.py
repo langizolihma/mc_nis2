@@ -21,6 +21,15 @@ class WorkPackageTests(unittest.TestCase):
     def test_expected_actions_are_covered(self):
         self.assertEqual({"A-023", "A-024", "A-028", "A-033", "A-034"}, {p["action_id"] for p in self.data["packages"]})
 
+    def test_operational_registry_is_valid_and_complete(self):
+        data = json.loads((ROOT / "data" / "operational_control_work_packages.json").read_text(encoding="utf-8"))
+        result = validate_work_packages(data, "operational.json")
+        self.assertEqual((), result.errors)
+        self.assertEqual(
+            {"A-009", "A-010", "A-013", "A-014", "A-015", "A-016"},
+            {p["action_id"] for p in data["packages"]},
+        )
+
     def test_duplicate_action_is_rejected(self):
         changed = copy.deepcopy(self.data)
         changed["packages"].append(copy.deepcopy(changed["packages"][0]))

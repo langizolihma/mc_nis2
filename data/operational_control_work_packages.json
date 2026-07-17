@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "OPERATIONAL-CONTROLS-2026-07",
+  "status": "PROPOSAL",
+  "packages": [
+    {
+      "action_id": "A-009", "title": "Szabályzat-életciklus",
+      "source_refs": ["SRC-008:p19-21"], "source_confidence": "audited",
+      "required_gates": ["G1_DOMAIN_REVIEW"],
+      "preconditions": ["szabályzatgazda és helyettes kijelölése", "hatályos szabályzatjegyzék"],
+      "planned_steps": ["éves review-naptár", "jogszabályi/incidens/rendszerváltozási triggerek", "verzió- és változásnapló", "jóváhagyás, kihirdetés és megismerési nyom"],
+      "deliverables": ["szabályzat-életciklus eljárás", "review-naptár", "változásnapló-sablon"],
+      "evidence_required": ["review log", "version history", "approval", "publication record", "acknowledgement"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-010", "title": "Információbiztonsági erőforrás- és költségterv",
+      "source_refs": ["SRC-008:p22"], "source_confidence": "audited",
+      "required_gates": ["G5_PURCHASE"],
+      "preconditions": ["kontrollgazdák kapacitásigénye", "meglévő licenc és belső kapacitás felmérése"],
+      "planned_steps": ["éves kapacitás- és B0 terv", "priorizált költségigény", "kivétel/halasztási napló", "purchase trigger és mérhető acceptance criterion"],
+      "deliverables": ["erőforrásterv-tervezet", "exception log", "G5 döntési lap"],
+      "evidence_required": ["budget extract", "capacity plan", "decision log", "deferral risk", "approver record"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-013", "title": "Incidenskezelési életciklus és tabletop gyakorlat",
+      "source_refs": ["SRC-008:p45-51"], "source_confidence": "audited",
+      "required_gates": ["G2_SECURITY_LEGAL"],
+      "preconditions": ["belső incidenskontroll-gazda", "kontakt- és eszkalációs lista", "jogi/hatósági bejelentési review"],
+      "planned_steps": ["észlelés és osztályozás", "eszkaláció és döntési jog", "containment/recovery playbook", "tabletop forgatókönyv", "lessons learned és javító akció"],
+      "deliverables": ["incidenskezelési terv", "playbookok", "tabletop jegyzőkönyv-sablon"],
+      "evidence_required": ["contact list", "ticket timeline", "decisions", "participant record", "lessons learned", "corrective actions"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-014", "title": "Szerepkör-alapú biztonságtudatossági képzés",
+      "source_refs": ["SRC-008:p38-44"], "source_confidence": "audited",
+      "required_gates": ["G1_DOMAIN_REVIEW"],
+      "preconditions": ["munkakörcsoportok és képzési gazda", "adatvédelmi review a nyilvántartáshoz"],
+      "planned_steps": ["minimum tananyag szerepkörönként", "belépő és éves ciklus", "tudásellenőrzés és minimumszint", "sikertelen teszt utánkövetése"],
+      "deliverables": ["képzési terv", "tananyagjegyzék", "teszt és nyilvántartási sablon"],
+      "evidence_required": ["attendance or receipt", "test result", "material version", "follow-up record"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-015", "title": "Fiók- és hozzáférés-életciklus",
+      "source_refs": ["SRC-008:p116,205,295", "SRC-003:p3"], "source_confidence": "audited",
+      "required_gates": ["G3_PRODUCTION_CHANGE"],
+      "preconditions": ["HR/IT/alkalmazásgazdai szerepek", "jóváhagyott read-only fiókexport", "kritikus jogosultsági scope"],
+      "planned_steps": ["stale/duplicate és privilegizált account review", "joiner-mover-leaver SLA", "owner döntési lista", "külön change és visszaellenőrzés"],
+      "deliverables": ["access review csomag", "onboarding/offboarding eljárás", "change-lista tervezet"],
+      "evidence_required": ["read-only export", "application owner decisions", "change ticket", "post-check"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-016", "title": "Privilegizált MFA gap analysis és pilot",
+      "source_refs": ["SRC-008:p167,257,346", "SRC-003:p3", "A-029"], "source_confidence": "audited",
+      "required_gates": ["G3_PRODUCTION_CHANGE", "G5_PURCHASE"],
+      "preconditions": ["A-029 entitlement review", "privilegizált scope owner-sign-off", "pilot és rollback jóváhagyás"],
+      "planned_steps": ["technikai és licencgap", "meglévő entitlementes minimum pilot", "siker/hiba és kizárás", "rollback próba", "kiterjesztési döntés"],
+      "deliverables": ["MFA gap analysis", "pilot terv és report-sablon"],
+      "evidence_required": ["license matrix", "pilot scope", "success and failure log", "rollback", "G3 approval"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    }
+  ],
+  "human_review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": ""}
+}
