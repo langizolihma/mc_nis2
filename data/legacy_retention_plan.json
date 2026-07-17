@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-026",
+  "requirement_families": ["7", "13", "18"],
+  "source_position": {"source_ref": "SRC-004", "source_confidence": "unverified_internal", "location": "munkadokumentum 111-114. és 165-166. bekezdés"},
+  "assumptions": [
+    "A BLADE5/Andoc elnevezés és állapot az SRC-004 nem igazolt belső munkaforrásából származik.",
+    "Megőrzési idő, jogalap, legal hold, adatlista és migrációs célállapot emberi döntésig nem található ki.",
+    "Export, restore/read teszt, selejtezés, leállítás és migráció nem engedélyezett."
+  ],
+  "safety": {
+    "required_gates": ["G2_SECURITY_LEGAL", "G3_PRODUCTION_CHANGE"],
+    "production_query_allowed": false,
+    "export_allowed": false,
+    "restore_allowed": false,
+    "migration_allowed": false,
+    "delete_or_dispose_allowed": false,
+    "application_shutdown_allowed": false,
+    "automatic_legal_decision_allowed": false
+  },
+  "legal_retention_decision": {
+    "status": "PENDING_LEGAL", "legal_basis_refs": [], "retention_rules": [], "legal_holds": [],
+    "disposal_constraints": [], "reviewer": "", "reviewed_at": "", "decision_ref": ""
+  },
+  "data_inventory": [],
+  "export_plan": {
+    "mode": "READ_ONLY_AFTER_G2_G3", "execution_status": "NOT_EXECUTED", "store_raw_export_in_git": false,
+    "required_outputs": [
+      "data_dictionary", "record_count", "date_range", "format_and_encoding",
+      "integrity_hash", "exception_log", "protected_uri", "human_review"
+    ]
+  },
+  "restore_read_test": {
+    "status": "NOT_EXECUTED", "data_set_id": "", "isolated_target_ref": "", "owner_approval_ref": "", "g3_approval_ref": "",
+    "result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": "",
+    "required_evidence": [
+      "approved_test_scope", "isolated_target", "source_backup_or_export",
+      "restore_or_import_log", "readability_checks", "sample_owner_validation",
+      "integrity_comparison", "elapsed_time", "cleanup_record", "protected_uri",
+      "sha256", "human_review"
+    ]
+  },
+  "migration_decision": {"status": "NOT_AUTHORIZED", "target_state": "TBD-HUMAN", "decision_ref": "", "approver": "", "approved_at": ""},
+  "human_review": {"reviewer": "", "approved_at": "", "decision_ref": ""}
+}
