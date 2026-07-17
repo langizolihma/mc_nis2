@@ -39,6 +39,15 @@ class WorkPackageTests(unittest.TestCase):
             {p["action_id"] for p in data["packages"]},
         )
 
+    def test_policy_registry_is_valid_and_complete(self):
+        data = json.loads((ROOT / "data" / "policy_baseline_work_packages.json").read_text(encoding="utf-8"))
+        result = validate_work_packages(data, "policies.json")
+        self.assertEqual((), result.errors)
+        self.assertEqual(
+            {"A-037", "A-038", "A-039", "A-040", "A-041"},
+            {p["action_id"] for p in data["packages"]},
+        )
+
     def test_duplicate_action_is_rejected(self):
         changed = copy.deepcopy(self.data)
         changed["packages"].append(copy.deepcopy(changed["packages"][0]))
