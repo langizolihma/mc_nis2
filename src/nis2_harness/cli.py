@@ -15,6 +15,7 @@ from .infrastructure_health import validate_infrastructure_health_plan
 from .license_entitlement import validate_license_entitlement_plan
 from .logging_monitoring import validate_logging_monitoring_plan
 from .maintenance_change import validate_maintenance_change_plan
+from .exchange_dependency import validate_exchange_dependency_plan
 from .supplier_risk import validate_supplier_risk_plan
 from .physical_security import validate_physical_security_plan
 from .evals import (
@@ -99,6 +100,8 @@ def _parser() -> argparse.ArgumentParser:
     maintenance_change.add_argument("--plan", required=True, type=Path)
     supplier_risk = subparsers.add_parser("validate-supplier-risk")
     supplier_risk.add_argument("--plan", required=True, type=Path)
+    exchange_dependency = subparsers.add_parser("validate-exchange-dependency")
+    exchange_dependency.add_argument("--plan", required=True, type=Path)
     return parser
 
 
@@ -114,6 +117,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-exchange-dependency":
+            plan = load_json_object(args.plan, "Exchange/SMTP dependency terv")
+            result = validate_exchange_dependency_plan(plan, args.plan)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Exchange dependency: {len(plan.get('dependency_records', []))} record; "
+                f"scenarios={len(plan.get('test_scenarios', []))}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-supplier-risk":
             plan = load_json_object(args.plan, "beszállítói kockázati terv")
             result = validate_supplier_risk_plan(plan, args.plan)

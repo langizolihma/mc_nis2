@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-025",
+  "requirement_family": "17",
+  "source_positions": [
+    {"source_ref": "SRC-003:p1,3,7", "source_confidence": "strategy_input"},
+    {"source_ref": "SRC-004", "source_confidence": "unverified_internal"}
+  ],
+  "assumptions": [
+    "Az Exchange kiváltása stratégiai irány, nem jóváhagyott migrációs döntés.",
+    "Az SMTP relay-, kliens- és alkalmazásfüggőségek tényleges állapota read-only export és owner review nélkül ismeretlen.",
+    "A csomag nem hajt végre lekérdezést, tesztüzenetet, konfiguráció-, DNS-, connector- vagy migrációs változtatást."
+  ],
+  "safety": {
+    "required_gates": ["G1_DOMAIN_REVIEW", "G3_PRODUCTION_CHANGE"],
+    "production_query_allowed": false,
+    "test_message_allowed": false,
+    "configuration_change_allowed": false,
+    "migration_allowed": false,
+    "dns_change_allowed": false,
+    "connector_change_allowed": false,
+    "credential_collection_allowed": false,
+    "delete_or_disable_allowed": false
+  },
+  "discovery_plan": {
+    "mode": "READ_ONLY_AFTER_HUMAN_APPROVAL",
+    "execution_status": "NOT_EXECUTED",
+    "required_sources": [
+      "MESSAGE_TRACKING_SAMPLE", "RECEIVE_CONNECTOR_EXPORT", "SEND_CONNECTOR_EXPORT",
+      "RELAY_ALLOWLIST_EXPORT", "AUTHENTICATION_MODE_EXPORT",
+      "APPLICATION_DEVICE_OWNER_CONFIRMATION", "NETWORK_DNS_DEPENDENCY_EXPORT"
+    ],
+    "store_secrets": false,
+    "store_addresses_in_git": false
+  },
+  "dependency_records": [],
+  "test_scenarios": [
+    {"scenario_id": "INTERNAL_DELIVERY", "status": "NOT_EXECUTED", "purpose": "belső kézbesítési út ellenőrzése", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "EXTERNAL_DELIVERY", "status": "NOT_EXECUTED", "purpose": "külső kézbesítés, TLS és visszajelzés ellenőrzése", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "INBOUND_DELIVERY", "status": "NOT_EXECUTED", "purpose": "bejövő levelezési út ellenőrzése", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "AUTHENTICATED_CLIENT", "status": "NOT_EXECUTED", "purpose": "jóváhagyott hitelesített kliens működésének ellenőrzése", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "DEVICE_RELAY", "status": "NOT_EXECUTED", "purpose": "eszköz- és appliance-relay út ellenőrzése", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "APPLICATION_RELAY", "status": "NOT_EXECUTED", "purpose": "alkalmazás- és automatizmus-relay út ellenőrzése", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "FAILURE_AND_ROLLBACK", "status": "NOT_EXECUTED", "purpose": "hibaészlelés, visszaállás és utóellenőrzés próbája", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""}
+  ],
+  "rollback_requirements": [
+    "configuration_backup", "current_connector_export", "dns_and_certificate_baseline",
+    "routing_restore_steps", "rollback_owner", "rollback_trigger",
+    "rollback_time_objective", "post_rollback_validation"
+  ],
+  "migration_decision": {"status": "NOT_AUTHORIZED", "target_model": "TBD-HUMAN", "decision_ref": "", "approver": "", "approved_at": ""},
+  "human_review": {"reviewer": "", "approved_at": "", "decision_ref": ""}
+}
