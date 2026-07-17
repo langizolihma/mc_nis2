@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-022",
+  "source_refs": [
+    "SRC-004:paragraphs155-159",
+    "DECISIONS.md:D-011",
+    "DECISIONS.md:D-027"
+  ],
+  "source_confidence": "unverified_internal",
+  "claim_status": "UNVERIFIED_PENDING_READ_ONLY_VALIDATION",
+  "assumptions": [
+    "A RAID-, kapacitás- és backup-problémák a read-only validáció és emberi review előtt nem kezelhetők tényként.",
+    "A célrendszereket, a legkisebb jogosultságot és az adatgyűjtési módszert a belső rendszerowner és Kollár Csaba jelöli ki."
+  ],
+  "collection": {
+    "execution_status": "BLOCKED_PENDING_G2_G3",
+    "technical_contributor": "Kollár Csaba",
+    "internal_accountable_owner": "TBD-HUMAN",
+    "required_gates": ["G2_SECURITY_LEGAL", "G3_PRODUCTION_CHANGE"],
+    "approved_by": "",
+    "approved_at": "",
+    "decision_ref": "",
+    "read_only_required": true,
+    "remote_access_allowed": false,
+    "write_operations_allowed": false,
+    "deletion_allowed": false,
+    "configuration_change_allowed": false,
+    "credential_scope": "TBD-HUMAN",
+    "approved_time_window": "TBD-HUMAN",
+    "protected_output_uri": "TBD-HUMAN"
+  },
+  "scopes": [
+    {
+      "scope_id": "HOSTS",
+      "status": "PENDING_HUMAN",
+      "targets": [],
+      "required_fields": ["host_ref", "role", "health_state", "source_timestamp"],
+      "collection_method": ""
+    },
+    {
+      "scope_id": "VMS",
+      "status": "PENDING_HUMAN",
+      "targets": [],
+      "required_fields": ["vm_ref", "host_ref", "power_state", "health_state", "source_timestamp"],
+      "collection_method": ""
+    },
+    {
+      "scope_id": "STORAGE_CAPACITY",
+      "status": "PENDING_HUMAN",
+      "targets": [],
+      "required_fields": ["volume_ref", "capacity_bytes", "free_bytes", "usage_percent", "source_timestamp"],
+      "collection_method": ""
+    },
+    {
+      "scope_id": "RAID_HEALTH",
+      "status": "PENDING_HUMAN",
+      "targets": [],
+      "required_fields": ["array_ref", "controller_state", "array_state", "disk_states", "source_timestamp"],
+      "collection_method": ""
+    },
+    {
+      "scope_id": "BACKUP_STATUS",
+      "status": "PENDING_HUMAN",
+      "targets": [],
+      "required_fields": ["job_ref", "protected_system_ref", "last_result", "last_success_at", "repository_capacity", "source_timestamp"],
+      "collection_method": ""
+    }
+  ],
+  "stop_conditions": [
+    "A művelet írást, javítást, újraszinkronizálást, törlést vagy konfigurációváltozást kérne.",
+    "A jóváhagyott célponton, időablakon vagy jogosultságon kívüli adat lenne szükséges.",
+    "Secret, személyes adat vagy szükségtelenül részletes támadási információ kerülne a kimenetbe.",
+    "A célrendszer terhelése vagy elérhetősége romlana.",
+    "A gyűjtési eredmény eltér a várt formátumtól vagy nem tehető védett tárba."
+  ],
+  "required_evidence": [
+    "timestamped_export",
+    "collector_identity",
+    "collection_method",
+    "source_system",
+    "sha256",
+    "protected_uri",
+    "human_review"
+  ],
+  "observations": [],
+  "human_review": {
+    "status": "",
+    "reviewer": "",
+    "reviewed_at": "",
+    "decision_ref": ""
+  }
+}

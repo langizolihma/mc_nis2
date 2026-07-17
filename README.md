@@ -36,6 +36,7 @@ python -m nis2_harness validate-quarterly-reporting --plan data/quarterly_report
 python -m nis2_harness validate-action-plan-submission --actions data/actions.csv --project-dates data/project_dates.json
 python -m nis2_harness validate-backup-restore --plan data/backup_restore_plan.json
 python -m nis2_harness validate-physical-security --plan data/physical_security_walkthrough.json
+python -m nis2_harness validate-infrastructure-health --plan data/infrastructure_health_snapshot_plan.json
 python -m unittest discover -s tests -v
 ```
 
@@ -79,6 +80,8 @@ Az A-017 backup és restore-teszt csomagja a [BACKUP_RESTORE_TEST_PLAN.md](BACKU
 
 Az A-020 fizikai védelmi csomagja a [PHYSICAL_SECURITY_WALKTHROUGH_PLAN.md](PHYSICAL_SECURITY_WALKTHROUGH_PLAN.md) dokumentumban, gépi checklistje és gap-regisztere a `data/physical_security_walkthrough.json`, helyszíni mintája a `templates/physical_walkthrough_record.md` fájlban található. A `validate-physical-security` megakadályozza, hogy bejárás nélküli kontrollhoz megfigyelést vagy megfelelőséget rögzítsenek, és kikényszeríti a kilenc kontrollt, a G2 kaput, a védett evidenciát és a fotókezelési szabályokat.
 
+Az A-022 read-only infrastruktúra-felmérési kerete az [INFRASTRUCTURE_HEALTH_SNAPSHOT_PLAN.md](INFRASTRUCTURE_HEALTH_SNAPSHOT_PLAN.md) dokumentumban, gépi terve a `data/infrastructure_health_snapshot_plan.json`, emberi jegyzőkönyve a `templates/infrastructure_health_snapshot_record.md` fájlban található. A `validate-infrastructure-health` megőrzi az `SRC-004` állításainak `unverified_internal` minősítését, tiltja a távoli kapcsolatot és minden író/törlő/konfigurációs műveletet, valamint G2/G3 jóváhagyást és emberi review-t követel meg a tényként kezelés előtt.
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők
@@ -110,6 +113,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness, az A-017 backup/restore és az A-020 fizikai bejárási előkészítés elkészült. A D-028 helyi portál-baseline jóváhagyott, implementációja a DEF-015 kapui mögött marad. Következő emberi lépés az A-020 telephelyi scope, G2 adatkezelés és helyszíni bejárás. Következő önálló agent-munkacsomagként az A-022 read-only infrastruktúra-health snapshot módszertana készíthető el; éles kapcsolat vagy rendszerállítás nem végezhető.
+Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness, az A-017 backup/restore, az A-020 fizikai bejárási előkészítés és az A-022 infrastruktúra-health módszertan elkészült. A D-028 helyi portál-baseline jóváhagyott, implementációja a DEF-015 kapui mögött marad. Következő emberi lépés az A-020 helyszíni bejárása és az A-022 célpont-/hozzáférés-jóváhagyása. Következő önálló agent-munkacsomagként az A-029 licenc- és support-entitlement felmérés készíthető elő a költségkapu szabályai szerint.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.

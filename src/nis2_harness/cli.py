@@ -11,6 +11,7 @@ from .deadlines import REPEAT_AUDIT_LATEST, action_plan_deadline, draft_quarterl
 from .ai_policy import validate_ai_policy
 from .action_plan_submission import validate_action_plan_submission
 from .backup_restore import validate_backup_restore_plan
+from .infrastructure_health import validate_infrastructure_health_plan
 from .physical_security import validate_physical_security_plan
 from .evals import (
     evaluate_agent_output,
@@ -84,6 +85,8 @@ def _parser() -> argparse.ArgumentParser:
     backup.add_argument("--plan", required=True, type=Path)
     physical = subparsers.add_parser("validate-physical-security")
     physical.add_argument("--plan", required=True, type=Path)
+    infrastructure = subparsers.add_parser("validate-infrastructure-health")
+    infrastructure.add_argument("--plan", required=True, type=Path)
     return parser
 
 
@@ -99,6 +102,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-infrastructure-health":
+            plan = load_json_object(args.plan, "infrastruktúra health snapshot terv")
+            result = validate_infrastructure_health_plan(plan, args.plan)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Infrastructure health: {len(plan.get('scopes', []))} scope; "
+                f"collection={plan.get('collection', {}).get('execution_status', 'UNKNOWN')}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-physical-security":
             plan = load_json_object(args.plan, "fizikai védelmi bejárási terv")
             result = validate_physical_security_plan(plan, args.plan)
