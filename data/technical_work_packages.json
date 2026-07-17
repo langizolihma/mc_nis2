@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "TECHNICAL-REMEDIATION-2026-07",
+  "status": "PROPOSAL",
+  "packages": [
+    {
+      "action_id": "A-023",
+      "title": "Feltételes műszaki stabilizálás",
+      "source_refs": ["SRC-004", "A-022"],
+      "source_confidence": "conditional",
+      "required_gates": ["G3_PRODUCTION_CHANGE"],
+      "preconditions": ["A-022 emberileg elfogadott health snapshot", "igazolt kapacitás- vagy adatvesztési kockázat"],
+      "planned_steps": ["pre/post metrika rögzítése", "backup proof ellenőrzése", "rollback és stop condition", "tulajdonosi change-döntés"],
+      "deliverables": ["emergency change plan vagy no-action döntés"],
+      "evidence_required": ["A-022 evidence", "backup proof", "G3 approval", "pre/post metrika", "rollback result"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-024",
+      "title": "VM dependency-, elhelyezési és kapacitásdöntés",
+      "source_refs": ["SRC-004", "A-022", "A-029"],
+      "source_confidence": "unverified_internal",
+      "required_gates": ["G3_PRODUCTION_CHANGE", "G5_PURCHASE"],
+      "preconditions": ["A-022 kapacitásbaseline", "A-029 licenc- és entitlement review", "alkalmazásgazdai dependency map"],
+      "planned_steps": ["VM dependency map", "placement és capacity model", "backup/restore feltétel", "licenc- és rollback review"],
+      "deliverables": ["migration/containment decision package"],
+      "evidence_required": ["capacity model", "dependency map", "test plan", "rollback", "license review", "risk acceptance"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-028",
+      "title": "AD/DHCP konszolidációs assessment",
+      "source_refs": ["SRC-004"],
+      "source_confidence": "unverified_internal",
+      "required_gates": ["G3_PRODUCTION_CHANGE"],
+      "preconditions": ["current role export", "site- és szolgáltatásgazdák kijelölése"],
+      "planned_steps": ["AD/DNS/DHCP szerepkörfelmérés", "HA és telephelyi hibaforgatókönyv", "backup/licenc hatás", "teszt- és rollback terv"],
+      "deliverables": ["AD/DHCP consolidation assessment"],
+      "evidence_required": ["current role export", "failure scenario", "test plan", "license impact", "rollback impact"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-033",
+      "title": "Sérülékenységvizsgálati és javítási terv",
+      "source_refs": ["SRC-008:p178,196,267,285,357,375"],
+      "source_confidence": "audited",
+      "required_gates": ["G3_PRODUCTION_CHANGE", "G5_PURCHASE"],
+      "preconditions": ["jóváhagyott EIR/asset scope", "credentialed/non-intrusive mód döntése", "meglévő capability felmérése"],
+      "planned_steps": ["scope és scan-mód", "súlyossági/javítási SLA", "finding-to-ticket workflow", "retest és exception"],
+      "deliverables": ["vulnerability assessment and remediation plan"],
+      "evidence_required": ["scope", "G3 approval", "scan log", "finding register", "remediation ticket", "retest"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-034",
+      "title": "Két nem auditált EIR scope- és readiness-rekordja",
+      "source_refs": ["SRC-008:p6"],
+      "source_confidence": "audited",
+      "required_gates": ["G1_DOMAIN_REVIEW"],
+      "preconditions": ["EIR tulajdonosok kijelölése", "üzleti szolgáltatás és adatminősítés megadása"],
+      "planned_steps": ["EIR definíció", "asset- és dependency lista", "owner sign-off", "readiness és következő audit scope"],
+      "deliverables": ["EIR scope and readiness record"],
+      "evidence_required": ["EIR definition", "owner sign-off", "asset list", "dependency list", "decision log"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    }
+  ],
+  "human_review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": ""}
+}

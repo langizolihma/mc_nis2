@@ -110,6 +110,12 @@ Az A-026 legacy megőrzési és migrációs döntési csomagja a [LEGACY_RETENTI
 
 Az A-027 RDS-szeparációs csomagja az [RDS_SEPARATION_DECISION_PLAN.md](RDS_SEPARATION_DECISION_PLAN.md) dokumentumban, üres gépi terve a `data/rds_separation_plan.json`, emberi munkalapja a `templates/rds_separation_review_record.md` fájlban található. A `validate-rds-separation` megőrzi az SRC-004 `unverified_internal` minősítését, kikényszeríti a hat assessment domaint, öt tesztet, G1/G3/G5 kaput és költségvédelmet; evidencia hiányában a jelenlegi szeparációt tartja fenn, és tiltja a konszolidációt.
 
+Az A-023/A-024/A-028/A-033/A-034 technikai döntés-előkészítő csomagjai a [TECHNICAL_REMEDIATION_WORK_PACKAGES.md](TECHNICAL_REMEDIATION_WORK_PACKAGES.md) dokumentumban és a `data/technical_work_packages.json` regiszterben találhatók. A közös `validate-work-packages` validátor tiltja az automatikus végrehajtást, evidenciaelfogadást, akciózárást, vásárlást és külső benyújtást; minden fizetős opcióhoz kikényszeríti a hét költségvédelmi inputot.
+
+```powershell
+python -m nis2_harness validate-work-packages --registry data/technical_work_packages.json
+```
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők
