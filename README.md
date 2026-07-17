@@ -38,6 +38,7 @@ python -m nis2_harness validate-backup-restore --plan data/backup_restore_plan.j
 python -m nis2_harness validate-physical-security --plan data/physical_security_walkthrough.json
 python -m nis2_harness validate-infrastructure-health --plan data/infrastructure_health_snapshot_plan.json
 python -m nis2_harness validate-license-entitlement --plan data/license_entitlement_plan.json
+python -m nis2_harness validate-logging-monitoring --plan data/logging_monitoring_plan.json
 python -m unittest discover -s tests -v
 ```
 
@@ -96,6 +97,8 @@ Az A-022 read-only infrastruktúra-felmérési kerete az [INFRASTRUCTURE_HEALTH_
 
 Az A-029 licenc- és supportaudit kerete a [LICENSE_ENTITLEMENT_SUPPORT_AUDIT_PLAN.md](LICENSE_ENTITLEMENT_SUPPORT_AUDIT_PLAN.md) dokumentumban, gépi mátrixa a `data/license_entitlement_plan.json`, emberi munkalapja a `templates/license_entitlement_review_record.md` fájlban található. A `validate-license-entitlement` nem engedi bizonyíték nélkül megfelelőnek vagy támogatottnak minősíteni a hat kötelező kategóriát, tiltja a vásárlás-végrehajtást, és fizetős javaslatnál kikényszeríti a hét költségvédelmi inputot, a `BLOCKED_BY_COST_GATE` státuszt és a G5 kaput.
 
+Az A-018 naplózási és felügyeleti minimuma a [LOGGING_MONITORING_REVIEW_PLAN.md](LOGGING_MONITORING_REVIEW_PLAN.md) dokumentumban, gépi mátrixa a `data/logging_monitoring_plan.json`, napi/heti munkalapja a `templates/log_review_record.md` fájlban található. A `validate-logging-monitoring` kikényszeríti a tíz forráskategóriát, a minimális naplótartalmat, a három emberileg jóváhagyandó retention osztályt, az öt hibariasztást, a napi/heti review-t, a read-only működést és a G1/G2/G3 korlátokat.
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők
@@ -127,6 +130,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness, az A-017 backup/restore, az A-020 fizikai bejárás, az A-022 infrastruktúra-health és az A-029 licenc/support módszertana elkészült. A D-028 helyi portál-baseline jóváhagyott, implementációja a DEF-015 kapui mögött marad. Következő emberi lépés az A-020 helyszíni bejárása, az A-022 hozzáférés-jóváhagyása és az A-029 szerződés-/használati adatgyűjtése. Következő önálló agent-munkacsomagként az A-018 minimum naplóforrás-, retention- és review-mátrix készíthető elő.
+Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness, az A-017 backup/restore, az A-020 fizikai bejárás, az A-022 infrastruktúra-health, az A-029 licenc/support és az A-018 naplófelügyeleti módszertan elkészült. A D-028 célállapot prezentációs prototípusa a `portal_demo/` könyvtárban van; élesítése a DEF-015/DEF-020 kapui mögött marad. Következő emberi lépés az A-018 forrás-, retention-, riasztási és revieweradatainak kitöltése. Következő önálló agent-munkacsomagként az A-019 baseline-, patch-, karbantartási- és változásnaptár készíthető elő.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.

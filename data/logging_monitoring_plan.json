@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-018",
+  "source_refs": [
+    "SRC-008:p126-135",
+    "SRC-008:p216-224",
+    "SRC-008:p305-314",
+    "data/control_action_mapping.csv:M-0027-M-0032"
+  ],
+  "control_refs": ["4.2", "4.3", "4.5", "4.7", "4.13", "5.15"],
+  "assumptions": [
+    "A kategóriák elvárt minimumot írnak le, nem állítják, hogy konkrét forrás vagy gyűjtés már működik.",
+    "A retention időtartamát csak jogi, IBF-, rendszerowner- és kapacitásreview után lehet számmal rögzíteni.",
+    "A napi és heti review első körben meglévő eszközökkel, B0 megközelítésben tervezendő."
+  ],
+  "safety": {
+    "required_gates": ["G1_DOMAIN_REVIEW", "G2_SECURITY_LEGAL", "G3_PRODUCTION_CHANGE"],
+    "read_only_required": true,
+    "automated_response_allowed": false,
+    "production_change_allowed": false,
+    "external_transmission_allowed": false,
+    "raw_logs_in_git_allowed": false
+  },
+  "log_sources": [
+    {
+      "category": "IDENTITY_ACCESS", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["account_lifecycle", "access_grant_revoke", "authentication_failure"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "SECURITY_CRITICAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "category": "PRIVILEGED_ACTIVITY", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["privileged_login", "privileged_change", "audit_policy_change"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "SECURITY_CRITICAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "category": "DIRECTORY_AUTHENTICATION", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["successful_authentication", "failed_authentication", "group_membership_change"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "SECURITY_CRITICAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "category": "ENDPOINT_SECURITY", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["malware_detection", "protection_disabled", "signature_or_sensor_failure"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "SECURITY_CRITICAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "category": "SERVER_OS", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["service_failure", "security_event", "resource_threshold"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "OPERATIONAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "category": "NETWORK_SECURITY", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["blocked_connection", "configuration_change", "device_or_link_failure"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "SECURITY_CRITICAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "category": "EMAIL_COLLABORATION", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["admin_change", "malicious_message", "mail_flow_or_service_failure"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "SECURITY_CRITICAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "category": "BUSINESS_APPLICATIONS", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["authentication", "authorization_change", "critical_business_transaction_or_error"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "OPERATIONAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "category": "BACKUP_RESTORE", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["job_success_failure", "repository_capacity", "restore_test_result"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "OPERATIONAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "category": "VIRTUALIZATION_STORAGE", "status": "PENDING_HUMAN", "source_system_ref": "TBD-HUMAN", "source_owner": "TBD-HUMAN", "applicable_eirs": [],
+      "required_events": ["host_or_vm_failure", "storage_capacity", "raid_or_datastore_health"],
+      "required_content_fields": ["event_time_with_timezone", "source", "subject_or_actor", "event_type", "result", "correlation_or_record_id"],
+      "approved_read_only_method": "", "retention_class": "OPERATIONAL", "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    }
+  ],
+  "retention_classes": [
+    {"retention_class": "SECURITY_CRITICAL", "status": "PENDING_HUMAN", "retention_days": "TBD-HUMAN", "capacity_estimate": "TBD-HUMAN", "legal_basis_ref": "TBD-HUMAN", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"retention_class": "OPERATIONAL", "status": "PENDING_HUMAN", "retention_days": "TBD-HUMAN", "capacity_estimate": "TBD-HUMAN", "legal_basis_ref": "TBD-HUMAN", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"retention_class": "DIAGNOSTIC", "status": "PENDING_HUMAN", "retention_days": "TBD-HUMAN", "capacity_estimate": "TBD-HUMAN", "legal_basis_ref": "TBD-HUMAN", "evidence_refs": [], "reviewer": "", "reviewed_at": ""}
+  ],
+  "alert_definitions": [
+    {"alert_id": "LOG_SOURCE_SILENT", "status": "NOT_TESTED", "detection_rule": "", "notification_target": "", "test_method": "", "tested_at": "", "evidence_refs": [], "reviewer": ""},
+    {"alert_id": "COLLECTION_FAILURE", "status": "NOT_TESTED", "detection_rule": "", "notification_target": "", "test_method": "", "tested_at": "", "evidence_refs": [], "reviewer": ""},
+    {"alert_id": "STORAGE_THRESHOLD", "status": "NOT_TESTED", "detection_rule": "", "notification_target": "", "test_method": "", "tested_at": "", "evidence_refs": [], "reviewer": ""},
+    {"alert_id": "TIME_SYNC_FAILURE", "status": "NOT_TESTED", "detection_rule": "", "notification_target": "", "test_method": "", "tested_at": "", "evidence_refs": [], "reviewer": ""},
+    {"alert_id": "TAMPERING_OR_DELETION", "status": "NOT_TESTED", "detection_rule": "", "notification_target": "", "test_method": "", "tested_at": "", "evidence_refs": [], "reviewer": ""}
+  ],
+  "review_schedule": [
+    {
+      "frequency": "DAILY", "status": "PENDING_HUMAN", "review_owner": "TBD-HUMAN", "escalation_target": "TBD-HUMAN", "evidence_template": "templates/log_review_record.md",
+      "checklist": ["kritikus riasztások", "naplóforrás-kiesések", "privilegizált és sikertelen belépések", "védelmi beállítás változása", "backup- és kapacitáshiba"]
+    },
+    {
+      "frequency": "WEEKLY", "status": "PENDING_HUMAN", "review_owner": "TBD-HUMAN", "escalation_target": "TBD-HUMAN", "evidence_template": "templates/log_review_record.md",
+      "checklist": ["forráslefedettség és hiány", "trendek és visszatérő események", "retention és tárkapacitás", "nyitott kivételek és ticketek", "vezetői összefoglaló és következő akció"]
+    }
+  ],
+  "review_runs": [],
+  "required_evidence": ["sample_log", "alert_test", "review_ticket", "retention_proof", "exception_log", "protected_uri", "sha256", "human_review"],
+  "human_approval": {"reviewer": "", "approved_at": "", "decision_ref": ""}
+}
