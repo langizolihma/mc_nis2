@@ -17,6 +17,7 @@ from .logging_monitoring import validate_logging_monitoring_plan
 from .maintenance_change import validate_maintenance_change_plan
 from .exchange_dependency import validate_exchange_dependency_plan
 from .legacy_retention import validate_legacy_retention_plan
+from .rds_separation import validate_rds_separation_plan
 from .supplier_risk import validate_supplier_risk_plan
 from .physical_security import validate_physical_security_plan
 from .evals import (
@@ -105,6 +106,8 @@ def _parser() -> argparse.ArgumentParser:
     exchange_dependency.add_argument("--plan", required=True, type=Path)
     legacy_retention = subparsers.add_parser("validate-legacy-retention")
     legacy_retention.add_argument("--plan", required=True, type=Path)
+    rds_separation = subparsers.add_parser("validate-rds-separation")
+    rds_separation.add_argument("--plan", required=True, type=Path)
     return parser
 
 
@@ -120,6 +123,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-rds-separation":
+            plan = load_json_object(args.plan, "RDS szeparációs döntési terv")
+            result = validate_rds_separation_plan(plan, args.plan)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"RDS separation: {len(plan.get('assessment_domains', []))} domain; "
+                f"tests={len(plan.get('test_scenarios', []))}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-legacy-retention":
             plan = load_json_object(args.plan, "legacy retention és migrációs terv")
             result = validate_legacy_retention_plan(plan, args.plan)

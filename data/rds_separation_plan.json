@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-027",
+  "requirement_families": ["2", "17"],
+  "source_position": {"source_ref": "SRC-004", "source_confidence": "unverified_internal", "location": "munkadokumentum 133-137. és 164. bekezdés"},
+  "assumptions": [
+    "Az RDS-környezet, workload, licenc és banki/könyvelési kulcshasználat tényleges állapota ismeretlen.",
+    "A jelenlegi szeparáció fenntartása biztonságos átmeneti alap, nem végleges megfelelőségi állítás.",
+    "Konszolidáció, felhasználó- vagy sessionmozgatás, kulcshozzáférés és vásárlás nem engedélyezett."
+  ],
+  "safety": {
+    "required_gates": ["G1_DOMAIN_REVIEW", "G3_PRODUCTION_CHANGE", "G5_PURCHASE"],
+    "production_query_allowed": false,
+    "session_or_user_move_allowed": false,
+    "key_or_secret_access_allowed": false,
+    "configuration_change_allowed": false,
+    "consolidation_allowed": false,
+    "purchase_allowed": false,
+    "delete_or_disable_allowed": false
+  },
+  "assessment_domains": [
+    {"domain_id": "USER_CAL_ENTITLEMENT", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "method": "", "evidence_refs": [], "finding": "", "reviewer": "", "reviewed_at": ""},
+    {"domain_id": "WORKLOAD_AND_DEPENDENCY", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "method": "", "evidence_refs": [], "finding": "", "reviewer": "", "reviewed_at": ""},
+    {"domain_id": "BANKING_ACCOUNTING_KEY_SCOPE", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "method": "", "evidence_refs": [], "finding": "", "reviewer": "", "reviewed_at": ""},
+    {"domain_id": "PERFORMANCE_AND_CAPACITY", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "method": "", "evidence_refs": [], "finding": "", "reviewer": "", "reviewed_at": ""},
+    {"domain_id": "SECURITY_AND_SEPARATION_RISK", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "method": "", "evidence_refs": [], "finding": "", "reviewer": "", "reviewed_at": ""},
+    {"domain_id": "BACKUP_CONTINUITY_AND_ROLLBACK", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "method": "", "evidence_refs": [], "finding": "", "reviewer": "", "reviewed_at": ""}
+  ],
+  "test_scenarios": [
+    {"scenario_id": "AUTHENTICATION_AND_PROFILE", "status": "NOT_EXECUTED", "purpose": "hitelesítés, profil és jogosultság kontrollált ellenőrzése", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "APPLICATION_FUNCTION", "status": "NOT_EXECUTED", "purpose": "üzleti alkalmazásfunkciók ellenőrzése", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "KEY_OR_DEVICE_ACCESS", "status": "NOT_EXECUTED", "purpose": "banki/könyvelési kulcs vagy eszköz elérésének ellenőrzése secret nélkül", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "PERFORMANCE_BASELINE", "status": "NOT_EXECUTED", "purpose": "teljesítmény- és kapacitásbaseline összevetése", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""},
+    {"scenario_id": "FAILURE_AND_ROLLBACK", "status": "NOT_EXECUTED", "purpose": "hiba-, visszaállási és üzletmeneti forgatókönyv próbája", "owner_approval_ref": "", "g3_approval_ref": "", "result": "", "rollback_result": "", "evidence_refs": [], "reviewer": "", "reviewed_at": ""}
+  ],
+  "cost_gate": {
+    "required_inputs": ["existing_entitlement", "existing_capacity", "b0_alternative", "pilot", "acceptance_criterion", "purchase_trigger", "deferral_risk"],
+    "paid_option_status": "BLOCKED_BY_COST_GATE",
+    "purchase_execution_allowed": false
+  },
+  "consolidation_decision": {
+    "status": "KEEP_SEPARATED_PENDING_EVIDENCE", "target_state": "CURRENT_SEPARATION", "decision_ref": "", "approver": "", "approved_at": "",
+    "license_review_ref": "", "risk_acceptance_ref": ""
+  },
+  "human_review": {"reviewer": "", "approved_at": "", "decision_ref": ""}
+}
