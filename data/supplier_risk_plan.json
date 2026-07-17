@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-021",
+  "source_refs": [
+    "SRC-008:p101-112",
+    "SRC-003:p2",
+    "data/audit_findings.csv:F-0072",
+    "data/audit_findings.csv:F-0074",
+    "data/control_action_mapping.csv:M-0046-M-0047"
+  ],
+  "control_refs": ["19.1", "19.4"],
+  "finding_refs": ["F-0072", "F-0074"],
+  "assumptions": [
+    "A repository nem tartalmaz beszállítónevet, szerződést vagy tényleges kockázati minősítést.",
+    "A beszállítói és szerződéses adatokat ember gyűjti jóváhagyott védett tárból; Gitbe csak nem érzékeny metaadat és minta kerülhet.",
+    "Az értékelés nem módosít szerződést, nem keresi meg a beszállítót és nem fogad el kockázatot automatikusan."
+  ],
+  "safety": {
+    "required_gates": ["G1_DOMAIN_REVIEW"],
+    "supplier_contact_allowed": false,
+    "contract_upload_allowed": false,
+    "contract_amendment_allowed": false,
+    "automatic_risk_acceptance_allowed": false,
+    "external_sharing_allowed": false,
+    "purchase_allowed": false
+  },
+  "criticality_model": {
+    "dimensions": [
+      "SERVICE_CRITICALITY", "EIR_DEPENDENCY", "DATA_ACCESS",
+      "PRIVILEGED_ACCESS", "REPLACEABILITY", "SUBCONTRACTOR_DEPENDENCY"
+    ],
+    "score_min": 0,
+    "score_max_per_dimension": 3,
+    "bands": {"LOW": "0-4", "MEDIUM": "5-9", "HIGH": "10-13", "CRITICAL": "14-18"},
+    "automatic_classification_allowed": false
+  },
+  "contract_control_catalog": [
+    {"control_id": "SECURITY_RESPONSIBILITY", "question": "Rögzítettek-e név vagy szerepkör szerint információbiztonsági felelősségeket?", "expected_evidence": "szerződéses pont vagy jóváhagyott melléklet"},
+    {"control_id": "INCIDENT_NOTIFICATION", "question": "Rögzített-e az incidensjelzési határidő, tartalom és kapcsolattartó?", "expected_evidence": "értesítési klauzula és kapcsolati rend"},
+    {"control_id": "ACCESS_AND_LEAST_PRIVILEGE", "question": "Szabályozott-e a hozzáférés, jogosultsági minimum és visszavonás?", "expected_evidence": "hozzáférési klauzula vagy eljárás"},
+    {"control_id": "SUBCONTRACTOR_FLOW_DOWN", "question": "Kiterjednek-e a biztonsági elvárások az alvállalkozókra?", "expected_evidence": "flow-down klauzula és alvállalkozói lista hivatkozása"},
+    {"control_id": "CONFIDENTIALITY_AND_DATA_HANDLING", "question": "Rögzített-e a titoktartás, adatminősítés és adatkezelés?", "expected_evidence": "titoktartási/adatkezelési feltétel"},
+    {"control_id": "VULNERABILITY_AND_PATCH", "question": "Rögzített-e a sérülékenységek és biztonsági javítások kezelése?", "expected_evidence": "patch/vulnerability SLA vagy eljárás"},
+    {"control_id": "BUSINESS_CONTINUITY", "question": "Rögzített-e az üzletmenet-folytonosság és helyreállítás elvárása?", "expected_evidence": "BC/DR klauzula vagy tesztigazolás"},
+    {"control_id": "AUDIT_AND_EVIDENCE_RIGHT", "question": "Biztosított-e audit-, ellenőrzési vagy evidencia-bekérési jog?", "expected_evidence": "auditjogi és bizonyítékszolgáltatási klauzula"},
+    {"control_id": "TERMINATION_RETURN_OR_DELETE", "question": "Rögzített-e megszűnéskor az adatok és hozzáférések visszaadása, törlése vagy visszavonása?", "expected_evidence": "exit/termination klauzula"},
+    {"control_id": "MATERIAL_CHANGE_NOTIFICATION", "question": "Rögzített-e a lényeges szolgáltatási, tulajdonosi vagy biztonsági változás jelzése?", "expected_evidence": "változásértesítési klauzula"}
+  ],
+  "suppliers": [],
+  "review_calendar": [],
+  "risk_decisions": [],
+  "human_review": {"reviewer": "", "approved_at": "", "decision_ref": ""}
+}

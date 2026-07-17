@@ -102,6 +102,8 @@ Az A-018 naplózási és felügyeleti minimuma a [LOGGING_MONITORING_REVIEW_PLAN
 
 Az A-019 maintenance-, patch- és változáskezelési csomagja a [MAINTENANCE_PATCH_CHANGE_WORKFLOW.md](MAINTENANCE_PATCH_CHANGE_WORKFLOW.md) dokumentumban, gépi terve a `data/maintenance_change_plan.json`, emberi jegyzőkönyve a `templates/maintenance_change_record.md` fájlban található. A `validate-maintenance-change` kikényszeríti a négy workstreamet, a tízlépéses jóváhagyási sorrendet, a G3 kaput, a backup/rollback és pre/post bizonyítást, valamint tiltja az automatikus patchtelepítést és a lejárat nélküli kivételt.
 
+Az A-021 beszállítói kockázati csomagja a [SUPPLIER_RISK_REVIEW_PLAN.md](SUPPLIER_RISK_REVIEW_PLAN.md) dokumentumban, üres gépi nyilvántartása a `data/supplier_risk_plan.json`, emberi munkalapja a `templates/supplier_risk_review_record.md` fájlban található. A `validate-supplier-risk` kikényszeríti a 19.1/19.4 kontroll- és finding-lefedettséget, a hat kritikalitási dimenziót, a tíz szerződéses kontrollt, a naptárt és a G1 review-t, miközben tiltja a beszállítói megkeresést, szerződésfeltöltést, automatikus kockázatelfogadást és beszerzést.
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők
@@ -133,6 +135,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness, az A-017 backup/restore, az A-020 fizikai bejárás, az A-022 infrastruktúra-health, az A-029 licenc/support, az A-018 naplófelügyelet és az A-019 változáskezelési módszertan elkészült. A D-028 célállapot prezentációs prototípusa a `portal_demo/` könyvtárban van; élesítése a DEF-015/DEF-020 kapui mögött marad. Következő emberi lépés az A-019 scope-, naptár-, G3- és végrehajtásiminta-adatainak kitöltése. Következő önálló agent-munkacsomagként az A-021 beszállítói kockázati nyilvántartás készíthető elő.
+Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness, az A-017 backup/restore, az A-020 fizikai bejárás, az A-022 infrastruktúra-health, az A-029 licenc/support, az A-018 naplófelügyelet, az A-019 változáskezelés és az A-021 beszállítói kockázati módszertan elkészült. A D-028 célállapot prezentációs prototípusa a `portal_demo/` könyvtárban van; élesítése a DEF-015/DEF-020 kapui mögött marad. Következő emberi lépés az A-021 beszállítói/szerződéses leltárának, kritikalitásának és review-naptárának kitöltése. Következő önálló agent-munkacsomagként az A-025 Exchange-függőségi nyilvántartás készíthető elő.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.
