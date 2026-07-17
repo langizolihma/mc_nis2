@@ -14,6 +14,7 @@ from .backup_restore import validate_backup_restore_plan
 from .infrastructure_health import validate_infrastructure_health_plan
 from .license_entitlement import validate_license_entitlement_plan
 from .logging_monitoring import validate_logging_monitoring_plan
+from .maintenance_change import validate_maintenance_change_plan
 from .physical_security import validate_physical_security_plan
 from .evals import (
     evaluate_agent_output,
@@ -93,6 +94,8 @@ def _parser() -> argparse.ArgumentParser:
     license_entitlement.add_argument("--plan", required=True, type=Path)
     logging_monitoring = subparsers.add_parser("validate-logging-monitoring")
     logging_monitoring.add_argument("--plan", required=True, type=Path)
+    maintenance_change = subparsers.add_parser("validate-maintenance-change")
+    maintenance_change.add_argument("--plan", required=True, type=Path)
     return parser
 
 
@@ -108,6 +111,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-maintenance-change":
+            plan = load_json_object(args.plan, "maintenance, patch és change terv")
+            result = validate_maintenance_change_plan(plan, args.plan)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Maintenance/change: {len(plan.get('workstreams', []))} workstream; "
+                f"changes={len(plan.get('change_records', []))}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-logging-monitoring":
             plan = load_json_object(args.plan, "naplózási és felügyeleti terv")
             result = validate_logging_monitoring_plan(plan, args.plan)

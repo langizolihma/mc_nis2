@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "action_id": "A-019",
+  "source_refs": [
+    "SRC-008:p54-59",
+    "SRC-008:p146-153",
+    "SRC-008:p196",
+    "SRC-008:p238-242",
+    "SRC-008:p285",
+    "SRC-008:p328-334",
+    "SRC-008:p375",
+    "data/control_action_mapping.csv:M-0033-M-0036"
+  ],
+  "control_refs": ["6.1", "6.2", "10.1", "18.2"],
+  "assumptions": [
+    "A csomag workflow-követelményt ír le, és nem állítja, hogy bármely konkrét baseline, patch- vagy karbantartási folyamat már működik.",
+    "Éles változtatás csak név szerinti owner, G3 döntés, backup/rollback és pre/post validáció mellett hajtható végre.",
+    "A naptár, scope és cadence értékei emberi rendszerowner-döntésig nem találhatók ki."
+  ],
+  "safety": {
+    "required_gates": ["G1_DOMAIN_REVIEW", "G3_PRODUCTION_CHANGE"],
+    "execution_allowed": false,
+    "automatic_approval_allowed": false,
+    "automatic_patch_deployment_allowed": false,
+    "remote_maintenance_allowed": false,
+    "delete_or_overwrite_allowed": false
+  },
+  "workflow_stages": [
+    "REQUEST", "RISK_AND_IMPACT", "OWNER_APPROVAL", "G3_APPROVAL",
+    "BACKUP_AND_ROLLBACK_PROOF", "SCHEDULED_WINDOW", "IMPLEMENTATION",
+    "POST_VALIDATION", "EVIDENCE_REVIEW", "CLOSURE"
+  ],
+  "workstreams": [
+    {
+      "workstream_id": "CONFIGURATION_BASELINE", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "cadence_or_trigger": "TBD-HUMAN",
+      "required_outputs": ["approved baseline definition", "read-only baseline export", "difference report", "exception record"],
+      "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "workstream_id": "PATCH_MANAGEMENT", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "cadence_or_trigger": "TBD-HUMAN",
+      "required_outputs": ["patch inventory", "risk and applicability review", "pilot or test result", "deployment report", "exception record"],
+      "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "workstream_id": "MAINTENANCE", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "cadence_or_trigger": "TBD-HUMAN",
+      "required_outputs": ["maintenance plan", "approved window", "access and supervision record", "completion report"],
+      "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    },
+    {
+      "workstream_id": "CHANGE_MANAGEMENT", "status": "PENDING_HUMAN", "owner": "TBD-HUMAN", "scope_refs": [], "cadence_or_trigger": "TBD-HUMAN",
+      "required_outputs": ["change ticket", "risk and impact", "G3 approval", "rollback plan", "pre and post validation", "closure review"],
+      "evidence_refs": [], "reviewer": "", "reviewed_at": ""
+    }
+  ],
+  "calendar_entries": [],
+  "change_records": [],
+  "exception_policy": {
+    "required_fields": ["exception_id", "scope_ref", "reason", "risk", "compensating_controls", "owner", "approver", "expires_at", "review_status"],
+    "automatic_approval_allowed": false,
+    "open_ended_exception_allowed": false
+  },
+  "required_evidence": [
+    "baseline_export", "patch_report", "change_ticket", "exception_record",
+    "pre_change_backup", "rollback_plan", "rollback_test_or_proof",
+    "pre_post_validation", "approval_record", "protected_uri", "sha256", "human_review"
+  ],
+  "human_approval": {"reviewer": "", "approved_at": "", "decision_ref": ""}
+}
