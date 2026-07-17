@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0", "registry_id": "GOVERNANCE-2026-07", "status": "PROPOSAL",
+  "packages": [
+    {
+      "action_id": "A-001", "title": "Formális IBF-kijelölés és hatáskör",
+      "source_refs": ["SRC-008:p21-22", "DECISIONS.md:D-027", "DEF-005", "DEF-006"], "source_confidence": "audited",
+      "required_gates": ["G2_SECURITY_LEGAL"],
+      "preconditions": ["szervezeti besorolás és alkalmazandó alkalmassági feltételek jogi review-ja", "helyettes és erőforrás meghatározása"],
+      "planned_steps": ["kinevezés és hatáskör", "helyettesítés", "munkaköri/RACI illesztés", "kihirdetés", "hatósági vagy nyilvántartási kötelezettség kezelése"],
+      "deliverables": ["aláírt kinevezés", "munkaköri leírás", "RACI", "szervezeti ábra"],
+      "evidence_required": ["signed documents", "publication record", "management approval", "eligibility review"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-002", "title": "Kézhezvételi baseline és határidőnaptár",
+      "source_refs": ["SRC-001:p1", "DECISIONS.md:D-022", "DECISIONS.md:D-026", "DEF-001", "DEF-003"], "source_confidence": "authority",
+      "required_gates": ["G2_SECURITY_LEGAL"],
+      "preconditions": ["2026-06-26 jóváhagyott baseline megőrzése", "hivatalos kézbesítési igazolás hiányának elfogadott kockázatként kezelése"],
+      "planned_steps": ["receipt record", "90 napos számítási napló", "G2/G4 határidő-review", "védett tárhivatkozás és reviewer"],
+      "deliverables": ["jóváhagyott receipt record", "határidőnaptár"],
+      "evidence_required": ["D-022/D-026", "available email support", "calculation log", "signed G2/G4 record"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-007", "title": "Cselekvési terv emberi jóváhagyása és benyújtása",
+      "source_refs": ["SRC-001:p1-2", "data/action_plan_submission_checklist.json", "DEF-014"], "source_confidence": "authority",
+      "required_gates": ["G4_EXTERNAL_SUBMISSION"],
+      "preconditions": ["A-006 review-ra kész csomag", "G1 szakmai és G2 jogi/IBF review", "jogosult aláíró és benyújtó"],
+      "planned_steps": ["végleges forráscsomag hash-elése", "szakmai/jogi/vezetői jóváhagyási lánc", "emberi aláírás", "emberi külső benyújtás", "átvételi igazolás"],
+      "deliverables": ["aláírt terv", "benyújtási csomag", "átvételi igazolás"],
+      "evidence_required": ["approval chain", "signed final plan", "protected URI and SHA-256", "submission receipt"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-035", "title": "Kanonikus auditforrás védett nyilvántartása",
+      "source_refs": ["SRC-008", "DECISIONS.md:D-025", "DECISIONS.md:D-026", "DEF-002", "DEF-004"], "source_confidence": "audited",
+      "required_gates": ["G2_SECURITY_LEGAL"],
+      "preconditions": ["SRC-008 aláírás érvényességének emberi megerősítése megőrzendő", "történeti SRC-002 státusz megőrzendő"],
+      "planned_steps": ["védett URI és SHA-256 rekord", "aláírásstruktúra-metaadat", "összehasonlítási jegyzőkönyv", "G2 reviewer-elfogadás", "388. oldal vizuális ellenőrzése"],
+      "deliverables": ["canonical source record"],
+      "evidence_required": ["SRC-008 file", "SHA-256", "signature metadata", "comparison record", "reviewer decision"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    },
+    {
+      "action_id": "A-036", "title": "Projekt-RACI és felelősségi bizonyítéklánc",
+      "source_refs": ["SRC-001:p2", "DECISIONS.md:D-027", "PROJECT_RACI.md", "DEF-005", "DEF-007"], "source_confidence": "authority",
+      "required_gates": ["G2_SECURITY_LEGAL"],
+      "preconditions": ["D-027 név szerinti szerepkiosztás", "belső infrastruktúra-/incidenskontroll-gazda kijelölése", "vezetői szponzor tisztázása"],
+      "planned_steps": ["RACI teljességi review", "P0 owner/approver ellenőrzés", "partneri felelősségek review-ja", "vezetői aláírás és kihirdetés"],
+      "deliverables": ["aláírt projekt-RACI", "kitöltött P0 owner/approver mezők"],
+      "evidence_required": ["signed RACI", "management decision", "actions review log", "partner obligation review"],
+      "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
+      "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
+      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+    }
+  ],
+  "human_review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": ""}
+}

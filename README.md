@@ -118,6 +118,8 @@ python -m nis2_harness validate-work-packages --registry data/technical_work_pac
 
 Az A-009/A-010/A-013–A-016 szervezeti és működési kontrollok előkészítése az [OPERATIONAL_CONTROL_WORK_PACKAGES.md](OPERATIONAL_CONTROL_WORK_PACKAGES.md) útmutatóban és a `data/operational_control_work_packages.json` regiszterben található. A regiszter ugyanazzal a `validate-work-packages` paranccsal ellenőrizhető.
 
+Az A-001/A-002/A-007/A-035/A-036 irányítási akciók jóváhagyott baseline-jait és pótlandó evidenciáit a [GOVERNANCE_EVIDENCE_CHAIN.md](GOVERNANCE_EVIDENCE_CHAIN.md) és a `data/governance_work_packages.json` választja szét. Külső benyújtás változatlanul kizárólag emberi G4 döntéssel történhet.
+
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
 ## Fontos adatmezők
