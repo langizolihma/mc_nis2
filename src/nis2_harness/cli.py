@@ -21,6 +21,13 @@ from .legacy_retention import validate_legacy_retention_plan
 from .rds_separation import validate_rds_separation_plan
 from .work_packages import validate_work_packages
 from .continuous_assurance import build_pilot_output, validate_pilot
+from .agent_jobs import (
+    build_h002_output,
+    ensure_generated_output,
+    load_h002_inputs,
+    validate_h002_job,
+    validate_h002_run,
+)
 from .supplier_risk import validate_supplier_risk_plan
 from .physical_security import validate_physical_security_plan
 from .evals import (
@@ -117,6 +124,10 @@ def _parser() -> argparse.ArgumentParser:
     continuous.add_argument("--config", required=True, type=Path)
     continuous.add_argument("--input", required=True, type=Path)
     continuous.add_argument("--output", required=True, type=Path)
+    h002 = subparsers.add_parser("run-h002-agent-pilot")
+    h002.add_argument("--job", required=True, type=Path)
+    h002.add_argument("--root", default=Path.cwd(), type=Path)
+    h002.add_argument("--output", required=True, type=Path)
     portal = subparsers.add_parser("serve-portal")
     portal.add_argument("--host", default="127.0.0.1")
     portal.add_argument("--port", default=8000, type=int)
@@ -135,6 +146,32 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "run-h002-agent-pilot":
+            root = args.root.resolve()
+            job = load_json_object(args.job, "H-002 agent job")
+            job_result = validate_h002_job(job, args.job)
+            for issue in job_result.issues:
+                print(issue.format())
+            if job_result.errors:
+                return 1
+            inputs, _, input_hash = load_h002_inputs(job, root, args.job)
+            result = validate_h002_run(job, inputs, args.job)
+            for issue in result.issues:
+                print(issue.format())
+            if result.errors:
+                return 1
+            output_path = ensure_generated_output(root, args.output)
+            output = build_h002_output(job, inputs, input_hash)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                json.dumps(output, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            print(
+                f"H-002 pilot: {len(output['proposals'])} proposal; "
+                f"run_status={output['run_status']}; human_review=PENDING_HUMAN; 0 hard error"
+            )
+            return 0
         if args.command == "serve-portal":
             from .portal_server import serve_portal
             serve_portal(Path.cwd(), args.host, args.port)

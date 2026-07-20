@@ -55,6 +55,16 @@ Böngészőcím: `http://127.0.0.1:8000`. Más helyi port például `--port 8080
 
 A `validate` és `status` automatikusan az akciófájl melletti `project_dates.json` rekordot használja. Másik rekord a `--project-dates PATH` argumentummal adható meg.
 
+### H-002 local-only agent pilot
+
+A H-002 futtatható job-csomagolása tíz szintetikus eseményből forráshivatkozott proposalokat, emberi approval queue-t és hash-láncolt auditlogot készít. A bemenet csak `tests/fixtures/`, a kimenet csak `generated/` alatt lehet; éles rendszer, hálózat, külső AI és formális döntés nincs.
+
+```powershell
+python -m nis2_harness run-h002-agent-pilot --job config/h002_agent_pilot.json --root . --output generated/h002_agent_pilot_output.json
+```
+
+A kezelői leírás a [H002_AGENT_PILOT.md](H002_AGENT_PILOT.md), a munkacsomag szerződése a [CODEX_HANDOFF_H002.md](CODEX_HANDOFF_H002.md) fájlban található. A tíz eset technikai teszt, nem emberileg jóváhagyott audit-gold case.
+
 Mintakimenet:
 
 ```text
@@ -158,4 +168,4 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 Mind a 42 akció előkészítő csomagja elkészült. A D-028 portál helyi MVP-je élő repository-nézettel, review-tervezet auditnyommal és A-042 pilotmegjelenítéssel rendelkezik; belső hálózati pilotja a DEF-015/DEF-020/DEF-032 emberi kapui mögött marad. A következő szakasz az emberi evidenciagyűjtés, review, aláírás és kontrollált végrehajtás.
 
-A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.
+A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 local-only fixture pilot elindult; valós adatforrásra vagy ütemezett működésre a DEF-033 emberi kapui előtt nem bővíthető.

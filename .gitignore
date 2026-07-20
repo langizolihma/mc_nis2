@@ -14,4 +14,5 @@ generated/*
 !generated/.gitkeep
 !generated/action_plan.md
 !generated/continuous_assurance_pilot_output.json
+!generated/h002_agent_pilot_output.json
 alapadatok/

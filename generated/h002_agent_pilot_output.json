@@ -1,0 +1,495 @@
+{
+  "schema_version": "1.0",
+  "handoff_id": "H-002",
+  "job_id": "H002-CA-JOB-001",
+  "status": "PROPOSAL",
+  "run_status": "PROPOSAL",
+  "agent_role": "continuous_assurance_operator",
+  "source_refs": [
+    "SYNTHETIC:H002:control-01",
+    "SYNTHETIC:H002:control-02",
+    "SYNTHETIC:H002:control-03",
+    "SYNTHETIC:H002:control-04",
+    "SYNTHETIC:H002:deadline-01",
+    "SYNTHETIC:H002:deadline-02",
+    "SYNTHETIC:H002:deadline-03",
+    "SYNTHETIC:H002:log-01",
+    "SYNTHETIC:H002:log-02",
+    "SYNTHETIC:H002:log-03"
+  ],
+  "assumptions": [
+    "A bemenet kizárólag szintetikus fixture; nem igazol éles rendszerállapotot."
+  ],
+  "confidence": "medium",
+  "proposed_changes": [
+    "Naplókivétel emberi vizsgálata",
+    "Kontrolleltérés javítási javaslata",
+    "Határidőkockázat felülvizsgálata",
+    "Naplókivétel emberi vizsgálata",
+    "Kontrolleltérés javítási javaslata",
+    "Kontrolleltérés javítási javaslata",
+    "Határidőkockázat felülvizsgálata",
+    "Naplókivétel emberi vizsgálata",
+    "Határidőkockázat felülvizsgálata",
+    "Kontrolleltérés javítási javaslata"
+  ],
+  "required_human_gate": "G1_DOMAIN_REVIEW;G2_SECURITY_LEGAL",
+  "forbidden_automatic_actions": [
+    "close_action",
+    "submit_external",
+    "change_production",
+    "purchase",
+    "accept_evidence"
+  ],
+  "formal_effect": false,
+  "human_review_status": "PENDING_HUMAN",
+  "input_provenance": {
+    "path": "tests/fixtures/h002_agent_events.json",
+    "sha256": "f61ba3250cb2d1a15c90a9f25e440a0505f6bf911f902c255bb9ab94cdad9abf",
+    "contains_sensitive_data": false
+  },
+  "proposals": [
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-001",
+      "status": "PROPOSAL",
+      "agent_role": "evidence_curator",
+      "source_refs": [
+        "SYNTHETIC:H002:log-01"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Naplókivétel emberi vizsgálata"
+      ],
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-002",
+      "status": "PROPOSAL",
+      "agent_role": "remediation_planner",
+      "source_refs": [
+        "SYNTHETIC:H002:control-01"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Kontrolleltérés javítási javaslata"
+      ],
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-003",
+      "status": "PROPOSAL",
+      "agent_role": "orchestrator",
+      "source_refs": [
+        "SYNTHETIC:H002:deadline-01"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Határidőkockázat felülvizsgálata"
+      ],
+      "required_human_gate": "G2_SECURITY_LEGAL",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-004",
+      "status": "PROPOSAL",
+      "agent_role": "evidence_curator",
+      "source_refs": [
+        "SYNTHETIC:H002:log-02"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Naplókivétel emberi vizsgálata"
+      ],
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-005",
+      "status": "PROPOSAL",
+      "agent_role": "remediation_planner",
+      "source_refs": [
+        "SYNTHETIC:H002:control-03"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Kontrolleltérés javítási javaslata"
+      ],
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-006",
+      "status": "PROPOSAL",
+      "agent_role": "remediation_planner",
+      "source_refs": [
+        "SYNTHETIC:H002:control-02"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Kontrolleltérés javítási javaslata"
+      ],
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-007",
+      "status": "PROPOSAL",
+      "agent_role": "orchestrator",
+      "source_refs": [
+        "SYNTHETIC:H002:deadline-02"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Határidőkockázat felülvizsgálata"
+      ],
+      "required_human_gate": "G2_SECURITY_LEGAL",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-008",
+      "status": "PROPOSAL",
+      "agent_role": "evidence_curator",
+      "source_refs": [
+        "SYNTHETIC:H002:log-03"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Naplókivétel emberi vizsgálata"
+      ],
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-009",
+      "status": "PROPOSAL",
+      "agent_role": "orchestrator",
+      "source_refs": [
+        "SYNTHETIC:H002:deadline-03"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Határidőkockázat felülvizsgálata"
+      ],
+      "required_human_gate": "G2_SECURITY_LEGAL",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-010",
+      "status": "PROPOSAL",
+      "agent_role": "remediation_planner",
+      "source_refs": [
+        "SYNTHETIC:H002:control-04"
+      ],
+      "source_confidence": "synthetic",
+      "assumptions": [
+        "A bemenet szintetikus pilot-metaadat; nem igazol éles rendszerállapotot."
+      ],
+      "confidence": "medium",
+      "proposed_changes": [
+        "Kontrolleltérés javítási javaslata"
+      ],
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "human_review_status": "PENDING_HUMAN",
+      "forbidden_automatic_actions": [
+        "close_action",
+        "submit_external",
+        "change_production",
+        "purchase",
+        "accept_evidence"
+      ]
+    }
+  ],
+  "approval_queue": [
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-001",
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-002",
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-003",
+      "required_human_gate": "G2_SECURITY_LEGAL",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-004",
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-005",
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-006",
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-007",
+      "required_human_gate": "G2_SECURITY_LEGAL",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-008",
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-009",
+      "required_human_gate": "G2_SECURITY_LEGAL",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "proposal_id": "PROP-H002-CA-PILOT-001-010",
+      "required_human_gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING_HUMAN"
+    }
+  ],
+  "audit_log": [
+    {
+      "sequence": 1,
+      "operation": "VERIFY_INPUT_SHA256",
+      "result": "f61ba3250cb2d1a15c90a9f25e440a0505f6bf911f902c255bb9ab94cdad9abf",
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "record_hash": "f59d0d6a0671452a62041f6e7453a2a488830de3e8422b13e36d2acbfa981b25"
+    },
+    {
+      "sequence": 2,
+      "event_id": "H2-EVT-001",
+      "source_id": "SYNTHETIC-LOG",
+      "source_ref": "SYNTHETIC:H002:log-01",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-001",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "f59d0d6a0671452a62041f6e7453a2a488830de3e8422b13e36d2acbfa981b25",
+      "record_hash": "ec9181e384e8f13e6b3902aac4ee8cf3470dc0698daff63973c7b320b51f2822"
+    },
+    {
+      "sequence": 3,
+      "event_id": "H2-EVT-002",
+      "source_id": "SYNTHETIC-CONTROL",
+      "source_ref": "SYNTHETIC:H002:control-01",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-002",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "ec9181e384e8f13e6b3902aac4ee8cf3470dc0698daff63973c7b320b51f2822",
+      "record_hash": "cb524a4a8eacc66b5934ee278f4c7f44efca5b7915fcf4963aeed48da1178053"
+    },
+    {
+      "sequence": 4,
+      "event_id": "H2-EVT-003",
+      "source_id": "SYNTHETIC-DEADLINE",
+      "source_ref": "SYNTHETIC:H002:deadline-01",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-003",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "cb524a4a8eacc66b5934ee278f4c7f44efca5b7915fcf4963aeed48da1178053",
+      "record_hash": "cb47b7eec6ec23112279ff34434206b0834706f315a9d3d0376eb5dcdd5d91e3"
+    },
+    {
+      "sequence": 5,
+      "event_id": "H2-EVT-004",
+      "source_id": "SYNTHETIC-LOG",
+      "source_ref": "SYNTHETIC:H002:log-02",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-004",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "cb47b7eec6ec23112279ff34434206b0834706f315a9d3d0376eb5dcdd5d91e3",
+      "record_hash": "de0452b468962794443070639f42eb14557e347de0638c9f6d17eabd74ce8bcd"
+    },
+    {
+      "sequence": 6,
+      "event_id": "H2-EVT-005",
+      "source_id": "SYNTHETIC-CONTROL",
+      "source_ref": "SYNTHETIC:H002:control-03",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-005",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "de0452b468962794443070639f42eb14557e347de0638c9f6d17eabd74ce8bcd",
+      "record_hash": "63036e2023ae1fc2cbff477747e88ad3cca80907074dd572c24b06cbae59eb1b"
+    },
+    {
+      "sequence": 7,
+      "event_id": "H2-EVT-006",
+      "source_id": "SYNTHETIC-CONTROL",
+      "source_ref": "SYNTHETIC:H002:control-02",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-006",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "63036e2023ae1fc2cbff477747e88ad3cca80907074dd572c24b06cbae59eb1b",
+      "record_hash": "28985c43c6d6b70f7c54e082e21d18a931d991b7473f14f0a43c9ec8f5446555"
+    },
+    {
+      "sequence": 8,
+      "event_id": "H2-EVT-007",
+      "source_id": "SYNTHETIC-DEADLINE",
+      "source_ref": "SYNTHETIC:H002:deadline-02",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-007",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "28985c43c6d6b70f7c54e082e21d18a931d991b7473f14f0a43c9ec8f5446555",
+      "record_hash": "9f45b5100760d521f4c00bdfdb5352388185c7377ebe18353532e2c9bd2c92a3"
+    },
+    {
+      "sequence": 9,
+      "event_id": "H2-EVT-008",
+      "source_id": "SYNTHETIC-LOG",
+      "source_ref": "SYNTHETIC:H002:log-03",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-008",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "9f45b5100760d521f4c00bdfdb5352388185c7377ebe18353532e2c9bd2c92a3",
+      "record_hash": "833d1efad8e7743d6c7538643c1ab9b02ea98a02067f738e6591c0caa786878d"
+    },
+    {
+      "sequence": 10,
+      "event_id": "H2-EVT-009",
+      "source_id": "SYNTHETIC-DEADLINE",
+      "source_ref": "SYNTHETIC:H002:deadline-03",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-009",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "833d1efad8e7743d6c7538643c1ab9b02ea98a02067f738e6591c0caa786878d",
+      "record_hash": "9209b780a2d0f21a8edce4d21938c2596792daf605be510267991e07e0d19a30"
+    },
+    {
+      "sequence": 11,
+      "event_id": "H2-EVT-010",
+      "source_id": "SYNTHETIC-CONTROL",
+      "source_ref": "SYNTHETIC:H002:control-04",
+      "operation": "CREATE_PROPOSAL",
+      "result": "PROP-H002-CA-PILOT-001-010",
+      "review_status": "PENDING_HUMAN",
+      "previous_hash": "9209b780a2d0f21a8edce4d21938c2596792daf605be510267991e07e0d19a30",
+      "record_hash": "380d520e6a3774f6a84a69dc4372969321848ec8f19631e28d7f9ea528376bb2"
+    },
+    {
+      "sequence": 12,
+      "operation": "QUEUE_HUMAN_REVIEW",
+      "result": "10 PENDING_HUMAN",
+      "previous_hash": "380d520e6a3774f6a84a69dc4372969321848ec8f19631e28d7f9ea528376bb2",
+      "record_hash": "dcc5f2a3800cb7f504e782038f045cd8be71ebc9da272ea1a31f54ee0142e9b1"
+    }
+  ],
+  "metrics": {
+    "events_seen": 10,
+    "proposals_created": 10,
+    "simulated_manual_steps_baseline": 30,
+    "simulated_pilot_human_steps": 10,
+    "simulated_manual_steps_saved": 20,
+    "false_alert_rate": "NOT_MEASURED_REQUIRES_HUMAN_GOLD_CASE_REVIEW",
+    "synthetic_eval": {
+      "classification": "SYNTHETIC_TECHNICAL_CASES_NOT_HUMAN_APPROVED_GOLD_CASES",
+      "cases": 10,
+      "passed": 10,
+      "pass_rate": 1.0
+    }
+  }
+}

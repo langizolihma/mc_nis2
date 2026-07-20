@@ -182,12 +182,16 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
     dates = json.loads((root / "data" / "project_dates.json").read_text(encoding="utf-8"))
     snapshot = build_snapshot(actions, deferred, dates, as_of)
     snapshot["review_drafts"] = store.load()
-    pilot_path = root / "generated" / "continuous_assurance_pilot_output.json"
+    h002_path = root / "generated" / "h002_agent_pilot_output.json"
+    legacy_path = root / "generated" / "continuous_assurance_pilot_output.json"
+    pilot_path = h002_path if h002_path.exists() else legacy_path
     if pilot_path.exists():
         pilot = json.loads(pilot_path.read_text(encoding="utf-8"))
         snapshot["agent_pilot"] = {
-            "status": pilot.get("status", "UNKNOWN"), "pilot_id": pilot.get("pilot_id", ""),
+            "status": pilot.get("run_status", pilot.get("status", "UNKNOWN")),
+            "pilot_id": pilot.get("job_id", pilot.get("pilot_id", "")),
             "proposals": pilot.get("proposals", []), "metrics": pilot.get("metrics", {}),
+            "formal_effect": pilot.get("formal_effect", False),
         }
     else:
         snapshot["agent_pilot"] = {"status": "NOT_AVAILABLE", "pilot_id": "", "proposals": [], "metrics": {}}

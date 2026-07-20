@@ -52,7 +52,9 @@ class PortalMvpTests(unittest.TestCase):
         self.assertEqual(66, snapshot["summary"]["days_to_deadline"])
         self.assertEqual(len(load_deferred(ROOT / "DEFERRED_EVIDENCE_LOG.md")), len(snapshot["deferred_tasks"]))
         self.assertEqual("PROPOSAL", snapshot["agent_pilot"]["status"])
-        self.assertEqual(3, len(snapshot["agent_pilot"]["proposals"]))
+        self.assertEqual("H002-CA-JOB-001", snapshot["agent_pilot"]["pilot_id"])
+        self.assertEqual(10, len(snapshot["agent_pilot"]["proposals"]))
+        self.assertFalse(snapshot["agent_pilot"]["formal_effect"])
         self.assertEqual("NOT_CONFIGURED", snapshot["meta"]["auth_status"])
 
     def test_http_api_serves_snapshot_and_appends_draft(self) -> None:

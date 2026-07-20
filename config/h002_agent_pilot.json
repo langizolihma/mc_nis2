@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "handoff_id": "H-002",
+  "job_id": "H002-CA-JOB-001",
+  "status": "PROPOSAL",
+  "mode": "LOCAL_FIXTURE_ONLY",
+  "generated_at": "2026-07-20T12:00:00+02:00",
+  "input": {
+    "path": "tests/fixtures/h002_agent_events.json",
+    "expected_sha256": "f61ba3250cb2d1a15c90a9f25e440a0505f6bf911f902c255bb9ab94cdad9abf",
+    "classification": "SYNTHETIC_NON_SENSITIVE",
+    "read_only": true
+  },
+  "engine_config": {
+    "schema_version": "1.0",
+    "pilot_id": "H002-CA-PILOT-001",
+    "mode": "LOCAL_SYNTHETIC_ONLY",
+    "generated_at": "2026-07-20T12:00:00+02:00",
+    "allowed_sources": ["SYNTHETIC-LOG", "SYNTHETIC-DEADLINE", "SYNTHETIC-CONTROL"],
+    "safety": {
+      "network_allowed": false,
+      "production_connection_allowed": false,
+      "external_ai_allowed": false,
+      "raw_sensitive_data_allowed": false,
+      "forbidden_automatic_actions": ["close_action", "submit_external", "change_production", "purchase", "accept_evidence"]
+    },
+    "kill_switch": {
+      "engaged": false,
+      "control_file": "config/h002_agent_pilot.json",
+      "test_requirement": "Engaged állapotban nulla input dolgozható fel."
+    },
+    "metrics": {
+      "manual_steps_per_event_baseline": 3,
+      "pilot_human_steps_per_event": 1,
+      "interpretation": "Szimulált technikai workflow-becslés; nem tényleges megtakarítás."
+    }
+  },
+  "output_policy": {
+    "proposal_only": true,
+    "formal_effect": false,
+    "external_write_allowed": false,
+    "production_change_allowed": false,
+    "evidence_acceptance_allowed": false,
+    "action_closure_allowed": false
+  }
+}

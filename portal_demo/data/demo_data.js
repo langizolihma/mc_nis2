@@ -1843,6 +1843,16 @@ window.NIS2_DEMO_DATA = {
       "related": "D-028; A-042; config/portal_mvp.json; portal_demo/; src/nis2_harness/portal.py; src/nis2_harness/portal_server.py",
       "required": "Kijelölt belső szerver és üzemeltető; jóváhagyott hálózati zóna; vállalati vagy dokumentált helyi hitelesítés; RBAC és legkisebb jogosultság; TLS/tanúsítvány; védett evidenciatár API és adatminősítés; auditlog-retention, backup/restore, monitoring és incidensfolyamat; a hitelesített jóváhagyási rekord és a formális workflow külön terve; G1 funkcionális, G2 biztonsági/jogi architektúra-review, G3 pilot/deploy döntés; jogosultsági, session-, CSRF-, negatív, helyreállítási és ember által tanúsított kill-switch teszt.",
       "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+      "gate": "Bármely valós vagy érzékeny forrás csatlakoztatása, ütemezett futás, többfelhasználós portálintegráció vagy az A-032/A-042 lezárása előtt.",
+      "id": "DEF-033",
+      "owner": "Pásztor András; kijelölendő agent-üzemeltető és forrásgazdák",
+      "process_state": "Elkészült a SHA-256-tal rögzített, tíz szintetikus technikai eseten futó local-only agent job, proposal-only kimenettel, approval queue-val, hash-láncolt auditloggal és automatikus negatív tesztekkel. A szintetikus 10/10 eredmény nem emberi gold-case elfogadás.",
+      "related": "H-002; A-032; A-042; config/h002_agent_pilot.json; generated/h002_agent_pilot_output.json",
+      "required": "A tíz A-032 gold case tényleges kitöltése és emberi jóváhagyása; false-positive/false-negative review; valós emberimunka-baseline és pilotmérés; adatminősítés, forrásgazdák, engedélyezett read-only forráslista és jogosultság; G1 funkcionális, G2 biztonsági/jogi review és G3 pilotdöntés; ember által tanúsított kill-switch és helyreállítási próba; védett futási evidencia URI/SHA-256 és reviewer-rekord.",
+      "status": "OPEN_DEFERRED"
     }
   ],
   "gate_legend": [
@@ -1894,7 +1904,7 @@ window.NIS2_DEMO_DATA = {
     },
     "in_progress": 8,
     "new_actions": 34,
-    "open_human_tasks": 31,
+    "open_human_tasks": 32,
     "p0_actions": 17,
     "priority_counts": {
       "P0": 17,
