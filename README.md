@@ -83,6 +83,8 @@ A warning emberi döntést vagy kiegészítést igényel, de nem teszi szerkezet
 
 Az evidencia-metaadatok külön `data/evidence_register.csv` fájlban szerepelnek. A `validate-evidence` ellenőrzi az akcióhivatkozást, az időzónás időbélyeget, a SHA-256 alakját és az emberi elfogadási előfeltételeket. Az üres induló regiszter warning, nem elfogadott evidencia. A működési és hozzáférési szabályokat az [EVIDENCE_STORAGE.md](EVIDENCE_STORAGE.md) tartalmazza.
 
+A 2026-07-20-án átvett 182 állományos belső dokumentumcsomag teljes helyi hash-jegyzéke az ignorált forrásmappában marad; a Git csak 19 megtisztított `DRAFT` evidenciajelölt metaadatát tartalmazza. A tartalmi eredményt és az emberi feladatokat a [DOCUMENT_INTAKE_REVIEW_2026-07-20.md](DOCUMENT_INTAKE_REVIEW_2026-07-20.md), a pótlandó védett URI-kat és review-kat a `DEF-034` tétel rögzíti. Egyetlen új jelölt sem elfogadott evidencia.
+
 Az audit 328 gépi finding-rekordja a `data/audit_findings.csv`, a javasolt kontroll–akció–evidencia kapcsolatok a `data/control_action_mapping.csv` fájlban találhatók. A `validate-findings` szerkezeti és hivatkozási ellenőrzést végez, de nem helyettesíti a G1 szakmai review-t. A rétegzett mintát, parser-kivételeket és jóváhagyási blokkot a [FINDING_REVIEW_2026-07-15.md](FINDING_REVIEW_2026-07-15.md) tartalmazza.
 
 Az A-011 öt EIR-t tartalmazó proposal baseline-ja a `data/inventory_register.json`, a jóváhagyandó read-only források a `config/inventory_export_plan.json` fájlban vannak. A `validate-inventory` megakadályozza a hibás hivatkozást, duplikált azonosítót, nem read-only gyűjtési módot és emberi metaadat nélküli jóváhagyást. A végrehajtási sorrendet az [A011_READONLY_INVENTORY_PLAN.md](A011_READONLY_INVENTORY_PLAN.md) tartalmazza.
