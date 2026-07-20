@@ -1723,6 +1723,126 @@ window.NIS2_DEMO_DATA = {
       "related": "D-028; A-042; portal_demo/; LOCAL_PORTAL_BASELINE.md",
       "required": "Prezentáció utáni stakeholder-visszajelzés és elfogadott funkcionális scope; belső szerver/üzemeltető; hitelesítés, szerepkörök, hálózati zóna és TLS; védett evidenciatár-integráció; adatminősítés, naplózás, backup/restore és kill switch; G2 architektúra-review, G3 pilot/deploy döntés; jogosultsági, negatív, helyreállítási és leállítási teszt evidenciája.",
       "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán",
+      "gate": "Bármely valós logkapcsolat vagy konfiguráció előtt, valamint az A-018 review-ra kész vagy DONE státusza előtt.",
+      "id": "DEF-021",
+      "owner": "Pásztor András; Kollár Csaba; kijelölendő belső owner és forrásgazdák",
+      "process_state": "A tíz forráskategóriás, három retention osztályos, öt hibariasztásos és napi/heti review-keret elkészült; konkrét loggyűjtés, riasztásteszt és review-run nem történt.",
+      "related": "A-018; data/logging_monitoring_plan.json; templates/log_review_record.md",
+      "required": "Belső infrastruktúra-/incidenskezelési kontrollgazda és forrásgazdák; kategóriánként konkrét rendszer, EIR-scope, jóváhagyott read-only módszer, adatminősítés és mintalog védett URI/SHA-256; G1 baseline-review, érzékeny loghoz G2, éles collector/alert konfigurációhoz G3; retention osztályonként jogalap, napérték, kapacitás és reviewer; öt alert szabálya, címzettje, nem destruktív tesztje és evidenciája; napi/heti reviewer, helyettes, escalation és első review-run ticket/exception/review rekorddal. Nyers log és secret nem kerülhet Gitbe.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; jogosult G3 approver",
+      "gate": "Bármely éles patch, karbantartás vagy változtatás előtt, valamint az A-019 review-ra kész vagy DONE státusza előtt.",
+      "id": "DEF-022",
+      "owner": "Pásztor András; Kollár Csaba; kijelölendő belső ownerek",
+      "process_state": "A négy workstream, tízlépéses workflow, naptár-, change-, rollback- és kivételséma elkészült; konkrét scope, naptár vagy végrehajtás nincs.",
+      "related": "A-019; data/maintenance_change_plan.json; templates/maintenance_change_record.md",
+      "required": "Belső metALCOM rendszer-/szolgáltatásgazdák és változáskezelési approver; workstreamenként scope, owner, cadence és trigger; jóváhagyott baseline-, patch- és maintenance-naptár; első kontrollált minta change ticket kockázat/hatás, owner- és G3 döntés, backup proof, rollback terv és teszt/proof, időablak, értesítés, pre/post validáció, védett URI/SHA-256 és reviewer mellett; első lejáratos exception minta kompenzáló kontrollal; távoli karbantartás esetén külön hozzáférési/felügyeleti review. Secret és nyers konfiguráció Gitbe nem kerülhet.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; szükség esetén Dr. Berta Brigitta",
+      "gate": "Bármely beszállítói végleges minősítés, megkeresés, szerződésmódosítás vagy az A-021 review-ra kész/DONE állapota előtt.",
+      "id": "DEF-023",
+      "owner": "Pásztor András; kijelölendő ellátásilánc-/beszerzési felelős és szerződésgazdák",
+      "process_state": "A 19.1/19.4 kontrollhoz elkészült a hatdimenziós kritikalitás, tíz szerződéses kontroll, kockázati döntés és review-naptár proposal-only sémája; valós beszállítói adat nincs benne.",
+      "related": "A-021; data/supplier_risk_plan.json; templates/supplier_risk_review_record.md",
+      "required": "Kijelölt belső ellátásilánc-/beszerzési felelős és szerződésgazdák; jóváhagyott beszállítói és szerződéslista védett tárban; szolgáltatás/EIR/owner kapcsolatok; dimenziónkénti indokolt pontozás; kontrollonként szerződéses vagy kérdőív-evidencia és gap; hiányonként emberi treatment döntés, felelős és határidő; kritikalitás- és változástrigger-alapú review-naptár; G1 reviewer-rekord. Jogi értelmezéshez Dr. Berta Brigitta review-ja szükséges. Beszállítónév, szerződés, kapcsolattartó és ár Gitbe nem kerülhet.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; jogosult G3 approver",
+      "gate": "Bármely éles lekérdezés, tesztüzenet, connector/DNS/routing változás vagy migrációs döntés, valamint az A-025 review-ra kész/DONE állapota előtt.",
+      "id": "DEF-024",
+      "owner": "Pásztor András; Kollár Csaba; kijelölendő belső levelezési owner és alkalmazásgazdák",
+      "process_state": "Elkészült a stratégiai/nem igazolt forráshelyzetet megőrző read-only felderítési, SMTP dependency-, hétszcenáriós teszt- és rollback-séma; éles lekérdezés, teszt vagy migráció nem történt.",
+      "related": "A-025; data/exchange_dependency_plan.json; templates/exchange_dependency_record.md",
+      "required": "Belső levelezési/infrastruktúra-kontrollgazda; pontos Exchange/SMTP scope és adatminősítés; Kollár Csabával jóváhagyott legkisebb jogosultságú read-only exportmódszer; message tracking minta, connector-, relay-, auth-, hálózati/DNS-export védett URI/SHA-256-tal; alkalmazás-, eszköz-, technikai és üzleti owner sign-off; dependency rekordok; tesztenként kontrollált címzett/scope, owner- és G3 approval, baseline, eredmény, stop condition és rollback proof; G1 review; külön migrációs célmodell és döntés. Valós cím, IP, credential, konfiguráció és nyers log Gitbe nem kerülhet.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+      "gate": "Bármely éles lekérdezés/export, restore/import, törlés, alkalmazásleállítás vagy migráció, valamint az A-026 review-ra kész/DONE állapota előtt.",
+      "id": "DEF-025",
+      "owner": "Pásztor András; Kollár Csaba; kijelölendő üzleti-, adat-, alkalmazás- és belső rendszerowner",
+      "process_state": "Elkészült az SRC-004 nem igazolt státuszát megőrző jogi retention-, adatleltár-, read-only export-, izolált restore/read-test és migrációs döntési séma; rendszerkapcsolat vagy végrehajtás nem történt.",
+      "related": "A-026; data/legacy_retention_plan.json; templates/legacy_retention_review_record.md",
+      "required": "Dr. Berta Brigitta jogi állásfoglalása jogalapokról, megőrzési időkről, legal holdról és selejtezési korlátokról; üzleti/adat-/alkalmazásowner és belső rendszerowner; jóváhagyott adatkategória- és függőségi lista; Kollár Csabával jóváhagyott read-only exportmódszer; adatszótár, rekorddarab, időtartomány, formátum, teljesség, kivételnapló, védett URI/SHA-256; izolált restore/read teszt owner- és G3 approval mellett; olvashatóság, integritás, idő, cleanup és reviewer; külön retention/migration/disposal döntés. Nyers export, személyes adat, üzleti dokumentum és credential Gitbe nem kerülhet.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; jogosult G3/G5 approver",
+      "gate": "Bármely éles lekérdezés, user/session/workload mozgatás, konfigurációváltozás, konszolidáció vagy vásárlás, valamint az A-027 review-ra kész/DONE állapota előtt.",
+      "id": "DEF-026",
+      "owner": "Pásztor András; Kollár Csaba; kijelölendő belső RDS-, alkalmazás- és üzleti ownerek",
+      "process_state": "Elkészült az SRC-004 nem igazolt státuszát megőrző hatdomaines RDS-assessment, öttesztes, költségkapus és döntési séma; a jelenlegi szeparáció marad, éles lekérdezés vagy konszolidáció nem történt.",
+      "related": "A-027; data/rds_separation_plan.json; templates/rds_separation_review_record.md",
+      "required": "Belső RDS-/infrastruktúra-owner, Kollár Csaba, alkalmazás- és üzleti ownerek; jóváhagyott read-only user/CAL-, session-, workload-, teljesítmény-, konfigurációs és backup-export védett URI/SHA-256-tal; banki/könyvelési kulcs-/eszköz-scope metaadata secret nélkül; A-029 licencreview; szeparációs kockázat, continuity és rollback; öt kontrollált teszt owner- és G3 approval mellett; G1 review; fizetős eltérésnél hét költséginput és G5; külön konszolidációs vagy szeparációfenntartási döntés. Felhasználólista, banki/könyvelési adat, secret és kulcsanyag Gitbe nem kerülhet.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; jogosult G3/G5 approver",
+      "gate": "Bármely éles lekérdezés, scan, változtatás, konszolidáció, VM-mozgatás vagy vásárlás, valamint az érintett akció review-ra kész/DONE státusza előtt.",
+      "id": "DEF-027",
+      "owner": "Pásztor András; Kollár Csaba; kijelölendő belső rendszer-/EIR-ownerek",
+      "process_state": "Elkészült az öt technikai akció egységes, proposal-only döntési csomagja; sem adatgyűjtés, scan, teszt, változtatás, vásárlás, sem külső művelet nem történt.",
+      "related": "A-023; A-024; A-028; A-033; A-034; data/technical_work_packages.json",
+      "required": "A-022/A-029 elfogadott inputok; belső rendszer- és EIR-ownerek; pontos scope; jóváhagyott read-only exportok védett URI/SHA-256-tal; VM/AD/DNS/DHCP dependency-, HA-, kapacitás-, backup-, licenc- és rollback-review; sérülékenységvizsgálati mód és SLA; két nem auditált EIR definíciója, assetje és függősége; G1/G2 review, minden teszt/változtatás előtt G3, fizetős döntés előtt hét költséginput és G5; végrehajtási és retest evidencia.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3/G5 approver",
+      "gate": "Bármely kihirdetés, gyakorlat, képzés, éles fiókművelet, MFA-pilot vagy vásárlás, valamint az érintett akció review-ra kész/DONE státusza előtt.",
+      "id": "DEF-028",
+      "owner": "Pásztor András; Kóczán Mónika; Koncz Erika; Kollár Csaba; kijelölendő belső kontroll-/alkalmazásgazdák",
+      "process_state": "Elkészült a hat szervezeti/működési akció proposal-only regisztere és felelősségi útmutatója; működési vagy technikai végrehajtás nem történt.",
+      "related": "A-009; A-010; A-013; A-014; A-015; A-016; data/operational_control_work_packages.json",
+      "required": "Szabályzatgazda és review-naptár; kontrollgazdai kapacitásigény és költségkeret-review; belső incidenskontroll-gazda, kontaktlista, jogi/IBF review és tabletop; HR/IBF szerepkör-alapú képzési scope és végrehajtási evidencia; jóváhagyott read-only account/access export, alkalmazásgazdai döntés, külön G3 change és post-check; A-029 licencreview, privilegizált MFA-scope, pilot, rollback, G3 és szükség esetén G5. Személyes lista, incidensadat, credential és védett dokumentum csak evidenciatárban kezelhető.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult benyújtó",
+      "gate": "Bármely kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett akció DONE státusza előtt.",
+      "id": "DEF-029",
+      "owner": "Pásztor András; Kóczán Mónika",
+      "process_state": "Elkészült az öt irányítási akció bizonyítéklánc-regisztere; a D-022/D-025/D-026/D-027 baseline-ok megőrzöttek, de a pótlandó evidencia nem lett teljesítettnek jelölve.",
+      "related": "A-001; A-002; A-007; A-035; A-036; data/governance_work_packages.json",
+      "required": "Formális IBF-kijelölés és alkalmassági/jogi review; ténylegesen aláírt G2/G4 nyilatkozat; SRC-008 védett URI-ja és reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; jogosult G5 approver",
+      "gate": "Hatálybalépés, kontrollműködés elfogadása, beszerzési döntés vagy az érintett akció DONE státusza előtt.",
+      "id": "DEF-030",
+      "owner": "Pásztor András; Koncz Erika; Dr. Berta Brigitta; kijelölendő dokumentum-, EIR-, kockázat-, beszerzési és szerződésgazdák",
+      "process_state": "Elkészült az öt szabályozási terület kötelező minimumtartalma és proposal-only kitöltési kerete; hatályos szabályzat vagy működési evidencia nem jött létre.",
+      "related": "A-037; A-038; A-039; A-040; A-041; data/policy_baseline_work_packages.json; templates/control_policy_baseline.md",
+      "required": "Dokumentumgazdák/helyettesek és scope; A-037 médialeltár, törlési módszer és mintajegyzőkönyv; A-038 HR/jogi/IT JML és visszavonási SLA; A-039 vezetői kockázati étvágy, skála, gazdák és treatment review; A-040 három auditált EIR kitöltött, verziózott SSP-je owner/IBF review-val; A-041 beszerzési/szerződésgazda, kitöltött checklist, klauzulák, support/EOL és kivétel/G5; mindegyikhez jóváhagyás, kihirdetés, megismerés, védett URI/SHA-256 és működési mintavétel.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+      "gate": "Bármely valós forrás, érzékeny adat, belső hálózati szolgáltatás vagy éles portálintegráció előtt, valamint az A-042 DONE státusza előtt.",
+      "id": "DEF-031",
+      "owner": "Pásztor András; kijelölendő agent-/portálüzemeltető és forrásgazdák",
+      "process_state": "Elkészült a hálózat nélküli, allowlistelt szintetikus metaadaton futó proposal/approval-queue/auditlog pilot, automatikus negatív és kill-switch tesztekkel; éles kapcsolat nincs.",
+      "related": "A-042; config/continuous_assurance_pilot.json; generated/continuous_assurance_pilot_output.json; CONTINUOUS_ASSURANCE_AGENT_PILOT.md",
+      "required": "Funkcionális scope és forrásgazdák; redaktált, emberileg elfogadott gold-case készlet; téves riasztási és tényleges emberimunka-csökkentési baseline/pilot mérés; belső portál és védett evidenciatár API-ja; szerver, üzemeltető, hitelesítés, RBAC, TLS, adatminősítés, retention, backup/restore és monitoring; G1 funkcionális, G2 biztonsági/jogi és G3 éles adatkapcsolati/pilot döntés; jogosultsági, negatív, helyreállítási és ember által tanúsított kill-switch próba.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+      "gate": "Bármely nem loopback kötés, többfelhasználós használat, hitelesített döntés, fájlfeltöltés, védett tár- vagy éles adatkapcsolat és belső hálózati pilot előtt.",
+      "id": "DEF-032",
+      "owner": "Pásztor András; kijelölendő portálüzemeltető",
+      "process_state": "Elkészült a loopback-only helyi portál-MVP: élő repository-snapshot, A-042 pilotnézet és append-only, formális hatás nélküli review-tervezet auditnyom. Hitelesítés, hálózati publikálás és éles integráció nincs.",
+      "related": "D-028; A-042; config/portal_mvp.json; portal_demo/; src/nis2_harness/portal.py; src/nis2_harness/portal_server.py",
+      "required": "Kijelölt belső szerver és üzemeltető; jóváhagyott hálózati zóna; vállalati vagy dokumentált helyi hitelesítés; RBAC és legkisebb jogosultság; TLS/tanúsítvány; védett evidenciatár API és adatminősítés; auditlog-retention, backup/restore, monitoring és incidensfolyamat; a hitelesített jóváhagyási rekord és a formális workflow külön terve; G1 funkcionális, G2 biztonsági/jogi architektúra-review, G3 pilot/deploy döntés; jogosultsági, session-, CSRF-, negatív, helyreállítási és ember által tanúsított kill-switch teszt.",
+      "status": "OPEN_DEFERRED"
     }
   ],
   "gate_legend": [
@@ -1753,16 +1873,18 @@ window.NIS2_DEMO_DATA = {
     }
   ],
   "meta": {
-    "as_of": "2026-07-17",
-    "disclaimer": "A felület demonstráció. Nem módosít nyilvántartást, nem fogad el evidenciát és nem hajt végre jóváhagyást.",
-    "mode": "PRESENTATION_PROTOTYPE",
+    "as_of": "2026-07-20",
+    "auth_status": "NOT_CONFIGURED",
+    "disclaimer": "A felület helyi MVP. A review-tervezet nem jóváhagyás, nem evidencia, nem módosít akcióstátuszt és a portál nem hajt végre jóváhagyást.",
+    "mode": "LOCAL_MVP",
     "product": "metALCOM NIS2 Audit Control Center",
-    "source": "local repository metadata"
+    "source": "local repository metadata",
+    "write_scope": "DRAFT_REVIEW_NOTES_ONLY"
   },
   "summary": {
     "accepted_risks": 1,
     "action_plan_deadline": "2026-09-24",
-    "days_to_deadline": 69,
+    "days_to_deadline": 66,
     "gate_counts": {
       "G1": 12,
       "G2": 14,
@@ -1772,7 +1894,7 @@ window.NIS2_DEMO_DATA = {
     },
     "in_progress": 8,
     "new_actions": 34,
-    "open_human_tasks": 19,
+    "open_human_tasks": 31,
     "p0_actions": 17,
     "priority_counts": {
       "P0": 17,

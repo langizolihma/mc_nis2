@@ -1,23 +1,32 @@
 (function () {
   "use strict";
-  const data = window.NIS2_DEMO_DATA;
-  if (!data) {
-    document.body.innerHTML = "<p style='padding:2rem;font-family:sans-serif'>A demo-adatfájl hiányzik. Futtasd újra a portál snapshot generálását.</p>";
-    return;
-  }
-
+  let data = null;
+  let serverMode = false;
   const titles = {
     overview: ["PROGRAMVEZETŐI NÉZET", "Auditfelkészültség"], actions: ["AKCIÓIRÁNYÍTÁS", "Feladatok"],
     approvals: ["EMBERI KONTROLL", "Jóváhagyások"], evidence: ["AUDITNYOM", "Evidenciák"], ai: ["PROPOSAL-ONLY", "AI-javaslatok"]
   };
-  const state = { priority: "ALL", query: "" };
+  const state = { priority: "ALL", query: "", reviewItem: null };
   const byId = (id) => document.getElementById(id);
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
   const formatDate = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Intl.DateTimeFormat("hu-HU", {year:"numeric",month:"long",day:"numeric"}).format(new Date(value + "T12:00:00")) : value;
 
-  function showToast(message) {
-    const toast = byId("toast"); toast.textContent = message; toast.classList.add("show");
-    window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 3300);
+  function showToast(message, isError) {
+    const toast = byId("toast"); toast.textContent = message; toast.classList.toggle("error", Boolean(isError)); toast.classList.add("show");
+    window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 4200);
+  }
+
+  async function loadData() {
+    try {
+      const response = await fetch("/api/snapshot", {headers:{"Accept":"application/json"}});
+      if (!response.ok) throw new Error("snapshot unavailable");
+      data = await response.json(); serverMode = true;
+    } catch (_error) {
+      data = window.NIS2_DEMO_DATA; serverMode = false;
+    }
+    if (!data) throw new Error("A portál adatforrása nem érhető el.");
+    byId("runtime-mode").textContent = serverMode ? "HELYI MVP · ÉLŐ REPOSITORY-NÉZET" : "OFFLINE BEMUTATÓ SNAPSHOT";
+    byId("runtime-detail").textContent = serverMode ? "· review-tervezetek helyi auditnaplóval" : "· minden művelet szimuláció";
   }
 
   function switchView(name) {
@@ -29,16 +38,9 @@
 
   function renderOverview() {
     const s = data.summary;
-    byId("as-of-date").textContent = formatDate(data.meta.as_of);
-    byId("deadline-date").textContent = formatDate(s.action_plan_deadline);
-    byId("days-left").textContent = s.days_to_deadline;
-    byId("countdown-ring").style.setProperty("--pct", `${Math.max(6, Math.min(100, (90 - s.days_to_deadline) / 90 * 100))}%`);
-    const metrics = [
-      ["Összes akció",s.total_actions,"19 követelménycsalád","teal"],
-      ["P0 prioritás",s.p0_actions,"azonnali fókusz","red"],
-      ["Folyamatban",s.in_progress,"emberi review szükséges","blue"],
-      ["Pótlandó evidencia",s.open_human_tasks,"nyitott emberi feladat","amber"]
-    ];
+    byId("as-of-date").textContent = formatDate(data.meta.as_of); byId("deadline-date").textContent = formatDate(s.action_plan_deadline);
+    byId("days-left").textContent = s.days_to_deadline; byId("countdown-ring").style.setProperty("--pct", `${Math.max(6, Math.min(100, (90 - s.days_to_deadline) / 90 * 100))}%`);
+    const metrics = [["Összes akció",s.total_actions,"19 követelménycsalád","teal"],["P0 prioritás",s.p0_actions,"azonnali fókusz","red"],["Folyamatban",s.in_progress,"emberi review szükséges","blue"],["Pótlandó evidencia",s.open_human_tasks,"nyitott emberi feladat","amber"]];
     byId("metric-grid").innerHTML = metrics.map(([label,value,note,color]) => `<article class="metric-card ${color}"><span>${label}</span><strong>${value}</strong><small>${note}</small></article>`).join("");
     const max = Math.max(...Object.values(s.priority_counts));
     byId("priority-bars").innerHTML = ["P0","P1","P2"].map((p) => `<div class="bar-row"><span>${p}</span><div class="bar-track"><div class="bar-fill ${p.toLowerCase()}" style="width:${(s.priority_counts[p] || 0) / max * 100}%"></div></div><b>${s.priority_counts[p] || 0}</b></div>`).join("");
@@ -52,20 +54,25 @@
   }
 
   function renderApprovals() {
-    const items = data.approval_queue.slice(0, 12);
-    byId("approval-count").textContent = data.approval_queue.length;
-    byId("approval-nav-count").textContent = data.approval_queue.length;
-    byId("approval-list").innerHTML = items.map((item) => `<article class="approval-card"><div class="approval-code">${escapeHtml(item.gates[0].slice(0,2))}</div><div><h3>${escapeHtml(item.action_id)} · ${escapeHtml(item.title)}</h3><div class="approval-meta">${escapeHtml(item.approver)} · ${escapeHtml(formatDate(item.target_date))} · ${escapeHtml(item.gates.map(g=>g.slice(0,2)).join(" / "))}</div></div><div class="demo-actions"><button data-demo="reject">Visszaküldés</button><button class="primary" data-demo="approve">Jóváhagyás</button></div></article>`).join("");
+    const items = data.approval_queue.slice(0, 15);
+    byId("approval-count").textContent = data.approval_queue.length; byId("approval-nav-count").textContent = data.approval_queue.length;
+    byId("approval-list").innerHTML = items.map((item) => `<article class="approval-card"><div class="approval-code">${escapeHtml(item.gates[0].slice(0,2))}</div><div><h3>${escapeHtml(item.action_id)} · ${escapeHtml(item.title)}</h3><div class="approval-meta">${escapeHtml(item.approver)} · ${escapeHtml(formatDate(item.target_date))} · ${escapeHtml(item.gates.map(g=>g.slice(0,2)).join(" / "))}</div></div><div class="demo-actions"><button class="primary" data-review="${escapeHtml(item.action_id)}">Review-tervezet</button></div></article>`).join("");
+    const drafts = (data.review_drafts || []).slice().reverse().slice(0, 8);
+    byId("review-draft-count").textContent = drafts.length;
+    byId("review-draft-list").innerHTML = drafts.length ? drafts.map((item) => `<article class="draft-card"><div><span>${escapeHtml(item.status)}</span><strong>${escapeHtml(item.action_id)} · ${escapeHtml(item.gate)}</strong></div><p>${escapeHtml(item.note)}</p><small>${escapeHtml(item.actor_display)} · ${escapeHtml(item.created_at)} · ${escapeHtml(item.draft_id)}</small></article>`).join("") : `<p class="empty-note">Még nincs helyi review-tervezet. Ezeknek nincs formális jóváhagyási hatásuk.</p>`;
   }
 
   function renderEvidence() {
-    byId("deferred-count").textContent = data.deferred_tasks.length;
-    byId("evidence-nav-count").textContent = data.summary.open_human_tasks;
+    byId("deferred-count").textContent = data.deferred_tasks.length; byId("evidence-nav-count").textContent = data.summary.open_human_tasks;
     byId("evidence-grid").innerHTML = data.deferred_tasks.map((item) => `<article class="evidence-card"><div class="evidence-top"><span class="evidence-id">${escapeHtml(item.id)}</span><span class="risk-chip ${item.status.includes("ACCEPTED_RISK") ? "accepted" : ""}">${escapeHtml(item.status)}</span></div><h3>${escapeHtml(item.related)}</h3><p>${escapeHtml(item.required)}</p><div class="evidence-footer"><span>Felelős: ${escapeHtml(item.owner)}</span><span>${escapeHtml(item.gate)}</span></div></article>`).join("");
   }
 
   function renderAi() {
-    byId("ai-grid").innerHTML = data.ai_proposals.map((item) => `<article class="ai-card"><div class="ai-card-top"><span class="proposal-chip">${escapeHtml(item.status)}</span><span class="action-id">${escapeHtml(item.action_id)}</span></div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.proposal)}</p><div class="source-line"><span>Forrás: ${escapeHtml(item.source_ref)}</span><span>${escapeHtml(item.agent_role)}</span></div><div class="ai-actions"><button data-demo="forward">Ember elé terjesztés</button><button data-demo="details">Források</button></div></article>`).join("");
+    const pilot = data.agent_pilot || {status:"NOT_AVAILABLE",proposals:[],metrics:{}};
+    byId("pilot-status").textContent = `${pilot.pilot_id || "A-042"} · ${pilot.status}`;
+    byId("pilot-metrics").textContent = pilot.metrics.events_seen !== undefined ? `${pilot.metrics.events_seen} esemény · ${pilot.metrics.proposals_created} proposal · téves riasztás: még nem mért` : "Pilotkimenet nem érhető el";
+    const pilotCards = (pilot.proposals || []).map((item) => ({action_id:item.proposal_id,title:item.agent_role,proposal:(item.proposed_changes || []).join("; "),source_ref:(item.source_refs || []).join("; "),agent_role:item.agent_role,status:item.status}));
+    byId("ai-grid").innerHTML = [...pilotCards, ...data.ai_proposals].map((item) => `<article class="ai-card"><div class="ai-card-top"><span class="proposal-chip">${escapeHtml(item.status)}</span><span class="action-id">${escapeHtml(item.action_id)}</span></div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.proposal)}</p><div class="source-line"><span>Forrás: ${escapeHtml(item.source_ref)}</span><span>${escapeHtml(item.agent_role)}</span></div><div class="ai-actions"><button data-ai-note="${escapeHtml(item.action_id)}">Emberi review szükséges</button></div></article>`).join("");
   }
 
   function openDrawer(actionId) {
@@ -75,17 +82,45 @@
   }
   function closeDrawer(){byId("action-drawer").classList.remove("open");byId("drawer-backdrop").classList.remove("open");byId("action-drawer").setAttribute("aria-hidden","true");}
 
-  document.addEventListener("click", (event) => {
-    const nav = event.target.closest("[data-view]"); if (nav) switchView(nav.dataset.view);
-    const go = event.target.closest("[data-go]"); if (go) switchView(go.dataset.go);
-    const row = event.target.closest("[data-action]"); if (row) openDrawer(row.dataset.action);
-    const demo = event.target.closest("[data-demo]"); if (demo) showToast("Bemutató mód: a művelet nem változtatta meg a nyilvántartást. Valódi döntéshez név szerinti ember és evidencia szükséges.");
-    const filter = event.target.closest("[data-priority]"); if (filter) { state.priority=filter.dataset.priority; document.querySelectorAll(".filter").forEach((b)=>b.classList.toggle("active",b===filter)); renderActions(); }
-  });
-  byId("action-search").addEventListener("input", (event) => {state.query=event.target.value;renderActions();});
-  byId("drawer-close").addEventListener("click",closeDrawer);byId("drawer-backdrop").addEventListener("click",closeDrawer);
-  document.addEventListener("keydown",(event)=>{if(event.key==="Escape")closeDrawer();});
-  byId("presentation-button").addEventListener("click",()=>{document.body.classList.toggle("presentation");byId("presentation-button").textContent=document.body.classList.contains("presentation")?"Navigáció mutatása":"Prezentációs mód";});
+  function openReviewModal(actionId) {
+    const item = data.approval_queue.find((entry) => entry.action_id === actionId); if (!item) return;
+    state.reviewItem = item; byId("review-action").value = item.action_id;
+    byId("review-gate").innerHTML = item.gates.map((gate) => `<option value="${escapeHtml(gate)}">${escapeHtml(gate)}</option>`).join("");
+    byId("review-modal").classList.add("open"); byId("review-modal").setAttribute("aria-hidden","false"); byId("review-actor").focus();
+  }
+  function closeReviewModal(){byId("review-modal").classList.remove("open");byId("review-modal").setAttribute("aria-hidden","true");state.reviewItem=null;}
 
-  renderOverview(); renderActions(); renderApprovals(); renderEvidence(); renderAi();
+  async function submitReviewDraft(event) {
+    event.preventDefault();
+    if (!serverMode) { showToast("Offline snapshot módban review-tervezet nem menthető.", true); return; }
+    const payload = {action_id:byId("review-action").value,gate:byId("review-gate").value,actor_display:byId("review-actor").value,decision:byId("review-decision").value,note:byId("review-note").value};
+    try {
+      const response = await fetch("/api/review-drafts", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+      const result = await response.json(); if (!response.ok) throw new Error((result.details || [result.error]).join(" "));
+      data.review_drafts = [...(data.review_drafts || []), result.record]; renderApprovals(); closeReviewModal(); byId("review-form").reset();
+      showToast("A review-tervezet helyi auditnyommal elmentve. Nem minősül jóváhagyásnak.");
+    } catch (error) { showToast(`A tervezet nem menthető: ${error.message}`, true); }
+  }
+
+  function bindEvents() {
+    document.addEventListener("click", (event) => {
+      const nav = event.target.closest("[data-view]"); if (nav) switchView(nav.dataset.view);
+      const go = event.target.closest("[data-go]"); if (go) switchView(go.dataset.go);
+      const row = event.target.closest("[data-action]"); if (row) openDrawer(row.dataset.action);
+      const review = event.target.closest("[data-review]"); if (review) openReviewModal(review.dataset.review);
+      const ai = event.target.closest("[data-ai-note]"); if (ai) showToast("Az AI-kimenet PROPOSAL. Formális hatása csak hitelesített emberi review után lehet.");
+      const filter = event.target.closest("[data-priority]"); if (filter) { state.priority=filter.dataset.priority; document.querySelectorAll(".filter").forEach((b)=>b.classList.toggle("active",b===filter)); renderActions(); }
+    });
+    byId("action-search").addEventListener("input", (event) => {state.query=event.target.value;renderActions();});
+    byId("drawer-close").addEventListener("click",closeDrawer);byId("drawer-backdrop").addEventListener("click",closeDrawer);
+    byId("review-cancel").addEventListener("click",closeReviewModal);byId("review-form").addEventListener("submit",submitReviewDraft);
+    document.addEventListener("keydown",(event)=>{if(event.key==="Escape"){closeDrawer();closeReviewModal();}});
+    byId("presentation-button").addEventListener("click",()=>{document.body.classList.toggle("presentation");byId("presentation-button").textContent=document.body.classList.contains("presentation")?"Navigáció mutatása":"Prezentációs mód";});
+  }
+
+  async function init() {
+    try { await loadData(); renderOverview(); renderActions(); renderApprovals(); renderEvidence(); renderAi(); bindEvents(); }
+    catch (error) { document.body.innerHTML = `<p class="fatal-error">${escapeHtml(error.message)}</p>`; }
+  }
+  init();
 })();

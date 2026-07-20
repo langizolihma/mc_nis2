@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Helyi NIS2 auditfelkészültségi portál – prezentációs prototípus">
+  <meta name="description" content="Helyi NIS2 auditfelkészültségi portál – biztonságos MVP">
   <title>metALCOM NIS2 Control Center</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="prototype-bar">
     <span class="prototype-dot"></span>
-    PREZENTÁCIÓS PROTOTÍPUS
-    <span>· nincs éles kapcsolat · minden művelet szimuláció</span>
+    <strong id="runtime-mode">HELYI MVP BETÖLTÉSE</strong>
+    <span id="runtime-detail">· nincs éles kapcsolat</span>
   </div>
 
   <div class="app-shell">
@@ -101,6 +101,7 @@
       <section class="view" id="view-approvals">
         <div class="view-intro"><div><p class="section-kicker">EMBERI DÖNTÉSI SOR</p><h2>Jóváhagyások</h2><p>Az AI összekészíti a döntési csomagot. Az elfogadás vagy elutasítás név szerinti ember feladata.</p></div><div class="big-count"><strong id="approval-count">0</strong><span>nyitott kapus tétel</span></div></div>
         <div class="approval-layout"><div class="approval-list" id="approval-list"></div><aside class="principle-card"><p class="section-kicker">NEM ALKU TÁRGYA</p><h3>Öt művelet mindig embernél marad</h3><ul><li>Evidencia elfogadása</li><li>Akció lezárása</li><li>Külső benyújtás</li><li>Éles rendszer módosítása</li><li>Vásárlás vagy költés</li></ul></aside></div>
+        <article class="panel draft-panel"><div class="panel-heading"><div><p class="section-kicker">HELYI AUDITNYOM</p><h2>Review-tervezetek</h2></div><span class="draft-count" id="review-draft-count">0</span></div><div id="review-draft-list" class="review-draft-list"></div></article>
       </section>
 
       <section class="view" id="view-evidence">
@@ -110,6 +111,7 @@
 
       <section class="view" id="view-ai">
         <div class="view-intro"><div><p class="section-kicker">FOLYAMATOS AUDITFELKÉSZÜLTSÉG</p><h2>AI-javaslati sor</h2><p>Minden kártya forráshivatkozott javaslat. Egyik sem jóváhagyás, evidencia vagy végrehajtási engedély.</p></div><div class="ai-status"><span></span><div><strong>Local-first</strong><small>Külső AI-kapcsolat nélkül</small></div></div></div>
+        <article class="pilot-strip"><div><span>A-042 FÁJLALAPÚ PILOT</span><strong id="pilot-status">Betöltés…</strong></div><p id="pilot-metrics">–</p></article>
         <div class="ai-grid" id="ai-grid"></div>
       </section>
     </main>
@@ -118,6 +120,18 @@
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
   <aside class="drawer" id="action-drawer" aria-label="Feladat részletei" aria-hidden="true"><button class="drawer-close" id="drawer-close" aria-label="Bezárás">×</button><div id="drawer-content"></div></aside>
   <div class="toast" id="toast" role="status"></div>
+  <div class="modal" id="review-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="review-modal-title">
+    <form class="modal-card" id="review-form">
+      <p class="section-kicker">NEM FORMÁLIS JÓVÁHAGYÁS</p><h2 id="review-modal-title">Review-tervezet rögzítése</h2>
+      <p class="modal-note">A név nincs hitelesítve. A rekord csak helyi munkajegyzet és auditnyom; nem fogad el evidenciát és nem módosít státuszt.</p>
+      <label>Akció<input id="review-action" readonly></label>
+      <label>Kapu<select id="review-gate" required></select></label>
+      <label>Megjelenített név<input id="review-actor" maxlength="80" required placeholder="Pl. Lángi Zoltán"></label>
+      <label>Tervezet típusa<select id="review-decision" required><option value="REQUEST_REVIEW">Review kérése</option><option value="RETURN_FOR_REWORK">Visszaküldési javaslat</option><option value="COMMENT">Megjegyzés</option></select></label>
+      <label>Megjegyzés<textarea id="review-note" minlength="3" maxlength="2000" required></textarea></label>
+      <div class="modal-actions"><button type="button" id="review-cancel">Mégse</button><button class="primary" type="submit">Tervezet mentése</button></div>
+    </form>
+  </div>
 
   <script src="data/demo_data.js"></script>
   <script src="app.js"></script>

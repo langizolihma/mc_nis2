@@ -8,6 +8,7 @@ venv/
 secrets/
 staging/
 raw_exports/
+portal_runtime/
 tmp/
 generated/*
 !generated/.gitkeep

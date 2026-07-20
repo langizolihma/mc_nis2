@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "mode": "LOCAL_LOOPBACK_MVP",
+  "bind_host": "127.0.0.1",
+  "authentication": "NOT_CONFIGURED",
+  "data_sources": [
+    "data/actions.csv",
+    "data/project_dates.json",
+    "DEFERRED_EVIDENCE_LOG.md",
+    "generated/continuous_assurance_pilot_output.json"
+  ],
+  "write_scope": "DRAFT_REVIEW_NOTES_ONLY",
+  "runtime_state": "portal_runtime/review_drafts.jsonl",
+  "safety": {
+    "external_network_allowed": false,
+    "lan_binding_allowed": false,
+    "formal_approval_allowed": false,
+    "evidence_acceptance_allowed": false,
+    "action_status_change_allowed": false,
+    "production_change_allowed": false,
+    "external_submission_allowed": false,
+    "purchase_allowed": false,
+    "sensitive_binary_upload_allowed": false
+  },
+  "required_before_lan_pilot": [
+    "G2_SECURITY_LEGAL architecture review",
+    "G3_PRODUCTION_CHANGE deployment decision",
+    "authenticated user identity",
+    "role-based least privilege",
+    "TLS and certificate",
+    "backup and restore test",
+    "retention and protected evidence-store decision"
+  ]
+}

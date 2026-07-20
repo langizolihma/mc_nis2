@@ -43,16 +43,15 @@ python -m nis2_harness validate-maintenance-change --plan data/maintenance_chang
 python -m unittest discover -s tests -v
 ```
 
-### Helyi prezentációs portál
+### Helyi portál-MVP
 
-A D-028 célállapot bemutatására dependency-free, kizárólag helyi prezentációs prototípus található a `portal_demo/` könyvtárban. A felület a repository nem érzékeny metaadataiból épül, és demonstrálja az áttekintő dashboardot, feladatlistát, G1–G5 jóváhagyási sort, pótlandó evidenciákat és AI-javaslatokat. Nem éles rendszer, a gombok nem módosítanak adatot.
+A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. Append-only helyi review-tervezetet rögzíthet, de az nem formális jóváhagyás, nem evidencia és nem módosít akcióstátuszt.
 
 ```powershell
-python scripts\build_portal_demo.py --as-of 2026-07-17
-python -m http.server 8000 --directory portal_demo
+python -m nis2_harness serve-portal
 ```
 
-Böngészőcím: `http://localhost:8000`. A prezentációs forgatókönyv és biztonsági korlátok a [portal_demo/README.md](portal_demo/README.md) fájlban találhatók.
+Böngészőcím: `http://127.0.0.1:8000`. Más helyi port például `--port 8080` kapcsolóval választható. A kiszolgáló szándékosan elutasítja a nem loopback hálózati címet; hitelesítés, RBAC, TLS és G2/G3 döntés nélkül nem tehető elérhetővé a belső hálózaton. A részletek a [portal_demo/README.md](portal_demo/README.md) fájlban találhatók.
 
 A `validate` és `status` automatikusan az akciófájl melletti `project_dates.json` rekordot használja. Másik rekord a `--project-dates PATH` argumentummal adható meg.
 
@@ -157,6 +156,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az A-011 read-only terve, az A-032 eval infrastruktúrája, az A-031 AI-policy, az A-030 repeat-audit roadmap, az A-008 negyedéves beszámolási csomag, az A-006 cselekvésiterv-readiness, az A-017 backup/restore, az A-020 fizikai bejárás, az A-022 infrastruktúra-health, az A-029 licenc/support, az A-018 naplófelügyelet, az A-019 változáskezelés, az A-021 beszállítói kockázat, az A-025 Exchange-függőség, az A-026 legacy retention és az A-027 RDS-szeparáció módszertana elkészült. A D-028 célállapot prezentációs prototípusa a `portal_demo/` könyvtárban van; élesítése a DEF-015/DEF-020 kapui mögött marad. Következő emberi lépés az A-027 assessment-, licenc-, G1/G3/G5- és tesztevidencia-adatainak kitöltése. Következő önálló agent-munkacsomagként az A-028 AD/DHCP konszolidációs assessment készíthető elő.
+Mind a 42 akció előkészítő csomagja elkészült. A D-028 portál helyi MVP-je élő repository-nézettel, review-tervezet auditnyommal és A-042 pilotmegjelenítéssel rendelkezik; belső hálózati pilotja a DEF-015/DEF-020/DEF-032 emberi kapui mögött marad. A következő szakasz az emberi evidenciagyűjtés, review, aláírás és kontrollált végrehajtás.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 nem része a jelenlegi H-001 implementációnak, és külön indítást igényel.

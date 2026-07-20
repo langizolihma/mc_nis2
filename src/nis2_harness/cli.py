@@ -117,6 +117,9 @@ def _parser() -> argparse.ArgumentParser:
     continuous.add_argument("--config", required=True, type=Path)
     continuous.add_argument("--input", required=True, type=Path)
     continuous.add_argument("--output", required=True, type=Path)
+    portal = subparsers.add_parser("serve-portal")
+    portal.add_argument("--host", default="127.0.0.1")
+    portal.add_argument("--port", default=8000, type=int)
     return parser
 
 
@@ -132,6 +135,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "serve-portal":
+            from .portal_server import serve_portal
+            serve_portal(Path.cwd(), args.host, args.port)
+            return 0
         if args.command == "run-continuous-assurance-pilot":
             config = load_json_object(args.config, "continuous assurance pilot config")
             inputs = load_json_object(args.input, "continuous assurance pilot input")

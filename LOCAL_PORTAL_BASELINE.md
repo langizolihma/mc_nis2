@@ -39,3 +39,13 @@ A technikai architektúra előtt fel kell mérni a rendelkezésre álló belső 
 ## Prezentációs prototípus – 2026-07-17
 
 A `portal_demo/` könyvtárban elkészült a célállapot dependency-free, helyben futó vizuális prototípusa. A dashboard, feladatlista, G1–G5 jóváhagyási sor, evidenciahiányok és AI-javaslatok kizárólag nem érzékeny repository-metaadatot mutatnak. A felület nem ír vissza adatot, nincs hitelesítése vagy éles integrációja, ezért nem minősül az első kiadás megvalósításának vagy deployengedélynek. A továbblépési feladatokat a DEF-015 és DEF-020 tartja nyitva.
+
+## Helyi MVP – 2026-07-20
+
+Az első működő MVP a Python standard library alapú `serve-portal` paranccsal indul. A 42 akciót, a projekt határidőit, a teljes pótlandóevidencia-naplót és az A-042 szintetikus pilotját minden kéréskor a repository aktuális állapotából olvassa.
+
+Az egyetlen írható funkció az append-only `DRAFT_REVIEW_NOTE`, amely a Gitből kizárt `portal_runtime/review_drafts.jsonl` fájlba kerül időponttal és SHA-256 auditazonosítóval. A megadott felhasználónév nincs hitelesítve, ezért a rekordnak nincs formális hatása: nem fogad el evidenciát, nem hagy jóvá kaput és nem módosít akcióstátuszt.
+
+Az MVP kizárólag `127.0.0.1`, `localhost` vagy `::1` címre köthető. Biztonsági fejléceket küld, külső függőséget nem használ, 16 KiB-ra korlátozza az írható kérést, ismeretlen akciót/kaput visszautasít, és bekapcsolt vagy hibás kill switch esetén fail-closed módon letiltja az írást.
+
+A hitelesítés, RBAC, TLS, védett evidenciatár-integráció, mentési/retention döntés, belső szerver és hálózati publikálás továbbra is emberi G2/G3 kapus feladat; részletek DEF-032.
