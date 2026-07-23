@@ -11,6 +11,8 @@ import re
 import threading
 from typing import Any, Callable
 
+from .sharepoint_snapshot import load_sharepoint_projection
+
 
 DEFERRED_ROW = re.compile(r"^\|\s*(DEF-\d+)\s*\|")
 ALLOWED_DRAFT_DECISIONS = {"COMMENT", "REQUEST_REVIEW", "RETURN_FOR_REWORK"}
@@ -182,6 +184,19 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
     dates = json.loads((root / "data" / "project_dates.json").read_text(encoding="utf-8"))
     snapshot = build_snapshot(actions, deferred, dates, as_of)
     snapshot["review_drafts"] = store.load()
+    try:
+        sharepoint_tasks, integration = load_sharepoint_projection(root, deferred)
+    except (OSError, ValueError, json.JSONDecodeError):
+        sharepoint_tasks = []
+        integration = {
+            "status": "ERROR_FAIL_CLOSED",
+            "network_allowed": False,
+            "write_back_allowed": False,
+            "formal_effect": False,
+        }
+    snapshot["sharepoint_tasks"] = sharepoint_tasks
+    snapshot["sharepoint_integration"] = integration
+    snapshot["summary"]["linked_human_tasks"] = len(sharepoint_tasks)
     h002_path = root / "generated" / "h002_agent_pilot_output.json"
     legacy_path = root / "generated" / "continuous_assurance_pilot_output.json"
     pilot_path = h002_path if h002_path.exists() else legacy_path

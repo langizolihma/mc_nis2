@@ -10,6 +10,14 @@
   const byId = (id) => document.getElementById(id);
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
   const formatDate = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Intl.DateTimeFormat("hu-HU", {year:"numeric",month:"long",day:"numeric"}).format(new Date(value + "T12:00:00")) : value;
+  const safeSharePointUrl = (value) => {
+    try {
+      const url = new URL(String(value));
+      return url.protocol === "https:" && url.hostname === "metalcom.sharepoint.com" && url.pathname.startsWith("/sites/NIS2/") ? url.href : "";
+    } catch (_error) {
+      return "";
+    }
+  };
 
   function showToast(message, isError) {
     const toast = byId("toast"); toast.textContent = message; toast.classList.toggle("error", Boolean(isError)); toast.classList.add("show");
@@ -62,9 +70,16 @@
     byId("review-draft-list").innerHTML = drafts.length ? drafts.map((item) => `<article class="draft-card"><div><span>${escapeHtml(item.status)}</span><strong>${escapeHtml(item.action_id)} · ${escapeHtml(item.gate)}</strong></div><p>${escapeHtml(item.note)}</p><small>${escapeHtml(item.actor_display)} · ${escapeHtml(item.created_at)} · ${escapeHtml(item.draft_id)}</small></article>`).join("") : `<p class="empty-note">Még nincs helyi review-tervezet. Ezeknek nincs formális jóváhagyási hatásuk.</p>`;
   }
 
-  function renderEvidence() {
-    byId("deferred-count").textContent = data.deferred_tasks.length; byId("evidence-nav-count").textContent = data.summary.open_human_tasks;
-    byId("evidence-grid").innerHTML = data.deferred_tasks.map((item) => `<article class="evidence-card"><div class="evidence-top"><span class="evidence-id">${escapeHtml(item.id)}</span><span class="risk-chip ${item.status.includes("ACCEPTED_RISK") ? "accepted" : ""}">${escapeHtml(item.status)}</span></div><h3>${escapeHtml(item.related)}</h3><p>${escapeHtml(item.required)}</p><div class="evidence-footer"><span>Felelős: ${escapeHtml(item.owner)}</span><span>${escapeHtml(item.gate)}</span></div></article>`).join("");
+function renderEvidence() {
+    const tasks = Array.isArray(data.sharepoint_tasks) && data.sharepoint_tasks.length ? data.sharepoint_tasks : data.deferred_tasks;
+    byId("deferred-count").textContent = tasks.length; byId("evidence-nav-count").textContent = data.summary.open_human_tasks;
+    byId("evidence-grid").innerHTML = tasks.map((item) => {
+      const safeUrl = safeSharePointUrl(item.evidence_url);
+      const link = safeUrl
+        ? `<a class="evidence-link" href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.evidence_label || "Kapcsolódó dokumentum")} ↗</a>`
+        : `<span class="evidence-link unavailable">Kapcsolódó dokumentum nem érhető el</span>`;
+      return `<article class="evidence-card"><div class="evidence-top"><span class="evidence-id">${escapeHtml(item.id)}</span><span class="risk-chip ${item.status.includes("ACCEPTED_RISK") ? "accepted" : ""}">${escapeHtml(item.status)}</span></div><h3>${escapeHtml(item.related)}</h3><p>${escapeHtml(item.required)}</p>${link}<div class="evidence-footer"><span>Felelős: ${escapeHtml(item.owner)}</span><span>${escapeHtml(item.gate)}</span></div></article>`;
+    }).join("");
   }
 
   function renderAi() {

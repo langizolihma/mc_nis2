@@ -1,6 +1,6 @@
 ---
 handoff_id: H-002
-status: IMPLEMENTED_LOCAL_FIXTURE_PILOT
+status: IMPLEMENTED_LOCAL_FIXTURE_PILOT_AND_READ_ONLY_SHAREPOINT_SNAPSHOT
 created: "2026-07-20"
 action_ids: [A-032, A-042]
 required_human_gates: [G1_DOMAIN_REVIEW, G2_SECURITY_LEGAL, G3_PRODUCTION_CHANGE]
@@ -51,3 +51,9 @@ python -m nis2_harness run-h002-agent-pilot `
 ## Továbblépési korlát
 
 A tíz beépített eset szintetikus technikai teszt, nem emberileg jóváhagyott audit-gold case. Valós, akár csak read-only forrás csatlakoztatása előtt a `DEF-010`, `DEF-011`, `DEF-031`, `DEF-033` tételek teljesítése, G1/G2 review és G3 pilotdöntés szükséges.
+
+## SharePoint-integráció első szelete
+
+A portál a `data/sharepoint_task_snapshot.json` helyi, ellenőrzött pillanatképből a 35 `DEF-*` emberi feladathoz kapcsolódó SharePoint-dokumentumot meg tudja nyitni. Ez nem élő Graph-kapcsolat: nem végez hálózati lekérést, nem ír vissza a SharePointba, és nem keletkeztet formális jóváhagyást vagy evidenciát. Hibás host, séma, azonosító-lefedettség vagy konfiguráció esetén a működés fail-closed, a linkek nem kerülnek a portál kimenetébe.
+
+A további fejlesztési munkablokkokat és kapukat a [H002_DEVELOPMENT_BACKLOG.md](H002_DEVELOPMENT_BACKLOG.md) tartalmazza.

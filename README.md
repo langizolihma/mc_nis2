@@ -45,13 +45,13 @@ python -m unittest discover -s tests -v
 
 ### Helyi portál-MVP
 
-A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. Append-only helyi review-tervezetet rögzíthet, de az nem formális jóváhagyás, nem evidencia és nem módosít akcióstátuszt.
+A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 35 emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. Append-only helyi review-tervezetet rögzíthet, de az nem formális jóváhagyás, nem evidencia és nem módosít akcióstátuszt.
 
 ```powershell
 python -m nis2_harness serve-portal
 ```
 
-Böngészőcím: `http://127.0.0.1:8000`. Más helyi port például `--port 8080` kapcsolóval választható. A kiszolgáló szándékosan elutasítja a nem loopback hálózati címet; hitelesítés, RBAC, TLS és G2/G3 döntés nélkül nem tehető elérhetővé a belső hálózaton. A részletek a [portal_demo/README.md](portal_demo/README.md) fájlban találhatók.
+Böngészőcím: `http://127.0.0.1:8000`. Más helyi port például `--port 8080` kapcsolóval választható. A kiszolgáló szándékosan elutasítja a nem loopback hálózati címet; hitelesítés, RBAC, TLS és G2/G3 döntés nélkül nem tehető elérhetővé a belső hálózaton. A részletek a [portal_demo/README.md](portal_demo/README.md), a teljes fejlesztési sorrend pedig a [H002_DEVELOPMENT_BACKLOG.md](H002_DEVELOPMENT_BACKLOG.md) fájlban található.
 
 A `validate` és `status` automatikusan az akciófájl melletti `project_dates.json` rekordot használja. Másik rekord a `--project-dates PATH` argumentummal adható meg.
 

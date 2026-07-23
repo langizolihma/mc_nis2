@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "mode": "LOCAL_SNAPSHOT_ONLY",
+  "allowed_host": "metalcom.sharepoint.com",
+  "snapshot_path": "data/sharepoint_task_snapshot.json",
+  "network_allowed": false,
+  "write_back_allowed": false,
+  "required_before_live_read": [
+    "G1_DOMAIN_REVIEW source and field mapping",
+    "G2_SECURITY_LEGAL data classification and retention review",
+    "G3_PRODUCTION_CHANGE service identity and read-only permission decision"
+  ],
+  "required_before_write_back": [
+    "authenticated named user",
+    "role-based least privilege",
+    "formal approval state machine",
+    "idempotency and conflict handling",
+    "append-only audit log",
+    "G2_SECURITY_LEGAL approval",
+    "G3_PRODUCTION_CHANGE approval"
+  ]
+}

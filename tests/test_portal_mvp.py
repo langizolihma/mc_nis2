@@ -56,6 +56,12 @@ class PortalMvpTests(unittest.TestCase):
         self.assertEqual(10, len(snapshot["agent_pilot"]["proposals"]))
         self.assertFalse(snapshot["agent_pilot"]["formal_effect"])
         self.assertEqual("NOT_CONFIGURED", snapshot["meta"]["auth_status"])
+        self.assertEqual(35, len(snapshot["sharepoint_tasks"]))
+        self.assertEqual(35, snapshot["summary"]["linked_human_tasks"])
+        self.assertEqual("READ_ONLY_SNAPSHOT_ACTIVE", snapshot["sharepoint_integration"]["status"])
+        self.assertFalse(snapshot["sharepoint_integration"]["network_allowed"])
+        self.assertFalse(snapshot["sharepoint_integration"]["write_back_allowed"])
+        self.assertFalse(snapshot["sharepoint_integration"]["formal_effect"])
 
     def test_http_api_serves_snapshot_and_appends_draft(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -103,6 +109,10 @@ class PortalMvpTests(unittest.TestCase):
         self.assertEqual(len(identifiers), len(set(identifiers)))
         self.assertNotIn("https://", html)
         self.assertIn("review-modal", identifiers)
+        javascript = (ROOT / "portal_demo" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("safeSharePointUrl", javascript)
+        self.assertIn("sharepoint_tasks", javascript)
+        self.assertIn('rel="noopener noreferrer"', javascript)
 
     def test_portal_config_forbids_formal_and_network_actions(self) -> None:
         config = json.loads((ROOT / "config" / "portal_mvp.json").read_text(encoding="utf-8"))
