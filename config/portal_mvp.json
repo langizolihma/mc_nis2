@@ -9,6 +9,7 @@
     "data/project_dates.json",
     "DEFERRED_EVIDENCE_LOG.md",
     "data/sharepoint_task_snapshot.json",
+    "config/sharepoint_graph_readiness.json",
     "generated/continuous_assurance_pilot_output.json"
   ],
   "write_scope": "DRAFT_REVIEW_NOTES_ONLY",

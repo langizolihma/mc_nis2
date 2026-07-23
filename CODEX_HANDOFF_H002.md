@@ -1,6 +1,6 @@
 ---
 handoff_id: H-002
-status: IMPLEMENTED_LOCAL_FIXTURE_PILOT_AND_READ_ONLY_SHAREPOINT_SNAPSHOT
+status: IMPLEMENTED_LOCAL_PILOT_SNAPSHOT_AND_GRAPH_READINESS
 created: "2026-07-20"
 action_ids: [A-032, A-042]
 required_human_gates: [G1_DOMAIN_REVIEW, G2_SECURITY_LEGAL, G3_PRODUCTION_CHANGE]
@@ -57,3 +57,7 @@ A tíz beépített eset szintetikus technikai teszt, nem emberileg jóváhagyott
 A portál a `data/sharepoint_task_snapshot.json` helyi, ellenőrzött pillanatképből a 35 `DEF-*` emberi feladathoz kapcsolódó SharePoint-dokumentumot meg tudja nyitni. Ez nem élő Graph-kapcsolat: nem végez hálózati lekérést, nem ír vissza a SharePointba, és nem keletkeztet formális jóváhagyást vagy evidenciát. Hibás host, séma, azonosító-lefedettség vagy konfiguráció esetén a működés fail-closed, a linkek nem kerülnek a portál kimenetébe.
 
 A további fejlesztési munkablokkokat és kapukat a [H002_DEVELOPMENT_BACKLOG.md](H002_DEVELOPMENT_BACKLOG.md) tartalmazza.
+
+## Élő Graph-olvasás előkészítése
+
+A `config/sharepoint_graph_readiness.json` és a `SHAREPOINT_GRAPH_DECISION_PACKAGE.md` előkészíti az élő, csak olvasható Microsoft Graph pilotot. A konfigurációt a `validate-sharepoint-readiness` parancs fail-closed módon ellenőrzi. Függő G1/G2/G3 kapu mellett hálózat, tokenkérés, credential repositoryban tárolása és SharePoint-visszaírás nem engedélyezhető. A portál ezt az állapotot láthatóan jelzi.

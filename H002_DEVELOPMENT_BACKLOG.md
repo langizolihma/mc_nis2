@@ -24,12 +24,23 @@ Elfogadási feltétel: minden helyi feladathoz pontosan egy engedélyezett NIS2 
 
 ### 2. Élő, csak olvasható Microsoft Graph/SharePoint szinkron
 
-Állapot: `BLOCKED_BY_G1_G2_G3`
+Állapot: `READINESS_PACKAGE_IMPLEMENTED_LIVE_SYNC_BLOCKED_BY_G1_G2_G3`
 
 - Alkalmazásregisztráció és legkisebb szükséges olvasási jogosultság.
 - Tenant-, webhely- és listakorlátozás.
 - Delta/időbélyeg alapú szinkron, gyorsítótár és hibatűrés.
 - Forrásazonosító, verzió és lekérési idő megőrzése.
+
+Elkészült előkészítés:
+
+- fail-closed readiness konfiguráció és validátor;
+- G1/G2/G3 aláírásra előkészített döntési csomag;
+- `Sites.Selected` site-szintű read grant mint minimumjogosultsági jelölt;
+- managed identity vagy tanúsítvány credential-preferencia;
+- delta/full-resync/tombstone kezelési terv;
+- portálos readiness állapotjelzés.
+
+Még nem készült el és kapu nélkül nem indítható: Entra app registration, site/list azonosító felderítése, tokenkérés, Graph-hálózati kapcsolat, ütemezés vagy éles cache.
 
 Elfogadási feltétel: a portál hálózati vagy jogosultsági hiba esetén nem állít valótlan friss állapotot, és semmilyen SharePoint-adatot nem módosít.
 

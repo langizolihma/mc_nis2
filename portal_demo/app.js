@@ -70,8 +70,13 @@
     byId("review-draft-list").innerHTML = drafts.length ? drafts.map((item) => `<article class="draft-card"><div><span>${escapeHtml(item.status)}</span><strong>${escapeHtml(item.action_id)} · ${escapeHtml(item.gate)}</strong></div><p>${escapeHtml(item.note)}</p><small>${escapeHtml(item.actor_display)} · ${escapeHtml(item.created_at)} · ${escapeHtml(item.draft_id)}</small></article>`).join("") : `<p class="empty-note">Még nincs helyi review-tervezet. Ezeknek nincs formális jóváhagyási hatásuk.</p>`;
   }
 
-function renderEvidence() {
+  function renderEvidence() {
     const tasks = Array.isArray(data.sharepoint_tasks) && data.sharepoint_tasks.length ? data.sharepoint_tasks : data.deferred_tasks;
+    const readiness = data.sharepoint_live_readiness || {status:"NOT_CONFIGURED",pending_gates:[],hard_errors:0};
+    byId("sharepoint-readiness-status").textContent = readiness.status;
+    byId("sharepoint-readiness-detail").textContent = readiness.hard_errors
+      ? `Fail-closed · ${readiness.hard_errors} hard error`
+      : `${(readiness.pending_gates || []).join(" · ") || "nincs függő kapu"} · hálózat és visszaírás tiltva`;
     byId("deferred-count").textContent = tasks.length; byId("evidence-nav-count").textContent = data.summary.open_human_tasks;
     byId("evidence-grid").innerHTML = tasks.map((item) => {
       const safeUrl = safeSharePointUrl(item.evidence_url);

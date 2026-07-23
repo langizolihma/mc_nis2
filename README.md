@@ -65,6 +65,14 @@ python -m nis2_harness run-h002-agent-pilot --job config/h002_agent_pilot.json -
 
 A kezelői leírás a [H002_AGENT_PILOT.md](H002_AGENT_PILOT.md), a munkacsomag szerződése a [CODEX_HANDOFF_H002.md](CODEX_HANDOFF_H002.md) fájlban található. A tíz eset technikai teszt, nem emberileg jóváhagyott audit-gold case.
 
+Az élő, read-only Microsoft Graph/SharePoint kapcsolat még nem aktív. A hálózatmentes readiness-terv és a G1/G2/G3 döntési csomag ellenőrzése:
+
+```powershell
+python -m nis2_harness validate-sharepoint-readiness --plan config/sharepoint_graph_readiness.json
+```
+
+A parancs jelenleg 0 hard error mellett szándékosan jelzi a három függő emberi kaput. A döntési csomag a [SHAREPOINT_GRAPH_DECISION_PACKAGE.md](SHAREPOINT_GRAPH_DECISION_PACKAGE.md) fájlban található.
+
 Mintakimenet:
 
 ```text

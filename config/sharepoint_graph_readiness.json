@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "status": "BLOCKED_PENDING_HUMAN_GATES",
+  "mode": "DESIGN_ONLY_NO_NETWORK",
+  "action_ids": ["A-031", "A-042"],
+  "source_refs": [
+    "https://learn.microsoft.com/en-us/graph/permissions-reference",
+    "https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins-modernize/understanding-rsc-for-msgraph-and-sharepoint-online",
+    "https://learn.microsoft.com/en-us/graph/api/listitem-delta?view=graph-rest-1.0",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
+  ],
+  "target": {
+    "tenant_domain": "metalcom.sharepoint.com",
+    "site_url": "https://metalcom.sharepoint.com/sites/NIS2",
+    "list_url": "https://metalcom.sharepoint.com/sites/NIS2/Lists/NIS2%20emberi%20feladatok/AllItems.aspx",
+    "site_id": "TBD_AFTER_APPROVED_READ_ONLY_DISCOVERY",
+    "list_id": "TBD_AFTER_APPROVED_READ_ONLY_DISCOVERY"
+  },
+  "identity": {
+    "flow": "APPLICATION_CLIENT_CREDENTIALS_PROPOSED",
+    "credential_preference": "MANAGED_IDENTITY_OR_CERTIFICATE",
+    "client_id_ref": "TBD_EXTERNAL_SECRET_STORE_REFERENCE",
+    "credential_ref": "TBD_EXTERNAL_SECRET_STORE_REFERENCE",
+    "plaintext_secret_allowed": false,
+    "credential_in_repository_allowed": false
+  },
+  "permissions": {
+    "candidate_application_permission": "Sites.Selected",
+    "resource_grant": "NIS2_SITE_READ_ONLY",
+    "broad_permissions_allowed": false,
+    "allowed_http_methods": ["GET"],
+    "write_operations_allowed": false,
+    "technical_validation_status": "PENDING_G2_NON_PRODUCTION_PROOF"
+  },
+  "sync": {
+    "strategy": "LIST_ITEM_DELTA_PROPOSED",
+    "full_resync_on_invalid_delta": true,
+    "delete_handling": "MARK_LOCAL_TOMBSTONE_PENDING_REVIEW",
+    "cursor_contains_secret": false,
+    "cursor_storage": "portal_runtime/sharepoint_delta_state.json",
+    "cache_storage": "portal_runtime/sharepoint_read_cache.json",
+    "maximum_staleness_minutes": "TBD_G1_G2",
+    "field_mapping_status": "PENDING_G1_DISCOVERY"
+  },
+  "required_canonical_fields": [
+    "task_id",
+    "title",
+    "status",
+    "owner",
+    "approver",
+    "human_gate",
+    "evidence_url",
+    "modified_at",
+    "source_version"
+  ],
+  "human_gates": [
+    {
+      "gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING",
+      "required_decision": "Forrásmezők, mezőtérkép, frissességi küszöb és szakmai adatgazda jóváhagyása.",
+      "reviewer": "TBD_HUMAN",
+      "evidence_ref": "TBD_PROTECTED_RECORD"
+    },
+    {
+      "gate": "G2_SECURITY_LEGAL",
+      "status": "PENDING",
+      "required_decision": "Adatminősítés, megőrzés, Sites.Selected technikai próba, szolgáltatásazonosság és naplózás jóváhagyása.",
+      "reviewer": "TBD_HUMAN",
+      "evidence_ref": "TBD_PROTECTED_RECORD"
+    },
+    {
+      "gate": "G3_PRODUCTION_CHANGE",
+      "status": "PENDING",
+      "required_decision": "App registration, site-grant, tanúsítvány vagy managed identity és pilotfuttatás engedélyezése.",
+      "reviewer": "TBD_HUMAN",
+      "evidence_ref": "TBD_PROTECTED_RECORD"
+    }
+  ],
+  "runtime_controls": {
+    "network_allowed": false,
+    "token_acquisition_allowed": false,
+    "sharepoint_write_back_allowed": false,
+    "formal_effect": false,
+    "fail_closed": true
+  },
+  "forbidden_automatic_actions": [
+    "accept_evidence",
+    "close_action",
+    "formal_approval",
+    "sharepoint_write_back",
+    "submit_external",
+    "change_production"
+  ]
+}

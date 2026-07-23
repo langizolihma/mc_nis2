@@ -11,6 +11,7 @@ import re
 import threading
 from typing import Any, Callable
 
+from .sharepoint_readiness import readiness_summary, validate_sharepoint_graph_readiness
 from .sharepoint_snapshot import load_sharepoint_projection
 
 
@@ -197,6 +198,24 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
     snapshot["sharepoint_tasks"] = sharepoint_tasks
     snapshot["sharepoint_integration"] = integration
     snapshot["summary"]["linked_human_tasks"] = len(sharepoint_tasks)
+    readiness_path = root / "config" / "sharepoint_graph_readiness.json"
+    try:
+        readiness_data = json.loads(readiness_path.read_text(encoding="utf-8"))
+        readiness_result = validate_sharepoint_graph_readiness(readiness_data, readiness_path)
+        snapshot["sharepoint_live_readiness"] = readiness_summary(
+            readiness_data, readiness_result
+        )
+    except (OSError, ValueError, json.JSONDecodeError):
+        snapshot["sharepoint_live_readiness"] = {
+            "status": "ERROR_FAIL_CLOSED",
+            "pending_gates": [],
+            "hard_errors": 1,
+            "warnings": 0,
+            "network_allowed": False,
+            "token_acquisition_allowed": False,
+            "write_back_allowed": False,
+            "formal_effect": False,
+        }
     h002_path = root / "generated" / "h002_agent_pilot_output.json"
     legacy_path = root / "generated" / "continuous_assurance_pilot_output.json"
     pilot_path = h002_path if h002_path.exists() else legacy_path

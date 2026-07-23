@@ -30,6 +30,7 @@ from .agent_jobs import (
 )
 from .supplier_risk import validate_supplier_risk_plan
 from .physical_security import validate_physical_security_plan
+from .sharepoint_readiness import validate_sharepoint_graph_readiness
 from .evals import (
     evaluate_agent_output,
     validate_defect_log,
@@ -131,6 +132,8 @@ def _parser() -> argparse.ArgumentParser:
     portal = subparsers.add_parser("serve-portal")
     portal.add_argument("--host", default="127.0.0.1")
     portal.add_argument("--port", default=8000, type=int)
+    sharepoint_readiness = subparsers.add_parser("validate-sharepoint-readiness")
+    sharepoint_readiness.add_argument("--plan", required=True, type=Path)
     return parser
 
 
@@ -146,6 +149,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-sharepoint-readiness":
+            plan = load_json_object(args.plan, "SharePoint Graph readiness terv")
+            result = validate_sharepoint_graph_readiness(plan, args.plan)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"SharePoint readiness: status={plan.get('status', 'UNKNOWN')}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "run-h002-agent-pilot":
             root = args.root.resolve()
             job = load_json_object(args.job, "H-002 agent job")

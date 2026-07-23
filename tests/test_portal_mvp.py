@@ -62,6 +62,14 @@ class PortalMvpTests(unittest.TestCase):
         self.assertFalse(snapshot["sharepoint_integration"]["network_allowed"])
         self.assertFalse(snapshot["sharepoint_integration"]["write_back_allowed"])
         self.assertFalse(snapshot["sharepoint_integration"]["formal_effect"])
+        readiness = snapshot["sharepoint_live_readiness"]
+        self.assertEqual("BLOCKED_PENDING_HUMAN_GATES", readiness["status"])
+        self.assertEqual(3, len(readiness["pending_gates"]))
+        self.assertEqual(0, readiness["hard_errors"])
+        self.assertFalse(readiness["network_allowed"])
+        self.assertFalse(readiness["token_acquisition_allowed"])
+        self.assertFalse(readiness["write_back_allowed"])
+        self.assertFalse(readiness["formal_effect"])
 
     def test_http_api_serves_snapshot_and_appends_draft(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -112,6 +120,7 @@ class PortalMvpTests(unittest.TestCase):
         javascript = (ROOT / "portal_demo" / "app.js").read_text(encoding="utf-8")
         self.assertIn("safeSharePointUrl", javascript)
         self.assertIn("sharepoint_tasks", javascript)
+        self.assertIn("sharepoint_live_readiness", javascript)
         self.assertIn('rel="noopener noreferrer"', javascript)
 
     def test_portal_config_forbids_formal_and_network_actions(self) -> None:
