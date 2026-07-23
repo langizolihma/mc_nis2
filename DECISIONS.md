@@ -45,6 +45,7 @@ updated: "2026-07-16"
 | D-026 | APPROVED_BASELINE | A projekt a G2/G4 aláírás és védett tárhivatkozások ideiglenes hiánya mellett továbbhaladhat, ha minden hiány a pótlandó evidencia naplóban nyitva marad. |
 | D-027 | APPROVED_BASELINE | A projekt folyamatszerepei név szerint rögzítettek; az IBF-alkalmasság, a formális kijelölések, a vezetői szponzor és a belső infrastruktúra-/incidenskezelési kontrollgazda még pótlandó. |
 | D-028 | APPROVED_BASELINE | A résztvevők és az AI elsődleges felülete helyi hálózaton, böngészőből elérhető belső portál; a Git és a védett evidenciatár háttérrendszer marad. |
+| D-029 | APPROVED_BASELINE | A portál belépési alapja a vállalati Microsoft Entra-bejelentkezés és a „NIS2 – Belső megfelelőség” SharePoint-webhely tényleges hozzáférési jogosultsága; külön portálcsoport az induláshoz nem kötelező. |
 
 # Részletes döntések
 
@@ -309,6 +310,23 @@ A portál nem válik önálló jogi döntéshozóvá vagy kanonikus bináris evi
 **Kötelező tervezési korlátok:** local-first működés, belső hálózati elérés, hitelesítés és szerepköralapú jogosultság, naplózott emberi döntések, érzékeny adat alapértelmezett tiltása, G1–G5 kapuk, kill switch, mentés és visszaállíthatóság. Külső hozzáférés, éles deploy vagy AI-környezet használata külön G2/G3 jóváhagyás nélkül nem engedélyezett.
 
 **Következmény:** a VS Code + Codex fejlesztői és adminisztrátori eszköz marad; a hétköznapi résztvevőknek nem kell Git-et, parancssort vagy fejlesztői felületet használniuk.
+
+## D-029 – Microsoft-bejelentkezés és SharePoint-hozzáférés
+
+**Státusz:** `APPROVED_BASELINE`
+
+**Rögzítés dátuma:** 2026-07-23
+
+**Jóváhagyó:** Lángi Zoltán
+
+A projektgazda döntése szerint a portálhoz nem készül külön felhasználónév/jelszó. A belépési feltétel:
+
+1. sikeres vállalati Microsoft Entra ID-bejelentkezés;
+2. a felhasználó tényleges olvasási hozzáférése a `https://metalcom.sharepoint.com/sites/NIS2` webhelyhez.
+
+Az induló modellben nem kötelező külön „NIS2 portál felhasználók” csoport. A portál nem feltételezheti a tagságot pusztán név, e-mail vagy kliensoldali állítás alapján: a szervernek hitelesített munkamenetből, érvényes tenanttal és a célwebhelyen végzett read-only hozzáférési próbával kell igazolnia.
+
+**Következmény:** a SharePoint-hozzáférés a belépés feltétele, de nem oszt automatikusan reviewer- vagy adminszerepet. A belső szerepkörök külön, szerveroldali legkisebb jogosultságú hozzárendelést igényelnek. Az Entra app registration, tokenkezelés, HTTPS/session-védelem és hozzáférési próba G2/G3 jóváhagyásig nem kapcsolható be.
 
 # Nyitott döntési sablon
 

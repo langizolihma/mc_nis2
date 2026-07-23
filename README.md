@@ -73,6 +73,14 @@ python -m nis2_harness validate-sharepoint-readiness --plan config/sharepoint_gr
 
 A parancs jelenleg 0 hard error mellett szándékosan jelzi a három függő emberi kaput. A döntési csomag a [SHAREPOINT_GRAPH_DECISION_PACKAGE.md](SHAREPOINT_GRAPH_DECISION_PACKAGE.md) fájlban található.
 
+A D-029 szerinti vállalati Microsoft-bejelentkezés és NIS2 SharePoint-hozzáférés alapú portálbelépés jelenleg hálózatmentes policy-prototípus. Ellenőrzése:
+
+```powershell
+python -m nis2_harness validate-portal-auth --policy config/portal_auth_policy.json
+```
+
+A valós Entra-bejelentkezés G1/G2/G3 jóváhagyásig kikapcsolt. Az aláírásra előkészített döntési csomag a [PORTAL_AUTH_DECISION_PACKAGE.md](PORTAL_AUTH_DECISION_PACKAGE.md) fájlban található.
+
 Mintakimenet:
 
 ```text

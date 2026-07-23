@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "status": "BLOCKED_PENDING_G1_G2_G3",
+  "mode": "DESIGN_ONLY_NO_SIGN_IN",
+  "decision_ref": "DECISIONS.md:D-029",
+  "source_refs": [
+    "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/id-tokens",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/claims-validation",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/app-sign-in-flow"
+  ],
+  "identity": {
+    "provider": "MICROSOFT_ENTRA_ID",
+    "tenant_mode": "SINGLE_TENANT",
+    "tenant_id": "TBD_G2_G3_PROTECTED_CONFIGURATION",
+    "client_id": "TBD_G2_G3_PROTECTED_CONFIGURATION",
+    "flow": "AUTHORIZATION_CODE_WITH_PKCE_PROPOSED",
+    "redirect_uri": "TBD_G2_G3_HTTPS_URI",
+    "token_library": "TBD_APPROVED_MICROSOFT_LIBRARY",
+    "server_validated_session_required": true,
+    "id_token_as_authorization_allowed": false
+  },
+  "admission": {
+    "rule": "ENTRA_AUTH_AND_NIS2_SITE_READ_PROBE",
+    "target_site": "https://metalcom.sharepoint.com/sites/NIS2",
+    "probe_method": "GET",
+    "probe_resource": "NIS2_SITE_OR_TASK_LIST",
+    "client_side_membership_claim_allowed": false,
+    "email_domain_only_allowed": false,
+    "failure_behavior": "DENY",
+    "cache_ttl_minutes": "TBD_G2",
+    "recheck_on_new_session": true
+  },
+  "roles": [
+    {
+      "role": "VIEWER",
+      "permissions": ["view_dashboard", "view_tasks", "open_evidence_link"]
+    },
+    {
+      "role": "TASK_OWNER",
+      "permissions": ["view_dashboard", "view_tasks", "open_evidence_link", "create_review_draft"]
+    },
+    {
+      "role": "REVIEWER",
+      "permissions": ["view_dashboard", "view_tasks", "open_evidence_link", "create_review_draft", "return_for_rework"]
+    },
+    {
+      "role": "PORTAL_ADMIN",
+      "permissions": ["view_dashboard", "view_tasks", "open_evidence_link", "view_auth_diagnostics"]
+    }
+  ],
+  "default_role_after_admission": "VIEWER",
+  "role_assignments": [],
+  "session_controls": {
+    "https_required": true,
+    "secure_cookie_required": true,
+    "http_only_cookie_required": true,
+    "same_site": "Lax",
+    "csrf_protection_required": true,
+    "idle_timeout_minutes": "TBD_G2",
+    "absolute_timeout_minutes": "TBD_G2",
+    "raw_token_in_browser_storage_allowed": false,
+    "token_logging_allowed": false
+  },
+  "human_gates": [
+    {
+      "gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING",
+      "required_decision": "Szerepkörök, feladatgazda/reviewer műveletek és szerepkör-gazda jóváhagyása.",
+      "reviewer": "TBD_HUMAN",
+      "evidence_ref": "TBD_PROTECTED_RECORD"
+    },
+    {
+      "gate": "G2_SECURITY_LEGAL",
+      "status": "PENDING",
+      "required_decision": "Tenant, OIDC/PKCE, tokenvalidáció, session, CSRF, naplózás és SharePoint read-probe jóváhagyása.",
+      "reviewer": "TBD_HUMAN",
+      "evidence_ref": "TBD_PROTECTED_RECORD"
+    },
+    {
+      "gate": "G3_PRODUCTION_CHANGE",
+      "status": "PENDING",
+      "required_decision": "Entra app registration, redirect URI, delegált site-hozzáférés és pilot engedélyezése.",
+      "reviewer": "TBD_HUMAN",
+      "evidence_ref": "TBD_PROTECTED_RECORD"
+    }
+  ],
+  "runtime_controls": {
+    "authentication_enabled": false,
+    "network_allowed": false,
+    "token_acquisition_allowed": false,
+    "admission_enabled": false,
+    "role_enforcement_enabled": false,
+    "formal_effect": false,
+    "fail_closed": true
+  },
+  "forbidden_automatic_actions": [
+    "accept_evidence",
+    "close_action",
+    "formal_approval",
+    "assign_privileged_role",
+    "sharepoint_write_back",
+    "submit_external",
+    "change_production"
+  ]
+}

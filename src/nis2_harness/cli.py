@@ -30,6 +30,7 @@ from .agent_jobs import (
 )
 from .supplier_risk import validate_supplier_risk_plan
 from .physical_security import validate_physical_security_plan
+from .portal_auth import validate_portal_auth_policy
 from .sharepoint_readiness import validate_sharepoint_graph_readiness
 from .evals import (
     evaluate_agent_output,
@@ -134,6 +135,8 @@ def _parser() -> argparse.ArgumentParser:
     portal.add_argument("--port", default=8000, type=int)
     sharepoint_readiness = subparsers.add_parser("validate-sharepoint-readiness")
     sharepoint_readiness.add_argument("--plan", required=True, type=Path)
+    portal_auth = subparsers.add_parser("validate-portal-auth")
+    portal_auth.add_argument("--policy", required=True, type=Path)
     return parser
 
 
@@ -149,6 +152,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-portal-auth":
+            policy = load_json_object(args.policy, "portál auth policy")
+            result = validate_portal_auth_policy(policy, args.policy)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Portal auth: status={policy.get('status', 'UNKNOWN')}; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-sharepoint-readiness":
             plan = load_json_object(args.plan, "SharePoint Graph readiness terv")
             result = validate_sharepoint_graph_readiness(plan, args.plan)

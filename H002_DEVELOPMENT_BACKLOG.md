@@ -46,12 +46,24 @@ Elfogadási feltétel: a portál hálózati vagy jogosultsági hiba esetén nem 
 
 ### 3. Hitelesítés és szerepkör-alapú jogosultság
 
-Állapot: `BLOCKED_BY_G2_G3`
+Állapot: `LOCAL_POLICY_PROTOTYPE_IMPLEMENTED_LIVE_ENTRA_BLOCKED_BY_G1_G2_G3`
 
 - Vállalati bejelentkezés.
 - Legalább megtekintő, feladatfelelős, reviewer és admin szerep.
 - Szerveroldali jogosultság-ellenőrzés minden műveletnél.
 - Munkamenet-védelem, naplózás és jogosultság-visszavonás.
+
+Elkészült előkészítés:
+
+- D-029 szerinti belépési baseline;
+- fail-closed auth/RBAC policy és CLI-validátor;
+- vállalati Entra-identitás + NIS2 site read-probe admission szabály;
+- `VIEWER`, `TASK_OWNER`, `REVIEWER`, `PORTAL_ADMIN` helyi jogosultsági modell;
+- kliensoldali tagsági állítás, e-mail-domain alapú belépés, hamis szerepköremelés és tiltott formális művelet negatív tesztje;
+- portálos auth-readiness állapotjelzés;
+- G1/G2/G3 döntési csomag.
+
+Még nem készült el és kapu nélkül nem indítható: Entra app registration, valós tenant/client ID, redirect URI, tokenkönyvtár, HTTPS session, delegált SharePoint access token és tényleges site read-probe.
 
 Elfogadási feltétel: névtelen vagy illetéktelen felhasználó nem lát és nem módosít védett adatot; minden művelet személyhez köthető.
 

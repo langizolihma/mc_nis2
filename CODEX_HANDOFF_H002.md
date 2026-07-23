@@ -1,6 +1,6 @@
 ---
 handoff_id: H-002
-status: IMPLEMENTED_LOCAL_PILOT_SNAPSHOT_AND_GRAPH_READINESS
+status: IMPLEMENTED_LOCAL_PILOT_GRAPH_AND_AUTH_READINESS
 created: "2026-07-20"
 action_ids: [A-032, A-042]
 required_human_gates: [G1_DOMAIN_REVIEW, G2_SECURITY_LEGAL, G3_PRODUCTION_CHANGE]
@@ -61,3 +61,7 @@ A további fejlesztési munkablokkokat és kapukat a [H002_DEVELOPMENT_BACKLOG.m
 ## Élő Graph-olvasás előkészítése
 
 A `config/sharepoint_graph_readiness.json` és a `SHAREPOINT_GRAPH_DECISION_PACKAGE.md` előkészíti az élő, csak olvasható Microsoft Graph pilotot. A konfigurációt a `validate-sharepoint-readiness` parancs fail-closed módon ellenőrzi. Függő G1/G2/G3 kapu mellett hálózat, tokenkérés, credential repositoryban tárolása és SharePoint-visszaírás nem engedélyezhető. A portál ezt az állapotot láthatóan jelzi.
+
+## Portálhitelesítés előkészítése
+
+A D-029, a `config/portal_auth_policy.json` és a `PORTAL_AUTH_DECISION_PACKAGE.md` rögzíti a vállalati Microsoft-bejelentkezésre és tényleges NIS2 SharePoint read-probe-ra épülő belépési modellt. A `validate-portal-auth` parancs ellenőrzi a deny-by-default admissiont, a szerepköröket, a session-kontrollokat és a függő G1/G2/G3 kapukat. Valós bejelentkezés, tokenkezelés és hálózati elérés továbbra sincs.

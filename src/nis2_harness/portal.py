@@ -11,6 +11,7 @@ import re
 import threading
 from typing import Any, Callable
 
+from .portal_auth import auth_readiness_summary, validate_portal_auth_policy
 from .sharepoint_readiness import readiness_summary, validate_sharepoint_graph_readiness
 from .sharepoint_snapshot import load_sharepoint_projection
 
@@ -214,6 +215,23 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
             "network_allowed": False,
             "token_acquisition_allowed": False,
             "write_back_allowed": False,
+            "formal_effect": False,
+        }
+    auth_path = root / "config" / "portal_auth_policy.json"
+    try:
+        auth_data = json.loads(auth_path.read_text(encoding="utf-8"))
+        auth_result = validate_portal_auth_policy(auth_data, auth_path)
+        snapshot["portal_auth_readiness"] = auth_readiness_summary(
+            auth_data, auth_result
+        )
+    except (OSError, ValueError, json.JSONDecodeError):
+        snapshot["portal_auth_readiness"] = {
+            "status": "ERROR_FAIL_CLOSED",
+            "pending_gates": [],
+            "hard_errors": 1,
+            "warnings": 0,
+            "authentication_enabled": False,
+            "network_allowed": False,
             "formal_effect": False,
         }
     h002_path = root / "generated" / "h002_agent_pilot_output.json"

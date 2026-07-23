@@ -82,6 +82,8 @@ Védett evidenciatár / hatósági benyújtás ember által
 
 A D-028 alapján a célállapot elsődleges ember–AI kommunikációs felülete egy helyi hálózaton, böngészőből elérhető belső portál. A VS Code + Codex a fejlesztés és műszaki adminisztráció eszköze marad; a résztvevők feladat-, döntési és jóváhagyási felületét a portál adja.
 
+A D-029 alapján a portál belépési feltétele a vállalati Microsoft Entra ID-bejelentkezés és a `NIS2 – Belső megfelelőség` SharePoint-webhely tényleges olvasási jogosultsága. Külön portálcsoport az induláshoz nem kötelező; a portálon belüli reviewer- és adminszerepek ettől elkülönített, szerveroldali RBAC-hozzárendelést igényelnek.
+
 ## Kanonikus tárolók
 
 - **Privát Git:** kód, sémák, promptok, tesztek, handoff dokumentumok, nem érzékeny mintaadat és evidencia-metaadat.
