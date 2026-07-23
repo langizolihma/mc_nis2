@@ -7,6 +7,7 @@
     "confidence": "authority",
     "purpose": "Kötelező határidők, benyújtási és beszámolási kötelezettségek.",
     "sha256": "9ecc9ac1761dc9a02c61a8b015b83b215312053c76194f088bea8ee89e1109f3",
+    "internal_uri": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/00_AUTHORITY/A-002/SRC-001__A-002__SIGNED-AUTHORITY-DECISION__v01__20260626.pdf",
     "received_date": "2026-06-26",
     "received_date_confidence": "user_confirmed_proven",
     "received_evidence_reference": "TBD-EVIDENCE-REPOSITORY-REF"
@@ -19,6 +20,7 @@
     "confidence": "audited",
     "purpose": "Korábbi auditjelentés-változat; tartalma az SRC-008 kanonikus változattal összevetve megőrzött történeti forrás.",
     "status": "SUPERSEDED_BY_SRC-008",
+    "internal_uri": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/99_ARCHIVE/A-035/SRC-002__A-035__HISTORICAL-AUDIT-REPORT__v01__20260504.pdf",
     "sha256": "f0d48aa53c07330d5a9088aec5479ca1c1675c5ec33d4a0726df76d77588f5a6"
   },
   {
@@ -76,6 +78,7 @@
     "pages": 388,
     "signature_field": "Signature2; Adobe.PPKLite; adbe.pkcs7.detached; Hinkel Attila; 2026-06-05 15:39:43 +02:00",
     "signature_validation": "HUMAN_VALIDATED_VALID_ON_2026-07-15; structure and ByteRange present; automated certificate trust chain not independently validated",
+    "internal_uri": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/01_AUDIT_SOURCE/A-035/SRC-008__A-035__SIGNED-SUBMITTED-AUDIT-REPORT__v01__20260605.pdf",
     "sha256": "c347dc3139dd433ace098b6145f1ea5d043614dcfcbf7ed46f71e1b405c5058f"
   }
 ]
