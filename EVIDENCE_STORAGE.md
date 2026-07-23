@@ -1,7 +1,7 @@
 ---
-version: "0.4"
+version: "0.5"
 status: DRAFT_FOR_APPROVAL
-updated: "2026-07-15"
+updated: "2026-07-23"
 ---
 
 # Termékfüggetlen evidenciatárolási szabály
@@ -51,6 +51,16 @@ NIS2_EVIDENCE/
 ```
 
 Az EIR-en belül szükség szerint az `ACTION-ID` szerinti almappa használható. A struktúra csak taxonómiajavaslat; a tényleges védett gyökér-URI-t és a vállalati csoportokat embernek kell kijelölnie a `config/evidence_store.example.json` alapján.
+
+## 4.1 Jelenlegi SharePoint-megvalósítás
+
+- Jelölt védett gyökér: `https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE`
+- Tárhely: a `NIS2 – Belső megfelelőség` SharePoint-webhely `Dokumentumok` dokumentumtára.
+- Írási próba: 2026-07-23-án egy ideiglenes tesztmappa létrehozása, visszaolvasása és törlése sikeres volt.
+- Migrációs próba: 19 `EV-VC-*` rekordhoz készült névszabály szerinti másolat; a célmappákból visszaolvasott fájlméret minden tételnél egyezett a 2026-07-20-i helyi átvételi jegyzékkel.
+- Forrásvédelem: a `Dokumentumok Váraljai Csabától` forrásmappából csak másolat készült; forrásfájl nem lett átnevezve, mozgatva vagy törölve.
+- Állapot: a tár és a 19 rekord továbbra is `DRAFT_FOR_APPROVAL` / `DRAFT`. A másolás nem bizonyítja a tartalom helyességét és nem jelent emberi elfogadást.
+- Nyitott kapuk: név szerinti store owner és backup owner; szerepkör- és mappaszintű legkisebb jogosultság; verziózás és auditnapló ellenőrzése; backup/restore-próba; retention és bizalmassági G2 döntés; G1 szakmai review; negyedéves hozzáférési és hash-mintavételi review.
 
 ### Fájlnévszabály
 
