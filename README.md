@@ -28,6 +28,7 @@ python -m nis2_harness deadlines --received 2026-06-26
 python -m nis2_harness draft-action-plan --actions data/actions.csv --output generated/action_plan.md
 python -m nis2_harness validate-evidence --evidence data/evidence_register.csv --actions data/actions.csv
 python -m nis2_harness validate-findings --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
+python -m nis2_harness validate-control-catalog --catalog data/control_catalog.csv --requirements data/control_requirements.csv --metadata data/control_catalog_metadata.json --review data/control_catalog_review.json --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
 python -m nis2_harness validate-inventory --inventory data/inventory_register.json --export-plan config/inventory_export_plan.json
 python -m nis2_harness validate-evals --config config/eval_config.json --cases evals/gold_cases.json --output evals/sample_proposal_output.json --defects evals/defect_log.json
 python -m nis2_harness validate-ai-policy --policy config/ai_usage_policy.json
@@ -45,7 +46,7 @@ python -m unittest discover -s tests -v
 
 ### Helyi portál-MVP
 
-A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 35 emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. Append-only helyi review-tervezetet rögzíthet, de az nem formális jóváhagyás, nem evidencia és nem módosít akcióstátuszt.
+A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 36 emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. Append-only helyi review-tervezetet rögzíthet, de az nem formális jóváhagyás, nem evidencia és nem módosít akcióstátuszt.
 
 ```powershell
 python -m nis2_harness serve-portal
@@ -102,6 +103,29 @@ Az evidencia-metaadatok külön `data/evidence_register.csv` fájlban szerepelne
 A 2026-07-20-án átvett 182 állományos belső dokumentumcsomag teljes helyi hash-jegyzéke az ignorált forrásmappában marad; a Git csak 19 megtisztított `DRAFT` evidenciajelölt metaadatát tartalmazza. A tartalmi eredményt és az emberi feladatokat a [DOCUMENT_INTAKE_REVIEW_2026-07-20.md](DOCUMENT_INTAKE_REVIEW_2026-07-20.md), a pótlandó védett URI-kat és review-kat a `DEF-034` tétel rögzíti. Egyetlen új jelölt sem elfogadott evidencia.
 
 Az audit 328 gépi finding-rekordja a `data/audit_findings.csv`, a javasolt kontroll–akció–evidencia kapcsolatok a `data/control_action_mapping.csv` fájlban találhatók. A `validate-findings` szerkezeti és hivatkozási ellenőrzést végez, de nem helyettesíti a G1 szakmai review-t. A rétegzett mintát, parser-kivételeket és jóváhagyási blokkot a [FINDING_REVIEW_2026-07-15.md](FINDING_REVIEW_2026-07-15.md) tartalmazza.
+
+Az `SRC-009` Excelből determinisztikusan kinyert 914 védelmi intézkedés a `data/control_catalog.csv`, a hozzájuk tartozó 1878 részletes követelménysor a `data/control_requirements.csv`, a forráshash és kivonási állapot pedig a `data/control_catalog_metadata.json` fájlban található. A katalógus mind a finding-, mapping- és akcióregiszterben használt 164 egyedi kontrollhivatkozást lefedi. A rekordok `PROPOSED` és `unverified_internal` állapotúak: magyarázatot, megvalósítási támpontot és ISO/NIST kereszthivatkozást adhatnak, de nem auditbizonyítékok és nem igazolnak kontrollműködést. A portál az akció részleteinél megjeleníti a kapcsolódó katalógusrekordokat.
+
+Az eredeti munkafüzet az `alapadatok/` Git-kizárt könyvtárban marad. Új verzió esetén, zárt Excel mellett a kivonás megismételhető:
+
+```powershell
+python -m nis2_harness extract-control-catalog `
+  --input alapadatok/Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0.xlsx `
+  --catalog-output data/control_catalog.csv `
+  --requirements-output data/control_requirements.csv `
+  --metadata-output data/control_catalog_metadata.json
+```
+
+Az automatikus Alap/Jelentős/Magas kontrollszűrés egyelőre szándékosan tiltott. A `data/inventory_register.json` minden EIR-re explicit `security_class: TBD-HUMAN` értéket tartalmaz, amíg az EIR-owner és az IBF emberileg nem igazolja a besorolást és a kontrolltestreszabást; ezt a `DEF-036` követi.
+
+A katalógus kitölthető G1 felülvizsgálati lapja a
+`CONTROL_CATALOG_G1_REVIEW.md`, a géppel ellenőrizhető döntési váza pedig a
+`data/control_catalog_review.json`. Az eredeti Excel védett SharePoint-példánya
+az `NIS2_EVIDENCE/02_GOVERNANCE/A-005/SRC-009` mappában található. A feltöltés
+nem jelent szakmai jóváhagyást; a store-owner, a G1 döntés és az öt
+EIR-besorolás továbbra is emberi feladat. A kapcsolaton át feltöltött XLSX
+mérete eltér a helyi kanonikus forrásétól, ezért a SharePoint-példány kézi
+cseréje és visszaolvasott SHA-256 ellenőrzése is a `DEF-036` része.
 
 Az A-011 öt EIR-t tartalmazó proposal baseline-ja a `data/inventory_register.json`, a jóváhagyandó read-only források a `config/inventory_export_plan.json` fájlban vannak. A `validate-inventory` megakadályozza a hibás hivatkozást, duplikált azonosítót, nem read-only gyűjtési módot és emberi metaadat nélküli jóváhagyást. A végrehajtási sorrendet az [A011_READONLY_INVENTORY_PLAN.md](A011_READONLY_INVENTORY_PLAN.md) tartalmazza.
 
@@ -166,6 +190,7 @@ Az éles változtatás igénye nem következtethető biztonságosan szabad szöv
 - `human_gate`: pontosvesszővel elválasztott G1–G5 kapulista.
 - `external_submission`: külső benyújtás jelzője.
 - `production_change`: opcionális explicit G3-követelményjelző.
+- `security_class`: EIR-enként `Alap`, `Jelentős`, `Magas` vagy `TBD-HUMAN`; automatikus kontrollkiválasztás csak emberileg igazolt besorolás után engedhető.
 
 Az engedélyezett enumokat a [CODEX_HANDOFF.md](CODEX_HANDOFF.md) és a `validation.py` tartalmazza.
 

@@ -46,6 +46,7 @@ updated: "2026-07-16"
 | D-027 | APPROVED_BASELINE | A projekt folyamatszerepei név szerint rögzítettek; az IBF-alkalmasság, a formális kijelölések, a vezetői szponzor és a belső infrastruktúra-/incidenskezelési kontrollgazda még pótlandó. |
 | D-028 | APPROVED_BASELINE | A résztvevők és az AI elsődleges felülete helyi hálózaton, böngészőből elérhető belső portál; a Git és a védett evidenciatár háttérrendszer marad. |
 | D-029 | APPROVED_BASELINE | A portál belépési alapja a vállalati Microsoft Entra-bejelentkezés és a „NIS2 – Belső megfelelőség” SharePoint-webhely tényleges hozzáférési jogosultsága; külön portálcsoport az induláshoz nem kötelező. |
+| D-030 | APPROVED_BASELINE | Az SRC-009 kontrollkatalógus proposal-only referenciaforrásként bekerül a registrybe és a portálba; megfelelőséget nem igazol, automatikus EIR-kontrollkiválasztás csak igazolt biztonsági osztály és G1 review után engedhető. |
 
 # Részletes döntések
 
@@ -327,6 +328,20 @@ A projektgazda döntése szerint a portálhoz nem készül külön felhasználó
 Az induló modellben nem kötelező külön „NIS2 portál felhasználók” csoport. A portál nem feltételezheti a tagságot pusztán név, e-mail vagy kliensoldali állítás alapján: a szervernek hitelesített munkamenetből, érvényes tenanttal és a célwebhelyen végzett read-only hozzáférési próbával kell igazolnia.
 
 **Következmény:** a SharePoint-hozzáférés a belépés feltétele, de nem oszt automatikusan reviewer- vagy adminszerepet. A belső szerepkörök külön, szerveroldali legkisebb jogosultságú hozzárendelést igényelnek. Az Entra app registration, tokenkezelés, HTTPS/session-védelem és hozzáférési próba G2/G3 jóváhagyásig nem kapcsolható be.
+
+## D-030 – Védelmi intézkedések katalógusának beillesztése
+
+**Státusz:** `APPROVED_BASELINE`
+
+**Rögzítés dátuma:** 2026-07-27
+
+**Jóváhagyó:** Lángi Zoltán
+
+A projektgazda engedélyezte a `Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0.xlsx` munkafüzet beillesztését a harness-be. Az eredeti bináris az `alapadatok/` Git-kizárt forráskönyvtárban, később jóváhagyott védett tárban marad; a Git a determinisztikusan kinyert kontroll-, részletes követelmény- és forrásmetaadat-regisztert tartalmazza.
+
+**Engedélyezett felhasználás:** kontrollhivatkozások ellenőrzése; finding-, mapping- és akciórekordok kiegészítése; magyarázat és megvalósítási támpont megjelenítése a portálban; későbbi, ember által felülvizsgálandó AI-javaslatok forrása.
+
+**Kontrollkorlát:** az SRC-009 `unverified_internal` és `PROPOSED`, nem auditbizonyíték és nem igazol kontrollműködést. A munkafüzet eredetét, verzióját és a hatályos jogszabályi szöveggel való egyezését G1 review-val kell igazolni. EIR-re alkalmazandó kontrollkör automatikusan csak az EIR Alap/Jelentős/Magas besorolásának és a kontrolltestreszabás emberi jóváhagyása után választható ki. A nyitott feladatokat a `DEF-036` követi.
 
 # Nyitott döntési sablon
 

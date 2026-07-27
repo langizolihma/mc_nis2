@@ -47,8 +47,32 @@ def load_deferred(path: Path) -> list[dict[str, str]]:
     return records
 
 
-def build_snapshot(actions: list[dict[str, str]], deferred: list[dict[str, str]], dates: dict[str, Any], as_of: date) -> dict[str, Any]:
+def load_control_catalog_projection(path: Path) -> list[dict[str, str]]:
+    """Load the non-sensitive proposal-only fields displayed in the portal."""
+    allowed = {
+        "control_ref", "requirement_family", "control_title",
+        "basic_applicability", "significant_applicability",
+        "high_applicability", "explanation", "implementation_steps",
+        "iso_27001_ref", "nist_sp_800_53_rev5_ref", "source_ref",
+        "source_confidence", "human_review_status",
+    }
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        return [
+            {key: (value or "").strip() for key, value in row.items() if key in allowed}
+            for row in csv.DictReader(handle)
+        ]
+
+
+def build_snapshot(
+    actions: list[dict[str, str]],
+    deferred: list[dict[str, str]],
+    dates: dict[str, Any],
+    as_of: date,
+    control_catalog: list[dict[str, str]] | None = None,
+) -> dict[str, Any]:
     """Build the safe, non-sensitive portal projection."""
+    catalog_records = control_catalog or []
+    catalog_by_ref = {item["control_ref"]: item for item in catalog_records}
     deadline = date.fromisoformat(str(dates["action_plan_deadline"]))
     gate_counts = {f"G{i}": 0 for i in range(1, 6)}
     status_counts: dict[str, int] = {}
@@ -71,6 +95,15 @@ def build_snapshot(actions: list[dict[str, str]], deferred: list[dict[str, str]]
         "gates": [gate for gate in item["human_gate"].split(";") if gate],
         "ai_role": item["ai_role"], "ai_eligibility": item["ai_eligibility"],
         "cost_band": item["cost_band"], "external_submission": item["external_submission"],
+        "control_refs": [
+            value.strip() for value in item.get("control_ref", "").split(";")
+            if value.strip()
+        ],
+        "control_details": [
+            catalog_by_ref[value.strip()]
+            for value in item.get("control_ref", "").split(";")
+            if value.strip() in catalog_by_ref
+        ],
     } for item in actions]
     approval_queue = [{
         "action_id": item["id"], "title": item["title"], "priority": item["priority"],
@@ -99,6 +132,10 @@ def build_snapshot(actions: list[dict[str, str]], deferred: list[dict[str, str]]
             "action_plan_deadline": deadline.isoformat(), "days_to_deadline": max((deadline - as_of).days, 0),
             "repeat_audit_target": "2027-09-30", "gate_counts": gate_counts,
             "priority_counts": priority_counts, "status_counts": status_counts,
+            "catalog_controls": len(catalog_records),
+            "catalog_review_status": (
+                "PROPOSED_G1_PENDING" if catalog_records else "NOT_AVAILABLE"
+            ),
         },
         "actions": safe_actions, "approval_queue": approval_queue,
         "deferred_tasks": deferred, "ai_proposals": ai_proposals,
@@ -184,7 +221,52 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
     actions = load_actions(root / "data" / "actions.csv")
     deferred = load_deferred(root / "DEFERRED_EVIDENCE_LOG.md")
     dates = json.loads((root / "data" / "project_dates.json").read_text(encoding="utf-8"))
-    snapshot = build_snapshot(actions, deferred, dates, as_of)
+    catalog_path = root / "data" / "control_catalog.csv"
+    try:
+        control_catalog = load_control_catalog_projection(catalog_path)
+    except OSError:
+        control_catalog = []
+    snapshot = build_snapshot(actions, deferred, dates, as_of, control_catalog)
+    review_path = root / "data" / "control_catalog_review.json"
+    try:
+        review = json.loads(review_path.read_text(encoding="utf-8"))
+        review_checks = review.get("review_checks", [])
+        eir_classifications = review.get("eir_classifications", [])
+        snapshot["catalog_review"] = {
+            "status": str(review.get("status", "UNKNOWN")),
+            "source_ref": str(review.get("source_ref", "")),
+            "deferred_task_id": str(review.get("deferred_task_id", "")),
+            "required_gate": str(review.get("required_gate", "")),
+            "protected_folder_uri": str(review.get("protected_folder_uri", "")),
+            "review_form_uri": str(review.get("review_form_uri", "")),
+            "pending_checks": sum(
+                item.get("status") == "PENDING"
+                for item in review_checks if isinstance(item, dict)
+            ),
+            "pending_eir_classifications": sum(
+                item.get("security_class") == "TBD-HUMAN"
+                for item in eir_classifications if isinstance(item, dict)
+            ),
+            "formal_effect": False,
+        }
+        snapshot["summary"]["catalog_review_status"] = snapshot["catalog_review"]["status"]
+        snapshot["summary"]["catalog_pending_checks"] = snapshot["catalog_review"]["pending_checks"]
+        snapshot["summary"]["catalog_pending_eir_classifications"] = (
+            snapshot["catalog_review"]["pending_eir_classifications"]
+        )
+    except (OSError, ValueError, json.JSONDecodeError):
+        snapshot["catalog_review"] = {
+            "status": "ERROR_FAIL_CLOSED",
+            "source_ref": "SRC-009",
+            "deferred_task_id": "DEF-036",
+            "required_gate": "G1_DOMAIN_REVIEW",
+            "protected_folder_uri": "",
+            "review_form_uri": "",
+            "pending_checks": 0,
+            "pending_eir_classifications": 0,
+            "formal_effect": False,
+        }
+        snapshot["summary"]["catalog_review_status"] = "ERROR_FAIL_CLOSED"
     snapshot["review_drafts"] = store.load()
     try:
         sharepoint_tasks, integration = load_sharepoint_projection(root, deferred)
@@ -198,7 +280,9 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
         }
     snapshot["sharepoint_tasks"] = sharepoint_tasks
     snapshot["sharepoint_integration"] = integration
-    snapshot["summary"]["linked_human_tasks"] = len(sharepoint_tasks)
+    linked_tasks = sum(bool(item.get("evidence_url")) for item in sharepoint_tasks)
+    snapshot["summary"]["linked_human_tasks"] = linked_tasks
+    snapshot["summary"]["unlinked_human_tasks"] = len(sharepoint_tasks) - linked_tasks
     readiness_path = root / "config" / "sharepoint_graph_readiness.json"
     try:
         readiness_data = json.loads(readiness_path.read_text(encoding="utf-8"))

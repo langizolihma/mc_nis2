@@ -61,17 +61,26 @@ def project_sharepoint_tasks(
     deferred_ids = {item["id"] for item in deferred}
     missing = sorted(deferred_ids - links.keys())
     unexpected = sorted(links.keys() - deferred_ids)
-    if missing or unexpected:
-        details = []
-        if missing:
-            details.append("hiányzik: " + ", ".join(missing))
-        if unexpected:
-            details.append("ismeretlen: " + ", ".join(unexpected))
-        raise ValueError("A SharePoint snapshot DEF-lefedettsége hibás (" + "; ".join(details) + ").")
+    if unexpected:
+        raise ValueError(
+            "A SharePoint snapshot ismeretlen DEF-tételt tartalmaz: "
+            + ", ".join(unexpected)
+        )
 
     projected: list[dict[str, Any]] = []
     for item in deferred:
-        link = links[item["id"]]
+        link = links.get(item["id"])
+        if link is None:
+            projected.append({
+                **item,
+                "evidence_url": "",
+                "evidence_label": "Kapcsolódó SharePoint-tétel még nincs rögzítve",
+                "sharepoint_status": "Nincs SharePoint-tétel",
+                "source": "LOCAL_DEFERRED_ONLY",
+                "formal_effect": False,
+                "write_back_allowed": False,
+            })
+            continue
         projected.append({
             **item,
             "evidence_url": str(link["evidence_url"]),
@@ -104,13 +113,20 @@ def load_sharepoint_projection(
     allowed_host = str(config.get("allowed_host", "")).strip()
     snapshot = load_sharepoint_snapshot(snapshot_path, allowed_host)
     tasks = project_sharepoint_tasks(deferred, snapshot)
+    linked_task_count = sum(bool(item["evidence_url"]) for item in tasks)
     return tasks, {
-        "status": "READ_ONLY_SNAPSHOT_ACTIVE",
+        "status": (
+            "READ_ONLY_SNAPSHOT_ACTIVE"
+            if linked_task_count == len(tasks)
+            else "READ_ONLY_SNAPSHOT_PARTIAL"
+        ),
         "mode": snapshot["mode"],
         "site_url": snapshot.get("site_url", ""),
         "list_url": snapshot.get("list_url", ""),
         "captured_at": snapshot.get("captured_at", ""),
         "task_count": len(tasks),
+        "linked_task_count": linked_task_count,
+        "unlinked_task_count": len(tasks) - linked_task_count,
         "network_allowed": False,
         "write_back_allowed": False,
         "formal_effect": False,

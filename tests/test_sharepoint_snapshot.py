@@ -32,9 +32,17 @@ class SharePointSnapshotTests(unittest.TestCase):
     def test_current_snapshot_covers_every_deferred_task(self) -> None:
         snapshot = load_sharepoint_snapshot(self.snapshot_path, "metalcom.sharepoint.com")
         projected = project_sharepoint_tasks(self.deferred, snapshot)
-        self.assertEqual(35, len(projected))
+        self.assertEqual(36, len(projected))
         self.assertEqual([item["id"] for item in self.deferred], [item["id"] for item in projected])
-        self.assertTrue(all(item["evidence_url"].startswith("https://metalcom.sharepoint.com/sites/NIS2/") for item in projected))
+        linked = [item for item in projected if item["evidence_url"]]
+        self.assertEqual(36, len(linked))
+        self.assertTrue(all(item["evidence_url"].startswith("https://metalcom.sharepoint.com/sites/NIS2/") for item in linked))
+        self.assertEqual(36, len(projected))
+        self.assertTrue(all(item["evidence_url"] for item in projected))
+        self.assertEqual(
+            "SRC-009 kontrollkatalógus G1 review célmappája",
+            next(item["evidence_label"] for item in projected if item["id"] == "DEF-036"),
+        )
         self.assertTrue(all(item["formal_effect"] is False for item in projected))
         self.assertTrue(all(item["write_back_allowed"] is False for item in projected))
 
@@ -62,16 +70,29 @@ class SharePointSnapshotTests(unittest.TestCase):
         finally:
             path.unlink(missing_ok=True)
 
-    def test_exact_deferred_coverage_is_required(self) -> None:
+    def test_missing_snapshot_link_remains_visible_but_unlinked(self) -> None:
         payload = copy.deepcopy(self.payload)
         payload["tasks"].pop()
-        with self.assertRaisesRegex(ValueError, "lefedettsége"):
+        projected = project_sharepoint_tasks(self.deferred, payload)
+        self.assertEqual("", projected[-1]["evidence_url"])
+        self.assertEqual("LOCAL_DEFERRED_ONLY", projected[-1]["source"])
+
+    def test_unexpected_snapshot_task_is_rejected(self) -> None:
+        payload = copy.deepcopy(self.payload)
+        payload["tasks"].append({
+            "id": "DEF-999",
+            "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/extra",
+            "evidence_label": "Ismeretlen",
+        })
+        with self.assertRaisesRegex(ValueError, "ismeretlen DEF"):
             project_sharepoint_tasks(self.deferred, payload)
 
     def test_configured_projection_is_local_and_read_only(self) -> None:
         tasks, metadata = load_sharepoint_projection(ROOT, self.deferred)
-        self.assertEqual(35, len(tasks))
+        self.assertEqual(36, len(tasks))
         self.assertEqual("READ_ONLY_SNAPSHOT_ACTIVE", metadata["status"])
+        self.assertEqual(36, metadata["linked_task_count"])
+        self.assertEqual(0, metadata["unlinked_task_count"])
         self.assertFalse(metadata["network_allowed"])
         self.assertFalse(metadata["write_back_allowed"])
         self.assertFalse(metadata["formal_effect"])

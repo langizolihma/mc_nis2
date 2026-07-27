@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "status": "PENDING_G1_REVIEW",
+  "source_ref": "SRC-009",
+  "decision_ref": "D-030",
+  "deferred_task_id": "DEF-036",
+  "required_gate": "G1_DOMAIN_REVIEW",
+  "formal_effect": false,
+  "source_sha256": "1391f28345798a80b2a1386be29a46929e78b4d390da074c6a8a835d8d6e1c7e",
+  "protected_folder_uri": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE/A-005/SRC-009",
+  "protected_file_uri": "https://metalcom.sharepoint.com/sites/NIS2/_layouts/15/Doc.aspx?sourcedoc=%7BFE4D82AD-9E39-4AB3-BBAF-5713EE9D88AE%7D&file=Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0.xlsx&action=default&mobileredirect=true",
+  "review_form_uri": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE/A-005/SRC-009/CONTROL_CATALOG_G1_REVIEW.md",
+  "protected_copy_verification": {
+    "local_size_bytes": 970666,
+    "local_sha256": "1391f28345798a80b2a1386be29a46929e78b4d390da074c6a8a835d8d6e1c7e",
+    "sharepoint_size_bytes": 977503,
+    "verification_status": "BINARY_SIZE_MISMATCH_REQUIRES_MANUAL_UPLOAD_AND_SHA256",
+    "canonical_source": "C:/NIS2/alapadatok/Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0.xlsx",
+    "note": "A SharePoint-kapcsolaton át feltöltött XLSX mérete eltér a helyi eredetitől. A SharePoint-példány nem tekinthető byteazonos kanonikus forrásnak; kézi feltöltés és visszaolvasott SHA-256 szükséges."
+  },
+  "review_checks": [
+    {"id": "ORIGIN", "label": "Eredet és készítő azonosítása", "status": "PENDING", "evidence_ref": ""},
+    {"id": "VERSION", "label": "Az 1.0 verzió aktualitása", "status": "PENDING", "evidence_ref": ""},
+    {"id": "USE_RIGHTS", "label": "Belső felhasználási jogosultság", "status": "PENDING", "evidence_ref": ""},
+    {"id": "LEGAL_TEXT", "label": "Hatályos jogszabályi szöveggel való egyezés", "status": "PENDING", "evidence_ref": ""},
+    {"id": "EXTRACTION", "label": "914 kontroll és 1878 részletes követelmény teljessége", "status": "PENDING", "evidence_ref": ""},
+    {"id": "CURRENT_COVERAGE", "label": "164 jelenleg használt kontrollhivatkozás lefedettsége", "status": "PENDING", "evidence_ref": ""}
+  ],
+  "eir_classifications": [
+    {"eir_id": "EIR-001", "eir_name": "Vezetéstámogató", "audit_scope": "AUDITED", "security_class": "TBD-HUMAN", "owner": "TBD-HUMAN", "rationale": "", "reviewer": "", "reviewed_at": "", "decision_ref": ""},
+    {"eir_id": "EIR-002", "eir_name": "Irodai", "audit_scope": "AUDITED", "security_class": "TBD-HUMAN", "owner": "TBD-HUMAN", "rationale": "", "reviewer": "", "reviewed_at": "", "decision_ref": ""},
+    {"eir_id": "EIR-003", "eir_name": "Termelés", "audit_scope": "AUDITED", "security_class": "TBD-HUMAN", "owner": "TBD-HUMAN", "rationale": "", "reviewer": "", "reviewed_at": "", "decision_ref": ""},
+    {"eir_id": "EIR-004", "eir_name": "Hálózat-kommunikációs", "audit_scope": "NOT_AUDITED", "security_class": "TBD-HUMAN", "owner": "TBD-HUMAN", "rationale": "", "reviewer": "", "reviewed_at": "", "decision_ref": ""},
+    {"eir_id": "EIR-005", "eir_name": "Biztonsági", "audit_scope": "NOT_AUDITED", "security_class": "TBD-HUMAN", "owner": "TBD-HUMAN", "rationale": "", "reviewer": "", "reviewed_at": "", "decision_ref": ""}
+  ],
+  "human_decision": {
+    "decision": "PENDING",
+    "reviewer": "",
+    "reviewed_at": "",
+    "decision_ref": "",
+    "signed_record_uri": "",
+    "signed_record_sha256": ""
+  },
+  "forbidden_automatic_actions": [
+    "approve_catalog",
+    "select_eir_controls",
+    "accept_evidence",
+    "close_action",
+    "submit_external",
+    "change_production"
+  ]
+}

@@ -21,6 +21,11 @@ from .legacy_retention import validate_legacy_retention_plan
 from .rds_separation import validate_rds_separation_plan
 from .work_packages import validate_work_packages
 from .continuous_assurance import build_pilot_output, validate_pilot
+from .control_catalog import (
+    extract_catalog,
+    normalize_control_ref,
+    write_catalog_outputs,
+)
 from .agent_jobs import (
     build_h002_output,
     ensure_generated_output,
@@ -43,6 +48,8 @@ from .registry import (
     default_project_dates_path,
     load_actions,
     load_control_action_mapping,
+    load_control_catalog,
+    load_control_requirements,
     load_evidence,
     load_findings,
     load_json_object,
@@ -55,6 +62,8 @@ from .validation import (
     combine_results,
     validate_actions,
     validate_control_action_mapping,
+    validate_control_catalog,
+    validate_control_catalog_review,
     validate_evidence,
     validate_findings,
     validate_inventory_export_plan,
@@ -137,6 +146,19 @@ def _parser() -> argparse.ArgumentParser:
     sharepoint_readiness.add_argument("--plan", required=True, type=Path)
     portal_auth = subparsers.add_parser("validate-portal-auth")
     portal_auth.add_argument("--policy", required=True, type=Path)
+    extract_controls = subparsers.add_parser("extract-control-catalog")
+    extract_controls.add_argument("--input", required=True, type=Path)
+    extract_controls.add_argument("--catalog-output", required=True, type=Path)
+    extract_controls.add_argument("--requirements-output", required=True, type=Path)
+    extract_controls.add_argument("--metadata-output", required=True, type=Path)
+    validate_controls = subparsers.add_parser("validate-control-catalog")
+    validate_controls.add_argument("--catalog", required=True, type=Path)
+    validate_controls.add_argument("--requirements", required=True, type=Path)
+    validate_controls.add_argument("--metadata", required=True, type=Path)
+    validate_controls.add_argument("--review", required=True, type=Path)
+    validate_controls.add_argument("--findings", required=True, type=Path)
+    validate_controls.add_argument("--mapping", required=True, type=Path)
+    validate_controls.add_argument("--actions", required=True, type=Path)
     return parser
 
 
@@ -152,6 +174,58 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "extract-control-catalog":
+            catalog, requirements, metadata = extract_catalog(args.input)
+            write_catalog_outputs(
+                args.catalog_output,
+                args.requirements_output,
+                args.metadata_output,
+                catalog,
+                requirements,
+                metadata,
+            )
+            print(
+                f"Kontrollkatalógus kivonva: {len(catalog)} kontroll, "
+                f"{len(requirements)} részletes követelmény; státusz=PROPOSAL"
+            )
+            return 0
+        if args.command == "validate-control-catalog":
+            catalog = load_control_catalog(args.catalog)
+            requirements = load_control_requirements(args.requirements)
+            metadata = load_json_object(args.metadata, "kontrollkatalógus-metaadat")
+            review = load_json_object(args.review, "kontrollkatalógus G1 review")
+            findings = load_findings(args.findings)
+            mappings = load_control_action_mapping(args.mapping)
+            actions = load_actions(args.actions)
+            required_refs = {
+                normalize_control_ref(value)
+                for value in (
+                    [record.control_ref for record in findings]
+                    + [record.control_ref for record in mappings]
+                    + [
+                        control_ref
+                        for action in actions
+                        for control_ref in action.control_ref.split(";")
+                    ]
+                )
+                if normalize_control_ref(value)
+                and normalize_control_ref(value).lower() != "n/a"
+            }
+            result = combine_results(
+                validate_control_catalog(
+                    catalog, requirements, metadata, required_refs
+                ),
+                validate_control_catalog_review(review, args.review),
+            )
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Kontrollkatalógus: {len(catalog)} kontroll, "
+                f"{len(requirements)} részletes követelmény, "
+                f"{len(required_refs)} használt kontroll lefedve; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
         if args.command == "validate-portal-auth":
             policy = load_json_object(args.policy, "portál auth policy")
             result = validate_portal_auth_policy(policy, args.policy)

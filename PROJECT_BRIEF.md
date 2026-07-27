@@ -178,6 +178,7 @@ Fizetős megoldás csak akkor kerülhet előre, ha dokumentáltan megtörtént:
 5. `SRC-004` – belső munkadokumentum, minden állítása validálandó.
 6. `SRC-005`/`SRC-006` – másodlagos összefoglaló.
 7. `SRC-007` – mentett belső levelezés: a kézhezvételi dátum kiegészítő alátámasztása, nem hivatalos cégkapus kézbesítési igazolás.
+8. `SRC-009` – proposal-only kontrollkatalógus-referencia: azonosítók, magyarázatok, megvalósítási támpontok és kereszthivatkozások; eredet- és G1 review előtt `unverified_internal`, nem auditbizonyíték.
 
 | ID | Fájl | Típus | Bizalmi szint | SHA-256 |
 |---|---|---|---|---|
@@ -189,6 +190,7 @@ Fizetős megoldás csak akkor kerülhet előre, ha dokumentáltan megtörtént:
 | SRC-006 | `NIS2_audit_osszefoglalo_folytatashoz.md` | conversation_continuation_summary | secondary | `76754455b17fe434759d6a534cac71e5f1b15e1f690d24329bca6099c0a94bcc` |
 | SRC-007 | `Re Cégkapura érkezett.msg` | internal_email_correspondence | unverified_internal | `007ac14c724f4293e662d7580c952c14b52035db76f67a392bbc3d050a348a9d` |
 | SRC-008 | `Audit_Cert_metLACOM Zrt._20260603_signed.pdf` | signed_submitted_audit_report | audited | `c347dc3139dd433ace098b6145f1ea5d043614dcfcbf7ed46f71e1b405c5058f` |
+| SRC-009 | `Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0.xlsx` | control_catalog_reference_workbook | unverified_internal | `1391f28345798a80b2a1386be29a46929e78b4d390da074c6a8a835d8d6e1c7e` |
 
 ## Feloldott forrásellentmondás
 

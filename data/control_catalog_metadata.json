@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL",
+  "source_ref": "SRC-009",
+  "source_file": "Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0.xlsx",
+  "source_sha256": "1391f28345798a80b2a1386be29a46929e78b4d390da074c6a8a835d8d6e1c7e",
+  "source_confidence": "unverified_internal",
+  "catalog_version": "1.0",
+  "legal_basis": "7/2024. (VI. 24.) MK rendelet 2. melléklet",
+  "workbook_properties": {
+    "creator": "Peter Kovacs - Multipolaris",
+    "lastModifiedBy": "Lángi Zoltán",
+    "created": "2024-06-28T07:30:25Z",
+    "modified": "2026-07-27T08:31:06Z"
+  },
+  "safety_scan": {
+    "macros_present": false,
+    "external_links_present": false,
+    "digital_signature_present": false
+  },
+  "counts": {
+    "sheet_count": 20,
+    "requirement_family_count": 19,
+    "control_count": 914,
+    "detailed_requirement_count": 1878
+  },
+  "families": [
+    {
+      "requirement_family": "1",
+      "title": "PROGRAMMENEDZSMENT"
+    },
+    {
+      "requirement_family": "2",
+      "title": "HOZZÁFÉRÉS-FELÜGYELET"
+    },
+    {
+      "requirement_family": "3",
+      "title": "TUDATOSSÁG ÉS KÉPZÉS"
+    },
+    {
+      "requirement_family": "4",
+      "title": "NAPLÓZÁS ÉS ELSZÁMOLTATHATÓSÁG"
+    },
+    {
+      "requirement_family": "5",
+      "title": "ÉRTÉKELÉS, ENGEDÉLYEZÉS ÉS MONITOROZÁS"
+    },
+    {
+      "requirement_family": "6",
+      "title": "KONFIGURÁCIÓKEZELÉS"
+    },
+    {
+      "requirement_family": "7",
+      "title": "KÉSZENLÉTI TERVEZÉS"
+    },
+    {
+      "requirement_family": "8",
+      "title": "AZONOSÍTÁS ÉS HITELESÍTÉS"
+    },
+    {
+      "requirement_family": "9",
+      "title": "BIZTONSÁGI ESEMÉNYEK KEZELÉSE"
+    },
+    {
+      "requirement_family": "10",
+      "title": "KARBANTARTÁS"
+    },
+    {
+      "requirement_family": "11",
+      "title": "ADATHORDOZÓK VÉDELME"
+    },
+    {
+      "requirement_family": "12",
+      "title": "FIZIKAI ÉS KÖRNYEZETI VÉDELEM"
+    },
+    {
+      "requirement_family": "13",
+      "title": "TERVEZÉS"
+    },
+    {
+      "requirement_family": "14",
+      "title": "SZEMÉLYI BIZTONSÁG"
+    },
+    {
+      "requirement_family": "15",
+      "title": "KOCKÁZATKEZELÉS"
+    },
+    {
+      "requirement_family": "16",
+      "title": "RENDSZER- ÉS SZOLGÁLTATÁSBESZERZÉS"
+    },
+    {
+      "requirement_family": "17",
+      "title": "RENDSZER- ÉS KOMMUNIKÁCIÓVÉDELEM"
+    },
+    {
+      "requirement_family": "18",
+      "title": "RENDSZER- ÉS INFORMÁCIÓSÉRTETLENSÉG"
+    },
+    {
+      "requirement_family": "19",
+      "title": "ELLÁTÁSI LÁNC KOCKÁZATKEZELÉSE"
+    }
+  ],
+  "human_review": {
+    "status": "PENDING",
+    "reviewer": "",
+    "reviewed_at": "",
+    "decision_ref": "",
+    "required_gate": "G1_DOMAIN_REVIEW"
+  },
+  "limitations": [
+    "A munkafüzet digitális aláírást nem tartalmaz; eredete külön igazolandó.",
+    "Az Excel nem auditbizonyíték és nem igazol kontrollműködést.",
+    "Az alkalmazandó kontrollkörhöz EIR-enként emberileg igazolt biztonsági osztály szükséges."
+  ]
+}

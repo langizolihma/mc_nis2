@@ -7,9 +7,17 @@ from datetime import datetime
 from pathlib import Path
 import re
 from typing import Any, Iterable
+from urllib.parse import urlparse
 
 from .deadlines import action_plan_deadline, parse_iso_date
-from .registry import Action, ControlActionMapping, EvidenceRecord, FindingRecord
+from .registry import (
+    Action,
+    ControlActionMapping,
+    ControlCatalogRecord,
+    ControlRequirementRecord,
+    EvidenceRecord,
+    FindingRecord,
+)
 
 
 PRIORITIES = {"P0", "P1", "P2", "P3"}
@@ -40,6 +48,7 @@ HUMAN_REVIEW_STATUSES = {"PROPOSED", "APPROVED", "REJECTED"}
 INVENTORY_STATUSES = {"PROPOSAL", "REVIEWED", "APPROVED"}
 INVENTORY_RECORD_STATUSES = {"PROPOSED", "VERIFIED", "RETIRED"}
 AUDIT_SCOPES = {"AUDITED", "NOT_AUDITED"}
+SECURITY_CLASSES = {"Alap", "Jelentős", "Magas", "TBD-HUMAN"}
 READ_ONLY_MODES = {"EXPORT", "REPORT", "API_READ_ONLY", "MANUAL_OWNER_ATTESTATION"}
 
 REQUIRED_FIELDS = (
@@ -325,12 +334,22 @@ def validate_evidence(
 
 
 def _record_issue(
-    record: FindingRecord | ControlActionMapping,
+    record: (
+        FindingRecord
+        | ControlActionMapping
+        | ControlCatalogRecord
+        | ControlRequirementRecord
+    ),
     severity: str,
     code: str,
     message: str,
 ) -> Issue:
-    identity = getattr(record, "finding_id", "") or getattr(record, "mapping_id", "")
+    identity = (
+        getattr(record, "finding_id", "")
+        or getattr(record, "mapping_id", "")
+        or getattr(record, "control_ref", "")
+        or getattr(record, "requirement_id", "")
+    )
     return Issue(severity, code, message, record.source_path, record.row_number, identity)
 
 
@@ -515,6 +534,201 @@ def validate_control_action_mapping(
     return ValidationResult(tuple(issues))
 
 
+def validate_control_catalog(
+    catalog: Iterable[ControlCatalogRecord],
+    requirements: Iterable[ControlRequirementRecord],
+    metadata: dict[str, Any],
+    required_control_refs: set[str] | None = None,
+) -> ValidationResult:
+    """Validate the proposal-only catalog and its references without promoting it."""
+    records = list(catalog)
+    detail_records = list(requirements)
+    issues: list[Issue] = []
+    seen_controls: set[str] = set()
+    required_catalog_fields = (
+        "control_ref", "requirement_family", "control_title",
+        "basic_applicability", "significant_applicability",
+        "high_applicability", "source_ref", "source_sheet",
+        "source_row_start", "source_row_end", "source_confidence",
+        "human_review_status",
+    )
+    for record in records:
+        for field in required_catalog_fields:
+            if not getattr(record, field):
+                issues.append(_record_issue(
+                    record, "ERROR", "E_CATALOG_REQUIRED",
+                    f"hiányzó kontrollkatalógus-mező: {field}",
+                ))
+        if record.control_ref in seen_controls:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_DUPLICATE", "duplikált control_ref"
+            ))
+        seen_controls.add(record.control_ref)
+        if record.control_ref.split(".", 1)[0] != record.requirement_family:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_FAMILY",
+                "a control_ref nem a megadott requirement_family családba tartozik",
+            ))
+        markers = (
+            record.basic_applicability,
+            record.significant_applicability,
+            record.high_applicability,
+        )
+        if any(marker not in {"X", "-"} for marker in markers):
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_APPLICABILITY",
+                "az alkalmazhatósági jelölés csak X vagy - lehet",
+            ))
+        if record.basic_applicability == "X" and markers[1:] != ("X", "X"):
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_APPLICABILITY_ORDER",
+                "Alap szinten alkalmazandó kontroll Jelentős és Magas szinten is alkalmazandó",
+            ))
+        if record.significant_applicability == "X" and record.high_applicability != "X":
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_APPLICABILITY_ORDER",
+                "Jelentős szinten alkalmazandó kontroll Magas szinten is alkalmazandó",
+            ))
+        if record.source_confidence not in SOURCE_CONFIDENCES:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_CONFIDENCE",
+                f"ismeretlen source_confidence: {record.source_confidence!r}",
+            ))
+        if record.human_review_status not in HUMAN_REVIEW_STATUSES:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_REVIEW_STATUS",
+                f"ismeretlen human_review_status: {record.human_review_status!r}",
+            ))
+        try:
+            row_start = int(record.source_row_start)
+            row_end = int(record.source_row_end)
+            if row_start <= 0 or row_start > row_end:
+                raise ValueError
+        except ValueError:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_SOURCE_RANGE",
+                "érvénytelen forrásmunkalap-sor tartomány",
+            ))
+        if record.human_review_status == "APPROVED":
+            if _missing_or_tbd(record.reviewer) or not record.reviewed_at:
+                issues.append(_record_issue(
+                    record, "ERROR", "E_CATALOG_HUMAN_REVIEW",
+                    "APPROVED kontrollhoz reviewer és reviewed_at szükséges",
+                ))
+            elif not _valid_timestamp(record.reviewed_at):
+                issues.append(_record_issue(
+                    record, "ERROR", "E_CATALOG_REVIEW_TIMESTAMP",
+                    "reviewed_at nem időzónás ISO-8601 időbélyeg",
+                ))
+
+    expected_families = {str(value) for value in range(1, 20)}
+    actual_families = {record.requirement_family for record in records}
+    missing_families = sorted(expected_families - actual_families, key=int)
+    if missing_families:
+        issues.append(Issue(
+            "WARNING", "W_CATALOG_FAMILY_COVERAGE",
+            f"hiányzó követelménycsaládok: {', '.join(missing_families)}",
+            records[0].source_path if records else "control_catalog",
+        ))
+    if required_control_refs is not None:
+        missing_controls = sorted(required_control_refs - seen_controls)
+        if missing_controls:
+            issues.append(Issue(
+                "ERROR", "E_CATALOG_REFERENCE_COVERAGE",
+                "a jelenlegi nyilvántartásokból hiányzó kontrollok: "
+                + ", ".join(missing_controls),
+                records[0].source_path if records else "control_catalog",
+            ))
+
+    seen_requirement_ids: set[str] = set()
+    seen_source_rows: set[tuple[str, str]] = set()
+    required_detail_fields = (
+        "requirement_id", "parent_control_ref", "requirement_ref",
+        "requirement_text", "source_ref", "source_sheet", "source_row",
+        "source_confidence", "human_review_status",
+    )
+    for record in detail_records:
+        for field in required_detail_fields:
+            if not getattr(record, field):
+                issues.append(_record_issue(
+                    record, "ERROR", "E_CATALOG_DETAIL_REQUIRED",
+                    f"hiányzó részletes követelménymező: {field}",
+                ))
+        if record.requirement_id in seen_requirement_ids:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_DETAIL_DUPLICATE",
+                "duplikált requirement_id",
+            ))
+        seen_requirement_ids.add(record.requirement_id)
+        source_key = (record.source_sheet, record.source_row)
+        if source_key in seen_source_rows:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_DETAIL_SOURCE_DUPLICATE",
+                "egy forrássor többször szerepel a részletes követelmények között",
+            ))
+        seen_source_rows.add(source_key)
+        if record.parent_control_ref not in seen_controls:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_DETAIL_PARENT",
+                f"ismeretlen parent_control_ref: {record.parent_control_ref!r}",
+            ))
+        if record.source_confidence not in SOURCE_CONFIDENCES:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_DETAIL_CONFIDENCE",
+                f"ismeretlen source_confidence: {record.source_confidence!r}",
+            ))
+        if record.human_review_status not in HUMAN_REVIEW_STATUSES:
+            issues.append(_record_issue(
+                record, "ERROR", "E_CATALOG_DETAIL_REVIEW_STATUS",
+                f"ismeretlen human_review_status: {record.human_review_status!r}",
+            ))
+
+    counts = metadata.get("counts", {})
+    if not isinstance(counts, dict):
+        issues.append(_json_issue(
+            "control_catalog_metadata", "ERROR", "E_CATALOG_METADATA",
+            "a counts metaadat objektum kell legyen",
+        ))
+    else:
+        expected_counts = {
+            "requirement_family_count": len(actual_families),
+            "control_count": len(records),
+            "detailed_requirement_count": len(detail_records),
+        }
+        for field, expected in expected_counts.items():
+            if counts.get(field) != expected:
+                issues.append(_json_issue(
+                    "control_catalog_metadata", "ERROR", "E_CATALOG_METADATA_COUNT",
+                    f"{field}={counts.get(field)!r}, elvárt: {expected}",
+                ))
+    source_hash = str(metadata.get("source_sha256", ""))
+    if not SHA256_PATTERN.fullmatch(source_hash):
+        issues.append(_json_issue(
+            "control_catalog_metadata", "ERROR", "E_CATALOG_METADATA_HASH",
+            "érvényes source_sha256 szükséges",
+        ))
+    review = metadata.get("human_review", {})
+    if not isinstance(review, dict) or review.get("status") not in {
+        "PENDING", "APPROVED", "REJECTED"
+    }:
+        issues.append(_json_issue(
+            "control_catalog_metadata", "ERROR", "E_CATALOG_METADATA_REVIEW",
+            "érvényes human_review objektum és státusz szükséges",
+        ))
+    elif review.get("status") == "PENDING":
+        issues.append(_json_issue(
+            "control_catalog_metadata", "WARNING", "W_CATALOG_REVIEW_PENDING",
+            "a katalógus forráseredet- és szakmai G1 review-ja függőben van",
+        ))
+    if records and any(record.human_review_status == "PROPOSED" for record in records):
+        issues.append(Issue(
+            "WARNING", "W_CATALOG_RECORD_REVIEW_PENDING",
+            "a kontrollrekordok PROPOSED állapotúak; nem használhatók megfelelőség igazolására",
+            records[0].source_path,
+        ))
+    return ValidationResult(tuple(issues))
+
+
 def _json_issue(
     path: str | Path, severity: str, code: str, message: str, identity: str = ""
 ) -> Issue:
@@ -529,6 +743,210 @@ def _required_dict_fields(
         _json_issue(path, "ERROR", code, f"hiányzó kötelező mező: {field}", identity)
         for field in fields if field not in value or value[field] in (None, "")
     ]
+
+
+def validate_control_catalog_review(
+    data: dict[str, Any], path: str | Path,
+) -> ValidationResult:
+    """Validate the proposal-only SRC-009 G1 review and EIR classification record."""
+    issues: list[Issue] = []
+    identity = "DEF-036"
+    required_top = (
+        "schema_version", "status", "source_ref", "decision_ref",
+        "deferred_task_id", "required_gate", "formal_effect", "source_sha256",
+        "protected_folder_uri", "protected_file_uri", "review_form_uri", "review_checks",
+        "eir_classifications", "human_decision", "forbidden_automatic_actions",
+    )
+    issues.extend(_required_dict_fields(
+        data, required_top, path, identity, "E_CATALOG_REVIEW_REQUIRED"
+    ))
+    expected = {
+        "schema_version": "1.0",
+        "source_ref": "SRC-009",
+        "decision_ref": "D-030",
+        "deferred_task_id": "DEF-036",
+        "required_gate": "G1_DOMAIN_REVIEW",
+    }
+    for field, value in expected.items():
+        if data.get(field) != value:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_IDENTITY",
+                f"{field} értéke {value!r} kell legyen", identity,
+            ))
+    if data.get("formal_effect") is not False:
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_REVIEW_FORMAL_EFFECT",
+            "a pending review-csomag nem állíthat formális hatást", identity,
+        ))
+    if not SHA256_PATTERN.fullmatch(str(data.get("source_sha256", ""))):
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_REVIEW_HASH",
+            "érvényes source_sha256 szükséges", identity,
+        ))
+    for field in ("protected_folder_uri", "protected_file_uri", "review_form_uri"):
+        parsed = urlparse(str(data.get(field, "")))
+        if (
+            parsed.scheme != "https"
+            or parsed.hostname != "metalcom.sharepoint.com"
+            or not parsed.path.startswith("/sites/NIS2/")
+        ):
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_URI",
+                f"{field} csak a jóváhagyott NIS2 SharePoint-webhelyre mutathat",
+                identity,
+            ))
+
+    checks = data.get("review_checks", [])
+    required_check_ids = {
+        "ORIGIN", "VERSION", "USE_RIGHTS", "LEGAL_TEXT",
+        "EXTRACTION", "CURRENT_COVERAGE",
+    }
+    seen_checks: set[str] = set()
+    if not isinstance(checks, list):
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_REVIEW_CHECKS",
+            "a review_checks mező lista legyen", identity,
+        ))
+        checks = []
+    for check in checks:
+        if not isinstance(check, dict):
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_CHECK",
+                "minden review-check objektum legyen", identity,
+            ))
+            continue
+        check_id = str(check.get("id", ""))
+        if check_id in seen_checks:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_CHECK",
+                f"duplikált review-check: {check_id}", identity,
+            ))
+        seen_checks.add(check_id)
+        if check.get("status") not in {"PENDING", "PASSED", "FAILED"}:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_CHECK",
+                f"ismeretlen review-check státusz: {check.get('status')!r}",
+                check_id,
+            ))
+    if seen_checks != required_check_ids:
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_REVIEW_CHECK_SET",
+            "a kötelező review-check készlet hiányos vagy többletet tartalmaz",
+            identity,
+        ))
+
+    eirs = data.get("eir_classifications", [])
+    expected_eirs = {f"EIR-{value:03d}" for value in range(1, 6)}
+    seen_eirs: set[str] = set()
+    if not isinstance(eirs, list):
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_REVIEW_EIRS",
+            "az eir_classifications mező lista legyen", identity,
+        ))
+        eirs = []
+    pending_classes = 0
+    for record in eirs:
+        if not isinstance(record, dict):
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_EIR",
+                "minden EIR-besorolás objektum legyen", identity,
+            ))
+            continue
+        eir_id = str(record.get("eir_id", ""))
+        if eir_id in seen_eirs:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_EIR",
+                f"duplikált EIR: {eir_id}", eir_id,
+            ))
+        seen_eirs.add(eir_id)
+        security_class = str(record.get("security_class", ""))
+        if security_class not in SECURITY_CLASSES:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_CLASS",
+                f"ismeretlen security_class: {security_class!r}", eir_id,
+            ))
+        elif security_class == "TBD-HUMAN":
+            pending_classes += 1
+        else:
+            for field in (
+                "owner", "rationale", "reviewer", "reviewed_at", "decision_ref",
+            ):
+                if _missing_or_tbd(str(record.get(field, ""))):
+                    issues.append(_json_issue(
+                        path, "ERROR", "E_CATALOG_REVIEW_CLASS_EVIDENCE",
+                        f"besorolt EIR-hez {field} szükséges", eir_id,
+                    ))
+            reviewed_at = str(record.get("reviewed_at", ""))
+            if reviewed_at and not _valid_timestamp(reviewed_at):
+                issues.append(_json_issue(
+                    path, "ERROR", "E_CATALOG_REVIEW_CLASS_TIME",
+                    "reviewed_at időzónás ISO-8601 időbélyeg legyen", eir_id,
+                ))
+    if seen_eirs != expected_eirs:
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_REVIEW_EIR_SET",
+            "pontosan az EIR-001–EIR-005 besorolási rekordjai szükségesek",
+            identity,
+        ))
+
+    decision = data.get("human_decision", {})
+    allowed_decisions = {
+        "PENDING", "APPROVED_REFERENCE", "APPROVED_WITH_LIMITATIONS",
+        "RETURN_FOR_REWORK", "REJECTED",
+    }
+    if not isinstance(decision, dict) or decision.get("decision") not in allowed_decisions:
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_REVIEW_DECISION",
+            "érvényes human_decision szükséges", identity,
+        ))
+        decision = {}
+    approved = decision.get("decision") in {
+        "APPROVED_REFERENCE", "APPROVED_WITH_LIMITATIONS",
+    }
+    if approved:
+        if any(check.get("status") != "PASSED" for check in checks if isinstance(check, dict)):
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_FALSE_APPROVAL",
+                "jóváhagyás előtt minden review-check PASSED kell legyen", identity,
+            ))
+        if pending_classes:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_FALSE_APPROVAL",
+                "jóváhagyás előtt mind az öt EIR besorolása szükséges", identity,
+            ))
+        for field in (
+            "reviewer", "reviewed_at", "decision_ref",
+            "signed_record_uri", "signed_record_sha256",
+        ):
+            if _missing_or_tbd(str(decision.get(field, ""))):
+                issues.append(_json_issue(
+                    path, "ERROR", "E_CATALOG_REVIEW_APPROVAL",
+                    f"jóváhagyáshoz human_decision.{field} szükséges", identity,
+                ))
+        reviewed_at = str(decision.get("reviewed_at", ""))
+        if reviewed_at and not _valid_timestamp(reviewed_at):
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_APPROVAL_TIME",
+                "human_decision.reviewed_at időzónás ISO-8601 időbélyeg legyen",
+                identity,
+            ))
+        if not SHA256_PATTERN.fullmatch(str(decision.get("signed_record_sha256", ""))):
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_APPROVAL_HASH",
+                "jóváhagyáshoz érvényes aláírt rekord SHA-256 szükséges",
+                identity,
+            ))
+    else:
+        issues.append(_json_issue(
+            path, "WARNING", "W_CATALOG_G1_DECISION_PENDING",
+            "az SRC-009 G1 emberi döntése még függőben van", identity,
+        ))
+    if pending_classes:
+        issues.append(_json_issue(
+            path, "WARNING", "W_CATALOG_EIR_CLASS_PENDING",
+            f"{pending_classes} EIR biztonsági osztálya még TBD-HUMAN", identity,
+        ))
+    return ValidationResult(tuple(issues))
 
 
 def validate_inventory_register(data: dict[str, Any], path: str | Path) -> ValidationResult:
@@ -599,7 +1017,7 @@ def validate_inventory_register(data: dict[str, Any], path: str | Path) -> Valid
         identity = str(record.get("eir_id", ""))
         issues.extend(_required_dict_fields(
             record,
-            ("eir_id", "name", "audit_scope", "owner", "source_ref",
+            ("eir_id", "name", "audit_scope", "security_class", "owner", "source_ref",
              "source_confidence", "record_status"),
             path, identity, "E_INVENTORY_EIR_REQUIRED",
         ))
@@ -618,6 +1036,11 @@ def validate_inventory_register(data: dict[str, Any], path: str | Path) -> Valid
             issues.append(_json_issue(
                 path, "ERROR", "E_INVENTORY_AUDIT_SCOPE",
                 f"ismeretlen audit_scope: {record.get('audit_scope')!r}", identity,
+            ))
+        if record.get("security_class") not in SECURITY_CLASSES:
+            issues.append(_json_issue(
+                path, "ERROR", "E_INVENTORY_SECURITY_CLASS",
+                f"ismeretlen security_class: {record.get('security_class')!r}", identity,
             ))
         if record.get("source_confidence") not in SOURCE_CONFIDENCES:
             issues.append(_json_issue(
@@ -642,6 +1065,16 @@ def validate_inventory_register(data: dict[str, Any], path: str | Path) -> Valid
         issues.append(_json_issue(
             path, "WARNING", "W_INVENTORY_OWNER_PENDING",
             f"{pending_owners} EIR tulajdonosa még nincs emberileg igazolva",
+        ))
+    pending_security_classes = sum(
+        str(record.get("security_class", "")) == "TBD-HUMAN"
+        for record in eir_records if isinstance(record, dict)
+    )
+    if pending_security_classes:
+        issues.append(_json_issue(
+            path, "WARNING", "W_INVENTORY_SECURITY_CLASS_PENDING",
+            f"{pending_security_classes} EIR Alap/Jelentős/Magas biztonsági osztálya "
+            "még nincs emberileg igazolva",
         ))
 
     assets = data.get("assets", []) if isinstance(data.get("assets"), list) else []

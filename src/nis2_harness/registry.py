@@ -138,6 +138,56 @@ class ControlActionMapping:
     source_path: str = ""
 
 
+@dataclass(frozen=True, slots=True)
+class ControlCatalogRecord:
+    """One control heading extracted from the 7/2024 MK reference workbook."""
+
+    control_ref: str = ""
+    requirement_family: str = ""
+    control_title: str = ""
+    basic_applicability: str = ""
+    significant_applicability: str = ""
+    high_applicability: str = ""
+    explanation: str = ""
+    implementation_steps: str = ""
+    legacy_41_2015_ref: str = ""
+    iso_27001_ref: str = ""
+    nist_sp_800_53_rev5_ref: str = ""
+    parameters: str = ""
+    related_controls: str = ""
+    source_ref: str = ""
+    source_sheet: str = ""
+    source_row_start: str = ""
+    source_row_end: str = ""
+    source_confidence: str = ""
+    human_review_status: str = ""
+    reviewer: str = ""
+    reviewed_at: str = ""
+    notes: str = ""
+    row_number: int = 0
+    source_path: str = ""
+
+
+@dataclass(frozen=True, slots=True)
+class ControlRequirementRecord:
+    """A detailed requirement line belonging to a catalog control heading."""
+
+    requirement_id: str = ""
+    parent_control_ref: str = ""
+    requirement_ref: str = ""
+    requirement_text: str = ""
+    source_ref: str = ""
+    source_sheet: str = ""
+    source_row: str = ""
+    source_confidence: str = ""
+    human_review_status: str = ""
+    reviewer: str = ""
+    reviewed_at: str = ""
+    notes: str = ""
+    row_number: int = 0
+    source_path: str = ""
+
+
 class RegistryLoadError(ValueError):
     """Raised when a structured source cannot be read safely."""
 
@@ -250,6 +300,14 @@ def load_findings(path: str | Path) -> list[FindingRecord]:
 
 def load_control_action_mapping(path: str | Path) -> list[ControlActionMapping]:
     return _load_typed_csv(path, ControlActionMapping, "mapping")
+
+
+def load_control_catalog(path: str | Path) -> list[ControlCatalogRecord]:
+    return _load_typed_csv(path, ControlCatalogRecord, "kontrollkatalógus")
+
+
+def load_control_requirements(path: str | Path) -> list[ControlRequirementRecord]:
+    return _load_typed_csv(path, ControlRequirementRecord, "kontrollkövetelmény")
 
 
 def load_project_dates(path: str | Path) -> dict[str, Any]:

@@ -10,7 +10,14 @@ import tempfile
 import threading
 import unittest
 
-from nis2_harness.portal import ReviewDraftStore, build_live_snapshot, load_actions, load_deferred, validate_review_draft
+from nis2_harness.portal import (
+    ReviewDraftStore,
+    build_live_snapshot,
+    load_actions,
+    load_control_catalog_projection,
+    load_deferred,
+    validate_review_draft,
+)
 from nis2_harness.portal_server import _kill_switch_engaged, make_handler, serve_portal
 
 
@@ -56,8 +63,18 @@ class PortalMvpTests(unittest.TestCase):
         self.assertEqual(10, len(snapshot["agent_pilot"]["proposals"]))
         self.assertFalse(snapshot["agent_pilot"]["formal_effect"])
         self.assertEqual("NOT_CONFIGURED", snapshot["meta"]["auth_status"])
-        self.assertEqual(35, len(snapshot["sharepoint_tasks"]))
-        self.assertEqual(35, snapshot["summary"]["linked_human_tasks"])
+        self.assertEqual(914, snapshot["summary"]["catalog_controls"])
+        self.assertEqual("PENDING_G1_REVIEW", snapshot["summary"]["catalog_review_status"])
+        self.assertEqual(6, snapshot["summary"]["catalog_pending_checks"])
+        self.assertEqual(5, snapshot["summary"]["catalog_pending_eir_classifications"])
+        self.assertEqual("DEF-036", snapshot["catalog_review"]["deferred_task_id"])
+        self.assertFalse(snapshot["catalog_review"]["formal_effect"])
+        action = next(item for item in snapshot["actions"] if item["id"] == "A-001")
+        self.assertEqual(["1.2"], action["control_refs"])
+        self.assertEqual("SRC-009", action["control_details"][0]["source_ref"])
+        self.assertEqual(36, len(snapshot["sharepoint_tasks"]))
+        self.assertEqual(36, snapshot["summary"]["linked_human_tasks"])
+        self.assertEqual(0, snapshot["summary"]["unlinked_human_tasks"])
         self.assertEqual("READ_ONLY_SNAPSHOT_ACTIVE", snapshot["sharepoint_integration"]["status"])
         self.assertFalse(snapshot["sharepoint_integration"]["network_allowed"])
         self.assertFalse(snapshot["sharepoint_integration"]["write_back_allowed"])
@@ -129,7 +146,14 @@ class PortalMvpTests(unittest.TestCase):
         self.assertIn("sharepoint_tasks", javascript)
         self.assertIn("sharepoint_live_readiness", javascript)
         self.assertIn("portal_auth_readiness", javascript)
+        self.assertIn("control_details", javascript)
+        self.assertIn("catalog_review", javascript)
         self.assertIn('rel="noopener noreferrer"', javascript)
+
+    def test_control_catalog_projection_is_proposal_only(self) -> None:
+        records = load_control_catalog_projection(ROOT / "data" / "control_catalog.csv")
+        self.assertEqual(914, len(records))
+        self.assertTrue(all(item["human_review_status"] == "PROPOSED" for item in records))
 
     def test_portal_config_forbids_formal_and_network_actions(self) -> None:
         config = json.loads((ROOT / "config" / "portal_mvp.json").read_text(encoding="utf-8"))

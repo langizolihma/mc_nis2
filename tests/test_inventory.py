@@ -19,6 +19,7 @@ def inventory() -> dict:
             {
                 "eir_id": f"EIR-{number:03d}", "name": name,
                 "audit_scope": "AUDITED" if number <= 3 else "NOT_AUDITED",
+                "security_class": "TBD-HUMAN",
                 "owner": "TBD-HUMAN", "source_ref": "SRC-008:p6",
                 "source_confidence": "audited", "record_status": "PROPOSED",
             }
@@ -55,6 +56,13 @@ class InventoryValidationTests(unittest.TestCase):
         value["eir_records"][1]["eir_id"] = "EIR-001"
         result = validate_inventory_register(value, "inventory.json")
         self.assertIn("E_INVENTORY_EIR_DUPLICATE", {item.code for item in result.errors})
+
+    def test_security_class_remains_an_explicit_human_task(self) -> None:
+        result = validate_inventory_register(inventory(), "inventory.json")
+        self.assertIn(
+            "W_INVENTORY_SECURITY_CLASS_PENDING",
+            {item.code for item in result.warnings},
+        )
 
     def test_approved_inventory_requires_human_metadata(self) -> None:
         value = inventory()

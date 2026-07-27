@@ -80,5 +80,21 @@
     "signature_validation": "HUMAN_VALIDATED_VALID_ON_2026-07-15; structure and ByteRange present; automated certificate trust chain not independently validated",
     "internal_uri": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/01_AUDIT_SOURCE/A-035/SRC-008__A-035__SIGNED-SUBMITTED-AUDIT-REPORT__v01__20260605.pdf",
     "sha256": "c347dc3139dd433ace098b6145f1ea5d043614dcfcbf7ed46f71e1b405c5058f"
+  },
+  {
+    "id": "SRC-009",
+    "file": "Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0.xlsx",
+    "type": "control_catalog_reference_workbook",
+    "date": "1.0 verzió; létrehozási metaadat: 2024-06-28; helyi módosítás: 2026-07-27",
+    "confidence": "unverified_internal",
+    "purpose": "A 7/2024. (VI. 24.) MK rendelet 2. mellékletéhez kapcsolódó, 19 követelménycsaládos kontrollreferencia; alkalmazhatóság, magyarázat, megvalósítási lépések, ISO 27001- és NIST-kereszthivatkozások proposal-only forrása.",
+    "status": "PROPOSED_PENDING_G1_SOURCE_AND_DOMAIN_REVIEW",
+    "internal_uri": "https://metalcom.sharepoint.com/sites/NIS2/_layouts/15/Doc.aspx?sourcedoc=%7BFE4D82AD-9E39-4AB3-BBAF-5713EE9D88AE%7D&file=Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0.xlsx&action=default&mobileredirect=true",
+    "protected_folder_uri": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE/A-005/SRC-009",
+    "storage_status": "PROTECTED_SHAREPOINT_COPY_PRESENT_BINARY_VERIFICATION_PENDING_G1_REVIEW",
+    "sha256": "1391f28345798a80b2a1386be29a46929e78b4d390da074c6a8a835d8d6e1c7e",
+    "workbook_creator_metadata": "Peter Kovacs - Multipolaris",
+    "last_modified_by_metadata": "Lángi Zoltán",
+    "limitations": "Nem digitálisan aláírt hivatalos kiadvány és nem auditbizonyíték. Szöveges aktualitása, eredete és felhasználási joga G1 review-ra vár; az alkalmazandó kontrollkörhöz EIR-enként igazolt Alap/Jelentős/Magas besorolás szükséges."
   }
 ]
