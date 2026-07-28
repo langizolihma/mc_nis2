@@ -25,10 +25,16 @@ A 2024. december 30-i módosítás megváltoztatta az 5.3 és 5.4 kontroll jogsz
 | Kontrollcím-egyezés | 914/914 | A PDF oldaltöréseinek és kötőjel-tördelésének normalizálása után teljes. |
 | Alap/Jelentős/Magas jelölés | 914/914 | A három biztonsági osztály alkalmazhatósági jelölése teljesen egyezik. |
 | Normalizált követelményszöveg-egyezés | 907 | A strukturált Excel-kivonat és a hivatalos szöveg lényegi gépi alakja egyezik. |
-| Nagyon hasonló, emberileg ellenőrzendő | 4 | `1.10`, `2.17`, `13.3`, `16.66`; kisebb szöveges/tördelési eltérés miatt G1 review kell. |
-| Eltérő, emberileg ellenőrzendő | 3 | `5.3`, `5.4`, `9.24`; az első kettő biztosan későbbi jogszabály-módosítás miatt tér el. |
+| Nagyon hasonló, emberileg ellenőrzendő | 2 | `1.10`, `13.3`; szerkezeti vagy írásmódbeli eltérés miatt G1 review kell. |
+| Tartalmilag eltérő, emberileg ellenőrzendő | 5 | `2.17`, `5.3`, `5.4`, `9.24`, `16.66`; a hivatalos baseline szövege az irányadó. |
 
 Az összehasonlítás részletes, kontrollonkénti eredménye: `data/control_catalog_legal_comparison.csv`.
+
+A célzott második ellenőrzés pontosította az első gépi, hasonlósági
+besorolást. A `2.17.2.4` pontból hiányzó „nem” szó és a `16.66.5` többletpont
+nem kezelhető pusztán tördelési eltérésként. A hét kontroll emberileg
+kitölthető döntési lapja:
+`CONTROL_CATALOG_TARGETED_G1_DECISION_2026-07-28.md`.
 
 ## Az 5.3 és 5.4 kontroll kezelése
 
@@ -39,7 +45,7 @@ Az összehasonlítás részletes, kontrollonkénti eredménye: `data/control_cat
 
 ## Mit kell még embernek eldöntenie?
 
-1. Ellenőrizze célzottan a hét megjelölt kontrollt, különösen a `9.24` tartalmi eltérését.
+1. Ellenőrizze célzottan a hét megjelölt kontrollt, különösen a `2.17`, `5.3`, `5.4`, `9.24` és `16.66` tartalmi eltérését.
 2. Igazolja az Excel eredetét, aktuális verzióját és belső felhasználási jogát.
 3. Döntse el, hogy az Excel belső referenciaforrásként elfogadható-e, és milyen korlátozásokkal.
 4. Töltse ki az öt EIR biztonsági osztályát az `EIR_SECURITY_CLASSIFICATION_QUESTIONNAIRE.md` alapján.
@@ -49,4 +55,3 @@ Az összehasonlítás részletes, kontrollonkénti eredménye: `data/control_cat
 ## Kötelező korlát
 
 Az előellenőrzés nem bizonyít kontrollműködést. Az AI nem hagyhatja jóvá a katalógust, nem sorolhatja be az EIR-eket, nem választhat automatikusan alkalmazandó kontrollkört, és nem zárhat le akciót.
-

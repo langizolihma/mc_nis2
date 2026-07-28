@@ -33,12 +33,91 @@
     "title_match_count": 914,
     "applicability_match_count": 914,
     "normalized_exact_requirement_count": 907,
-    "high_similarity_requirement_count": 4,
-    "text_difference_requirement_count": 3,
+    "high_similarity_requirement_count": 2,
+    "text_difference_requirement_count": 5,
     "amended_controls": ["5.3", "5.4"],
     "required_human_gate": "G1_DOMAIN_REVIEW",
     "formal_effect": false
   },
+  "targeted_control_reviews": [
+    {
+      "control_ref": "1.10",
+      "finding_type": "FORMATTING_ONLY",
+      "materiality": "LOW",
+      "finding": "A tartalom egyezik; az eltérés felsorolásjel, kis- és nagybetű, illetve központozás.",
+      "proposed_treatment": "NORMALIZED_EQUIVALENCE_ACCEPTABLE",
+      "status": "PENDING_G1_REVIEW",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "control_ref": "2.17",
+      "finding_type": "MISSING_NEGATION",
+      "materiality": "HIGH",
+      "finding": "Az SRC-009 2.17.2.4 pontjából hiányzik a „nem”, ezért a mondat értelme megfordul.",
+      "proposed_treatment": "USE_SRC_010_AND_CORRECT_CATALOG",
+      "status": "PENDING_G1_REVIEW",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "control_ref": "5.3",
+      "finding_type": "OUTDATED_LEGAL_REFERENCE",
+      "materiality": "HIGH",
+      "finding": "Az SRC-009 a korábbi 1. § (1) bekezdésre hivatkozik; az SRC-010 a Kiberbiztonsági tv. 16. § (1) bekezdése szerinti, módosított szöveget tartalmazza.",
+      "proposed_treatment": "USE_AMENDED_SRC_010_TEXT",
+      "status": "PENDING_G1_REVIEW",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "control_ref": "5.4",
+      "finding_type": "OUTDATED_LEGAL_REFERENCE",
+      "materiality": "HIGH",
+      "finding": "Az SRC-009 a korábbi 1. § (2) bekezdésre hivatkozik; az SRC-010 a Kiberbiztonsági tv. 16. § (1) bekezdése szerinti, módosított szöveget tartalmazza.",
+      "proposed_treatment": "USE_AMENDED_SRC_010_TEXT",
+      "status": "PENDING_G1_REVIEW",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "control_ref": "9.24",
+      "finding_type": "MISSING_SUBREQUIREMENT",
+      "materiality": "HIGH",
+      "finding": "Az SRC-009 kivonatból hiányzik a 9.24.2, vagyis a jóhírnév helyreállítására vonatkozó követelmény.",
+      "proposed_treatment": "USE_SRC_010_AND_CORRECT_CATALOG",
+      "status": "PENDING_G1_REVIEW",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "control_ref": "13.3",
+      "finding_type": "STRUCTURAL_ONLY",
+      "materiality": "LOW",
+      "finding": "A követelmények tartalma egyezik; az eltérés a bevezető és az alpontok mondatszerkezetéből adódik.",
+      "proposed_treatment": "NORMALIZED_EQUIVALENCE_ACCEPTABLE",
+      "status": "PENDING_G1_REVIEW",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "control_ref": "16.66",
+      "finding_type": "EXTRA_SUBREQUIREMENT",
+      "materiality": "HIGH",
+      "finding": "Az SRC-009 tartalmaz egy 16.66.5 alpontot, amely az SRC-010 hivatalos baseline-ban nem szerepel.",
+      "proposed_treatment": "DO_NOT_PRESENT_EXTRA_ITEM_AS_LEGAL_REQUIREMENT",
+      "status": "PENDING_G1_REVIEW",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    }
+  ],
   "review_checks": [
     {"id": "ORIGIN", "label": "Eredet és készítő azonosítása", "status": "PENDING", "evidence_ref": ""},
     {"id": "VERSION", "label": "Az 1.0 verzió aktualitása", "status": "PENDING", "evidence_ref": ""},

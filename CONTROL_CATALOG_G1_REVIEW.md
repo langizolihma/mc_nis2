@@ -27,8 +27,9 @@ Az előellenőrzés nem helyettesíti a reviewer döntését, de leszűkíti az 
 - 914/914 kontrollcím egyezik normalizált formában;
 - 914/914 Alap/Jelentős/Magas alkalmazhatósági jelölés egyezik;
 - 907 követelményszöveg normalizáltan egyezik;
-- `1.10`, `2.17`, `13.3`, `16.66` kisebb eltérés miatt ellenőrzendő;
-- `5.3`, `5.4`, `9.24` külön tartalmi review-t igényel;
+- `1.10` és `13.3` kisebb szerkezeti vagy írásmódbeli eltérés miatt ellenőrzendő;
+- `2.17`, `5.3`, `5.4`, `9.24` és `16.66` tartalmi review-t igényel;
+- a `2.17.2.4` Excel-szövegéből hiányzik a „nem”, a `9.24.2` hiányzik, a `16.66.5` pedig csak az Excelben szerepel;
 - az `5.3` és `5.4` esetében a 18/2024. (XII. 30.) MK rendelet módosított szövege az irányadó.
 
 ## Felülvizsgálandó pontok
@@ -38,7 +39,7 @@ Az alábbi pontokat a reviewernek külön-külön ellenőriznie és jelölnie ke
 - [ ] A munkafüzet eredete és készítője elfogadhatóan azonosított.
 - [ ] A `1.0` verzió a használni kívánt, aktuális változat.
 - [ ] A metALCOM rendelkezik a belső felhasználáshoz szükséges jogosultsággal.
-- [ ] A `CONTROL_CATALOG_LEGAL_COMPARISON_2026-07-28.md` és a kontrollszintű összevetés alapján a hét megjelölt kontroll emberileg ellenőrzött; az `5.3` és `5.4` módosított szövege alkalmazandó.
+- [ ] A `CONTROL_CATALOG_TARGETED_G1_DECISION_2026-07-28.md` alapján a hét megjelölt kontroll emberileg ellenőrzött és külön-külön elbírált.
 - [ ] A 914 kontrollos és 1878 részletes követelményes kivonat teljessége elfogadható.
 - [ ] A jelenleg használt 164 egyedi kontrollhivatkozás lefedettsége elfogadható.
 - [ ] A katalógus csak referencia; kontrollműködést és megfelelőséget nem igazol.

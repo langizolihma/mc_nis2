@@ -8,7 +8,7 @@
 
 - Hivatalos `SRC-010` baseline készült a 7/2024. (VI. 24.) MK rendelet 2. mellékletéből és a 18/2024. (XII. 30.) MK rendelet 5.3/5.4 módosításából.
 - A baseline és az `SRC-009` Excelből kinyert regiszter kontrollonként összevetésre került.
-- Eredmény: 914/914 azonosító-, cím- és alkalmazhatósági egyezés; 907 normalizált követelményszöveg-egyezés; 4 kisebb és 3 tartalmi review-tétel.
+- Eredmény: 914/914 azonosító-, cím- és alkalmazhatósági egyezés; 907 normalizált követelményszöveg-egyezés; a célzott második ellenőrzés után 2 kisebb és 5 tartalmi review-tétel.
 - A hét célzott kontroll: `1.10`, `2.17`, `5.3`, `5.4`, `9.24`, `13.3`, `16.66`.
 - Az öt EIR-hez kitölthető hatáselemzési és biztonsági osztályba sorolási kérdőív készült.
 - A helyi portál a jogszabályi előellenőrzés állapotát és a hét review-tételt is megjeleníti.
@@ -20,6 +20,7 @@
 - `README.md`
 - `CONTROL_CATALOG_G1_REVIEW.md`
 - `CONTROL_CATALOG_LEGAL_COMPARISON_2026-07-28.md`
+- `CONTROL_CATALOG_TARGETED_G1_DECISION_2026-07-28.md`
 - `EIR_SECURITY_CLASSIFICATION_QUESTIONNAIRE.md`
 - `DEFERRED_EVIDENCE_LOG.md`
 - `data/source_register.json`
@@ -75,4 +76,3 @@ A feltöltés után a mappa tartalma, a fájlnevek és a visszaadott méretek el
 ## Git
 
 Ebben a munkamenetben nem történt commit vagy push, mert erre nem érkezett külön utasítás.
-

@@ -224,6 +224,69 @@ class ControlCatalogTests(unittest.TestCase):
             if row["amendment_status"] == "AMENDED_BY_18_2024"
         ]
         self.assertEqual(["5.3", "5.4"], amended)
+        statuses = {
+            row["control_ref"]: row["requirement_comparison_status"]
+            for row in rows
+        }
+        self.assertEqual(
+            "TEXT_DIFFERENCE_REVIEW_REQUIRED",
+            statuses["2.17"],
+        )
+        self.assertEqual(
+            "TEXT_DIFFERENCE_REVIEW_REQUIRED",
+            statuses["16.66"],
+        )
+        comparison_counts = {
+            status: sum(
+                row["requirement_comparison_status"] == status for row in rows
+            )
+            for status in {
+                "NORMALIZED_EXACT",
+                "HIGH_SIMILARITY_REVIEW_REQUIRED",
+                "TEXT_DIFFERENCE_REVIEW_REQUIRED",
+            }
+        }
+        self.assertEqual(907, comparison_counts["NORMALIZED_EXACT"])
+        self.assertEqual(2, comparison_counts["HIGH_SIMILARITY_REVIEW_REQUIRED"])
+        self.assertEqual(5, comparison_counts["TEXT_DIFFERENCE_REVIEW_REQUIRED"])
+
+    def test_targeted_g1_review_contains_exactly_seven_pending_controls(self) -> None:
+        review_path = (
+            Path(__file__).resolve().parents[1]
+            / "data"
+            / "control_catalog_review.json"
+        )
+        review = json.loads(review_path.read_text(encoding="utf-8"))
+        targeted = review["targeted_control_reviews"]
+        self.assertEqual(
+            {"1.10", "2.17", "5.3", "5.4", "9.24", "13.3", "16.66"},
+            {item["control_ref"] for item in targeted},
+        )
+        self.assertTrue(
+            all(item["status"] == "PENDING_G1_REVIEW" for item in targeted)
+        )
+        high_materiality = {
+            item["control_ref"]
+            for item in targeted
+            if item["materiality"] == "HIGH"
+        }
+        self.assertEqual(
+            {"2.17", "5.3", "5.4", "9.24", "16.66"},
+            high_materiality,
+        )
+
+    def test_targeted_material_findings_match_extracted_requirements(self) -> None:
+        requirements_path = (
+            Path(__file__).resolve().parents[1]
+            / "data"
+            / "control_requirements.csv"
+        )
+        with requirements_path.open(encoding="utf-8", newline="") as handle:
+            requirements = list(csv.DictReader(handle))
+        by_ref = {item["requirement_ref"]: item["requirement_text"] for item in requirements}
+        self.assertNotIn("nem választhatja", by_ref["2.17.2.4"].lower())
+        self.assertNotIn("9.24.2", by_ref)
+        self.assertIn("16.66.5", by_ref)
 
     def test_extraction_and_csv_round_trip_are_deterministic(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

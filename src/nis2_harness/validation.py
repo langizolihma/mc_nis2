@@ -755,7 +755,8 @@ def validate_control_catalog_review(
         "schema_version", "status", "source_ref", "decision_ref",
         "deferred_task_id", "required_gate", "formal_effect", "source_sha256",
         "protected_folder_uri", "protected_file_uri", "review_form_uri", "review_checks",
-        "official_legal_precheck", "eir_classifications", "human_decision",
+        "official_legal_precheck", "targeted_control_reviews",
+        "eir_classifications", "human_decision",
         "forbidden_automatic_actions",
     )
     issues.extend(_required_dict_fields(
@@ -800,8 +801,8 @@ def validate_control_catalog_review(
         "title_match_count": 914,
         "applicability_match_count": 914,
         "normalized_exact_requirement_count": 907,
-        "high_similarity_requirement_count": 4,
-        "text_difference_requirement_count": 3,
+        "high_similarity_requirement_count": 2,
+        "text_difference_requirement_count": 5,
         "required_human_gate": "G1_DOMAIN_REVIEW",
         "formal_effect": False,
     }
@@ -816,6 +817,75 @@ def validate_control_catalog_review(
         issues.append(_json_issue(
             path, "ERROR", "E_CATALOG_LEGAL_PRECHECK",
             "az amended_controls pontosan az 5.3 és 5.4 kontrollt tartalmazza",
+            identity,
+        ))
+    targeted_reviews = data.get("targeted_control_reviews", [])
+    expected_targeted = {
+        "1.10", "2.17", "5.3", "5.4", "9.24", "13.3", "16.66",
+    }
+    seen_targeted: set[str] = set()
+    pending_targeted = 0
+    if not isinstance(targeted_reviews, list):
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_TARGETED_REVIEW",
+            "targeted_control_reviews lista szükséges", identity,
+        ))
+        targeted_reviews = []
+    for record in targeted_reviews:
+        if not isinstance(record, dict):
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_TARGETED_REVIEW",
+                "minden célzott kontroll-review objektum legyen", identity,
+            ))
+            continue
+        control_ref = str(record.get("control_ref", ""))
+        if control_ref in seen_targeted:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_TARGETED_REVIEW",
+                f"duplikált célzott kontroll-review: {control_ref}", identity,
+            ))
+        seen_targeted.add(control_ref)
+        if record.get("materiality") not in {"LOW", "HIGH"}:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_TARGETED_REVIEW",
+                "a materiality csak LOW vagy HIGH lehet", control_ref,
+            ))
+        review_status = record.get("status")
+        if review_status not in {
+            "PENDING_G1_REVIEW", "ACCEPTED", "ACCEPTED_WITH_LIMITATION", "REJECTED",
+        }:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_TARGETED_REVIEW",
+                "ismeretlen célzott review státusz",
+                control_ref,
+            ))
+        elif review_status == "PENDING_G1_REVIEW":
+            pending_targeted += 1
+        else:
+            for field in ("reviewer", "reviewed_at", "decision_ref"):
+                if _missing_or_tbd(str(record.get(field, ""))):
+                    issues.append(_json_issue(
+                        path, "ERROR", "E_CATALOG_TARGETED_REVIEW_EVIDENCE",
+                        f"lezárt célzott review-hoz {field} szükséges",
+                        control_ref,
+                    ))
+            reviewed_at = str(record.get("reviewed_at", ""))
+            if reviewed_at and not _valid_timestamp(reviewed_at):
+                issues.append(_json_issue(
+                    path, "ERROR", "E_CATALOG_TARGETED_REVIEW_TIME",
+                    "reviewed_at időzónás ISO-8601 időbélyeg legyen",
+                    control_ref,
+                ))
+        for field in ("finding_type", "finding", "proposed_treatment"):
+            if not str(record.get(field, "")).strip():
+                issues.append(_json_issue(
+                    path, "ERROR", "E_CATALOG_TARGETED_REVIEW",
+                    f"hiányzó célzott review mező: {field}", control_ref,
+                ))
+    if seen_targeted != expected_targeted:
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_TARGETED_REVIEW_SET",
+            "pontosan a hét kijelölt kontroll célzott review-ja szükséges",
             identity,
         ))
     for field in ("protected_folder_uri", "protected_file_uri", "review_form_uri"):
@@ -948,6 +1018,12 @@ def validate_control_catalog_review(
             issues.append(_json_issue(
                 path, "ERROR", "E_CATALOG_REVIEW_FALSE_APPROVAL",
                 "jóváhagyás előtt mind az öt EIR besorolása szükséges", identity,
+            ))
+        if pending_targeted:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_REVIEW_FALSE_APPROVAL",
+                "jóváhagyás előtt mind a hét célzott kontroll review-ja szükséges",
+                identity,
             ))
         for field in (
             "reviewer", "reviewed_at", "decision_ref",

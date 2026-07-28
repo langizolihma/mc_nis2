@@ -128,7 +128,13 @@ Az automatikus Alap/Jelentős/Magas kontrollszűrés egyelőre szándékosan til
 
 A katalógus kitölthető G1 felülvizsgálati lapja a
 `CONTROL_CATALOG_G1_REVIEW.md`, a géppel ellenőrizhető döntési váza pedig a
-`data/control_catalog_review.json`. Az eredeti Excel védett SharePoint-példánya
+`data/control_catalog_review.json`. A hét eltérő kontroll közérthető,
+kontrollonként kitölthető döntési lapja a
+`CONTROL_CATALOG_TARGETED_G1_DECISION_2026-07-28.md`. A célzott második
+ellenőrzés két szerkezeti és öt tartalmi review-tételt azonosított; különösen
+a `2.17.2.4` hiányzó tagadása, a `9.24.2` hiánya és a `16.66.5` többlete
+miatt mindig a hivatalos `SRC-010` baseline az irányadó.
+Az eredeti Excel védett SharePoint-példánya
 az `NIS2_EVIDENCE/02_GOVERNANCE/A-005/SRC-009` mappában található. A feltöltés
 nem jelent szakmai jóváhagyást; a store-owner, a G1 döntés és az öt
 EIR-besorolás továbbra is emberi feladat. A kapcsolaton át feltöltött XLSX
