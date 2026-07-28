@@ -18,13 +18,34 @@
     "canonical_source": "C:/NIS2/alapadatok/Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0.xlsx",
     "note": "A SharePoint-kapcsolaton át feltöltött XLSX mérete eltér a helyi eredetitől. A SharePoint-példány nem tekinthető byteazonos kanonikus forrásnak; kézi feltöltés és visszaolvasott SHA-256 szükséges."
   },
+  "official_legal_precheck": {
+    "status": "READY_FOR_G1_HUMAN_REVIEW",
+    "official_source_ref": "SRC-010",
+    "comparison_summary_ref": "data/control_catalog_legal_comparison_summary.json",
+    "comparison_detail_ref": "data/control_catalog_legal_comparison.csv",
+    "human_readable_report_ref": "CONTROL_CATALOG_LEGAL_COMPARISON_2026-07-28.md",
+    "eir_questionnaire_ref": "EIR_SECURITY_CLASSIFICATION_QUESTIONNAIRE.md",
+    "sharepoint_report_uri": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE/A-005/SRC-009/CONTROL_CATALOG_LEGAL_COMPARISON_2026-07-28.md",
+    "sharepoint_questionnaire_uri": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE/A-005/SRC-009/EIR_SECURITY_CLASSIFICATION_QUESTIONNAIRE.md",
+    "official_control_count": 914,
+    "catalog_control_count": 914,
+    "identifier_match_count": 914,
+    "title_match_count": 914,
+    "applicability_match_count": 914,
+    "normalized_exact_requirement_count": 907,
+    "high_similarity_requirement_count": 4,
+    "text_difference_requirement_count": 3,
+    "amended_controls": ["5.3", "5.4"],
+    "required_human_gate": "G1_DOMAIN_REVIEW",
+    "formal_effect": false
+  },
   "review_checks": [
     {"id": "ORIGIN", "label": "Eredet és készítő azonosítása", "status": "PENDING", "evidence_ref": ""},
     {"id": "VERSION", "label": "Az 1.0 verzió aktualitása", "status": "PENDING", "evidence_ref": ""},
     {"id": "USE_RIGHTS", "label": "Belső felhasználási jogosultság", "status": "PENDING", "evidence_ref": ""},
-    {"id": "LEGAL_TEXT", "label": "Hatályos jogszabályi szöveggel való egyezés", "status": "PENDING", "evidence_ref": ""},
-    {"id": "EXTRACTION", "label": "914 kontroll és 1878 részletes követelmény teljessége", "status": "PENDING", "evidence_ref": ""},
-    {"id": "CURRENT_COVERAGE", "label": "164 jelenleg használt kontrollhivatkozás lefedettsége", "status": "PENDING", "evidence_ref": ""}
+    {"id": "LEGAL_TEXT", "label": "Hatályos jogszabályi szöveggel való egyezés", "status": "PENDING", "evidence_ref": "CONTROL_CATALOG_LEGAL_COMPARISON_2026-07-28.md; data/control_catalog_legal_comparison.csv"},
+    {"id": "EXTRACTION", "label": "914 kontroll és 1878 részletes követelmény teljessége", "status": "PENDING", "evidence_ref": "data/control_catalog_metadata.json; data/control_catalog_legal_comparison_summary.json"},
+    {"id": "CURRENT_COVERAGE", "label": "164 jelenleg használt kontrollhivatkozás lefedettsége", "status": "PENDING", "evidence_ref": "data/control_catalog_metadata.json"}
   ],
   "eir_classifications": [
     {"eir_id": "EIR-001", "eir_name": "Vezetéstámogató", "audit_scope": "AUDITED", "security_class": "TBD-HUMAN", "owner": "TBD-HUMAN", "rationale": "", "reviewer": "", "reviewed_at": "", "decision_ref": ""},

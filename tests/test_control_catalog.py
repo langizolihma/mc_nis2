@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import json
 from pathlib import Path
 import tempfile
@@ -187,6 +188,42 @@ class ControlCatalogTests(unittest.TestCase):
             "E_CATALOG_REVIEW_FALSE_APPROVAL",
             {item.code for item in result.errors},
         )
+
+    def test_g1_review_rejects_tampered_legal_precheck(self) -> None:
+        review_path = (
+            Path(__file__).resolve().parents[1]
+            / "data"
+            / "control_catalog_review.json"
+        )
+        review = json.loads(review_path.read_text(encoding="utf-8"))
+        review["official_legal_precheck"]["identifier_match_count"] = 913
+        result = validate_control_catalog_review(review, review_path)
+        self.assertIn(
+            "E_CATALOG_LEGAL_PRECHECK",
+            {item.code for item in result.errors},
+        )
+
+    def test_official_legal_comparison_is_complete_and_pending_human_review(self) -> None:
+        comparison_path = (
+            Path(__file__).resolve().parents[1]
+            / "data"
+            / "control_catalog_legal_comparison.csv"
+        )
+        with comparison_path.open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(914, len(rows))
+        self.assertTrue(all(row["identifier_status"] == "MATCH" for row in rows))
+        self.assertTrue(all(row["title_status"] == "MATCH" for row in rows))
+        self.assertTrue(all(row["applicability_status"] == "MATCH" for row in rows))
+        self.assertTrue(
+            all(row["human_review_status"] == "PENDING_G1_REVIEW" for row in rows)
+        )
+        amended = [
+            row["control_ref"]
+            for row in rows
+            if row["amendment_status"] == "AMENDED_BY_18_2024"
+        ]
+        self.assertEqual(["5.3", "5.4"], amended)
 
     def test_extraction_and_csv_round_trip_are_deterministic(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

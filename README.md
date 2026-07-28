@@ -106,6 +106,14 @@ Az audit 328 gépi finding-rekordja a `data/audit_findings.csv`, a javasolt kont
 
 Az `SRC-009` Excelből determinisztikusan kinyert 914 védelmi intézkedés a `data/control_catalog.csv`, a hozzájuk tartozó 1878 részletes követelménysor a `data/control_requirements.csv`, a forráshash és kivonási állapot pedig a `data/control_catalog_metadata.json` fájlban található. A katalógus mind a finding-, mapping- és akcióregiszterben használt 164 egyedi kontrollhivatkozást lefedi. A rekordok `PROPOSED` és `unverified_internal` állapotúak: magyarázatot, megvalósítási támpontot és ISO/NIST kereszthivatkozást adhatnak, de nem auditbizonyítékok és nem igazolnak kontrollműködést. A portál az akció részleteinél megjeleníti a kapcsolódó katalógusrekordokat.
 
+A hivatalos `SRC-010` jogszabályi baseline és az SRC-009 gépi összevetése a
+`data/official_control_baseline.csv`, a `data/control_catalog_legal_comparison.csv`
+és a `data/control_catalog_legal_comparison_summary.json` fájlban található. A
+[közérthető összefoglaló](CONTROL_CATALOG_LEGAL_COMPARISON_2026-07-28.md) szerint
+mind a 914 azonosító, cím és biztonságiosztály-jelölés egyezik; hét kontroll
+célzott G1 szövegreview-ra vár. Az `5.3` és `5.4` esetében a 18/2024.
+(XII. 30.) MK rendelet módosított szövege az irányadó.
+
 Az eredeti munkafüzet az `alapadatok/` Git-kizárt könyvtárban marad. Új verzió esetén, zárt Excel mellett a kivonás megismételhető:
 
 ```powershell
@@ -116,7 +124,7 @@ python -m nis2_harness extract-control-catalog `
   --metadata-output data/control_catalog_metadata.json
 ```
 
-Az automatikus Alap/Jelentős/Magas kontrollszűrés egyelőre szándékosan tiltott. A `data/inventory_register.json` minden EIR-re explicit `security_class: TBD-HUMAN` értéket tartalmaz, amíg az EIR-owner és az IBF emberileg nem igazolja a besorolást és a kontrolltestreszabást; ezt a `DEF-036` követi.
+Az automatikus Alap/Jelentős/Magas kontrollszűrés egyelőre szándékosan tiltott. A `data/inventory_register.json` minden EIR-re explicit `security_class: TBD-HUMAN` értéket tartalmaz, amíg az EIR-owner és az IBF emberileg nem igazolja a besorolást és a kontrolltestreszabást; ezt a `DEF-036` követi. A kitöltendő, öt EIR-re előkészített hatáselemzési segédlet az [EIR_SECURITY_CLASSIFICATION_QUESTIONNAIRE.md](EIR_SECURITY_CLASSIFICATION_QUESTIONNAIRE.md).
 
 A katalógus kitölthető G1 felülvizsgálati lapja a
 `CONTROL_CATALOG_G1_REVIEW.md`, a géppel ellenőrizhető döntési váza pedig a

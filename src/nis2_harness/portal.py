@@ -232,6 +232,7 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
         review = json.loads(review_path.read_text(encoding="utf-8"))
         review_checks = review.get("review_checks", [])
         eir_classifications = review.get("eir_classifications", [])
+        legal_precheck = review.get("official_legal_precheck", {})
         snapshot["catalog_review"] = {
             "status": str(review.get("status", "UNKNOWN")),
             "source_ref": str(review.get("source_ref", "")),
@@ -246,6 +247,27 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
             "pending_eir_classifications": sum(
                 item.get("security_class") == "TBD-HUMAN"
                 for item in eir_classifications if isinstance(item, dict)
+            ),
+            "legal_precheck_status": str(
+                legal_precheck.get("status", "NOT_AVAILABLE")
+            ),
+            "official_control_count": int(
+                legal_precheck.get("official_control_count", 0)
+            ),
+            "identifier_match_count": int(
+                legal_precheck.get("identifier_match_count", 0)
+            ),
+            "title_match_count": int(
+                legal_precheck.get("title_match_count", 0)
+            ),
+            "applicability_match_count": int(
+                legal_precheck.get("applicability_match_count", 0)
+            ),
+            "text_review_required_count": int(
+                legal_precheck.get("high_similarity_requirement_count", 0)
+            ) + int(legal_precheck.get("text_difference_requirement_count", 0)),
+            "amended_controls": list(
+                legal_precheck.get("amended_controls", [])
             ),
             "formal_effect": False,
         }
@@ -264,6 +286,13 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
             "review_form_uri": "",
             "pending_checks": 0,
             "pending_eir_classifications": 0,
+            "legal_precheck_status": "ERROR_FAIL_CLOSED",
+            "official_control_count": 0,
+            "identifier_match_count": 0,
+            "title_match_count": 0,
+            "applicability_match_count": 0,
+            "text_review_required_count": 0,
+            "amended_controls": [],
             "formal_effect": False,
         }
         snapshot["summary"]["catalog_review_status"] = "ERROR_FAIL_CLOSED"

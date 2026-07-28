@@ -96,5 +96,22 @@
     "workbook_creator_metadata": "Peter Kovacs - Multipolaris",
     "last_modified_by_metadata": "Lángi Zoltán",
     "limitations": "Nem digitálisan aláírt hivatalos kiadvány és nem auditbizonyíték. Szöveges aktualitása, eredete és felhasználási joga G1 review-ra vár; az alkalmazandó kontrollkörhöz EIR-enként igazolt Alap/Jelentős/Magas besorolás szükséges."
+  },
+  {
+    "id": "SRC-010",
+    "file": "Magyar Közlöny 2024. évi 68. és 137. szám; NJT konszolidált szöveg",
+    "type": "official_legal_control_baseline",
+    "date": "2024-06-24; módosítás: 2024-12-30; ellenőrzés: 2026-07-28",
+    "confidence": "authority",
+    "purpose": "A 7/2024. (VI. 24.) MK rendelet 2. mellékletének hivatalos kontrollbaseline-ja, a 18/2024. (XII. 30.) MK rendelet 5.3 és 5.4 kontrollt érintő módosításával.",
+    "status": "MANDATORY_SOURCE_FOR_CONTROL_CATALOG_G1_REVIEW",
+    "official_uri": "https://njt.hu/jogszabaly/2024-7-20-7G",
+    "original_gazette_uri": "https://magyarkozlony.hu/dokumentumok/6a941bae23a11518e38315c9df5fddb40881dafa/letoltes",
+    "original_gazette_sha256": "368ee61b73a8e9e3631e4716908fd6d1598ad12b6be1c4cdb3845a6cb8ea996f",
+    "amendment_gazette_uri": "https://magyarkozlony.hu/hivatalos-lapok/f7Ahelc59ABHyePyze14676984146c779/dokumentumok/a042826308ead5098901eeebed499b64e6705ea9/letoltes",
+    "amendment_gazette_sha256": "422d9eaa67f0986fd6fe5babbfda79a4842982092cf20441be882f04f94cb89b",
+    "derived_baseline": "data/official_control_baseline.csv",
+    "comparison_summary": "data/control_catalog_legal_comparison_summary.json",
+    "limitations": "A gépi összevetés strukturális és szöveges előellenőrzés. Nem helyettesíti a G1 szakmai/jogi emberi felülvizsgálatot, és önmagában nem hagyja jóvá az SRC-009 katalógust."
   }
 ]

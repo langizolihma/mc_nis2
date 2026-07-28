@@ -69,6 +69,15 @@ class PortalMvpTests(unittest.TestCase):
         self.assertEqual(5, snapshot["summary"]["catalog_pending_eir_classifications"])
         self.assertEqual("DEF-036", snapshot["catalog_review"]["deferred_task_id"])
         self.assertFalse(snapshot["catalog_review"]["formal_effect"])
+        self.assertEqual(
+            "READY_FOR_G1_HUMAN_REVIEW",
+            snapshot["catalog_review"]["legal_precheck_status"],
+        )
+        self.assertEqual(914, snapshot["catalog_review"]["identifier_match_count"])
+        self.assertEqual(914, snapshot["catalog_review"]["title_match_count"])
+        self.assertEqual(914, snapshot["catalog_review"]["applicability_match_count"])
+        self.assertEqual(7, snapshot["catalog_review"]["text_review_required_count"])
+        self.assertEqual(["5.3", "5.4"], snapshot["catalog_review"]["amended_controls"])
         action = next(item for item in snapshot["actions"] if item["id"] == "A-001")
         self.assertEqual(["1.2"], action["control_refs"])
         self.assertEqual("SRC-009", action["control_details"][0]["source_ref"])

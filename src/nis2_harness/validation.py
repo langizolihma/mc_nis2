@@ -755,7 +755,8 @@ def validate_control_catalog_review(
         "schema_version", "status", "source_ref", "decision_ref",
         "deferred_task_id", "required_gate", "formal_effect", "source_sha256",
         "protected_folder_uri", "protected_file_uri", "review_form_uri", "review_checks",
-        "eir_classifications", "human_decision", "forbidden_automatic_actions",
+        "official_legal_precheck", "eir_classifications", "human_decision",
+        "forbidden_automatic_actions",
     )
     issues.extend(_required_dict_fields(
         data, required_top, path, identity, "E_CATALOG_REVIEW_REQUIRED"
@@ -782,6 +783,40 @@ def validate_control_catalog_review(
         issues.append(_json_issue(
             path, "ERROR", "E_CATALOG_REVIEW_HASH",
             "érvényes source_sha256 szükséges", identity,
+        ))
+    legal_precheck = data.get("official_legal_precheck", {})
+    if not isinstance(legal_precheck, dict):
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_LEGAL_PRECHECK",
+            "official_legal_precheck objektum szükséges", identity,
+        ))
+        legal_precheck = {}
+    expected_precheck = {
+        "status": "READY_FOR_G1_HUMAN_REVIEW",
+        "official_source_ref": "SRC-010",
+        "official_control_count": 914,
+        "catalog_control_count": 914,
+        "identifier_match_count": 914,
+        "title_match_count": 914,
+        "applicability_match_count": 914,
+        "normalized_exact_requirement_count": 907,
+        "high_similarity_requirement_count": 4,
+        "text_difference_requirement_count": 3,
+        "required_human_gate": "G1_DOMAIN_REVIEW",
+        "formal_effect": False,
+    }
+    for field, expected_value in expected_precheck.items():
+        if legal_precheck.get(field) != expected_value:
+            issues.append(_json_issue(
+                path, "ERROR", "E_CATALOG_LEGAL_PRECHECK",
+                f"official_legal_precheck.{field} értéke {expected_value!r} kell legyen",
+                identity,
+            ))
+    if legal_precheck.get("amended_controls") != ["5.3", "5.4"]:
+        issues.append(_json_issue(
+            path, "ERROR", "E_CATALOG_LEGAL_PRECHECK",
+            "az amended_controls pontosan az 5.3 és 5.4 kontrollt tartalmazza",
+            identity,
         ))
     for field in ("protected_folder_uri", "protected_file_uri", "review_form_uri"):
         parsed = urlparse(str(data.get(field, "")))

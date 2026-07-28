@@ -70,7 +70,7 @@
       ? `Fail-closed · ${auth.hard_errors} hard error`
       : `${(auth.pending_gates || []).join(" · ") || "nincs függő kapu"} · valós bejelentkezés még kikapcsolva`;
     byId("catalog-review-status").textContent = catalog.status;
-    byId("catalog-review-detail").textContent = `${catalog.required_gate} · ${catalog.pending_checks} függő ellenőrzés · ${catalog.pending_eir_classifications} függő EIR-besorolás · DEF-036`;
+    byId("catalog-review-detail").textContent = `${catalog.legal_precheck_status || "NINCS ELŐELLENŐRZÉS"} · ${catalog.identifier_match_count || 0}/${catalog.official_control_count || 0} azonosító · ${catalog.text_review_required_count || 0} célzott szövegreview · ${catalog.pending_eir_classifications} függő EIR-besorolás · DEF-036`;
     byId("approval-count").textContent = data.approval_queue.length; byId("approval-nav-count").textContent = data.approval_queue.length;
     byId("approval-list").innerHTML = items.map((item) => `<article class="approval-card"><div class="approval-code">${escapeHtml(item.gates[0].slice(0,2))}</div><div><h3>${escapeHtml(item.action_id)} · ${escapeHtml(item.title)}</h3><div class="approval-meta">${escapeHtml(item.approver)} · ${escapeHtml(formatDate(item.target_date))} · ${escapeHtml(item.gates.map(g=>g.slice(0,2)).join(" / "))}</div></div><div class="demo-actions"><button class="primary" data-review="${escapeHtml(item.action_id)}">Review-tervezet</button></div></article>`).join("");
     const drafts = (data.review_drafts || []).slice().reverse().slice(0, 8);
