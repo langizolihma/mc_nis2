@@ -26,6 +26,7 @@ python -m nis2_harness validate --actions data/actions.csv
 python -m nis2_harness status --actions data/actions.csv
 python -m nis2_harness deadlines --received 2026-06-26
 python -m nis2_harness draft-action-plan --actions data/actions.csv --output generated/action_plan.md
+python -m nis2_harness daily-execution-brief --actions data/actions.csv --project-dates data/project_dates.json --as-of 2026-07-29 --output generated/daily_execution_brief_2026-07-29.md
 python -m nis2_harness validate-evidence --evidence data/evidence_register.csv --actions data/actions.csv
 python -m nis2_harness validate-findings --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
 python -m nis2_harness validate-control-catalog --catalog data/control_catalog.csv --requirements data/control_requirements.csv --metadata data/control_catalog_metadata.json --review data/control_catalog_review.json --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
@@ -47,6 +48,12 @@ python -m unittest discover -s tests -v
 ### Helyi portál-MVP
 
 A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 36 emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. Append-only helyi review-tervezetet rögzíthet, de az nem formális jóváhagyás, nem evidencia és nem módosít akcióstátuszt.
+
+A `daily-execution-brief` parancs egy megadott állapotdátumra, determinisztikusan
+elkészíti a résztvevők napi munkasorrendjét. Külön mutatja a lejárt, 7 napon
+belüli, 30 napon belüli és még konkrét dátumot igénylő akciókat, valamint az
+elvárt eredményt, bizonyítékot, emberi kaput és függőséget. A lejárt jelölés
+figyelmeztetés, nem automatikus nemteljesítési döntés.
 
 ```powershell
 python -m nis2_harness serve-portal

@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Sequence
 
 from .deadlines import REPEAT_AUDIT_LATEST, action_plan_deadline, draft_quarterly_schedule, parse_iso_date
+from .execution_brief import render_daily_execution_brief
 from .ai_policy import validate_ai_policy
 from .action_plan_submission import validate_action_plan_submission
 from .backup_restore import validate_backup_restore_plan
@@ -85,6 +86,11 @@ def _parser() -> argparse.ArgumentParser:
     draft.add_argument("--actions", required=True, type=Path)
     draft.add_argument("--project-dates", type=Path)
     draft.add_argument("--output", required=True, type=Path)
+    daily_brief = subparsers.add_parser("daily-execution-brief")
+    daily_brief.add_argument("--actions", required=True, type=Path)
+    daily_brief.add_argument("--project-dates", type=Path)
+    daily_brief.add_argument("--as-of", required=True)
+    daily_brief.add_argument("--output", required=True, type=Path)
     evidence = subparsers.add_parser("validate-evidence")
     evidence.add_argument("--evidence", required=True, type=Path)
     evidence.add_argument("--actions", required=True, type=Path)
@@ -577,6 +583,25 @@ def main(argv: Sequence[str] | None = None) -> int:
             output.parent.mkdir(parents=True, exist_ok=True)
             output.write_text(render_action_plan(actions, dates), encoding="utf-8", newline="\n")
             print(f"Tervezet elkészült: {output}")
+            return 0
+        if args.command == "daily-execution-brief":
+            if result.errors:
+                for issue in result.errors:
+                    print(issue.format(), file=sys.stderr)
+                print(
+                    "A napi összefoglaló hard validation error miatt nem készült el.",
+                    file=sys.stderr,
+                )
+                return 1
+            as_of = parse_iso_date(args.as_of, field_name="as_of")
+            output = args.output
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_text(
+                render_daily_execution_brief(actions, as_of),
+                encoding="utf-8",
+                newline="\n",
+            )
+            print(f"Napi végrehajtási összefoglaló elkészült: {output}")
             return 0
     except (RegistryLoadError, ValueError, OSError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)

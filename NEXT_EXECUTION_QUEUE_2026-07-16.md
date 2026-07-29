@@ -1,4 +1,4 @@
-# Következő végrehajtási sor – frissítve 2026-07-17
+# Következő végrehajtási sor – frissítve 2026-07-29
 
 ```json
 {
@@ -17,6 +17,13 @@
 
 Mind a 42 akció előkészítő csomagja elkészült. A következő sor kizárólag emberi adatgyűjtést, döntést és kontrollált végrehajtást tartalmaz; az AI dokumentálhat és javasolhat, de nem helyettesíti a kapukat.
 
+A napi operatív munkasorrend a
+`generated/daily_execution_brief_2026-07-29.md` fájlban található. A
+2026-07-29-i nyilvántartási állapot szerint 17 akciónak lejárt a céldátuma,
+9 akció 8–30 napon belül esedékes, 9 akció pedig még konkrét emberi ütemezést
+igényel. A „lejárt” megjelölés státuszellenőrzést kér; nem jelenti
+automatikusan azt, hogy a munka nem történt meg.
+
 | Sorrend | Emberi munkablokk | Érintett fő akciók | Következő elfogadható eredmény | Kötelező kapu |
 |---|---|---|---|---|
 | 1 | Irányítási aláírások és felelősök | A-001; A-002; A-035; A-036 | IBF/RACI/G2-G4 és kanonikus forrás védett, aláírt review-rekordja | G2 |
@@ -30,3 +37,13 @@ Mind a 42 akció előkészítő csomagja elkészült. A következő sor kizáró
 ## Működési szabály
 
 Minden végrehajtott emberi feladatnál előbb a tényleges dokumentumot vagy exportot kell védett tárba helyezni, majd URI-t, SHA-256 értéket, reviewert, időzónás időpontot és döntési hivatkozást rögzíteni. Csak ezután frissíthető a kapcsolódó akció státusza. A `DEFERRED_EVIDENCE_LOG.md` tételei nem zárhatók le pusztán szóbeli megerősítéssel.
+
+A napi összefoglaló újragenerálása:
+
+```powershell
+python -m nis2_harness daily-execution-brief `
+  --actions data/actions.csv `
+  --project-dates data/project_dates.json `
+  --as-of ÉÉÉÉ-HH-NN `
+  --output generated/daily_execution_brief_ÉÉÉÉ-HH-NN.md
+```

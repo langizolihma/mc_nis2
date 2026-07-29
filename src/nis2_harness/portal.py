@@ -11,6 +11,7 @@ import re
 import threading
 from typing import Any, Callable
 
+from .execution_brief import deadline_bucket
 from .portal_auth import auth_readiness_summary, validate_portal_auth_policy
 from .sharepoint_readiness import readiness_summary, validate_sharepoint_graph_readiness
 from .sharepoint_snapshot import load_sharepoint_projection
@@ -105,6 +106,16 @@ def build_snapshot(
             if value.strip() in catalog_by_ref
         ],
     } for item in actions]
+    for projected, source in zip(safe_actions, actions):
+        bucket, days = deadline_bucket(
+            source.get("target_date", ""), as_of, source.get("status", "")
+        )
+        projected["deadline_bucket"] = bucket
+        projected["days_to_target"] = days
+    deadline_bucket_counts: dict[str, int] = {}
+    for item in safe_actions:
+        bucket = item["deadline_bucket"]
+        deadline_bucket_counts[bucket] = deadline_bucket_counts.get(bucket, 0) + 1
     approval_queue = [{
         "action_id": item["id"], "title": item["title"], "priority": item["priority"],
         "owner": item["owner"], "approver": item["approver"], "gates": item["gates"],
@@ -132,6 +143,10 @@ def build_snapshot(
             "action_plan_deadline": deadline.isoformat(), "days_to_deadline": max((deadline - as_of).days, 0),
             "repeat_audit_target": "2027-09-30", "gate_counts": gate_counts,
             "priority_counts": priority_counts, "status_counts": status_counts,
+            "overdue_actions": deadline_bucket_counts.get("OVERDUE", 0),
+            "due_within_7_days": deadline_bucket_counts.get("DUE_7_DAYS", 0),
+            "due_within_30_days": deadline_bucket_counts.get("DUE_30_DAYS", 0),
+            "undated_actions": deadline_bucket_counts.get("DATE_REQUIRED", 0),
             "catalog_controls": len(catalog_records),
             "catalog_review_status": (
                 "PROPOSED_G1_PENDING" if catalog_records else "NOT_AVAILABLE"
