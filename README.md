@@ -32,6 +32,7 @@ python -m nis2_harness validate-deadline-reconciliation --actions data/actions.c
 python -m nis2_harness build-reconciliation-review-package --actions data/actions.csv --register data/deadline_reconciliation.json --drafts portal_runtime/deadline_reconciliation_drafts.jsonl --allow-missing-drafts --json-output generated/deadline_reconciliation_review_package_2026-07-29.json --markdown-output generated/deadline_reconciliation_review_package_2026-07-29.md
 python -m nis2_harness build-reconciliation-decision-template --review-package generated/deadline_reconciliation_review_package_2026-07-29.json --output portal_runtime/deadline_reconciliation_decisions.json
 python -m nis2_harness build-reconciliation-change-proposal --review-package generated/deadline_reconciliation_review_package_2026-07-29.json --decisions portal_runtime/deadline_reconciliation_decisions.json --json-output generated/deadline_reconciliation_change_proposal_2026-07-29.json --markdown-output generated/deadline_reconciliation_change_proposal_2026-07-29.md
+python -m nis2_harness build-reconciliation-application-preflight --actions data/actions.csv --change-proposal generated/deadline_reconciliation_change_proposal_2026-07-29.json --json-output generated/deadline_reconciliation_application_preflight_2026-07-29.json --markdown-output generated/deadline_reconciliation_application_preflight_2026-07-29.md
 python -m nis2_harness validate-evidence --evidence data/evidence_register.csv --actions data/actions.csv
 python -m nis2_harness validate-findings --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
 python -m nis2_harness validate-control-catalog --catalog data/control_catalog.csv --requirements data/control_requirements.csv --metadata data/control_catalog_metadata.json --review data/control_catalog_review.json --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
@@ -97,6 +98,13 @@ tervezet elfogadását és a nem védett döntési hivatkozást, majd csak
 `PROPOSAL_PENDING_CONTROLLED_APPLICATION` csomagot készít. A parancs nem írja
 át az `actions.csv` fájlt, nem javasol `DONE` státuszt és nem fogad el
 evidenciát. A döntési és változásjavaslati fájlok helyiek és Gitből kizártak.
+
+A `build-reconciliation-application-preflight` a változásjavaslat rögzített
+státusz-, céldátum-, felelős-, jóváhagyó- és kapu-pillanatképét összeveti az
+aktuális `actions.csv` rekorddal. Eltérésnél fail-closed módon leáll. Érvényes
+csomagnál kézi átvezetési jegyzéket készít a módosítandó mezőkről, az aktuális
+akciórekord hash-éről és a külön ellenőrzendő evidenciáról. A preflight sem
+módosít fájlt, sem evidenciát nem fogad el, sem akciót nem zár le.
 
 ```powershell
 python -m nis2_harness serve-portal

@@ -26,6 +26,10 @@ from .reconciliation_changeset import (
     write_change_proposal,
     write_json,
 )
+from .reconciliation_preflight import (
+    build_reconciliation_application_preflight,
+    write_reconciliation_application_preflight,
+)
 from .ai_policy import validate_ai_policy
 from .action_plan_submission import validate_action_plan_submission
 from .backup_restore import validate_backup_restore_plan
@@ -161,6 +165,21 @@ def _parser() -> argparse.ArgumentParser:
         "--json-output", required=True, type=Path
     )
     build_reconciliation_changes.add_argument(
+        "--markdown-output", required=True, type=Path
+    )
+    build_reconciliation_preflight = subparsers.add_parser(
+        "build-reconciliation-application-preflight"
+    )
+    build_reconciliation_preflight.add_argument(
+        "--actions", required=True, type=Path
+    )
+    build_reconciliation_preflight.add_argument(
+        "--change-proposal", required=True, type=Path
+    )
+    build_reconciliation_preflight.add_argument(
+        "--json-output", required=True, type=Path
+    )
+    build_reconciliation_preflight.add_argument(
         "--markdown-output", required=True, type=Path
     )
     evidence = subparsers.add_parser("validate-evidence")
@@ -408,6 +427,37 @@ def main(argv: Sequence[str] | None = None) -> int:
                 f"{package['summary']['decision_count']} döntési rekord, "
                 f"{package['summary']['accepted_count']} elfogadásra jelölt; "
                 "formális hatás=nem"
+            )
+            return 0
+        if args.command == "build-reconciliation-application-preflight":
+            actions = load_actions(args.actions)
+            base_result = validate_actions(actions)
+            if base_result.errors:
+                for issue in base_result.errors:
+                    print(issue.format(), file=sys.stderr)
+                print(
+                    "A preflight hibás akcióregiszterből nem készült el.",
+                    file=sys.stderr,
+                )
+                return 1
+            package = load_json_object(
+                args.change_proposal,
+                "egyeztetési változásjavaslat",
+            )
+            preflight = build_reconciliation_application_preflight(
+                package,
+                actions,
+            )
+            write_reconciliation_application_preflight(
+                preflight,
+                args.json_output,
+                args.markdown_output,
+            )
+            print(
+                "Egyeztetési átvezetési preflight elkészült: "
+                f"{preflight['summary']['accepted_record_count']} elfogadott rekord, "
+                f"{preflight['summary']['registry_change_count']} registry-módosítás; "
+                "automatikus alkalmazás=nem"
             )
             return 0
         if args.command == "validate-portal-auth":

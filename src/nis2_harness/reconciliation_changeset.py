@@ -235,6 +235,12 @@ def build_reconciliation_change_proposal(
             )
         output_records.append({
             "action_id": action_id,
+            "registered_snapshot": {
+                "status": review["registered_status"],
+                "target_date": review["registered_target_date"],
+                "owner": review["owner"],
+                "approver": review["approver"],
+            },
             "selected_draft_id": latest["draft_id"],
             "selected_draft_sha256": latest["audit_sha256"],
             "source_outcome": latest["outcome"],

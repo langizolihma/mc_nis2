@@ -51,6 +51,12 @@ tervezet elfogadása tilos. A kimenet csak kontrollált átvezetési javaslat:
 `actions.csv`-t nem módosít, `DONE` státuszt nem javasol és evidenciát nem fogad
 el. A tényleges átvezetés továbbra is külön emberi ellenőrzés.
 
+A `build-reconciliation-application-preflight` közvetlenül az emberi átvezetés
+előtt újra összeveti a változásjavaslat baseline-ját az aktuális
+`actions.csv`-vel. Felelős-, jóváhagyó-, kapu-, státusz- vagy céldátum-eltérés
+esetén nem készít jegyzéket. Egyezéskor csak kézi mezőszintű checklistet és
+rekordhash-t ad; automatikus CSV-módosítás továbbra sincs.
+
 | Sorrend | Emberi munkablokk | Érintett fő akciók | Következő elfogadható eredmény | Kötelező kapu |
 |---|---|---|---|---|
 | 1 | Irányítási aláírások és felelősök | A-001; A-002; A-035; A-036 | IBF/RACI/G2-G4 és kanonikus forrás védett, aláírt review-rekordja | G2 |

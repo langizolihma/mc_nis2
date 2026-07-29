@@ -26,6 +26,8 @@ def _review_package(*, conflict: bool = False) -> dict:
                 "action_id": "A-001",
                 "registered_status": "IN_PROGRESS",
                 "registered_target_date": "2026-07-03",
+                "owner": "Pásztor András",
+                "approver": "Lángi Zoltán",
                 "required_gates": ["G2_SECURITY_LEGAL"],
                 "conflict": conflict,
                 "latest_draft": {
