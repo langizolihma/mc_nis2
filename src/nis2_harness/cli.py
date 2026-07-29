@@ -20,6 +20,12 @@ from .reconciliation_review import (
     load_reconciliation_drafts,
     write_reconciliation_review_outputs,
 )
+from .reconciliation_changeset import (
+    build_reconciliation_change_proposal,
+    build_reconciliation_decision_template,
+    write_change_proposal,
+    write_json,
+)
 from .ai_policy import validate_ai_policy
 from .action_plan_submission import validate_action_plan_submission
 from .backup_restore import validate_backup_restore_plan
@@ -131,6 +137,30 @@ def _parser() -> argparse.ArgumentParser:
         "--json-output", required=True, type=Path
     )
     build_reconciliation_review.add_argument(
+        "--markdown-output", required=True, type=Path
+    )
+    build_reconciliation_decisions = subparsers.add_parser(
+        "build-reconciliation-decision-template"
+    )
+    build_reconciliation_decisions.add_argument(
+        "--review-package", required=True, type=Path
+    )
+    build_reconciliation_decisions.add_argument(
+        "--output", required=True, type=Path
+    )
+    build_reconciliation_changes = subparsers.add_parser(
+        "build-reconciliation-change-proposal"
+    )
+    build_reconciliation_changes.add_argument(
+        "--review-package", required=True, type=Path
+    )
+    build_reconciliation_changes.add_argument(
+        "--decisions", required=True, type=Path
+    )
+    build_reconciliation_changes.add_argument(
+        "--json-output", required=True, type=Path
+    )
+    build_reconciliation_changes.add_argument(
         "--markdown-output", required=True, type=Path
     )
     evidence = subparsers.add_parser("validate-evidence")
@@ -341,6 +371,43 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "Státuszjavaslat-review csomag elkészült: "
                 f"{package['summary']['draft_count']} tervezet, "
                 f"{package['summary']['conflict_count']} konfliktus"
+            )
+            return 0
+        if args.command == "build-reconciliation-decision-template":
+            review_package = load_json_object(
+                args.review_package,
+                "lejárt akciók emberi review-csomagja",
+            )
+            template = build_reconciliation_decision_template(review_package)
+            write_json(template, args.output)
+            print(
+                "Egyeztetési döntési sablon elkészült: "
+                f"{len(template['records'])} kitöltendő rekord"
+            )
+            return 0
+        if args.command == "build-reconciliation-change-proposal":
+            review_package = load_json_object(
+                args.review_package,
+                "lejárt akciók emberi review-csomagja",
+            )
+            decisions = load_json_object(
+                args.decisions,
+                "egyeztetési döntési rekordok",
+            )
+            package = build_reconciliation_change_proposal(
+                review_package,
+                decisions,
+            )
+            write_change_proposal(
+                package,
+                args.json_output,
+                args.markdown_output,
+            )
+            print(
+                "Egyeztetési változásjavaslat elkészült: "
+                f"{package['summary']['decision_count']} döntési rekord, "
+                f"{package['summary']['accepted_count']} elfogadásra jelölt; "
+                "formális hatás=nem"
             )
             return 0
         if args.command == "validate-portal-auth":

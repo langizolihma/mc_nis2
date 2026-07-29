@@ -43,6 +43,14 @@ emberi review-csomagot készít. A 2026-07-29-i baseline kimenet a
 review-kimenet helyi és Gitből kizárt, mert később emberi megjegyzést vagy
 védett evidenciahivatkozást tartalmazhat.
 
+A review-csomagból a `build-reconciliation-decision-template` készít helyi
+döntési sablont. A kitöltés után a
+`build-reconciliation-change-proposal` ellenőrzi a tervezet ID/hash kötését, a
+reviewer-időpontot és a védett NIS2 SharePoint döntési hivatkozást. Konfliktusos
+tervezet elfogadása tilos. A kimenet csak kontrollált átvezetési javaslat:
+`actions.csv`-t nem módosít, `DONE` státuszt nem javasol és evidenciát nem fogad
+el. A tényleges átvezetés továbbra is külön emberi ellenőrzés.
+
 | Sorrend | Emberi munkablokk | Érintett fő akciók | Következő elfogadható eredmény | Kötelező kapu |
 |---|---|---|---|---|
 | 1 | Irányítási aláírások és felelősök | A-001; A-002; A-035; A-036 | IBF/RACI/G2-G4 és kanonikus forrás védett, aláírt review-rekordja | G2 |
