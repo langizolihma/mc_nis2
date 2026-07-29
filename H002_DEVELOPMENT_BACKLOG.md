@@ -1,8 +1,14 @@
 # H-002 fejlesztési hátralék – belső NIS2 portál és agent
 
-Állapot: `PROPOSAL`  
-Felülvizsgálat dátuma: 2026-07-23  
+Állapot: `PROPOSAL`
+Felülvizsgálat dátuma: 2026-07-29
 Kötelező emberi kapuk: G1 szakmai, G2 biztonsági/jogi, G3 élesítési
+
+**Autonóm local-first fejlesztési állapot:** `COMPLETE_UP_TO_HUMAN_GATES`.
+A hálózatmentesen, valós azonosító, token, érzékeny adat, éles kapcsolat és
+formális emberi döntés nélkül biztonságosan elkészíthető elemek megvalósultak.
+A továbblépéshez szükséges 37 emberi tétel egységes csomagja:
+`HUMAN_EXECUTION_PACKAGE_2026-07-29.md`.
 
 ## Mit tekintünk teljes fejlesztési végállapotnak?
 
@@ -69,23 +75,46 @@ Elfogadási feltétel: névtelen vagy illetéktelen felhasználó nem lát és n
 
 ### 4. Formális jóváhagyási folyamat és visszaírás
 
-Állapot: `BLOCKED_BY_G2_G3`
+Állapot: `LOCAL_REVIEW_CHAIN_IMPLEMENTED_LIVE_WRITEBACK_BLOCKED_BY_G2_G3`
 
 - Jóváhagyás, visszaküldés és elutasítás állapotgépe.
 - Kötelező indoklás, időbélyeg, reviewer és változat.
 - Idempotens visszaírás és verzióütközés-kezelés.
 - Változtathatatlan auditnapló.
 
+Elkészült local-first előkészítés:
+
+- append-only, SHA-256-tal kötött státusztervezet;
+- konfliktusjelző emberi review-csomag;
+- kitölthető döntési sablon és védett döntési URI ellenőrzése;
+- proposal-only változáscsomag, amely soha nem javasol `DONE` státuszt;
+- stale-safe kézi átvezetési preflight teljes akciórekord-hash-sel;
+- kézi átvezetés utóellenőrzése pre/post hash alapján;
+- automatikus evidenciaelfogadás és registry-write továbbra is tiltott.
+
 Elfogadási feltétel: write-back csak hitelesített, jogosult ember kifejezett műveletére történhet. Az AI nem fogadhat el evidenciát, nem zárhat le akciót, és nem indíthat külső benyújtást.
 
 ### 5. Evidencia-életciklus
 
-Állapot: `PLANNED_REQUIRES_HUMAN_DECISIONS`
+Állapot: `LOCAL_METADATA_FLOW_IMPLEMENTED_OPERATIONAL_GATES_PENDING`
 
 - Dokumentumazonosító, forrás, verzió, hash és megőrzési besorolás.
 - Védett tárhely, hozzáférés, mentés és visszaállítás.
 - Lejárat, felülvizsgálat és törlési zárolás.
 - Bizalmas tartalom elkülönítése a portál biztonságos metaadataitól.
+
+Elkészült local-first előkészítés:
+
+- evidencia-metaadat-regiszter és életciklus-validáció;
+- URI-, SHA-256-, reviewer-, időpont- és döntési hivatkozás-követelmény;
+- SharePoint `NIS2_EVIDENCE` mappastruktúra és 19 `DRAFT` jelölt;
+- forrás- és verzióeltérés-review;
+- elfogadott evidencia felülírásának, automatikus elfogadásának és Gitbe
+  kerülésének tiltása.
+
+Emberi döntés nélkül nem készíthető el: retention és bizalmassági besorolás,
+store-/backup-owner, jogosultsági review, backup/restore próba és a jelöltek
+rekordonkénti G1/G2 elfogadása.
 
 Elfogadási feltétel: egy auditbizonyíték eredete és változata visszakövethető, a visszaállítás tesztelt, a megőrzés jóváhagyott.
 
@@ -131,3 +160,17 @@ Elfogadási feltétel: sikeres biztonsági felülvizsgálat, mentés-visszaáll�
 - éles rendszer módosítása;
 - külső benyújtás vagy üzenet;
 - vásárlás.
+
+## A ténylegesen hátralévő munka
+
+Az autonóm local-first fejlesztési backlog lezárult. A fennmaradó munka
+kizárólag:
+
+- név szerinti G1/G2/G3/G4/G5 döntés és aláírás;
+- valós, védett rendszer- és evidenciaadat gyűjtése;
+- Entra/Graph tenant-, app-, site- és jogosultságkonfiguráció;
+- kontrollált éles pilot, teszt, backup/restore és biztonsági review;
+- ember által végzett SharePoint-/registry-write és külső benyújtás.
+
+Ezek sorrendjét és lezárási bizonyítékait a
+`HUMAN_EXECUTION_PACKAGE_2026-07-29.md` tartalmazza.

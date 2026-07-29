@@ -12,7 +12,7 @@ requested_executor: HUMAN_GATED_EXECUTION
 
 # H-001 – Determinisztikus helyi NIS2 core
 
-> **Aktuális állapot (2026-07-17):** a H-001 core és mind a 42 akció előkészítő munkacsomagja elkészült. A repository 203 teszttel, akciónkénti completion reporttal, pótlandó evidencia naplóval és A-042 local-only pilottal rendelkezik. A következő szakasz nem további autonóm előkészítés, hanem a `NEXT_EXECUTION_QUEUE_2026-07-16.md` szerinti emberi adatgyűjtés, review, aláírás és kontrollált végrehajtás. Egyetlen akció sincs automatikusan `DONE` státuszra állítva.
+> **Aktuális állapot (2026-07-29):** a H-001 core, mind a 42 akció előkészítő munkacsomagja és a kapuk előtt biztonságosan elkészíthető H-002 local-first fejlesztési réteg elkészült. A portál-MVP, a SharePoint/auth readiness, az A-042 fixture pilot, a teljes határidő-egyeztetési review–döntés–preflight–utóellenőrzési lánc és a 37 tételes `HUMAN_EXECUTION_PACKAGE_2026-07-29.md` rendelkezésre áll. A következő szakasz emberi adatgyűjtés, review, aláírás, G1–G5 döntés és kontrollált végrehajtás. Egyetlen akció sincs automatikusan `DONE` státuszra állítva, evidencia nincs automatikusan elfogadva, éles integráció vagy deploy nem történt.
 
 # 1. Cél
 

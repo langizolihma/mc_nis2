@@ -33,6 +33,8 @@ python -m nis2_harness build-reconciliation-review-package --actions data/action
 python -m nis2_harness build-reconciliation-decision-template --review-package generated/deadline_reconciliation_review_package_2026-07-29.json --output portal_runtime/deadline_reconciliation_decisions.json
 python -m nis2_harness build-reconciliation-change-proposal --review-package generated/deadline_reconciliation_review_package_2026-07-29.json --decisions portal_runtime/deadline_reconciliation_decisions.json --json-output generated/deadline_reconciliation_change_proposal_2026-07-29.json --markdown-output generated/deadline_reconciliation_change_proposal_2026-07-29.md
 python -m nis2_harness build-reconciliation-application-preflight --actions data/actions.csv --change-proposal generated/deadline_reconciliation_change_proposal_2026-07-29.json --json-output generated/deadline_reconciliation_application_preflight_2026-07-29.json --markdown-output generated/deadline_reconciliation_application_preflight_2026-07-29.md
+python -m nis2_harness verify-reconciliation-application --actions data/actions.csv --preflight generated/deadline_reconciliation_application_preflight_2026-07-29.json --json-output generated/deadline_reconciliation_application_verification_2026-07-29.json --markdown-output generated/deadline_reconciliation_application_verification_2026-07-29.md
+python -m nis2_harness build-human-execution-package --deferred-log DEFERRED_EVIDENCE_LOG.md --as-of 2026-07-29 --json-output data/human_execution_package.json --markdown-output HUMAN_EXECUTION_PACKAGE_2026-07-29.md
 python -m nis2_harness validate-evidence --evidence data/evidence_register.csv --actions data/actions.csv
 python -m nis2_harness validate-findings --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
 python -m nis2_harness validate-control-catalog --catalog data/control_catalog.csv --requirements data/control_requirements.csv --metadata data/control_catalog_metadata.json --review data/control_catalog_review.json --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
@@ -105,6 +107,18 @@ aktuális `actions.csv` rekorddal. Eltérésnél fail-closed módon leáll. Érv
 csomagnál kézi átvezetési jegyzéket készít a módosítandó mezőkről, az aktuális
 akciórekord hash-éről és a külön ellenőrzendő evidenciáról. A preflight sem
 módosít fájlt, sem evidenciát nem fogad el, sem akciót nem zár le.
+
+A `verify-reconciliation-application` a kézi átvezetés után a teljes
+akciórekord preflight előtti és várt utáni hash-éhez méri az aktuális
+`actions.csv` rekordot. A változatlan, a pontosan átvezetett és a még függő
+állapotot külön jelzi; bármely más eltérésnél leáll. Az ellenőrzés az
+evidencia-review-t szándékosan külön, emberi kapun hagyja.
+
+A 37 pótlandó tétel egyetlen, hét végrehajtási hullámra rendezett emberi
+munkacsomagja a [HUMAN_EXECUTION_PACKAGE_2026-07-29.md](HUMAN_EXECUTION_PACKAGE_2026-07-29.md),
+gépileg feldolgozható párja a `data/human_execution_package.json`. A csomag
+mind a 36 `OPEN_DEFERRED` és az egy elfogadott, de továbbra is nyilvántartott
+kockázati tételt megtartja; automatikus lezárást nem végez.
 
 ```powershell
 python -m nis2_harness serve-portal

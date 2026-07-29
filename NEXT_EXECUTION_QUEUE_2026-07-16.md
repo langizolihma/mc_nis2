@@ -57,6 +57,16 @@ előtt újra összeveti a változásjavaslat baseline-ját az aktuális
 esetén nem készít jegyzéket. Egyezéskor csak kézi mezőszintű checklistet és
 rekordhash-t ad; automatikus CSV-módosítás továbbra sincs.
 
+A kézi átvezetés után a `verify-reconciliation-application` teljes
+akciórekord-hash alapján megkülönbözteti a pontosan átvezetett, a még függő és
+a nem várt eltérést. Evidenciaelfogadást ez sem végez.
+
+Az összes pótlandó feladat egységes, hét hullámos munkacsomagja:
+`HUMAN_EXECUTION_PACKAGE_2026-07-29.md`; gépi párja:
+`data/human_execution_package.json`. Ez a további emberi végrehajtás elsődleges
+munkasorrendje, a részletes követelmények kanonikus forrása továbbra is a
+`DEFERRED_EVIDENCE_LOG.md`.
+
 | Sorrend | Emberi munkablokk | Érintett fő akciók | Következő elfogadható eredmény | Kötelező kapu |
 |---|---|---|---|---|
 | 1 | Irányítási aláírások és felelősök | A-001; A-002; A-035; A-036 | IBF/RACI/G2-G4 és kanonikus forrás védett, aláírt review-rekordja | G2 |

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from dataclasses import fields, replace
 from datetime import date, datetime
 import hashlib
 import json
@@ -70,14 +71,11 @@ def _valid_timestamp(value: str) -> bool:
     return parsed.tzinfo is not None
 
 
-def _action_fingerprint(action: Action) -> str:
+def action_fingerprint(action: Action) -> str:
     baseline = {
-        "action_id": action.action_id,
-        "status": action.status,
-        "target_date": action.target_date,
-        "human_owner": action.human_owner,
-        "human_approver": action.human_approver,
-        "required_gates": list(action.gates),
+        field.name: getattr(action, field.name)
+        for field in fields(Action)
+        if field.name not in {"row_number", "source_path"}
     }
     canonical = json.dumps(
         baseline,
@@ -245,10 +243,20 @@ def build_reconciliation_application_preflight(
                 "from": action.target_date,
                 "to": update["target_date"],
             })
+        expected_action = replace(
+            action,
+            status=str(update["status"]),
+            target_date=(
+                str(update["target_date"])
+                if update["target_date"]
+                else action.target_date
+            ),
+        )
         checklist.append({
             "action_id": action_id,
             "source_row": action.row_number,
-            "current_action_sha256": _action_fingerprint(action),
+            "current_action_sha256": action_fingerprint(action),
+            "expected_post_action_sha256": action_fingerprint(expected_action),
             "decision_ref": record["decision_ref"],
             "reviewer": record["reviewer"],
             "reviewed_at": record["reviewed_at"],

@@ -1,0 +1,814 @@
+{
+  "schema_version": "1.0",
+  "status": "HUMAN_EXECUTION_REQUIRED",
+  "as_of": "2026-07-29",
+  "source_ref": "DEFERRED_EVIDENCE_LOG.md",
+  "source_sha256": "1ddde843ef8803c2b783caddfca4ab2642d283fbd209fa8c0e24deb869f300db",
+  "formal_effect": false,
+  "summary": {
+    "task_count": 37,
+    "open_deferred_count": 36,
+    "accepted_risk_count": 1,
+    "wave_count": 7,
+    "owner_task_counts": {
+      "Kóczán Mónika": 1,
+      "Pásztor András": 17,
+      "Pásztor András; Kollár Csaba; kijelölendő belső RDS-, alkalmazás- és üzleti ownerek": 1,
+      "Pásztor András; Kollár Csaba; kijelölendő belső levelezési owner és alkalmazásgazdák": 1,
+      "Pásztor András; Kollár Csaba; kijelölendő belső owner": 1,
+      "Pásztor András; Kollár Csaba; kijelölendő belső owner és forrásgazdák": 1,
+      "Pásztor András; Kollár Csaba; kijelölendő belső owner és szerződésgazda": 1,
+      "Pásztor András; Kollár Csaba; kijelölendő belső ownerek": 1,
+      "Pásztor András; Kollár Csaba; kijelölendő belső rendszer-/EIR-ownerek": 1,
+      "Pásztor András; Kollár Csaba; kijelölendő üzleti-, adat-, alkalmazás- és belső rendszerowner": 1,
+      "Pásztor András; Koncz Erika; Dr. Berta Brigitta; kijelölendő dokumentum-, EIR-, kockázat-, beszerzési és szerződésgazdák": 1,
+      "Pásztor András; Kóczán Mónika": 1,
+      "Pásztor András; Kóczán Mónika; Koncz Erika; Kollár Csaba; kijelölendő belső kontroll-/alkalmazásgazdák": 1,
+      "Pásztor András; Német Péter": 1,
+      "Pásztor András; kijelölendő SharePoint-/backup-owner": 1,
+      "Pásztor András; kijelölendő agent-/portálüzemeltető és forrásgazdák": 1,
+      "Pásztor András; kijelölendő agent-üzemeltető és forrásgazdák": 1,
+      "Pásztor András; kijelölendő ellátásilánc-/beszerzési felelős és szerződésgazdák": 1,
+      "Pásztor András; kijelölendő portálüzemeltető": 1,
+      "Pásztor András; érintett EIR-ownerek": 1,
+      "Pásztor András; érintett dokumentum-, EIR-, HR-, beszállítói és infrastruktúra-gazdák": 1
+    }
+  },
+  "start_here": [
+    "DEF-001",
+    "DEF-002",
+    "DEF-003",
+    "DEF-004",
+    "DEF-005",
+    "DEF-006",
+    "DEF-007",
+    "DEF-011",
+    "DEF-022",
+    "DEF-023",
+    "DEF-029",
+    "DEF-037"
+  ],
+  "waves": [
+    {
+      "wave_id": "W1",
+      "title": "Irányítás, határidők és döntési alapok",
+      "task_count": 12,
+      "tasks": [
+        {
+          "task_id": "DEF-001",
+          "status": "OPEN_DEFERRED",
+          "related": "A-002; D-026",
+          "current_process_state": "A 2026-06-26-i baseline és a 2026-09-24-i határidő alapján a projekt továbbhaladhat.",
+          "required_result": "A G2/G4 nyilatkozat tényleges aláírt példánya, aláírási dátuma, SHA-256 értéke, védett URI-ja és reviewer-rekordja.",
+          "must_be_completed_before": "Külső benyújtás előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-002",
+          "status": "OPEN_DEFERRED",
+          "related": "A-035; SRC-008; D-025; D-026",
+          "current_process_state": "Az SRC-008 kanonikus forrásként használható; védett SharePoint-hivatkozása 2026-07-23-án rögzítve.",
+          "required_result": "A G2 reviewer D-025-höz kapcsolt elfogadási rekordja.",
+          "must_be_completed_before": "Külső benyújtás előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-003",
+          "status": "NOT_AVAILABLE_ACCEPTED_RISK",
+          "related": "A-002; D-022",
+          "current_process_state": "A 2026-06-26-i kézhezvételi dátum elfogadott baseline.",
+          "required_result": "Hivatalos címzetti kézbesítési igazolás nem áll rendelkezésre. Ha később előkerül, hash-sel és védett URI-val csatolandó; addig a hiány elfogadott kockázatként jelölendő.",
+          "must_be_completed_before": "Folyamatos nyilvántartási korlát.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-004",
+          "status": "OPEN_DEFERRED",
+          "related": "SRC-008:p388; D-025",
+          "current_process_state": "Az auditjelentés kanonikus használatát nem blokkolja.",
+          "required_result": "Az angol auditigazolás 388. oldalán jelzett Poppler-renderelt mezők olvashatóságának ellenőrzési feljegyzése emberi PDF-megjelenítőből.",
+          "must_be_completed_before": "Külső felhasználás előtt, ha az angol igazolás része a csomagnak.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-005",
+          "status": "OPEN_DEFERRED",
+          "related": "A-001; A-036; D-027",
+          "current_process_state": "A jóváhagyott név szerinti szerepkiosztással a projekttervezés továbbhaladhat.",
+          "required_result": "Aláírt projekt-RACI, formális IBF-kijelölés, feladat- és hatáskör, helyettesítés, kihirdetési nyom, valamint az alkalmazandó hatósági bejelentési vagy nyilvántartási rekord védett URI-ja, hash-e és review-ja.",
+          "must_be_completed_before": "A szerepkörre épülő kontroll elfogadása, de legkésőbb külső benyújtás előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-006",
+          "status": "OPEN_DEFERRED",
+          "related": "A-001; D-027",
+          "current_process_state": "Lángi Zoltán a projekt folyamataiban IBF-ként kezelhető, de az alkalmasság nem tekinthető bizonyítottnak.",
+          "required_result": "A metALCOM Kiberbiztonsági tv. 1. § (1) szerinti besorolási jogcíme; az alkalmazandó végzettségi, szakképzettségi vagy szakmai tapasztalati feltétel teljesítésének védett igazolása; büntetlen előéleti és éves továbbképzési megfelelés kezelési rekordja. Személyes okirat Gitbe nem kerülhet.",
+          "must_be_completed_before": "Formális IBF-kijelölés és hatósági használat előtt.",
+          "owner": "Pásztor András",
+          "approver": "Dr. Berta Brigitta",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-007",
+          "status": "OPEN_DEFERRED",
+          "related": "A-036; D-027",
+          "current_process_state": "Kollár Csaba technikai infrastruktúra- és incidenskezelési feladatokat végezhet.",
+          "required_result": "Belső metALCOM infrastruktúra-/incidenskezelési kontrollgazda kijelölése, valamint a Serversystem Kft. incidensjelzési, napló-, evidencia-, hozzáférési, titoktartási, helyettesítési és auditálhatósági kötelezettségeinek dokumentált review-ja.",
+          "must_be_completed_before": "Technikai evidencia elfogadása vagy incidenskezelési folyamat jóváhagyása előtt.",
+          "owner": "Kóczán Mónika",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-011",
+          "status": "OPEN_DEFERRED",
+          "related": "A-031; D-017; config/ai_usage_policy.json",
+          "current_process_state": "A deny-by-default AI-policy, acknowledgement-, környezetengedély- és redakciós sablon elkészült.",
+          "required_result": "Lángi Zoltán biztonsági és Dr. Berta Brigitta jogi G2 review-ja; engedélyezett AI-környezet vagy local-only döntés; vállalati adatminősítési illesztés; policy verzió/hash és kihirdetési rekord; felhasználói acknowledgement-ek védett URI-ja/hash-e; felülvizsgálati ciklus és incidensjelzési csatorna.",
+          "must_be_completed_before": "AI-policy kihirdetése, külső AI-környezet használata vagy A-031 lezárása előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán; Dr. Berta Brigitta",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-022",
+          "status": "OPEN_DEFERRED",
+          "related": "A-019; data/maintenance_change_plan.json; templates/maintenance_change_record.md",
+          "current_process_state": "A négy workstream, tízlépéses workflow, naptár-, change-, rollback- és kivételséma elkészült; konkrét scope, naptár vagy végrehajtás nincs.",
+          "required_result": "Belső metALCOM rendszer-/szolgáltatásgazdák és változáskezelési approver; workstreamenként scope, owner, cadence és trigger; jóváhagyott baseline-, patch- és maintenance-naptár; első kontrollált minta change ticket kockázat/hatás, owner- és G3 döntés, backup proof, rollback terv és teszt/proof, időablak, értesítés, pre/post validáció, védett URI/SHA-256 és reviewer mellett; első lejáratos exception minta kompenzáló kontrollal; távoli karbantartás esetén külön hozzáférési/felügyeleti review. Secret és nyers konfiguráció Gitbe nem kerülhet.",
+          "must_be_completed_before": "Bármely éles patch, karbantartás vagy változtatás előtt, valamint az A-019 review-ra kész vagy DONE státusza előtt.",
+          "owner": "Pásztor András; Kollár Csaba; kijelölendő belső ownerek",
+          "approver": "Lángi Zoltán; jogosult G3 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-023",
+          "status": "OPEN_DEFERRED",
+          "related": "A-021; data/supplier_risk_plan.json; templates/supplier_risk_review_record.md",
+          "current_process_state": "A 19.1/19.4 kontrollhoz elkészült a hatdimenziós kritikalitás, tíz szerződéses kontroll, kockázati döntés és review-naptár proposal-only sémája; valós beszállítói adat nincs benne.",
+          "required_result": "Kijelölt belső ellátásilánc-/beszerzési felelős és szerződésgazdák; jóváhagyott beszállítói és szerződéslista védett tárban; szolgáltatás/EIR/owner kapcsolatok; dimenziónkénti indokolt pontozás; kontrollonként szerződéses vagy kérdőív-evidencia és gap; hiányonként emberi treatment döntés, felelős és határidő; kritikalitás- és változástrigger-alapú review-naptár; G1 reviewer-rekord. Jogi értelmezéshez Dr. Berta Brigitta review-ja szükséges. Beszállítónév, szerződés, kapcsolattartó és ár Gitbe nem kerülhet.",
+          "must_be_completed_before": "Bármely beszállítói végleges minősítés, megkeresés, szerződésmódosítás vagy az A-021 review-ra kész/DONE állapota előtt.",
+          "owner": "Pásztor András; kijelölendő ellátásilánc-/beszerzési felelős és szerződésgazdák",
+          "approver": "Lángi Zoltán; szükség esetén Dr. Berta Brigitta",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-029",
+          "status": "OPEN_DEFERRED",
+          "related": "A-001; A-002; A-007; A-035; A-036; data/governance_work_packages.json",
+          "current_process_state": "Elkészült az öt irányítási akció bizonyítéklánc-regisztere; a D-022/D-025/D-026/D-027 baseline-ok megőrzöttek, de a pótlandó evidencia nem lett teljesítettnek jelölve.",
+          "required_result": "Formális IBF-kijelölés és alkalmassági/jogi review; ténylegesen aláírt G2/G4 nyilatkozat; SRC-008 védett URI-ja és reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.",
+          "must_be_completed_before": "Bármely kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett akció DONE státusza előtt.",
+          "owner": "Pásztor András; Kóczán Mónika",
+          "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult benyújtó",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-037",
+          "status": "OPEN_DEFERRED",
+          "related": "17 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
+          "current_process_state": "A 2026-07-29-i állapot szerint 17 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. A helyi portál append-only, hitelesítetlen rögzítői státusztervezetet tud fogadni; a hash-ellenőrzött review-, döntési-, változásjavaslati, stale-safe preflight- és pre/post hash utóellenőrzési lánc elkészült. A baseline még 0 tervezetet tartalmaz. Státusz vagy céldátum nem változott.",
+          "required_result": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.",
+          "must_be_completed_before": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán; az akció szerinti G1–G5 reviewer",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        }
+      ]
+    },
+    {
+      "wave_id": "W2",
+      "title": "EIR-, forrás-, leltár- és evidenciatár-baseline",
+      "task_count": 6,
+      "tasks": [
+        {
+          "task_id": "DEF-008",
+          "status": "OPEN_DEFERRED",
+          "related": "A-011; config/inventory_export_plan.json",
+          "current_process_state": "Az öt EIR proposal baseline-ja és a read-only gyűjtési terv használható az előkészítéshez.",
+          "required_result": "Az öt EIR tulajdonosának és helyettesének kijelölése; a kilenc tényleges forrásrendszer és forrásgazda megnevezése; az exportok adatminősítése, védett tárolási helye, legkisebb read-only jogosultsága és G1 jóváhagyása.",
+          "must_be_completed_before": "Bármely valós rendszerexport vagy leltárfeltöltés előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-009",
+          "status": "OPEN_DEFERRED",
+          "related": "A-011; data/inventory_register.json",
+          "current_process_state": "A JSON-séma és validátor kész, de csak az öt EIR baseline-rekordot tartalmazza.",
+          "required_result": "A jóváhagyott read-only exportok végrehajtása; az asset-, adat-, helyszín- és függőségi listák feltöltése; nyers exportok védett tárolása hash-sel; duplikáció/orphan/scope exception review; EIR- és kritikusrekord-owner sign-off.",
+          "must_be_completed_before": "Az A-011 review-ra kész vagy DONE állapota előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-027",
+          "status": "OPEN_DEFERRED",
+          "related": "A-023; A-024; A-028; A-033; A-034; data/technical_work_packages.json",
+          "current_process_state": "Elkészült az öt technikai akció egységes, proposal-only döntési csomagja; sem adatgyűjtés, scan, teszt, változtatás, vásárlás, sem külső művelet nem történt.",
+          "required_result": "A-022/A-029 elfogadott inputok; belső rendszer- és EIR-ownerek; pontos scope; jóváhagyott read-only exportok védett URI/SHA-256-tal; VM/AD/DNS/DHCP dependency-, HA-, kapacitás-, backup-, licenc- és rollback-review; sérülékenységvizsgálati mód és SLA; két nem auditált EIR definíciója, assetje és függősége; G1/G2 review, minden teszt/változtatás előtt G3, fizetős döntés előtt hét költséginput és G5; végrehajtási és retest evidencia.",
+          "must_be_completed_before": "Bármely éles lekérdezés, scan, változtatás, konszolidáció, VM-mozgatás vagy vásárlás, valamint az érintett akció review-ra kész/DONE státusza előtt.",
+          "owner": "Pásztor András; Kollár Csaba; kijelölendő belső rendszer-/EIR-ownerek",
+          "approver": "Lángi Zoltán; jogosult G3/G5 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-034",
+          "status": "OPEN_DEFERRED",
+          "related": "INTAKE-VC-20260720; DOCUMENT_INTAKE_REVIEW_2026-07-20.md; data/evidence_register.csv",
+          "current_process_state": "A 182 állományos helyi hash-jegyzék elkészült; a 19 magas értékű jelölt névszabály szerinti másolata 2026-07-23-án létrejött a SharePoint NIS2_EVIDENCE ágában, valós URI-val és egyező visszaolvasott fájlmérettel. A rekordok DRAFT állapotúak, egyetlen tartalom sem lett elfogadva.",
+          "required_result": "Készítő- és forrásgazda-megerősítés; bizalmassági/retention G2 döntés; EIR- és kontrollscope; szakmai G1 review; szabályzatok verzió-, aláírás-, kihirdetés- és megismerési ellenőrzése; helyőrzős tervek javítása; történeti képernyőképek frissítése; személyügyi és műszaki minták célhoz kötött minimalizált kezelése; rekordonként reviewer-idő és döntési hivatkozás.",
+          "must_be_completed_before": "Bármely jelölt SUBMITTED/ACCEPTED státusza vagy kapcsolódó akció review-ra kész/DONE állapota előtt.",
+          "owner": "Pásztor András; érintett dokumentum-, EIR-, HR-, beszállítói és infrastruktúra-gazdák",
+          "approver": "Lángi Zoltán; szükség szerint Dr. Berta Brigitta",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-035",
+          "status": "OPEN_DEFERRED",
+          "related": "EVIDENCE_STORAGE.md; NIS2_EVIDENCE; data/evidence_register.csv; SHAREPOINT_SOURCE_DELTA_REVIEW_2026-07-23.md",
+          "current_process_state": "A SharePoint-kapcsolat olvasási és írási próbája sikeres; a célmappastruktúra és 19 DRAFT másolat létrejött. A 2026-07-20-i helyi baseline-hoz képest talált öt forráseltérés 2026-07-23-án tételesen besorolásra került. Az SRC-001 és SRC-008 rendezett példánya, valamint az SRC-002 történeti archívuma létrejött; a másik három eltérés nem került automatikusan az evidenciatárba.",
+          "required_result": "Store owner és backup owner név szerinti kijelölése; mappaszintű least-privilege jogosultság és külső megosztás review; verziózás/auditnapló/elfogadott fájl felülírásának tiltása; backup és restore-próba; retention és bizalmassági taxonómia; negyedéves review-gazda és ütem; a személyes adatokat tartalmazó kameravizsgálati irat célhoz kötöttségének, adatminimalizálásának és hozzáférésének G2 döntése.",
+          "must_be_completed_before": "A SharePoint evidenciatár végleges jóváhagyása, bármely rekord SUBMITTED/ACCEPTED státusza és a kameravizsgálati irat felhasználása előtt.",
+          "owner": "Pásztor András; kijelölendő SharePoint-/backup-owner",
+          "approver": "Lángi Zoltán; szükség szerint Dr. Berta Brigitta",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-036",
+          "status": "OPEN_DEFERRED",
+          "related": "A-005; A-011; A-040; SRC-009; SRC-010; data/control_catalog.csv; data/control_requirements.csv; data/official_control_baseline.csv; data/control_catalog_legal_comparison.csv; CONTROL_CATALOG_G1_REVIEW.md; CONTROL_CATALOG_TARGETED_G1_DECISION_2026-07-28.md; EIR_SECURITY_CLASSIFICATION_QUESTIONNAIRE.md",
+          "current_process_state": "A 7/2024. MK rendelethez kapcsolódó Excelből 914 kontroll és 1878 részletes követelmény determinisztikus, PROPOSED nyilvántartása készült; a jelenlegi 164 használt kontrollhivatkozás teljesen lefedett. A hivatalos 7/2024. és 18/2024. MK forrásokkal végzett előellenőrzés 914/914 azonosító-, cím- és osztályjelölés-egyezést mutatott; 907 követelményszöveg normalizáltan egyezik. A célzott második ellenőrzés 2 kisebb és 5 tartalmi eltérést azonosított: a 2.17.2.4 pontból hiányzó tagadást, a módosított 5.3/5.4 szöveget, a 9.24.2 hiányát és a 16.66.5 többletét külön kiemeli. A SharePoint-listaelem és az elkülönített A-005/SRC-009 mappa létrejött. A feltöltött XLSX 977503 bájt, míg a kanonikus helyi forrás 970666 bájt, ezért byteazonossága nincs igazolva.",
+          "required_result": "A hét megjelölt kontroll célzott G1 ellenőrzése és döntési lapja; a SharePoint-példány kézi cseréje és visszaolvasott SHA-256 ellenőrzése; store-owner; eredet, verzió és felhasználási jog; reviewer, időzónás review-idő és döntési hivatkozás; az öt EIR kérdőíves hatáselemzése, Alap/Jelentős/Magas besorolásának emberi jóváhagyása és kontrolltestreszabási döntése.",
+          "must_be_completed_before": "A katalógus APPROVED minősítése, EIR-re alkalmazandó kontrollkör automatikus kiválasztása, rendszerbiztonsági terv jóváhagyása vagy megfelelőségi állítás előtt.",
+          "owner": "Pásztor András; érintett EIR-ownerek",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        }
+      ]
+    },
+    {
+      "wave_id": "W3",
+      "title": "Read-only műszaki adatgyűjtés és értékelés",
+      "task_count": 6,
+      "tasks": [
+        {
+          "task_id": "DEF-018",
+          "status": "OPEN_DEFERRED",
+          "related": "A-022; data/infrastructure_health_snapshot_plan.json; templates/infrastructure_health_snapshot_record.md",
+          "current_process_state": "Az öt scope-os read-only health snapshot módszertan elkészült; az SRC-004 RAID-, tárhely- és backup-állításai továbbra is unverified_internal; adatgyűjtés nem történt.",
+          "required_result": "Belső metALCOM infrastruktúra-kontrollgazda; pontos host/VM/storage/RAID/backup célpontlista és adatminősítés; Kollár Csabával platformonként jóváhagyott read-only módszer; legkisebb jogosultság, időablak és stop condition; G2/G3 írásos jóváhagyás; időbélyeges export, gyűjtő és módszer; védett URI és SHA-256; observationönként emberi review; az eredeti állítás emberi minősítése; igazolt sürgős kockázat esetén külön A-023/G3 döntés. Secret, célpontlista és nyers export nem kerülhet Gitbe.",
+          "must_be_completed_before": "Bármely éles adatgyűjtés előtt, valamint az A-022 review-ra kész vagy DONE státusza előtt.",
+          "owner": "Pásztor András; Kollár Csaba; kijelölendő belső owner",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-019",
+          "status": "OPEN_DEFERRED",
+          "related": "A-029; data/license_entitlement_plan.json; templates/license_entitlement_review_record.md",
+          "current_process_state": "A hat kategóriás entitlement/support mátrix és a költségkapu-validáció elkészült; minden tényleges jogosultság, használat és lifecycle státusz UNKNOWN_PENDING_EVIDENCE.",
+          "required_result": "Belső metALCOM infrastruktúra-kontrollgazda és alkalmazásgazdák; szerződés/beszerzés gazda; szerződés-, számla-, SAM- és gyártói portál-export védett URI-val/SHA-256-tal; jóváhagyott read-only deployment/usage összesítés; hivatalos gyártói lifecycle-forrás és ellenőrzési dátum; kategóriánként entitlement/support minősítés és reviewer; eltérésenként B0/no-action döntés vagy meglévő entitlement, kapacitás, B0 alternatíva, pilot, mérhető acceptance criterion, purchase trigger és halasztási kockázat; B1–B3 esetén G5 döntés. Licenckulcs, személyes lista, szerződés és nyers export nem kerülhet Gitbe.",
+          "must_be_completed_before": "Bármely licenc-/supportmegfelelőségi állítás, fizetős javaslat, A-016/A-024/A-028 döntés vagy az A-029 DONE státusza előtt.",
+          "owner": "Pásztor András; Kollár Csaba; kijelölendő belső owner és szerződésgazda",
+          "approver": "Lángi Zoltán; jogosult költségkeret-gazda",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-021",
+          "status": "OPEN_DEFERRED",
+          "related": "A-018; data/logging_monitoring_plan.json; templates/log_review_record.md",
+          "current_process_state": "A tíz forráskategóriás, három retention osztályos, öt hibariasztásos és napi/heti review-keret elkészült; konkrét loggyűjtés, riasztásteszt és review-run nem történt.",
+          "required_result": "Belső infrastruktúra-/incidenskezelési kontrollgazda és forrásgazdák; kategóriánként konkrét rendszer, EIR-scope, jóváhagyott read-only módszer, adatminősítés és mintalog védett URI/SHA-256; G1 baseline-review, érzékeny loghoz G2, éles collector/alert konfigurációhoz G3; retention osztályonként jogalap, napérték, kapacitás és reviewer; öt alert szabálya, címzettje, nem destruktív tesztje és evidenciája; napi/heti reviewer, helyettes, escalation és első review-run ticket/exception/review rekorddal. Nyers log és secret nem kerülhet Gitbe.",
+          "must_be_completed_before": "Bármely valós logkapcsolat vagy konfiguráció előtt, valamint az A-018 review-ra kész vagy DONE státusza előtt.",
+          "owner": "Pásztor András; Kollár Csaba; kijelölendő belső owner és forrásgazdák",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-024",
+          "status": "OPEN_DEFERRED",
+          "related": "A-025; data/exchange_dependency_plan.json; templates/exchange_dependency_record.md",
+          "current_process_state": "Elkészült a stratégiai/nem igazolt forráshelyzetet megőrző read-only felderítési, SMTP dependency-, hétszcenáriós teszt- és rollback-séma; éles lekérdezés, teszt vagy migráció nem történt.",
+          "required_result": "Belső levelezési/infrastruktúra-kontrollgazda; pontos Exchange/SMTP scope és adatminősítés; Kollár Csabával jóváhagyott legkisebb jogosultságú read-only exportmódszer; message tracking minta, connector-, relay-, auth-, hálózati/DNS-export védett URI/SHA-256-tal; alkalmazás-, eszköz-, technikai és üzleti owner sign-off; dependency rekordok; tesztenként kontrollált címzett/scope, owner- és G3 approval, baseline, eredmény, stop condition és rollback proof; G1 review; külön migrációs célmodell és döntés. Valós cím, IP, credential, konfiguráció és nyers log Gitbe nem kerülhet.",
+          "must_be_completed_before": "Bármely éles lekérdezés, tesztüzenet, connector/DNS/routing változás vagy migrációs döntés, valamint az A-025 review-ra kész/DONE állapota előtt.",
+          "owner": "Pásztor András; Kollár Csaba; kijelölendő belső levelezési owner és alkalmazásgazdák",
+          "approver": "Lángi Zoltán; jogosult G3 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-025",
+          "status": "OPEN_DEFERRED",
+          "related": "A-026; data/legacy_retention_plan.json; templates/legacy_retention_review_record.md",
+          "current_process_state": "Elkészült az SRC-004 nem igazolt státuszát megőrző jogi retention-, adatleltár-, read-only export-, izolált restore/read-test és migrációs döntési séma; rendszerkapcsolat vagy végrehajtás nem történt.",
+          "required_result": "Dr. Berta Brigitta jogi állásfoglalása jogalapokról, megőrzési időkről, legal holdról és selejtezési korlátokról; üzleti/adat-/alkalmazásowner és belső rendszerowner; jóváhagyott adatkategória- és függőségi lista; Kollár Csabával jóváhagyott read-only exportmódszer; adatszótár, rekorddarab, időtartomány, formátum, teljesség, kivételnapló, védett URI/SHA-256; izolált restore/read teszt owner- és G3 approval mellett; olvashatóság, integritás, idő, cleanup és reviewer; külön retention/migration/disposal döntés. Nyers export, személyes adat, üzleti dokumentum és credential Gitbe nem kerülhet.",
+          "must_be_completed_before": "Bármely éles lekérdezés/export, restore/import, törlés, alkalmazásleállítás vagy migráció, valamint az A-026 review-ra kész/DONE állapota előtt.",
+          "owner": "Pásztor András; Kollár Csaba; kijelölendő üzleti-, adat-, alkalmazás- és belső rendszerowner",
+          "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-026",
+          "status": "OPEN_DEFERRED",
+          "related": "A-027; data/rds_separation_plan.json; templates/rds_separation_review_record.md",
+          "current_process_state": "Elkészült az SRC-004 nem igazolt státuszát megőrző hatdomaines RDS-assessment, öttesztes, költségkapus és döntési séma; a jelenlegi szeparáció marad, éles lekérdezés vagy konszolidáció nem történt.",
+          "required_result": "Belső RDS-/infrastruktúra-owner, Kollár Csaba, alkalmazás- és üzleti ownerek; jóváhagyott read-only user/CAL-, session-, workload-, teljesítmény-, konfigurációs és backup-export védett URI/SHA-256-tal; banki/könyvelési kulcs-/eszköz-scope metaadata secret nélkül; A-029 licencreview; szeparációs kockázat, continuity és rollback; öt kontrollált teszt owner- és G3 approval mellett; G1 review; fizetős eltérésnél hét költséginput és G5; külön konszolidációs vagy szeparációfenntartási döntés. Felhasználólista, banki/könyvelési adat, secret és kulcsanyag Gitbe nem kerülhet.",
+          "must_be_completed_before": "Bármely éles lekérdezés, user/session/workload mozgatás, konfigurációváltozás, konszolidáció vagy vásárlás, valamint az A-027 review-ra kész/DONE állapota előtt.",
+          "owner": "Pásztor András; Kollár Csaba; kijelölendő belső RDS-, alkalmazás- és üzleti ownerek",
+          "approver": "Lángi Zoltán; jogosult G3/G5 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        }
+      ]
+    },
+    {
+      "wave_id": "W4",
+      "title": "Szervezeti és szabályozási kontrollok",
+      "task_count": 2,
+      "tasks": [
+        {
+          "task_id": "DEF-028",
+          "status": "OPEN_DEFERRED",
+          "related": "A-009; A-010; A-013; A-014; A-015; A-016; data/operational_control_work_packages.json",
+          "current_process_state": "Elkészült a hat szervezeti/működési akció proposal-only regisztere és felelősségi útmutatója; működési vagy technikai végrehajtás nem történt.",
+          "required_result": "Szabályzatgazda és review-naptár; kontrollgazdai kapacitásigény és költségkeret-review; belső incidenskontroll-gazda, kontaktlista, jogi/IBF review és tabletop; HR/IBF szerepkör-alapú képzési scope és végrehajtási evidencia; jóváhagyott read-only account/access export, alkalmazásgazdai döntés, külön G3 change és post-check; A-029 licencreview, privilegizált MFA-scope, pilot, rollback, G3 és szükség esetén G5. Személyes lista, incidensadat, credential és védett dokumentum csak evidenciatárban kezelhető.",
+          "must_be_completed_before": "Bármely kihirdetés, gyakorlat, képzés, éles fiókművelet, MFA-pilot vagy vásárlás, valamint az érintett akció review-ra kész/DONE státusza előtt.",
+          "owner": "Pásztor András; Kóczán Mónika; Koncz Erika; Kollár Csaba; kijelölendő belső kontroll-/alkalmazásgazdák",
+          "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3/G5 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-030",
+          "status": "OPEN_DEFERRED",
+          "related": "A-037; A-038; A-039; A-040; A-041; data/policy_baseline_work_packages.json; templates/control_policy_baseline.md",
+          "current_process_state": "Elkészült az öt szabályozási terület kötelező minimumtartalma és proposal-only kitöltési kerete; hatályos szabályzat vagy működési evidencia nem jött létre.",
+          "required_result": "Dokumentumgazdák/helyettesek és scope; A-037 médialeltár, törlési módszer és mintajegyzőkönyv; A-038 HR/jogi/IT JML és visszavonási SLA; A-039 vezetői kockázati étvágy, skála, gazdák és treatment review; A-040 három auditált EIR kitöltött, verziózott SSP-je owner/IBF review-val; A-041 beszerzési/szerződésgazda, kitöltött checklist, klauzulák, support/EOL és kivétel/G5; mindegyikhez jóváhagyás, kihirdetés, megismerés, védett URI/SHA-256 és működési mintavétel.",
+          "must_be_completed_before": "Hatálybalépés, kontrollműködés elfogadása, beszerzési döntés vagy az érintett akció DONE státusza előtt.",
+          "owner": "Pásztor András; Koncz Erika; Dr. Berta Brigitta; kijelölendő dokumentum-, EIR-, kockázat-, beszerzési és szerződésgazdák",
+          "approver": "Lángi Zoltán; jogosult G5 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        }
+      ]
+    },
+    {
+      "wave_id": "W5",
+      "title": "Kontrollált tesztek, portál és agent pilot",
+      "task_count": 8,
+      "tasks": [
+        {
+          "task_id": "DEF-010",
+          "status": "OPEN_DEFERRED",
+          "related": "A-032; evals/gold_cases.json",
+          "current_process_state": "A helyi eval-validator, tíz pending slot, mintakimenet és defect workflow elkészült.",
+          "required_result": "Tíz redaktált gold-case bemenet és elvárt szakmai eredmény; elvárt források/kapuk/tiltások; név szerinti reviewer, időzónás review-idő és döntési hivatkozás; teljes eval-futtatás, defectek és retest.",
+          "must_be_completed_before": "Az A-032 baseline jóváhagyása vagy bármely agent-kimenet minőségi elfogadása előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-015",
+          "status": "OPEN_DEFERRED",
+          "related": "D-028; A-042; LOCAL_PORTAL_BASELINE.md",
+          "current_process_state": "A helyi hálózaton, böngészőből elérhető belső portál jóváhagyott célfelület.",
+          "required_result": "Belső szerver és üzemeltető; hálózati zóna; hitelesítés és szerepkörök; TLS/tanúsítvány; védett evidenciatár-kapcsolat; backup/restore; naplómegőrzés; adatminősítés; G2 architektúra-review; G3 élesítési döntés; pilot, jogosultság- és kill-switch teszt evidenciája.",
+          "must_be_completed_before": "Portálfejlesztés éles adatkapcsolata, hálózati megnyitása vagy deployja előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-016",
+          "status": "OPEN_DEFERRED",
+          "related": "A-017; data/backup_restore_plan.json; templates/restore_test_record.md",
+          "current_process_state": "Az öt EIR backup/RPO/RTO váza és az izolált restore-teszt proposal elkészült; a végrehajtás G3-ig blokkolt.",
+          "required_result": "Öt EIR üzleti ownere, rendszerlistája, RPO/RTO-ja, mentési módja, retentionje és elkülönített másolata; mintarendszer és izolált cél; adatminősítés/G2; üzleti és rendszerowner, change approver G3 döntése; backup- és restore-job log, visszaállított objektum, integritás, eltelt idő, RPO/RTO összevetés, cleanup rekord, védett URI, SHA-256 és emberi review.",
+          "must_be_completed_before": "Bármely restore-művelet előtt és az A-017 review-ra kész vagy DONE státusza előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-017",
+          "status": "OPEN_DEFERRED",
+          "related": "A-020; data/physical_security_walkthrough.json; templates/physical_walkthrough_record.md",
+          "current_process_state": "A kilenc kontrollos checklist, gap-register és fotó/adatkezelési korlát elkészült; a bejárás NOT_PERFORMED, minden kontroll NOT_ASSESSED.",
+          "required_result": "Német Péter és az IBF által jóváhagyott telephely/védett terület scope; időpont és résztvevők; fotó- és személyesadat-kezelési G2 döntés; kontrollonként tényleges megfigyelés, megfigyelő, időzónás időpont és védett evidencia; gapenként kockázat, B0 gyorsjavítás, intézkedés, felelős, céldátum és review; eredeti fotók/listák/jegyzőkönyvek védett URI-ja és SHA-256 metaadata.",
+          "must_be_completed_before": "A helyszíni bejárás előtt, valamint az A-020 review-ra kész vagy DONE státusza előtt.",
+          "owner": "Pásztor András; Német Péter",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-020",
+          "status": "OPEN_DEFERRED",
+          "related": "D-028; A-042; portal_demo/; LOCAL_PORTAL_BASELINE.md",
+          "current_process_state": "A helyi, böngészős célállapot dependency-free prezentációs prototípusa elkészült; kizárólag statikus, nem érzékeny repository-metaadatot jelenít meg, műveletei szimulációk.",
+          "required_result": "Prezentáció utáni stakeholder-visszajelzés és elfogadott funkcionális scope; belső szerver/üzemeltető; hitelesítés, szerepkörök, hálózati zóna és TLS; védett evidenciatár-integráció; adatminősítés, naplózás, backup/restore és kill switch; G2 architektúra-review, G3 pilot/deploy döntés; jogosultsági, negatív, helyreállítási és leállítási teszt evidenciája.",
+          "must_be_completed_before": "Bármely valós adatkapcsolat, belső hálózati közzététel, hitelesítés vagy éles portáldeploy előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-031",
+          "status": "OPEN_DEFERRED",
+          "related": "A-042; config/continuous_assurance_pilot.json; generated/continuous_assurance_pilot_output.json; CONTINUOUS_ASSURANCE_AGENT_PILOT.md",
+          "current_process_state": "Elkészült a hálózat nélküli, allowlistelt szintetikus metaadaton futó proposal/approval-queue/auditlog pilot, automatikus negatív és kill-switch tesztekkel; éles kapcsolat nincs.",
+          "required_result": "Funkcionális scope és forrásgazdák; redaktált, emberileg elfogadott gold-case készlet; téves riasztási és tényleges emberimunka-csökkentési baseline/pilot mérés; belső portál és védett evidenciatár API-ja; szerver, üzemeltető, hitelesítés, RBAC, TLS, adatminősítés, retention, backup/restore és monitoring; G1 funkcionális, G2 biztonsági/jogi és G3 éles adatkapcsolati/pilot döntés; jogosultsági, negatív, helyreállítási és ember által tanúsított kill-switch próba.",
+          "must_be_completed_before": "Bármely valós forrás, érzékeny adat, belső hálózati szolgáltatás vagy éles portálintegráció előtt, valamint az A-042 DONE státusza előtt.",
+          "owner": "Pásztor András; kijelölendő agent-/portálüzemeltető és forrásgazdák",
+          "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-032",
+          "status": "OPEN_DEFERRED",
+          "related": "D-028; D-029; A-042; config/portal_mvp.json; config/sharepoint_graph_readiness.json; config/portal_auth_policy.json; SHAREPOINT_GRAPH_DECISION_PACKAGE.md; PORTAL_AUTH_DECISION_PACKAGE.md; portal_demo/; src/nis2_harness/portal.py; src/nis2_harness/portal_server.py",
+          "current_process_state": "Elkészült a loopback-only helyi portál-MVP, a read-only SharePoint-linknézet, az élő Graph-olvasás readiness-csomagja és a vállalati Entra + NIS2 site read-probe alapú auth/RBAC policy-prototípus. Valós hitelesítés, hálózati publikálás, tokenkérés és éles integráció nincs.",
+          "required_result": "Kijelölt belső szerver és üzemeltető; jóváhagyott hálózati zóna; valós tenant/client ID és Entra app registration; authorization code + PKCE és jóváhagyott tokenkönyvtár; HTTPS redirect URI, Secure/HttpOnly/SameSite session, CSRF és kijelentkezés; delegált NIS2 site read-probe; név szerinti vagy jóváhagyott forrású szerepkör-hozzárendelések; hozzáférés-visszavonás és vendégkezelés; auditlog-retention, backup/restore, monitoring és incidensfolyamat; a Graph mezőtérkép, frissességi küszöb, site/list azonosító és szolgáltatásazonosság; Sites.Selected read grant nem éles technikai próbája; credential védett tárhivatkozása; a hitelesített jóváhagyási rekord és a formális workflow külön terve; G1 funkcionális/szerepkör-, G2 biztonsági/jogi architektúra-review, G3 pilot/deploy döntés; pozitív, negatív, session-, CSRF-, szerepköremelés-, visszavonási, helyreállítási és ember által tanúsított kill-switch teszt.",
+          "must_be_completed_before": "Bármely nem loopback kötés, többfelhasználós használat, valós Microsoft-bejelentkezés, hitelesített döntés, tokenkérés, fájlfeltöltés, védett tár- vagy éles adatkapcsolat és belső hálózati pilot előtt.",
+          "owner": "Pásztor András; kijelölendő portálüzemeltető",
+          "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-033",
+          "status": "OPEN_DEFERRED",
+          "related": "H-002; A-032; A-042; config/h002_agent_pilot.json; config/sharepoint_graph_readiness.json; SHAREPOINT_GRAPH_DECISION_PACKAGE.md; generated/h002_agent_pilot_output.json",
+          "current_process_state": "Elkészült a SHA-256-tal rögzített local-only agent job és az első valós forrásjelölt, a SharePoint-feladatlista élő olvasásának hálózatmentes readiness-csomagja. A szintetikus 10/10 eredmény nem emberi gold-case elfogadás; tokenkérés és élő Graph-kapcsolat nincs.",
+          "required_result": "A tíz A-032 gold case tényleges kitöltése és emberi jóváhagyása; false-positive/false-negative review; valós emberimunka-baseline és pilotmérés; adatminősítés, forrásgazdák, engedélyezett read-only forráslista és jogosultság; a Graph-mezőtérkép és frissességi küszöb G1 jóváhagyása; a Sites.Selected read grant, credential-kezelés, retention és naplózás G2 jóváhagyása; az app registration, site/list grant és pilot G3 döntése; ember által tanúsított kill-switch és helyreállítási próba; védett futási evidencia URI/SHA-256 és reviewer-rekord.",
+          "must_be_completed_before": "Bármely valós vagy érzékeny forrás csatlakoztatása, tokenkérés, ütemezett futás, többfelhasználós portálintegráció vagy az A-032/A-042 lezárása előtt.",
+          "owner": "Pásztor András; kijelölendő agent-üzemeltető és forrásgazdák",
+          "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        }
+      ]
+    },
+    {
+      "wave_id": "W6",
+      "title": "Külső cselekvési terv",
+      "task_count": 2,
+      "tasks": [
+        {
+          "task_id": "DEF-013",
+          "status": "OPEN_DEFERRED",
+          "related": "A-008; A-006; A-007; data/quarterly_reporting_plan.json",
+          "current_process_state": "A negyedéves riportnaptár, adat-cut-off workflow, dry run és sablon proposal-only formában elkészült; a 2026-09-24 dátum csak tervezési horgony.",
+          "required_result": "A tényleges cselekvésiterv-benyújtási dátum, benyújtási/átvételi evidencia és reviewer; a naptár újraszámítása; jogi vagy IBF G2 review az ütemezési logikáról és formáról; Lángi Zoltán G4 jóváhagyása; naptárbejegyzések; dry-run jegyzőkönyv; riportonként forráscsomag, approval, benyújtási és átvételi evidencia védett URI-val és SHA-256-tal.",
+          "must_be_completed_before": "Az első negyedéves beszámoló véglegesítése és minden külső benyújtás előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-014",
+          "status": "OPEN_DEFERRED",
+          "related": "A-006; A-007; generated/action_plan.md; data/action_plan_submission_checklist.json",
+          "current_process_state": "A 42 akciós tervezet 19/19 követelménycsaládot lefed, 0 hard hibával; strukturálisan review-ra kész, de G4 benyújtásra nem kész.",
+          "required_result": "A-004 finding-minta és A-005 mapping G1 review; A-036 formális RACI-evidencia; A-008/A-022–A-028/A-042 fix dátuma vagy jóváhagyott indoklása; A-022/A-024/A-026/A-027/A-028 read-only forrásvalidációja; G2 jogi/IBF review; Lángi Zoltán G4 jóváhagyása; aláírt végleges verzió, jogosult benyújtó, védett URI, SHA-256, benyújtási és átvételi igazolás.",
+          "must_be_completed_before": "A cselekvési terv aláírása, véglegesítése és külső benyújtása előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        }
+      ]
+    },
+    {
+      "wave_id": "W7",
+      "title": "Negyedéves jelentés és megismételt audit",
+      "task_count": 1,
+      "tasks": [
+        {
+          "task_id": "DEF-012",
+          "status": "OPEN_DEFERRED",
+          "related": "A-030; D-021; data/repeat_audit_roadmap.json",
+          "current_process_state": "A D-021 szerinti 2027-09-30-i baseline-hoz elkészült a proposal-only readiness-, mock-audit- és javítási roadmap.",
+          "required_result": "A köztes dátumok és a mock audit scope-jának G4 review-ja; az A-034 scope-döntés beépítése; auditor esetén entitlement/kapacitás/B0/pilot/acceptance/purchase-trigger/halasztási kockázat csomag és G5 döntés; jóváhagyott naptárbejegyzések, mock jegyzőkönyv, finding- és remediation-evidencia védett URI-val, hash-sel és reviewer-rekorddal.",
+          "must_be_completed_before": "Bármely külső auditor-kommunikáció, beszerzés vagy az A-030 lezárása előtt.",
+          "owner": "Pásztor András",
+          "approver": "Lángi Zoltán",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        }
+      ]
+    }
+  ],
+  "completion_rule": "A feladat csak tényleges dokumentum vagy döntés, védett URI, SHA-256 és név szerinti emberi review után zárható.",
+  "forbidden_automatic_actions": [
+    "mark_deferred_done",
+    "accept_evidence",
+    "close_action",
+    "change_production",
+    "submit_external",
+    "purchase"
+  ]
+}

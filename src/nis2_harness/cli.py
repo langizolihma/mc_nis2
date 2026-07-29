@@ -30,6 +30,10 @@ from .reconciliation_preflight import (
     build_reconciliation_application_preflight,
     write_reconciliation_application_preflight,
 )
+from .reconciliation_postcheck import (
+    verify_reconciliation_application,
+    write_reconciliation_application_verification,
+)
 from .ai_policy import validate_ai_policy
 from .action_plan_submission import validate_action_plan_submission
 from .backup_restore import validate_backup_restore_plan
@@ -56,8 +60,13 @@ from .agent_jobs import (
 )
 from .supplier_risk import validate_supplier_risk_plan
 from .physical_security import validate_physical_security_plan
+from .portal import load_deferred
 from .portal_auth import validate_portal_auth_policy
 from .sharepoint_readiness import validate_sharepoint_graph_readiness
+from .human_execution import (
+    build_human_execution_package,
+    write_human_execution_package,
+)
 from .evals import (
     evaluate_agent_output,
     validate_defect_log,
@@ -180,6 +189,34 @@ def _parser() -> argparse.ArgumentParser:
         "--json-output", required=True, type=Path
     )
     build_reconciliation_preflight.add_argument(
+        "--markdown-output", required=True, type=Path
+    )
+    verify_reconciliation = subparsers.add_parser(
+        "verify-reconciliation-application"
+    )
+    verify_reconciliation.add_argument(
+        "--actions", required=True, type=Path
+    )
+    verify_reconciliation.add_argument(
+        "--preflight", required=True, type=Path
+    )
+    verify_reconciliation.add_argument(
+        "--json-output", required=True, type=Path
+    )
+    verify_reconciliation.add_argument(
+        "--markdown-output", required=True, type=Path
+    )
+    human_execution = subparsers.add_parser(
+        "build-human-execution-package"
+    )
+    human_execution.add_argument(
+        "--deferred-log", required=True, type=Path
+    )
+    human_execution.add_argument("--as-of", required=True)
+    human_execution.add_argument(
+        "--json-output", required=True, type=Path
+    )
+    human_execution.add_argument(
         "--markdown-output", required=True, type=Path
     )
     evidence = subparsers.add_parser("validate-evidence")
@@ -458,6 +495,57 @@ def main(argv: Sequence[str] | None = None) -> int:
                 f"{preflight['summary']['accepted_record_count']} elfogadott rekord, "
                 f"{preflight['summary']['registry_change_count']} registry-módosítás; "
                 "automatikus alkalmazás=nem"
+            )
+            return 0
+        if args.command == "verify-reconciliation-application":
+            actions = load_actions(args.actions)
+            base_result = validate_actions(actions)
+            if base_result.errors:
+                for issue in base_result.errors:
+                    print(issue.format(), file=sys.stderr)
+                print(
+                    "Az utóellenőrzés hibás akcióregiszterből nem készült el.",
+                    file=sys.stderr,
+                )
+                return 1
+            preflight = load_json_object(
+                args.preflight,
+                "egyeztetési átvezetési preflight",
+            )
+            verification = verify_reconciliation_application(
+                preflight,
+                actions,
+            )
+            write_reconciliation_application_verification(
+                verification,
+                args.json_output,
+                args.markdown_output,
+            )
+            print(
+                "Egyeztetési átvezetés utóellenőrzése elkészült: "
+                f"{verification['summary']['verified_change_count']} igazolt, "
+                f"{verification['summary']['pending_change_count']} függő; "
+                "evidenciaelfogadás=nem"
+            )
+            return 0
+        if args.command == "build-human-execution-package":
+            as_of = parse_iso_date(args.as_of, field_name="as_of")
+            records = load_deferred(args.deferred_log)
+            package = build_human_execution_package(
+                records,
+                args.deferred_log,
+                as_of,
+            )
+            write_human_execution_package(
+                package,
+                args.json_output,
+                args.markdown_output,
+            )
+            print(
+                "Egységes emberi végrehajtási csomag elkészült: "
+                f"{package['summary']['task_count']} tétel, "
+                f"{package['summary']['open_deferred_count']} nyitott; "
+                "automatikus lezárás=nem"
             )
             return 0
         if args.command == "validate-portal-auth":
