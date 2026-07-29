@@ -9,6 +9,11 @@ from pathlib import Path
 from typing import Sequence
 
 from .deadlines import REPEAT_AUDIT_LATEST, action_plan_deadline, draft_quarterly_schedule, parse_iso_date
+from .deadline_reconciliation import (
+    build_deadline_reconciliation,
+    validate_deadline_reconciliation,
+    write_reconciliation_outputs,
+)
 from .execution_brief import render_daily_execution_brief
 from .ai_policy import validate_ai_policy
 from .action_plan_submission import validate_action_plan_submission
@@ -91,6 +96,15 @@ def _parser() -> argparse.ArgumentParser:
     daily_brief.add_argument("--project-dates", type=Path)
     daily_brief.add_argument("--as-of", required=True)
     daily_brief.add_argument("--output", required=True, type=Path)
+    build_reconciliation = subparsers.add_parser("build-deadline-reconciliation")
+    build_reconciliation.add_argument("--actions", required=True, type=Path)
+    build_reconciliation.add_argument("--project-dates", type=Path)
+    build_reconciliation.add_argument("--as-of", required=True)
+    build_reconciliation.add_argument("--json-output", required=True, type=Path)
+    build_reconciliation.add_argument("--markdown-output", required=True, type=Path)
+    validate_reconciliation = subparsers.add_parser("validate-deadline-reconciliation")
+    validate_reconciliation.add_argument("--actions", required=True, type=Path)
+    validate_reconciliation.add_argument("--register", required=True, type=Path)
     evidence = subparsers.add_parser("validate-evidence")
     evidence.add_argument("--evidence", required=True, type=Path)
     evidence.add_argument("--actions", required=True, type=Path)
@@ -229,6 +243,22 @@ def main(argv: Sequence[str] | None = None) -> int:
                 f"Kontrollkatalógus: {len(catalog)} kontroll, "
                 f"{len(requirements)} részletes követelmény, "
                 f"{len(required_refs)} használt kontroll lefedve; "
+                f"{len(result.errors)} hard error, {len(result.warnings)} warning"
+            )
+            return 1 if result.errors else 0
+        if args.command == "validate-deadline-reconciliation":
+            actions = load_actions(args.actions)
+            register = load_json_object(
+                args.register, "lejárt akciók státusz-egyeztetési nyilvántartása"
+            )
+            result = combine_results(
+                validate_actions(actions),
+                validate_deadline_reconciliation(register, actions),
+            )
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                f"Deadline reconciliation: {len(register.get('records', []))} record; "
                 f"{len(result.errors)} hard error, {len(result.warnings)} warning"
             )
             return 1 if result.errors else 0
@@ -602,6 +632,25 @@ def main(argv: Sequence[str] | None = None) -> int:
                 newline="\n",
             )
             print(f"Napi végrehajtási összefoglaló elkészült: {output}")
+            return 0
+        if args.command == "build-deadline-reconciliation":
+            if result.errors:
+                for issue in result.errors:
+                    print(issue.format(), file=sys.stderr)
+                print(
+                    "A státusz-egyeztetési csomag hard validation error miatt nem készült el.",
+                    file=sys.stderr,
+                )
+                return 1
+            as_of = parse_iso_date(args.as_of, field_name="as_of")
+            register = build_deadline_reconciliation(actions, as_of)
+            write_reconciliation_outputs(
+                register, args.json_output, args.markdown_output
+            )
+            print(
+                "Státusz-egyeztetési csomag elkészült: "
+                f"{len(register['records'])} lejárt akció"
+            )
             return 0
     except (RegistryLoadError, ValueError, OSError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)

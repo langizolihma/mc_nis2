@@ -1,0 +1,353 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSAL_PENDING_HUMAN_RECONCILIATION",
+  "as_of": "2026-07-29",
+  "source_refs": [
+    "data/actions.csv",
+    "data/project_dates.json"
+  ],
+  "formal_effect": false,
+  "allowed_outcomes": [
+    "PENDING_HUMAN",
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED_EVIDENCE_PENDING",
+    "COMPLETED_READY_FOR_REVIEW",
+    "RESCHEDULE_REQUESTED"
+  ],
+  "record_count": 17,
+  "records": [
+    {
+      "action_id": "A-002",
+      "registered_status": "IN_PROGRESS",
+      "registered_target_date": "2026-06-27",
+      "days_overdue": 32,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-003",
+      "registered_status": "IN_PROGRESS",
+      "registered_target_date": "2026-06-29",
+      "days_overdue": 30,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-035",
+      "registered_status": "IN_PROGRESS",
+      "registered_target_date": "2026-06-29",
+      "days_overdue": 30,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-001",
+      "registered_status": "IN_PROGRESS",
+      "registered_target_date": "2026-07-01",
+      "days_overdue": 28,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-036",
+      "registered_status": "IN_PROGRESS",
+      "registered_target_date": "2026-07-01",
+      "days_overdue": 28,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-031",
+      "registered_status": "NEW",
+      "registered_target_date": "2026-07-03",
+      "days_overdue": 26,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-004",
+      "registered_status": "IN_PROGRESS",
+      "registered_target_date": "2026-07-06",
+      "days_overdue": 23,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-012",
+      "registered_status": "IN_PROGRESS",
+      "registered_target_date": "2026-07-10",
+      "days_overdue": 19,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-005",
+      "registered_status": "IN_PROGRESS",
+      "registered_target_date": "2026-07-11",
+      "days_overdue": 18,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-011",
+      "registered_status": "NEW",
+      "registered_target_date": "2026-07-16",
+      "days_overdue": 13,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-006",
+      "registered_status": "NEW",
+      "registered_target_date": "2026-07-26",
+      "days_overdue": 3,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G4_EXTERNAL_SUBMISSION"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-017",
+      "registered_status": "NEW",
+      "registered_target_date": "2026-07-26",
+      "days_overdue": 3,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-020",
+      "registered_status": "NEW",
+      "registered_target_date": "2026-07-26",
+      "days_overdue": 3,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-032",
+      "registered_status": "NEW",
+      "registered_target_date": "2026-07-17",
+      "days_overdue": 12,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-009",
+      "registered_status": "NEW",
+      "registered_target_date": "2026-07-26",
+      "days_overdue": 3,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-010",
+      "registered_status": "NEW",
+      "registered_target_date": "2026-07-26",
+      "days_overdue": 3,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G5_PURCHASE"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    },
+    {
+      "action_id": "A-029",
+      "registered_status": "NEW",
+      "registered_target_date": "2026-07-26",
+      "days_overdue": 3,
+      "owner": "Pásztor András",
+      "approver": "Lángi Zoltán",
+      "required_gates": [
+        "G5_PURCHASE"
+      ],
+      "outcome": "PENDING_HUMAN",
+      "actual_progress_summary": "",
+      "proposed_new_target_date": "",
+      "evidence_uri": "",
+      "evidence_sha256": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "decision_ref": ""
+    }
+  ],
+  "forbidden_automatic_actions": [
+    "change_action_status",
+    "change_target_date",
+    "accept_evidence",
+    "close_action",
+    "submit_external",
+    "change_production",
+    "purchase"
+  ]
+}

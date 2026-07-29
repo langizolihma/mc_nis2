@@ -311,6 +311,51 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
             "formal_effect": False,
         }
         snapshot["summary"]["catalog_review_status"] = "ERROR_FAIL_CLOSED"
+    reconciliation_path = root / "data" / "deadline_reconciliation.json"
+    try:
+        reconciliation = json.loads(
+            reconciliation_path.read_text(encoding="utf-8")
+        )
+        records = reconciliation.get("records", [])
+        if (
+            reconciliation.get("formal_effect") is not False
+            or not isinstance(records, list)
+        ):
+            raise ValueError("unsafe deadline reconciliation projection")
+        safe_records = [{
+            "action_id": str(item.get("action_id", "")),
+            "registered_status": str(item.get("registered_status", "")),
+            "registered_target_date": str(
+                item.get("registered_target_date", "")
+            ),
+            "days_overdue": int(item.get("days_overdue", 0)),
+            "owner": str(item.get("owner", "")),
+            "approver": str(item.get("approver", "")),
+            "required_gates": list(item.get("required_gates", [])),
+            "outcome": str(item.get("outcome", "PENDING_HUMAN")),
+        } for item in records if isinstance(item, dict)]
+        pending = sum(
+            item["outcome"] == "PENDING_HUMAN" for item in safe_records
+        )
+        snapshot["deadline_reconciliation"] = {
+            "status": str(reconciliation.get("status", "UNKNOWN")),
+            "as_of": str(reconciliation.get("as_of", "")),
+            "record_count": len(safe_records),
+            "pending_count": pending,
+            "formal_effect": False,
+            "records": safe_records,
+        }
+        snapshot["summary"]["deadline_reconciliation_pending"] = pending
+    except (OSError, ValueError, TypeError, json.JSONDecodeError):
+        snapshot["deadline_reconciliation"] = {
+            "status": "ERROR_FAIL_CLOSED",
+            "as_of": "",
+            "record_count": 0,
+            "pending_count": 0,
+            "formal_effect": False,
+            "records": [],
+        }
+        snapshot["summary"]["deadline_reconciliation_pending"] = 0
     snapshot["review_drafts"] = store.load()
     try:
         sharepoint_tasks, integration = load_sharepoint_projection(root, deferred)

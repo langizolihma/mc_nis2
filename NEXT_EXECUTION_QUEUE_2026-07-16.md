@@ -24,6 +24,12 @@ A napi operatív munkasorrend a
 igényel. A „lejárt” megjelölés státuszellenőrzést kér; nem jelenti
 automatikusan azt, hogy a munka nem történt meg.
 
+A 17 lejárt tétel egységes emberi egyeztetőlapja:
+`DEADLINE_RECONCILIATION_FORM_2026-07-29.md`. A gépi, proposal-only
+nyilvántartás a `data/deadline_reconciliation.json`; mind a 17 rekord
+`PENDING_HUMAN` állapotú, ezért ebből még sem státusz-, sem céldátumváltozás
+nem vezethető át.
+
 | Sorrend | Emberi munkablokk | Érintett fő akciók | Következő elfogadható eredmény | Kötelező kapu |
 |---|---|---|---|---|
 | 1 | Irányítási aláírások és felelősök | A-001; A-002; A-035; A-036 | IBF/RACI/G2-G4 és kanonikus forrás védett, aláírt review-rekordja | G2 |

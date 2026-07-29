@@ -48,7 +48,7 @@
     const s = data.summary;
     byId("as-of-date").textContent = formatDate(data.meta.as_of); byId("deadline-date").textContent = formatDate(s.action_plan_deadline);
     byId("days-left").textContent = s.days_to_deadline; byId("countdown-ring").style.setProperty("--pct", `${Math.max(6, Math.min(100, (90 - s.days_to_deadline) / 90 * 100))}%`);
-    const metrics = [["Összes akció",s.total_actions,"19 követelménycsalád","teal"],["P0 prioritás",s.p0_actions,"azonnali fókusz","red"],["Lejárt céldátum",s.overdue_actions ?? 0,"emberi státuszellenőrzés szükséges","blue"],["Pótlandó evidencia",s.open_human_tasks,"nyitott emberi feladat","amber"]];
+    const metrics = [["Összes akció",s.total_actions,"19 követelménycsalád","teal"],["P0 prioritás",s.p0_actions,"azonnali fókusz","red"],["Lejárt céldátum",s.overdue_actions ?? 0,`${s.deadline_reconciliation_pending ?? s.overdue_actions ?? 0} státusz-egyeztetés függőben`,"blue"],["Pótlandó evidencia",s.open_human_tasks,"nyitott emberi feladat","amber"]];
     byId("metric-grid").innerHTML = metrics.map(([label,value,note,color]) => `<article class="metric-card ${color}"><span>${label}</span><strong>${value}</strong><small>${note}</small></article>`).join("");
     const max = Math.max(...Object.values(s.priority_counts));
     byId("priority-bars").innerHTML = ["P0","P1","P2"].map((p) => `<div class="bar-row"><span>${p}</span><div class="bar-track"><div class="bar-fill ${p.toLowerCase()}" style="width:${(s.priority_counts[p] || 0) / max * 100}%"></div></div><b>${s.priority_counts[p] || 0}</b></div>`).join("");

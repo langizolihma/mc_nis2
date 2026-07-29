@@ -60,6 +60,15 @@ class PortalMvpTests(unittest.TestCase):
         self.assertGreater(snapshot["summary"]["overdue_actions"], 0)
         self.assertIn("due_within_7_days", snapshot["summary"])
         self.assertIn("undated_actions", snapshot["summary"])
+        self.assertEqual(
+            17, snapshot["summary"]["deadline_reconciliation_pending"]
+        )
+        self.assertEqual(
+            "PROPOSAL_PENDING_HUMAN_RECONCILIATION",
+            snapshot["deadline_reconciliation"]["status"],
+        )
+        self.assertEqual(17, snapshot["deadline_reconciliation"]["record_count"])
+        self.assertFalse(snapshot["deadline_reconciliation"]["formal_effect"])
         self.assertEqual(len(load_deferred(ROOT / "DEFERRED_EVIDENCE_LOG.md")), len(snapshot["deferred_tasks"]))
         self.assertEqual("PROPOSAL", snapshot["agent_pilot"]["status"])
         self.assertEqual("H002-CA-JOB-001", snapshot["agent_pilot"]["pilot_id"])
@@ -86,8 +95,8 @@ class PortalMvpTests(unittest.TestCase):
         self.assertLess(action["days_to_target"], 0)
         self.assertEqual(["1.2"], action["control_refs"])
         self.assertEqual("SRC-009", action["control_details"][0]["source_ref"])
-        self.assertEqual(36, len(snapshot["sharepoint_tasks"]))
-        self.assertEqual(36, snapshot["summary"]["linked_human_tasks"])
+        self.assertEqual(37, len(snapshot["sharepoint_tasks"]))
+        self.assertEqual(37, snapshot["summary"]["linked_human_tasks"])
         self.assertEqual(0, snapshot["summary"]["unlinked_human_tasks"])
         self.assertEqual("READ_ONLY_SNAPSHOT_ACTIVE", snapshot["sharepoint_integration"]["status"])
         self.assertFalse(snapshot["sharepoint_integration"]["network_allowed"])

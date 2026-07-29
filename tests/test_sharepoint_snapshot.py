@@ -32,12 +32,12 @@ class SharePointSnapshotTests(unittest.TestCase):
     def test_current_snapshot_covers_every_deferred_task(self) -> None:
         snapshot = load_sharepoint_snapshot(self.snapshot_path, "metalcom.sharepoint.com")
         projected = project_sharepoint_tasks(self.deferred, snapshot)
-        self.assertEqual(36, len(projected))
+        self.assertEqual(37, len(projected))
         self.assertEqual([item["id"] for item in self.deferred], [item["id"] for item in projected])
         linked = [item for item in projected if item["evidence_url"]]
-        self.assertEqual(36, len(linked))
+        self.assertEqual(37, len(linked))
         self.assertTrue(all(item["evidence_url"].startswith("https://metalcom.sharepoint.com/sites/NIS2/") for item in linked))
-        self.assertEqual(36, len(projected))
+        self.assertEqual(37, len(projected))
         self.assertTrue(all(item["evidence_url"] for item in projected))
         self.assertEqual(
             "SRC-009 kontrollkatalógus G1 review célmappája",
@@ -89,9 +89,9 @@ class SharePointSnapshotTests(unittest.TestCase):
 
     def test_configured_projection_is_local_and_read_only(self) -> None:
         tasks, metadata = load_sharepoint_projection(ROOT, self.deferred)
-        self.assertEqual(36, len(tasks))
+        self.assertEqual(37, len(tasks))
         self.assertEqual("READ_ONLY_SNAPSHOT_ACTIVE", metadata["status"])
-        self.assertEqual(36, metadata["linked_task_count"])
+        self.assertEqual(37, metadata["linked_task_count"])
         self.assertEqual(0, metadata["unlinked_task_count"])
         self.assertFalse(metadata["network_allowed"])
         self.assertFalse(metadata["write_back_allowed"])

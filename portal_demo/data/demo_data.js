@@ -3245,6 +3245,219 @@ window.NIS2_DEMO_DATA = {
     "text_review_required_count": 7,
     "title_match_count": 914
   },
+  "deadline_reconciliation": {
+    "as_of": "2026-07-29",
+    "formal_effect": false,
+    "pending_count": 17,
+    "record_count": 17,
+    "records": [
+      {
+        "action_id": "A-002",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 32,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "IN_PROGRESS",
+        "registered_target_date": "2026-06-27",
+        "required_gates": [
+          "G2_SECURITY_LEGAL"
+        ]
+      },
+      {
+        "action_id": "A-003",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 30,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "IN_PROGRESS",
+        "registered_target_date": "2026-06-29",
+        "required_gates": [
+          "G2_SECURITY_LEGAL"
+        ]
+      },
+      {
+        "action_id": "A-035",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 30,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "IN_PROGRESS",
+        "registered_target_date": "2026-06-29",
+        "required_gates": [
+          "G2_SECURITY_LEGAL"
+        ]
+      },
+      {
+        "action_id": "A-001",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 28,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "IN_PROGRESS",
+        "registered_target_date": "2026-07-01",
+        "required_gates": [
+          "G2_SECURITY_LEGAL"
+        ]
+      },
+      {
+        "action_id": "A-036",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 28,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "IN_PROGRESS",
+        "registered_target_date": "2026-07-01",
+        "required_gates": [
+          "G2_SECURITY_LEGAL"
+        ]
+      },
+      {
+        "action_id": "A-031",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 26,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "NEW",
+        "registered_target_date": "2026-07-03",
+        "required_gates": [
+          "G2_SECURITY_LEGAL"
+        ]
+      },
+      {
+        "action_id": "A-004",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 23,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "IN_PROGRESS",
+        "registered_target_date": "2026-07-06",
+        "required_gates": [
+          "G1_DOMAIN_REVIEW"
+        ]
+      },
+      {
+        "action_id": "A-012",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 19,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "IN_PROGRESS",
+        "registered_target_date": "2026-07-10",
+        "required_gates": [
+          "G2_SECURITY_LEGAL"
+        ]
+      },
+      {
+        "action_id": "A-005",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 18,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "IN_PROGRESS",
+        "registered_target_date": "2026-07-11",
+        "required_gates": [
+          "G1_DOMAIN_REVIEW"
+        ]
+      },
+      {
+        "action_id": "A-011",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 13,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "NEW",
+        "registered_target_date": "2026-07-16",
+        "required_gates": [
+          "G1_DOMAIN_REVIEW"
+        ]
+      },
+      {
+        "action_id": "A-006",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 3,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "NEW",
+        "registered_target_date": "2026-07-26",
+        "required_gates": [
+          "G4_EXTERNAL_SUBMISSION"
+        ]
+      },
+      {
+        "action_id": "A-017",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 3,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "NEW",
+        "registered_target_date": "2026-07-26",
+        "required_gates": [
+          "G3_PRODUCTION_CHANGE"
+        ]
+      },
+      {
+        "action_id": "A-020",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 3,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "NEW",
+        "registered_target_date": "2026-07-26",
+        "required_gates": [
+          "G2_SECURITY_LEGAL"
+        ]
+      },
+      {
+        "action_id": "A-032",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 12,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "NEW",
+        "registered_target_date": "2026-07-17",
+        "required_gates": [
+          "G1_DOMAIN_REVIEW"
+        ]
+      },
+      {
+        "action_id": "A-009",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 3,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "NEW",
+        "registered_target_date": "2026-07-26",
+        "required_gates": [
+          "G1_DOMAIN_REVIEW"
+        ]
+      },
+      {
+        "action_id": "A-010",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 3,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "NEW",
+        "registered_target_date": "2026-07-26",
+        "required_gates": [
+          "G5_PURCHASE"
+        ]
+      },
+      {
+        "action_id": "A-029",
+        "approver": "Lángi Zoltán",
+        "days_overdue": 3,
+        "outcome": "PENDING_HUMAN",
+        "owner": "Pásztor András",
+        "registered_status": "NEW",
+        "registered_target_date": "2026-07-26",
+        "required_gates": [
+          "G5_PURCHASE"
+        ]
+      }
+    ],
+    "status": "PROPOSAL_PENDING_HUMAN_RECONCILIATION"
+  },
   "deferred_tasks": [
     {
       "approver": "Lángi Zoltán",
@@ -3605,6 +3818,16 @@ window.NIS2_DEMO_DATA = {
       "related": "A-005; A-011; A-040; SRC-009; SRC-010; data/control_catalog.csv; data/control_requirements.csv; data/official_control_baseline.csv; data/control_catalog_legal_comparison.csv; CONTROL_CATALOG_G1_REVIEW.md; CONTROL_CATALOG_TARGETED_G1_DECISION_2026-07-28.md; EIR_SECURITY_CLASSIFICATION_QUESTIONNAIRE.md",
       "required": "A hét megjelölt kontroll célzott G1 ellenőrzése és döntési lapja; a SharePoint-példány kézi cseréje és visszaolvasott SHA-256 ellenőrzése; store-owner; eredet, verzió és felhasználási jog; reviewer, időzónás review-idő és döntési hivatkozás; az öt EIR kérdőíves hatáselemzése, Alap/Jelentős/Magas besorolásának emberi jóváhagyása és kontrolltestreszabási döntése.",
       "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; az akció szerinti G1–G5 reviewer",
+      "gate": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
+      "id": "DEF-037",
+      "owner": "Pásztor András",
+      "process_state": "A 2026-07-29-i állapot szerint 17 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. Státusz vagy céldátum nem változott.",
+      "related": "17 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
+      "required": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések külön, ellenőrzött átvezetése az actions.csv fájlba.",
+      "status": "OPEN_DEFERRED"
     }
   ],
   "gate_legend": [
@@ -3662,13 +3885,13 @@ window.NIS2_DEMO_DATA = {
   "sharepoint_integration": {
     "captured_at": "2026-07-27T20:43:00+02:00",
     "formal_effect": false,
-    "linked_task_count": 36,
+    "linked_task_count": 37,
     "list_url": "https://metalcom.sharepoint.com/sites/NIS2/Lists/NIS2%20emberi%20feladatok/AllItems.aspx",
     "mode": "READ_ONLY_CONNECTOR_SNAPSHOT",
     "network_allowed": false,
     "site_url": "https://metalcom.sharepoint.com/sites/NIS2",
     "status": "READ_ONLY_SNAPSHOT_ACTIVE",
-    "task_count": 36,
+    "task_count": 37,
     "unlinked_task_count": 0,
     "write_back_allowed": false
   },
@@ -4265,6 +4488,22 @@ window.NIS2_DEMO_DATA = {
       "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
       "status": "OPEN_DEFERRED",
       "write_back_allowed": false
+    },
+    {
+      "approver": "Lángi Zoltán; az akció szerinti G1–G5 reviewer",
+      "evidence_label": "Lejárt akciók státusz- és határidő-egyeztetésének célmappája",
+      "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE",
+      "formal_effect": false,
+      "gate": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
+      "id": "DEF-037",
+      "owner": "Pásztor András",
+      "process_state": "A 2026-07-29-i állapot szerint 17 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. Státusz vagy céldátum nem változott.",
+      "related": "17 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
+      "required": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések külön, ellenőrzött átvezetése az actions.csv fájlba.",
+      "sharepoint_status": "Nyitott",
+      "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
+      "status": "OPEN_DEFERRED",
+      "write_back_allowed": false
     }
   ],
   "summary": {
@@ -4275,6 +4514,7 @@ window.NIS2_DEMO_DATA = {
     "catalog_pending_eir_classifications": 5,
     "catalog_review_status": "PENDING_G1_REVIEW",
     "days_to_deadline": 57,
+    "deadline_reconciliation_pending": 17,
     "due_within_30_days": 9,
     "due_within_7_days": 0,
     "gate_counts": {
@@ -4285,9 +4525,9 @@ window.NIS2_DEMO_DATA = {
       "G5": 6
     },
     "in_progress": 8,
-    "linked_human_tasks": 36,
+    "linked_human_tasks": 37,
     "new_actions": 34,
-    "open_human_tasks": 35,
+    "open_human_tasks": 36,
     "overdue_actions": 17,
     "p0_actions": 17,
     "priority_counts": {

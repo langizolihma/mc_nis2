@@ -27,6 +27,8 @@ python -m nis2_harness status --actions data/actions.csv
 python -m nis2_harness deadlines --received 2026-06-26
 python -m nis2_harness draft-action-plan --actions data/actions.csv --output generated/action_plan.md
 python -m nis2_harness daily-execution-brief --actions data/actions.csv --project-dates data/project_dates.json --as-of 2026-07-29 --output generated/daily_execution_brief_2026-07-29.md
+python -m nis2_harness build-deadline-reconciliation --actions data/actions.csv --project-dates data/project_dates.json --as-of 2026-07-29 --json-output data/deadline_reconciliation.json --markdown-output DEADLINE_RECONCILIATION_FORM_2026-07-29.md
+python -m nis2_harness validate-deadline-reconciliation --actions data/actions.csv --register data/deadline_reconciliation.json
 python -m nis2_harness validate-evidence --evidence data/evidence_register.csv --actions data/actions.csv
 python -m nis2_harness validate-findings --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
 python -m nis2_harness validate-control-catalog --catalog data/control_catalog.csv --requirements data/control_requirements.csv --metadata data/control_catalog_metadata.json --review data/control_catalog_review.json --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
@@ -54,6 +56,16 @@ elkészíti a résztvevők napi munkasorrendjét. Külön mutatja a lejárt, 7 n
 belüli, 30 napon belüli és még konkrét dátumot igénylő akciókat, valamint az
 elvárt eredményt, bizonyítékot, emberi kaput és függőséget. A lejárt jelölés
 figyelmeztetés, nem automatikus nemteljesítési döntés.
+
+A 2026-07-29-i lejárt akciók emberi státusz-egyeztetési nyilvántartása a
+`data/deadline_reconciliation.json`, kitölthető munkalapja a
+`DEADLINE_RECONCILIATION_FORM_2026-07-29.md`. Az öt válaszlehetőség
+megkülönbözteti a nem kezdett, folyamatban lévő, evidenciahiányosan elkészült,
+review-ra kész és újraütemezendő tételeket. A nyilvántartás csak proposal:
+nem írja át az `actions.csv` státuszát vagy céldátumát. A
+`validate-deadline-reconciliation` ellenőrzi a 17 elemű kört, a snapshot
+mezőket, a reviewer-adatokat, az időzónás időpontot, az új céldátumot és a
+review-ra kész tétel védett SharePoint URI/SHA-256 párosát.
 
 ```powershell
 python -m nis2_harness serve-portal
