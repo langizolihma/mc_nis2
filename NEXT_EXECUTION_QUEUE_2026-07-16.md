@@ -30,6 +30,12 @@ nyilvántartás a `data/deadline_reconciliation.json`; mind a 17 rekord
 `PENDING_HUMAN` állapotú, ezért ebből még sem státusz-, sem céldátumváltozás
 nem vezethető át.
 
+A helyi portál Jóváhagyások nézete a 17 tételhez append-only
+státusz-egyeztetési tervezetet tud rögzíteni. Ez gyorsítja az adatbekérést, de
+a rögzítő neve az MVP-ben nem hitelesített, a tervezet nem formális döntés és
+nem ír vissza sem az akcióregiszterbe, sem a SharePointba. A lenti emberi
+review- és evidenciakövetelmények ezért változatlanok.
+
 | Sorrend | Emberi munkablokk | Érintett fő akciók | Következő elfogadható eredmény | Kötelező kapu |
 |---|---|---|---|---|
 | 1 | Irányítási aláírások és felelősök | A-001; A-002; A-035; A-036 | IBF/RACI/G2-G4 és kanonikus forrás védett, aláírt review-rekordja | G2 |

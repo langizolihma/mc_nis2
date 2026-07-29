@@ -6,7 +6,7 @@
     overview: ["PROGRAMVEZETŐI NÉZET", "Auditfelkészültség"], actions: ["AKCIÓIRÁNYÍTÁS", "Feladatok"],
     approvals: ["EMBERI KONTROLL", "Jóváhagyások"], evidence: ["AUDITNYOM", "Evidenciák"], ai: ["PROPOSAL-ONLY", "AI-javaslatok"]
   };
-  const state = { priority: "ALL", query: "", reviewItem: null };
+  const state = { priority: "ALL", query: "", reviewItem: null, reconciliationItem: null };
   const byId = (id) => document.getElementById(id);
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
   const formatDate = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Intl.DateTimeFormat("hu-HU", {year:"numeric",month:"long",day:"numeric"}).format(new Date(value + "T12:00:00")) : value;
@@ -34,7 +34,7 @@
     }
     if (!data) throw new Error("A portál adatforrása nem érhető el.");
     byId("runtime-mode").textContent = serverMode ? "HELYI MVP · ÉLŐ REPOSITORY-NÉZET" : "OFFLINE BEMUTATÓ SNAPSHOT";
-    byId("runtime-detail").textContent = serverMode ? "· review-tervezetek helyi auditnaplóval" : "· minden művelet szimuláció";
+    byId("runtime-detail").textContent = serverMode ? "· review- és státusztervezetek helyi auditnaplóval" : "· minden művelet szimuláció";
   }
 
   function switchView(name) {
@@ -73,9 +73,15 @@
     byId("catalog-review-detail").textContent = `${catalog.legal_precheck_status || "NINCS ELŐELLENŐRZÉS"} · ${catalog.identifier_match_count || 0}/${catalog.official_control_count || 0} azonosító · ${catalog.text_review_required_count || 0} célzott szövegreview · ${catalog.pending_eir_classifications} függő EIR-besorolás · DEF-036`;
     byId("approval-count").textContent = data.approval_queue.length; byId("approval-nav-count").textContent = data.approval_queue.length;
     byId("approval-list").innerHTML = items.map((item) => `<article class="approval-card"><div class="approval-code">${escapeHtml(item.gates[0].slice(0,2))}</div><div><h3>${escapeHtml(item.action_id)} · ${escapeHtml(item.title)}</h3><div class="approval-meta">${escapeHtml(item.approver)} · ${escapeHtml(formatDate(item.target_date))} · ${escapeHtml(item.gates.map(g=>g.slice(0,2)).join(" / "))}</div></div><div class="demo-actions"><button class="primary" data-review="${escapeHtml(item.action_id)}">Review-tervezet</button></div></article>`).join("");
+    const reconciliation = (data.deadline_reconciliation || {records:[]}).records || [];
+    byId("reconciliation-count").textContent = reconciliation.length;
+    byId("deadline-reconciliation-list").innerHTML = reconciliation.length ? reconciliation.map((item) => `<article class="reconciliation-card overdue"><header><h3>${escapeHtml(item.action_id)}</h3><span>${escapeHtml(item.days_overdue)} napja lejárt</span></header><p>${escapeHtml(item.registered_status)} · ${escapeHtml(formatDate(item.registered_target_date))} · ${escapeHtml((item.required_gates || []).map(g=>g.slice(0,2)).join(" / "))}</p><button type="button" data-reconcile="${escapeHtml(item.action_id)}">Állapot rögzítése</button></article>`).join("") : `<p class="empty-note">Nincs egyeztetésre váró lejárt tétel.</p>`;
     const drafts = (data.review_drafts || []).slice().reverse().slice(0, 8);
     byId("review-draft-count").textContent = drafts.length;
     byId("review-draft-list").innerHTML = drafts.length ? drafts.map((item) => `<article class="draft-card"><div><span>${escapeHtml(item.status)}</span><strong>${escapeHtml(item.action_id)} · ${escapeHtml(item.gate)}</strong></div><p>${escapeHtml(item.note)}</p><small>${escapeHtml(item.actor_display)} · ${escapeHtml(item.created_at)} · ${escapeHtml(item.draft_id)}</small></article>`).join("") : `<p class="empty-note">Még nincs helyi review-tervezet. Ezeknek nincs formális jóváhagyási hatásuk.</p>`;
+    const reconciliationDrafts = (data.reconciliation_drafts || []).slice().reverse().slice(0, 8);
+    byId("reconciliation-draft-count").textContent = reconciliationDrafts.length;
+    byId("reconciliation-draft-list").innerHTML = reconciliationDrafts.length ? reconciliationDrafts.map((item) => `<article class="draft-card"><div><span>${escapeHtml(item.status)}</span><strong>${escapeHtml(item.action_id)} · ${escapeHtml(item.outcome)}</strong></div><p>${escapeHtml(item.actual_progress_summary)}</p><small>${escapeHtml(item.actor_display)} · ${escapeHtml(item.created_at)} · ${escapeHtml(item.draft_id)} · nincs formális hatás</small></article>`).join("") : `<p class="empty-note">Még nincs helyi státusz-egyeztetési tervezet. A kanonikus nyilvántartás változatlan.</p>`;
   }
 
   function renderEvidence() {
@@ -119,6 +125,30 @@
   }
   function closeReviewModal(){byId("review-modal").classList.remove("open");byId("review-modal").setAttribute("aria-hidden","true");state.reviewItem=null;}
 
+  function updateReconciliationFields() {
+    const outcome = byId("reconciliation-outcome").value;
+    const dateRequired = outcome === "RESCHEDULE_REQUESTED";
+    const evidenceRequired = outcome === "COMPLETED_READY_FOR_REVIEW";
+    byId("reconciliation-date-field").hidden = !dateRequired;
+    byId("reconciliation-target-date").required = dateRequired;
+    byId("reconciliation-evidence-fields").hidden = !evidenceRequired;
+    byId("reconciliation-evidence-uri").required = evidenceRequired;
+    byId("reconciliation-evidence-sha256").required = evidenceRequired;
+  }
+
+  function openReconciliationModal(actionId) {
+    const records = (data.deadline_reconciliation || {records:[]}).records || [];
+    const item = records.find((entry) => entry.action_id === actionId); if (!item) return;
+    byId("reconciliation-form").reset(); state.reconciliationItem = item;
+    byId("reconciliation-action").value = item.action_id;
+    const minimum = new Date(`${data.meta.as_of}T12:00:00`);
+    minimum.setDate(minimum.getDate() + 1);
+    byId("reconciliation-target-date").min = minimum.toISOString().slice(0,10);
+    updateReconciliationFields();
+    byId("reconciliation-modal").classList.add("open"); byId("reconciliation-modal").setAttribute("aria-hidden","false"); byId("reconciliation-actor").focus();
+  }
+  function closeReconciliationModal(){byId("reconciliation-modal").classList.remove("open");byId("reconciliation-modal").setAttribute("aria-hidden","true");state.reconciliationItem=null;}
+
   async function submitReviewDraft(event) {
     event.preventDefault();
     if (!serverMode) { showToast("Offline snapshot módban review-tervezet nem menthető.", true); return; }
@@ -131,19 +161,41 @@
     } catch (error) { showToast(`A tervezet nem menthető: ${error.message}`, true); }
   }
 
+  async function submitReconciliationDraft(event) {
+    event.preventDefault();
+    if (!serverMode) { showToast("Offline snapshot módban státusztervezet nem menthető.", true); return; }
+    const payload = {
+      action_id:byId("reconciliation-action").value,
+      actor_display:byId("reconciliation-actor").value,
+      outcome:byId("reconciliation-outcome").value,
+      actual_progress_summary:byId("reconciliation-summary").value,
+      proposed_new_target_date:byId("reconciliation-target-date").value,
+      evidence_uri:byId("reconciliation-evidence-uri").value,
+      evidence_sha256:byId("reconciliation-evidence-sha256").value
+    };
+    try {
+      const response = await fetch("/api/reconciliation-drafts", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+      const result = await response.json(); if (!response.ok) throw new Error((result.details || [result.error]).join(" "));
+      data.reconciliation_drafts = [...(data.reconciliation_drafts || []), result.record]; renderApprovals(); closeReconciliationModal(); byId("reconciliation-form").reset();
+      showToast("A státusz-egyeztetési tervezet elmentve. A kanonikus akció nem változott.");
+    } catch (error) { showToast(`A státusztervezet nem menthető: ${error.message}`, true); }
+  }
+
   function bindEvents() {
     document.addEventListener("click", (event) => {
       const nav = event.target.closest("[data-view]"); if (nav) switchView(nav.dataset.view);
       const go = event.target.closest("[data-go]"); if (go) switchView(go.dataset.go);
       const row = event.target.closest("[data-action]"); if (row) openDrawer(row.dataset.action);
       const review = event.target.closest("[data-review]"); if (review) openReviewModal(review.dataset.review);
+      const reconciliation = event.target.closest("[data-reconcile]"); if (reconciliation) openReconciliationModal(reconciliation.dataset.reconcile);
       const ai = event.target.closest("[data-ai-note]"); if (ai) showToast("Az AI-kimenet PROPOSAL. Formális hatása csak hitelesített emberi review után lehet.");
       const filter = event.target.closest("[data-priority]"); if (filter) { state.priority=filter.dataset.priority; document.querySelectorAll(".filter").forEach((b)=>b.classList.toggle("active",b===filter)); renderActions(); }
     });
     byId("action-search").addEventListener("input", (event) => {state.query=event.target.value;renderActions();});
     byId("drawer-close").addEventListener("click",closeDrawer);byId("drawer-backdrop").addEventListener("click",closeDrawer);
     byId("review-cancel").addEventListener("click",closeReviewModal);byId("review-form").addEventListener("submit",submitReviewDraft);
-    document.addEventListener("keydown",(event)=>{if(event.key==="Escape"){closeDrawer();closeReviewModal();}});
+    byId("reconciliation-cancel").addEventListener("click",closeReconciliationModal);byId("reconciliation-form").addEventListener("submit",submitReconciliationDraft);byId("reconciliation-outcome").addEventListener("change",updateReconciliationFields);
+    document.addEventListener("keydown",(event)=>{if(event.key==="Escape"){closeDrawer();closeReviewModal();closeReconciliationModal();}});
     byId("presentation-button").addEventListener("click",()=>{document.body.classList.toggle("presentation");byId("presentation-button").textContent=document.body.classList.contains("presentation")?"Navigáció mutatása":"Prezentációs mód";});
   }
 

@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 import threading
 from typing import Any, Callable
+from urllib.parse import urlparse
 
 from .execution_brief import deadline_bucket
 from .portal_auth import auth_readiness_summary, validate_portal_auth_policy
@@ -19,6 +20,14 @@ from .sharepoint_snapshot import load_sharepoint_projection
 
 DEFERRED_ROW = re.compile(r"^\|\s*(DEF-\d+)\s*\|")
 ALLOWED_DRAFT_DECISIONS = {"COMMENT", "REQUEST_REVIEW", "RETURN_FOR_REWORK"}
+ALLOWED_RECONCILIATION_OUTCOMES = {
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED_EVIDENCE_PENDING",
+    "COMPLETED_READY_FOR_REVIEW",
+    "RESCHEDULE_REQUESTED",
+}
+SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 
 
 def _clean_markdown(value: str) -> str:
@@ -189,6 +198,70 @@ def validate_review_draft(payload: Any, known_actions: dict[str, dict[str, str]]
     return errors
 
 
+def _protected_sharepoint_uri(value: str) -> bool:
+    parsed = urlparse(value)
+    return (
+        parsed.scheme == "https"
+        and parsed.hostname == "metalcom.sharepoint.com"
+        and parsed.path.startswith("/sites/NIS2/")
+    )
+
+
+def validate_reconciliation_draft(
+    payload: Any,
+    known_records: dict[str, dict[str, Any]],
+    as_of: date,
+) -> list[str]:
+    """Validate a non-authoritative overdue-action reconciliation draft."""
+    if not isinstance(payload, dict):
+        return ["A kérés JSON objektum kell legyen."]
+    allowed_fields = {
+        "action_id",
+        "actor_display",
+        "outcome",
+        "actual_progress_summary",
+        "proposed_new_target_date",
+        "evidence_uri",
+        "evidence_sha256",
+    }
+    errors: list[str] = []
+    if set(payload) - allowed_fields:
+        errors.append("A kérés nem engedélyezett mezőt tartalmaz.")
+    action_id = str(payload.get("action_id", "")).strip()
+    actor = str(payload.get("actor_display", "")).strip()
+    outcome = str(payload.get("outcome", "")).strip()
+    summary = str(payload.get("actual_progress_summary", "")).strip()
+    proposed_date = str(payload.get("proposed_new_target_date", "")).strip()
+    evidence_uri = str(payload.get("evidence_uri", "")).strip()
+    evidence_sha256 = str(payload.get("evidence_sha256", "")).strip()
+    if action_id not in known_records:
+        errors.append("Az akció nem része a lejárt tételek egyeztetési körének.")
+    if outcome not in ALLOWED_RECONCILIATION_OUTCOMES:
+        errors.append("Az egyeztetési eredmény nem engedélyezett.")
+    if not 2 <= len(actor) <= 80 or any(char in actor for char in "\r\n"):
+        errors.append("A rögzítő neve 2–80 karakteres, egysoros érték legyen.")
+    if not 3 <= len(summary) <= 2000:
+        errors.append("A tényleges állapot leírása 3–2000 karakteres legyen.")
+    if outcome == "RESCHEDULE_REQUESTED":
+        try:
+            parsed_date = date.fromisoformat(proposed_date)
+            if parsed_date <= as_of:
+                raise ValueError
+        except ValueError:
+            errors.append("Az új céldátum az állapotdátumnál későbbi ISO-dátum legyen.")
+    elif proposed_date:
+        errors.append("Új céldátum csak újraütemezési kérésnél adható meg.")
+    evidence_present = bool(evidence_uri or evidence_sha256)
+    if outcome == "COMPLETED_READY_FOR_REVIEW" and not evidence_present:
+        errors.append("Review-ra kész tételhez védett evidencia URI és SHA-256 szükséges.")
+    if evidence_present:
+        if not _protected_sharepoint_uri(evidence_uri):
+            errors.append("Az evidencia URI a jóváhagyott NIS2 SharePoint-webhelyre mutasson.")
+        if not SHA256_PATTERN.fullmatch(evidence_sha256):
+            errors.append("Az evidencia hash 64 karakteres, kisbetűs SHA-256 legyen.")
+    return errors
+
+
 class ReviewDraftStore:
     """Append-only JSONL store for non-authoritative local review notes."""
 
@@ -231,7 +304,83 @@ class ReviewDraftStore:
         return record
 
 
-def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dict[str, Any]:
+class ReconciliationDraftStore:
+    """Append-only JSONL store for non-authoritative reconciliation drafts."""
+
+    def __init__(self, path: Path, clock: Callable[[], datetime] | None = None) -> None:
+        self.path = path
+        self.clock = clock or (lambda: datetime.now(timezone.utc))
+        self._lock = threading.Lock()
+
+    def load(self) -> list[dict[str, Any]]:
+        if not self.path.exists():
+            return []
+        records: list[dict[str, Any]] = []
+        for line in self.path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            try:
+                item = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if (
+                isinstance(item, dict)
+                and item.get("status") == "DRAFT_RECONCILIATION_NOTE"
+                and item.get("formal_effect") is False
+            ):
+                records.append(item)
+        return records
+
+    def append(self, payload: dict[str, Any]) -> dict[str, Any]:
+        created_at = self.clock().isoformat()
+        clean_payload = {
+            "action_id": str(payload["action_id"]).strip(),
+            "actor_display": str(payload["actor_display"]).strip(),
+            "outcome": str(payload["outcome"]).strip(),
+            "actual_progress_summary": str(
+                payload["actual_progress_summary"]
+            ).strip(),
+            "proposed_new_target_date": str(
+                payload.get("proposed_new_target_date", "")
+            ).strip(),
+            "evidence_uri": str(payload.get("evidence_uri", "")).strip(),
+            "evidence_sha256": str(
+                payload.get("evidence_sha256", "")
+            ).strip(),
+        }
+        canonical = json.dumps(
+            clean_payload,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+        )
+        digest = hashlib.sha256(
+            f"{created_at}|{canonical}".encode("utf-8")
+        ).hexdigest()
+        record = {
+            "draft_id": f"RDR-{digest[:12]}",
+            "status": "DRAFT_RECONCILIATION_NOTE",
+            "formal_effect": False,
+            "actor_claim_unverified": True,
+            "created_at": created_at,
+            "audit_sha256": digest,
+            **clean_payload,
+        }
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        with self._lock:
+            with self.path.open("a", encoding="utf-8", newline="\n") as handle:
+                handle.write(
+                    json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n"
+                )
+        return record
+
+
+def build_live_snapshot(
+    root: Path,
+    store: ReviewDraftStore,
+    as_of: date,
+    reconciliation_store: ReconciliationDraftStore | None = None,
+) -> dict[str, Any]:
     """Read current repository metadata and merge safe local runtime state."""
     actions = load_actions(root / "data" / "actions.csv")
     deferred = load_deferred(root / "DEFERRED_EVIDENCE_LOG.md")
@@ -357,6 +506,9 @@ def build_live_snapshot(root: Path, store: ReviewDraftStore, as_of: date) -> dic
         }
         snapshot["summary"]["deadline_reconciliation_pending"] = 0
     snapshot["review_drafts"] = store.load()
+    snapshot["reconciliation_drafts"] = (
+        reconciliation_store.load() if reconciliation_store is not None else []
+    )
     try:
         sharepoint_tasks, integration = load_sharepoint_projection(root, deferred)
     except (OSError, ValueError, json.JSONDecodeError):

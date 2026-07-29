@@ -1,6 +1,6 @@
 # Helyi NIS2 portál – működő MVP
 
-Ez a felület a D-028 célállapot helyi, működő MVP-je. Indításkor élőben olvassa a repository nem érzékeny akció-, határidő-, pótlandóevidencia- és A-042 pilot-metaadatait. A pótlandó feladatoknál meg tudja nyitni a helyi, ellenőrzött pillanatképben rögzített SharePoint-dokumentumokat. Helyi review-tervezetet rögzíthet append-only JSONL auditnyommal, de az nem formális jóváhagyás, nem evidencia és nem módosít akcióstátuszt.
+Ez a felület a D-028 célállapot helyi, működő MVP-je. Indításkor élőben olvassa a repository nem érzékeny akció-, határidő-, pótlandóevidencia- és A-042 pilot-metaadatait. A pótlandó feladatoknál meg tudja nyitni a helyi, ellenőrzött pillanatképben rögzített SharePoint-dokumentumokat. Helyi review- és lejártakció-egyeztetési tervezetet rögzíthet append-only JSONL auditnyommal, de ezek nem formális jóváhagyások, nem evidenciák és nem módosítanak akcióstátuszt vagy céldátumot.
 
 ## Indítás
 
@@ -18,10 +18,10 @@ Az MVP szándékosan csak a helyi gépről érhető el. A `0.0.0.0` vagy más h�
 
 1. Áttekintés: cél, határidő, programmetrikák és G1–G5 kapuk.
 2. Feladatok: keresés, P0/P1/P2 szűrés, egy akció részletei.
-3. Jóváhagyások: mutasd meg az Entra/SharePoint auth-readiness állapotot, majd rögzíts helyi review-tervezetet, amelynek nincs formális hatása.
+3. Jóváhagyások: mutasd meg az Entra/SharePoint auth-readiness állapotot, rögzíts helyi review-tervezetet, majd nyisd meg az egyik lejárt akció státusz-egyeztetését. Mindkét helyi rekord formális hatás nélküli munkatervezet.
 4. Evidenciák: a pótlandó emberi teendők és a kapcsolódó SharePoint-dokumentumok megnyitása.
 5. AI-javaslatok: forráskövetett `PROPOSAL` kimenetek és emberi kapuk.
 
 ## Biztonsági korlát
 
-Ne nyisd meg az `alapadatok/`, `raw_exports/`, szerződés-, licenc- vagy infrastruktúra-export könyvtárakat. A runtime review-tervezetek a Gitből kizárt `portal_runtime/` könyvtárba kerülnek. A SharePoint-kapcsolat ebben a lépésben csak helyi pillanatkép: nincs élő lekérés és nincs visszaírás. Az Evidenciák nézet külön jelzi az élő Graph-integráció readiness állapotát és a függő G1/G2/G3 kapukat. Éles belső hálózati eléréshez, hitelesítéshez és deployhoz a DEF-015/DEF-020, DEF-032 és DEF-033 feladatai továbbra is kötelezők.
+Ne nyisd meg az `alapadatok/`, `raw_exports/`, szerződés-, licenc- vagy infrastruktúra-export könyvtárakat. A runtime review-tervezetek és státusz-egyeztetési tervezetek a Gitből kizárt `portal_runtime/` könyvtárba kerülnek. A SharePoint-kapcsolat ebben a lépésben csak helyi pillanatkép: nincs élő lekérés és nincs visszaírás. Az Evidenciák nézet külön jelzi az élő Graph-integráció readiness állapotát és a függő G1/G2/G3 kapukat. Éles belső hálózati eléréshez, hitelesítéshez és deployhoz a DEF-015/DEF-020, DEF-032 és DEF-033 feladatai továbbra is kötelezők.

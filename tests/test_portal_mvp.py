@@ -11,11 +11,13 @@ import threading
 import unittest
 
 from nis2_harness.portal import (
+    ReconciliationDraftStore,
     ReviewDraftStore,
     build_live_snapshot,
     load_actions,
     load_control_catalog_projection,
     load_deferred,
+    validate_reconciliation_draft,
     validate_review_draft,
 )
 from nis2_harness.portal_server import _kill_switch_engaged, make_handler, serve_portal
@@ -31,6 +33,15 @@ class PortalMvpTests(unittest.TestCase):
             "action_id": "A-001", "gate": "G2_SECURITY_LEGAL",
             "actor_display": "Teszt Reviewer", "decision": "REQUEST_REVIEW",
             "note": "A formális aláírás és védett evidencia pótlása szükséges.",
+        }
+        self.valid_reconciliation_payload = {
+            "action_id": "A-001",
+            "actor_display": "Teszt Rögzítő",
+            "outcome": "IN_PROGRESS",
+            "actual_progress_summary": "A végrehajtás folyamatban van.",
+            "proposed_new_target_date": "",
+            "evidence_uri": "",
+            "evidence_sha256": "",
         }
 
     def test_review_draft_is_valid_but_not_formal(self) -> None:
@@ -51,10 +62,64 @@ class PortalMvpTests(unittest.TestCase):
         errors = validate_review_draft(payload, self.actions)
         self.assertGreaterEqual(len(errors), 2)
 
+    def test_reconciliation_draft_is_append_only_and_not_formal(self) -> None:
+        source = json.loads(
+            (ROOT / "data" / "deadline_reconciliation.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        known = {item["action_id"]: item for item in source["records"]}
+        errors = validate_reconciliation_draft(
+            self.valid_reconciliation_payload,
+            known,
+            date.fromisoformat(source["as_of"]),
+        )
+        self.assertEqual([], errors)
+        with tempfile.TemporaryDirectory() as temp:
+            store = ReconciliationDraftStore(
+                Path(temp) / "reconciliation.jsonl",
+                clock=lambda: datetime(
+                    2026, 7, 29, 8, 0, tzinfo=timezone.utc
+                ),
+            )
+            record = store.append(self.valid_reconciliation_payload)
+            self.assertEqual("DRAFT_RECONCILIATION_NOTE", record["status"])
+            self.assertFalse(record["formal_effect"])
+            self.assertTrue(record["actor_claim_unverified"])
+            self.assertEqual([record], store.load())
+
+    def test_reconciliation_draft_rejects_unsafe_claims(self) -> None:
+        source = json.loads(
+            (ROOT / "data" / "deadline_reconciliation.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        known = {item["action_id"]: item for item in source["records"]}
+        payload = dict(
+            self.valid_reconciliation_payload,
+            outcome="COMPLETED_READY_FOR_REVIEW",
+            proposed_new_target_date="2026-07-01",
+            formal_effect=True,
+        )
+        errors = validate_reconciliation_draft(
+            payload,
+            known,
+            date.fromisoformat(source["as_of"]),
+        )
+        self.assertGreaterEqual(len(errors), 3)
+
     def test_live_snapshot_uses_all_current_sources(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             store = ReviewDraftStore(Path(temp) / "drafts.jsonl")
-            snapshot = build_live_snapshot(ROOT, store, date(2026, 7, 20))
+            reconciliation_store = ReconciliationDraftStore(
+                Path(temp) / "reconciliation.jsonl"
+            )
+            snapshot = build_live_snapshot(
+                ROOT,
+                store,
+                date(2026, 7, 20),
+                reconciliation_store,
+            )
         self.assertEqual(42, snapshot["summary"]["total_actions"])
         self.assertEqual(66, snapshot["summary"]["days_to_deadline"])
         self.assertGreater(snapshot["summary"]["overdue_actions"], 0)
@@ -69,6 +134,7 @@ class PortalMvpTests(unittest.TestCase):
         )
         self.assertEqual(17, snapshot["deadline_reconciliation"]["record_count"])
         self.assertFalse(snapshot["deadline_reconciliation"]["formal_effect"])
+        self.assertEqual([], snapshot["reconciliation_drafts"])
         self.assertEqual(len(load_deferred(ROOT / "DEFERRED_EVIDENCE_LOG.md")), len(snapshot["deferred_tasks"]))
         self.assertEqual("PROPOSAL", snapshot["agent_pilot"]["status"])
         self.assertEqual("H002-CA-JOB-001", snapshot["agent_pilot"]["pilot_id"])
@@ -121,7 +187,18 @@ class PortalMvpTests(unittest.TestCase):
     def test_http_api_serves_snapshot_and_appends_draft(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             store = ReviewDraftStore(Path(temp) / "drafts.jsonl")
-            server = ThreadingHTTPServer(("127.0.0.1", 0), make_handler(ROOT, store, lambda: date(2026, 7, 20)))
+            reconciliation_store = ReconciliationDraftStore(
+                Path(temp) / "reconciliation.jsonl"
+            )
+            server = ThreadingHTTPServer(
+                ("127.0.0.1", 0),
+                make_handler(
+                    ROOT,
+                    store,
+                    lambda: date(2026, 7, 20),
+                    reconciliation_store,
+                ),
+            )
             thread = threading.Thread(target=server.serve_forever, daemon=True)
             thread.start()
             try:
@@ -139,6 +216,21 @@ class PortalMvpTests(unittest.TestCase):
                 self.assertEqual(201, response.status)
                 self.assertFalse(result["record"]["formal_effect"])
                 self.assertEqual(1, len(store.load()))
+                body = json.dumps(
+                    self.valid_reconciliation_payload,
+                    ensure_ascii=False,
+                ).encode("utf-8")
+                connection.request(
+                    "POST",
+                    "/api/reconciliation-drafts",
+                    body=body,
+                    headers={"Content-Type": "application/json"},
+                )
+                response = connection.getresponse()
+                result = json.loads(response.read())
+                self.assertEqual(201, response.status)
+                self.assertFalse(result["record"]["formal_effect"])
+                self.assertEqual(1, len(reconciliation_store.load()))
                 connection.close()
             finally:
                 server.shutdown()
@@ -164,6 +256,7 @@ class PortalMvpTests(unittest.TestCase):
         self.assertEqual(len(identifiers), len(set(identifiers)))
         self.assertNotIn("https://", html)
         self.assertIn("review-modal", identifiers)
+        self.assertIn("reconciliation-modal", identifiers)
         javascript = (ROOT / "portal_demo" / "app.js").read_text(encoding="utf-8")
         self.assertIn("safeSharePointUrl", javascript)
         self.assertIn("sharepoint_tasks", javascript)

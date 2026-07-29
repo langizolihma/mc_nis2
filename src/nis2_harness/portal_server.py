@@ -10,7 +10,16 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlparse
 
-from .portal import ReviewDraftStore, build_live_snapshot, load_actions, validate_review_draft
+from .deadline_reconciliation import validate_deadline_reconciliation
+from .portal import (
+    ReconciliationDraftStore,
+    ReviewDraftStore,
+    build_live_snapshot,
+    load_actions,
+    validate_reconciliation_draft,
+    validate_review_draft,
+)
+from .registry import load_actions as load_action_records
 
 
 MAX_REQUEST_BYTES = 16_384
@@ -32,7 +41,12 @@ def _kill_switch_engaged(root: Path) -> bool:
     return config.get("kill_switch", {}).get("engaged") is not False
 
 
-def make_handler(root: Path, store: ReviewDraftStore, today: Callable[[], date] = date.today) -> type[BaseHTTPRequestHandler]:
+def make_handler(
+    root: Path,
+    store: ReviewDraftStore,
+    today: Callable[[], date] = date.today,
+    reconciliation_store: ReconciliationDraftStore | None = None,
+) -> type[BaseHTTPRequestHandler]:
     portal_dir = root / "portal_demo"
 
     class PortalHandler(BaseHTTPRequestHandler):
@@ -60,7 +74,12 @@ def make_handler(root: Path, store: ReviewDraftStore, today: Callable[[], date] 
                 self._json(HTTPStatus.OK, {"status": "OK", "mode": "LOCAL_LOOPBACK_MVP", "kill_switch_engaged": _kill_switch_engaged(root), "authentication": "NOT_CONFIGURED"})
                 return
             if path == "/api/snapshot":
-                self._json(HTTPStatus.OK, build_live_snapshot(root, store, today()))
+                self._json(
+                    HTTPStatus.OK,
+                    build_live_snapshot(
+                        root, store, today(), reconciliation_store
+                    ),
+                )
                 return
             static = STATIC_FILES.get(path)
             if static is None:
@@ -76,7 +95,11 @@ def make_handler(root: Path, store: ReviewDraftStore, today: Callable[[], date] 
             self.wfile.write(body)
 
         def do_POST(self) -> None:  # noqa: N802
-            if urlparse(self.path).path != "/api/review-drafts":
+            path = urlparse(self.path).path
+            if path not in {
+                "/api/review-drafts",
+                "/api/reconciliation-drafts",
+            }:
                 self._json(HTTPStatus.NOT_FOUND, {"error": "NOT_FOUND"})
                 return
             if _kill_switch_engaged(root):
@@ -94,13 +117,89 @@ def make_handler(root: Path, store: ReviewDraftStore, today: Callable[[], date] 
             except (UnicodeDecodeError, json.JSONDecodeError):
                 self._json(HTTPStatus.BAD_REQUEST, {"error": "INVALID_JSON"})
                 return
-            actions = {item["action_id"]: item for item in load_actions(root / "data" / "actions.csv")}
-            errors = validate_review_draft(payload, actions)
-            if errors:
-                self._json(HTTPStatus.BAD_REQUEST, {"error": "VALIDATION_FAILED", "details": errors})
+            if path == "/api/review-drafts":
+                actions = {
+                    item["action_id"]: item
+                    for item in load_actions(root / "data" / "actions.csv")
+                }
+                errors = validate_review_draft(payload, actions)
+                if errors:
+                    self._json(
+                        HTTPStatus.BAD_REQUEST,
+                        {"error": "VALIDATION_FAILED", "details": errors},
+                    )
+                    return
+                record = store.append(payload)
+                self._json(
+                    HTTPStatus.CREATED,
+                    {
+                        "record": record,
+                        "warning": (
+                            "A review-tervezetnek nincs formális "
+                            "jóváhagyási hatása."
+                        ),
+                    },
+                )
                 return
-            record = store.append(payload)
-            self._json(HTTPStatus.CREATED, {"record": record, "warning": "A review-tervezetnek nincs formális jóváhagyási hatása."})
+            if reconciliation_store is None:
+                self._json(
+                    HTTPStatus.SERVICE_UNAVAILABLE,
+                    {"error": "RECONCILIATION_STORE_NOT_CONFIGURED"},
+                )
+                return
+            try:
+                reconciliation = json.loads(
+                    (
+                        root / "data" / "deadline_reconciliation.json"
+                    ).read_text(encoding="utf-8")
+                )
+                if reconciliation.get("formal_effect") is not False:
+                    raise ValueError
+                records = reconciliation.get("records", [])
+                if not isinstance(records, list):
+                    raise ValueError
+                validation = validate_deadline_reconciliation(
+                    reconciliation,
+                    load_action_records(root / "data" / "actions.csv"),
+                )
+                if validation.errors:
+                    raise ValueError
+                known_records = {
+                    str(item.get("action_id", "")): item
+                    for item in records
+                    if isinstance(item, dict)
+                }
+                reconciliation_date = date.fromisoformat(
+                    str(reconciliation.get("as_of", ""))
+                )
+            except (OSError, ValueError, json.JSONDecodeError):
+                self._json(
+                    HTTPStatus.SERVICE_UNAVAILABLE,
+                    {"error": "RECONCILIATION_SOURCE_INVALID"},
+                )
+                return
+            errors = validate_reconciliation_draft(
+                payload,
+                known_records,
+                max(reconciliation_date, today()),
+            )
+            if errors:
+                self._json(
+                    HTTPStatus.BAD_REQUEST,
+                    {"error": "VALIDATION_FAILED", "details": errors},
+                )
+                return
+            record = reconciliation_store.append(payload)
+            self._json(
+                HTTPStatus.CREATED,
+                {
+                    "record": record,
+                    "warning": (
+                        "Az egyeztetési tervezet nem módosítja az akció "
+                        "státuszát vagy céldátumát."
+                    ),
+                },
+            )
 
         def log_message(self, format: str, *args: object) -> None:
             return
@@ -113,9 +212,18 @@ def serve_portal(root: Path, host: str, port: int) -> None:
     if host not in {"127.0.0.1", "localhost", "::1"}:
         raise ValueError("Az MVP csak loopback címen indítható; belső hálózati közzétételhez G2/G3 jóváhagyás szükséges.")
     store = ReviewDraftStore(root / "portal_runtime" / "review_drafts.jsonl")
-    server = ThreadingHTTPServer((host, port), make_handler(root, store))
+    reconciliation_store = ReconciliationDraftStore(
+        root / "portal_runtime" / "deadline_reconciliation_drafts.jsonl"
+    )
+    server = ThreadingHTTPServer(
+        (host, port),
+        make_handler(root, store, reconciliation_store=reconciliation_store),
+    )
     print(f"NIS2 local portal MVP: http://{host}:{server.server_port}")
-    print("A review-tervezetek nem formális jóváhagyások. Leállítás: Ctrl+C")
+    print(
+        "A review- és státusz-egyeztetési tervezetek nem formális "
+        "jóváhagyások. Leállítás: Ctrl+C"
+    )
     try:
         server.serve_forever()
     except KeyboardInterrupt:

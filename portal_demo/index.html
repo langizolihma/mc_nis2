@@ -102,8 +102,13 @@
         <div class="view-intro"><div><p class="section-kicker">EMBERI DÖNTÉSI SOR</p><h2>Jóváhagyások</h2><p>Az AI összekészíti a döntési csomagot. Az elfogadás vagy elutasítás név szerinti ember feladata.</p></div><div class="big-count"><strong id="approval-count">0</strong><span>nyitott kapus tétel</span></div></div>
         <article class="integration-strip"><div><span>VÁLLALATI MICROSOFT-BEJELENTKEZÉS</span><strong id="portal-auth-status">Betöltés…</strong></div><p id="portal-auth-detail">–</p></article>
         <article class="integration-strip"><div><span>SRC-009 KONTROLLKATALÓGUS</span><strong id="catalog-review-status">Betöltés…</strong></div><p id="catalog-review-detail">–</p></article>
+        <article class="panel reconciliation-panel">
+          <div class="panel-heading"><div><p class="section-kicker">LEJÁRT CÉLDÁTUMOK</p><h2>Státusz-egyeztetés</h2><p class="panel-copy">A rögzítés munkatervezet. A kanonikus akcióstátusz és határidő csak külön, hitelesített emberi döntés után változhat.</p></div><span class="draft-count" id="reconciliation-count">0</span></div>
+          <div id="deadline-reconciliation-list" class="reconciliation-list"></div>
+        </article>
         <div class="approval-layout"><div class="approval-list" id="approval-list"></div><aside class="principle-card"><p class="section-kicker">NEM ALKU TÁRGYA</p><h3>Öt művelet mindig embernél marad</h3><ul><li>Evidencia elfogadása</li><li>Akció lezárása</li><li>Külső benyújtás</li><li>Éles rendszer módosítása</li><li>Vásárlás vagy költés</li></ul></aside></div>
         <article class="panel draft-panel"><div class="panel-heading"><div><p class="section-kicker">HELYI AUDITNYOM</p><h2>Review-tervezetek</h2></div><span class="draft-count" id="review-draft-count">0</span></div><div id="review-draft-list" class="review-draft-list"></div></article>
+        <article class="panel draft-panel"><div class="panel-heading"><div><p class="section-kicker">STÁTUSZJAVASLATOK</p><h2>Egyeztetési tervezetek</h2></div><span class="draft-count" id="reconciliation-draft-count">0</span></div><div id="reconciliation-draft-list" class="review-draft-list"></div></article>
       </section>
 
       <section class="view" id="view-evidence">
@@ -133,6 +138,22 @@
       <label>Tervezet típusa<select id="review-decision" required><option value="REQUEST_REVIEW">Review kérése</option><option value="RETURN_FOR_REWORK">Visszaküldési javaslat</option><option value="COMMENT">Megjegyzés</option></select></label>
       <label>Megjegyzés<textarea id="review-note" minlength="3" maxlength="2000" required></textarea></label>
       <div class="modal-actions"><button type="button" id="review-cancel">Mégse</button><button class="primary" type="submit">Tervezet mentése</button></div>
+    </form>
+  </div>
+  <div class="modal" id="reconciliation-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="reconciliation-modal-title">
+    <form class="modal-card" id="reconciliation-form">
+      <p class="section-kicker">NEM FORMÁLIS STÁTUSZMÓDOSÍTÁS</p><h2 id="reconciliation-modal-title">Lejárt tétel egyeztetése</h2>
+      <p class="modal-note">A név nincs hitelesítve. A tervezet külön helyi auditnaplóba kerül; nem írja át az akciót, nem fogad el evidenciát és nem hagy jóvá új határidőt.</p>
+      <label>Akció<input id="reconciliation-action" readonly></label>
+      <label>Rögzítő neve<input id="reconciliation-actor" maxlength="80" required placeholder="Pl. Pásztor András"></label>
+      <label>Tényleges állapot<select id="reconciliation-outcome" required><option value="NOT_STARTED">Nem kezdődött el</option><option value="IN_PROGRESS">Folyamatban van</option><option value="COMPLETED_EVIDENCE_PENDING">Elkészült, evidencia vagy review hiányzik</option><option value="COMPLETED_READY_FOR_REVIEW">Elkészült, review-ra előterjeszthető</option><option value="RESCHEDULE_REQUESTED">Új céldátum jóváhagyása szükséges</option></select></label>
+      <label>Állapot rövid indoklása<textarea id="reconciliation-summary" minlength="3" maxlength="2000" required></textarea></label>
+      <label id="reconciliation-date-field" hidden>Javasolt új céldátum<input id="reconciliation-target-date" type="date"></label>
+      <div id="reconciliation-evidence-fields" hidden>
+        <label>Védett SharePoint-evidencia URI<input id="reconciliation-evidence-uri" type="url" maxlength="1000" placeholder="A NIS2-webhely dokumentumhivatkozása"></label>
+        <label>Evidencia SHA-256<input id="reconciliation-evidence-sha256" maxlength="64" pattern="[0-9a-f]{64}" placeholder="64 karakteres kisbetűs hash"></label>
+      </div>
+      <div class="modal-actions"><button type="button" id="reconciliation-cancel">Mégse</button><button class="primary" type="submit">Tervezet mentése</button></div>
     </form>
   </div>
 

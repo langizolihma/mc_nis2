@@ -49,7 +49,7 @@ python -m unittest discover -s tests -v
 
 ### Helyi portál-MVP
 
-A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 36 emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. Append-only helyi review-tervezetet rögzíthet, de az nem formális jóváhagyás, nem evidencia és nem módosít akcióstátuszt.
+A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 37 emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. Append-only helyi review-tervezetet és lejártakció-egyeztetési tervezetet rögzíthet, de egyik sem formális jóváhagyás vagy evidencia, és egyik sem módosít akcióstátuszt vagy céldátumot.
 
 A `daily-execution-brief` parancs egy megadott állapotdátumra, determinisztikusan
 elkészíti a résztvevők napi munkasorrendjét. Külön mutatja a lejárt, 7 napon
@@ -66,6 +66,13 @@ nem írja át az `actions.csv` státuszát vagy céldátumát. A
 `validate-deadline-reconciliation` ellenőrzi a 17 elemű kört, a snapshot
 mezőket, a reviewer-adatokat, az időzónás időpontot, az új céldátumot és a
 review-ra kész tétel védett SharePoint URI/SHA-256 párosát.
+
+A helyi portál Jóváhagyások nézetében ugyanez a 17 tétel külön kártyákon
+egyeztethető. A szerver az outcome-ot, az indoklást, az új céldátumot és a
+review-ra kész evidencia URI/SHA-256 párját is ellenőrzi, majd a választ a
+Gitből kizárt `portal_runtime/deadline_reconciliation_drafts.jsonl` fájlba
+fűzi. A rögzítő neve ebben az MVP-ben hitelesítetlen állítás; a tervezet nem
+íródik vissza sem az `actions.csv`, sem a SharePoint felé.
 
 ```powershell
 python -m nis2_harness serve-portal
@@ -242,6 +249,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Mind a 42 akció előkészítő csomagja elkészült. A D-028 portál helyi MVP-je élő repository-nézettel, review-tervezet auditnyommal és A-042 pilotmegjelenítéssel rendelkezik; belső hálózati pilotja a DEF-015/DEF-020/DEF-032 emberi kapui mögött marad. A következő szakasz az emberi evidenciagyűjtés, review, aláírás és kontrollált végrehajtás.
+Mind a 42 akció előkészítő csomagja elkészült. A D-028 portál helyi MVP-je élő repository-nézettel, review- és lejártakció-egyeztetési tervezet auditnyommal, valamint A-042 pilotmegjelenítéssel rendelkezik; belső hálózati pilotja a DEF-015/DEF-020/DEF-032 emberi kapui mögött marad. A következő szakasz az emberi evidenciagyűjtés, review, aláírás és kontrollált végrehajtás.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 local-only fixture pilot elindult; valós adatforrásra vagy ütemezett működésre a DEF-033 emberi kapui előtt nem bővíthető.

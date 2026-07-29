@@ -3881,6 +3881,7 @@ window.NIS2_DEMO_DATA = {
     "status": "BLOCKED_PENDING_G1_G2_G3",
     "warnings": 4
   },
+  "reconciliation_drafts": [],
   "review_drafts": [],
   "sharepoint_integration": {
     "captured_at": "2026-07-27T20:43:00+02:00",
