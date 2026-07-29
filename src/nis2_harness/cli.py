@@ -15,6 +15,11 @@ from .deadline_reconciliation import (
     write_reconciliation_outputs,
 )
 from .execution_brief import render_daily_execution_brief
+from .reconciliation_review import (
+    build_reconciliation_review_package,
+    load_reconciliation_drafts,
+    write_reconciliation_review_outputs,
+)
 from .ai_policy import validate_ai_policy
 from .action_plan_submission import validate_action_plan_submission
 from .backup_restore import validate_backup_restore_plan
@@ -105,6 +110,29 @@ def _parser() -> argparse.ArgumentParser:
     validate_reconciliation = subparsers.add_parser("validate-deadline-reconciliation")
     validate_reconciliation.add_argument("--actions", required=True, type=Path)
     validate_reconciliation.add_argument("--register", required=True, type=Path)
+    build_reconciliation_review = subparsers.add_parser(
+        "build-reconciliation-review-package"
+    )
+    build_reconciliation_review.add_argument(
+        "--actions", required=True, type=Path
+    )
+    build_reconciliation_review.add_argument(
+        "--register", required=True, type=Path
+    )
+    build_reconciliation_review.add_argument(
+        "--drafts", required=True, type=Path
+    )
+    build_reconciliation_review.add_argument(
+        "--allow-missing-drafts",
+        action="store_true",
+        help="Kizárólag dokumentált üres baseline készítéséhez.",
+    )
+    build_reconciliation_review.add_argument(
+        "--json-output", required=True, type=Path
+    )
+    build_reconciliation_review.add_argument(
+        "--markdown-output", required=True, type=Path
+    )
     evidence = subparsers.add_parser("validate-evidence")
     evidence.add_argument("--evidence", required=True, type=Path)
     evidence.add_argument("--actions", required=True, type=Path)
@@ -262,6 +290,59 @@ def main(argv: Sequence[str] | None = None) -> int:
                 f"{len(result.errors)} hard error, {len(result.warnings)} warning"
             )
             return 1 if result.errors else 0
+        if args.command == "build-reconciliation-review-package":
+            actions = load_actions(args.actions)
+            register = load_json_object(
+                args.register,
+                "lejárt akciók státusz-egyeztetési nyilvántartása",
+            )
+            base_result = combine_results(
+                validate_actions(actions),
+                validate_deadline_reconciliation(register, actions),
+            )
+            if base_result.errors:
+                for issue in base_result.errors:
+                    print(issue.format(), file=sys.stderr)
+                print(
+                    "A review-csomag hard validation error miatt nem készült el.",
+                    file=sys.stderr,
+                )
+                return 1
+            known_records = {
+                str(item["action_id"]): item
+                for item in register.get("records", [])
+                if isinstance(item, dict) and item.get("action_id")
+            }
+            as_of = parse_iso_date(
+                str(register.get("as_of", "")),
+                field_name="as_of",
+            )
+            if not args.drafts.exists() and not args.allow_missing_drafts:
+                raise OSError(
+                    "A tervezetnapló nem található. Üres baseline csak az "
+                    "--allow-missing-drafts kapcsolóval készíthető."
+                )
+            drafts = load_reconciliation_drafts(
+                args.drafts,
+                known_records,
+                as_of,
+            )
+            package = build_reconciliation_review_package(
+                register,
+                actions,
+                drafts,
+            )
+            write_reconciliation_review_outputs(
+                package,
+                args.json_output,
+                args.markdown_output,
+            )
+            print(
+                "Státuszjavaslat-review csomag elkészült: "
+                f"{package['summary']['draft_count']} tervezet, "
+                f"{package['summary']['conflict_count']} konfliktus"
+            )
+            return 0
         if args.command == "validate-portal-auth":
             policy = load_json_object(args.policy, "portál auth policy")
             result = validate_portal_auth_policy(policy, args.policy)

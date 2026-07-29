@@ -29,6 +29,7 @@ python -m nis2_harness draft-action-plan --actions data/actions.csv --output gen
 python -m nis2_harness daily-execution-brief --actions data/actions.csv --project-dates data/project_dates.json --as-of 2026-07-29 --output generated/daily_execution_brief_2026-07-29.md
 python -m nis2_harness build-deadline-reconciliation --actions data/actions.csv --project-dates data/project_dates.json --as-of 2026-07-29 --json-output data/deadline_reconciliation.json --markdown-output DEADLINE_RECONCILIATION_FORM_2026-07-29.md
 python -m nis2_harness validate-deadline-reconciliation --actions data/actions.csv --register data/deadline_reconciliation.json
+python -m nis2_harness build-reconciliation-review-package --actions data/actions.csv --register data/deadline_reconciliation.json --drafts portal_runtime/deadline_reconciliation_drafts.jsonl --allow-missing-drafts --json-output generated/deadline_reconciliation_review_package_2026-07-29.json --markdown-output generated/deadline_reconciliation_review_package_2026-07-29.md
 python -m nis2_harness validate-evidence --evidence data/evidence_register.csv --actions data/actions.csv
 python -m nis2_harness validate-findings --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
 python -m nis2_harness validate-control-catalog --catalog data/control_catalog.csv --requirements data/control_requirements.csv --metadata data/control_catalog_metadata.json --review data/control_catalog_review.json --findings data/audit_findings.csv --mapping data/control_action_mapping.csv --actions data/actions.csv
@@ -73,6 +74,17 @@ review-ra kész evidencia URI/SHA-256 párját is ellenőrzi, majd a választ a
 Gitből kizárt `portal_runtime/deadline_reconciliation_drafts.jsonl` fájlba
 fűzi. A rögzítő neve ebben az MVP-ben hitelesítetlen állítás; a tervezet nem
 íródik vissza sem az `actions.csv`, sem a SharePoint felé.
+
+A `build-reconciliation-review-package` a helyi tervezetnapló minden sorának
+hash-ét és szerkezetét fail-closed módon ellenőrzi, akciónként kiválasztja a
+legfrissebb tervezetet, és külön megjelöli az eltérő javaslatokat. Konfliktus
+esetén nem dönt automatikusan. A létrejövő JSON és Markdown csak emberi
+review-előterjesztés; az üres baseline jelenleg 0 tervezetet és 17 még adatot
+igénylő akciót mutat. Hiányzó naplófájl alapértelmezetten hiba; az
+`--allow-missing-drafts` kizárólag dokumentált üres baseline készítésére való.
+A review-kimenetek a `generated/` szabály szerint helyben maradnak és
+alapértelmezetten nem kerülnek Gitbe, mert később emberi megjegyzést és védett
+evidenciahivatkozást tartalmazhatnak.
 
 ```powershell
 python -m nis2_harness serve-portal
