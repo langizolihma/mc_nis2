@@ -15,7 +15,7 @@
     },
     {
       "action_id": "A-002", "title": "Kézhezvételi baseline és határidőnaptár",
-      "source_refs": ["SRC-001:p1", "DECISIONS.md:D-022", "DECISIONS.md:D-026", "DEF-001", "DEF-003"], "source_confidence": "authority",
+      "source_refs": ["SRC-001:p1", "DECISIONS.md:D-022", "DECISIONS.md:D-031", "EV-GOV-001", "DEF-003"], "source_confidence": "authority",
       "required_gates": ["G2_SECURITY_LEGAL"],
       "preconditions": ["2026-06-26 jóváhagyott baseline megőrzése", "hivatalos kézbesítési igazolás hiányának elfogadott kockázatként kezelése"],
       "planned_steps": ["receipt record", "90 napos számítási napló", "G2/G4 határidő-review", "védett tárhivatkozás és reviewer"],
@@ -23,7 +23,7 @@
       "evidence_required": ["D-022/D-026", "available email support", "calculation log", "signed G2/G4 record"],
       "safety": {"execution_allowed": false, "forbidden_automatic_actions": ["accept_evidence", "change_production", "close_action", "purchase", "submit_external"]},
       "cost_gate": {"required_inputs": ["acceptance_criterion", "b0_alternative", "deferral_risk", "existing_capacity", "existing_entitlement", "pilot", "purchase_trigger"], "paid_option_status": "BLOCKED_BY_COST_GATE", "purchase_allowed": false},
-      "review": {"status": "PENDING_HUMAN", "reviewer": "", "reviewed_at": "", "decision_ref": "", "evidence_refs": []}
+      "review": {"status": "HUMAN_REVIEWED", "reviewer": "Lángi Zoltán", "reviewed_at": "2026-07-29T13:54:05.739Z", "decision_ref": "DECISIONS.md:D-031", "evidence_refs": ["EV-GOV-001"]}
     },
     {
       "action_id": "A-007", "title": "Cselekvési terv emberi jóváhagyása és benyújtása",

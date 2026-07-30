@@ -126,13 +126,13 @@ class PortalMvpTests(unittest.TestCase):
         self.assertIn("due_within_7_days", snapshot["summary"])
         self.assertIn("undated_actions", snapshot["summary"])
         self.assertEqual(
-            17, snapshot["summary"]["deadline_reconciliation_pending"]
+            16, snapshot["summary"]["deadline_reconciliation_pending"]
         )
         self.assertEqual(
             "PROPOSAL_PENDING_HUMAN_RECONCILIATION",
             snapshot["deadline_reconciliation"]["status"],
         )
-        self.assertEqual(17, snapshot["deadline_reconciliation"]["record_count"])
+        self.assertEqual(16, snapshot["deadline_reconciliation"]["record_count"])
         self.assertFalse(snapshot["deadline_reconciliation"]["formal_effect"])
         self.assertEqual([], snapshot["reconciliation_drafts"])
         self.assertEqual(len(load_deferred(ROOT / "DEFERRED_EVIDENCE_LOG.md")), len(snapshot["deferred_tasks"]))

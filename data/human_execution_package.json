@@ -3,16 +3,17 @@
   "status": "HUMAN_EXECUTION_REQUIRED",
   "as_of": "2026-07-29",
   "source_ref": "DEFERRED_EVIDENCE_LOG.md",
-  "source_sha256": "1ddde843ef8803c2b783caddfca4ab2642d283fbd209fa8c0e24deb869f300db",
+  "source_sha256": "2ecaffe4edefe2e39233e3bc9b7142f3d04c23590ed2473461694b0741bf05aa",
   "formal_effect": false,
   "summary": {
-    "task_count": 37,
-    "open_deferred_count": 36,
+    "task_count": 36,
+    "open_deferred_count": 35,
     "accepted_risk_count": 1,
+    "closed_accepted_count": 1,
     "wave_count": 7,
     "owner_task_counts": {
       "Kóczán Mónika": 1,
-      "Pásztor András": 17,
+      "Pásztor András": 16,
       "Pásztor András; Kollár Csaba; kijelölendő belső RDS-, alkalmazás- és üzleti ownerek": 1,
       "Pásztor András; Kollár Csaba; kijelölendő belső levelezési owner és alkalmazásgazdák": 1,
       "Pásztor András; Kollár Csaba; kijelölendő belső owner": 1,
@@ -35,7 +36,6 @@
     }
   },
   "start_here": [
-    "DEF-001",
     "DEF-002",
     "DEF-003",
     "DEF-004",
@@ -52,27 +52,8 @@
     {
       "wave_id": "W1",
       "title": "Irányítás, határidők és döntési alapok",
-      "task_count": 12,
+      "task_count": 11,
       "tasks": [
-        {
-          "task_id": "DEF-001",
-          "status": "OPEN_DEFERRED",
-          "related": "A-002; D-026",
-          "current_process_state": "A 2026-06-26-i baseline és a 2026-09-24-i határidő alapján a projekt továbbhaladhat.",
-          "required_result": "A G2/G4 nyilatkozat tényleges aláírt példánya, aláírási dátuma, SHA-256 értéke, védett URI-ja és reviewer-rekordja.",
-          "must_be_completed_before": "Külső benyújtás előtt.",
-          "owner": "Pásztor András",
-          "approver": "Lángi Zoltán",
-          "completion_requirements": [
-            "actual_artifact_or_decision_created",
-            "protected_nis2_sharepoint_uri_recorded",
-            "sha256_recorded",
-            "named_reviewer_recorded",
-            "timezone_aware_review_time_recorded",
-            "decision_reference_recorded"
-          ],
-          "automatic_completion_allowed": false
-        },
         {
           "task_id": "DEF-002",
           "status": "OPEN_DEFERRED",
@@ -247,10 +228,10 @@
         {
           "task_id": "DEF-029",
           "status": "OPEN_DEFERRED",
-          "related": "A-001; A-002; A-007; A-035; A-036; data/governance_work_packages.json",
-          "current_process_state": "Elkészült az öt irányítási akció bizonyítéklánc-regisztere; a D-022/D-025/D-026/D-027 baseline-ok megőrzöttek, de a pótlandó evidencia nem lett teljesítettnek jelölve.",
-          "required_result": "Formális IBF-kijelölés és alkalmassági/jogi review; ténylegesen aláírt G2/G4 nyilatkozat; SRC-008 védett URI-ja és reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.",
-          "must_be_completed_before": "Bármely kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett akció DONE státusza előtt.",
+          "related": "A-001; A-007; A-035; A-036; data/governance_work_packages.json",
+          "current_process_state": "Elkészült az öt irányítási akció bizonyítéklánc-regisztere. Az A-002 G2/G4 rekordja a D-031/EV-GOV-001 alapján elfogadott, ezért az A-002 és a DEF-001 lezárt; a többi irányítási evidencia továbbra is pótlandó.",
+          "required_result": "Formális IBF-kijelölés és alkalmassági/jogi review; SRC-008 reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.",
+          "must_be_completed_before": "Bármely fennmaradó kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett nyitott akció DONE státusza előtt.",
           "owner": "Pásztor András; Kóczán Mónika",
           "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult benyújtó",
           "completion_requirements": [
@@ -266,8 +247,8 @@
         {
           "task_id": "DEF-037",
           "status": "OPEN_DEFERRED",
-          "related": "17 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
-          "current_process_state": "A 2026-07-29-i állapot szerint 17 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. A helyi portál append-only, hitelesítetlen rögzítői státusztervezetet tud fogadni; a hash-ellenőrzött review-, döntési-, változásjavaslati, stale-safe preflight- és pre/post hash utóellenőrzési lánc elkészült. A baseline még 0 tervezetet tartalmaz. Státusz vagy céldátum nem változott.",
+          "related": "16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
+          "current_process_state": "Az A-002 D-031/EV-GOV-001 szerinti lezárása után a 2026-07-29-i állapot szerint 16 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. A helyi portál append-only, hitelesítetlen rögzítői státusztervezetet tud fogadni; a hash-ellenőrzött review-, döntési-, változásjavaslati, stale-safe preflight- és pre/post hash utóellenőrzési lánc elkészült. A baseline még 0 tervezetet tartalmaz. Státusz vagy céldátum nem változott.",
           "required_result": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.",
           "must_be_completed_before": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
           "owner": "Pásztor András",

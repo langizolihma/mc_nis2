@@ -7,7 +7,7 @@
   "formal_effect": false,
   "write_back_allowed": false,
   "tasks": [
-    {"id":"DEF-001","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/00_AUTHORITY/A-002","evidence_label":"A-002 – hatósági és határidő-evidencia mappa"},
+    {"id":"DEF-001","status":"Lezárt – elfogadva","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/00_AUTHORITY/A-002/D-026__A-002__G2-G4-HATARIDO-JOVAHAGYAS__v01__20260714_signed.pdf","evidence_label":"EV-GOV-001 – aláírt G2/G4 határidő-jóváhagyás"},
     {"id":"DEF-002","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/01_AUDIT_SOURCE/A-035/SRC-008__A-035__SIGNED-SUBMITTED-AUDIT-REPORT__v01__20260605.pdf","evidence_label":"SRC-008 – aláírt, beadott auditjelentés"},
     {"id":"DEF-003","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/00_AUTHORITY/A-002","evidence_label":"A-002 – hatósági döntés és kézhezvételi alap"},
     {"id":"DEF-004","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/01_AUDIT_SOURCE/A-035/SRC-008__A-035__SIGNED-SUBMITTED-AUDIT-REPORT__v01__20260605.pdf","evidence_label":"SRC-008 – aláírt auditjelentés"},

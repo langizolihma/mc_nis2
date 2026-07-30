@@ -69,11 +69,11 @@ A 2026-07-29-i lejárt akciók emberi státusz-egyeztetési nyilvántartása a
 megkülönbözteti a nem kezdett, folyamatban lévő, evidenciahiányosan elkészült,
 review-ra kész és újraütemezendő tételeket. A nyilvántartás csak proposal:
 nem írja át az `actions.csv` státuszát vagy céldátumát. A
-`validate-deadline-reconciliation` ellenőrzi a 17 elemű kört, a snapshot
+`validate-deadline-reconciliation` ellenőrzi a 16 elemű kört, a snapshot
 mezőket, a reviewer-adatokat, az időzónás időpontot, az új céldátumot és a
 review-ra kész tétel védett SharePoint URI/SHA-256 párosát.
 
-A helyi portál Jóváhagyások nézetében ugyanez a 17 tétel külön kártyákon
+A helyi portál Jóváhagyások nézetében ugyanez a 16 tétel külön kártyákon
 egyeztethető. A szerver az outcome-ot, az indoklást, az új céldátumot és a
 review-ra kész evidencia URI/SHA-256 párját is ellenőrzi, majd a választ a
 Gitből kizárt `portal_runtime/deadline_reconciliation_drafts.jsonl` fájlba
@@ -114,11 +114,12 @@ akciórekord preflight előtti és várt utáni hash-éhez méri az aktuális
 állapotot külön jelzi; bármely más eltérésnél leáll. Az ellenőrzés az
 evidencia-review-t szándékosan külön, emberi kapun hagyja.
 
-A 37 pótlandó tétel egyetlen, hét végrehajtási hullámra rendezett emberi
+A 36 végrehajtandó tétel egyetlen, hét végrehajtási hullámra rendezett emberi
 munkacsomagja a [HUMAN_EXECUTION_PACKAGE_2026-07-29.md](HUMAN_EXECUTION_PACKAGE_2026-07-29.md),
 gépileg feldolgozható párja a `data/human_execution_package.json`. A csomag
-mind a 36 `OPEN_DEFERRED` és az egy elfogadott, de továbbra is nyilvántartott
-kockázati tételt megtartja; automatikus lezárást nem végez.
+35 `OPEN_DEFERRED` és egy elfogadott, de továbbra is nyilvántartott
+kockázati tételt tartalmaz. A `DEF-001` lezárt és elfogadott, ezért már nem
+szerepel a végrehajtandó feladatok között; automatikus lezárást a csomag nem végez.
 
 ```powershell
 python -m nis2_harness serve-portal
@@ -168,7 +169,7 @@ A warningok tényleges száma a regiszter emberi kitöltésével változik.
 
 A hard error hibás vagy biztonsági szabályt sértő adatot jelez, például duplikált azonosítót, ismeretlen enumot, hibás dátumot vagy hiányzó G4/G5/G3 kaput. A `validate` ilyenkor nem nulla exit code-dal tér vissza, a riportgenerálás pedig leáll.
 
-A warning emberi döntést vagy kiegészítést igényel, de nem teszi szerkezetileg érvénytelenné a regisztert. Ilyen a `TBD-HUMAN` felelős, a forráskonfliktus, a hiányzó kézbesítési evidencia vagy a függő G2/G4 review. A jelenlegi regiszterben nincs `TBD-HUMAN` felelős vagy jóváhagyó, az auditjelentés verziókonfliktusát pedig a D-025 és az SRC-008 feloldotta.
+A warning emberi döntést vagy kiegészítést igényel, de nem teszi szerkezetileg érvénytelenné a regisztert. Ilyen a `TBD-HUMAN` felelős, a forráskonfliktus vagy a hiányzó elsődleges kézbesítési evidencia. A jelenlegi regiszterben nincs `TBD-HUMAN` felelős vagy jóváhagyó, az auditjelentés verziókonfliktusát a D-025 és az SRC-008, a G2/G4 határidő-review-t pedig a D-031 és az EV-GOV-001 lezárta.
 
 Az evidencia-metaadatok külön `data/evidence_register.csv` fájlban szerepelnek. A `validate-evidence` ellenőrzi az akcióhivatkozást, az időzónás időbélyeget, a SHA-256 alakját és az emberi elfogadási előfeltételeket. Az üres induló regiszter warning, nem elfogadott evidencia. A működési és hozzáférési szabályokat az [EVIDENCE_STORAGE.md](EVIDENCE_STORAGE.md) tartalmazza.
 
@@ -285,7 +286,7 @@ Az engedélyezett enumokat a [CODEX_HANDOFF.md](CODEX_HANDOFF.md) és a `validat
 - A bemeneti CSV és JSON nem módosul.
 - Eredeti auditanyag, secret, személyes adat és nyers infrastruktúra-export nem kerülhet Gitbe.
 - A generált riport kötelezően `PROPOSAL`, és nem nyújtható be G4 jóváhagyás nélkül.
-- Külön elsődleges kézbesítési igazolás nem áll rendelkezésre. A 2026-06-26-i baseline-t a D-022 emberi elfogadás mellett az SRC-007 mentett belső levelezés is alátámasztja, de nem helyettesíti a cégkapus bizonylatot. A D-026 engedélyezi a folyamat továbbhaladását; a tényleges G2/G4 aláírás, tárhivatkozás és reviewer-rekord a `DEFERRED_EVIDENCE_LOG.md` szerint külső benyújtás előtt pótlandó.
+- Külön elsődleges kézbesítési igazolás nem áll rendelkezésre. A 2026-06-26-i baseline-t a D-022 emberi elfogadás mellett az SRC-007 mentett belső levelezés is alátámasztja, de nem helyettesíti a cégkapus bizonylatot. A kézzel aláírt G2/G4 rekord, tárhivatkozás, SHA-256 és reviewer a D-031/EV-GOV-001 szerint elfogadott; a DEF-001 és az A-002 lezárt. Az elsődleges igazolás hiánya a DEF-003 szerint elfogadott, nyilvántartott kockázat.
 
 ## Projektirányítás
 

@@ -66,7 +66,7 @@ python -m nis2_harness deadlines --received 2026-06-26
 python -m nis2_harness draft-action-plan --actions data/actions.csv --output generated/action_plan.md
 ```
 
-A 2026-06-26-i dátum jóváhagyott projektbaseline. Külső benyújtás előtt a kézbesítési bizonyíték hivatkozását és a G2/G4 felülvizsgálatot dokumentálni kell.
+A 2026-06-26-i dátum jóváhagyott projektbaseline. A G2/G4 felülvizsgálat a D-031 és az EV-GOV-001 szerint dokumentált és elfogadott. Külön címzetti kézbesítési igazolás nem áll rendelkezésre; a hiány a D-022/DEF-003 szerint elfogadott, nyilvántartott kockázat.
 
 # 5. H-001 definition of done
 

@@ -15,27 +15,8 @@
     "COMPLETED_READY_FOR_REVIEW",
     "RESCHEDULE_REQUESTED"
   ],
-  "record_count": 17,
+  "record_count": 16,
   "records": [
-    {
-      "action_id": "A-002",
-      "registered_status": "IN_PROGRESS",
-      "registered_target_date": "2026-06-27",
-      "days_overdue": 32,
-      "owner": "Pásztor András",
-      "approver": "Lángi Zoltán",
-      "required_gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "outcome": "PENDING_HUMAN",
-      "actual_progress_summary": "",
-      "proposed_new_target_date": "",
-      "evidence_uri": "",
-      "evidence_sha256": "",
-      "reviewer": "",
-      "reviewed_at": "",
-      "decision_ref": ""
-    },
     {
       "action_id": "A-003",
       "registered_status": "IN_PROGRESS",

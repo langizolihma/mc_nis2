@@ -42,7 +42,7 @@
 
 ## Eredmény
 
-A H-001 determinisztikus, helyi Python core elkészült. A 42 tételes kanonikus akcióregiszter validációja 0 hard errort és 1 warningot ad. Mind a 42 akció felelőse Pásztor András, jóváhagyója Lángi Zoltán a D-020 emberi döntési rekord alapján. A 2027-09-30-i belső repeat-audit céldátum a D-021 alapján jóváhagyott. Az A-042 és a D-024 kötelező hosszú távú programcélként rögzíti a folyamatos auditfelkészültségi ügynököt. A D-025 és az SRC-008 feloldotta az auditjelentés verziókonfliktusát. A D-026 engedélyezi a folyamat továbbhaladását a tényleges aláírás és tárhivatkozások későbbi pótlásával. A D-027 név szerint rögzíti a projektvezetőt, IBF-et, jogi reviewert és szakmai kontrollszerepeket. Az A-003/A-012 helyi evidence-register és emberi acceptance-workflow minimuma elkészült, de tényleges vállalati tárhely és G2 próba hiányában `IN_PROGRESS`. Az akciókat nem zárjuk le és hiányzó evidenciát nem tüntetünk fel létezőként.
+A H-001 determinisztikus, helyi Python core elkészült. A 42 tételes kanonikus akcióregiszter felelőse Pásztor András, jóváhagyója Lángi Zoltán a D-020 emberi döntési rekord alapján. A 2027-09-30-i belső repeat-audit céldátum a D-021 alapján jóváhagyott. Az A-042 és a D-024 kötelező hosszú távú programcélként rögzíti a folyamatos auditfelkészültségi ügynököt. A D-025 és az SRC-008 feloldotta az auditjelentés verziókonfliktusát. A kézzel aláírt G2/G4 határidő-jóváhagyás védett SharePoint-példányát, hashét és emberi review-ját a D-031/EV-GOV-001 rögzíti; a DEF-001 és az A-002 2026-07-29-én lezárt. A külön címzetti kézbesítési igazolás hiánya a D-022/DEF-003 szerint elfogadott kockázat. A D-027 név szerint rögzíti a projektvezetőt, IBF-et, jogi reviewert és szakmai kontrollszerepeket. Az A-003/A-012 helyi evidence-register és emberi acceptance-workflow minimuma elkészült, de a tárhely teljes G2/G3 üzemeltetési jóváhagyása továbbra is nyitott.
 
 ## Létrehozott vagy módosított fájlok
 
@@ -117,7 +117,7 @@ Kiegészítő ellenőrzés történt az input hash változatlanságára, a ripor
 ## Ismert korlátok és nyitott emberi döntések
 
 1. Külön 2026-06-26-i címzetti kézbesítési igazolás nem áll rendelkezésre; a dátumot a D-022 emberi döntés elfogadja és az SRC-007 belső levelezés alátámasztja, de a primer bizonyíték hiánya warningként megmarad.
-2. A D-026 alapján a G2/G4 határidő-review folyamat szempontjából elfogadott, de a tényleges aláírt nyilatkozat, hash, védett URI és reviewer-rekord a `DEF-001` tételben pótlandó; az A-002 ezért `IN_PROGRESS`.
+2. A G2/G4 határidő-review tényleges kézzel aláírt nyilatkozata, hash-e, védett URI-ja és reviewer-rekordja a D-031/EV-GOV-001 szerint elfogadott; a `DEF-001` és az A-002 lezárt. A külön címzetti kézbesítési igazolás hiánya továbbra is a `DEF-003` elfogadott kockázati rekordban marad.
 3. Az A-035 forráskonfliktusa feloldott, de az SRC-008 védett tárhivatkozása és reviewer-rekordja a `DEF-002` tételben pótlandó; ezért az akció `IN_PROGRESS`.
 4. Az SRC-008 aláírását a projektgazda érvényesnek erősítette meg; automatizált tanúsítványlánc-validáció külön nem történt. Az angol auditigazolás 388. oldalának Poppler-renderelési eltérése a `DEF-004` tételben marad nyitva.
 5. A D-027 szerinti szerepbaseline használható, de az aláírt RACI és IBF-kijelölés a `DEF-005`, az IBF jogalap szerinti alkalmassági és továbbképzési evidenciája a `DEF-006`, a belső infrastruktúra-/incidenskezelési kontrollgazda és beszállítói kontrollreview a `DEF-007` szerint pótlandó. A vezetői szponzor továbbra is `TBD-HUMAN`; az A-001/A-036 `IN_PROGRESS`.

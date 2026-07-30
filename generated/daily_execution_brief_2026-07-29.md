@@ -8,8 +8,8 @@
 
 ## Rövid vezetői kép
 
-- Aktív akció: **42**
-- Lejárt céldátumú: **17**
+- Aktív akció: **41**
+- Lejárt céldátumú: **16**
 - 7 napon belül esedékes: **0**
 - 8–30 napon belül esedékes: **9**
 - Konkrét dátumot igényel: **9**
@@ -20,7 +20,6 @@ A lejárt jelölés a nyilvántartott céldátumhoz viszonyított figyelmezteté
 
 | ID | Prioritás | Feladat | Felelős | Határidő | Következő eredmény | Elvárt bizonyíték | Kapu | Függőség |
 |---|---|---|---|---|---|---|---|---|
-| A-002 | P0 | Rögzítse a 2026.06.26-i kézhezvétel bizonyítékának védett evidenciatári vagy iratkezelési hivatkozásját és reviewerét, majd véglegesítse a jóváhagyandó határidőnaptárt. | Pásztor András | 2026-06-27 (32 napja lejárt) | Jóváhagyott receipt record és határidőnaptár. | Kézbesítési igazolás, receipt_date, reviewer és számítási napló. | G2_SECURITY_LEGAL | nincs |
 | A-003 | P0 | Hozza létre a privát Git workspace-t, az védett evidenciatár taxonomiáját, elnevezési szabályt és hozzáférési csoportokat. | Pásztor András | 2026-06-29 (30 napja lejárt) | Működő repository- és evidenciatár-struktúra. | Repository access list, evidenciatár-struktúra export/képernyőkép, naming convention, jóváhagyás. | G2_SECURITY_LEGAL | nincs |
 | A-035 | P0 | Rögzítse a D-025 szerinti G2 emberi review elfogadását. | Pásztor András | 2026-06-29 (30 napja lejárt) | Jóváhagyott canonical source record. | SRC-008 fájl, SHA-256, védett tárhivatkozás, aláírásstruktúra-metaadat, összehasonlítási jegyzőkönyv, D-025 és reviewer. | G2_SECURITY_LEGAL | nincs |
 | A-001 | P0 | Formálisan jelölje ki az elektronikus információs rendszerek biztonságáért felelős személyt, biztosítson hatáskört, erőforrást és helyettesítést. | Pásztor András | 2026-07-01 (28 napja lejárt) | Aláírt kinevezés, munkaköri leírás, RACI és szervezeti ábra. | Aláírt dokumentumok, kihirdetési nyom, vezetői jóváhagyás. | G2_SECURITY_LEGAL | nincs |
@@ -30,7 +29,7 @@ A lejárt jelölés a nyilvántartott céldátumhoz viszonyított figyelmezteté
 | A-012 | P0 | Vezesse be az evidence manifestet és acceptance workflow-t: forrás, dátum, EIR, kontroll, hash, készítő, reviewer, státusz. | Pásztor András | 2026-07-10 (19 napja lejárt) | Működő evidence register és review workflow. | védett belső URI-k, hash manifest, review log, visszautasítási okok. | G2_SECURITY_LEGAL | A-003 |
 | A-005 | P0 | Térképezze a findingokat követelménycsaládhoz, kontrollhoz, EIR-hez, akcióhoz, emberi gazdához és evidenciatípushoz. | Pásztor András | 2026-07-11 (18 napja lejárt) | Jóváhagyott control-action-evidence mapping. | Mapping review log, hiány- és duplikációlista, owner sign-off. | G1_DOMAIN_REVIEW | A-004 |
 | A-011 | P0 | Frissítse az EIR-, eszköz-, adat-, tulajdonos-, helyszín- és függőségi leltárt. | Pásztor András | 2026-07-16 (13 napja lejárt) | Jóváhagyott EIR/asset/dependency register. | Read-only exportok, tulajdonosi jóváhagyás, adatfolyam- és függőségi lista. | G1_DOMAIN_REVIEW | nincs |
-| A-006 | P0 | Készítse el a teljes hatósági cselekvési terv első tervezetét a 19 követelménycsalád szerint. | Pásztor András | 2026-07-26 (3 napja lejárt) | Cselekvési terv tervezet. | Minden tételhez követelménycsalád, feladat, név szerinti felelős, dátum, deliverable, evidencia és forrás. | G4_EXTERNAL_SUBMISSION | A-002; A-004; A-005; A-036 |
+| A-006 | P0 | Készítse el a teljes hatósági cselekvési terv első tervezetét a 19 követelménycsalád szerint. | Pásztor András | 2026-07-26 (3 napja lejárt) | Cselekvési terv tervezet. | Minden tételhez követelménycsalád, feladat, név szerinti felelős, dátum, deliverable, evidencia és forrás. | G4_EXTERNAL_SUBMISSION | A-004; A-005; A-036 |
 | A-017 | P0 | Határozza meg a backup scope/RPO/RTO mátrixot és hajtson végre dokumentált restore tesztet kritikus EIR mintán. | Pásztor András | 2026-07-26 (3 napja lejárt) | Backup matrix és restore test report. | Job log, helyreállított objektum/rendszer, időtartam, hiba, RPO/RTO összevetés és jóváhagyás. | G3_PRODUCTION_CHANGE | nincs |
 | A-020 | P0 | Végezzen dokumentált helyszíni bejárást, rögzítse a költségmentes gyorsjavításokat, és készítsen kockázatalapú fizikai javítási tervet. | Pásztor András | 2026-07-26 (3 napja lejárt) | Fizikai gap register és evidence csomag. | Checklist, dátumozott fotó, belépési lista, tesztjegyzőkönyv, intézkedési terv. | G2_SECURITY_LEGAL | nincs |
 | A-032 | P1 | Hozzon létre helyi eval-harness-t és legalább 10 emberileg jóváhagyott gold case-t. | Pásztor András | 2026-07-17 (12 napja lejárt) | Eval baseline, gold cases és defect log. | Tesztfutás, reviewed examples, trace/output, hibajegy és javítási kör. | G1_DOMAIN_REVIEW | nincs |
@@ -51,7 +50,7 @@ A lejárt jelölés a nyilvántartott céldátumhoz viszonyított figyelmezteté
 
 | ID | Prioritás | Feladat | Felelős | Határidő | Következő eredmény | Elvárt bizonyíték | Kapu | Függőség |
 |---|---|---|---|---|---|---|---|---|
-| A-008 | P0 | Hozza létre a beszámolási naptár, adatvágás, sablon, felelős és jóváhagyási workflow tervezetét. | Pásztor András | Emberi ütemezés szükséges | Jóváhagyott riportnaptár és beszámolósablon. | Naptárbejegyzés, adatcut-off szabály, sablon, dry run és jóváhagyás. | G4_EXTERNAL_SUBMISSION | A-002; A-006 |
+| A-008 | P0 | Hozza létre a beszámolási naptár, adatvágás, sablon, felelős és jóváhagyási workflow tervezetét. | Pásztor András | Emberi ütemezés szükséges | Jóváhagyott riportnaptár és beszámolósablon. | Naptárbejegyzés, adatcut-off szabály, sablon, dry run és jóváhagyás. | G4_EXTERNAL_SUBMISSION | A-006 |
 | A-022 | P0 | Read-only módszerrel azonnal validálja a hivatkozott hostok, VM-ek, lemezek, RAID és backup állapotát; semmit ne módosítson. | Pásztor András | Emberi ütemezés szükséges | Aláírt technikai health snapshot és eltéréslista. | Időbélyeges read-only export, RAID log, kapacitás, VM-lista, backup status és reviewer. | G3_PRODUCTION_CHANGE | nincs |
 | A-023 | P0 | Készítsen freespace/backup-protection emergency change tervet; törlés vagy áthelyezés csak tulajdonosi jóváhagyással. | Pásztor András | Emberi ütemezés szükséges | Jóváhagyott emergency change plan vagy dokumentált no-action döntés. | Pre/post metrika, backup proof, törlési/áthelyezési jóváhagyás, rollback. | G3_PRODUCTION_CHANGE | A-022 |
 | A-024 | P1 | Készítsen VM dependency-, placement-, capacity-, backup- és licence-tervet; végrehajtás nélkül. | Pásztor András | Emberi ütemezés szükséges | Migration/containment decision package. | Kapacitásmodell, dependency map, test, rollback, licenc review és kockázatelfogadás. | G3_PRODUCTION_CHANGE; G5_PURCHASE | A-022; A-029 |

@@ -4,12 +4,12 @@ project_name: metALCOM NIS2 helyreállítási és audit-evidencia harness
 version: "0.3"
 status: DRAFT_FOR_HUMAN_APPROVAL
 created: "2026-07-13"
-updated: "2026-07-16"
+updated: "2026-07-29"
 receipt_date: "2026-06-26"
 receipt_evidence_status: HUMAN_ACCEPTED_WITH_INTERNAL_EMAIL_SUPPORT_NO_PRIMARY_RECEIPT
 receipt_supporting_source: SRC-007
 action_plan_deadline: "2026-09-24"
-deadline_review_status: PROCESS_ACCEPTED_EVIDENCE_DEFERRED_D026
+deadline_review_status: HUMAN_APPROVED_G2_G4_D031
 project_sponsor: TBD-HUMAN
 project_manager: Kóczán Mónika
 information_security_owner: Lángi Zoltán
@@ -37,7 +37,7 @@ A hatósági döntés alapján:
 - a benyújtást követően a megismételt auditig negyedéves beszámoló szükséges;
 - a megismételt audit legkésőbbi időpontja 2027. december 31. [SRC-001, 1–2. oldal]
 
-**Rögzített határidőalap:** a határozat elfogadott kézhezvételi dátuma **2026. június 26.** A projekt alapértelmezett, 90 naptári napos számítása szerint a cselekvési terv benyújtási határideje **2026. szeptember 24. (csütörtök)**. A D-026 alapján a projekt folyamat szempontjából továbbhaladhat; a tényleges G2/G4 aláírás, védett tárhivatkozás és reviewer-rekord a `DEFERRED_EVIDENCE_LOG.md` szerint külső benyújtás előtt pótlandó.
+**Rögzített határidőalap:** a határozat elfogadott kézhezvételi dátuma **2026. június 26.** A projekt alapértelmezett, 90 naptári napos számítása szerint a cselekvési terv benyújtási határideje **2026. szeptember 24. (csütörtök)**. A kézzel aláírt G2/G4 határidő-review-t a D-031 és az EV-GOV-001 teljes értékű evidenciaként rögzíti; a DEF-001 lezárt. A külön címzetti kézbesítési igazolás hiánya a D-022/DEF-003 szerint elfogadott, nyilvántartott kockázat.
 
 # 3. Auditált kiinduló állapot
 
@@ -159,7 +159,7 @@ Fizetős megoldás csak akkor kerülhet előre, ha dokumentáltan megtörtént:
 
 # 10. Kritikus nyitott kérdések
 
-1. Mi a 2026.06.26-i kézhezvételt igazoló dokumentum védett evidenciatári vagy iratkezelési hivatkozásja, és ki végzi el a G2/G4 határidő-felülvizsgálatot?
+1. Ha később előkerül a 2026.06.26-i kézhezvétel elsődleges címzetti igazolása, melyik iratkezelési hivatkozással és hash-sel egészítjük ki a DEF-003 elfogadott kockázati rekordját?
 2. Melyik a kanonikus auditjelentés: a határozatban hivatkozott 2026.06.05-i vagy a rendelkezésre álló 2026.05.04-i borítójú változat?
 3. Ki a vezetői szponzor és a belső infrastruktúra-/incidenskezelési kontrollgazda, továbbá milyen védett rekord igazolja az IBF alkalmasságát és a formális szerepkijelöléseket? A többi folyamatszerepet a D-027 és a `PROJECT_RACI.md` rögzíti.
 4. Milyen vállalati adatminősítést kapnak az audit- és infrastruktúra-adatok?

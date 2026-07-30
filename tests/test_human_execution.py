@@ -35,13 +35,17 @@ class HumanExecutionPackageTests(unittest.TestCase):
             for wave in package["waves"]
             for task in wave["tasks"]
         ]
-        self.assertEqual(37, len(task_ids))
+        self.assertEqual(36, len(task_ids))
         self.assertEqual(
-            sorted(record["id"] for record in self.records),
+            sorted(
+                record["id"] for record in self.records
+                if record["status"] != "CLOSED_ACCEPTED"
+            ),
             sorted(task_ids),
         )
-        self.assertEqual(36, package["summary"]["open_deferred_count"])
+        self.assertEqual(35, package["summary"]["open_deferred_count"])
         self.assertEqual(1, package["summary"]["accepted_risk_count"])
+        self.assertEqual(1, package["summary"]["closed_accepted_count"])
 
     def test_governance_and_submission_tasks_follow_declared_waves(self) -> None:
         package = build_human_execution_package(
@@ -54,7 +58,7 @@ class HumanExecutionPackageTests(unittest.TestCase):
             for wave in package["waves"]
             for task in wave["tasks"]
         }
-        self.assertEqual("W1", wave_by_task["DEF-001"])
+        self.assertNotIn("DEF-001", wave_by_task)
         self.assertEqual("W6", wave_by_task["DEF-014"])
         self.assertEqual("W7", wave_by_task["DEF-012"])
 
@@ -103,7 +107,7 @@ class HumanExecutionPackageTests(unittest.TestCase):
                 "--markdown-output", str(markdown_output),
             ]))
             data = json.loads(json_output.read_text(encoding="utf-8"))
-            self.assertEqual(37, data["summary"]["task_count"])
+            self.assertEqual(36, data["summary"]["task_count"])
             self.assertTrue(markdown_output.exists())
 
     def test_checked_in_package_matches_current_deferred_log(self) -> None:
@@ -116,7 +120,10 @@ class HumanExecutionPackageTests(unittest.TestCase):
             hashlib.sha256(LOG.read_bytes()).hexdigest(),
             data["source_sha256"],
         )
-        self.assertEqual(len(self.records), data["summary"]["task_count"])
+        self.assertEqual(
+            sum(record["status"] != "CLOSED_ACCEPTED" for record in self.records),
+            data["summary"]["task_count"],
+        )
 
 
 if __name__ == "__main__":

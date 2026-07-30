@@ -12,32 +12,6 @@
 - `COMPLETED_READY_FOR_REVIEW` – elkészült, védett evidencia és hash rendelkezésre áll.
 - `RESCHEDULE_REQUESTED` – új céldátum emberi jóváhagyása szükséges.
 
-## A-002 – 32 napja lejárt
-
-- Nyilvántartott státusz: `IN_PROGRESS`
-- Nyilvántartott céldátum: `2026-06-27`
-- Felelős: Pásztor András
-- Jóváhagyó: Lángi Zoltán
-- Kapu: `G2_SECURITY_LEGAL`
-
-Válasszon egyet:
-
-- [ ] `NOT_STARTED`
-- [ ] `IN_PROGRESS`
-- [ ] `COMPLETED_EVIDENCE_PENDING`
-- [ ] `COMPLETED_READY_FOR_REVIEW`
-- [ ] `RESCHEDULE_REQUESTED`
-
-| Mező | Kitöltendő érték |
-|---|---|
-| Tényleges állapot röviden |  |
-| Javasolt új céldátum, ha szükséges |  |
-| Védett evidencia URI-ja |  |
-| Evidencia SHA-256 |  |
-| Reviewer |  |
-| Időzónás review-idő |  |
-| Döntési hivatkozás |  |
-
 ## A-003 – 30 napja lejárt
 
 - Nyilvántartott státusz: `IN_PROGRESS`

@@ -68,7 +68,7 @@ class ReconciliationReviewTests(unittest.TestCase):
             drafts,
         )
         self.assertEqual(0, package["summary"]["draft_count"])
-        self.assertEqual(17, package["summary"]["actions_without_draft"])
+        self.assertEqual(16, package["summary"]["actions_without_draft"])
         self.assertFalse(package["formal_effect"])
 
     def test_valid_draft_is_loaded_and_projected_for_human_review(self) -> None:
@@ -157,8 +157,8 @@ class ReconciliationReviewTests(unittest.TestCase):
     def test_package_is_deterministic_for_input_order(self) -> None:
         second = dict(
             self.payload,
-            action_id="A-002",
-            actual_progress_summary="Az A-002 feladat folyamatban van.",
+            action_id="A-003",
+            actual_progress_summary="Az A-003 feladat folyamatban van.",
         )
         with tempfile.TemporaryDirectory() as temp:
             path = self._write_drafts(Path(temp), [self.payload, second])

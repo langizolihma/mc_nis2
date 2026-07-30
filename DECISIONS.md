@@ -1,7 +1,7 @@
 ---
 version: "0.3"
 status: WORKING_DECISION_LOG
-updated: "2026-07-16"
+updated: "2026-07-29"
 ---
 
 # Döntési napló
@@ -47,6 +47,7 @@ updated: "2026-07-16"
 | D-028 | APPROVED_BASELINE | A résztvevők és az AI elsődleges felülete helyi hálózaton, böngészőből elérhető belső portál; a Git és a védett evidenciatár háttérrendszer marad. |
 | D-029 | APPROVED_BASELINE | A portál belépési alapja a vállalati Microsoft Entra-bejelentkezés és a „NIS2 – Belső megfelelőség” SharePoint-webhely tényleges hozzáférési jogosultsága; külön portálcsoport az induláshoz nem kötelező. |
 | D-030 | APPROVED_BASELINE | Az SRC-009 kontrollkatalógus proposal-only referenciaforrásként bekerül a registrybe és a portálba; megfelelőséget nem igazol, automatikus EIR-kontrollkiválasztás csak igazolt biztonsági osztály és G1 review után engedhető. |
+| D-031 | APPROVED_BASELINE | A kézzel aláírt, beszkennelt dokumentum teljes értékű evidencia; elektronikus aláírás hiánya nem warning. A G2/G4 rekord elfogadott, a DEF-001 és az A-002 lezárható. |
 
 # Részletes döntések
 
@@ -342,6 +343,30 @@ A projektgazda engedélyezte a `Vedelmi-intezkedesek-katalogusa-tablazat-ver_1_0
 **Engedélyezett felhasználás:** kontrollhivatkozások ellenőrzése; finding-, mapping- és akciórekordok kiegészítése; magyarázat és megvalósítási támpont megjelenítése a portálban; későbbi, ember által felülvizsgálandó AI-javaslatok forrása.
 
 **Kontrollkorlát:** az SRC-009 `unverified_internal` és `PROPOSED`, nem auditbizonyíték és nem igazol kontrollműködést. A munkafüzet eredetét, verzióját és a hatályos jogszabályi szöveggel való egyezését G1 review-val kell igazolni. EIR-re alkalmazandó kontrollkör automatikusan csak az EIR Alap/Jelentős/Magas besorolásának és a kontrolltestreszabás emberi jóváhagyása után választható ki. A nyitott feladatokat a `DEF-036` követi.
+
+## D-031 – Kézi aláírás elfogadása és a G2/G4 határidő-review lezárása
+
+**Státusz:** `APPROVED_BASELINE`
+
+**Rögzítés dátuma:** 2026-07-29
+
+**Jóváhagyó és reviewer:** Lángi Zoltán
+
+**Végrehajtásért felelős:** Pásztor András
+
+A projektgazda megerősítette, hogy a kézzel aláírt, majd beszkennelt dokumentumot teljes értékű, elfogadott aláírt evidenciaként kell kezelni. Az elektronikus vagy kriptográfiai PDF-aláírás hiánya önmagában nem hiányosság, nem warning és nem akadályozza evidencia vagy akció emberi elfogadását.
+
+A `D-026__A-002__G2-G4-HATARIDO-JOVAHAGYAS__v01__20260714_signed.pdf` kétoldalas, olvasható példánya 2026-07-29-én bekerült a védett SharePoint evidenciatár `00_AUTHORITY/A-002` mappájába. A dokumentum Lángi Zoltán jóváhagyását, Pásztor András végrehajtásért felelősi tudomásulvételét, mindkét kézi aláírást és a 2026.07.29-i dátumot tartalmazza.
+
+- evidenciaazonosító: `EV-GOV-001`;
+- SharePoint-hivatkozás: `https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/00_AUTHORITY/A-002/D-026__A-002__G2-G4-HATARIDO-JOVAHAGYAS__v01__20260714_signed.pdf`;
+- SHA-256: `ed2822a7510ca1aecea6cedd29a2f464fbdf89a3157cee8b3a65ce5b3d797908`;
+- emberi review-idő: `2026-07-29T13:54:05.739Z`;
+- review eredménye: `ACCEPTED`.
+
+**Döntési hatás:** a G2/G4 határidő-review teljesült, a `DEF-001` lezárható, és az `A-002` akció `DONE` státuszra állítható. A külön címzetti kézbesítési igazolás továbbra sem áll rendelkezésre; ennek hiánya a D-022 és a `DEF-003` szerint elfogadott, nyilvántartott kockázat, amely nem nyitja újra a G2/G4 jóváhagyást.
+
+**Formai megjegyzés:** a beszkennelt példány oldalláblécében megmaradt „Aláírás előtt tervezet” szöveg az aláírt döntés, a személyek és a dátum egyértelműsége miatt nem csökkenti az evidencia elfogadott státuszát.
 
 # Nyitott döntési sablon
 

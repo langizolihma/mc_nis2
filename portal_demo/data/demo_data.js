@@ -51,8 +51,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -32,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": null,
+      "deadline_bucket": "TERMINAL",
       "deliverable": "Jóváhagyott receipt record és határidőnaptár.",
       "evidence": "Kézbesítési igazolás, receipt_date, reviewer és számítási napló.",
       "external_submission": "no",
@@ -65,7 +65,7 @@ window.NIS2_DEMO_DATA = {
       "priority": "P0",
       "source_confidence": "authority",
       "source_ref": "SRC-001",
-      "status": "IN_PROGRESS",
+      "status": "DONE",
       "target_date": "2026-06-27",
       "task": "Rögzítse a 2026.06.26-i kézhezvétel bizonyítékának védett evidenciatári vagy iratkezelési hivatkozásját és reviewerét, majd véglegesítse a jóváhagyandó határidőnaptárt.",
       "title": "Hatósági határidő"
@@ -2715,18 +2715,6 @@ window.NIS2_DEMO_DATA = {
   ],
   "approval_queue": [
     {
-      "action_id": "A-002",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-06-27",
-      "title": "Hatósági határidő"
-    },
-    {
       "action_id": "A-003",
       "approver": "Lángi Zoltán",
       "gates": [
@@ -3248,21 +3236,9 @@ window.NIS2_DEMO_DATA = {
   "deadline_reconciliation": {
     "as_of": "2026-07-29",
     "formal_effect": false,
-    "pending_count": 17,
-    "record_count": 17,
+    "pending_count": 16,
+    "record_count": 16,
     "records": [
-      {
-        "action_id": "A-002",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 32,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "IN_PROGRESS",
-        "registered_target_date": "2026-06-27",
-        "required_gates": [
-          "G2_SECURITY_LEGAL"
-        ]
-      },
       {
         "action_id": "A-003",
         "approver": "Lángi Zoltán",
@@ -3461,13 +3437,13 @@ window.NIS2_DEMO_DATA = {
   "deferred_tasks": [
     {
       "approver": "Lángi Zoltán",
-      "gate": "Külső benyújtás előtt.",
+      "gate": "Lezárva 2026-07-29-én.",
       "id": "DEF-001",
       "owner": "Pásztor András",
-      "process_state": "A 2026-06-26-i baseline és a 2026-09-24-i határidő alapján a projekt továbbhaladhat.",
-      "related": "A-002; D-026",
-      "required": "A G2/G4 nyilatkozat tényleges aláírt példánya, aláírási dátuma, SHA-256 értéke, védett URI-ja és reviewer-rekordja.",
-      "status": "OPEN_DEFERRED"
+      "process_state": "A G2/G4 nyilatkozat kézzel aláírt, beszkennelt példánya 2026-07-29-én a védett SharePoint evidenciatárba került; URI-ja, SHA-256 értéke, aláírási dátuma, reviewer-rekordja és emberi elfogadása rögzített.",
+      "related": "A-002; D-026; D-031; EV-GOV-001",
+      "required": "Nincs további pótlandó elem. Az elektronikus aláírás hiánya a D-031 szerint nem hiányosság.",
+      "status": "CLOSED_ACCEPTED"
     },
     {
       "approver": "Lángi Zoltán",
@@ -3741,12 +3717,12 @@ window.NIS2_DEMO_DATA = {
     },
     {
       "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult benyújtó",
-      "gate": "Bármely kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett akció DONE státusza előtt.",
+      "gate": "Bármely fennmaradó kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett nyitott akció DONE státusza előtt.",
       "id": "DEF-029",
       "owner": "Pásztor András; Kóczán Mónika",
-      "process_state": "Elkészült az öt irányítási akció bizonyítéklánc-regisztere; a D-022/D-025/D-026/D-027 baseline-ok megőrzöttek, de a pótlandó evidencia nem lett teljesítettnek jelölve.",
-      "related": "A-001; A-002; A-007; A-035; A-036; data/governance_work_packages.json",
-      "required": "Formális IBF-kijelölés és alkalmassági/jogi review; ténylegesen aláírt G2/G4 nyilatkozat; SRC-008 védett URI-ja és reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.",
+      "process_state": "Elkészült az öt irányítási akció bizonyítéklánc-regisztere. Az A-002 G2/G4 rekordja a D-031/EV-GOV-001 alapján elfogadott, ezért az A-002 és a DEF-001 lezárt; a többi irányítási evidencia továbbra is pótlandó.",
+      "related": "A-001; A-007; A-035; A-036; data/governance_work_packages.json",
+      "required": "Formális IBF-kijelölés és alkalmassági/jogi review; SRC-008 reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.",
       "status": "OPEN_DEFERRED"
     },
     {
@@ -3824,9 +3800,9 @@ window.NIS2_DEMO_DATA = {
       "gate": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
       "id": "DEF-037",
       "owner": "Pásztor András",
-      "process_state": "A 2026-07-29-i állapot szerint 17 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. Státusz vagy céldátum nem változott.",
-      "related": "17 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
-      "required": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések külön, ellenőrzött átvezetése az actions.csv fájlba.",
+      "process_state": "Az A-002 D-031/EV-GOV-001 szerinti lezárása után a 2026-07-29-i állapot szerint 16 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. A helyi portál append-only, hitelesítetlen rögzítői státusztervezetet tud fogadni; a hash-ellenőrzött review-, döntési-, változásjavaslati, stale-safe preflight- és pre/post hash utóellenőrzési lánc elkészült. A baseline még 0 tervezetet tartalmaz. Státusz vagy céldátum nem változott.",
+      "related": "16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
+      "required": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.",
       "status": "OPEN_DEFERRED"
     }
   ],
@@ -3916,18 +3892,18 @@ window.NIS2_DEMO_DATA = {
   "sharepoint_tasks": [
     {
       "approver": "Lángi Zoltán",
-      "evidence_label": "A-002 – hatósági és határidő-evidencia mappa",
-      "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/00_AUTHORITY/A-002",
+      "evidence_label": "EV-GOV-001 – aláírt G2/G4 határidő-jóváhagyás",
+      "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/00_AUTHORITY/A-002/D-026__A-002__G2-G4-HATARIDO-JOVAHAGYAS__v01__20260714_signed.pdf",
       "formal_effect": false,
-      "gate": "Külső benyújtás előtt.",
+      "gate": "Lezárva 2026-07-29-én.",
       "id": "DEF-001",
       "owner": "Pásztor András",
-      "process_state": "A 2026-06-26-i baseline és a 2026-09-24-i határidő alapján a projekt továbbhaladhat.",
-      "related": "A-002; D-026",
-      "required": "A G2/G4 nyilatkozat tényleges aláírt példánya, aláírási dátuma, SHA-256 értéke, védett URI-ja és reviewer-rekordja.",
-      "sharepoint_status": "Nyitott",
+      "process_state": "A G2/G4 nyilatkozat kézzel aláírt, beszkennelt példánya 2026-07-29-én a védett SharePoint evidenciatárba került; URI-ja, SHA-256 értéke, aláírási dátuma, reviewer-rekordja és emberi elfogadása rögzített.",
+      "related": "A-002; D-026; D-031; EV-GOV-001",
+      "required": "Nincs további pótlandó elem. Az elektronikus aláírás hiánya a D-031 szerint nem hiányosság.",
+      "sharepoint_status": "Lezárt – elfogadva",
       "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
-      "status": "OPEN_DEFERRED",
+      "status": "CLOSED_ACCEPTED",
       "write_back_allowed": false
     },
     {
@@ -4367,12 +4343,12 @@ window.NIS2_DEMO_DATA = {
       "evidence_label": "Projektirányítási evidenciák mappája",
       "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE",
       "formal_effect": false,
-      "gate": "Bármely kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett akció DONE státusza előtt.",
+      "gate": "Bármely fennmaradó kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett nyitott akció DONE státusza előtt.",
       "id": "DEF-029",
       "owner": "Pásztor András; Kóczán Mónika",
-      "process_state": "Elkészült az öt irányítási akció bizonyítéklánc-regisztere; a D-022/D-025/D-026/D-027 baseline-ok megőrzöttek, de a pótlandó evidencia nem lett teljesítettnek jelölve.",
-      "related": "A-001; A-002; A-007; A-035; A-036; data/governance_work_packages.json",
-      "required": "Formális IBF-kijelölés és alkalmassági/jogi review; ténylegesen aláírt G2/G4 nyilatkozat; SRC-008 védett URI-ja és reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.",
+      "process_state": "Elkészült az öt irányítási akció bizonyítéklánc-regisztere. Az A-002 G2/G4 rekordja a D-031/EV-GOV-001 alapján elfogadott, ezért az A-002 és a DEF-001 lezárt; a többi irányítási evidencia továbbra is pótlandó.",
+      "related": "A-001; A-007; A-035; A-036; data/governance_work_packages.json",
+      "required": "Formális IBF-kijelölés és alkalmassági/jogi review; SRC-008 reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.",
       "sharepoint_status": "Nyitott",
       "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
       "status": "OPEN_DEFERRED",
@@ -4498,9 +4474,9 @@ window.NIS2_DEMO_DATA = {
       "gate": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
       "id": "DEF-037",
       "owner": "Pásztor András",
-      "process_state": "A 2026-07-29-i állapot szerint 17 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. Státusz vagy céldátum nem változott.",
-      "related": "17 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
-      "required": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések külön, ellenőrzött átvezetése az actions.csv fájlba.",
+      "process_state": "Az A-002 D-031/EV-GOV-001 szerinti lezárása után a 2026-07-29-i állapot szerint 16 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. A helyi portál append-only, hitelesítetlen rögzítői státusztervezetet tud fogadni; a hash-ellenőrzött review-, döntési-, változásjavaslati, stale-safe preflight- és pre/post hash utóellenőrzési lánc elkészült. A baseline még 0 tervezetet tartalmaz. Státusz vagy céldátum nem változott.",
+      "related": "16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
+      "required": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.",
       "sharepoint_status": "Nyitott",
       "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
       "status": "OPEN_DEFERRED",
@@ -4515,7 +4491,7 @@ window.NIS2_DEMO_DATA = {
     "catalog_pending_eir_classifications": 5,
     "catalog_review_status": "PENDING_G1_REVIEW",
     "days_to_deadline": 57,
-    "deadline_reconciliation_pending": 17,
+    "deadline_reconciliation_pending": 16,
     "due_within_30_days": 9,
     "due_within_7_days": 0,
     "gate_counts": {
@@ -4525,11 +4501,11 @@ window.NIS2_DEMO_DATA = {
       "G4": 4,
       "G5": 6
     },
-    "in_progress": 8,
+    "in_progress": 7,
     "linked_human_tasks": 37,
     "new_actions": 34,
-    "open_human_tasks": 36,
-    "overdue_actions": 17,
+    "open_human_tasks": 35,
+    "overdue_actions": 16,
     "p0_actions": 17,
     "priority_counts": {
       "P0": 17,
@@ -4538,7 +4514,8 @@ window.NIS2_DEMO_DATA = {
     },
     "repeat_audit_target": "2027-09-30",
     "status_counts": {
-      "IN_PROGRESS": 8,
+      "DONE": 1,
+      "IN_PROGRESS": 7,
       "NEW": 34
     },
     "total_actions": 42,

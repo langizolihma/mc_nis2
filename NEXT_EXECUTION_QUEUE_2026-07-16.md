@@ -19,18 +19,18 @@ Mind a 42 akció előkészítő csomagja elkészült. A következő sor kizáró
 
 A napi operatív munkasorrend a
 `generated/daily_execution_brief_2026-07-29.md` fájlban található. A
-2026-07-29-i nyilvántartási állapot szerint 17 akciónak lejárt a céldátuma,
+2026-07-29-i nyilvántartási állapot szerint 16 akciónak lejárt a céldátuma,
 9 akció 8–30 napon belül esedékes, 9 akció pedig még konkrét emberi ütemezést
 igényel. A „lejárt” megjelölés státuszellenőrzést kér; nem jelenti
 automatikusan azt, hogy a munka nem történt meg.
 
-A 17 lejárt tétel egységes emberi egyeztetőlapja:
+A 16 lejárt tétel egységes emberi egyeztetőlapja:
 `DEADLINE_RECONCILIATION_FORM_2026-07-29.md`. A gépi, proposal-only
-nyilvántartás a `data/deadline_reconciliation.json`; mind a 17 rekord
+nyilvántartás a `data/deadline_reconciliation.json`; mind a 16 rekord
 `PENDING_HUMAN` állapotú, ezért ebből még sem státusz-, sem céldátumváltozás
 nem vezethető át.
 
-A helyi portál Jóváhagyások nézete a 17 tételhez append-only
+A helyi portál Jóváhagyások nézete a 16 tételhez append-only
 státusz-egyeztetési tervezetet tud rögzíteni. Ez gyorsítja az adatbekérést, de
 a rögzítő neve az MVP-ben nem hitelesített, a tervezet nem formális döntés és
 nem ír vissza sem az akcióregiszterbe, sem a SharePointba. A lenti emberi
@@ -69,7 +69,7 @@ munkasorrendje, a részletes követelmények kanonikus forrása továbbra is a
 
 | Sorrend | Emberi munkablokk | Érintett fő akciók | Következő elfogadható eredmény | Kötelező kapu |
 |---|---|---|---|---|
-| 1 | Irányítási aláírások és felelősök | A-001; A-002; A-035; A-036 | IBF/RACI/G2-G4 és kanonikus forrás védett, aláírt review-rekordja | G2 |
+| 1 | Irányítási aláírások és felelősök | A-001; A-035; A-036 | IBF/RACI és kanonikus forrás védett, aláírt review-rekordja; az A-002 G2/G4 rekordja a D-031/EV-GOV-001 szerint lezárt | G2 |
 | 2 | EIR-, asset-, forrás- és owner-baseline | A-005; A-011; A-034 | Öt EIR és a két nem auditált EIR jóváhagyott scope-ja, owner- és forráslistája | G1 |
 | 3 | Read-only technikai baseline | A-018; A-022; A-024; A-025; A-026; A-027; A-028; A-029; A-033 | Jóváhagyott exportok védett URI/SHA-256-tal, emberi értékelés és döntési csomag | G1; G2; szükség szerint G3/G5 |
 | 4 | Szervezeti kontrollok | A-009; A-010; A-013; A-014; A-015; A-016; A-037–A-041 | Kijelölt gazdák, kitöltött szabályozások, review és első működési minta | G1; G2; szükség szerint G3/G5 |

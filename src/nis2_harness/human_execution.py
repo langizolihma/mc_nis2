@@ -66,6 +66,7 @@ FORBIDDEN_AUTOMATIC_ACTIONS = [
     "submit_external",
     "purchase",
 ]
+TERMINAL_STATUSES = {"CLOSED_ACCEPTED"}
 
 
 def _wave_for(record: dict[str, str]) -> str:
@@ -107,10 +108,14 @@ def build_human_execution_package(
     """Group every deferred task without changing its human-controlled status."""
     _validate_records(records)
     source_sha256 = hashlib.sha256(source_path.read_bytes()).hexdigest()
+    actionable_records = [
+        record for record in records
+        if record["status"] not in TERMINAL_STATUSES
+    ]
     tasks_by_wave: dict[str, list[dict[str, Any]]] = {
         wave_id: [] for wave_id, _ in WAVES
     }
-    for record in records:
+    for record in actionable_records:
         wave_id = _wave_for(record)
         tasks_by_wave[wave_id].append({
             "task_id": record["id"],
@@ -137,7 +142,7 @@ def build_human_execution_package(
         for wave_id, title in WAVES
     ]
     owner_counts: dict[str, int] = {}
-    for record in records:
+    for record in actionable_records:
         owner_counts[record["owner"]] = owner_counts.get(record["owner"], 0) + 1
     return {
         "schema_version": "1.0",
@@ -147,13 +152,17 @@ def build_human_execution_package(
         "source_sha256": source_sha256,
         "formal_effect": False,
         "summary": {
-            "task_count": len(records),
+            "task_count": len(actionable_records),
             "open_deferred_count": sum(
-                record["status"] == "OPEN_DEFERRED" for record in records
+                record["status"] == "OPEN_DEFERRED"
+                for record in actionable_records
             ),
             "accepted_risk_count": sum(
                 record["status"] == "NOT_AVAILABLE_ACCEPTED_RISK"
-                for record in records
+                for record in actionable_records
+            ),
+            "closed_accepted_count": sum(
+                record["status"] == "CLOSED_ACCEPTED" for record in records
             ),
             "wave_count": len(waves),
             "owner_task_counts": dict(sorted(owner_counts.items())),
@@ -183,6 +192,7 @@ def render_human_execution_package(data: dict[str, Any]) -> str:
         f"- Összes emberi tétel: **{summary['task_count']}**",
         f"- Nyitott pótlandó tétel: **{summary['open_deferred_count']}**",
         f"- Elfogadott, de továbbra is nyilvántartott kockázat: **{summary['accepted_risk_count']}**",
+        f"- Lezárt és elfogadott tétel: **{summary['closed_accepted_count']}**",
         "- Automatikus lezárás: **tiltott**",
         "",
         "A hullámokat sorrendben kell feldolgozni. Egy tétel lezárásához tényleges "

@@ -1,32 +1,17 @@
 # Egységes emberi végrehajtási csomag
 
 - Állapot dátuma: `2026-07-29`
-- Összes emberi tétel: **37**
-- Nyitott pótlandó tétel: **36**
+- Összes emberi tétel: **36**
+- Nyitott pótlandó tétel: **35**
 - Elfogadott, de továbbra is nyilvántartott kockázat: **1**
+- Lezárt és elfogadott tétel: **1**
 - Automatikus lezárás: **tiltott**
 
 A hullámokat sorrendben kell feldolgozni. Egy tétel lezárásához tényleges dokumentum vagy döntés, védett SharePoint-hivatkozás, SHA-256 hash, reviewer, időzónás review-idő és döntési hivatkozás szükséges.
 
 ## W1 – Irányítás, határidők és döntési alapok
 
-Tételek száma: **12**
-
-### DEF-001 – OPEN_DEFERRED
-
-- Felelős: Pásztor András
-- Jóváhagyó: Lángi Zoltán
-- Kapcsolódó elem: A-002; D-026
-- Elkészítendő: A G2/G4 nyilatkozat tényleges aláírt példánya, aláírási dátuma, SHA-256 értéke, védett URI-ja és reviewer-rekordja.
-- Legkésőbbi kapu: Külső benyújtás előtt.
-
-Lezárási ellenőrzőlista:
-
-- [ ] A tényleges dokumentum vagy döntés elkészült.
-- [ ] A védett NIS2 SharePoint URI rögzítve.
-- [ ] Az SHA-256 hash rögzítve.
-- [ ] A reviewer és az időzónás review-idő rögzítve.
-- [ ] A döntési hivatkozás rögzítve.
+Tételek száma: **11**
 
 ### DEF-002 – OPEN_DEFERRED
 
@@ -176,9 +161,9 @@ Lezárási ellenőrzőlista:
 
 - Felelős: Pásztor András; Kóczán Mónika
 - Jóváhagyó: Lángi Zoltán; Dr. Berta Brigitta; jogosult benyújtó
-- Kapcsolódó elem: A-001; A-002; A-007; A-035; A-036; data/governance_work_packages.json
-- Elkészítendő: Formális IBF-kijelölés és alkalmassági/jogi review; ténylegesen aláírt G2/G4 nyilatkozat; SRC-008 védett URI-ja és reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.
-- Legkésőbbi kapu: Bármely kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett akció DONE státusza előtt.
+- Kapcsolódó elem: A-001; A-007; A-035; A-036; data/governance_work_packages.json
+- Elkészítendő: Formális IBF-kijelölés és alkalmassági/jogi review; SRC-008 reviewer-rekordja; aláírt RACI, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda; végleges terv G1/G2/G4 review-ja, jogosult emberi aláírás és benyújtás, védett végleges csomag SHA-256-tal, valamint átvételi igazolás.
+- Legkésőbbi kapu: Bármely fennmaradó kapcsolódó kontroll elfogadása vagy külső benyújtás, valamint az érintett nyitott akció DONE státusza előtt.
 
 Lezárási ellenőrzőlista:
 
@@ -192,7 +177,7 @@ Lezárási ellenőrzőlista:
 
 - Felelős: Pásztor András
 - Jóváhagyó: Lángi Zoltán; az akció szerinti G1–G5 reviewer
-- Kapcsolódó elem: 17 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md
+- Kapcsolódó elem: 16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md
 - Elkészítendő: Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.
 - Legkésőbbi kapu: Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.
 

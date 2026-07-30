@@ -86,6 +86,20 @@ def render_action_plan(actions: list[Action], project_dates: dict[str, Any]) -> 
     """Render the 19-family draft action plan in deterministic order."""
     receipt = str(project_dates.get("receipt_date", "TBD-HUMAN"))
     generation_date = str(project_dates.get("recorded_on", "n/a"))
+    deadline_review_status = str(
+        project_dates.get("deadline_review_status", "")
+    )
+    if deadline_review_status.startswith("HUMAN_APPROVED"):
+        deadline_review_note = (
+            "A G2/G4 határidő-review emberileg jóváhagyott; a külön "
+            "címzetti kézbesítési igazolás hiánya elfogadott, "
+            "nyilvántartott kockázat."
+        )
+    else:
+        deadline_review_note = (
+            "A kézbesítési evidencia és a G2/G4 review státusza a "
+            "projektadat-rekord szerint még emberi ellenőrzést igényel."
+        )
     lines = [
         "# TERVEZET – EMBERI JÓVÁHAGYÁS NÉLKÜL NEM NYÚJTHATÓ BE",
         "",
@@ -99,7 +113,7 @@ def render_action_plan(actions: list[Action], project_dates: dict[str, Any]) -> 
         f"- generation_record_date: `{generation_date}`",
         "- generator: `nis2_harness/0.1.0`",
         "",
-        f"Kanonikus kézhezvételi dátum: **{receipt}**. A kézbesítési evidencia és a G2/G4 review státusza a projektadat-rekord szerint még emberi ellenőrzést igényel.",
+        f"Kanonikus kézhezvételi dátum: **{receipt}**. {deadline_review_note}",
         f"Kanonikus benyújtási határidő: **{project_dates.get('action_plan_deadline', 'TBD-HUMAN')}**. A relatív vagy eseményalapú végrehajtási határidőket a G1/G4 review során konkrét dátummá kell alakítani.",
         "",
     ]

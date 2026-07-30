@@ -103,6 +103,8 @@ SUBMITTED
 
 Az AI legfeljebb DRAFT-metaadatot és review-javaslatot készíthet. Nem állíthat be `ACCEPTED`, `NEEDS_CHANGES` vagy `SUPERSEDED` státuszt, nem fogadhat el hash nélküli vagy `TBD` URI-jú rekordot, és nem zárhatja le a kapcsolódó akciót.
 
+A D-031 szerint a kézzel aláírt, majd beszkennelt dokumentum teljes értékű aláírt evidencia lehet. Beágyazott elektronikus vagy kriptográfiai PDF-aláírás hiánya önmagában nem warning és nem kizáró ok. Az elfogadáshoz ettől függetlenül szükséges az olvasható dokumentum, az azonosítható aláíró és dátum, a védett URI, a SHA-256, valamint a név szerinti emberi reviewer és döntési rekord.
+
 ## 7. Hozzáférési szerepek
 
 | Logikai szerep | Minimumjog | Korlát |

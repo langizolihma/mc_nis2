@@ -3,16 +3,16 @@ handoff_id: H-001
 version: "0.4"
 status: PREPARATION_COMPLETE_HUMAN_EXECUTION_REQUIRED
 created: "2026-07-13"
-updated: "2026-07-17"
+updated: "2026-07-29"
 receipt_date: "2026-06-26"
 action_plan_deadline: "2026-09-24"
-deadline_review_status: PENDING_G2_G4_REVIEW
+deadline_review_status: HUMAN_APPROVED_G2_G4_D031
 requested_executor: HUMAN_GATED_EXECUTION
 ---
 
 # H-001 – Determinisztikus helyi NIS2 core
 
-> **Aktuális állapot (2026-07-29):** a H-001 core, mind a 42 akció előkészítő munkacsomagja és a kapuk előtt biztonságosan elkészíthető H-002 local-first fejlesztési réteg elkészült. A portál-MVP, a SharePoint/auth readiness, az A-042 fixture pilot, a teljes határidő-egyeztetési review–döntés–preflight–utóellenőrzési lánc és a 37 tételes `HUMAN_EXECUTION_PACKAGE_2026-07-29.md` rendelkezésre áll. A következő szakasz emberi adatgyűjtés, review, aláírás, G1–G5 döntés és kontrollált végrehajtás. Egyetlen akció sincs automatikusan `DONE` státuszra állítva, evidencia nincs automatikusan elfogadva, éles integráció vagy deploy nem történt.
+> **Aktuális állapot (2026-07-29):** a H-001 core, mind a 42 akció előkészítő munkacsomagja és a kapuk előtt biztonságosan elkészíthető H-002 local-first fejlesztési réteg elkészült. A portál-MVP, a SharePoint/auth readiness, az A-042 fixture pilot, a teljes határidő-egyeztetési review–döntés–preflight–utóellenőrzési lánc és a 36 végrehajtandó tételes `HUMAN_EXECUTION_PACKAGE_2026-07-29.md` rendelkezésre áll. A D-031/EV-GOV-001 alapján a kézzel aláírt G2/G4 rekord emberileg elfogadott, a DEF-001 és az A-002 lezárt; ez nem automatikus AI-döntés. A következő szakasz a fennmaradó emberi adatgyűjtés, review, aláírás, G1–G5 döntés és kontrollált végrehajtás. Éles integráció vagy deploy nem történt.
 
 # 1. Cél
 
