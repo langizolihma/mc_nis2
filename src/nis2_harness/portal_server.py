@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlparse
+from urllib.parse import unquote
 
 from .deadline_reconciliation import validate_deadline_reconciliation
 from .portal import (
@@ -20,6 +21,14 @@ from .portal import (
     validate_review_draft,
 )
 from .registry import load_actions as load_action_records
+from .task_workflow import (
+    MAX_ATTACHMENT_BYTES,
+    TaskAttachmentStore,
+    TaskWorkflowDraftStore,
+    current_pilot_states,
+    load_pilot_config,
+    validate_work_event,
+)
 
 
 MAX_REQUEST_BYTES = 16_384
@@ -46,6 +55,8 @@ def make_handler(
     store: ReviewDraftStore,
     today: Callable[[], date] = date.today,
     reconciliation_store: ReconciliationDraftStore | None = None,
+    task_workflow_store: TaskWorkflowDraftStore | None = None,
+    task_attachment_store: TaskAttachmentStore | None = None,
 ) -> type[BaseHTTPRequestHandler]:
     portal_dir = root / "portal_demo"
 
@@ -77,9 +88,98 @@ def make_handler(
                 self._json(
                     HTTPStatus.OK,
                     build_live_snapshot(
-                        root, store, today(), reconciliation_store
+                        root,
+                        store,
+                        today(),
+                        reconciliation_store,
+                        task_workflow_store,
+                        task_attachment_store,
                     ),
                 )
+                return
+            if path.startswith("/api/task-materials/"):
+                parts = path.split("/")
+                if len(parts) != 5:
+                    self._json(HTTPStatus.NOT_FOUND, {"error": "NOT_FOUND"})
+                    return
+                task_id, filename = parts[3], unquote(parts[4])
+                try:
+                    config = load_pilot_config(
+                        root / "data" / "human_task_pilot.json"
+                    )
+                    material = next(
+                        item
+                        for task in config["tasks"]
+                        if task["task_id"] == task_id
+                        for item in task["materials"]
+                        if item["filename"] == filename
+                    )
+                    file_path = root / str(material["path"])
+                    body = file_path.read_bytes()
+                except (OSError, StopIteration, ValueError, json.JSONDecodeError):
+                    self._json(
+                        HTTPStatus.NOT_FOUND,
+                        {"error": "TASK_MATERIAL_NOT_FOUND"},
+                    )
+                    return
+                self.send_response(HTTPStatus.OK)
+                self.send_header(
+                    "Content-Type",
+                    "application/vnd.openxmlformats-officedocument."
+                    "wordprocessingml.document",
+                )
+                self.send_header("Content-Length", str(len(body)))
+                self.send_header(
+                    "Content-Disposition",
+                    f'attachment; filename="{filename}"',
+                )
+                self.send_header("Cache-Control", "no-store")
+                self.send_header("X-Content-Type-Options", "nosniff")
+                self.end_headers()
+                self.wfile.write(body)
+                return
+            if path.startswith("/api/task-attachments/"):
+                parts = path.split("/")
+                if len(parts) != 5 or task_attachment_store is None:
+                    self._json(HTTPStatus.NOT_FOUND, {"error": "NOT_FOUND"})
+                    return
+                task_id, attachment_id = unquote(parts[3]), unquote(parts[4])
+                try:
+                    record = next(
+                        item
+                        for item in task_attachment_store.load()
+                        if item.get("task_id") == task_id
+                        and item.get("attachment_id") == attachment_id
+                    )
+                    file_path = (
+                        task_attachment_store.directory
+                        / str(record["stored_relative_path"])
+                    )
+                    body = file_path.read_bytes()
+                    filename = str(record["filename"])
+                    content_type = str(
+                        record.get(
+                            "content_type",
+                            "application/octet-stream",
+                        )
+                    )
+                except (OSError, StopIteration, ValueError):
+                    self._json(
+                        HTTPStatus.NOT_FOUND,
+                        {"error": "TASK_ATTACHMENT_NOT_FOUND"},
+                    )
+                    return
+                self.send_response(HTTPStatus.OK)
+                self.send_header("Content-Type", content_type)
+                self.send_header("Content-Length", str(len(body)))
+                self.send_header(
+                    "Content-Disposition",
+                    f'attachment; filename="{filename}"',
+                )
+                self.send_header("Cache-Control", "no-store")
+                self.send_header("X-Content-Type-Options", "nosniff")
+                self.end_headers()
+                self.wfile.write(body)
                 return
             static = STATIC_FILES.get(path)
             if static is None:
@@ -96,10 +196,12 @@ def make_handler(
 
         def do_POST(self) -> None:  # noqa: N802
             path = urlparse(self.path).path
+            is_attachment = path.startswith("/api/task-attachments/")
             if path not in {
                 "/api/review-drafts",
                 "/api/reconciliation-drafts",
-            }:
+                "/api/task-work-events",
+            } and not is_attachment:
                 self._json(HTTPStatus.NOT_FOUND, {"error": "NOT_FOUND"})
                 return
             if _kill_switch_engaged(root):
@@ -109,8 +211,56 @@ def make_handler(
                 length = int(self.headers.get("Content-Length", "0"))
             except ValueError:
                 length = 0
-            if length <= 0 or length > MAX_REQUEST_BYTES:
+            max_size = MAX_ATTACHMENT_BYTES if is_attachment else MAX_REQUEST_BYTES
+            if length <= 0 or length > max_size:
                 self._json(HTTPStatus.REQUEST_ENTITY_TOO_LARGE, {"error": "INVALID_REQUEST_SIZE"})
+                return
+            if is_attachment:
+                if task_attachment_store is None:
+                    self._json(
+                        HTTPStatus.SERVICE_UNAVAILABLE,
+                        {"error": "TASK_ATTACHMENT_STORE_NOT_CONFIGURED"},
+                    )
+                    return
+                task_id = unquote(path.removeprefix("/api/task-attachments/"))
+                filename = unquote(self.headers.get("X-Filename", ""))
+                content_type = self.headers.get(
+                    "Content-Type", "application/octet-stream"
+                )
+                try:
+                    config = load_pilot_config(
+                        root / "data" / "human_task_pilot.json"
+                    )
+                    task_ids = {
+                        str(item["task_id"]) for item in config["tasks"]
+                    }
+                    record = task_attachment_store.append(
+                        task_id,
+                        filename,
+                        content_type,
+                        self.rfile.read(length),
+                        task_ids,
+                    )
+                except (OSError, ValueError, json.JSONDecodeError) as error:
+                    self._json(
+                        HTTPStatus.BAD_REQUEST,
+                        {
+                            "error": "ATTACHMENT_REJECTED",
+                            "details": [str(error)],
+                        },
+                    )
+                    return
+                self._json(
+                    HTTPStatus.CREATED,
+                    {
+                        "record": record,
+                        "warning": (
+                            "A csatolmány csak helyi előkészített munkapéldány. "
+                            "A formális evidenciához SharePoint-feltöltés és "
+                            "emberi review szükséges."
+                        ),
+                    },
+                )
                 return
             try:
                 payload = json.loads(self.rfile.read(length).decode("utf-8"))
@@ -137,6 +287,61 @@ def make_handler(
                         "warning": (
                             "A review-tervezetnek nincs formális "
                             "jóváhagyási hatása."
+                        ),
+                    },
+                )
+                return
+            if path == "/api/task-work-events":
+                if task_workflow_store is None:
+                    self._json(
+                        HTTPStatus.SERVICE_UNAVAILABLE,
+                        {"error": "TASK_WORKFLOW_STORE_NOT_CONFIGURED"},
+                    )
+                    return
+                try:
+                    config = load_pilot_config(
+                        root / "data" / "human_task_pilot.json"
+                    )
+                    task_ids = {
+                        str(item["task_id"]) for item in config["tasks"]
+                    }
+                    events = task_workflow_store.load()
+                    states = current_pilot_states(task_ids, events)
+                except (OSError, ValueError, json.JSONDecodeError):
+                    self._json(
+                        HTTPStatus.SERVICE_UNAVAILABLE,
+                        {"error": "TASK_WORKFLOW_SOURCE_INVALID"},
+                    )
+                    return
+                errors = validate_work_event(payload, task_ids, states)
+                if errors:
+                    self._json(
+                        HTTPStatus.BAD_REQUEST,
+                        {"error": "VALIDATION_FAILED", "details": errors},
+                    )
+                    return
+                task_id = str(payload["task_id"]).strip()
+                try:
+                    record = task_workflow_store.append(
+                        payload,
+                        states[task_id],
+                    )
+                except ValueError as error:
+                    self._json(
+                        HTTPStatus.CONFLICT,
+                        {
+                            "error": "STALE_TASK_STATE",
+                            "details": [str(error)],
+                        },
+                    )
+                    return
+                self._json(
+                    HTTPStatus.CREATED,
+                    {
+                        "record": record,
+                        "warning": (
+                            "A pilot munkafolyamat-esemény nem módosítja a "
+                            "kanonikus emberi feladatot és nem jóváhagyás."
                         ),
                     },
                 )
@@ -215,13 +420,44 @@ def serve_portal(root: Path, host: str, port: int) -> None:
     reconciliation_store = ReconciliationDraftStore(
         root / "portal_runtime" / "deadline_reconciliation_drafts.jsonl"
     )
+    from .pilot_storage import (
+        PilotDatabase,
+        SqliteTaskAttachmentStore,
+        SqliteTaskWorkflowStore,
+        migrate_jsonl_runtime,
+    )
+
+    runtime = root / "portal_runtime"
+    database = PilotDatabase(runtime / "pilot.db")
+    attachment_directory = runtime / "attachments"
+    imported = migrate_jsonl_runtime(
+        database,
+        runtime / "task_workflow_events.jsonl",
+        attachment_directory / "attachment_manifest.jsonl",
+    )
+    task_workflow_store = SqliteTaskWorkflowStore(database)
+    task_attachment_store = SqliteTaskAttachmentStore(
+        database, attachment_directory
+    )
     server = ThreadingHTTPServer(
         (host, port),
-        make_handler(root, store, reconciliation_store=reconciliation_store),
+        make_handler(
+            root,
+            store,
+            reconciliation_store=reconciliation_store,
+            task_workflow_store=task_workflow_store,
+            task_attachment_store=task_attachment_store,
+        ),
     )
     print(f"NIS2 local portal MVP: http://{host}:{server.server_port}")
+    if any(imported.values()):
+        print(
+            "Korábbi helyi adatok átvéve SQLite-ba: "
+            f"{imported['work_events']} esemény, "
+            f"{imported['attachments']} csatolmány."
+        )
     print(
-        "A review- és státusz-egyeztetési tervezetek nem formális "
+        "A munkafolyamat-, review- és státusztervezetek nem formális "
         "jóváhagyások. Leállítás: Ctrl+C"
     )
     try:

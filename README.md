@@ -55,7 +55,7 @@ python -m unittest discover -s tests -v
 
 ### Helyi portál-MVP
 
-A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 37 emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. Append-only helyi review-tervezetet és lejártakció-egyeztetési tervezetet rögzíthet, de egyik sem formális jóváhagyás vagy evidencia, és egyik sem módosít akcióstátuszt vagy céldátumot.
+A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 37 emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. A D-032 szerinti „Az én munkám” nézet öt valós W1 feladatot közérthető cél, ellenőrzőlista, felelős/reviewer és egyértelmű következő lépés mentén vezet végig. A munkalépések append-only, hash-láncolt helyi naplóba kerülnek. A review-, munkafolyamat- és lejártakció-egyeztetési rekordok hitelesített belépésig tervezetek: nem formális jóváhagyások vagy evidenciák, és nem módosítanak kanonikus státuszt vagy céldátumot.
 
 A `daily-execution-brief` parancs egy megadott állapotdátumra, determinisztikusan
 elkészíti a résztvevők napi munkasorrendjét. Külön mutatja a lejárt, 7 napon
@@ -123,6 +123,25 @@ szerepel a végrehajtandó feladatok között; automatikus lezárást a csomag n
 
 ```powershell
 python -m nis2_harness serve-portal
+```
+
+Az emberi feladatok eseményei és a csatolmányok metaadatai a
+`portal_runtime/pilot.db` SQLite-adatbázisba kerülnek. Az első indítás a
+korábbi JSONL-adatokat idempotensen átveszi, az eredeti fájlokat nem törli.
+A többfelhasználós előkészítés ellenőrzése:
+
+```powershell
+python -m nis2_harness validate-multiuser-pilot
+```
+
+A hálózati publikálás G1/G2/G3 jóváhagyásig szándékosan blokkolt. A teljes
+adminisztrátori és felhasználói próbaterv:
+[MULTIUSER_PILOT_DEPLOYMENT.md](MULTIUSER_PILOT_DEPLOYMENT.md) és
+[PILOT_UAT_CHECKLIST.md](PILOT_UAT_CHECKLIST.md). Konzisztens, azonnal
+ellenőrzött pilotmentés:
+
+```powershell
+.\deploy\windows\Backup-Nis2Pilot.ps1
 ```
 
 Böngészőcím: `http://127.0.0.1:8000`. Más helyi port például `--port 8080` kapcsolóval választható. A kiszolgáló szándékosan elutasítja a nem loopback hálózati címet; hitelesítés, RBAC, TLS és G2/G3 döntés nélkül nem tehető elérhetővé a belső hálózaton. A részletek a [portal_demo/README.md](portal_demo/README.md), a teljes fejlesztési sorrend pedig a [H002_DEVELOPMENT_BACKLOG.md](H002_DEVELOPMENT_BACKLOG.md) fájlban található.
@@ -227,6 +246,15 @@ Az A-008 negyedéves beszámolási csomagja a [QUARTERLY_REPORTING_KIT.md](QUART
 Az A-006 benyújtási readiness-csomagja az [ACTION_PLAN_SUBMISSION_READINESS.md](ACTION_PLAN_SUBMISSION_READINESS.md) dokumentumban és a `data/action_plan_submission_checklist.json` fájlban található. A `validate-action-plan-submission` ellenőrzi a 19 követelménycsalád lefedettségét, a kötelező külső tervmezőket, a név szerinti felelősöket, a fix/relatív dátumokat, a függőségeket, a forrásbizalmat és a G4 kaput. A 0 hard hiba nem jelent benyújtási jóváhagyást.
 
 A D-028 szerinti végfelhasználói célfelület egy helyi hálózaton, böngészőből elérhető belső portál. A [LOCAL_PORTAL_BASELINE.md](LOCAL_PORTAL_BASELINE.md) rögzíti a minimális funkciókat és biztonsági korlátokat. A portál tervezési baseline, nem éles deploy-engedély; a Git és a védett evidenciatár háttérrendszer marad.
+
+A D-032/D-033 szerinti helyi emberifeladat-pilot az **Az én munkám**
+nézetben öt valós feladathoz letölthető Word-munkalapot, helyi
+csatolmány-előkészítést és automatikus SHA-256 számítást biztosít. A
+kitöltött munkapéldányok a Gitből kizárt `portal_runtime/attachments/`
+területre kerülnek. A végleges fájlt továbbra is ember tölti fel a védett
+SharePoint-tárba, és csak a tényleges SharePoint-hivatkozás plusz emberi
+review adhat formális hatást. Részletes használat:
+[HUMAN_TASK_WORKFLOW_PILOT.md](HUMAN_TASK_WORKFLOW_PILOT.md).
 
 Az A-017 backup és restore-teszt csomagja a [BACKUP_RESTORE_TEST_PLAN.md](BACKUP_RESTORE_TEST_PLAN.md) dokumentumban, gépi mátrixa a `data/backup_restore_plan.json`, jegyzőkönyve a `templates/restore_test_record.md` fájlban található. A `validate-backup-restore` kikényszeríti az öt EIR lefedését, a pozitív vagy emberre váró RPO/RTO-t, az izolált restore-t, a G3 kaput, a felülírás/törlés tiltását és a szükséges evidenciákat.
 

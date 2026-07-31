@@ -4,7 +4,7 @@ project_name: metALCOM NIS2 helyreállítási és audit-evidencia harness
 version: "0.3"
 status: DRAFT_FOR_HUMAN_APPROVAL
 created: "2026-07-13"
-updated: "2026-07-29"
+updated: "2026-07-30"
 receipt_date: "2026-06-26"
 receipt_evidence_status: HUMAN_ACCEPTED_WITH_INTERNAL_EMAIL_SUPPORT_NO_PRIMARY_RECEIPT
 receipt_supporting_source: SRC-007
@@ -83,6 +83,13 @@ Védett evidenciatár / hatósági benyújtás ember által
 A D-028 alapján a célállapot elsődleges ember–AI kommunikációs felülete egy helyi hálózaton, böngészőből elérhető belső portál. A VS Code + Codex a fejlesztés és műszaki adminisztráció eszköze marad; a résztvevők feladat-, döntési és jóváhagyási felületét a portál adja.
 
 A D-029 alapján a portál belépési feltétele a vállalati Microsoft Entra ID-bejelentkezés és a `NIS2 – Belső megfelelőség` SharePoint-webhely tényleges olvasási jogosultsága. Külön portálcsoport az induláshoz nem kötelező; a portálon belüli reviewer- és adminszerepek ettől elkülönített, szerveroldali RBAC-hozzárendelést igényelnek.
+
+A D-032 alapján az emberi feladatkezelés első használható pilotja öt valós
+irányítási tételt vezet végig a teendő, folyamatban, review-ra vár és
+visszaküldött állapotokon. A pilot közérthető célt, ellenőrzőlistát,
+SharePoint-dokumentumlinket és név szerinti felelősséget mutat. Hitelesített
+belépésig az események csak hash-láncolt, helyi munkatervezetek; nem
+formális jóváhagyások és nem módosítják a kanonikus nyilvántartást.
 
 ## Kanonikus tárolók
 

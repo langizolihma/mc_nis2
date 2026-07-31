@@ -2,7 +2,7 @@
 version: "0.3"
 work_package: H-001
 status: DRAFT_FOR_APPROVAL
-updated: "2026-07-14"
+updated: "2026-07-30"
 ---
 
 # Elfogadási kritériumok – H-001 helyi core
@@ -33,6 +33,9 @@ updated: "2026-07-14"
 | PR-003 | Az automatizálás célja a rutinszerű emberi munka mérhető csökkentése; az ember kivételeket és kötelező döntési pontokat kezel. | pilot előtti/utáni munkaidő, lefedettség, téves riasztás és feldolgozási SLA |
 | PR-004 | Evidenciaelfogadás, akciólezárás, külső benyújtás, költés és éles változtatás emberi kapu nélkül tiltott. | negatív tesztek és jóváhagyási auditlog |
 | PR-005 | Az ügynök működése teljesen naplózott, minimális jogosultságú, leállítható és hibánál biztonságosan függő állapotba kerül. | jogosultsági review, kill switch teszt, hibatűrési és visszaállítási jegyzőkönyv |
+| PR-006 | Az emberi feladatkezelés közérthető célt, felelőst, reviewert, ellenőrzőlistát, dokumentumlinket és egyértelmű következő lépést mutat; az állapotátmenetek visszakövethetők, a review-ra előterjesztéshez védett URI és SHA-256 szükséges. | 3–5 valós feladatos pilot, felhasználói próba, append-only auditnapló és negatív tesztek |
+| PR-007 | A többfelhasználós pilot nem veszít és nem ír felül csendben adatot párhuzamos használatkor; a backend közvetlenül nem publikálható; hitelesítés, szerveroldali RBAC, SharePoint-írás és hálózati megnyitás csak G1/G2/G3 után kapcsolható be; ellenőrzött mentés és elkülönített restore-próba kötelező. | SQLite-tranzakciós és konkurenciateszt, fail-closed config-validátor, mentés/hash/integritás teszt, 16 pontos emberi UAT |
+| PR-007 | Az emberi feladatokhoz közvetlenül letölthető és nyomtatható munkalap, helyi csatolmány-előkészítés és automatikus SHA-256 tartozik; a helyi fájl nem minősül evidenciának, és nem kerül Gitbe. | öt Word-munkalap render-QA-ja, letöltési és csatolási API-teszt, extension/méret/path negatív tesztek |
 
 Ezek a programkövetelmények nem bővítik visszamenőleg a H-001 definition of done-ját; a következő munkacsomagok tervezésénél kötelező bemenetek.
 

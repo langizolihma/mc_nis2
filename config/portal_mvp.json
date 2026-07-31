@@ -9,12 +9,26 @@
     "data/project_dates.json",
     "DEFERRED_EVIDENCE_LOG.md",
     "data/sharepoint_task_snapshot.json",
+    "data/human_task_pilot.json",
+    "data/human_execution_package.json",
     "config/sharepoint_graph_readiness.json",
     "config/portal_auth_policy.json",
     "generated/continuous_assurance_pilot_output.json"
   ],
-  "write_scope": "DRAFT_REVIEW_NOTES_ONLY",
+  "write_scope": "DRAFT_WORK_EVENTS_REVIEW_AND_RECONCILIATION_NOTES_ONLY",
   "runtime_state": "portal_runtime/review_drafts.jsonl",
+  "task_workflow_runtime_state": "portal_runtime/task_workflow_events.jsonl",
+  "local_attachment_runtime_state": "portal_runtime/attachments/",
+  "multiuser_runtime_database": "portal_runtime/pilot.db",
+  "multiuser_storage_engine": "SQLITE_WAL",
+  "legacy_runtime_import_preserved": true,
+  "local_attachment_staging": {
+    "enabled": true,
+    "formal_effect": false,
+    "max_bytes": 10485760,
+    "allowed_extensions": [".pdf", ".docx", ".xlsx", ".jpg", ".jpeg", ".png"],
+    "sharepoint_upload_and_human_review_required": true
+  },
   "safety": {
     "external_network_allowed": false,
     "lan_binding_allowed": false,

@@ -16,6 +16,12 @@ from .execution_brief import deadline_bucket
 from .portal_auth import auth_readiness_summary, validate_portal_auth_policy
 from .sharepoint_readiness import readiness_summary, validate_sharepoint_graph_readiness
 from .sharepoint_snapshot import load_sharepoint_projection
+from .task_workflow import (
+    TaskAttachmentStore,
+    TaskWorkflowDraftStore,
+    build_pilot_projection,
+    load_pilot_config,
+)
 
 
 DEFERRED_ROW = re.compile(r"^\|\s*(DEF-\d+)\s*\|")
@@ -380,6 +386,8 @@ def build_live_snapshot(
     store: ReviewDraftStore,
     as_of: date,
     reconciliation_store: ReconciliationDraftStore | None = None,
+    task_workflow_store: TaskWorkflowDraftStore | None = None,
+    task_attachment_store: TaskAttachmentStore | None = None,
 ) -> dict[str, Any]:
     """Read current repository metadata and merge safe local runtime state."""
     actions = load_actions(root / "data" / "actions.csv")
@@ -524,6 +532,54 @@ def build_live_snapshot(
     linked_tasks = sum(bool(item.get("evidence_url")) for item in sharepoint_tasks)
     snapshot["summary"]["linked_human_tasks"] = linked_tasks
     snapshot["summary"]["unlinked_human_tasks"] = len(sharepoint_tasks) - linked_tasks
+    try:
+        pilot_config = load_pilot_config(
+            root / "data" / "human_task_pilot.json"
+        )
+        human_package = json.loads(
+            (root / "data" / "human_execution_package.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        work_events = (
+            task_workflow_store.load()
+            if task_workflow_store is not None
+            else []
+        )
+        attachments = (
+            task_attachment_store.load()
+            if task_attachment_store is not None
+            else []
+        )
+        snapshot["human_task_pilot"] = build_pilot_projection(
+            pilot_config,
+            human_package,
+            sharepoint_tasks,
+            work_events,
+            attachments,
+        )
+        snapshot["summary"]["human_task_pilot_count"] = len(
+            snapshot["human_task_pilot"]["tasks"]
+        )
+        snapshot["summary"]["human_task_ready_for_review"] = (
+            snapshot["human_task_pilot"]["state_counts"].get(
+                "READY_FOR_REVIEW", 0
+            )
+        )
+    except (OSError, ValueError, TypeError, json.JSONDecodeError):
+        snapshot["human_task_pilot"] = {
+            "pilot_id": "HTW-PILOT-001",
+            "status": "ERROR_FAIL_CLOSED",
+            "formal_effect": False,
+            "authentication_required_for_formal_use": True,
+            "task_count": 0,
+            "state_counts": {},
+            "tasks": [],
+            "events": [],
+            "allowed_transitions": {},
+        }
+        snapshot["summary"]["human_task_pilot_count"] = 0
+        snapshot["summary"]["human_task_ready_for_review"] = 0
     readiness_path = root / "config" / "sharepoint_graph_readiness.json"
     try:
         readiness_data = json.loads(readiness_path.read_text(encoding="utf-8"))

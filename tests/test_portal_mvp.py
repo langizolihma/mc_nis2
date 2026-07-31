@@ -21,6 +21,10 @@ from nis2_harness.portal import (
     validate_review_draft,
 )
 from nis2_harness.portal_server import _kill_switch_engaged, make_handler, serve_portal
+from nis2_harness.task_workflow import (
+    TaskAttachmentStore,
+    TaskWorkflowDraftStore,
+)
 
 
 ROOT = Path(__file__).parents[1]
@@ -114,11 +118,15 @@ class PortalMvpTests(unittest.TestCase):
             reconciliation_store = ReconciliationDraftStore(
                 Path(temp) / "reconciliation.jsonl"
             )
+            task_workflow_store = TaskWorkflowDraftStore(
+                Path(temp) / "task-workflow.jsonl"
+            )
             snapshot = build_live_snapshot(
                 ROOT,
                 store,
                 date(2026, 7, 20),
                 reconciliation_store,
+                task_workflow_store,
             )
         self.assertEqual(42, snapshot["summary"]["total_actions"])
         self.assertEqual(66, snapshot["summary"]["days_to_deadline"])
@@ -161,8 +169,8 @@ class PortalMvpTests(unittest.TestCase):
         self.assertLess(action["days_to_target"], 0)
         self.assertEqual(["1.2"], action["control_refs"])
         self.assertEqual("SRC-009", action["control_details"][0]["source_ref"])
-        self.assertEqual(37, len(snapshot["sharepoint_tasks"]))
-        self.assertEqual(37, snapshot["summary"]["linked_human_tasks"])
+        self.assertEqual(38, len(snapshot["sharepoint_tasks"]))
+        self.assertEqual(38, snapshot["summary"]["linked_human_tasks"])
         self.assertEqual(0, snapshot["summary"]["unlinked_human_tasks"])
         self.assertEqual("READ_ONLY_SNAPSHOT_ACTIVE", snapshot["sharepoint_integration"]["status"])
         self.assertFalse(snapshot["sharepoint_integration"]["network_allowed"])
@@ -183,12 +191,29 @@ class PortalMvpTests(unittest.TestCase):
         self.assertFalse(auth["authentication_enabled"])
         self.assertFalse(auth["network_allowed"])
         self.assertFalse(auth["formal_effect"])
+        self.assertEqual(5, snapshot["human_task_pilot"]["task_count"])
+        self.assertEqual(
+            "LOCAL_PILOT_READY",
+            snapshot["human_task_pilot"]["status"],
+        )
+        self.assertFalse(snapshot["human_task_pilot"]["formal_effect"])
+        self.assertTrue(
+            snapshot["human_task_pilot"][
+                "authentication_required_for_formal_use"
+            ]
+        )
 
     def test_http_api_serves_snapshot_and_appends_draft(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             store = ReviewDraftStore(Path(temp) / "drafts.jsonl")
             reconciliation_store = ReconciliationDraftStore(
                 Path(temp) / "reconciliation.jsonl"
+            )
+            task_workflow_store = TaskWorkflowDraftStore(
+                Path(temp) / "task-workflow.jsonl"
+            )
+            task_attachment_store = TaskAttachmentStore(
+                Path(temp) / "attachments"
             )
             server = ThreadingHTTPServer(
                 ("127.0.0.1", 0),
@@ -197,6 +222,8 @@ class PortalMvpTests(unittest.TestCase):
                     store,
                     lambda: date(2026, 7, 20),
                     reconciliation_store,
+                    task_workflow_store,
+                    task_attachment_store,
                 ),
             )
             thread = threading.Thread(target=server.serve_forever, daemon=True)
@@ -231,6 +258,72 @@ class PortalMvpTests(unittest.TestCase):
                 self.assertEqual(201, response.status)
                 self.assertFalse(result["record"]["formal_effect"])
                 self.assertEqual(1, len(reconciliation_store.load()))
+                work_payload = {
+                    "task_id": "DEF-002",
+                    "actor_display": "Pásztor András",
+                    "transition": "START_WORK",
+                    "note": "A dokumentumellenőrzés megkezdődött.",
+                    "evidence_uri": "",
+                    "evidence_sha256": "",
+                }
+                body = json.dumps(
+                    work_payload,
+                    ensure_ascii=False,
+                ).encode("utf-8")
+                connection.request(
+                    "POST",
+                    "/api/task-work-events",
+                    body=body,
+                    headers={"Content-Type": "application/json"},
+                )
+                response = connection.getresponse()
+                result = json.loads(response.read())
+                self.assertEqual(201, response.status)
+                self.assertFalse(result["record"]["formal_effect"])
+                self.assertEqual(1, len(task_workflow_store.load()))
+                connection.request(
+                    "GET",
+                    (
+                        "/api/task-materials/DEF-002/"
+                        "DEF-002_kanonikus_auditjelentes_review.docx"
+                    ),
+                )
+                response = connection.getresponse()
+                material = response.read()
+                self.assertEqual(200, response.status)
+                self.assertTrue(material.startswith(b"PK"))
+                self.assertIn(
+                    "attachment;",
+                    response.getheader("Content-Disposition"),
+                )
+                connection.request(
+                    "POST",
+                    "/api/task-attachments/DEF-002",
+                    body=b"%PDF-1.7 attachment",
+                    headers={
+                        "Content-Type": "application/pdf",
+                        "X-Filename": "alairt-review.pdf",
+                    },
+                )
+                response = connection.getresponse()
+                result = json.loads(response.read())
+                self.assertEqual(201, response.status)
+                self.assertFalse(result["record"]["formal_effect"])
+                self.assertEqual(
+                    "LOCAL_STAGED_NOT_EVIDENCE",
+                    result["record"]["status"],
+                )
+                self.assertEqual(1, len(task_attachment_store.load()))
+                connection.request(
+                    "GET",
+                    result["record"]["download_url"],
+                )
+                response = connection.getresponse()
+                self.assertEqual(200, response.status)
+                self.assertEqual(
+                    b"%PDF-1.7 attachment",
+                    response.read(),
+                )
                 connection.close()
             finally:
                 server.shutdown()
@@ -257,6 +350,8 @@ class PortalMvpTests(unittest.TestCase):
         self.assertNotIn("https://", html)
         self.assertIn("review-modal", identifiers)
         self.assertIn("reconciliation-modal", identifiers)
+        self.assertIn("work-modal", identifiers)
+        self.assertIn("work-grid", identifiers)
         javascript = (ROOT / "portal_demo" / "app.js").read_text(encoding="utf-8")
         self.assertIn("safeSharePointUrl", javascript)
         self.assertIn("sharepoint_tasks", javascript)
@@ -264,6 +359,11 @@ class PortalMvpTests(unittest.TestCase):
         self.assertIn("portal_auth_readiness", javascript)
         self.assertIn("control_details", javascript)
         self.assertIn("catalog_review", javascript)
+        self.assertIn("human_task_pilot", javascript)
+        self.assertIn("/api/task-work-events", javascript)
+        self.assertIn("/api/task-attachments/", javascript)
+        self.assertIn("work-attachment", identifiers)
+        self.assertIn("work-attachment-upload", identifiers)
         self.assertIn('rel="noopener noreferrer"', javascript)
 
     def test_control_catalog_projection_is_proposal_only(self) -> None:

@@ -25,7 +25,7 @@ window.NIS2_DEMO_DATA = {
         "1.2"
       ],
       "cost_band": "B0",
-      "days_to_target": -28,
+      "days_to_target": -29,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Aláírt kinevezés, munkaköri leírás, RACI és szervezeti ábra.",
       "evidence": "Aláírt dokumentumok, kihirdetési nyom, vezetői jóváhagyás.",
@@ -77,7 +77,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -30,
+      "days_to_target": -31,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Működő repository- és evidenciatár-struktúra.",
       "evidence": "Repository access list, evidenciatár-struktúra export/képernyőkép, naming convention, jóváhagyás.",
@@ -103,7 +103,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -23,
+      "days_to_target": -24,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Emberileg ellenőrzött audit finding-regiszter és parser-hibajegy.",
       "evidence": "Mintavételi jegyzőkönyv, exception log, human_validated mező, reviewer sign-off.",
@@ -129,7 +129,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -18,
+      "days_to_target": -19,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott control-action-evidence mapping.",
       "evidence": "Mapping review log, hiány- és duplikációlista, owner sign-off.",
@@ -173,7 +173,7 @@ window.NIS2_DEMO_DATA = {
         "1.4"
       ],
       "cost_band": "B0",
-      "days_to_target": -3,
+      "days_to_target": -4,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Cselekvési terv tervezet.",
       "evidence": "Minden tételhez követelménycsalád, feladat, név szerinti felelős, dátum, deliverable, evidencia és forrás.",
@@ -217,7 +217,7 @@ window.NIS2_DEMO_DATA = {
         "1.4"
       ],
       "cost_band": "B0",
-      "days_to_target": 57,
+      "days_to_target": 56,
       "deadline_bucket": "LATER",
       "deliverable": "Benyújtott csomag és átvételi igazolás.",
       "evidence": "Aláírt terv, jóváhagyási lánc, benyújtási és átvételi bizonyíték.",
@@ -305,7 +305,7 @@ window.NIS2_DEMO_DATA = {
         "1.1"
       ],
       "cost_band": "B0",
-      "days_to_target": -3,
+      "days_to_target": -4,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Szabályzat-életciklus eljárás.",
       "evidence": "Review log, verziótörténet, jóváhagyás, kihirdetés és megismerési nyom.",
@@ -349,7 +349,7 @@ window.NIS2_DEMO_DATA = {
         "1.3"
       ],
       "cost_band": "B0",
-      "days_to_target": -3,
+      "days_to_target": -4,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott erőforrásterv és exception log.",
       "evidence": "Budget extract, kapacitásterv, döntési napló, halasztási kockázat.",
@@ -409,7 +409,7 @@ window.NIS2_DEMO_DATA = {
         "6.36"
       ],
       "cost_band": "B0",
-      "days_to_target": -13,
+      "days_to_target": -14,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott EIR/asset/dependency register.",
       "evidence": "Read-only exportok, tulajdonosi jóváhagyás, adatfolyam- és függőségi lista.",
@@ -435,7 +435,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -19,
+      "days_to_target": -20,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Működő evidence register és review workflow.",
       "evidence": "védett belső URI-k, hash manifest, review log, visszautasítási okok.",
@@ -527,7 +527,7 @@ window.NIS2_DEMO_DATA = {
         "9.34"
       ],
       "cost_band": "B0",
-      "days_to_target": 27,
+      "days_to_target": 26,
       "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Incidenskezelési terv és gyakorlatjegyzőkönyv.",
       "evidence": "Kontaktlista, ticket/timeline, döntések, lessons learned, javító akciók és résztvevői nyom.",
@@ -587,7 +587,7 @@ window.NIS2_DEMO_DATA = {
         "3.13"
       ],
       "cost_band": "B0",
-      "days_to_target": 27,
+      "days_to_target": 26,
       "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Képzési terv, anyag, teszt és nyilvántartás.",
       "evidence": "Jelenlét/átvétel, teszteredmény, anyagverzió, utánkövetés.",
@@ -663,7 +663,7 @@ window.NIS2_DEMO_DATA = {
         "8.2"
       ],
       "cost_band": "B0",
-      "days_to_target": 12,
+      "days_to_target": 11,
       "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Access review csomag és jóváhagyott életciklus-eljárás.",
       "evidence": "Read-only export, alkalmazásgazdai döntések, change ticket és visszaellenőrzés.",
@@ -707,7 +707,7 @@ window.NIS2_DEMO_DATA = {
         "8.3"
       ],
       "cost_band": "B0",
-      "days_to_target": 27,
+      "days_to_target": 26,
       "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "MFA gap analysis és pilot report.",
       "evidence": "Licencmátrix, pilot scope, siker/hiba napló, rollback és jóváhagyás.",
@@ -784,7 +784,7 @@ window.NIS2_DEMO_DATA = {
         "7.43"
       ],
       "cost_band": "B0",
-      "days_to_target": -3,
+      "days_to_target": -4,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Backup matrix és restore test report.",
       "evidence": "Job log, helyreállított objektum/rendszer, időtartam, hiba, RPO/RTO összevetés és jóváhagyás.",
@@ -908,7 +908,7 @@ window.NIS2_DEMO_DATA = {
         "5.15"
       ],
       "cost_band": "B0",
-      "days_to_target": 42,
+      "days_to_target": 41,
       "deadline_bucket": "LATER",
       "deliverable": "Log source matrix, retention és review log.",
       "evidence": "Mintalog, alert teszt, review ticket, retention proof, exception log.",
@@ -1000,7 +1000,7 @@ window.NIS2_DEMO_DATA = {
         "18.2"
       ],
       "cost_band": "B0",
-      "days_to_target": 12,
+      "days_to_target": 11,
       "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Jóváhagyott maintenance/patch/change workflow.",
       "evidence": "Baseline export, patch report, change ticket, exception, rollback proof.",
@@ -1172,7 +1172,7 @@ window.NIS2_DEMO_DATA = {
         "12.42"
       ],
       "cost_band": "B0",
-      "days_to_target": -3,
+      "days_to_target": -4,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Fizikai gap register és evidence csomag.",
       "evidence": "Checklist, dátumozott fotó, belépési lista, tesztjegyzőkönyv, intézkedési terv.",
@@ -1232,7 +1232,7 @@ window.NIS2_DEMO_DATA = {
         "19.4"
       ],
       "cost_band": "B0",
-      "days_to_target": 42,
+      "days_to_target": 41,
       "deadline_bucket": "LATER",
       "deliverable": "Supplier risk register és review terv.",
       "evidence": "Szerződéslista, kérdőív, kockázati döntés, hiánylista és review proof.",
@@ -1475,7 +1475,7 @@ window.NIS2_DEMO_DATA = {
         "16.99"
       ],
       "cost_band": "B0",
-      "days_to_target": -3,
+      "days_to_target": -4,
       "deadline_bucket": "OVERDUE",
       "deliverable": "License entitlement and support matrix.",
       "evidence": "Szerződés/SAM export, host/core/VM/user mapping, support lifecycle és reviewer sign-off.",
@@ -1501,7 +1501,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": 428,
+      "days_to_target": 427,
       "deadline_bucket": "LATER",
       "deliverable": "Repeat-audit roadmap.",
       "evidence": "Jóváhagyott target, mock audit naptár, javítási buffer és auditor-procurement gate.",
@@ -1527,7 +1527,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -26,
+      "days_to_target": -27,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott AI usage rule és felhasználói visszaigazolás.",
       "evidence": "Policy note, acknowledgement, minta redakció, környezetengedély.",
@@ -1553,7 +1553,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -12,
+      "days_to_target": -13,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Eval baseline, gold cases és defect log.",
       "evidence": "Tesztfutás, reviewed examples, trace/output, hibajegy és javítási kör.",
@@ -1613,7 +1613,7 @@ window.NIS2_DEMO_DATA = {
         "18.2"
       ],
       "cost_band": "B0",
-      "days_to_target": 57,
+      "days_to_target": 56,
       "deadline_bucket": "LATER",
       "deliverable": "Vulnerability assessment and remediation plan.",
       "evidence": "Scope, G3 approval, scan log, finding register, remediation ticket és retest.",
@@ -1640,7 +1640,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": 57,
+      "days_to_target": 56,
       "deadline_bucket": "LATER",
       "deliverable": "EIR scope and readiness record.",
       "evidence": "EIR definition, owner sign-off, asset/dependency list és döntési napló.",
@@ -1666,7 +1666,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -30,
+      "days_to_target": -31,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott canonical source record.",
       "evidence": "SRC-008 fájl, SHA-256, védett tárhivatkozás, aláírásstruktúra-metaadat, összehasonlítási jegyzőkönyv, D-025 és reviewer.",
@@ -1692,7 +1692,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -28,
+      "days_to_target": -29,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott projekt-RACI és kitöltött P0 owner/approver mezők.",
       "evidence": "Aláírt RACI, vezetői döntés, actions.csv review log.",
@@ -1784,7 +1784,7 @@ window.NIS2_DEMO_DATA = {
         "11.14"
       ],
       "cost_band": "B0",
-      "days_to_target": 27,
+      "days_to_target": 26,
       "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Adathordozó-védelmi eljárás és nyilvántartás.",
       "evidence": "Médialeltár, jóváhagyott törlési módszer, hozzáférési lista, mintajegyzőkönyv és megsemmisítési/újrahasználati bizonyíték.",
@@ -1956,7 +1956,7 @@ window.NIS2_DEMO_DATA = {
         "14.13"
       ],
       "cost_band": "B0",
-      "days_to_target": 27,
+      "days_to_target": 26,
       "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Jóváhagyott personnel security és joiner-mover-leaver csomag.",
       "evidence": "Munkakör-besorolás, ellenőrzési szabály, checklist, hozzáférés-visszavonási SLA, nyilatkozat és mintafolyamat-evidencia.",
@@ -2064,7 +2064,7 @@ window.NIS2_DEMO_DATA = {
         "15.20"
       ],
       "cost_band": "B0",
-      "days_to_target": 12,
+      "days_to_target": 11,
       "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Jóváhagyott risk methodology, risk register és treatment workflow.",
       "evidence": "Kockázati skála, elfogadási hatáskör, mintakockázatok, kezelési döntések, review log és vezetői jóváhagyás.",
@@ -2172,7 +2172,7 @@ window.NIS2_DEMO_DATA = {
         "13.11"
       ],
       "cost_band": "B0",
-      "days_to_target": 27,
+      "days_to_target": 26,
       "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Három jóváhagyott rendszerbiztonsági terv és közös sablon.",
       "evidence": "Verziózott tervek, EIR-owner és IBF jóváhagyás, dependency/threat mapping, változásnapló és megismertetési nyom.",
@@ -2312,7 +2312,7 @@ window.NIS2_DEMO_DATA = {
         "16.99"
       ],
       "cost_band": "B0",
-      "days_to_target": 42,
+      "days_to_target": 41,
       "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott beszerzési biztonsági checklist és szerződéses követelményminta.",
       "evidence": "Kitöltött mintachecklist, szerződéses klauzulák, support/EOL döntés, kivétel és jóváhagyás.",
@@ -3833,8 +3833,202 @@ window.NIS2_DEMO_DATA = {
       "name": "Költési döntés"
     }
   ],
+  "human_task_pilot": {
+    "allowed_transitions": {
+      "RETURN_FOR_REWORK": {
+        "from": [
+          "READY_FOR_REVIEW"
+        ],
+        "to": "REWORK_REQUIRED"
+      },
+      "SAVE_PROGRESS": {
+        "from": [
+          "IN_PROGRESS"
+        ],
+        "to": "IN_PROGRESS"
+      },
+      "START_WORK": {
+        "from": [
+          "REWORK_REQUIRED",
+          "TODO"
+        ],
+        "to": "IN_PROGRESS"
+      },
+      "SUBMIT_FOR_REVIEW": {
+        "from": [
+          "IN_PROGRESS"
+        ],
+        "to": "READY_FOR_REVIEW"
+      }
+    },
+    "attachments": [],
+    "authentication_required_for_formal_use": true,
+    "events": [],
+    "formal_effect": false,
+    "pilot_id": "HTW-PILOT-001",
+    "state_counts": {
+      "IN_PROGRESS": 0,
+      "READY_FOR_REVIEW": 0,
+      "REWORK_REQUIRED": 0,
+      "TODO": 5
+    },
+    "status": "LOCAL_PILOT_READY",
+    "task_count": 5,
+    "tasks": [
+      {
+        "approver": "Lángi Zoltán",
+        "attachments": [],
+        "checklist": [
+          "Nyisd meg a kapcsolódó auditjelentést és a D-025 döntést.",
+          "Ellenőrizd, hogy a fájl és a döntés ugyanarra a kanonikus jelentésre vonatkozik.",
+          "Töltsd fel az aláírt vagy jóváhagyott review-rekordot, majd rögzítsd a linket és a hash-t."
+        ],
+        "evidence_label": "SRC-008 – aláírt, beadott auditjelentés",
+        "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/01_AUDIT_SOURCE/A-035/SRC-008__A-035__SIGNED-SUBMITTED-AUDIT-REPORT__v01__20260605.pdf",
+        "formal_effect": false,
+        "latest_event": null,
+        "materials": [
+          {
+            "download_url": "/api/task-materials/DEF-002/DEF-002_kanonikus_auditjelentes_review.docx",
+            "filename": "DEF-002_kanonikus_auditjelentes_review.docx",
+            "label": "Kanonikus auditjelentés – review-munkalap",
+            "material_id": "MAT-DEF-002-01",
+            "path": "portal_materials/DEF-002_kanonikus_auditjelentes_review.docx"
+          }
+        ],
+        "must_be_completed_before": "Külső benyújtás előtt.",
+        "owner": "Pásztor András",
+        "pilot_order": 1,
+        "plain_language_goal": "Lángi Zoltán erősítse meg írásban, hogy az aláírt auditjelentés a használható kanonikus példány.",
+        "required_result": "A G2 reviewer D-025-höz kapcsolt elfogadási rekordja.",
+        "status": "TODO",
+        "task_id": "DEF-002",
+        "work_type": "Szakmai elfogadás"
+      },
+      {
+        "approver": "Lángi Zoltán",
+        "attachments": [],
+        "checklist": [
+          "Nyisd meg az SRC-008 dokumentum 388. oldalát.",
+          "Ellenőrizd az összes mező olvashatóságát, és írd le az eredményt.",
+          "Mentsd a feljegyzést a védett tárba, majd rögzítsd a linket és a hash-t."
+        ],
+        "evidence_label": "SRC-008 – aláírt auditjelentés",
+        "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/01_AUDIT_SOURCE/A-035/SRC-008__A-035__SIGNED-SUBMITTED-AUDIT-REPORT__v01__20260605.pdf",
+        "formal_effect": false,
+        "latest_event": null,
+        "materials": [
+          {
+            "download_url": "/api/task-materials/DEF-004/DEF-004_auditigazolas_olvashatosagi_ellenorzes.docx",
+            "filename": "DEF-004_auditigazolas_olvashatosagi_ellenorzes.docx",
+            "label": "Auditigazolás – olvashatósági ellenőrzőlap",
+            "material_id": "MAT-DEF-004-01",
+            "path": "portal_materials/DEF-004_auditigazolas_olvashatosagi_ellenorzes.docx"
+          }
+        ],
+        "must_be_completed_before": "Külső felhasználás előtt, ha az angol igazolás része a csomagnak.",
+        "owner": "Pásztor András",
+        "pilot_order": 2,
+        "plain_language_goal": "Emberi PDF-megjelenítőben ellenőrizni kell, hogy az angol auditigazolás 388. oldala olvasható.",
+        "required_result": "Az angol auditigazolás 388. oldalán jelzett Poppler-renderelt mezők olvashatóságának ellenőrzési feljegyzése emberi PDF-megjelenítőből.",
+        "status": "TODO",
+        "task_id": "DEF-004",
+        "work_type": "Dokumentumellenőrzés"
+      },
+      {
+        "approver": "Lángi Zoltán",
+        "attachments": [],
+        "checklist": [
+          "Ellenőrizd a szerepeket, helyettesítést és hatásköröket.",
+          "Írasd alá a RACI- és IBF-kijelölési dokumentumokat.",
+          "Töltsd fel a végleges csomagot, majd rögzítsd a SharePoint-linket és a hash-t."
+        ],
+        "evidence_label": "A-036 – szervezeti és RACI-evidencia mappa",
+        "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE/A-036",
+        "formal_effect": false,
+        "latest_event": null,
+        "materials": [
+          {
+            "download_url": "/api/task-materials/DEF-005/DEF-005_RACI_es_IBF_kijelolesi_csomag.docx",
+            "filename": "DEF-005_RACI_es_IBF_kijelolesi_csomag.docx",
+            "label": "RACI- és IBF-kijelölési csomag",
+            "material_id": "MAT-DEF-005-01",
+            "path": "portal_materials/DEF-005_RACI_es_IBF_kijelolesi_csomag.docx"
+          }
+        ],
+        "must_be_completed_before": "A szerepkörre épülő kontroll elfogadása, de legkésőbb külső benyújtás előtt.",
+        "owner": "Pásztor András",
+        "pilot_order": 3,
+        "plain_language_goal": "A jóváhagyott szerepkiosztást formális, aláírt RACI- és IBF-kijelölési csomaggal kell igazolni.",
+        "required_result": "Aláírt projekt-RACI, formális IBF-kijelölés, feladat- és hatáskör, helyettesítés, kihirdetési nyom, valamint az alkalmazandó hatósági bejelentési vagy nyilvántartási rekord védett URI-ja, hash-e és review-ja.",
+        "status": "TODO",
+        "task_id": "DEF-005",
+        "work_type": "Szerepkijelölés"
+      },
+      {
+        "approver": "Dr. Berta Brigitta",
+        "attachments": [],
+        "checklist": [
+          "Határozd meg a metALCOM-ra alkalmazandó jogcímet és követelményeket.",
+          "Ellenőrizd a szükséges végzettségi, tapasztalati és továbbképzési feltételeket.",
+          "Csak a review-rekordot és a védett tárhivatkozást rögzítsd; személyes okirat ne kerüljön Gitbe."
+        ],
+        "evidence_label": "A-036 – IBF- és szerepkijelölési evidencia mappa",
+        "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE/A-036",
+        "formal_effect": false,
+        "latest_event": null,
+        "materials": [
+          {
+            "download_url": "/api/task-materials/DEF-006/DEF-006_IBF_alkalmassagi_jogi_review.docx",
+            "filename": "DEF-006_IBF_alkalmassagi_jogi_review.docx",
+            "label": "IBF-alkalmasság – jogi review-lap",
+            "material_id": "MAT-DEF-006-01",
+            "path": "portal_materials/DEF-006_IBF_alkalmassagi_jogi_review.docx"
+          }
+        ],
+        "must_be_completed_before": "Formális IBF-kijelölés és hatósági használat előtt.",
+        "owner": "Pásztor András",
+        "pilot_order": 4,
+        "plain_language_goal": "Dr. Berta Brigitta ellenőrizze és dokumentálja az IBF-re vonatkozó alkalmassági feltételek teljesülését.",
+        "required_result": "A metALCOM Kiberbiztonsági tv. 1. § (1) szerinti besorolási jogcíme; az alkalmazandó végzettségi, szakképzettségi vagy szakmai tapasztalati feltétel teljesítésének védett igazolása; büntetlen előéleti és éves továbbképzési megfelelés kezelési rekordja. Személyes okirat Gitbe nem kerülhet.",
+        "status": "TODO",
+        "task_id": "DEF-006",
+        "work_type": "Jogi megfelelőség"
+      },
+      {
+        "approver": "Lángi Zoltán",
+        "attachments": [],
+        "checklist": [
+          "Kóczán Mónika jelölje ki a belső kontrollgazdát.",
+          "Ellenőrizzétek a Serversystem Kft. incidens-, napló-, hozzáférési és auditkötelezettségeit.",
+          "Töltsétek fel a kijelölést és a review-t, majd rögzítsétek a linket és a hash-t."
+        ],
+        "evidence_label": "A-036 – kontrollgazdai kijelölések mappa",
+        "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE/A-036",
+        "formal_effect": false,
+        "latest_event": null,
+        "materials": [
+          {
+            "download_url": "/api/task-materials/DEF-007/DEF-007_kontrollgazda_es_partner_review.docx",
+            "filename": "DEF-007_kontrollgazda_es_partner_review.docx",
+            "label": "Kontrollgazda-kijelölés és partneri review",
+            "material_id": "MAT-DEF-007-01",
+            "path": "portal_materials/DEF-007_kontrollgazda_es_partner_review.docx"
+          }
+        ],
+        "must_be_completed_before": "Technikai evidencia elfogadása vagy incidenskezelési folyamat jóváhagyása előtt.",
+        "owner": "Kóczán Mónika",
+        "pilot_order": 5,
+        "plain_language_goal": "Ki kell jelölni a belső infrastruktúra- és incidenskezelési kontrollgazdát, és át kell nézni a partner kötelezettségeit.",
+        "required_result": "Belső metALCOM infrastruktúra-/incidenskezelési kontrollgazda kijelölése, valamint a Serversystem Kft. incidensjelzési, napló-, evidencia-, hozzáférési, titoktartási, helyettesítési és auditálhatósági kötelezettségeinek dokumentált review-ja.",
+        "status": "TODO",
+        "task_id": "DEF-007",
+        "work_type": "Kontrollgazda-kijelölés"
+      }
+    ]
+  },
   "meta": {
-    "as_of": "2026-07-29",
+    "as_of": "2026-07-30",
     "auth_status": "NOT_CONFIGURED",
     "disclaimer": "A felület helyi MVP. A review-tervezet nem jóváhagyás, nem evidencia, nem módosít akcióstátuszt és a portál nem hajt végre jóváhagyást.",
     "mode": "LOCAL_MVP",
@@ -4490,7 +4684,7 @@ window.NIS2_DEMO_DATA = {
     "catalog_pending_checks": 6,
     "catalog_pending_eir_classifications": 5,
     "catalog_review_status": "PENDING_G1_REVIEW",
-    "days_to_deadline": 57,
+    "days_to_deadline": 56,
     "deadline_reconciliation_pending": 16,
     "due_within_30_days": 9,
     "due_within_7_days": 0,
@@ -4501,6 +4695,8 @@ window.NIS2_DEMO_DATA = {
       "G4": 4,
       "G5": 6
     },
+    "human_task_pilot_count": 5,
+    "human_task_ready_for_review": 0,
     "in_progress": 7,
     "linked_human_tasks": 37,
     "new_actions": 34,

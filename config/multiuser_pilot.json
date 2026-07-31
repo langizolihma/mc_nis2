@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "status": "BLOCKED_PENDING_G1_G2_G3",
+  "formal_effect": false,
+  "decision_refs": [
+    "DECISIONS.md:D-029",
+    "DECISIONS.md:D-032",
+    "DECISIONS.md:D-033"
+  ],
+  "topology": {
+    "pattern": "LOOPBACK_BACKEND_BEHIND_APPROVED_HTTPS_GATEWAY",
+    "backend_bind_host": "127.0.0.1",
+    "backend_port": 8765,
+    "https_gateway_required": true,
+    "public_base_url": "TBD_G2_G3",
+    "direct_backend_access_allowed": false
+  },
+  "storage": {
+    "engine": "SQLITE_WAL",
+    "database_path": "portal_runtime/pilot.db",
+    "attachment_path": "portal_runtime/attachments",
+    "legacy_workflow_import": "portal_runtime/task_workflow_events.jsonl",
+    "legacy_attachment_manifest_import": "portal_runtime/attachments/attachment_manifest.jsonl",
+    "append_only_audit_log": true
+  },
+  "identity": {
+    "provider": "MICROSOFT_ENTRA_ID",
+    "tenant_mode": "SINGLE_TENANT",
+    "protocol": "OIDC_AUTH_CODE_PKCE",
+    "supported_library": "TBD_G2_MSAL_OR_APPROVED_MICROSOFT_LIBRARY",
+    "handcrafted_protocol_allowed": false,
+    "tenant_id": "TBD_ADMIN",
+    "client_id": "TBD_ADMIN",
+    "secret_storage": "WINDOWS_PROTECTED_SECRET_STORE_OR_EQUIVALENT_TBD_G2"
+  },
+  "authorization": {
+    "roles": [
+      "VIEWER",
+      "TASK_OWNER",
+      "REVIEWER",
+      "PORTAL_ADMIN"
+    ],
+    "default_role": "VIEWER",
+    "server_side_enforcement_required": true,
+    "sharepoint_site_read_probe_required": true,
+    "email_domain_only_allowed": false
+  },
+  "sharepoint_upload": {
+    "target_site": "https://metalcom.sharepoint.com/sites/NIS2",
+    "target_library": "Dokumentumok",
+    "target_folder": "NIS2_EVIDENCE",
+    "selected_scope_required": true,
+    "broad_graph_permissions_allowed": false,
+    "hash_verification_required": true,
+    "human_review_required": true
+  },
+  "backup": {
+    "consistent_sqlite_snapshot_required": true,
+    "attachment_hash_manifest_required": true,
+    "restore_test_required_before_pilot": true,
+    "last_restore_test_status": "NOT_RUN"
+  },
+  "runtime_controls": {
+    "publish_enabled": false,
+    "authentication_enabled": false,
+    "role_enforcement_enabled": false,
+    "sharepoint_write_enabled": false,
+    "formal_effect": false,
+    "fail_closed": true
+  },
+  "human_gates": [
+    {
+      "gate": "G1_DOMAIN_REVIEW",
+      "status": "PENDING",
+      "reviewer": "TBD",
+      "evidence_ref": "TBD"
+    },
+    {
+      "gate": "G2_SECURITY_LEGAL",
+      "status": "PENDING",
+      "reviewer": "TBD",
+      "evidence_ref": "TBD"
+    },
+    {
+      "gate": "G3_PRODUCTION_CHANGE",
+      "status": "PENDING",
+      "reviewer": "TBD",
+      "evidence_ref": "TBD"
+    }
+  ]
+}

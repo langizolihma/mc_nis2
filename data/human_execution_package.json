@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
   "status": "HUMAN_EXECUTION_REQUIRED",
-  "as_of": "2026-07-29",
+  "as_of": "2026-07-30",
   "source_ref": "DEFERRED_EVIDENCE_LOG.md",
-  "source_sha256": "2ecaffe4edefe2e39233e3bc9b7142f3d04c23590ed2473461694b0741bf05aa",
+  "source_sha256": "1f2f333b8419fdbd5581772265f0a2de56c4c864d19b716640ae946818f944a0",
   "formal_effect": false,
   "summary": {
-    "task_count": 36,
-    "open_deferred_count": 35,
+    "task_count": 37,
+    "open_deferred_count": 36,
     "accepted_risk_count": 1,
     "closed_accepted_count": 1,
     "wave_count": 7,
@@ -30,7 +30,7 @@
       "Pásztor András; kijelölendő agent-/portálüzemeltető és forrásgazdák": 1,
       "Pásztor András; kijelölendő agent-üzemeltető és forrásgazdák": 1,
       "Pásztor András; kijelölendő ellátásilánc-/beszerzési felelős és szerződésgazdák": 1,
-      "Pásztor András; kijelölendő portálüzemeltető": 1,
+      "Pásztor András; kijelölendő portálüzemeltető": 2,
       "Pásztor András; érintett EIR-ownerek": 1,
       "Pásztor András; érintett dokumentum-, EIR-, HR-, beszállítói és infrastruktúra-gazdák": 1
     }
@@ -46,13 +46,14 @@
     "DEF-022",
     "DEF-023",
     "DEF-029",
-    "DEF-037"
+    "DEF-037",
+    "DEF-038"
   ],
   "waves": [
     {
       "wave_id": "W1",
       "title": "Irányítás, határidők és döntési alapok",
-      "task_count": 11,
+      "task_count": 12,
       "tasks": [
         {
           "task_id": "DEF-002",
@@ -253,6 +254,25 @@
           "must_be_completed_before": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
           "owner": "Pásztor András",
           "approver": "Lángi Zoltán; az akció szerinti G1–G5 reviewer",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-038",
+          "status": "OPEN_DEFERRED",
+          "related": "D-029; D-032; D-033; D-034; config/multiuser_pilot.json; MULTIUSER_PILOT_DEPLOYMENT.md; PILOT_UAT_CHECKLIST.md",
+          "current_process_state": "Elkészült a többfelhasználós pilot tranzakciós SQLite-tárolása, párhuzamos állapotvédelme, csatolmány- és hash-kezelése, korábbi JSONL-adatok egyszeri átvétele, ellenőrzött mentése, fail-closed konfigurációja, indító/mentő segédje és UAT-terve. A hálózati publikálás, hitelesítés, szerepkör-kikényszerítés és SharePoint-írás kikapcsolt.",
+          "required_result": "Belső Windows szerver, üzemeltető, DNS, hálózati zóna, HTTPS gateway és tanúsítvány; Entra tenant/client/redirect adatok és támogatott auth-könyvtár; Entra object ID alapú, jóváhagyott szerepkiosztás; kiválasztott hatókörű Graph/site/folder grant; secret-store és naplóretention; G1/G2/G3 jóváhagyás; a 16 pontos UAT, mentési és elkülönített visszaállítási próba valós reviewerrel és védett evidenciával.",
+          "must_be_completed_before": "Bármely nem loopback használat, többfelhasználós pilot, valós bejelentkezés, SharePoint-feltöltés vagy szervertelepítés előtt.",
+          "owner": "Pásztor András; kijelölendő portálüzemeltető",
+          "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
           "completion_requirements": [
             "actual_artifact_or_decision_created",
             "protected_nis2_sharepoint_uri_recorded",

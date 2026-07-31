@@ -3,10 +3,12 @@
   let data = null;
   let serverMode = false;
   const titles = {
-    overview: ["PROGRAMVEZETŐI NÉZET", "Auditfelkészültség"], actions: ["AKCIÓIRÁNYÍTÁS", "Feladatok"],
+    overview: ["PROGRAMVEZETŐI NÉZET", "Auditfelkészültség"], work: ["EMBERI VÉGREHAJTÁS", "Az én munkám"], actions: ["AKCIÓIRÁNYÍTÁS", "Akciók"],
     approvals: ["EMBERI KONTROLL", "Jóváhagyások"], evidence: ["AUDITNYOM", "Evidenciák"], ai: ["PROPOSAL-ONLY", "AI-javaslatok"]
   };
-  const state = { priority: "ALL", query: "", reviewItem: null, reconciliationItem: null };
+  const state = { priority: "ALL", query: "", workItem: null, reviewItem: null, reconciliationItem: null };
+  const workStateLabels = {TODO:"Teendő",IN_PROGRESS:"Folyamatban",READY_FOR_REVIEW:"Review-ra vár",REWORK_REQUIRED:"Javítandó"};
+  const transitionLabels = {START_WORK:"Munka megkezdése",SAVE_PROGRESS:"Előrehaladás mentése",SUBMIT_FOR_REVIEW:"Előterjesztés review-ra",RETURN_FOR_REWORK:"Visszaküldés javításra"};
   const byId = (id) => document.getElementById(id);
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
   const formatDate = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Intl.DateTimeFormat("hu-HU", {year:"numeric",month:"long",day:"numeric"}).format(new Date(value + "T12:00:00")) : value;
@@ -34,7 +36,7 @@
     }
     if (!data) throw new Error("A portál adatforrása nem érhető el.");
     byId("runtime-mode").textContent = serverMode ? "HELYI MVP · ÉLŐ REPOSITORY-NÉZET" : "OFFLINE BEMUTATÓ SNAPSHOT";
-    byId("runtime-detail").textContent = serverMode ? "· review- és státusztervezetek helyi auditnaplóval" : "· minden művelet szimuláció";
+    byId("runtime-detail").textContent = serverMode ? "· vezetett munkafolyamat és helyi auditnapló" : "· minden művelet szimuláció";
   }
 
   function switchView(name) {
@@ -59,6 +61,32 @@
     const query = state.query.toLocaleLowerCase("hu-HU");
     const rows = data.actions.filter((a) => (state.priority === "ALL" || a.priority === state.priority) && [a.id,a.title,a.task,a.owner].join(" ").toLocaleLowerCase("hu-HU").includes(query));
     byId("actions-body").innerHTML = rows.map((a) => `<tr><td><span class="action-id">${escapeHtml(a.id)}</span></td><td><strong>${escapeHtml(a.title)}</strong></td><td><span class="priority ${a.priority.toLowerCase()}">${a.priority}</span></td><td>${escapeHtml(formatDate(a.target_date))}</td><td>${escapeHtml(a.owner)}</td><td>${a.gates.map((g) => `<span class="gate-chip">${escapeHtml(g.slice(0,2))}</span>`).join("") || "–"}</td><td><span class="status-chip">${escapeHtml(a.status)}</span></td><td><button class="row-button" data-action="${escapeHtml(a.id)}">Részletek →</button></td></tr>`).join("") || `<tr><td colspan="8">Nincs a szűrésnek megfelelő feladat.</td></tr>`;
+  }
+
+  function availableWorkTransitions(item) {
+    const rules = (data.human_task_pilot || {}).allowed_transitions || {};
+    return Object.entries(rules).filter(([, rule]) => (rule.from || []).includes(item.status));
+  }
+
+  function renderWork() {
+    const pilot = data.human_task_pilot || {status:"NOT_AVAILABLE",tasks:[],events:[]};
+    byId("work-count").textContent = pilot.tasks.length;
+    byId("work-nav-count").textContent = pilot.tasks.filter((item) => item.status !== "READY_FOR_REVIEW").length;
+    byId("work-pilot-status").textContent = `${pilot.pilot_id || "HTW-PILOT-001"} · ${pilot.status}`;
+    byId("work-grid").innerHTML = pilot.tasks.length ? pilot.tasks.map((item) => {
+      const safeUrl = safeSharePointUrl(item.evidence_url);
+      const link = safeUrl ? `<a class="work-doc-link" href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">Kapcsolódó dokumentum megnyitása ↗</a>` : `<span class="work-doc-link unavailable">Kapcsolódó dokumentumlink nincs</span>`;
+      const materials = (item.materials || []).map((material) => `<a class="work-material-link" href="${escapeHtml(material.download_url)}" download="${escapeHtml(material.filename)}">Word-munkalap letöltése / nyomtatása ↓<small>${escapeHtml(material.label)}</small></a>`).join("");
+      const attachments = (item.attachments || []).map((attachment) => `<div class="work-attachment"><a href="${escapeHtml(attachment.download_url)}" download="${escapeHtml(attachment.filename)}">${escapeHtml(attachment.filename)} ↓</a><small>${escapeHtml(attachment.size_bytes)} bájt · SHA-256: ${escapeHtml(attachment.sha256)} · csak helyi előkészítés</small></div>`).join("");
+      const checklist = (item.checklist || []).map((step) => `<li>${escapeHtml(step)}</li>`).join("");
+      const latest = item.latest_event ? `<p class="work-latest"><strong>Legutóbbi bejegyzés:</strong> ${escapeHtml(item.latest_event.note)}<br><small>${escapeHtml(item.latest_event.actor_display)} · ${escapeHtml(item.latest_event.created_at)}</small></p>` : "";
+      const transitions = availableWorkTransitions(item);
+      const button = transitions.length ? `<button type="button" data-work-task="${escapeHtml(item.task_id)}">${item.status === "TODO" || item.status === "REWORK_REQUIRED" ? "Feladat megnyitása" : item.status === "IN_PROGRESS" ? "Munka folytatása" : "Review megnyitása"} →</button>` : "";
+      return `<article class="work-card state-${escapeHtml(item.status.toLowerCase())}"><header><div><span class="work-order">${escapeHtml(item.pilot_order)}</span><span class="action-id">${escapeHtml(item.task_id)}</span></div><span class="work-state">${escapeHtml(workStateLabels[item.status] || item.status)}</span></header><p class="work-type">${escapeHtml(item.work_type)}</p><h3>${escapeHtml(item.plain_language_goal)}</h3><div class="work-people"><span><b>Felelős</b>${escapeHtml(item.owner)}</span><span><b>Reviewer</b>${escapeHtml(item.approver)}</span></div><ol>${checklist}</ol><div class="work-materials">${materials || `<span class="work-doc-link unavailable">Nyomtatható munkalap nem érhető el</span>`}${link}</div>${attachments ? `<div class="work-attachments">${attachments}</div>` : ""}${latest}<footer><small>${escapeHtml(item.must_be_completed_before)}</small>${button}</footer></article>`;
+    }).join("") : `<p class="empty-note">A pilot feladatai nem érhetők el; a rendszer fail-closed állapotban marad.</p>`;
+    const events = (pilot.events || []).slice().reverse();
+    byId("work-event-count").textContent = events.length;
+    byId("work-event-list").innerHTML = events.length ? events.map((item) => `<article class="draft-card"><div><span>${escapeHtml(workStateLabels[item.proposed_state] || item.proposed_state)}</span><strong>${escapeHtml(item.task_id)} · ${escapeHtml(transitionLabels[item.transition] || item.transition)}</strong></div><p>${escapeHtml(item.note)}</p><small>${escapeHtml(item.actor_display)} · ${escapeHtml(item.created_at)} · ${escapeHtml(item.event_id)} · nincs formális hatás</small></article>`).join("") : `<p class="empty-note">Még nincs pilot munkabejegyzés.</p>`;
   }
 
   function renderApprovals() {
@@ -125,6 +153,53 @@
   }
   function closeReviewModal(){byId("review-modal").classList.remove("open");byId("review-modal").setAttribute("aria-hidden","true");state.reviewItem=null;}
 
+  function updateWorkEvidenceFields() {
+    const required = byId("work-transition").value === "SUBMIT_FOR_REVIEW";
+    byId("work-evidence-fields").hidden = !required;
+    byId("work-evidence-uri").required = required;
+    byId("work-evidence-sha256").required = required;
+  }
+
+  function openWorkModal(taskId) {
+    const pilot = data.human_task_pilot || {tasks:[]};
+    const item = pilot.tasks.find((entry) => entry.task_id === taskId); if (!item) return;
+    byId("work-form").reset(); state.workItem = item; byId("work-task").value = item.task_id;
+    byId("work-transition").innerHTML = availableWorkTransitions(item).map(([name, rule]) => `<option value="${escapeHtml(name)}">${escapeHtml(transitionLabels[name] || name)} → ${escapeHtml(workStateLabels[rule.to] || rule.to)}</option>`).join("");
+    const safeUrl = safeSharePointUrl(item.evidence_url);
+    byId("work-sharepoint-target").innerHTML = safeUrl ? `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">Védett SharePoint-cél megnyitása ↗</a>` : "Ehhez a feladathoz még nincs jóváhagyott SharePoint-célhivatkozás.";
+    byId("work-attachment-status").textContent = "PDF, DOCX, XLSX, JPG vagy PNG; legfeljebb 10 MB.";
+    updateWorkEvidenceFields();
+    byId("work-modal").classList.add("open"); byId("work-modal").setAttribute("aria-hidden","false"); byId("work-actor").focus();
+  }
+  function closeWorkModal(){byId("work-modal").classList.remove("open");byId("work-modal").setAttribute("aria-hidden","true");state.workItem=null;}
+
+  async function uploadWorkAttachment() {
+    if (!serverMode || !state.workItem) { showToast("Offline snapshot módban csatolmány nem rögzíthető.", true); return; }
+    const input = byId("work-attachment");
+    const file = input.files && input.files[0];
+    if (!file) { showToast("Előbb válassz ki egy fájlt.", true); return; }
+    byId("work-attachment-upload").disabled = true;
+    byId("work-attachment-status").textContent = "Helyi csatolás és SHA-256 számítás folyamatban…";
+    try {
+      const response = await fetch(`/api/task-attachments/${encodeURIComponent(state.workItem.task_id)}`, {
+        method:"POST",
+        headers:{"Content-Type":file.type || "application/octet-stream","X-Filename":encodeURIComponent(file.name)},
+        body:file
+      });
+      const result = await response.json(); if (!response.ok) throw new Error((result.details || [result.error]).join(" "));
+      state.workItem.attachments = [...(state.workItem.attachments || []), result.record];
+      byId("work-evidence-sha256").value = result.record.sha256;
+      byId("work-attachment-status").textContent = `${result.record.filename} helyben csatolva. SHA-256: ${result.record.sha256}. A végleges fájlt még fel kell tölteni SharePointra.`;
+      renderWork();
+      showToast("A fájl helyben csatolva és az SHA-256 kiszámítva. Ez még nem formális evidencia.");
+    } catch (error) {
+      byId("work-attachment-status").textContent = `A csatolás sikertelen: ${error.message}`;
+      showToast(`A csatolás sikertelen: ${error.message}`, true);
+    } finally {
+      byId("work-attachment-upload").disabled = false;
+    }
+  }
+
   function updateReconciliationFields() {
     const outcome = byId("reconciliation-outcome").value;
     const dateRequired = outcome === "RESCHEDULE_REQUESTED";
@@ -161,6 +236,21 @@
     } catch (error) { showToast(`A tervezet nem menthető: ${error.message}`, true); }
   }
 
+  async function submitWorkEvent(event) {
+    event.preventDefault();
+    if (!serverMode) { showToast("Offline snapshot módban munkalépés nem menthető.", true); return; }
+    const payload = {task_id:byId("work-task").value,actor_display:byId("work-actor").value,transition:byId("work-transition").value,note:byId("work-note").value,evidence_uri:byId("work-evidence-uri").value,evidence_sha256:byId("work-evidence-sha256").value};
+    try {
+      const response = await fetch("/api/task-work-events", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+      const result = await response.json(); if (!response.ok) throw new Error((result.details || [result.error]).join(" "));
+      const item = data.human_task_pilot.tasks.find((entry) => entry.task_id === result.record.task_id);
+      item.status = result.record.proposed_state; item.latest_event = result.record;
+      data.human_task_pilot.events = [...(data.human_task_pilot.events || []), result.record];
+      renderWork(); closeWorkModal(); byId("work-form").reset();
+      showToast("A munkalépés auditnyommal elmentve. A kanonikus feladat nem változott.");
+    } catch (error) { showToast(`A munkalépés nem menthető: ${error.message}`, true); }
+  }
+
   async function submitReconciliationDraft(event) {
     event.preventDefault();
     if (!serverMode) { showToast("Offline snapshot módban státusztervezet nem menthető.", true); return; }
@@ -186,6 +276,7 @@
       const nav = event.target.closest("[data-view]"); if (nav) switchView(nav.dataset.view);
       const go = event.target.closest("[data-go]"); if (go) switchView(go.dataset.go);
       const row = event.target.closest("[data-action]"); if (row) openDrawer(row.dataset.action);
+      const work = event.target.closest("[data-work-task]"); if (work) openWorkModal(work.dataset.workTask);
       const review = event.target.closest("[data-review]"); if (review) openReviewModal(review.dataset.review);
       const reconciliation = event.target.closest("[data-reconcile]"); if (reconciliation) openReconciliationModal(reconciliation.dataset.reconcile);
       const ai = event.target.closest("[data-ai-note]"); if (ai) showToast("Az AI-kimenet PROPOSAL. Formális hatása csak hitelesített emberi review után lehet.");
@@ -193,14 +284,15 @@
     });
     byId("action-search").addEventListener("input", (event) => {state.query=event.target.value;renderActions();});
     byId("drawer-close").addEventListener("click",closeDrawer);byId("drawer-backdrop").addEventListener("click",closeDrawer);
+    byId("work-cancel").addEventListener("click",closeWorkModal);byId("work-form").addEventListener("submit",submitWorkEvent);byId("work-transition").addEventListener("change",updateWorkEvidenceFields);byId("work-attachment-upload").addEventListener("click",uploadWorkAttachment);
     byId("review-cancel").addEventListener("click",closeReviewModal);byId("review-form").addEventListener("submit",submitReviewDraft);
     byId("reconciliation-cancel").addEventListener("click",closeReconciliationModal);byId("reconciliation-form").addEventListener("submit",submitReconciliationDraft);byId("reconciliation-outcome").addEventListener("change",updateReconciliationFields);
-    document.addEventListener("keydown",(event)=>{if(event.key==="Escape"){closeDrawer();closeReviewModal();closeReconciliationModal();}});
+    document.addEventListener("keydown",(event)=>{if(event.key==="Escape"){closeDrawer();closeWorkModal();closeReviewModal();closeReconciliationModal();}});
     byId("presentation-button").addEventListener("click",()=>{document.body.classList.toggle("presentation");byId("presentation-button").textContent=document.body.classList.contains("presentation")?"Navigáció mutatása":"Prezentációs mód";});
   }
 
   async function init() {
-    try { await loadData(); renderOverview(); renderActions(); renderApprovals(); renderEvidence(); renderAi(); bindEvents(); }
+    try { await loadData(); renderOverview(); renderWork(); renderActions(); renderApprovals(); renderEvidence(); renderAi(); bindEvents(); }
     catch (error) { document.body.innerHTML = `<p class="fatal-error">${escapeHtml(error.message)}</p>`; }
   }
   init();

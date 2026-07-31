@@ -35,7 +35,7 @@ class HumanExecutionPackageTests(unittest.TestCase):
             for wave in package["waves"]
             for task in wave["tasks"]
         ]
-        self.assertEqual(36, len(task_ids))
+        self.assertEqual(37, len(task_ids))
         self.assertEqual(
             sorted(
                 record["id"] for record in self.records
@@ -43,7 +43,7 @@ class HumanExecutionPackageTests(unittest.TestCase):
             ),
             sorted(task_ids),
         )
-        self.assertEqual(35, package["summary"]["open_deferred_count"])
+        self.assertEqual(36, package["summary"]["open_deferred_count"])
         self.assertEqual(1, package["summary"]["accepted_risk_count"])
         self.assertEqual(1, package["summary"]["closed_accepted_count"])
 
@@ -107,7 +107,7 @@ class HumanExecutionPackageTests(unittest.TestCase):
                 "--markdown-output", str(markdown_output),
             ]))
             data = json.loads(json_output.read_text(encoding="utf-8"))
-            self.assertEqual(36, data["summary"]["task_count"])
+            self.assertEqual(37, data["summary"]["task_count"])
             self.assertTrue(markdown_output.exists())
 
     def test_checked_in_package_matches_current_deferred_log(self) -> None:

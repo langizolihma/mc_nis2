@@ -62,6 +62,7 @@ from .supplier_risk import validate_supplier_risk_plan
 from .physical_security import validate_physical_security_plan
 from .portal import load_deferred
 from .portal_auth import validate_portal_auth_policy
+from .multiuser_pilot import validate_multiuser_pilot
 from .sharepoint_readiness import validate_sharepoint_graph_readiness
 from .human_execution import (
     build_human_execution_package,
@@ -280,6 +281,16 @@ def _parser() -> argparse.ArgumentParser:
     sharepoint_readiness.add_argument("--plan", required=True, type=Path)
     portal_auth = subparsers.add_parser("validate-portal-auth")
     portal_auth.add_argument("--policy", required=True, type=Path)
+    multiuser = subparsers.add_parser("validate-multiuser-pilot")
+    multiuser.add_argument(
+        "--config",
+        default=Path("config/multiuser_pilot.json"),
+        type=Path,
+    )
+    pilot_backup = subparsers.add_parser("backup-pilot-runtime")
+    pilot_backup.add_argument("--output", required=True, type=Path)
+    verify_backup = subparsers.add_parser("verify-pilot-backup")
+    verify_backup.add_argument("--input", required=True, type=Path)
     extract_controls = subparsers.add_parser("extract-control-catalog")
     extract_controls.add_argument("--input", required=True, type=Path)
     extract_controls.add_argument("--catalog-output", required=True, type=Path)
@@ -308,6 +319,43 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run the CLI and return a process exit code."""
     args = _parser().parse_args(argv)
     try:
+        if args.command == "validate-multiuser-pilot":
+            data = load_json_object(
+                args.config, "többfelhasználós pilotkonfiguráció"
+            )
+            result = validate_multiuser_pilot(data, args.config)
+            for issue in result.issues:
+                print(issue.format())
+            print(
+                "Multi-user pilot: "
+                f"{len(result.errors)} hard error, "
+                f"{len(result.warnings)} warning; "
+                f"status={data.get('status', 'UNKNOWN')}"
+            )
+            return 1 if result.errors else 0
+        if args.command == "backup-pilot-runtime":
+            from .pilot_storage import create_pilot_backup
+
+            manifest = create_pilot_backup(
+                Path.cwd() / "portal_runtime" / "pilot.db",
+                Path.cwd() / "portal_runtime" / "attachments",
+                args.output,
+            )
+            print(
+                f"Pilotmentés elkészült: {args.output}; "
+                f"{len(manifest['files'])} fájl; "
+                f"SHA-256={manifest['archive_sha256']}"
+            )
+            return 0
+        if args.command == "verify-pilot-backup":
+            from .pilot_storage import verify_pilot_backup
+
+            result = verify_pilot_backup(args.input)
+            print(
+                f"Pilotmentés érvényes: {result['file_count']} fájl; "
+                f"SHA-256={result['archive_sha256']}"
+            )
+            return 0
         if args.command == "extract-control-catalog":
             catalog, requirements, metadata = extract_catalog(args.input)
             write_catalog_outputs(

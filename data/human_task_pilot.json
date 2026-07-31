@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "pilot_id": "HTW-PILOT-001",
+  "status": "LOCAL_PILOT_READY",
+  "formal_effect": false,
+  "purpose": "Az emberi feladatok hétköznapi, vezetett végrehajtásának kipróbálása formális státuszmódosítás nélkül.",
+  "tasks": [
+    {
+      "task_id": "DEF-002",
+      "pilot_order": 1,
+      "work_type": "Szakmai elfogadás",
+      "plain_language_goal": "Lángi Zoltán erősítse meg írásban, hogy az aláírt auditjelentés a használható kanonikus példány.",
+      "checklist": [
+        "Nyisd meg a kapcsolódó auditjelentést és a D-025 döntést.",
+        "Ellenőrizd, hogy a fájl és a döntés ugyanarra a kanonikus jelentésre vonatkozik.",
+        "Töltsd fel az aláírt vagy jóváhagyott review-rekordot, majd rögzítsd a linket és a hash-t."
+      ],
+      "materials": [
+        {
+          "material_id": "MAT-DEF-002-01",
+          "label": "Kanonikus auditjelentés – review-munkalap",
+          "filename": "DEF-002_kanonikus_auditjelentes_review.docx",
+          "path": "portal_materials/DEF-002_kanonikus_auditjelentes_review.docx"
+        }
+      ]
+    },
+    {
+      "task_id": "DEF-004",
+      "pilot_order": 2,
+      "work_type": "Dokumentumellenőrzés",
+      "plain_language_goal": "Emberi PDF-megjelenítőben ellenőrizni kell, hogy az angol auditigazolás 388. oldala olvasható.",
+      "checklist": [
+        "Nyisd meg az SRC-008 dokumentum 388. oldalát.",
+        "Ellenőrizd az összes mező olvashatóságát, és írd le az eredményt.",
+        "Mentsd a feljegyzést a védett tárba, majd rögzítsd a linket és a hash-t."
+      ],
+      "materials": [
+        {
+          "material_id": "MAT-DEF-004-01",
+          "label": "Auditigazolás – olvashatósági ellenőrzőlap",
+          "filename": "DEF-004_auditigazolas_olvashatosagi_ellenorzes.docx",
+          "path": "portal_materials/DEF-004_auditigazolas_olvashatosagi_ellenorzes.docx"
+        }
+      ]
+    },
+    {
+      "task_id": "DEF-005",
+      "pilot_order": 3,
+      "work_type": "Szerepkijelölés",
+      "plain_language_goal": "A jóváhagyott szerepkiosztást formális, aláírt RACI- és IBF-kijelölési csomaggal kell igazolni.",
+      "checklist": [
+        "Ellenőrizd a szerepeket, helyettesítést és hatásköröket.",
+        "Írasd alá a RACI- és IBF-kijelölési dokumentumokat.",
+        "Töltsd fel a végleges csomagot, majd rögzítsd a SharePoint-linket és a hash-t."
+      ],
+      "materials": [
+        {
+          "material_id": "MAT-DEF-005-01",
+          "label": "RACI- és IBF-kijelölési csomag",
+          "filename": "DEF-005_RACI_es_IBF_kijelolesi_csomag.docx",
+          "path": "portal_materials/DEF-005_RACI_es_IBF_kijelolesi_csomag.docx"
+        }
+      ]
+    },
+    {
+      "task_id": "DEF-006",
+      "pilot_order": 4,
+      "work_type": "Jogi megfelelőség",
+      "plain_language_goal": "Dr. Berta Brigitta ellenőrizze és dokumentálja az IBF-re vonatkozó alkalmassági feltételek teljesülését.",
+      "checklist": [
+        "Határozd meg a metALCOM-ra alkalmazandó jogcímet és követelményeket.",
+        "Ellenőrizd a szükséges végzettségi, tapasztalati és továbbképzési feltételeket.",
+        "Csak a review-rekordot és a védett tárhivatkozást rögzítsd; személyes okirat ne kerüljön Gitbe."
+      ],
+      "materials": [
+        {
+          "material_id": "MAT-DEF-006-01",
+          "label": "IBF-alkalmasság – jogi review-lap",
+          "filename": "DEF-006_IBF_alkalmassagi_jogi_review.docx",
+          "path": "portal_materials/DEF-006_IBF_alkalmassagi_jogi_review.docx"
+        }
+      ]
+    },
+    {
+      "task_id": "DEF-007",
+      "pilot_order": 5,
+      "work_type": "Kontrollgazda-kijelölés",
+      "plain_language_goal": "Ki kell jelölni a belső infrastruktúra- és incidenskezelési kontrollgazdát, és át kell nézni a partner kötelezettségeit.",
+      "checklist": [
+        "Kóczán Mónika jelölje ki a belső kontrollgazdát.",
+        "Ellenőrizzétek a Serversystem Kft. incidens-, napló-, hozzáférési és auditkötelezettségeit.",
+        "Töltsétek fel a kijelölést és a review-t, majd rögzítsétek a linket és a hash-t."
+      ],
+      "materials": [
+        {
+          "material_id": "MAT-DEF-007-01",
+          "label": "Kontrollgazda-kijelölés és partneri review",
+          "filename": "DEF-007_kontrollgazda_es_partner_review.docx",
+          "path": "portal_materials/DEF-007_kontrollgazda_es_partner_review.docx"
+        }
+      ]
+    }
+  ]
+}

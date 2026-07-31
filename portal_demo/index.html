@@ -22,10 +22,11 @@
       </div>
       <nav>
         <button class="nav-item active" data-view="overview"><span>01</span>Áttekintés</button>
-        <button class="nav-item" data-view="actions"><span>02</span>Feladatok</button>
-        <button class="nav-item" data-view="approvals"><span>03</span>Jóváhagyások<b id="approval-nav-count">0</b></button>
-        <button class="nav-item" data-view="evidence"><span>04</span>Evidenciák<b id="evidence-nav-count">0</b></button>
-        <button class="nav-item" data-view="ai"><span>05</span>AI-javaslatok</button>
+        <button class="nav-item" data-view="work"><span>02</span>Az én munkám<b id="work-nav-count">0</b></button>
+        <button class="nav-item" data-view="actions"><span>03</span>Akciók</button>
+        <button class="nav-item" data-view="approvals"><span>04</span>Jóváhagyások<b id="approval-nav-count">0</b></button>
+        <button class="nav-item" data-view="evidence"><span>05</span>Evidenciák<b id="evidence-nav-count">0</b></button>
+        <button class="nav-item" data-view="ai"><span>06</span>AI-javaslatok</button>
       </nav>
       <div class="sidebar-footer">
         <div class="safety-label">BIZTONSÁGI MODELL</div>
@@ -89,6 +90,25 @@
         </article>
       </section>
 
+      <section class="view" id="view-work">
+        <div class="view-intro">
+          <div><p class="section-kicker">EMBERI FELADATKEZELÉS · PILOT</p><h2>Az én munkám</h2><p>Öt valós feladat hétköznapi leírással, ellenőrzőlistával és egyértelmű következő lépéssel.</p></div>
+          <div class="big-count"><strong id="work-count">0</strong><span>pilotfeladat</span></div>
+        </div>
+        <article class="integration-strip"><div><span>PILOT MŰKÖDÉSI MÓD</span><strong id="work-pilot-status">Betöltés…</strong></div><p>Az itt rögzített lépések append-only munkatervezetek. Hitelesített belépésig nem zárnak le feladatot és nem fogadnak el evidenciát.</p></article>
+        <div class="workflow-legend">
+          <span><i class="todo"></i> Teendő</span>
+          <span><i class="progress"></i> Folyamatban</span>
+          <span><i class="review"></i> Review-ra vár</span>
+          <span><i class="rework"></i> Javítandó</span>
+        </div>
+        <div class="work-grid" id="work-grid"></div>
+        <article class="panel draft-panel">
+          <div class="panel-heading"><div><p class="section-kicker">VISSZAKÖVETHETŐ MUNKANYOM</p><h2>Legutóbbi pilot-események</h2></div><span class="draft-count" id="work-event-count">0</span></div>
+          <div id="work-event-list" class="review-draft-list"></div>
+        </article>
+      </section>
+
       <section class="view" id="view-actions">
         <div class="view-intro"><div><p class="section-kicker">TELJES AKCIÓREGISZTER</p><h2>Feladatok és felelősségek</h2><p>Minden tétel forráshoz, deliverable-höz, evidenciához és emberi kapuhoz kötött.</p></div></div>
         <div class="toolbar">
@@ -138,6 +158,29 @@
       <label>Tervezet típusa<select id="review-decision" required><option value="REQUEST_REVIEW">Review kérése</option><option value="RETURN_FOR_REWORK">Visszaküldési javaslat</option><option value="COMMENT">Megjegyzés</option></select></label>
       <label>Megjegyzés<textarea id="review-note" minlength="3" maxlength="2000" required></textarea></label>
       <div class="modal-actions"><button type="button" id="review-cancel">Mégse</button><button class="primary" type="submit">Tervezet mentése</button></div>
+    </form>
+  </div>
+  <div class="modal" id="work-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="work-modal-title">
+    <form class="modal-card" id="work-form">
+      <p class="section-kicker">EMBERI MUNKAFOLYAMAT · PILOT</p><h2 id="work-modal-title">Feladat frissítése</h2>
+      <p class="modal-note">Ez a helyi pilot a munkavégzést dokumentálja. A név nincs hitelesítve; a rekord nem formális jóváhagyás, evidenciaelfogadás vagy feladatzárás.</p>
+      <label>Feladat<input id="work-task" readonly></label>
+      <label>Következő lépés<select id="work-transition" required></select></label>
+      <label>Rögzítő neve<input id="work-actor" maxlength="80" required placeholder="Pl. Pásztor András"></label>
+      <label>Mit végeztél el / mi hiányzik?<textarea id="work-note" minlength="3" maxlength="2000" required></textarea></label>
+      <fieldset class="attachment-fieldset">
+        <legend>Kitöltött vagy aláírt fájl csatolása</legend>
+        <p class="modal-note">A fájl először csak ezen a számítógépen, a Gitből kizárt munkaterületre kerül. A rendszer kiszámítja az SHA-256 azonosítót; formális evidenciává csak a védett SharePoint-tárba feltöltés és emberi review után válik.</p>
+        <input id="work-attachment" type="file" accept=".pdf,.docx,.xlsx,.jpg,.jpeg,.png">
+        <button id="work-attachment-upload" type="button">Fájl helyi csatolása és hash készítése</button>
+        <small id="work-attachment-status">PDF, DOCX, XLSX, JPG vagy PNG; legfeljebb 10 MB.</small>
+        <div id="work-sharepoint-target" class="sharepoint-target"></div>
+      </fieldset>
+      <div id="work-evidence-fields" hidden>
+        <label>Védett SharePoint-evidencia URI<input id="work-evidence-uri" type="url" maxlength="1000" placeholder="A NIS2-webhely dokumentumhivatkozása"></label>
+        <label>Evidencia SHA-256<input id="work-evidence-sha256" maxlength="64" pattern="[0-9a-f]{64}" placeholder="64 karakteres kisbetűs hash"></label>
+      </div>
+      <div class="modal-actions"><button type="button" id="work-cancel">Mégse</button><button class="primary" type="submit">Munkalépés mentése</button></div>
     </form>
   </div>
   <div class="modal" id="reconciliation-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="reconciliation-modal-title">

@@ -3,7 +3,7 @@ handoff_id: H-001
 version: "0.4"
 status: PREPARATION_COMPLETE_HUMAN_EXECUTION_REQUIRED
 created: "2026-07-13"
-updated: "2026-07-29"
+updated: "2026-07-30"
 receipt_date: "2026-06-26"
 action_plan_deadline: "2026-09-24"
 deadline_review_status: HUMAN_APPROVED_G2_G4_D031
@@ -12,7 +12,7 @@ requested_executor: HUMAN_GATED_EXECUTION
 
 # H-001 – Determinisztikus helyi NIS2 core
 
-> **Aktuális állapot (2026-07-29):** a H-001 core, mind a 42 akció előkészítő munkacsomagja és a kapuk előtt biztonságosan elkészíthető H-002 local-first fejlesztési réteg elkészült. A portál-MVP, a SharePoint/auth readiness, az A-042 fixture pilot, a teljes határidő-egyeztetési review–döntés–preflight–utóellenőrzési lánc és a 36 végrehajtandó tételes `HUMAN_EXECUTION_PACKAGE_2026-07-29.md` rendelkezésre áll. A D-031/EV-GOV-001 alapján a kézzel aláírt G2/G4 rekord emberileg elfogadott, a DEF-001 és az A-002 lezárt; ez nem automatikus AI-döntés. A következő szakasz a fennmaradó emberi adatgyűjtés, review, aláírás, G1–G5 döntés és kontrollált végrehajtás. Éles integráció vagy deploy nem történt.
+> **Aktuális állapot (2026-07-30):** a H-001 core, mind a 42 akció előkészítő munkacsomagja és a kapuk előtt biztonságosan elkészíthető H-002 local-first fejlesztési réteg elkészült. A portál-MVP a D-032/D-033 alapján öt valós W1 tételes, vezetett emberifeladat-pilottal bővült: közérthető cél, ellenőrzőlista, SharePoint-link, felelős/reviewer, kontrollált állapotátmenet, letölthető Word-munkalap, helyi csatolmány-előkészítés, automatikus SHA-256 és append-only hash-láncolt munkanyom áll rendelkezésre. A D-034 javaslathoz elkészült a tranzakciós SQLite WAL-tárolás, a párhuzamos módosítás elleni állapotvédelem, a korábbi JSONL-adatok biztonságos átvétele, az ellenőrzött mentés, a fail-closed többfelhasználós konfiguráció, a telepítési segéd és a 16 pontos UAT-terv. A pilot hitelesített belépésig nem formális, nem zár le feladatot, nem fogad el evidenciát és nem tölt fel közvetlenül SharePointba. A SharePoint/auth readiness, az A-042 fixture pilot, a teljes határidő-egyeztetési lánc és a 36 végrehajtandó tételes csomag rendelkezésre áll. Éles integráció, hálózati publikálás vagy deploy nem történt; ezek G1/G2/G3 után végezhetők.
 
 # 1. Cél
 

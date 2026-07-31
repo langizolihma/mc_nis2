@@ -1,8 +1,8 @@
 # Egységes emberi végrehajtási csomag
 
-- Állapot dátuma: `2026-07-29`
-- Összes emberi tétel: **36**
-- Nyitott pótlandó tétel: **35**
+- Állapot dátuma: `2026-07-30`
+- Összes emberi tétel: **37**
+- Nyitott pótlandó tétel: **36**
 - Elfogadott, de továbbra is nyilvántartott kockázat: **1**
 - Lezárt és elfogadott tétel: **1**
 - Automatikus lezárás: **tiltott**
@@ -11,7 +11,7 @@ A hullámokat sorrendben kell feldolgozni. Egy tétel lezárásához tényleges 
 
 ## W1 – Irányítás, határidők és döntési alapok
 
-Tételek száma: **11**
+Tételek száma: **12**
 
 ### DEF-002 – OPEN_DEFERRED
 
@@ -180,6 +180,22 @@ Lezárási ellenőrzőlista:
 - Kapcsolódó elem: 16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md
 - Elkészítendő: Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.
 - Legkésőbbi kapu: Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.
+
+Lezárási ellenőrzőlista:
+
+- [ ] A tényleges dokumentum vagy döntés elkészült.
+- [ ] A védett NIS2 SharePoint URI rögzítve.
+- [ ] Az SHA-256 hash rögzítve.
+- [ ] A reviewer és az időzónás review-idő rögzítve.
+- [ ] A döntési hivatkozás rögzítve.
+
+### DEF-038 – OPEN_DEFERRED
+
+- Felelős: Pásztor András; kijelölendő portálüzemeltető
+- Jóváhagyó: Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver
+- Kapcsolódó elem: D-029; D-032; D-033; D-034; config/multiuser_pilot.json; MULTIUSER_PILOT_DEPLOYMENT.md; PILOT_UAT_CHECKLIST.md
+- Elkészítendő: Belső Windows szerver, üzemeltető, DNS, hálózati zóna, HTTPS gateway és tanúsítvány; Entra tenant/client/redirect adatok és támogatott auth-könyvtár; Entra object ID alapú, jóváhagyott szerepkiosztás; kiválasztott hatókörű Graph/site/folder grant; secret-store és naplóretention; G1/G2/G3 jóváhagyás; a 16 pontos UAT, mentési és elkülönített visszaállítási próba valós reviewerrel és védett evidenciával.
+- Legkésőbbi kapu: Bármely nem loopback használat, többfelhasználós pilot, valós bejelentkezés, SharePoint-feltöltés vagy szervertelepítés előtt.
 
 Lezárási ellenőrzőlista:
 

@@ -1,7 +1,7 @@
 ---
 version: "0.3"
 status: WORKING_DECISION_LOG
-updated: "2026-07-29"
+updated: "2026-07-30"
 ---
 
 # Döntési napló
@@ -48,6 +48,7 @@ updated: "2026-07-29"
 | D-029 | APPROVED_BASELINE | A portál belépési alapja a vállalati Microsoft Entra-bejelentkezés és a „NIS2 – Belső megfelelőség” SharePoint-webhely tényleges hozzáférési jogosultsága; külön portálcsoport az induláshoz nem kötelező. |
 | D-030 | APPROVED_BASELINE | Az SRC-009 kontrollkatalógus proposal-only referenciaforrásként bekerül a registrybe és a portálba; megfelelőséget nem igazol, automatikus EIR-kontrollkiválasztás csak igazolt biztonsági osztály és G1 review után engedhető. |
 | D-031 | APPROVED_BASELINE | A kézzel aláírt, beszkennelt dokumentum teljes értékű evidencia; elektronikus aláírás hiánya nem warning. A G2/G4 rekord elfogadott, a DEF-001 és az A-002 lezárható. |
+| D-032 | APPROVED_BASELINE | Az emberi feladatok első használható portálfolyamata öt valós W1 tételes, vezetett pilot; hitelesített belépésig minden esemény nem formális, append-only munkatervezet. |
 
 # Részletes döntések
 
@@ -367,6 +368,80 @@ A `D-026__A-002__G2-G4-HATARIDO-JOVAHAGYAS__v01__20260714_signed.pdf` kétoldala
 **Döntési hatás:** a G2/G4 határidő-review teljesült, a `DEF-001` lezárható, és az `A-002` akció `DONE` státuszra állítható. A külön címzetti kézbesítési igazolás továbbra sem áll rendelkezésre; ennek hiánya a D-022 és a `DEF-003` szerint elfogadott, nyilvántartott kockázat, amely nem nyitja újra a G2/G4 jóváhagyást.
 
 **Formai megjegyzés:** a beszkennelt példány oldalláblécében megmaradt „Aláírás előtt tervezet” szöveg az aláírt döntés, a személyek és a dátum egyértelműsége miatt nem csökkenti az evidencia elfogadott státuszát.
+
+## D-032 – Vezetett emberifeladat-kezelési pilot
+
+**Státusz:** `APPROVED_BASELINE`
+
+**Rögzítés dátuma:** 2026-07-30
+
+**Jóváhagyó:** Lángi Zoltán
+
+A projektgazda jóváhagyta, hogy a portál következő használható rétege az
+emberi feladatok hétköznapi, vezetett végrehajtása legyen. Az első pilot öt
+valós W1 tételt (`DEF-002`, `DEF-004`–`DEF-007`) kezel. Minden kártya
+közérthető célt, név szerinti felelőst és reviewert, háromlépéses
+ellenőrzőlistát, kapcsolódó SharePoint-dokumentumot és egyértelmű következő
+lépést mutat.
+
+A pilot életciklusa:
+
+`TODO → IN_PROGRESS → READY_FOR_REVIEW`, visszaküldéskor
+`READY_FOR_REVIEW → REWORK_REQUIRED → IN_PROGRESS`.
+
+Az események append-only, hash-láncolt helyi auditnaplóba kerülnek. Review-ra
+előterjesztéshez védett NIS2 SharePoint URI és SHA-256 kötelező. A
+hitelesített Entra-munkamenet és szerveroldali RBAC elkészültéig a rögzítő
+neve nem hitelesített állítás, ezért a pilot eseményeinek nincs formális
+hatásuk: nem fogadnak el evidenciát, nem zárnak le feladatot és nem írnak
+vissza a SharePointba vagy a kanonikus regiszterekbe.
+
+**Pilot utáni döntési pont:** a felhasználói próba alapján mérni kell a
+feladat megértéséhez szükséges időt, a hibás/visszaküldött előterjesztések
+arányát és az adminisztratív időt. Formális használat csak a D-029,
+DEF-015/DEF-020/DEF-032 szerinti hitelesítési, biztonsági és élesítési kapuk
+után engedhető.
+
+## D-033 – Nyomtatható munkalapok és helyi csatolmány-előkészítés
+
+**Státusz:** `APPROVED_BASELINE`
+
+**Rögzítés dátuma:** 2026-07-30
+
+**Jóváhagyó:** Lángi Zoltán
+
+A D-032 pilot minden feladatához közvetlenül letölthető és nyomtatható
+Word-munkalap szükséges. A résztvevő a kitöltött, aláírt vagy beszkennelt
+PDF, DOCX, XLSX, JPG, JPEG vagy PNG fájlt legfeljebb 10 MB méretig a helyi
+portálon csatolhatja. A csatolmány a Gitből kizárt
+`portal_runtime/attachments/` területre kerül, a portál automatikusan
+kiszámítja az SHA-256 azonosítót.
+
+**Kontrollkorlát:** a helyi csatolás csak munkapéldány-előkészítés, nem
+evidenciaelfogadás és nem SharePoint-visszaírás. A végleges fájlt embernek
+kell a védett NIS2 SharePoint-tárba feltöltenie, majd a tényleges
+SharePoint-fájlhivatkozást és a kiszámított SHA-256 értéket review-ra
+előterjesztenie. A közvetlen SharePoint-feltöltés csak D-029, G2 és G3 után
+kapcsolható be.
+
+## D-034 – Többfelhasználós portálpilot architektúra-javaslat
+
+**Státusz:** `PROPOSED_PENDING_G1_G2_G3`
+
+**Rögzítés dátuma:** 2026-07-30
+
+A következő heti felhasználói pilot technikai célmodellje: loopback címen
+futó Python backend, előtte jóváhagyott HTTPS gateway; Microsoft Entra
+single-tenant OIDC bejelentkezés támogatott Microsoft-könyvtárral;
+szerveroldali VIEWER/TASK_OWNER/REVIEWER/PORTAL_ADMIN jogosultság;
+tranzakciós SQLite WAL tárolás; hash-láncolt munkanapló; védett
+csatolmánykönyvtár; kiválasztott hatókörű SharePoint-hozzáférés; ellenőrzött
+mentés és elkülönített visszaállítási próba.
+
+**Korlát:** ez fejlesztési javaslat, nem élesítési döntés. A hálózati
+publikálás, valós Entra-hitelesítés, szerepkör-hozzárendelés és
+SharePoint-visszaírás a G1 funkcionális, G2 biztonsági/jogi és G3
+változtatási jóváhagyásig kikapcsolva marad.
 
 # Nyitott döntési sablon
 

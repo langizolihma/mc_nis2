@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "TEMPLATE_NOT_ACTIVE",
+  "source": "SERVER_PROTECTED_STORE",
+  "formal_effect": false,
+  "assignments": [
+    {
+      "entra_object_id": "TBD-USER-OBJECT-ID",
+      "display_name": "TBD",
+      "roles": [
+        "VIEWER"
+      ],
+      "approved_by": "TBD",
+      "approval_evidence_ref": "TBD",
+      "valid_from": "TBD",
+      "valid_until": "TBD"
+    }
+  ],
+  "rules": {
+    "default_role": "VIEWER",
+    "self_assignment_allowed": false,
+    "client_supplied_roles_allowed": false,
+    "privileged_role_requires_g2_g3": true,
+    "repository_storage_allowed": false
+  }
+}
