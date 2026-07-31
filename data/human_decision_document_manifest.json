@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "status": "PRINTABLE_DRAFTS_READY_FOR_HUMAN_EXECUTION",
+  "as_of": "2026-07-30",
+  "formal_effect": false,
+  "source_ref": "data/human_execution_package.json",
+  "source_sha256": "9b0fe479cadf7c06b4cef9664ccccd2c3ebcfd12191c9c5226241e2b8c1ab2ce",
+  "document_count": 36,
+  "index": {
+    "path": "portal_materials/NIS2_emberi_dontesi_dokumentumjegyzek.docx",
+    "sha256": "3c6f5a78aac8c27c8fe85c206eda58e8be1b78788664588ecbc28619b55c181b"
+  },
+  "documents": [
+    {
+      "task_id": "DEF-002",
+      "title": "Kanonikus auditjelentés – emberi review",
+      "path": "portal_materials/DEF-002_kanonikus_auditjelentes_review.docx",
+      "sha256": "f4ce161767d1d80e6a3af47ab573d12891030eeb120c922fdcd39e5708d415a4",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-004",
+      "title": "Auditigazolás – olvashatósági ellenőrzés",
+      "path": "portal_materials/DEF-004_auditigazolas_olvashatosagi_ellenorzes.docx",
+      "sha256": "aa6f60abec06b816fb7977d816e1de2ad6920ab49b2b3428c81e8a12aeb5c6fa",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-005",
+      "title": "RACI- és IBF-kijelölési csomag",
+      "path": "portal_materials/DEF-005_RACI_es_IBF_kijelolesi_csomag.docx",
+      "sha256": "b6469bd0e1169803fd5af8b695dccf70ecd861c032988e61661f73d4fb286070",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-006",
+      "title": "IBF-alkalmasság – jogi review",
+      "path": "portal_materials/DEF-006_IBF_alkalmassagi_jogi_review.docx",
+      "sha256": "1c71dd9349ecec4d332935f6660079554ba4058099fd997b469187fa599d6763",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-007",
+      "title": "Kontrollgazda-kijelölés és partneri review",
+      "path": "portal_materials/DEF-007_kontrollgazda_es_partner_review.docx",
+      "sha256": "f2c52f789c375bc40e19abd11504fa9578519db9e61eeb479fc349f365ef4ab3",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-008",
+      "title": "EIR- és exportforrás-kijelölés",
+      "path": "portal_materials/DEF-008_eir_es_exportforras_kijeloles.docx",
+      "sha256": "63612e3c9f2a5d13cff352b8e3f3dd4501dacbd60a892ade16c6bcb8e86b3649",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-009",
+      "title": "Leltárfeltöltési és adatminőségi review",
+      "path": "portal_materials/DEF-009_leltarfeltoltesi_es_adatminosegi_review.docx",
+      "sha256": "c186c04eb061ac3227df7c0cf6298fd556131f3e6f1068ede9f9a2a0b7671108",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-010",
+      "title": "Agent QA és gold-case elfogadás",
+      "path": "portal_materials/DEF-010_agent_qa_es_gold_case_elfogadas.docx",
+      "sha256": "142b59f20f5a05e212d6059afcefc9c27e5d0a6c7cf4b81d891f3de59ef5d70b",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-011",
+      "title": "AI-használati szabályzat G2 jóváhagyása",
+      "path": "portal_materials/DEF-011_ai_hasznalati_szabalyzat_g2_jovahagyasa.docx",
+      "sha256": "516d5c77921a6702da22ddade40f24501de6794629ac67843d2e7c44f9430aff",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-012",
+      "title": "Repeat-audit ütemterv G4/G5 döntése",
+      "path": "portal_materials/DEF-012_repeat_audit_utemterv_g4_g5_dontese.docx",
+      "sha256": "af59026bc087183c6933d92e625e85930940023fa9f279dabfd07145a30047d4",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-013",
+      "title": "Negyedéves riportütemezés jóváhagyása",
+      "path": "portal_materials/DEF-013_negyedeves_riportutemezes_jovahagyasa.docx",
+      "sha256": "4624d4030092203b1125ef80b76ee816910ef73847bb58e248a949e72acaa7d4",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-014",
+      "title": "Cselekvési terv G1/G2/G4 jóváhagyása",
+      "path": "portal_materials/DEF-014_cselekvesi_terv_g1_g2_g4_jovahagyasa.docx",
+      "sha256": "ef1d34f2e15173796db813fa0b46d48f14317cd782066ae136c150f7de3f4049",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-015",
+      "title": "Belső portál architektúra G2/G3 döntése",
+      "path": "portal_materials/DEF-015_belso_portal_architektura_g2_g3_dontese.docx",
+      "sha256": "18cc040c229f145fdccdddd8021676d24aa2dafba17fda9918095db60ba7001d",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-016",
+      "title": "Backup- és restore-teszt engedélyezése",
+      "path": "portal_materials/DEF-016_backup_es_restore_teszt_engedelyezese.docx",
+      "sha256": "f37e409fdb1b2bf503f9159d28cb2c0993f28bcb2860df61c98315f083057fbb",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-017",
+      "title": "Fizikai bejárás és adatkezelési jóváhagyás",
+      "path": "portal_materials/DEF-017_fizikai_bejaras_es_adatkezelesi_jovahagyas.docx",
+      "sha256": "548f288afa24d1e0ee23d8f7d95c32c5d852be3e9dbf73d30ed6100e6338154f",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-018",
+      "title": "Infrastruktúra health snapshot gyűjtési engedély",
+      "path": "portal_materials/DEF-018_infrastruktura_health_snapshot_gyujtesi_engedely.docx",
+      "sha256": "4d86696107603eb4abc1d6bfb37d5c4de0505386f7db0b662d3463698e242946",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-019",
+      "title": "Licenc- és entitlement-review",
+      "path": "portal_materials/DEF-019_licenc_es_entitlement_review.docx",
+      "sha256": "586bc393768769391b2b464314d3598bf318895b8314dd24b02e22c9b2e15037",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-020",
+      "title": "Portál funkcionális scope és pilotdöntés",
+      "path": "portal_materials/DEF-020_portal_funkcionalis_scope_es_pilotdontes.docx",
+      "sha256": "70c9d027830a7f6d4f4089ed2af9c4041818810bf076a50574ce413af5815710",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-021",
+      "title": "Naplózási és monitoring-baseline jóváhagyása",
+      "path": "portal_materials/DEF-021_naplozasi_es_monitoring_baseline_jovahagyasa.docx",
+      "sha256": "30ee943ef70d03611d9313d63ef1cf076220a50358299b71d92a34584dd58f71",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-022",
+      "title": "Karbantartási és változáskezelési baseline",
+      "path": "portal_materials/DEF-022_karbantartasi_es_valtozaskezelesi_baseline.docx",
+      "sha256": "2dbbac1ba308af4c18dd38c481e031be2027c9716374d42f881d17cae6559ba8",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-023",
+      "title": "Beszállítói kockázati baseline jóváhagyása",
+      "path": "portal_materials/DEF-023_beszallitoi_kockazati_baseline_jovahagyasa.docx",
+      "sha256": "34bcc0901daf4a47da9334a36d575f85472595a5c630655ec1cd83786a939354",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-024",
+      "title": "Exchange-függőségi gyűjtés és teszt engedély",
+      "path": "portal_materials/DEF-024_exchange_fuggosegi_gyujtes_es_teszt_engedely.docx",
+      "sha256": "a774481a2f6a6c6f16b41f8e3d6153f9237ae67fc6e7ddf2c64e3259f9119c38",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-025",
+      "title": "Legacy megőrzési és restore-döntés",
+      "path": "portal_materials/DEF-025_legacy_megorzesi_es_restore_dontes.docx",
+      "sha256": "d065e2410d439ad95a3bf598c059bb69d731ea4be9d03daefa1ac57fb4b306ce",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-026",
+      "title": "RDS-szeparációs assessment döntése",
+      "path": "portal_materials/DEF-026_rds_szeparacios_assessment_dontese.docx",
+      "sha256": "03ea75ef61a1210332ab7691abc4f2b027e8c7df026a58583819edb5c2a5aabf",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-027",
+      "title": "Technikai munkacsomagok kapudöntése",
+      "path": "portal_materials/DEF-027_technikai_munkacsomagok_kapudontese.docx",
+      "sha256": "07b692bf6ed5e141a9e331ffb99105a9fa2730c42656f9de06271f30b57b2417",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-028",
+      "title": "Működési kontrollcsomagok kapudöntése",
+      "path": "portal_materials/DEF-028_mukodesi_kontrollcsomagok_kapudontese.docx",
+      "sha256": "3cc6d1132579f4864be60d62afd2abefaba658ca3e97b857889db19f0c2e9b3f",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-029",
+      "title": "Irányítási evidencialánc jóváhagyása",
+      "path": "portal_materials/DEF-029_iranyitasi_evidencialanc_jovahagyasa.docx",
+      "sha256": "0ecf51c2787aef78b7b12f4f3013800a4cc38bfa26f9294767804de9ead19660",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-030",
+      "title": "Szabályozási baseline-ok jóváhagyása",
+      "path": "portal_materials/DEF-030_szabalyozasi_baseline_ok_jovahagyasa.docx",
+      "sha256": "5e7b26fd31c8b3b7d83ffda192e7f09a3809ea387e8346a0fb6550baae48369f",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-031",
+      "title": "Folyamatos auditfelkészültségi agent pilot",
+      "path": "portal_materials/DEF-031_folyamatos_auditfelkeszultsegi_agent_pilot.docx",
+      "sha256": "ceee59c18d5b0e7d14603f306ab3f23093e6688ce66b65190c9925467135e0f6",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-032",
+      "title": "Hitelesített portál- és Graph-pilot döntése",
+      "path": "portal_materials/DEF-032_hitelesitett_portal_es_graph_pilot_dontese.docx",
+      "sha256": "3d0e4cf35b48603351f6bcfd4ee728c20477965044ad36418f812c89c7ebb5b7",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-033",
+      "title": "H-002 agent és Graph read pilot döntése",
+      "path": "portal_materials/DEF-033_h_002_agent_es_graph_read_pilot_dontese.docx",
+      "sha256": "171114e700354a0bcc70cf5848526185ef7cbcf9b985d9bdb4707e108ec9e97c",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-034",
+      "title": "Átvett dokumentumok szakmai besorolása",
+      "path": "portal_materials/DEF-034_atvett_dokumentumok_szakmai_besorolasa.docx",
+      "sha256": "d4af68de3c1752706ca5e30402c564179db51fdec0b9d8743da2e7cc3b07d21a",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-035",
+      "title": "SharePoint evidenciatár kontrollreview-ja",
+      "path": "portal_materials/DEF-035_sharepoint_evidenciatar_kontrollreview_ja.docx",
+      "sha256": "5ee84df9d00ba2a555a38457e915f7e05fdd36e067e137961a6c2dfe2a0cc4d7",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-036",
+      "title": "Kontrollkatalógus G1 és EIR-besorolási döntés",
+      "path": "portal_materials/DEF-036_kontrollkatalogus_g1_es_eir_besorolasi_dontes.docx",
+      "sha256": "a6b09834893416649b780c89ae92cfeeaed6f594e4b228f7a743b64559e78563",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-037",
+      "title": "Lejárt akciók státusz- és határidő-egyeztetése",
+      "path": "portal_materials/DEF-037_lejart_akciok_statusz_es_hatarido_egyeztetese.docx",
+      "sha256": "96e889dd78dcab7f83bcec1d78dd48c3023eb6cec3d3e8902889c69817f0a76a",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-038",
+      "title": "Többfelhasználós portálpilot indítási döntése",
+      "path": "portal_materials/DEF-038_tobbfelhasznalos_portalpilot_inditasi_dontese.docx",
+      "sha256": "f11e97c5c04a0195de00f062e53acba41315e3a64732062d78fc5b1420393d19",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    }
+  ],
+  "completion_warning": "A nyomtatás és aláírás önmagában nem pótolja a feladatlapon előírt tényleges vizsgálatot, mellékletet vagy evidenciát."
+}

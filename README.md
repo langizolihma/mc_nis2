@@ -50,6 +50,7 @@ python -m nis2_harness validate-infrastructure-health --plan data/infrastructure
 python -m nis2_harness validate-license-entitlement --plan data/license_entitlement_plan.json
 python -m nis2_harness validate-logging-monitoring --plan data/logging_monitoring_plan.json
 python -m nis2_harness validate-maintenance-change --plan data/maintenance_change_plan.json
+python scripts/build_all_human_decision_documents.py
 python -m unittest discover -s tests -v
 ```
 
@@ -114,12 +115,17 @@ akciórekord preflight előtti és várt utáni hash-éhez méri az aktuális
 állapotot külön jelzi; bármely más eltérésnél leáll. Az ellenőrzés az
 evidencia-review-t szándékosan külön, emberi kapun hagyja.
 
-A 36 végrehajtandó tétel egyetlen, hét végrehajtási hullámra rendezett emberi
+A 36 nyitott tétel egyetlen, hét végrehajtási hullámra rendezett emberi
 munkacsomagja a [HUMAN_EXECUTION_PACKAGE_2026-07-29.md](HUMAN_EXECUTION_PACKAGE_2026-07-29.md),
-gépileg feldolgozható párja a `data/human_execution_package.json`. A csomag
-35 `OPEN_DEFERRED` és egy elfogadott, de továbbra is nyilvántartott
-kockázati tételt tartalmaz. A `DEF-001` lezárt és elfogadott, ezért már nem
-szerepel a végrehajtandó feladatok között; automatikus lezárást a csomag nem végez.
+gépileg feldolgozható párja a `data/human_execution_package.json`. Mind a 36
+`OPEN_DEFERRED` tételhez külön nyomtatható és kézzel aláírható Word-munkalap
+készült a `portal_materials/` könyvtárban. A teljes fájljegyzék és a SHA-256
+értékek a `data/human_decision_document_manifest.json`, az átadócsomag a
+`portal_materials/NIS2_emberi_dontesi_dokumentumcsomag.zip`, az ember által
+olvasható tartalomjegyzék pedig a
+`portal_materials/NIS2_emberi_dontesi_dokumentumjegyzek.docx`. A `DEF-001`
+lezárt és elfogadott, a `DEF-003` elfogadott kockázat, ezért egyik sem kapott
+új nyitott feladatlapot; automatikus lezárást a csomag nem végez.
 
 ```powershell
 python -m nis2_harness serve-portal
@@ -248,8 +254,10 @@ Az A-006 benyújtási readiness-csomagja az [ACTION_PLAN_SUBMISSION_READINESS.md
 A D-028 szerinti végfelhasználói célfelület egy helyi hálózaton, böngészőből elérhető belső portál. A [LOCAL_PORTAL_BASELINE.md](LOCAL_PORTAL_BASELINE.md) rögzíti a minimális funkciókat és biztonsági korlátokat. A portál tervezési baseline, nem éles deploy-engedély; a Git és a védett evidenciatár háttérrendszer marad.
 
 A D-032/D-033 szerinti helyi emberifeladat-pilot az **Az én munkám**
-nézetben öt valós feladathoz letölthető Word-munkalapot, helyi
+nézetben öt valós feladathoz közvetlenül letölthető Word-munkalapot, helyi
 csatolmány-előkészítést és automatikus SHA-256 számítást biztosít. A
+teljes, 36 feladatos nyomtatható csomag ettől függetlenül elkészült; a további
+lapok portálkártyákhoz kötése külön felületbővítés. A
 kitöltött munkapéldányok a Gitből kizárt `portal_runtime/attachments/`
 területre kerülnek. A végleges fájlt továbbra is ember tölti fel a védett
 SharePoint-tárba, és csak a tényleges SharePoint-hivatkozás plusz emberi

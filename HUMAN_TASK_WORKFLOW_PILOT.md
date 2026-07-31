@@ -63,6 +63,8 @@ A helyi csatolmányok a szintén Gitből kizárt
 
 ## Elérhető nyomtatható munkalapok
 
+Az öt portálpilotos feladathoz közvetlenül kapcsolt munkalap:
+
 - `DEF-002_kanonikus_auditjelentes_review.docx`;
 - `DEF-004_auditigazolas_olvashatosagi_ellenorzes.docx`;
 - `DEF-005_RACI_es_IBF_kijelolesi_csomag.docx`;
@@ -71,6 +73,20 @@ A helyi csatolmányok a szintén Gitből kizárt
 
 Ezek üres munkasablonok, ezért Gitben tarthatók. A kitöltött, aláírt és
 személyes vagy érzékeny adatot tartalmazó példányok nem kerülhetnek Gitbe.
+
+A teljes emberi végrehajtási kör mind a 36 nyitott `OPEN_DEFERRED`
+feladatához elkészült a nyomtatható és kézzel aláírható Word-munkalap. Az
+áttekintő jegyzék a
+`portal_materials/NIS2_emberi_dontesi_dokumentumjegyzek.docx`, az egyben
+átadható csomag pedig a
+`portal_materials/NIS2_emberi_dontesi_dokumentumcsomag.zip`. A gépi
+fájljegyzék és a munkapéldányok SHA-256 értékei a
+`data/human_decision_document_manifest.json` fájlban találhatók.
+
+A kézi aláírás teljes értékű aláírási mód lehet; nem szükséges minden
+résztvevőnek elektronikus aláírás. Az aláírás ugyanakkor nem pótolja a
+feladatlapon felsorolt tényleges vizsgálatot, mellékletet, tesztet vagy
+védett SharePoint-hivatkozást.
 
 ## Mit kell mérni a pilot során?
 

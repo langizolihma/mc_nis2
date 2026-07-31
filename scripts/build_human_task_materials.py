@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from pathlib import Path
 
 from docx import Document
@@ -203,6 +204,22 @@ def configure_table(table, widths: list[int]) -> None:
                 tc_mar.append(node)
 
 
+def keep_table_row_together(row) -> None:
+    """Prevent a table row from being split between two printed pages."""
+    tr_pr = row._tr.get_or_add_trPr()
+    if tr_pr.find(qn("w:cantSplit")) is None:
+        tr_pr.append(OxmlElement("w:cantSplit"))
+
+
+def repeat_table_header(row) -> None:
+    """Repeat a real header row when a table continues on another page."""
+    tr_pr = row._tr.get_or_add_trPr()
+    if tr_pr.find(qn("w:tblHeader")) is None:
+        header = OxmlElement("w:tblHeader")
+        header.set(qn("w:val"), "true")
+        tr_pr.append(header)
+
+
 def style_run(run, *, size: float = 11, bold: bool = False, color: str = "000000") -> None:
     run.font.name = "Calibri"
     run._element.get_or_add_rPr().rFonts.set(qn("w:ascii"), "Calibri")
@@ -306,22 +323,40 @@ def build_document(spec: dict[str, object]) -> Path:
             ("Felelős", str(spec["owner"])),
             ("Reviewer", str(spec["reviewer"])),
             ("Forrás", str(spec["source_refs"])),
+            ("Végrehajtási hullám", str(spec.get("wave", "W1"))),
             ("Kitöltés dátuma", "________________________________"),
         ],
     )
     doc.add_heading("Mire való ez a lap?", level=2)
     doc.add_paragraph(str(spec["purpose"]))
+    if spec.get("current_process_state"):
+        doc.add_heading("Jelenlegi, igazolt folyamatállapot", level=2)
+        doc.add_paragraph(str(spec["current_process_state"]))
+    if spec.get("must_be_completed_before"):
+        doc.add_heading("Döntési kapu", level=2)
+        doc.add_paragraph(str(spec["must_be_completed_before"]))
     doc.add_heading("Elvégzendő lépések", level=2)
     for step in spec["steps"]:
         doc.add_paragraph(str(step), style="List Number")
 
-    doc.add_section(WD_SECTION.NEW_PAGE)
-    add_footer(doc.sections[-1], str(spec["task_id"]))
+    curated_two_page_ids = {
+        "DEF-002",
+        "DEF-004",
+        "DEF-005",
+        "DEF-006",
+        "DEF-007",
+    }
+    if str(spec["task_id"]) in curated_two_page_ids:
+        doc.add_section(WD_SECTION.NEW_PAGE)
+        add_footer(doc.sections[-1], str(spec["task_id"]))
     doc.add_heading("Ellenőrzési pontok", level=1)
     checks = list(spec["checks"])
     table = doc.add_table(rows=len(checks) + 1, cols=3)
     table.style = "Table Grid"
     configure_table(table, [6120, 1620, 1620])
+    repeat_table_header(table.rows[0])
+    for row in table.rows:
+        keep_table_row_together(row)
     for index, value in enumerate(("Ellenőrzési pont", "Megfelel", "Nem felel meg")):
         set_cell_fill(table.cell(0, index), LIGHT_BLUE)
         style_run(table.cell(0, index).paragraphs[0].add_run(value), bold=True, color=NAVY)
@@ -332,15 +367,45 @@ def build_document(spec: dict[str, object]) -> Path:
 
     doc.add_heading("Megállapítás és szükséges intézkedés", level=2)
     add_lines(doc, 3)
-    doc.add_heading("Döntés", level=2)
-    decision = doc.add_table(rows=2, cols=2)
+    doc.add_heading("Mellékletek és evidenciák", level=2)
+    attachments = doc.add_table(rows=5, cols=3)
+    attachments.style = "Table Grid"
+    configure_table(attachments, [2700, 3780, 2880])
+    repeat_table_header(attachments.rows[0])
+    for row in attachments.rows:
+        keep_table_row_together(row)
+    for index, value in enumerate(("Dokumentum / evidencia", "Védett URI", "SHA-256 / megjegyzés")):
+        set_cell_fill(attachments.cell(0, index), LIGHT_BLUE)
+        style_run(attachments.cell(0, index).paragraphs[0].add_run(value), bold=True, color=NAVY)
+    for row_index in range(1, 5):
+        style_run(attachments.cell(row_index, 0).paragraphs[0].add_run(f"{row_index}. __________________"))
+        style_run(attachments.cell(row_index, 1).paragraphs[0].add_run("________________________"))
+        style_run(attachments.cell(row_index, 2).paragraphs[0].add_run("__________________"))
+    decision_heading = doc.add_heading("Döntés", level=2)
+    decision_heading.paragraph_format.keep_with_next = True
+    decision = doc.add_table(rows=2, cols=3)
     decision.style = "Table Grid"
-    configure_table(decision, [4680, 4680])
+    configure_table(decision, [3120, 3120, 3120])
+    for row in decision.rows:
+        keep_table_row_together(row)
     style_run(decision.cell(0, 0).paragraphs[0].add_run("Elfogadható / előterjeszthető"), bold=True)
-    style_run(decision.cell(0, 1).paragraphs[0].add_run("Javításra vagy pótlásra visszaadva"), bold=True)
+    style_run(decision.cell(0, 1).paragraphs[0].add_run("Feltételekkel elfogadható"), bold=True)
+    style_run(decision.cell(0, 2).paragraphs[0].add_run("Javításra vagy pótlásra visszaadva"), bold=True)
+    for cell in decision.rows[0].cells:
+        cell.paragraphs[0].paragraph_format.keep_with_next = True
     style_run(decision.cell(1, 0).paragraphs[0].add_run("Jelölés: __________________"))
     style_run(decision.cell(1, 1).paragraphs[0].add_run("Jelölés: __________________"))
+    style_run(decision.cell(1, 2).paragraphs[0].add_run("Jelölés: __________________"))
 
+    doc.add_paragraph(
+        "Az aláírás önmagában nem pótolja a felsorolt vizsgálatot, mellékletet, "
+        "védett tárhivatkozást vagy technikai tesztet. A döntés csak a ténylegesen "
+        "rendelkezésre álló és ellenőrzött anyagokra vonatkozhat."
+    )
+
+    if str(spec["task_id"]) not in curated_two_page_ids:
+        doc.add_section(WD_SECTION.NEW_PAGE)
+        add_footer(doc.sections[-1], str(spec["task_id"]))
     doc.add_heading("Végleges dokumentum nyilvántartása", level=2)
     add_field_table(
         doc,
@@ -357,20 +422,27 @@ def build_document(spec: dict[str, object]) -> Path:
         "kell feltölteni, majd a tényleges fájlhivatkozást és a SHA-256 értéket kell rögzíteni."
     )
     doc.add_heading("Aláírások", level=2)
-    signatures = doc.add_table(rows=3, cols=2)
+    signatures = doc.add_table(rows=2, cols=2)
     signatures.style = "Table Grid"
     configure_table(signatures, [4680, 4680])
+    for row in signatures.rows:
+        keep_table_row_together(row)
     for col, label in enumerate(("Előkészítő / felelős", "Reviewer / jóváhagyó")):
         set_cell_fill(signatures.cell(0, col), LIGHT_GRAY)
         style_run(signatures.cell(0, col).paragraphs[0].add_run(label), bold=True, color=NAVY)
-        style_run(signatures.cell(1, col).paragraphs[0].add_run("Név: ______________________________"))
-        style_run(signatures.cell(2, col).paragraphs[0].add_run("Dátum, aláírás: ____________________"))
+        signatures.cell(0, col).paragraphs[0].paragraph_format.keep_with_next = True
+        paragraph = signatures.cell(1, col).paragraphs[0]
+        style_run(paragraph.add_run("Név: ______________________________"))
+        style_run(paragraph.add_run("\nDátum, aláírás: ____________________"))
 
     doc.core_properties.author = ""
     doc.core_properties.last_modified_by = ""
     doc.core_properties.comments = ""
     doc.core_properties.keywords = ""
     doc.core_properties.title = str(spec["title"])
+    fixed_time = datetime(2026, 7, 30, 12, 0, tzinfo=timezone.utc)
+    doc.core_properties.created = fixed_time
+    doc.core_properties.modified = fixed_time
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output = OUTPUT_DIR / str(spec["filename"])
     doc.save(output)
