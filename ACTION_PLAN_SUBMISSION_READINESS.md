@@ -15,14 +15,14 @@
 
 ## Eredmény röviden
 
-A tervezet szerkezetileg teljes: 42 akcióval lefedi mind a 19 követelménycsaládot, minden tételhez van feladat, név szerinti felelős és jóváhagyó, deliverable, elvárt evidencia és forrás. A kanonikus benyújtási határidő 2026-09-24.
+A tervezet szerkezetileg teljes: 127 akcióval lefedi mind a 19 követelménycsaládot és közvetlen intézkedést rendel mind a 156 eltéréssel érintett követelménycsoporthoz. Minden tételhez van feladat, programfelelős, jóváhagyó, deliverable, elvárt evidencia és forrás. Az A-043–A-127 tételek kontrollspecifikus checklistje, mérhető lezárási feltétele, javasolt kontrollgazdája és háromhullámos ütemezése elkészült a `data/action_execution_details.csv` fájlban. Ezek emberi jóváhagyásig nem kanonikusak; a tényleges kontrollgazda és konkrét céldátum G1/G2/G4 jóváhagyásra vár. A kanonikus benyújtási határidő 2026-09-24.
 
 A csomag még nem nyújtható be. A validátor 0 hard hibát és 16 warningot jelez; ezek emberi tartalmi, dátum- és jóváhagyási feladatok.
 
 ## G4 előtti kötelező munka
 
-1. **G1 szakmai review:** az A-004 finding-minta és az A-005 mapping elfogadása, különösen a 164 unmapped finding kezelése.
-2. **Konkrét végrehajtási dátumok:** A-008, A-022–A-028 és A-042 relatív/eseményalapú dátumainak jóváhagyott fixálása vagy külső tervben elfogadható indoklása.
+1. **G1 szakmai review:** az A-004 finding-minta és az A-005 mapping elfogadása; a 85 új lefedettségpótló akció, felelős, EIR-hatókör, céldátum és evidenciaelvárás véglegesítése a `COVERAGE_MATURATION_REVIEW_2026-08-19.md` és a `data/action_execution_details.csv` alapján.
+2. **Konkrét végrehajtási dátumok:** A-008, A-022–A-028, A-042 és A-043–A-127 relatív/hiányzó dátumainak jóváhagyott fixálása vagy külső tervben elfogadható indoklása.
 3. **Nem auditált állítások:** A-022, A-024, A-026, A-027 és A-028 SRC-004 állításainak read-only validációja; addig csak feltételesen szerepelhetnek.
 4. **G2 jogi/IBF review:** határidőalap, adatminősítés, személyes adatok, megfogalmazások és külső forma ellenőrzése.
 5. **G4 vezetői döntés:** a végleges verzió, aláírás, jogosult benyújtó és benyújtási csatorna jóváhagyása.

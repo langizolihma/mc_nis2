@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "mode": "READ_ONLY_CONNECTOR_SNAPSHOT",
-  "captured_at": "2026-07-27T20:43:00+02:00",
+  "captured_at": "2026-08-19T09:30:00+02:00",
   "site_url": "https://metalcom.sharepoint.com/sites/NIS2",
   "list_url": "https://metalcom.sharepoint.com/sites/NIS2/Lists/NIS2%20emberi%20feladatok/AllItems.aspx",
   "formal_effect": false,
@@ -44,6 +44,7 @@
     {"id":"DEF-035","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE","evidence_label":"NIS2 központi evidenciatár"},
     {"id":"DEF-036","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE/A-005/SRC-009","evidence_label":"SRC-009 kontrollkatalógus G1 review célmappája"},
     {"id":"DEF-037","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE","evidence_label":"Lejárt akciók státusz- és határidő-egyeztetésének célmappája"},
-    {"id":"DEF-038","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/04_TECHNICAL","evidence_label":"Többfelhasználós portálpilot műszaki és UAT evidenciáinak célmappája"}
+    {"id":"DEF-038","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/04_TECHNICAL","evidence_label":"Többfelhasználós portálpilot műszaki és UAT evidenciáinak célmappája"},
+    {"id":"DEF-039","status":"Nyitott","evidence_url":"https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE","evidence_label":"A-043–A-127 szakmai és határidő-jóváhagyásának célmappája"}
   ]
 }

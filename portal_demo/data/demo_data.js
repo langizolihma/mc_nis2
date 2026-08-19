@@ -25,7 +25,7 @@ window.NIS2_DEMO_DATA = {
         "1.2"
       ],
       "cost_band": "B0",
-      "days_to_target": -29,
+      "days_to_target": -49,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Aláírt kinevezés, munkaköri leírás, RACI és szervezeti ábra.",
       "evidence": "Aláírt dokumentumok, kihirdetési nyom, vezetői jóváhagyás.",
@@ -77,7 +77,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -31,
+      "days_to_target": -51,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Működő repository- és evidenciatár-struktúra.",
       "evidence": "Repository access list, evidenciatár-struktúra export/képernyőkép, naming convention, jóváhagyás.",
@@ -103,7 +103,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -24,
+      "days_to_target": -44,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Emberileg ellenőrzött audit finding-regiszter és parser-hibajegy.",
       "evidence": "Mintavételi jegyzőkönyv, exception log, human_validated mező, reviewer sign-off.",
@@ -129,7 +129,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -19,
+      "days_to_target": -39,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott control-action-evidence mapping.",
       "evidence": "Mapping review log, hiány- és duplikációlista, owner sign-off.",
@@ -173,7 +173,7 @@ window.NIS2_DEMO_DATA = {
         "1.4"
       ],
       "cost_band": "B0",
-      "days_to_target": -4,
+      "days_to_target": -24,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Cselekvési terv tervezet.",
       "evidence": "Minden tételhez követelménycsalád, feladat, név szerinti felelős, dátum, deliverable, evidencia és forrás.",
@@ -217,7 +217,7 @@ window.NIS2_DEMO_DATA = {
         "1.4"
       ],
       "cost_band": "B0",
-      "days_to_target": 56,
+      "days_to_target": 36,
       "deadline_bucket": "LATER",
       "deliverable": "Benyújtott csomag és átvételi igazolás.",
       "evidence": "Aláírt terv, jóváhagyási lánc, benyújtási és átvételi bizonyíték.",
@@ -305,7 +305,7 @@ window.NIS2_DEMO_DATA = {
         "1.1"
       ],
       "cost_band": "B0",
-      "days_to_target": -4,
+      "days_to_target": -24,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Szabályzat-életciklus eljárás.",
       "evidence": "Review log, verziótörténet, jóváhagyás, kihirdetés és megismerési nyom.",
@@ -349,7 +349,7 @@ window.NIS2_DEMO_DATA = {
         "1.3"
       ],
       "cost_band": "B0",
-      "days_to_target": -4,
+      "days_to_target": -24,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott erőforrásterv és exception log.",
       "evidence": "Budget extract, kapacitásterv, döntési napló, halasztási kockázat.",
@@ -409,7 +409,7 @@ window.NIS2_DEMO_DATA = {
         "6.36"
       ],
       "cost_band": "B0",
-      "days_to_target": -14,
+      "days_to_target": -34,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott EIR/asset/dependency register.",
       "evidence": "Read-only exportok, tulajdonosi jóváhagyás, adatfolyam- és függőségi lista.",
@@ -435,7 +435,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -20,
+      "days_to_target": -40,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Működő evidence register és review workflow.",
       "evidence": "védett belső URI-k, hash manifest, review log, visszautasítási okok.",
@@ -527,8 +527,8 @@ window.NIS2_DEMO_DATA = {
         "9.34"
       ],
       "cost_band": "B0",
-      "days_to_target": 26,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": 6,
+      "deadline_bucket": "DUE_7_DAYS",
       "deliverable": "Incidenskezelési terv és gyakorlatjegyzőkönyv.",
       "evidence": "Kontaktlista, ticket/timeline, döntések, lessons learned, javító akciók és résztvevői nyom.",
       "external_submission": "no",
@@ -587,8 +587,8 @@ window.NIS2_DEMO_DATA = {
         "3.13"
       ],
       "cost_band": "B0",
-      "days_to_target": 26,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": 6,
+      "deadline_bucket": "DUE_7_DAYS",
       "deliverable": "Képzési terv, anyag, teszt és nyilvántartás.",
       "evidence": "Jelenlét/átvétel, teszteredmény, anyagverzió, utánkövetés.",
       "external_submission": "no",
@@ -663,8 +663,8 @@ window.NIS2_DEMO_DATA = {
         "8.2"
       ],
       "cost_band": "B0",
-      "days_to_target": 11,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": -9,
+      "deadline_bucket": "OVERDUE",
       "deliverable": "Access review csomag és jóváhagyott életciklus-eljárás.",
       "evidence": "Read-only export, alkalmazásgazdai döntések, change ticket és visszaellenőrzés.",
       "external_submission": "no",
@@ -707,8 +707,8 @@ window.NIS2_DEMO_DATA = {
         "8.3"
       ],
       "cost_band": "B0",
-      "days_to_target": 26,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": 6,
+      "deadline_bucket": "DUE_7_DAYS",
       "deliverable": "MFA gap analysis és pilot report.",
       "evidence": "Licencmátrix, pilot scope, siker/hiba napló, rollback és jóváhagyás.",
       "external_submission": "no",
@@ -784,7 +784,7 @@ window.NIS2_DEMO_DATA = {
         "7.43"
       ],
       "cost_band": "B0",
-      "days_to_target": -4,
+      "days_to_target": -24,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Backup matrix és restore test report.",
       "evidence": "Job log, helyreállított objektum/rendszer, időtartam, hiba, RPO/RTO összevetés és jóváhagyás.",
@@ -908,8 +908,8 @@ window.NIS2_DEMO_DATA = {
         "5.15"
       ],
       "cost_band": "B0",
-      "days_to_target": 41,
-      "deadline_bucket": "LATER",
+      "days_to_target": 21,
+      "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Log source matrix, retention és review log.",
       "evidence": "Mintalog, alert teszt, review ticket, retention proof, exception log.",
       "external_submission": "no",
@@ -1000,8 +1000,8 @@ window.NIS2_DEMO_DATA = {
         "18.2"
       ],
       "cost_band": "B0",
-      "days_to_target": 11,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": -9,
+      "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott maintenance/patch/change workflow.",
       "evidence": "Baseline export, patch report, change ticket, exception, rollback proof.",
       "external_submission": "no",
@@ -1172,7 +1172,7 @@ window.NIS2_DEMO_DATA = {
         "12.42"
       ],
       "cost_band": "B0",
-      "days_to_target": -4,
+      "days_to_target": -24,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Fizikai gap register és evidence csomag.",
       "evidence": "Checklist, dátumozott fotó, belépési lista, tesztjegyzőkönyv, intézkedési terv.",
@@ -1232,8 +1232,8 @@ window.NIS2_DEMO_DATA = {
         "19.4"
       ],
       "cost_band": "B0",
-      "days_to_target": 41,
-      "deadline_bucket": "LATER",
+      "days_to_target": 21,
+      "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Supplier risk register és review terv.",
       "evidence": "Szerződéslista, kérdőív, kockázati döntés, hiánylista és review proof.",
       "external_submission": "no",
@@ -1475,7 +1475,7 @@ window.NIS2_DEMO_DATA = {
         "16.99"
       ],
       "cost_band": "B0",
-      "days_to_target": -4,
+      "days_to_target": -24,
       "deadline_bucket": "OVERDUE",
       "deliverable": "License entitlement and support matrix.",
       "evidence": "Szerződés/SAM export, host/core/VM/user mapping, support lifecycle és reviewer sign-off.",
@@ -1501,7 +1501,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": 427,
+      "days_to_target": 407,
       "deadline_bucket": "LATER",
       "deliverable": "Repeat-audit roadmap.",
       "evidence": "Jóváhagyott target, mock audit naptár, javítási buffer és auditor-procurement gate.",
@@ -1527,7 +1527,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -27,
+      "days_to_target": -47,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott AI usage rule és felhasználói visszaigazolás.",
       "evidence": "Policy note, acknowledgement, minta redakció, környezetengedély.",
@@ -1553,7 +1553,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -13,
+      "days_to_target": -33,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Eval baseline, gold cases és defect log.",
       "evidence": "Tesztfutás, reviewed examples, trace/output, hibajegy és javítási kör.",
@@ -1613,7 +1613,7 @@ window.NIS2_DEMO_DATA = {
         "18.2"
       ],
       "cost_band": "B0",
-      "days_to_target": 56,
+      "days_to_target": 36,
       "deadline_bucket": "LATER",
       "deliverable": "Vulnerability assessment and remediation plan.",
       "evidence": "Scope, G3 approval, scan log, finding register, remediation ticket és retest.",
@@ -1640,7 +1640,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": 56,
+      "days_to_target": 36,
       "deadline_bucket": "LATER",
       "deliverable": "EIR scope and readiness record.",
       "evidence": "EIR definition, owner sign-off, asset/dependency list és döntési napló.",
@@ -1666,7 +1666,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -31,
+      "days_to_target": -51,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott canonical source record.",
       "evidence": "SRC-008 fájl, SHA-256, védett tárhivatkozás, aláírásstruktúra-metaadat, összehasonlítási jegyzőkönyv, D-025 és reviewer.",
@@ -1692,7 +1692,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -29,
+      "days_to_target": -49,
       "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott projekt-RACI és kitöltött P0 owner/approver mezők.",
       "evidence": "Aláírt RACI, vezetői döntés, actions.csv review log.",
@@ -1784,8 +1784,8 @@ window.NIS2_DEMO_DATA = {
         "11.14"
       ],
       "cost_band": "B0",
-      "days_to_target": 26,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": 6,
+      "deadline_bucket": "DUE_7_DAYS",
       "deliverable": "Adathordozó-védelmi eljárás és nyilvántartás.",
       "evidence": "Médialeltár, jóváhagyott törlési módszer, hozzáférési lista, mintajegyzőkönyv és megsemmisítési/újrahasználati bizonyíték.",
       "external_submission": "no",
@@ -1956,8 +1956,8 @@ window.NIS2_DEMO_DATA = {
         "14.13"
       ],
       "cost_band": "B0",
-      "days_to_target": 26,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": 6,
+      "deadline_bucket": "DUE_7_DAYS",
       "deliverable": "Jóváhagyott personnel security és joiner-mover-leaver csomag.",
       "evidence": "Munkakör-besorolás, ellenőrzési szabály, checklist, hozzáférés-visszavonási SLA, nyilatkozat és mintafolyamat-evidencia.",
       "external_submission": "no",
@@ -2064,8 +2064,8 @@ window.NIS2_DEMO_DATA = {
         "15.20"
       ],
       "cost_band": "B0",
-      "days_to_target": 11,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": -9,
+      "deadline_bucket": "OVERDUE",
       "deliverable": "Jóváhagyott risk methodology, risk register és treatment workflow.",
       "evidence": "Kockázati skála, elfogadási hatáskör, mintakockázatok, kezelési döntések, review log és vezetői jóváhagyás.",
       "external_submission": "no",
@@ -2172,8 +2172,8 @@ window.NIS2_DEMO_DATA = {
         "13.11"
       ],
       "cost_band": "B0",
-      "days_to_target": 26,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": 6,
+      "deadline_bucket": "DUE_7_DAYS",
       "deliverable": "Három jóváhagyott rendszerbiztonsági terv és közös sablon.",
       "evidence": "Verziózott tervek, EIR-owner és IBF jóváhagyás, dependency/threat mapping, változásnapló és megismertetési nyom.",
       "external_submission": "no",
@@ -2312,8 +2312,8 @@ window.NIS2_DEMO_DATA = {
         "16.99"
       ],
       "cost_band": "B0",
-      "days_to_target": 41,
-      "deadline_bucket": "LATER",
+      "days_to_target": 21,
+      "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Jóváhagyott beszerzési biztonsági checklist és szerződéses követelményminta.",
       "evidence": "Kitöltött mintachecklist, szerződéses klauzulák, support/EOL döntés, kivétel és jóváhagyás.",
       "external_submission": "no",
@@ -2358,6 +2358,3883 @@ window.NIS2_DEMO_DATA = {
       "target_date": "Emberi ütemezés szükséges",
       "task": "Tervezzen, pilotoljon és fokozatosan vezessen be local-first folyamatos auditfelkészültségi ügynököt, amely jóváhagyott read-only forrásokat értelmez, karbantartja a nyilvántartásokat, jegyzőkönyv- és intézkedéstervezeteket készít, határidőt figyel és kivételt terjeszt ember elé.",
       "title": "Folyamatos auditfelkészültség"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.6",
+          "control_title": "Biztonsági teljesítmény mérése",
+          "explanation": "Az érintett szervezet - az információbiztonsági szervezési intézkedéseire, valamint azok ellenőrzésére vonatkozó hatékonyság növelése érdekében - kifejleszti az EIR-ek biztonsági mérésének rendszerét. A mérési rendszer akkor eredményes, ha az az érintett szervezet kockázatkezelési stratégiájával, továbbá működési és menedzsment céljaival szoros kapcsolatban áll. Egy szofisztikáltan megalkotott, biztonsági teljesítmény mérésére szolgáló program olyan teljesítménymutatókat használ, melyek valós és reprezentatív képet adnak a menedzsment számára az EIR biztonságáról, illetőleg az érintett szervezet által alkalmazott biztonsági irányítási rendszer állapotáról. A biztonsági teljesítménymutatók irányulhatnak például a rendszer állapotára (rendszerfrissítések és azok hatékonysága - rendszerek naprakészsége), irányulhatnak az érintett szervezet kiberbiztonsági rezilienciájára (vírusvédelem hatékonysága, dolgozók biztonságtudatossága - például egy phishing kampánnyal szembeni ellenállása, egy adott képzést követő vizsga eredményei, vagy a felhasználók jelszókezelési szokásai), irányulhatnak többek között a szervezet reakcióidejére (pl. átlagos biztonsági esemény reagálási idő, sérülékenységek felfedése utáni frissítési és hibakezelési eljárási idő), de a rendelkezésre állás monitoring kapcsán is számos teljesítménymutató meghatározható. Gyakori teljesítménymutató továbbá az üzletmenet-folytonosság vonatkozásában az üzletmenet-folytonossági és katasztrófa utáni helyreállítási tesztelés végrehajtási ideje és annak hatékonysága. Az érintett szervezetek függetlenül attól, hogy tanúsítottak-e az ISO/IEC 27001 szabványra, a teljesítménymutatók megfelelő kiválasztása érdekében segítségül hívhatják az ISO/IEC 27004 nemzetközi szabványt.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell fejlesztenie az EIR-re vonatkozó biztonsági mérésének rendszerét.\n2. A szervezetnek folyamatosan monitoroznia kell az általa meghatározott teljesítménymutatókat. Rendszeresen ellenőrizni kell a meghatározott mérőszámokat, és figyelemmel kell kísérni a változásokat. Ez lehetővé teszi a szervezet számára, hogy időben észlelje a potenciális biztonsági problémákat, és megtegye a szükséges lépéseket a kockázatok csökkentése érdekében.\n3. A szervezetnek rendszeresen jelentéseket kell készítenie az EIR biztonsági mérési rendszerének eredményeiről. Ezek a jelentések részletes információkat tartalmaznak a mérőszámok aktuális állapotáról, a változásokról és a potenciális kockázatokról. A jelentések segítenek a szervezetnek a kiberbiztonsági stratégia finomításában, és lehetővé teszik a vezetőség számára, hogy megalapozott döntéseket hozzanak a biztonsági kérdésekben.\n4. A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell az EIR biztonsági mérési rendszerét, hogy biztosítsa annak relevanciáját és hatékonyságát a változó kiberbiztonsági környezetben.",
+          "iso_27001_ref": "5.3; 6.1.1; 6.2; 9.1",
+          "nist_sp_800_53_rev5_ref": "PM-6",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.6"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.6 – Biztonsági teljesítmény mérése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-043",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.6 – Biztonsági teljesítmény mérése: 1) A szervezetnek ki kell fejlesztenie az EIR-re vonatkozó biztonsági mérésének rendszerét. 2) A szervezetnek folyamatosan monitoroznia kell az általa meghatározott teljesítménymutatókat. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell az EIR biztonsági mérési rendszerét, hogy biztosítsa annak relevanciáját és hatékonyságát a változó kiberbiztonsági környezetben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.10",
+          "control_title": "Kockázatmenedzsment stratégia",
+          "explanation": "Az egész szervezetre kiterjedő kockázatkezelési stratégia magában foglalja a szervezet kockázattűrésének meghatározását, a kockázatcsökkentési stratégiákat, az elfogadható kockázatértékelési módszereket, a szervezet egészére kiterjedő kockázatértékelésének folyamatát, valamint a kockázat időbeli nyomon követésére szolgáló megközelítéseket. A kockázatkezelésért felelős vezető (a szervezet vezetője vagy kijelölt képviselője) összehangolja az információbiztonság irányítási folyamatait a stratégiai, operatív és költségvetési tervezési folyamatokkal. A kockázatkezelésért felelős vezető által vezetett kockázatkezelési irányítási funkció elősegítheti a kockázatkezelési stratégia következetes alkalmazását az egész szervezetre kiterjedően. A kockázatkezelési stratégiát a szervezeten belüli és kívüli, más forrásokból származó, a kockázatokkal kapcsolatos információkkal lehet alátámasztani annak biztosítása érdekében, hogy a stratégia kellően széles körű és átfogó legyen. Az ellátási lánc kockázatkezelési stratégiája szintén hasznos információkat szolgáltathat a szervezet egészére kiterjedő kockázatkezelési stratégiához.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell dolgoznia egy átfogó kockázatkezelési stratégiát, amely tartalmazza a szervezet kockázattűrését, a kockázatok csökkentésének stratégiáit, az elfogadható kockázatértékelési módszertanokat, egy folyamatot a biztonsági kockázatok értékelésére az egész szervezeten belül, valamint a szervezet kockázattűrésével összhangban, és a megközelítéseket a kockázatok időbeli nyomon követésére.\n2. A kockázatkezelésért felelős személy összehangolja az információbiztonsági irányítási folyamatokat a stratégiai, operatív és költségvetési tervezési folyamatokkal.\n3. Az EIR-ekkel kapcsolatos ellátási lánc kockázatkezelési stratégia,  hasznos bemeneteket is nyújthat az érintett szervezet széles körű kockázatkezelési stratégiájához.\n4. Az érintett szervezet által meghatározott gyakorisággal és esetekben felülvizsgálja és frissíti a kockázatkezelési stratégiát, hogy meg tudjon felelni a szervezeti változásoknak. Ezt a folyamatot naplózni kell, hogy biztosítsa a folyamat átláthatóságát és nyomon követhetőségét.",
+          "iso_27001_ref": "4.3; 4.4; 6.1.1; 6.1.2; 6.2; 7.5.1; 7.5.2; 7.5.3; 10.1",
+          "nist_sp_800_53_rev5_ref": "PM-9",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.10"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.10 – Kockázatmenedzsment stratégia végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-044",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.10 – Kockázatmenedzsment stratégia: 1) A szervezetnek ki kell dolgoznia egy átfogó kockázatkezelési stratégiát, amely tartalmazza a szervezet kockázattűrését, a kockázatok csökkentésének stratégiáit, az elfogadható kockázatértékelési módszertanokat, egy folyamatot a biztonsági kockázatok értékelésére az egész szervezeten belül, valamint a szervezet kockázattűrésével… 2) A kockázatkezelésért felelős személy összehangolja az információbiztonsági irányítási folyamatokat a stratégiai, operatív és költségvetési tervezési folyamatokkal. 3) Az érintett szervezet által meghatározott gyakorisággal és esetekben felülvizsgálja és frissíti a kockázatkezelési stratégiát, hogy meg tudjon felelni a szervezeti változásoknak. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.11",
+          "control_title": "Engedélyezési folyamatok meghatározása",
+          "explanation": "A szervezeti rendszerek és működési környezetük engedélyezési folyamatai megkövetelik az egész szervezetre kiterjedő kockázatkezelési eljárás kialakítását, amelyhez a szervezet segítségül hívhatja meglévő kockázatkezelési keretrendszerek iránymutatásait, valamint a kapcsolódó biztonsági szabványokat, amelyek alapján implementálhat és végrehajthat az egész szervezetre kiterjedően. Ezen eljárás kialakításában kulcsfontosságú szerepet tölt be egy kockázatkezelésért felelős vezető és minden egyes szervezeti rendszer esetében egy kijelölt engedélyező. A szervezet engedélyezési folyamatait a folyamatos ellenőrzési folyamatokkal integrálják, hogy megkönnyítsék a szervezeti működésre, a szervezeti eszközökre, személyekre, és más szervezetekre vonatkozó biztonsági kockázatok folyamatos megértését és elfogadását.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek engedélyezési folyamatokat kell létrehoznia az EIR-ek és azok működési környezetének biztonsági állapotának kezelésére. A kockázatkezelési folyamatokért felelős személyt és az egyes EIR-ekért felelős engedélyezőket kell kijelölni.\n3. A szervezetnek be kell illesztenie az engedélyezési folyamatokat a szervezet egészét átfogó kockázatkezelési keretrendszerbe.\n4. A szervezet engedélyezési folyamatait össze kell hangolni a folyamatos felügyeleti folyamatokkal, hogy elősegítsék a biztonsági kockázatok folyamatos megértését és elfogadását az érintett szervezet működésére, eszközeire, személyekre, más szervezetekre.\n5. A szervezetnek dokumentálnia kell az engedélyezési folyamatokat, hogy nyomon követhesse és ellenőrizhesse a folyamatokat és az esetleges biztonsági eseményeket.",
+          "iso_27001_ref": "A.5.2",
+          "nist_sp_800_53_rev5_ref": "PM-10",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.11"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.11 – Engedélyezési folyamatok meghatározása végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-045",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.11 – Engedélyezési folyamatok meghatározása: 1) A szervezetnek engedélyezési folyamatokat kell létrehoznia az EIR-ek és azok működési környezetének biztonsági állapotának kezelésére. 2) A szervezetnek be kell illesztenie az engedélyezési folyamatokat a szervezet egészét átfogó kockázatkezelési keretrendszerbe. 3) A szervezetnek dokumentálnia kell az engedélyezési folyamatokat, hogy nyomon követhesse és ellenőrizhesse a folyamatokat és az esetleges biztonsági eseményeket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.12",
+          "control_title": "Szervezeti működés és üzleti folyamatok meghatározása",
+          "explanation": "A szervezeti célokkal és az alapfunkciókkal összhangban megalkotott információvédelmi igények határozzák meg a szervezet és az EIR-ek számára szükséges biztonsági követelményeket. A biztonsági követelmények meghatározásához hozzátartozik annak a káros hatásnak a megértése, amelyet az információk veszélyeztetése vagy sérülése eredményezhet. A működési célokat és az alapfunkciókat, valamint a kapcsolódó védelmi követelményeket a szervezeti irányelvekkel és eljárásokkal összhangban dokumentálni szükséges.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia a szervezeti célokat és az alapfunkciókat, figyelembe véve az információbiztonságot és a szervezeti működésre, EIR-re, személyekre, más szervezetekre gyakorolt kockázatokat.\n2. A szervezetnek meg kell határoznia a szervezeti célokból és alapfunkciókból adódó információvédelmi igényeket.\n3. A szervezetnek dokumentálnia kell az alapfeladatok és az alapfunkciók meghatározásait, valamint a hozzájuk kapcsolódó védelmi követelményeket az érintett szervezet szabályzatai és eljárásrendjei szerint.\n4. A szervezetnek meghatározott gyakorisággal felül kell vizsgálnia és módosítania a szervezeti célokat és az alapfunkciókat, hogy biztosítsa azok relevanciáját és hatékonyságát a változó környezeti és üzleti körülmények között.",
+          "iso_27001_ref": "4.1",
+          "nist_sp_800_53_rev5_ref": "PM-11",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.12"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.12 – Szervezeti működés és üzleti folyamatok meghatározása végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-046",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.12 – Szervezeti működés és üzleti folyamatok meghatározása: 1) A szervezetnek meg kell határoznia a szervezeti célokat és az alapfunkciókat, figyelembe véve az információbiztonságot és a szervezeti működésre, EIR-re, személyekre, más szervezetekre gyakorolt kockázatokat. 2) A szervezetnek meg kell határoznia a szervezeti célokból és alapfunkciókból adódó információvédelmi igényeket. 3) A szervezetnek meghatározott gyakorisággal felül kell vizsgálnia és módosítania a szervezeti célokat és az alapfunkciókat, hogy biztosítsa azok relevanciáját és hatékonyságát a változó környezeti és üzleti körülmények között. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.14",
+          "control_title": "Biztonsági személyzet képzése",
+          "explanation": "A biztonsági személyzet képzését és fejlesztését elősegítő programok magukban foglalják a biztonsági feladatok és feladatok ellátásához szükséges ismeretek, készségek és képességek meghatározását, a szerepkör alapú képzési programok kidolgozását a biztonsági szerep- és felelősségi körökkel megbízott személyek számára, valamint szabályok és iránymutatások kidolgozását a biztonsággal kapcsolatos pozíciókat betöltő személyek és a pályázók egyéni képzettségének mérésére és fejlesztésére. A képzési programok mérhetővé teszik az egyéni teljesítményt, valamint karrierutat biztosítanak a biztonsági szerepköröket betöltők számára, ezzel is ösztönözve a szakembereket a területen való előrelépésre és a nagyobb felelősséggel járó pozíciók betöltésére.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia azt a tudást, készségeket és képességeket, amelyekre szükség van a biztonsággal kapcsolatos feladatok elvégzéséhez.\n2. A szervezetnek szerepkör-alapú képzési programokat kell kifejlesztenie azok számára, akik biztonsági szerep- és felelősségi köröket látnak el.\n3. A szervezetnek meglévő szabványokat és irányelveket kell alkalmaznia az egyéni képesítések méréséhez és fejlesztéséhez a biztonsági pozíciókban dolgozók és jelentkezők számára.\n4. A szervezetnek biztonsági karrierutakat be kell kidolgoznia a programban, hogy ösztönözze a biztonsági szakembereket a területen való előrelépésre és a nagyobb felelősségfel járó pozíciók betöltésére.\n5. A szervezetnek a programokat úgy kell kialakítania, hogy ösztönözzék a képesítéssel rendelkező személyeket a biztonsági pozíciók betöltésére.\n6. A szervezetnek a biztonsági munkaerő-fejlesztési programokat össze kell hangolnia a szervezeti biztonsági tudatosság és képzési programokkal, és összpontosítania kell a személyzet alapvető biztonsági képességeinek fejlesztésére és intézményesítésére, hogy ilyen módon is védje a szervezet működését, eszközeit és a személyeket.\n7. A szervezetnek dokumentálnia kell a programban részt vevők előrehaladásáról és fejlődéséről, hogy biztosítsa a program hatékonyságát és folyamatos fejlesztését.",
+          "iso_27001_ref": "7.2; A.6.3",
+          "nist_sp_800_53_rev5_ref": "PM-13",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.14"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.14 – Biztonsági személyzet képzése végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-047",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.14 – Biztonsági személyzet képzése: 1) A szervezetnek meg kell határoznia azt a tudást, készségeket és képességeket, amelyekre szükség van a biztonsággal kapcsolatos feladatok elvégzéséhez. 2) A szervezetnek szerepkör-alapú képzési programokat kell kifejlesztenie azok számára, akik biztonsági szerep- és felelősségi köröket látnak el. 3) A szervezetnek dokumentálnia kell a programban részt vevők előrehaladásáról és fejlődéséről, hogy biztosítsa a program hatékonyságát és folyamatos fejlesztését. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.15",
+          "control_title": "Tesztelés, képzés és felügyelet",
+          "explanation": "Az egész szervezetre kiterjedő biztonsági tesztelési, képzési és felügyeleti folyamat segít biztosítani, hogy a szervezet mindig tisztán lássa a tesztelési, képzési és felügyeleti tevékenységek aktuális állapotát, és lehetősége nyílik arra, hogy ezeket a tevékenységeket összehangoltan kezelje. A folyamatos felügyeleti folyamatok növekvő fontosságával, az információbiztonsági védelmi intézkedések megvalósításával a kockázatelemzések alapján, valamint az egész szervezetre kiterjedő biztonsági követelmények széles körű használatával a szervezet összehangolja és konszolidálja a különböző biztonsági követelmények megvalósulását támogató folyamatos értékelések részeként rutinszerűen végzett tesztelési és felügyeleti tevékenységeket. A biztonsági képzési tevékenységek, bár az egyes rendszerekre és konkrét szerepkörökre összpontosítanak, az összes szervezeti elemre kiterjedő koordinációt igényelnek. A tesztelési, képzési és felügyeleti terveket és tevékenységeket az aktuális fenyegetés- és sérülékenységi vizsgálatok eredményei alapján határozzák meg.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek be kell vezetnie egy folyamatot, amely biztosítja, hogy az EIR-ekhez kapcsolódó biztonsági tesztelések, képzések és felügyeleti tevékenységek folyamatosan végrehajtásra kerüljenek. Ez magában foglalja a tesztelési, képzési és felügyeleti tervek fejlesztését és karbantartását.\n2. A szervezetnek gondoskodnia kell arról, hogy ezek a tevékenységek összehangoltak legyenek.\n3. A szervezetnek biztosítania kell, hogy a tesztelési, képzési és felügyeleti tervek és tevékenységek a jelenlegi fenyegetés- és sérülékenységi vizsgálati eredmények alapján készülnek.\n4. A szervezetnek felül kell vizsgálnia és össze kell hangolnia a terveit a szervezeti kockázatkezelési stratégiával és a kockázatkezelési intézkedésekre vonatkozó, az egész szervezetre kiterjedő prioritásokkal.\n5. A szervezetnek dokumentálnia kell a tesztelési, képzési és felügyeleti tevékenységeket, hogy biztosítsa a folyamatok átláthatóságát és a felelősséget.",
+          "iso_27001_ref": "6.2",
+          "nist_sp_800_53_rev5_ref": "PM-14",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.15"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.15 – Tesztelés, képzés és felügyelet végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-048",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.15 – Tesztelés, képzés és felügyelet: 1) A szervezetnek be kell vezetnie egy folyamatot, amely biztosítja, hogy az EIR-ekhez kapcsolódó biztonsági tesztelések, képzések és felügyeleti tevékenységek folyamatosan végrehajtásra kerüljenek. 2) A szervezetnek gondoskodnia kell arról, hogy ezek a tevékenységek összehangoltak legyenek. 3) A szervezetnek dokumentálnia kell a tesztelési, képzési és felügyeleti tevékenységeket, hogy biztosítsa a folyamatok átláthatóságát és a felelősséget. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.16",
+          "control_title": "Szakmai csoportokkal és közösségekkel való kapcsolattartás",
+          "explanation": "A szakmai csoportokkal és közösségekkel való folyamatos kapcsolattartás fontos a gyorsan változó technológiák és fenyegetések közepette. A szakmai csoportok és közösségek közé tartoznak a speciális érdekcsoportok, szakmai szövetségek, fórumok, hírcsoportok, felhasználói csoportok és a hasonló szervezetekben dolgozó biztonsági szakemberek csoportjai. A szervezetek a működési célok és az üzleti funkciók alapján választják ki a biztonsági csoportokat és egyesületeket. A szervezetek megosztják egymással a fenyegetésekkel, sebezhetőségekkel és biztonsági eseményekkel kapcsolatos információkat (megfelelő feltételek mentén), valamint a kontextuális tudást igénylő ismereteket és a vonatkozó törvényeknek, végrehajtási rendeleteknek, irányelveknek, szabályzatoknak, előírásoknak, szabványoknak és iránymutatásoknak való megfelelési technikákat.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell választania azokat a szakmai csoportokat és közösségeket, amelyekkel kapcsolatot kíván létrehozni.\n2. Miután kiválasztotta a megfelelő csoportokat, a szervezetnek kapcsolatot kell létesítenie ezekkel a csoportokkal, és aktívan részt kell vennie a közösségek és csoportok tevékenységeiben. Ez magában foglalhatja a rendszeres kommunikációt, a szakmai- vagy érdekcsoportok által szervezett eseményeken való részvételt, és a közzétett információk követését.\n3. A szervezetnek folyamatosan biztosítania kell a szervezethez köthető személyek biztonsági oktatását és képzését. Ez magában foglalhatja a biztonsági gyakorlatok, technikák és technológiák oktatását, valamint a fenyegetések, sérülékenységek és biztonsági események ismertetését.\n4. A szervezetnek naprakész információkkal kell rendelkeznie az ajánlott biztonsági gyakorlatokról, technikákról és technológiákról. Ez magában foglalhatja a csoportoktól és közösségektől származó információk követését, valamint saját kutatások és elemzések végzését.\n5. A szervezetnek meg kell osztania az aktuális biztonsággal kapcsolatos információkat, beleértve a fenyegetéseket, sérülékenységeket és biztonsági eseményeket. Ez magában foglalhatja az információk megosztását a csoportokkal és közösségekkel.\n6. A szervezetnek dokumentálnia kell a biztonsági eseményeket, és rendszeresen felül kell vizsgálnia a naplót, hogy azonosítsa a potenciális problémákat és javítási lehetőségeket.",
+          "iso_27001_ref": "7.4; A.5.6",
+          "nist_sp_800_53_rev5_ref": "PM-15",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.16"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.16 – Szakmai csoportokkal és közösségekkel való kapcsolattartás végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-049",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.16 – Szakmai csoportokkal és közösségekkel való kapcsolattartás: 1) A szervezetnek ki kell választania azokat a szakmai csoportokat és közösségeket, amelyekkel kapcsolatot kíván létrehozni. 2) Miután kiválasztotta a megfelelő csoportokat, a szervezetnek kapcsolatot kell létesítenie ezekkel a csoportokkal, és aktívan részt kell vennie a közösségek és csoportok tevékenységeiben. 3) A szervezetnek dokumentálnia kell a biztonsági eseményeket, és rendszeresen felül kell vizsgálnia a naplót, hogy azonosítsa a potenciális problémákat és javítási lehetőségeket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.17",
+          "control_title": "Fenyegetettség tudatosító program",
+          "explanation": "A folyamatosan változó és egyre kifinomultabb fenyegetések, különösen a fejlett, tartós fenyegetések (APT csoportok) miatt egyre valószínűbb, hogy a támadók sikeresen behatolnak a szervezeti EIR-ekbe, rendszerelemekbe vagy veszélyeztetik azokat. Az egyik legjobb technika ennek kezelésére az, ha a szervezetek megosztják egymással a fenyegetésekkel kapcsolatos információikat, beleértve a szervezetek által tapasztalt fenyegetési eseményeket (azaz azokat a taktikákat, technikákat és eljárásokat), szervezetek által bizonyos típusú fenyegetésekkel szemben hatásosnak talált kockázatcsökkentő intézkedéseket, valamint a fenyegetési információkat (azaz a fenyegetésekre vonatkozó jelzéseket és figyelmeztetéseket). A fenyegetésekre vonatkozó információk megosztása lehet kétoldalú vagy többoldalú. A többoldalú fenyegetésmegosztás keretében a szereplők fenyegetési információkat megosztó csoportot hoznak létre. A fenyegetésekkel kapcsolatos információk különleges megállapodásokat és védelmet igényelhetnek, vagy szabadon megoszthatók.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek először létre kell hoznia egy fenyegetettség tudatosító programot. Ez a program magában foglalja a fenyegetések felderítését és azokról szóló információk megosztását a szervezeten belül és más szervezetekkel.\n2. A szervezetnek ki kell dolgoznia egy stratégiát a fenyegetések felderítésére. Ez magában foglalhatja a fenyegetések azonosítását, értékelését és prioritizálását az EIR-en belül.\n3. A szervezetnek létre kell hoznia egy információmegosztási rendszert, amely lehetővé teszi a fenyegetésekkel kapcsolatos információk gyors és hatékony megosztását a szervezeten belül és más szervezetekkel.\n4. A szervezetnek meg kell határoznia a fenyegetésekkel kapcsolatos információk megosztásának szabályait és eljárásait. Ez magában foglalhatja a megosztandó információk típusát, a megosztás módját és időzítését, valamint a megosztásért felelős személyeket vagy csoportokat.\n5. A szervezetnek rendszeresen naplót kell vezetnie a fenyegetésekkel kapcsolatos információk megosztásáról, hogy nyomon követhesse a program hatékonyságát és szükség esetén módosíthassa azt.\n6. A szervezetnek biztosítania kell, hogy a fenyegetésekkel kapcsolatos információk megosztása megfelelően védett legyen, hogy megakadályozza az információk illetéktelen hozzáférését vagy felhasználását.\n7. A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a fenyegetettség tudatosító programját, hogy biztosítsa annak relevanciáját és hatékonyságát a folyamatosan változó fenyegetési környezetben.",
+          "iso_27001_ref": "A.5.7",
+          "nist_sp_800_53_rev5_ref": "PM-16",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.17"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.17 – Fenyegetettség tudatosító program végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-050",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.17 – Fenyegetettség tudatosító program: 1) A szervezetnek először létre kell hoznia egy fenyegetettség tudatosító programot. 2) A szervezetnek ki kell dolgoznia egy stratégiát a fenyegetések felderítésére. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a fenyegetettség tudatosító programját, hogy biztosítsa annak relevanciáját és hatékonyságát a folyamatosan változó fenyegetési környezetben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.19",
+          "control_title": "Kockázatmenedzsment keretrendszer",
+          "explanation": "A kockázatkezelési keretrendszer kialakítása akkor a leghatékonyabb, ha a szervezet szintjén és az érdekelt felekkel - beleértve a működési célok, az üzleti funkciók és a rendszer tulajdonosait - konzultálva történik. A kockázatkezelési folyamat részeként azonosított feltételezések, korlátozások, kockázattűrő képesség, prioritások és kompromisszumok alapul szolgálnak a kockázatkezelési stratégiához, amely viszont a kockázatértékelés, a kockázati válaszadás és a kockázatfigyelési tevékenységek elvégzéséhez szükséges információkkal szolgál. A kockázatkezelés eredményeit megosztják az érintett szervezethez köthető személyekkel, beleértve a működési célok és az üzleti funkciók tulajdonosait, az információk tulajdonosait vagy kezelőit, a rendszer tulajdonosait, az engedélyezésre jogosult vezetőket, a szervezet információbiztonsági vezetőjét és a kockázatkezelésért felelős személyt.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek azonosítania és dokumentálnia kell a kockázatelemzést, kockázatkezelést és a kockázatok felügyeletét érintő feltételezéseit. Ez magában foglalja a kockázatkezelés során figyelembe vett prioritásokat és kompromisszumokat, valamint az érintett szervezet kockázattűrő képességét, továbbá azonosítania és dokumentálnia kell a kockázatelemzést, kockázatkezelést és a kockázatok felügyeletét érintő megkötéseit.\n2. A szervezetnek meg kell osztania a kockázatkezelési tevékenység eredményeit a szervezet által meghatározott személyekkel.\n4. A szervezet által meghatározott gyakorisággal el kell végeznie a kockázatkezelési keretrendszer szempontrendszerének felülvizsgálatát és frissítését. Ez magában foglalja a kockázatkezelési stratégia, a kockázatelemzés, a kockázatválasz és a kockázatfelügyeleti tevékenységek felülvizsgálatát és frissítését.\n5. A naplózás során az érintett szervezetnek figyelemmel kell kísérnie és dokumentálnia kell a kockázatkezelési tevékenységeket, beleértve a kockázatok azonosítását, értékelését, kezelését és felügyeletét.",
+          "iso_27001_ref": "4.3; 6.1.2; 6.2; 7.4; 7.5.1; 7.5.2; 7.5.3",
+          "nist_sp_800_53_rev5_ref": "PM-28",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.19"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.19 – Kockázatmenedzsment keretrendszer végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-051",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.19 – Kockázatmenedzsment keretrendszer: 1) A szervezetnek azonosítania és dokumentálnia kell a kockázatelemzést, kockázatkezelést és a kockázatok felügyeletét érintő feltételezéseit. 2) A szervezetnek meg kell osztania a kockázatkezelési tevékenység eredményeit a szervezet által meghatározott személyekkel. 3) A naplózás során az érintett szervezetnek figyelemmel kell kísérnie és dokumentálnia kell a kockázatkezelési tevékenységeket, beleértve a kockázatok azonosítását, értékelését, kezelését és felügyeletét. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.20",
+          "control_title": "Kockázatkezelésért felelős szerepkörök",
+          "explanation": "A kockázatkezelésért felelős személy kinevezése elősegíti, hogy a szervezeti információbiztonsági irányítási folyamatok illeszkedjenek a szervezet stratégiai, működési és költségvetés-tervezési folyamataiba, ill. összhangban legyenek azokkal. A kockázati vezető a szervezet egészére kiterjedő kockázatkezelési tevékenységek vezetésért felelős. A kockázati vezető szerepkört betöltő személy kinevezése elősegíti, hogy a kockázatok a szervezet egészére kiterjedő szemszögből kerüljenek áttekintésre és elemzésre, valamint azt, hogy a kockázatkezelés az egész szervezeten belül következetes legyen.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell jelölnie egy kockázatkezelésért felelős személyt.\n2. A szervezetnek ki kell jelölnie egy kockázati vezetőt.\n3. A kockázatkezelésért felelős személynek és a kockázati vezetőnek együtt kell működniük, hogy biztosítsák a szervezeti kockázatkezelési folyamatok integrálását a szervezet összes releváns folyamatába.\n4. A kockázatkezelésért felelős személynek és a kockázati vezetőnek rendszeresen dokumentálniuk kell a kockázatkezelési tevékenységeket, beleértve a kockázatok azonosítását, értékelését, kezelését és monitorozását.\n5. A szervezetnek biztosítania kell, hogy a kockázatkezelésért felelős személy és a kockázati vezető rendelkezzen a szükséges képesítéssel, erőforrásokkal és támogatással a feladataik eredményes végrehajtásához.\n6. A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a kockázatkezelési folyamatokat, hogy biztosítsa azok hatékonyságát és relevanciáját a változó kockázati környezetben.",
+          "iso_27001_ref": "5.1; 5.2; 5.3; 9.3.1; A.5.2",
+          "nist_sp_800_53_rev5_ref": "PM-29",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.20"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.20 – Kockázatkezelésért felelős szerepkörök végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-052",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.20 – Kockázatkezelésért felelős szerepkörök: 1) A szervezetnek ki kell jelölnie egy kockázatkezelésért felelős személyt. 2) A szervezetnek ki kell jelölnie egy kockázati vezetőt. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a kockázatkezelési folyamatokat, hogy biztosítsa azok hatékonyságát és relevanciáját a változó kockázati környezetben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.21",
+          "control_title": "Ellátási lánc kockázatmenedzsment stratégiája",
+          "explanation": "Az egész szervezetre kiterjedő ellátási lánc kockázatainak kezelésére vonatkozó stratégia tartalmazza a szervezet ellátási láncra vonatkozó kockázattűrésének egyértelmű kifejezését, az elfogadható ellátási lánc kockázatcsökkentési stratégiákat vagy védelmi intézkedéseket, az ellátási láncból fakadó kockázatok következetes értékelésére és nyomon követésére szolgáló folyamatot, az ellátási lánc kockázatkezelési stratégia végrehajtására és kommunikációjára vonatkozó megközelítéseket, valamint a kapcsolódó szerep- és felelősségi köröket. Az ellátási láncra vonatkozó kockázatkezelés magában foglalja az EIR-ek, rendszerelemek és rendszerszolgáltatások fejlesztésével, beszerzésével, karbantartásával és selejtezésével kapcsolatos biztonsági kockázatok figyelembevételét. Az ellátási lánc kockázatkezelési stratégiája beépíthető a szervezet átfogó kockázatkezelési stratégiájába, iránymutató és tájékoztató jellegű lehet az ellátási láncra vonatkozó irányelvek és a rendszerszintű ellátási lánc kockázatkezelési tervek tekintetében. Ezen túlmenően ezen kockázatkezelési funkció alkalmazása elősegítheti az ellátási lánc kockázatkezelési stratégiájának következetes, az egész szervezetre kiterjedő alkalmazását. Az ellátási láncra vonatkozó kockázatkezelési stratégiát szervezeti, valamint üzleti funkciók szintjén hajtják végre, míg az ellátási lánc kockázatkezelési tervek rendszerszinten kerülnek végrehajtásra.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezet kidolgoz egy, az egész szervezetre kiterjedő ellátási láncra vonatkozó kockázatkezelési stratégiát.\n2. A szervezetnek meg kell fontolnia, hogy az ellátási láncra vonatkozó kockázatkezelési stratégiát beépíti a szervezeti kockázatkezelési stratégiájába.\n3. A szervezetnek meg kell különböztetnie az ellátási lánc kockázatkezelési stratégiát, amelyet a szervezeti és üzleti folyamatok szintjén kell végrehajtania, valamint az ellátási lánc kockázatkezelési terveit, amelyeket az EIR-ek szintjén.\n4. A szervezet rendszeresen felülvizsgálja és frissíti az ellátási lánc kockázatkezelési stratégiáját a változások nyomon követése érdekében az általa meghatározott gyakorisággal.",
+          "iso_27001_ref": "4.4; 6.2; 7.5.1; 7.5.2; 7.5.3",
+          "nist_sp_800_53_rev5_ref": "PM-30",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.21"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.21 – Ellátási lánc kockázatmenedzsment stratégiája végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-053",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.21 – Ellátási lánc kockázatmenedzsment stratégiája: 1) A szervezet kidolgoz egy, az egész szervezetre kiterjedő ellátási láncra vonatkozó kockázatkezelési stratégiát. 2) A szervezetnek meg kell fontolnia, hogy az ellátási láncra vonatkozó kockázatkezelési stratégiát beépíti a szervezeti kockázatkezelési stratégiájába. 3) A szervezet rendszeresen felülvizsgálja és frissíti az ellátási lánc kockázatkezelési stratégiáját a változások nyomon követése érdekében az általa meghatározott gyakorisággal. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "1.23",
+          "control_title": "Folyamatos felügyeleti stratégia",
+          "explanation": "A szervezeti szinten történő folyamatos felügyelet elősegíti, hogy a szervezetnek folyamatos és valós képe legyen a szervezet biztonsági állapotáról, ezzel támogatva a szervezet kockázatkezelési döntéseit. A folyamatos kifejezés azt jelenti, hogy a szervezetek a kockázatalapú döntések támogatásához megfelelő gyakorisággal értékelik és monitorozzák a védelmi intézkedéseket és a kapcsolódó kockázatokat. A különböző típusú védelmi intézkedések eltérő felügyeleti gyakoriságot igényelhetnek. A folyamatos felügyelet eredményei iránymutatást adnak és támogatják a szervezetek kockázatkezelési válaszait (intézkedéseit). A folyamatos felügyeleti programok lehetővé teszik a szervezetek számára, hogy a védelmi intézkedéseket a változó működési célokkal és üzleti igényekkel, fenyegetésekkel, sérülékenységekkel és technológiákkal jellemezhető, rendkívül dinamikus működési környezetekben is fenntartsák. A biztonsággal kapcsolatos információkhoz való folyamatos hozzáférés a jelentéseken keresztül biztosítja a szervezet vezetői számára a hatékony, gyors és megalapozott kockázatkezelési döntések meghozatalának képességét, beleértve a folyamatos jóváhagyási döntéseket is. A kockázatok kezelésének további megkönnyítése érdekében a szervezet fontolóra veszi a szervezet által meghatározott felügyeleti mérőszámok összehangolását a kockázatkezelési stratégiában meghatározott kockázattűréssel.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell dolgoznia egy stratégiát, amely meghatározza a felügyeleti tevékenységek gyakoriságát és módszereit, valamint a mérőszámokat, amelyek alapján a felügyeleti tevékenységek hatékonyságát értékelik.\n2. A szervezetnek fen kell tartania kell egy programot, amely a felügyeleti stratégia szerint folyamatosan figyelemmel kíséri a mérőszámokat.\n3.  A szervezetnek elemeznie kell a felügyeleti és vizsgálati adatok közötti összefüggéseket, hogy meghatározza a védelmi intézkedések hatékonyságát.\n4. A szervezetnek válaszlépéseket kell tennie a védelmi intézkedések értékelése és a felügyeleti információk eredményei alapján.\n5. A szervezetnek rendszeres időközönként jelentést kell készítenie az EIR biztonsági állapotáról a kijelölt személyek számára.\n6.A szervezetnek dokumentálnia kell a folyamatos felügyeleti tevékenységeket, hogy nyomon követhető legyen a felügyeleti tevékenységek hatékonysága és a védelmi intézkedések hatékonysága.",
+          "iso_27001_ref": "4.4; 6.2; 7.4; 7.5.1; 7.5.2; 7.5.3; 9.1; 9.2.2; 10.1; 10.2",
+          "nist_sp_800_53_rev5_ref": "PM-31",
+          "requirement_family": "1",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "1.23"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "1.23 – Folyamatos felügyeleti stratégia végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-054",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "1.23 – Folyamatos felügyeleti stratégia: 1) A szervezetnek ki kell dolgoznia egy stratégiát, amely meghatározza a felügyeleti tevékenységek gyakoriságát és módszereit, valamint a mérőszámokat, amelyek alapján a felügyeleti tevékenységek hatékonyságát értékelik. 2) A szervezetnek fen kell tartania kell egy programot, amely a felügyeleti stratégia szerint folyamatosan figyelemmel kíséri a mérőszámokat. 3) A szervezetnek dokumentálnia kell a folyamatos felügyeleti tevékenységeket, hogy nyomon követhető legyen a felügyeleti tevékenységek hatékonysága és a védelmi intézkedések hatékonysága. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.1",
+          "control_title": "Szabályzat és eljárásrendek",
+          "explanation": "A hozzáférés-felügyeleti szabályzatnak és a kapcsolódó eljárásrend(ek)nek illeszkednie kell az érintett szervezet kockázatkezelési stratégiájához. A megfelelő minőségben és megfelelő szempontok mentén elkészített szabályzatok és eljárásrendek nagy mértékben járulnak hozzá a szervezet biztonságának megőrzéséhez. Az elkészült szabályzatoknak és eljárásrendeknek összhangban kell lenniük egymással és a szervezet információbiztonsági környezetével. A szervezeti szintű biztonsági szabályzatok és eljárásrendek használata általában előnyösebb, hiszen szükségtelenné teheti a különböző szervezeti célok vagy rendszerek szintjén kialakítandó szabályzatokat és eljárásrendeket. A szervezet azonban dönthet úgy (amennyiben a szervezet felépítése ezt indokolja), hogy a szabályzati szinten megjelenő követelményeket egy általános biztonsági szabályzatban [pl.: Információbiztonsági Szabályzat (IBSZ)], vagy több szabályzatban implementálja, míg az eljárásrendek szintjén megjelenő követelményeket (melyek a szabályzatban foglalt követelményeket részletezik rendszer- és szerepköri szinten) beépítheti a rendszerbiztonsági tervébe, vagy több különböző dokumentumban jeleníti meg azokat. A szervezetnek kiemelt figyelmet kell fordítania mind a szabályzat, mind az eljárásrendek megfelelő frissítésére. A frissítéseket kiváltó események lehetnek értékelésből vagy (felül)vizsgálatból eredő megállapítások, biztonsági események vagy változások a hatályos jogszabályokban, irányelvekben, szabályozásokban, szabványokban és ajánlásokban. A szervezetnek szem előtt kell tartania, hogy az elvárt védelmi intézkedések egyszerű újraközlése nem minősülhet szervezeti szabályzatnak vagy eljárásrendnek.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek gondoskodnia kell a hozzáférés-felügyeleti szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról.\n2. A szervezetnek meg kell bizonyosodnia arról, hogy a hozzáférés-felügyeleti szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak.\n3. A szervezetnek - a megfelelő szereplők bevonásával, dokumentált módon - ki kell dolgoznia a vonatkozó szabályzatot és a kapcsolódó eljárásrendeket, és gondoskodnia kell a szabályzat és az eljárásrendek megfelelő kihirdetéséről, valamint az érintett felekkel történő megismertetéséről.\n4. A szabályzat és a kapcsolódó eljárásrendek kidolgozásánál a szervezetnek figyelembe kell vennie a rá vonatkozó sajátosságokat. Az elvárt védelmi intézkedések szó szerinti átvétele nem minősül szervezeti szabályzatnak vagy eljárásrendnek.\n5. A szervezetnek a gyakorlatban is alkalmaznia kell a hozzáférés-felügyeleti szabályzatban és az ahhoz kapcsolódó eljárásrendekben megfogalmazott elvárásokat, ezáltal biztosítva azok tényleges megvalósulását.\n6. A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális hozzáférés-felügyeleti szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően.",
+          "iso_27001_ref": "5.2; 5.3; 7.5.1; 7.5.2; 7.5.3; A.5.1; A.5.2; A.5.4; A.5.15; A.5.31; A.5.36; A.5.37",
+          "nist_sp_800_53_rev5_ref": "AC-1",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.1"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-055",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.1 – Szabályzat és eljárásrendek: 1) A szervezetnek gondoskodnia kell a hozzáférés-felügyeleti szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról. 2) A szervezetnek meg kell bizonyosodnia arról, hogy a hozzáférés-felügyeleti szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak. 3) A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális hozzáférés-felügyeleti szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.15",
+          "control_title": "Hozzáférési szabályok érvényesítése",
+          "explanation": "Az EIR-ben megvalósított logikai hozzáférés-felügyeleti szabályokkal szemben, a fizikai hozzáférés-felügyeleti szabályok a fizikai hozzáféréssel/belépéssel kapcsolatos kontrolloknál kerültek bővebben kifejtésre. Az hozzáférés-felügyeleti szabályzatok szabályozzák a hozzáférést az aktív entitások vagy alanyok és a passzív entitások vagy objektumok (azaz eszközök, fájlok, rekordok, domainek) között az érintett szervezet infrastruktúrájában. Az EIR biztosítja, hogy csak azok a felhasználók és folyamatok férjenek hozzá az információkhoz és az EIR erőforrásaihoz, akiknek erre jogosultságuk van. Ez a jogosultság a felhasználói szinttől, a felhasználói csoportokon át, egészen az alkalmazások és szolgáltatások szintjéig terjedhet.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia és dokumentálnia a logikai hozzáférési jogosultságokat az EIR-hez. Ez magában foglalja a felhasználói jogosultságok, a rendszergazdai jogosultságok és a hozzáférési szintek meghatározását.\n2. A szervezetnek létre kell hoznia egy szabályzatot, amely meghatározza, hogyan kell kezelni és érvényesíteni a logikai hozzáférési jogosultságokat az EIR-ben. Ez a szabályzat magában foglalja a jogosultságok létrehozásának, módosításának, törlésének és felülvizsgálatának folyamatát.\n3. A szervezetnek implementálnia kell a logikai hozzáférési jogosultságokat az EIR-ben a szabályzatnak megfelelően. Ez magában foglalja a jogosultságok hozzárendelését a megfelelő felhasználókhoz, valamint a hozzáférési szintek beállítását.\n4. A szervezetnek naplóznia kell a logikai hozzáférési jogosultságok használatát az EIR-ben. Ez magában foglalja a hozzáférési kísérletek, a sikeres és sikertelen hozzáférési események, valamint a jogosultságok módosításának naplózását.",
+          "iso_27001_ref": "A.5.15; A.5.33; A.8.3; A.8.4; A.8.18; A.8.20; A.8.26",
+          "nist_sp_800_53_rev5_ref": "AC-3",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.15"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.15 – Hozzáférési szabályok érvényesítése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-056",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.15 – Hozzáférési szabályok érvényesítése: 1) A szervezetnek meg kell határoznia és dokumentálnia a logikai hozzáférési jogosultságokat az EIR-hez. 2) A szervezetnek létre kell hoznia egy szabályzatot, amely meghatározza, hogyan kell kezelni és érvényesíteni a logikai hozzáférési jogosultságokat az EIR-ben. 3) A szervezetnek naplóznia kell a logikai hozzáférési jogosultságok használatát az EIR-ben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.71",
+          "control_title": "Sikertelen bejelentkezési kísérletek",
+          "explanation": "A sikertelen bejelentkezési kísérletek korlátozásának és a megengedett próbálkozások számának túllépése esetén követendő további lépéseknek szükségessége független attól, hogy a bejelentkezés helyi vagy hálózati kapcsolaton keresztül történt. A szolgáltatásmegtagadás lehetősége miatt kezdeményezett automatikus zárolások általában ideiglenesek, és automatikusan feloldódnak egy előre meghatározott, az érintett szervezet által meghatározott időszak után. Késleltetési algoritmus használata esetén az érintett szervezetek különböző algoritmusokat alkalmazhatnak a különböző rendszerelemekre, attól függően, hogy a rendszerelem milyen képességekkel rendelkezik. A sikertelen bejelentkezési kísérletekre adott válaszok az operációs rendszer és az alkalmazás szintjén is megvalósíthatók. Az érintett szervezet által meghatározott intézkedések, amelyek a megengedett egymást követő érvénytelen bejelentkezési kísérletek számának túllépése esetén lépnek életbe lehetnek például egy titkos kérdés megválaszolásának megkövetelése a felhasználónév és jelszó mellett, egy korlátozott felhasználói képességekkel rendelkező zárolási mód bevezetése, bejelentkezés korlátozása és egy meghatározott IP (Internet Protocol) címhez, mint forráscímhez kötése, CAPTCHA igényelése az automatizált támadások megakadályozása érdekében, vagy felhasználói profilok alkalmazása, melyek a bejelentkezést megfelelő napszakhoz, IP címhez, eszközhöz vagy MAC (Media Access Control) címhez köthetik.. Ha az automatikus zárolás, vagy a késleltetési algoritmus végrehajtása nem történik meg, a szervezet más intézkedések kombinációját is mérlegelheti a kimerítő próbálkozásos módszerre (brute-force) épülő támadások megakadályozása érdekében. A szervezet arra is kérheti a felhasználókat, hogy válaszoljanak egy titkos kérdésre, mielőtt a megengedett sikertelen bejelentkezési kísérletek száma túllépné a meghatározott értéket. Egy fiók automatikus feloldása egy meghatározott időszak után általában nem engedélyezett, azonban lehetnek kivételek a szervezeti célok vagy igények figyelembevételével.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meghatározott esetszám korlátot kell alkalmaznia a felhasználló meghatározott időtartamon belül egymást követő sikertelen bejelentkezési kísérleteire.\n2. A szervezetnek implementálnia kell egy olyan megoldást, amely képes nyomon követni és naplózni a sikertelen bejelentkezési kísérleteket.\n3. A szervezetnek biztosítania kell, hogy a meghatározott esetszám túllépése esetén az EIR automatikusan zárolja a felhasználói fiókot egy meghatározott időtartamra vagy amíg a rendszergazda fel nem oldja a zárolást. Emellett késleltetheti a következő bejelentkezési lehetőséget egy meghatározott algoritmus szerint.\n4. A szervezetnek biztosítania kell, hogy az EIR értesíti a rendszergazdát, amennyiben a sikertelen próbálkozások maximális számát túllépte egy felhasználó.\n5. A szervezet például az alábbi intézkedéseket határozhatja meg a meghatározott időtartamon belül egymást követő sikertelen bejelentkezési kísérleteire: titkos kérdés megválaszolása a felhasználónév és jelszó mellett, korlátozott felhasználói képességekkel rendelkező zárolási mód bevezetése, bejelentkezés korlátozása és egy meghatározott Internet Protocol (IP) címhez, mint forráscímhez kötése, CAPTCHA használata az automatizált támadások megakadályozására, illetve felhasználói profilok alkalmazása, melyek a bejelentkezést megfelelő napszakhoz, IP címhez, eszközhöz vagy MAC címhez köthetik.\n6. A szervezetnek meghatározott időközönként, rendszeresen felül kell vizsgálnia és szükség esetén frissítenie kell a bejelentkezési kísérletekkel kapcsolatos intézkedéseket, így biztosítva azok hatékonyságát és naprakészségét.",
+          "iso_27001_ref": "A.8.5",
+          "nist_sp_800_53_rev5_ref": "AC-7",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.71"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.71 – Sikertelen bejelentkezési kísérletek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-057",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.71 – Sikertelen bejelentkezési kísérletek: 1) A szervezetnek meghatározott esetszám korlátot kell alkalmaznia a felhasználló meghatározott időtartamon belül egymást követő sikertelen bejelentkezési kísérleteire. 2) A szervezetnek implementálnia kell egy olyan megoldást, amely képes nyomon követni és naplózni a sikertelen bejelentkezési kísérleteket. 3) A szervezetnek meghatározott időközönként, rendszeresen felül kell vizsgálnia és szükség esetén frissítenie kell a bejelentkezési kísérletekkel kapcsolatos intézkedéseket, így biztosítva azok hatékonyságát és naprakészségét. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.75",
+          "control_title": "A rendszerhasználat jelzése",
+          "explanation": "",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "",
+          "iso_27001_ref": "",
+          "nist_sp_800_53_rev5_ref": "",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.75"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.75 – A rendszerhasználat jelzése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-058",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.75 – A rendszerhasználat jelzése: 1) Határozza meg az EIR-ek belépési felületén megjelenítendő, jogilag és információbiztonságilag jóváhagyott rendszerhasználati figyelmeztetés tartalmát. 2) Állítsa be a jóváhagyott figyelmeztetés megjelenítését minden alkalmazandó interaktív belépési ponton, még a hitelesítés vagy a hozzáférés engedélyezése előtt. 3) Dokumentálja a szövegváltozatot, a konfigurációt, a képernyőképes vagy konfigurációexport-alapú próbaeredményt és a felülvizsgálati ciklust. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.88",
+          "control_title": "Azonosítás vagy hitelesítés nélkül engedélyezett tevékenységek",
+          "explanation": "Bizonyos felhasználói tevékenységek végrehajhatók azonosítás és hitelesítés nélkül is, amennyiben a szervezet úgy dönt. A szervezet például olyan esetekben engedélyezhet azonosítás és hitelesítés nélküli felhasználói tevékenységet, mikor a felhasználóknak egy publikusan elérhető weboldalhoz kell hozzáférniük vagy amikor mobiltelefonon fogadnak hívásokat. Olyan felhasználói tevékenység nem minősül azonosítás és hitelesítés nélkül engedélyezett tevékenységnek, melynek megtételéhez már egyszer szükség volt azonosításra és hitelesítésre.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek azonosítania kell azokat a felhasználói tevékenységeket, amelyeket az EIR-ben azonosítás vagy hitelesítés nélkül is végrehajthatnak.\n2. A szervezetnek meg kell határoznia azokat a tevékenységeket, amelyek normál esetben azonosítást vagy hitelesítést igényelnek, de bizonyos körülmények között lehetővé teszik az azonosítási vagy hitelesítési mechanizmusok megkerülését.\n3. A szervezetnek dokumentálnia és indokolnia kell az EIR-ben azonosítás vagy hitelesítés nélkül végrehajtható felhasználói tevékenységeket a rendszerbiztonsági tervben.\n4. A szervezetnek rendszeresen felül kell vizsgálnia ezeket az azonosítást és hitelesítést nem igénylő felhasználói tevékenységeket, és amennyiben azok már nincsenek összhangban a szervezeti célokkal és az üzleti funkciókkal, meg kell szüntetnie azokat.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "AC-14",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.88"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.88 – Azonosítás vagy hitelesítés nélkül engedélyezett tevékenységek végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-059",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.88 – Azonosítás vagy hitelesítés nélkül engedélyezett tevékenységek: 1) A szervezetnek azonosítania kell azokat a felhasználói tevékenységeket, amelyeket az EIR-ben azonosítás vagy hitelesítés nélkül is végrehajthatnak. 2) A szervezetnek meg kell határoznia azokat a tevékenységeket, amelyek normál esetben azonosítást vagy hitelesítést igényelnek, de bizonyos körülmények között lehetővé teszik az azonosítási vagy hitelesítési mechanizmusok megkerülését. 3) A szervezetnek rendszeresen felül kell vizsgálnia ezeket az azonosítást és hitelesítést nem igénylő felhasználói tevékenységeket, és amennyiben azok már nincsenek összhangban a szervezeti célokkal és az üzleti funkciókkal, meg kell szüntetnie azokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.100",
+          "control_title": "Távoli hozzáférés",
+          "explanation": "A távoli hozzáférés olyan hozzáférés, amely az érintett szervezet EIR-jéhez kapcsolódik és amely külső hálózatokon, például az interneten keresztül kommunikál. A szervezet jellemzően titkosított virtuális magánhálózatokat (VPN-eket) használ a távoli kapcsolatok bizalmasságának és integritásának megőrzése érdekében. A titkosított VPN-ek használata elegendő biztosítékot nyújt az érintett szervezet számára arra, hogy hatékonyan kezelje ezeket a kapcsolatokat belső hálózatokként, ha a használt kriptográfiai mechanizmusokat a hatályos jogszabályok, irányelvek, szabályozások, szabványok és ajánlások szerint hajtják végre. A VPN kapcsolatok külső hálózatokon keresztül haladnak át, a titkosított VPN nem növeli a távoli kapcsolatok rendelkezésre állását. A titkosított VPN-ek befolyásolhatják a hálózati kommunikációs forgalom megfelelő monitorozásának képességét a rosszindulatú kódok szempontjából. A távoli hozzáférési szabályok alkalmazása más rendszerekre is vonatkozik, nem csak a nyilvános webkiszolgálókra vagy az olyan EIR-ekre, melyeket úgy terveztek, hogy nyilvánosan hozzáférhetők legyenek. Minden távoli hozzáférési típust engedélyeznie kell a szervezetnek, azt megelőzően, hogy a távoli hozzáférést lehetővé tenné a szervezet. A használati korlátozások mind biztonsági, mind funkcionális korlátozások lehetnek (pl. az átviteli sebességre való tekintettel a streaming szolgáltatások tiltása). A szervezet használhat információcserére, illetve rendszerkapcsolatokra vonatkozó megállapodásokat/szerződéseket, melyekben szabályozzák a távoli hozzáférést is. A említett megállapodásokkal/szerződésekkel kapcsolatos elvárások az \"Információcsere\" kontrollnál kerültek bővebben kifejtésre. A távoli hozzáférésre vonatkozó korlátozások érvényesítése a \"Hozzáférés-ellenőrzés érvényesítése\" kontrollnál kerültek bővebben kifejtésre.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell dolgoznia és dokumentálnia kell az engedélyezett távoli hozzáférés minden egyes típusára vonatkozó használati korlátozásokat, a konfigurációs vagy csatlakozási követelményeket és az alkalmazási útmutatókat.\n2. A szervezetnek titkosított magánhálózatokat (VPN-eket) kell használnia a távoli kapcsolatok bizalmasságának és integritásának megőrzése érdekében.\n3. Minden távoli hozzáférési típust engedélyeznie kell a szervezetnek, azt megelőzően, hogy a távoli hozzáférést lehetővé tenné a szervezet.\n4. A szervezetnek érvényesítenie kell a távoli hozzáférésre vonatkozó hozzáférési korlátozásokat a biztonsági és a rendelkezésre állási szempontok figyelembevételével.\n5. A szervezetnek dokumentálnia kell, hogy mely felhasználók részére került engedélyezésre a távoli hozzáférés.",
+          "iso_27001_ref": "A.5.14; A.6.7",
+          "nist_sp_800_53_rev5_ref": "AC-17",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.100"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.100 – Távoli hozzáférés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-060",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.100 – Távoli hozzáférés: 1) A szervezetnek ki kell dolgoznia és dokumentálnia kell az engedélyezett távoli hozzáférés minden egyes típusára vonatkozó használati korlátozásokat, a konfigurációs vagy csatlakozási követelményeket és az alkalmazási útmutatókat. 2) A szervezetnek titkosított magánhálózatokat (VPN-eket) kell használnia a távoli kapcsolatok bizalmasságának és integritásának megőrzése érdekében. 3) A szervezetnek dokumentálnia kell, hogy mely felhasználók részére került engedélyezésre a távoli hozzáférés. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.108",
+          "control_title": "Vezeték nélküli hozzáférés",
+          "explanation": "A vezeték nélküli technológiák közé sorolható a mikrohullám, a nagyon magas- vagy ultra magas rádiós frekvencia, a 802.11x és a Bluetooth. A vezeték nélküli hálózatok hitelesítési protokollokat használnak, amelyek biztosítják a hitelesítő védelmét és a kölcsönös hitelesítést.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek konfigurációs követelményeket, kapcsolódási követelményeket és alkalmazási útmutatót kell kidolgoznia minden egyes vezeték nélküli hozzáférési típusra. Ez magában foglalja a mikrohullámú, a nagyon magas- vagy ultra magas frekvenciájú rádió frekvenciákat, a 802.11x-et és a Bluetooth-t is.\n2. A szervezetnek engedélyezési eljárást kell lefolytatnia az EIR-hez való vezeték nélküli hozzáférés minden egyes típusára, mielőtt lehetővé tenné ezeket a kapcsolatokat. Ez azt jelenti, hogy az érintett szervezetnek ellenőriznie kell, hogy a vezeték nélküli hozzáférést biztosító technológiák megfelelnek-e a biztonsági követelményeknek, és hogy azokat megfelelően konfigurálták-e.\n3. A szervezetnek rendszeresen felül kell vizsgálnia és szükség esetén frissítenie kell az általa alkalmazott vezeték nélküli hozzáférési technológiákat, hogy biztosítsa azok naprakészségét és hatékonyságát.\n4. A szervezetnek biztosítania kell, hogy a vezeték nélküli hozzáféréshez kapcsolódó biztonsági elvárásokat minden releváns személy megismerje és azokat be is tartsa. Releváns személyek lehetnek a szervezet munkavállalói, alvállalkozói, illetve beszállítói is.",
+          "iso_27001_ref": "A.5.14; A.8.20",
+          "nist_sp_800_53_rev5_ref": "AC-18",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.108"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.108 – Vezeték nélküli hozzáférés végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-061",
+      "owner": "Pásztor András",
+      "phase": "M3_3_6M",
+      "priority": "P2",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.108 – Vezeték nélküli hozzáférés: 1) A szervezetnek konfigurációs követelményeket, kapcsolódási követelményeket és alkalmazási útmutatót kell kidolgoznia minden egyes vezeték nélküli hozzáférési típusra. 2) A szervezetnek engedélyezési eljárást kell lefolytatnia az EIR-hez való vezeték nélküli hozzáférés minden egyes típusára, mielőtt lehetővé tenné ezeket a kapcsolatokat. 3) A szervezetnek biztosítania kell, hogy a vezeték nélküli hozzáféréshez kapcsolódó biztonsági elvárásokat minden releváns személy megismerje és azokat be is tartsa. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.113",
+          "control_title": "Mobil eszközök hozzáférés-ellenőrzése",
+          "explanation": "Az érintett szervezet a mobil eszközök számára kialakítja a konfigurációs követelményeket, kapcsolódási követelményeket és alkalmazási útmutatót. Az érintett szervezetnek akkor is gondoskodni kell a mobil eszközök biztonságáról, amikor azok a felhasználók kezelésében, az érintett szervezet által felügyelt helyen kívül vannak. Az érintett szervezetnek ezért megfelelően kell konfigurálnia az eszközöket és szabályzati oldalról intézkedéseket kell foganatosítania, hogy a felhasználók felügyelete alatt is megfelelő biztonságban legyenek az eszközök és a rajtuk tárolt adatok.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell alakítania a konfigurációs követelményeket, kapcsolódási követelményeket és alkalmazási útmutatót a mobil eszközök számára, különös tekintettel azokra az esetekre, amikor a mobil eszközök az érintett szervezet által ellenőrzött területen kívül helyezkednek el.\n2. A szervezetnek engedélykötelessé kell tennie a mobil eszközökkel történő kapcsolódást az EIR-hez. Ez azt jelenti, hogy a mobil eszközök csak akkor csatlakozhatnak az EIR-hez, ha ezt engedélyezték. Célszerű a kiemelt kockázat miatt az ilyen intézkedési engedélyezéseket az üzemeltetéstől független félnek, például a szervezet elektronikus információs rendszer biztonságáért felelős személyének jóváhagynia.\n3. A szervezetnek felügyelnie kell a mobil eszközökkel történő csatlakozásokat, továbbá a mobil eszközökön kikényszerített biztonsági beállítások megfelelő és folyamatos működését pl.: MDM (Mobile Device Management) rendszer használata.\n4. A szervezetnek rendszeresen felül kell vizsgálnia a kiadott engedélyeket, és a már nem szükséges engedélyeket vissza kell vonnia.",
+          "iso_27001_ref": "A.5.14; A.7.9; A.8.1",
+          "nist_sp_800_53_rev5_ref": "AC-19",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.113"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.113 – Mobil eszközök hozzáférés-ellenőrzése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-062",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.113 – Mobil eszközök hozzáférés-ellenőrzése: 1) A szervezetnek ki kell alakítania a konfigurációs követelményeket, kapcsolódási követelményeket és alkalmazási útmutatót a mobil eszközök számára, különös tekintettel azokra az esetekre, amikor a mobil eszközök az érintett szervezet által ellenőrzött területen kívül helyezkednek el. 2) A szervezetnek engedélykötelessé kell tennie a mobil eszközökkel történő kapcsolódást az EIR-hez. 3) A szervezetnek rendszeresen felül kell vizsgálnia a kiadott engedélyeket, és a már nem szükséges engedélyeket vissza kell vonnia. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.115",
+          "control_title": "Külső elektronikus információs rendszerek használata",
+          "explanation": "Az érintett szervezet meghatározza a követelmény szerinti felhasználási feltételeket, és megállapítja, hogy az elvárt követelmények megvalósultak-e a külső rendszerekben. A szervezet érvényesíti az elvárásait a külső rendszerrel történő információfeldolgozás és -továbbítás kapcsán, továbbá a szervezet által meghatározott típusú külső rendszerek használatát logikai és adminisztratív úton megtiltja.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia a felhasználási feltételeket a külső rendszerekkel kapcsolatban. Ez magában foglalja a specifikus alkalmazásokat, amelyekhez hozzáférhetnek külső rendszerekhez, és a legmagasabb biztonsági kategóriájú információt, amelyet feldolgozhatnak, tárolhatnak vagy továbbíthatnak a külső rendszereken.\n2. A szervezetnek bizalmi kapcsolatokat kell létrehoznia a külső rendszereket birtokló, üzemeltető vagy karbantartó szervezetekkel. Ezek a kapcsolatok lehetővé teszik, hogy az arra jogosult személyek hozzáférjenek az EIR-hez külső rendszerekből, és feldolgozzák, tárolják vagy továbbítsák az érintett szervezet által ellenőrzött információkat külső rendszerek használatával.\n3. A szervezetnek döntenie kell arról, hogy megtiltja-e a meghatározott típusú külsőrendszerek használatát. Például megtilthatja bármely külső rendszer használatát, amelyet nem a szervezet birtokol, vagy megtilthatja a személyes tulajdonban lévő EIR-ek használatát.\n4. Ha a felhasználási feltételeket nem lehet meghatározni a külső rendszerek tulajdonosaival, a szervezet korlátozásokat vezethet be azokkal a személyekkel szemben, akik ezeket a külső rendszereket használják.",
+          "iso_27001_ref": "A.5.14; A.7.9; A.8.20",
+          "nist_sp_800_53_rev5_ref": "AC-20",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.115"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.115 – Külső elektronikus információs rendszerek használata végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-063",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.115 – Külső elektronikus információs rendszerek használata: 1) A szervezetnek meg kell határoznia a felhasználási feltételeket a külső rendszerekkel kapcsolatban. 2) A szervezetnek bizalmi kapcsolatokat kell létrehoznia a külső rendszereket birtokló, üzemeltető vagy karbantartó szervezetekkel. 3) Ha a felhasználási feltételeket nem lehet meghatározni a külső rendszerek tulajdonosaival, a szervezet korlátozásokat vezethet be azokkal a személyekkel szemben, akik ezeket a külső rendszereket használják. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "2.124",
+          "control_title": "Nyilvánosan elérhető tartalom",
+          "explanation": "Az érintett szervezet a vonatkozó hatályos jogszabályok, irányelvek, szabályozások, szabványok és ajánlások szerint, nem engedélyezi a nyilvánosság számára a nem nyilvános információkhoz való hozzáférést. A nyilvánosan hozzáférhető tartalom olyan EIR-eket érint, amelyeket az érintett szervezet kontrollál, és amelyek általában azonosítás vagy hitelesítés nélkül hozzáférhetők a nyilvánosság számára. Az információk nem szervezeti rendszerekben történő közzétételét (pl.: nem szervezethez köthető publikusan elérhető weboldalak, fórumok és közösségi média) az érintett szervezet szabályozásában kezelni kell.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek gondoskodnia kell a nyilvános információk közzétételével kapcsolatos feladatok ellátásról. Meg kell határoznia, hogy kik azok a személyek, akik jogosultak nyilvános elérésre szánt információk közzétételére.\n2. A szervezetnek tájékoztatást kell nyújtania a jogosult személyeknek annak érdekében, hogy képesek legyenek annak a megállapítására, hogy mely információk tehetők nyilvánosan elérhetővé.\n3. A szervezetnek át kell tekintenie az információ tartalmát közzététel előtt és meg kell bizonyosodnia róla, hogy a közzétételre szánt információ nem tartalmaz olyan információt amely nem minősül nyilvánosnak.\n4. A szervezetnek meghatározott gyakorisággal át kell tekintenie a nyilvánosan elérhető tartalmakat, hogy azok tartalmaznak-e nem nyilvános információkat. Amennyiben a szervezet felfedez nyilvánosan elérhető nem nyilvános tartalmat, akkor gondoskodnia kell annak minél hamarabbi eltávolításáról.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "AC-22",
+          "requirement_family": "2",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "2.124"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "2.124 – Nyilvánosan elérhető tartalom végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-064",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "2.124 – Nyilvánosan elérhető tartalom: 1) A szervezetnek gondoskodnia kell a nyilvános információk közzétételével kapcsolatos feladatok ellátásról. 2) A szervezetnek tájékoztatást kell nyújtania a jogosult személyeknek annak érdekében, hogy képesek legyenek annak a megállapítására, hogy mely információk tehetők nyilvánosan elérhetővé. 3) A szervezetnek meghatározott gyakorisággal át kell tekintenie a nyilvánosan elérhető tartalmakat, hogy azok tartalmaznak-e nem nyilvános információkat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "3.2",
+          "control_title": "Biztonságtudatossági képzés",
+          "explanation": "Az érintett szervezet alap- és haladó szintű biztonságtudatossági képzést biztosít a felhasználók számára, mely magában foglalja a felhasználók tudásszintjének mérését is. A szervezet a biztonságtudatossági képzés tartalmát a szervezeti követelmények, a felhasználók által elérhető rendszerek, és a munkakörnyezet alapján (pl.: távmunka) határozzák meg. A képzés tartalma magában foglalja a biztonság szükségességének megértését, a felhasználók által a biztonság fenntartása érdekében megteendő intézkedéseket, valamint a biztonsági eseményekre történő reagálást. A képzés hangsúlyozza a biztonságos működés fontosságát. A biztonságtudatosság erősítésére használt eszközök közé sorolhatjuk a plakátok kihelyezését, a biztonsági emlékeztetőkkel ellátott tárgyak biztosítását, a bejelentkezési képernyőn üzenetek elhelyezését, a szervezet vezetőitől kapott e-mailes figyelmeztetéseket vagy tanácsokat, valamint tudatosító események lebonyolítását.\nA kezdeti képzést követően a biztonságtudatossági képzést a szervezetre vonatkozó hatályos jogszabályok, irányelvek, szabályozások, szabványok és ajánlások alapján meghatározott  minimális gyakorisággal kell lefolytatni. A későbbi biztonságtudatossági képzés egy vagy több rövid ad hoc képzéssel is teljesíthető és tartalmazhat aktuális információkat a legutóbbi támadási sémákról, a szervezeti biztonsági irányelvek változásairól, a felülvizsgált biztonsági elvárásokról vagy a kezdeti képzés témaköreinek egyes részeiből. A biztonságtudatossági képzés és a figyelemfelhívó anyagok rendszeres frissítése segít abban, hogy a tartalom releváns maradjon. A biztonságtudatossági képzés tartalmi frissítését kiváltó események többek között lehetnek értékelésből vagy felülvizsgálatból eredő megállapítások, biztonsági események, vagy változások a hatályos jogszabályokban, irányelvekben, szabályozásokban, szabványokban és ajánlásokban.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell dolgoznia egy alap- és haladó szintű biztonságtudatossági képzést és azokat meg kell tartania a felhasználók számára, mely magában foglalja a felhasználók tudásszintjének mérését is. A felhasználók alatt a vezetők, felsővezetők és a szervezet szerződéses partnerei is értendők.\n2.  A szervezetnek a biztonságtudatossági képzés tartalmát a szervezeti követelmények, a felhasználók által elérhető rendszerek, és a munkakörnyezet alapján (pl.: távmunka) kell meghatároznia.\n3. A szervezetnek úgy kell kidolgoznia a biztonságtudatossági képzést, hogy az képes legyen megértetni a felhasználókkal a biztonság fontosságát és szükségességét. Emellett tartalmaznia kell, hogy a felhasználóknak milyen intézkedéseket kell megtenniük, hogy elősegítsék a biztonság fenntartását. A képzésnek arra is ki kell térnie , hogy egy felhasználónak hogyan kell reagálnia egy biztonsági eseményre pl.: hová kell bejelentenie a felhasználónak egy általa biztonsági eseménynek vélt történést.\n3. A szervezetnek meg kell határoznia, hogy milyen biztonságtudatosságot elősegítő eszközöket fog használni és a gyakorlatban is alkalmaznia kell azokat pl.: plakátok kihelyezése, biztonsági emlékeztetőkkel ellátott tárgyak biztosítása, a bejelentkezési képernyőn üzenetek elhelyezését, a szervezet vezetőitől kapott e-mailes figyelmeztetések vagy tanácsok, valamint biztonságtudatosságot erősítő események lebonyolítása. A biztonságtudatosságot erősítő események közé sorolható egy adathalász kampány szimulálása.\n4. A kezdeti képzést követően a szervezetnek a vonatkozó hatályos jogszabályok, irányelvek, szabályozások, szabványok és ajánlások alapján meghatározott  minimális gyakorisággal kell lefolytatnia a biztonságtudatossági képzéseket.\n5. A kezdeti képzést követő biztonságtudatossági képzés egy vagy több rövid ad hoc képzéssel is teljesíthető és tartalmazhat aktuális információkat a legutóbbi támadási sémákról, a szervezeti biztonsági irányelvek változásairól, a felülvizsgált biztonsági elvárásokról vagy a kezdeti képzés témaköreinek egyes részeiből.\n6. A szervezetnek rendszeresen felül kell vizsgálnia és szükség esetén frissítenie kell a biztonságtudatossági képzést és a figyelemfelhívó anyagokat annak érdekében, hogy azok tartalma releváns maradjon.\n7. A szervezetnek a biztonságtudatossági képzés tartalmát frissítenie kell a meghatározott események bekövetkezését követően pl.: értékelésből vagy felülvizsgálatból eredő megállapítások, biztonsági események, vagy változások a hatályos jogszabályokban, irányelvekben, szabályozásokban, szabványokban és ajánlásokban.\n8. A szervezetnek be kell építenie a belső és külső biztonsági eseményekből levont tanulságokat a biztonságtudatossági képzési anyagokba, valamint az alkalmazott biztonságtudatossági eszközrendszerébe.\n9. A szervezetnek dokumentálnia kell a biztonságtudatossági képzések lebonyolítását pl.: jelenléti ívek használata, automatikusan generált részvételi igazolás.",
+          "iso_27001_ref": "7.3; A.6.3; A.8.7",
+          "nist_sp_800_53_rev5_ref": "AT-2",
+          "requirement_family": "3",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "3.2"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "3.2 – Biztonságtudatossági képzés végrehajtási csomag: jóváhagyott EIR-scope, 10 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott képzési terv és anyag, résztvevői nyilvántartás, tudásellenőrzés és felülvizsgálati rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 10 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-065",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "3.2 – Biztonságtudatossági képzés: 1) A szervezetnek ki kell dolgoznia egy alap- és haladó szintű biztonságtudatossági képzést és azokat meg kell tartania a felhasználók számára, mely magában foglalja a felhasználók tudásszintjének mérését is. 2) A szervezetnek a biztonságtudatossági képzés tartalmát a szervezeti követelmények, a felhasználók által elérhető rendszerek, és a munkakörnyezet alapján (pl.: távmunka) kell meghatároznia. 3) A szervezetnek dokumentálnia kell a biztonságtudatossági képzések lebonyolítását pl.: jelenléti ívek használata, automatikusan generált részvételi igazolás. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "3.4",
+          "control_title": "Biztonságtudatossági képzés – Belső fenyegetés",
+          "explanation": "A belső fenyegetések potenciális tünete és lehetséges előjele lehet a szélsőséges és hosszú ideig tartó munkahelyi elégedetlenség, a munkavégzéshez nem szükséges információkhoz való hozzáférési kísérlet, a pénzügyi forrásokhoz történő megmagyarázhatatlan hozzáférési kísérlet, a munkatársak zaklatása vagy bántalmazása, a munkahelyi erőszak és a szabályzatok, eljárások, utasítások, szabályok vagy gyakorlatok súlyos megsértése. A biztonságtudatossági képzésnek tartalmaznia kell, hogy a munkavállalók és a vezetőség hogyan kommunikálhatják az észrevételeiket a belső fenyegetések potenciális jeleivel kapcsolatban. A szervezet erre a célra létesíthet - a meghatározott szabályzatokkal és eljárásrendekkel összhangban - egy kommunikációs csatornát.\nA szervezet megfontolhatja a belső fenyegetésekkel kapcsolatos tudatosság témáinak személyre szabását az érintettek szerepköre szerint. Például a vezetőknek szóló képzés a beosztottak viselkedésének változásaira összpontosíthat, míg az alkalmazottaknak szóló képzés általánosabb megfigyelésekre összpontosíthat.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek tisztában kell lennie azzal, hogy mi a belső fenyegetés és mik lehetnek annak potenciális jelei. Illetve mindez milyen veszélyekkel járhat a szervezet egészére nézve.\n2. A szervezetnek törekednie kell a belső fenyegetések potenciális jeleinek felismerésére és meg kell tennie a szükséges intézkedéseket, melyekkel igyekszik csökkenteni a fenyegetés mértékét vagy megszüntetni azt.\n3. A szervezetnek a biztonságtudatossági képzés keretében foglalkoznia kell a belső fenyegetéssel. A képzésnek tartalmaznia kell, hogy mi számít belső fenyegetésnek, mik lehetnek a belső fenyegetés potenciális jelei. Emellett a képzésben szerepelnie kell annak, hogy a munkavállalók milyen kommunikációs csatornán keresztül jelezhetik, amennyiben belső fenyegetsére utaló történést érzékelnek.\n4. A szervezet a belső fenyegetéssel kapcsolatos tudnivalók oktatását megvalósíthatja személyre szabottan is, az érintettek szerepköre szerint. Például a vezetőknek szóló képzés a beosztottak viselkedésének változásaira összpontosíthat, míg az alkalmazottaknak szóló képzés általánosabb megfigyelésekre összpontosíthat.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "AT-2(2)",
+          "requirement_family": "3",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "3.4"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "3.4 – Biztonságtudatossági képzés – Belső fenyegetés végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott képzési terv és anyag, résztvevői nyilvántartás, tudásellenőrzés és felülvizsgálati rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-066",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "3.4 – Biztonságtudatossági képzés – Belső fenyegetés: 1) A szervezetnek tisztában kell lennie azzal, hogy mi a belső fenyegetés és mik lehetnek annak potenciális jelei. 2) A szervezetnek törekednie kell a belső fenyegetések potenciális jeleinek felismerésére és meg kell tennie a szükséges intézkedéseket, melyekkel igyekszik csökkenteni a fenyegetés mértékét vagy megszüntetni azt. 3) A szervezet a belső fenyegetéssel kapcsolatos tudnivalók oktatását megvalósíthatja személyre szabottan is, az érintettek szerepköre szerint. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "3.9",
+          "control_title": "Szerepkör alapú biztonsági képzés",
+          "explanation": "Az érintett szervezet a képzés tartalmát az egyének által betöltött szerepkörök és felelősségek, valamint a szervezet biztonsági követelményei alapján határozza meg, beleértve a személyzetnek az EIR-hez való hozzáférését is, amely speciálisan az adott feladatokra szabott technikai képzést tartalmaz. A szerepköralapú képzést igénylő szerepek közé tartoznak a vezetők vagy a menedzsment tagjai, EIR tulajdonosok; engedélyező tisztviselők; biztonsági tisztviselők; adatvédelmi tisztviselők; beszerzési tisztviselők; rendszer tervezőmérnökök; rendszermérnökök; szoftverfejlesztők; biztonsági mérnökök; rendszer-, hálózati és adatbázis-adminisztrátorok; központi naplózás adminisztátorai; konfigurációkezelési tevékenységeket végző személyek; ellenőrzési tevékenységeket végző személyek; rendszerszintű szoftverhez hozzáféréssel rendelkező személyek; vészhelyzeti és biztonsági eseménykezelési feladatokat ellátó személyek; adatvédelmi feladatokat ellátó személyek; és személyes adatokhoz hozzáféréssel rendelkező személyek.\nA szerepköralapú képzés átfogóan kezeli a menedzsment, az operatív és a technikai szerepeket és felelősségeket, beleértve a fizikai, személyi és technikai ellenőrzéseket. A szerepköralapú képzés magában foglalja a biztonsági szerepekre vonatkozó szabályokat, eljárásokat, eszközöket, módszereket és dokumentumokat. A szervezet a szükséges képzést biztosítja az egyének számára, hogy képesek legyenek ellátni az operatív és ellátási lánc kockázatkezelési feladataikat a szervezet biztonsági elvárásainak megfelelően. A képzés típusai közé tartozik a web-alapú- és számítógépes képzés, a dedikált helyiségben megtartott képzés és a gyakorlati képzés is. A szerepköralapú képzés rendszeres frissítése segít annak biztosításában, hogy a képzés tartalma továbbra is releváns és hatékony maradjon. A szerepkör alapú biztonságtudatossági képzés tartalmi frissítését kiváltó események többek között lehetnek értékelésből vagy felülvizsgálatból eredő megállapítások, biztonsági események, vagy változások a hatályos jogszabályokban, irányelvekben, szabályozásokban, szabványokban és ajánlásokban.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek szerepkör alapú biztonsági képzést kell biztosítania a felhasználóknak. A képzés tartalmát az egyének által betöltött szerepkörök és felelősségek, valamint az érintett szervezet biztonsági követelményei határozzák meg.\n2. A kezdeti képzést követően a szervezetnek a vonatkozó hatályos jogszabályok, irányelvek, szabályozások, szabványok és ajánlások alapján meghatározott  minimális gyakorisággal kell lefolytatnia a biztonságtudatossági képzéseket.\n3. A képzésnek meg kell előznie az EIR-hez vagy az információhoz való hozzáférés biztosítását, vagy a kijelölt feladat végrehajtását. A képzést rendszeresen, az érintett szervezet által meghatározott gyakorisággal meg kell ismételni.\n4. A szervezetnek rendszeresen, illetve az érintett szervezet által meghatározott események bekövetkezése után is frissítenie kell a szerepköralapú képzés tartalmát.\n5. A szervezetnek be kell építenie a belső vagy külső biztonsági eseményekből levont tanulságokat a szerepköralapú biztonsági képzésekbe.",
+          "iso_27001_ref": "A.6.3",
+          "nist_sp_800_53_rev5_ref": "AT-3",
+          "requirement_family": "3",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "3.9"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "3.9 – Szerepkör alapú biztonsági képzés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott képzési terv és anyag, résztvevői nyilvántartás, tudásellenőrzés és felülvizsgálati rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-067",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "3.9 – Szerepkör alapú biztonsági képzés: 1) A szervezetnek szerepkör alapú biztonsági képzést kell biztosítania a felhasználóknak. 2) A kezdeti képzést követően a szervezetnek a vonatkozó hatályos jogszabályok, irányelvek, szabályozások, szabványok és ajánlások alapján meghatározott minimális gyakorisággal kell lefolytatnia a biztonságtudatossági képzéseket. 3) A szervezetnek be kell építenie a belső vagy külső biztonsági eseményekből levont tanulságokat a szerepköralapú biztonsági képzésekbe. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "4.1",
+          "control_title": "Szabályzat és eljárásrendek",
+          "explanation": "A naplózást és elszámoltathatóságot magában foglaló szabályzatnak és a kapcsolódó eljárásrend(ek)nek illeszkednie kell az érintett szervezet kockázatkezelési stratégiájához. A megfelelő minőségben és megfelelő szempontok mentén elkészített szabályzatok és eljárásrendek nagy mértékben járulnak hozzá a szervezet biztonságának megőrzéséhez. Az elkészült szabályzatoknak és eljárásrendeknek összhangban kell lenniük egymással és a szervezet információbiztonsági környezetével. A szervezeti szintű biztonsági szabályzatok és eljárásrendek használata általában előnyösebb, hiszen szükségtelenné teheti a különböző szervezeti célok vagy rendszerek szintjén kialakítandó szabályzatokat és eljárásrendeket. A szervezet azonban dönthet úgy (amennyiben a szervezet felépítése ezt indokolja), hogy a szabályzati szinten megjelenő követelményeket egy általános biztonsági szabályzatban [pl.: Információbiztonsági Szabályzat (IBSZ)], vagy több szabályzatban implementálja, míg az eljárásrendek szintjén megjelenő követelményeket (melyek a szabályzatban foglalt követelményeket részletezik rendszer- és szerepköri szinten) beépítheti a rendszerbiztonsági tervébe, vagy több különböző dokumentumban jeleníti meg azokat. A szervezetnek kiemelt figyelmet kell fordítania mind a szabályzat, mind az eljárásrendek megfelelő frissítésére. A frissítéseket kiváltó események lehetnek értékelésből vagy (felül)vizsgálatból eredő megállapítások, biztonsági események vagy változások a hatályos jogszabályokban, irányelvekben, szabályozásokban, szabványokban és ajánlásokban. A szervezetnek szem előtt kell tartania, hogy az elvárt védelmi intézkedések egyszerű újraközlése nem minősülhet szervezeti szabályzatnak vagy eljárásrendnek.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek gondoskodnia kell a naplózást és elszámoltathatóságot magában foglaló szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról.\n2. A szervezetnek meg kell bizonyosodnia arról, hogy a naplózást és elszámoltathatóságot magában foglaló szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak.\n3. A szervezetnek - a megfelelő szereplők bevonásával, dokumentált módon - ki kell dolgoznia a vonatkozó szabályzatot és a kapcsolódó eljárásrendeket, és gondoskodnia kell a szabályzat és az eljárásrendek megfelelő kihirdetéséről, valamint az érintett felekkel történő megismertetéséről.\n4. A szabályzat és a kapcsolódó eljárásrendek kidolgozásánál a szervezetnek figyelembe kell vennie a rá vonatkozó sajátosságokat. Az elvárt védelmi intézkedések szó szerinti átvétele nem minősül szervezeti szabályzatnak vagy eljárásrendnek.\n5. A szervezetnek a gyakorlatban is alkalmaznia kell a naplózást és elszámoltathatóságot magában foglaló szabályzatban és az ahhoz kapcsolódó eljárásrendekben megfogalmazott elvárásokat, ezáltal biztosítva azok tényleges megvalósulását.\n6. A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális naplózást és elszámoltathatóságot magában foglaló szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően.",
+          "iso_27001_ref": "5.2; 5.3; 7.5.1; 7.5.2; 7.5.3; A.5.1; A.5.2; A.5.4; A.5.31; A.5.36; A.5.37",
+          "nist_sp_800_53_rev5_ref": "AU-1",
+          "requirement_family": "4",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "4.1"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "4.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "naplózási szabály, read-only konfigurációexport, mintanapló, megőrzési és hozzáférési ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-068",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "4.1 – Szabályzat és eljárásrendek: 1) A szervezetnek gondoskodnia kell a naplózást és elszámoltathatóságot magában foglaló szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról. 2) A szervezetnek meg kell bizonyosodnia arról, hogy a naplózást és elszámoltathatóságot magában foglaló szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak. 3) A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális naplózást és elszámoltathatóságot magában foglaló szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Naplózás és elszámoltathatóság"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "4.25",
+          "control_title": "Naplóinformációk védelme",
+          "explanation": "A naplóinformációk magukban foglalják az EIR-ben végrehajtott tevékenységek sikeres ellenőrzéséhez szükséges összes információt, például a naplóbejegyzéseket, a naplófájlok beállításait, a vizsgálati jelentéseket és a személyazonosításra alkalmas információkat. A naplókezelő eszközök azok a programok és eszközök, amelyeket az EIR naplózására és a naplózási tevékenységek elvégzésére használnak. Az naplóinformációk védelme a technikai védelemre összpontosít, és a naplókezelő eszközökhöz történő hozzáférést és azok futtatását az arra jogosult személyekre korlátozza. A naplóinformációk fizikai védelmét mind az adathordozók védelmének intézkedései, mind a fizikai és környezeti védelem intézkedései biztosítják. A naplóinformációkhoz történő jogosulatlan hozzáférés felügyelete kritikus fontosságú a kiberbiztonsági események gyors észleléséhez és kezeléséhez, valamint az érintett szervezet kiberbiztonsági állapotának folyamatos monitorozásához.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek biztosítania kell, hogy az EIR-ben végrehajtott tevékenységek sikeres ellenőrzéséhez szükséges összes információ rendelkezésre álljon pl.: naplóbejegyzések, naplófájlok beállításai, a vizsgálati jelentéseket és a személyazonosításra alkalmas információk.\n2. A szervezetnek kiemelt figyelmet kell fordítania a naplóinformációk technikai védelmére. Korlátoznia kell a naplózási eszközökhöz történő hozzáférést, annak érdekében, hogy megakadályozza a jogosulatlan hozzáférést, módosítást, illetve törlést.\n4. A szervezetnek fizikailag is meg kell védenie kell a naplóinformációkat. A naplóinformációk fizikai védelmét a szervezet az adathordozók védelmére, illetve a fizikai és környezeti védelemre vonatkozó biztonsági követelmények betartásával tudja biztosítani.\n5. A szervezetnek úgy kell beállítania az EIR-t, hogy amennyiben jogosulatlan hozzáférést, módosítást vagy a naplóinformációk törlését észleli, képes legyen értesítést küldeni a meghatározott személyeknek vagy szerepköröknek.",
+          "iso_27001_ref": "A.5.33; A.8.15",
+          "nist_sp_800_53_rev5_ref": "AU-9",
+          "requirement_family": "4",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "4.25"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "4.25 – Naplóinformációk védelme végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "naplózási szabály, read-only konfigurációexport, mintanapló, megőrzési és hozzáférési ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-069",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "4.25 – Naplóinformációk védelme: 1) A szervezetnek biztosítania kell, hogy az EIR-ben végrehajtott tevékenységek sikeres ellenőrzéséhez szükséges összes információ rendelkezésre álljon pl.: naplóbejegyzések, naplófájlok beállításai, a vizsgálati jelentéseket és a személyazonosításra alkalmas információk. 2) A szervezetnek kiemelt figyelmet kell fordítania a naplóinformációk technikai védelmére. 3) A szervezetnek úgy kell beállítania az EIR-t, hogy amennyiben jogosulatlan hozzáférést, módosítást vagy a naplóinformációk törlését észleli, képes legyen értesítést küldeni a meghatározott személyeknek vagy szerepköröknek. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Naplózás és elszámoltathatóság"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "4.38",
+          "control_title": "A naplóbejegyzések megőrzése",
+          "explanation": "A szervezet a naplóbejegyzéseket addig őrzi meg, amíg meg nem állapítja, hogy azokra már nincs szükség és nem használhatók fel adminisztratív, jogi, naplózási vagy egyéb működési célokra. A naplóbejegyzések megőrzését és elérhetőségét biztosítani kell a vonatkozó jogszabályok szerint arra az esetre is, ha egy illetékes hatóság (pl.: rendvédelmi szerv) megkeresést küld a szervezetnek. A szervezet standard kategóriákat dolgoz ki a naplóbejegyzések számára az ilyen típusú intézkedésekkel kapcsolatban, és standard válaszadási folyamatot dolgoz ki minden egyes intézkedéstípushoz.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia a naplóbejegyzések megőrzésének időtartamát, figyelembe véve az adminisztratív, jogi, naplózási és egyéb működési szempontokat.\n2. A szervezetnek biztosítania kell a naplóbejegyzések elérhetőségét az esetleges hatósági megkeresések esetére.\n3. A szervezetnek standard kategóriákat kell kialakítania a naplóbejegyzések besorolására.\n4. A szervezetnek standard válaszadási folyamatokat kell kidolgoznia a hatósági keresések kezelésére.",
+          "iso_27001_ref": "A.5.28; A.8.15",
+          "nist_sp_800_53_rev5_ref": "AU-11",
+          "requirement_family": "4",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "4.38"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "4.38 – A naplóbejegyzések megőrzése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "naplózási szabály, read-only konfigurációexport, mintanapló, megőrzési és hozzáférési ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-070",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "4.38 – A naplóbejegyzések megőrzése: 1) A szervezetnek meg kell határoznia a naplóbejegyzések megőrzésének időtartamát, figyelembe véve az adminisztratív, jogi, naplózási és egyéb működési szempontokat. 2) A szervezetnek biztosítania kell a naplóbejegyzések elérhetőségét az esetleges hatósági megkeresések esetére. 3) A szervezetnek standard válaszadási folyamatokat kell kidolgoznia a hatósági keresések kezelésére. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Naplózás és elszámoltathatóság"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "4.40",
+          "control_title": "Naplóbejegyzések létrehozása",
+          "explanation": "Az EIR különböző elemeiből naplóbejegyzések generálhatóak. Az események utólagos kivizsgálásában támogatást nyújtó eseménytípusok azok az eseménytípusok, amelyekre naplóbejegyzéseket kell generálni, és ezek csak egy részét képezik az összes eseménytípusnak, amelyekre az EIR képes naplóbejegyzéseket generálni. Az eseménytípusokra vonatkozó előírások a \"Naplózható események\" kontrollnál kerültek bővebben kifejtésre.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. Az EIR-nek képesnek kell lennie naplóbejegyzések generálni a \"Naplózható események\" pontban meghatározott előírásoknak megfelelően.\n2. Az EIR-nek lehetővé kell tennie meghatározott személyeknek vagy szerepköröknek, hogy kiválasszák, mely naplózható események legyenek naplózva az EIR egyes elemei által.\n3. Az EIR-nek naplóbejegyzéseket kell előállítania a \"Naplózható események\" pont szerinti eseményekre az \"Naplóbejegyzések tartalma\" pontban meghatározott tartalommal.\n4. Az érintett szervezetnek biztosítania kell, hogy az EIR működése megfeleljen a fenti követelményeknek.",
+          "iso_27001_ref": "A.8.15",
+          "nist_sp_800_53_rev5_ref": "AU-12",
+          "requirement_family": "4",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "4.40"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "4.40 – Naplóbejegyzések létrehozása végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "naplózási szabály, read-only konfigurációexport, mintanapló, megőrzési és hozzáférési ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-071",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "4.40 – Naplóbejegyzések létrehozása: 1) Az EIR-nek képesnek kell lennie naplóbejegyzések generálni a \"Naplózható események\" pontban meghatározott előírásoknak megfelelően. 2) Az EIR-nek lehetővé kell tennie meghatározott személyeknek vagy szerepköröknek, hogy kiválasszák, mely naplózható események legyenek naplózva az EIR egyes elemei által. 3) Az érintett szervezetnek biztosítania kell, hogy az EIR működése megfeleljen a fenti követelményeknek. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Naplózás és elszámoltathatóság"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "5.1",
+          "control_title": "Szabályzat és eljárásrendek",
+          "explanation": "A biztonságértékelési szabályzatnak és a kapcsolódó eljárásrend(ek)nek illeszkednie kell az érintett szervezet kockázatkezelési stratégiájához. A megfelelő minőségben és megfelelő szempontok mentén elkészített szabályzatok és eljárásrendek nagy mértékben járulnak hozzá a szervezet biztonságának megőrzéséhez. Az elkészült szabályzatoknak és eljárásrendeknek összhangban kell lenniük egymással és a szervezet információbiztonsági környezetével. A szervezeti szintű biztonsági szabályzatok és eljárásrendek használata általában előnyösebb, hiszen szükségtelenné teheti a különböző szervezeti célok vagy rendszerek szintjén kialakítandó szabályzatokat és eljárásrendeket. A szervezet azonban dönthet úgy (amennyiben a szervezet felépítése ezt indokolja), hogy a szabályzati szinten megjelenő követelményeket egy általános biztonsági szabályzatban [pl.: Információbiztonsági Szabályzat (IBSZ)], vagy több szabályzatban implementálja, míg az eljárásrendek szintjén megjelenő követelményeket (melyek a szabályzatban foglalt követelményeket részletezik rendszer- és szerepköri szinten) beépítheti a rendszerbiztonsági tervébe, vagy több különböző dokumentumban jeleníti meg azokat. A szervezetnek kiemelt figyelmet kell fordítania mind a szabályzat, mind az eljárásrendek megfelelő frissítésére. A frissítéseket kiváltó események lehetnek értékelésből vagy (felül)vizsgálatból eredő megállapítások, biztonsági események vagy változások a hatályos jogszabályokban, irányelvekben, szabályozásokban, szabványokban és ajánlásokban. A szervezetnek szem előtt kell tartania, hogy az elvárt védelmi intézkedések egyszerű újraközlése nem minősülhet szervezeti szabályzatnak vagy eljárásrendnek.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek gondoskodnia kell a biztonságértékelési szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról.\n2. A szervezetnek meg kell bizonyosodnia arról, hogy a biztonságértékelési szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak.\n3. A szervezetnek - a megfelelő szereplők bevonásával, dokumentált módon - ki kell dolgoznia a vonatkozó szabályzatot és a kapcsolódó eljárásrendeket, és gondoskodnia kell a szabályzat és az eljárásrendek megfelelő kihirdetéséről, valamint az érintett felekkel történő megismertetéséről.\n4. A szabályzat és a kapcsolódó eljárásrendek kidolgozásánál a szervezetnek figyelembe kell vennie a rá vonatkozó sajátosságokat. Az elvárt védelmi intézkedések szó szerinti átvétele nem minősül szervezeti szabályzatnak vagy eljárásrendnek.\n5. A szervezetnek a gyakorlatban is alkalmaznia kell a biztonságértékelési szabályzatban és az ahhoz kapcsolódó eljárásrendekben megfogalmazott elvárásokat, ezáltal biztosítva azok tényleges megvalósulását.\n6. A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális biztonságértékelési szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően.",
+          "iso_27001_ref": "5.2; 5.3; 7.5.1; 7.5.2; 7.5.3; 9.2.2; 9.3.1; A.5.1; A.5.2; A.5.4; A.5.31; A.5.36; A.5.37",
+          "nist_sp_800_53_rev5_ref": "CA-1",
+          "requirement_family": "5",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "5.1"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "5.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-072",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "5.1 – Szabályzat és eljárásrendek: 1) A szervezetnek gondoskodnia kell a biztonságértékelési szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról. 2) A szervezetnek meg kell bizonyosodnia arról, hogy a biztonságértékelési szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak. 3) A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális biztonságértékelési szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "5.2",
+          "control_title": "Biztonsági értékelések",
+          "explanation": "A szervezet biztosítja, hogy a védelmi intézkedések értékelői rendelkezzenek a szükséges készségekkel és technikai szakértelemmel a hatékony értékelési tervek kidolgozásához és a rendszerspecifikus, hibrid, közös (több szervezetet érintő, ágazati, stb.) és az információbiztonsági irányítási rendszert érintő védelmi intézkedések értékelésének elvégzéséhez. A szükséges készségek közé tartozik a kockázatkezelési koncepciók és megközelítések általános ismerete, valamint a hardver, szoftver és firmware rendszerelemek átfogó ismerete és tapasztalata.\nA szervezet értékeli az EIR-ek és a működési környezetük vonatkozásában alkalmazott védelmi intézkedéseket a kezdeti és folyamatos engedélyezés, a folyamatos felügyelet, az éves értékelések, a rendszertervezés és -fejlesztés, a rendszerbiztonsági tervezés, valamint a rendszerfejlesztési életciklus részeként.  Az értékelések segítenek biztosítani, hogy a szervezetek megfeleljenek az információbiztonsági követelményeknek, azonosítsák a rendszertervezési és -fejlesztési folyamat gyengeségeit és hiányosságait, az engedélyezési folyamatok részeként kockázatalapú döntések meghozatalához szükséges alapvető információkat szolgáltassanak, és megfeleljenek a sérülékenységeket csökkentő eljárásoknak. A szervezet a biztonsági tervekben dokumentált módon végzi el a megvalósított védelmi intézkedések értékelését. Az értékelések a rendszerfejlesztési életciklus során is elvégezhetők a rendszertervezési és rendszerbiztonsági tervezési folyamatok részeként. A védelmi intézkedések tervezése értékelhető az ajánlattételi felhívások kidolgozása, a válaszok értékelése és a tervezési felülvizsgálatok elvégzése során. Ha a fejlesztés során értékelik az ellenőrzések végrehajtására vonatkozó tervet és a tervnek megfelelő későbbi végrehajtást, a végső ellenőrzési tesztelés lehet egy egyszerű megerősítés a korábban elvégzett ellenőrzési értékelés felhasználásával és az eredmények összesítésével.\nA szervezet kidolgozhat egyetlen, összevont biztonsági értékelési tervet az EIR-re vonatkozóan, illetve fenntarthat külön terveket is. Az összevont értékelési terv egyértelműen meghatározza az ellenőrzési értékeléssel kapcsolatos szerepeket és felelősségi köröket. Ha egy EIR értékelésében több szervezet is részt vesz, az összehangolt megközelítés csökkentheti a redundanciákat és a kapcsolódó költségeket.\nA szervezet más típusú értékelési tevékenységeket, például sérülékenységszkennelést és rendszerfelügyeletet is alkalmazhat a rendszerek biztonsági helyzetének fenntartására a rendszer életciklusa során. Az értékelési jelentések a szervezet által szükségesnek ítélt megfelelő részletességgel dokumentálják az értékelési eredményeket, annak érdekében, hogy meghatározható legyen a jelentések pontossága és teljessége, valamint azt, hogy az ellenőrzések helyesen vannak-e végrehajtva, a tervezett módon működnek-e, és a kívánt eredményt hozzák-e a követelmények teljesítése tekintetében. Az értékelési eredményeket az elvégzett értékelések típusának megfelelő személyek vagy szerepkörök kapják meg. Például az engedélyezési döntések alátámasztására végzett értékeléseket az engedélyező tisztviselők, a vezető információbiztonsági tisztviselők és az engedélyező tisztviselők kijelölt képviselői kapják meg.\nAz éves értékelési követelmények teljesítéséhez a szervezet a következő forrásokból származó értékelési eredményeket használhatja: kezdeti vagy folyamatos rendszerengedélyezés, folyamatos felügyelet, rendszertervezési folyamatok vagy rendszerfejlesztési életciklussal kapcsolatos tevékenységek. A szervezet biztosítja, hogy az értékelési eredmények naprakészek, az ellenőrzés hatékonyságának meghatározása szempontjából relevánsak, és az azokat készítő értékelő kellően független volt. A meglévő védelmi intézkedések értékelési eredményei újra felhasználhatók, amennyiben az eredmények még mindig érvényesek, és szükség szerint további értékelésekkel is kiegészíthetők. A kezdeti jóváhagyások után a szervezet a folyamatos ellenőrzés során értékeli a védelmi intézkedéseket. A szervezet a folyamatos értékelések gyakoriságát is a szervezetben meglévő, folyamatos felügyeleti stratégiákkal összhangban határozza meg. A külső ellenőrzések (pl.: felügyeleti szervek által lefolytatott biztonsági értékelés) nem tartoznak a biztonsági értékelések alá.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek biztosítania kell, hogy a védelmi intézkedések értékelői rendelkezzenek a szükséges készségekkel és technikai szaktudással a hatékony értékelési tervek kialakításához és a rendszerspecifikus, hibrid, közös és programkezelési kontrollok értékeléséhez, amennyiben ez szükséges. A szükséges készségek közé tartozik az általános ismeret a kockázatkezelési koncepciókról és megközelítésekről, valamint átfogó ismeretek és tapasztalat az EIR hardver, szoftver és firmware komponenseivel kapcsolatban.\n2. A szervezetnek értékelnie kell az EIR, illetve az EIR működési környezetét érintő védelmi intézkedéseket, beleértve az elsődleges és folyamatos engedélyezés, a folyamatos felügyelet, az éves értékelések, a rendszertervezés és fejlesztés, a rendszerbiztonsági tervezés és az rendszerfejlesztési életciklus részét. Az értékelések segítenek biztosítani, hogy a szervezet megfeleljen az információbiztonsági követelményeknek, azonosítsa a rendszertervezési és fejlesztési folyamatának gyengeségeit és hiányosságait, szükséges információkat szolgáltasson a kockázatalapú döntések meghozatalához az engedélyezési folyamatok során, és megfeleljen a sérülékenységek enyhítésére vonatkozó eljárásoknak.\n3. A szervezetnek el kell döntenie, hogy egyetlen, összevont biztonsági értékelési tervet készít az EIR számára, vagy külön terveket tart fenn. Egy összevont értékelési terv világosan meghatározza a védelmi intézkedésekkel kapcsolatos értékelő szerepköröket.\n4. A szervezetnek meg kell fontolnia más típusú értékelési tevékenységek használatát is, mint például a sérülékenységszkennelés és a rendszerfelügyelet, annak érdekében, hogy fenntartsa az EIR biztonsági állapotát az EIR életciklusa során.\n5. A szervezetnek gondoskodnia kell arról, hogy az értékelési jelentések a szervezet által szükségesnek ítélt megfelelő részletességgel dokumentálja az értékelési eredményeket, annak érdekében, hogy meghatározható legyen a jelentések pontossága és teljessége, valamint az, hogy az ellenőrzések helyesen vannak-e végrehajtva, a tervezett módon működnek-e, és a kívánt eredményt hozzák-e a követelmények teljesítése tekintetében.\n6. A szervezetnek gondoskodnia kell arról, hogy értékelési eredményeket az adott értékelések típusának megfelelő illetékes személyek vagy szerepkörök megkapják. Például az engedélyezési döntések támogatására végzett értékeléseket az engedélyező tisztségviselő.\n7. A szervezetnek gondoskodnia kell az értékelések során feltárt kockázatok kezeléséről. Erre vonatkozóan intézkedési tervet kell készíteni, és gondoskodni kell annak folyamatos monitorozásáról, ill. az abban szereplő feladatok végrehajtásáról.",
+          "iso_27001_ref": "9.2; 9.2.1; 9.2.2; A.5.30; A.5.36; A.8.29",
+          "nist_sp_800_53_rev5_ref": "CA-2",
+          "requirement_family": "5",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "5.2"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "5.2 – Biztonsági értékelések végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-073",
+      "owner": "Pásztor András",
+      "phase": "M3_3_6M",
+      "priority": "P2",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "5.2 – Biztonsági értékelések: 1) A szervezetnek biztosítania kell, hogy a védelmi intézkedések értékelői rendelkezzenek a szükséges készségekkel és technikai szaktudással a hatékony értékelési tervek kialakításához és a rendszerspecifikus, hibrid, közös és programkezelési kontrollok értékeléséhez, amennyiben ez szükséges. 2) A szervezetnek értékelnie kell az EIR, illetve az EIR működési környezetét érintő védelmi intézkedéseket, beleértve az elsődleges és folyamatos engedélyezés, a folyamatos felügyelet, az éves értékelések, a rendszertervezés és fejlesztés, a rendszerbiztonsági tervezés és az rendszerfejlesztési életciklus részét. 3) A szervezetnek gondoskodnia kell az értékelések során feltárt kockázatok kezeléséről. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "5.4",
+          "control_title": "Biztonsági értékelések – Kiberbiztonsági audit",
+          "explanation": "A védelmi intézkedés a Kibertantv. hatálya alá tartozó szervezetek esetében kötelező. A Kibertantv. 23. § (1) bekezdés szerinti intézkedés értendő alatta: „Az érintett szervezet az e törvény szerinti kiberbiztonsági követelményeknek való megfelelés bizonyítására köteles kétévente a tevékenység végzésére jogosult, független auditor (a továbbiakban: auditor) által kiberbiztonsági auditot végeztetni.”",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "A végrehajtásra irányadó rendelkezésekről az alábbi linken lehet tájékozódni:  https://sztfh.hu/tevekenysegek/kiberbiztonsagi-tanusitas/kiberbiztonsagi-felugyelet/",
+          "iso_27001_ref": "9.2.2; A.5.35",
+          "nist_sp_800_53_rev5_ref": "CA-2(1)",
+          "requirement_family": "5",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "5.4"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "5.4 – Biztonsági értékelések – Kiberbiztonsági audit végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-074",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "5.4 – Biztonsági értékelések – Kiberbiztonsági audit: 1) Az SRC-010 hatályos követelménye és a hatósági/auditori feltételek alapján rögzítse az audit hatókörét, az érintett EIR-eket és az auditütemezést. 2) Ellenőrizze és dokumentálja az auditor jogosultságát, függetlenségét, szerződéses kereteit és a szükséges információátadást. 3) Őrizze meg a jóváhagyott auditjelentést, a javítási evidenciákat és a lezáró vezetői döntést védett tárban. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "5.7",
+          "control_title": "Információcsere",
+          "explanation": "Az EIR és más rendszerek közti rendszerinformáció-csere követelményei a két vagy több rendszer közötti információcserére vonatkoznak. A rendszerinformáció-csere magában foglalja a bérelt vonalakon vagy virtuális magánhálózatokon keresztül történő kapcsolatokat, az internetszolgáltatókkal való kapcsolatokat, az adatbázisok megosztását vagy az adatbázis-tranzakciós információk cseréjét, a felhőszolgáltatásokkal való kapcsolatokat és cseréket, a webalapú szolgáltatásokon keresztül történő cseréket vagy a fájlok cseréjét fájlátviteli protokollokon, hálózati protokollokon, e-mailen vagy más szervezetek közötti kommunikáción keresztül. A szervezetek figyelembe veszik az új vagy megnövekedett fenyegetésekkel kapcsolatos kockázatokat, amelyek akkor merülhetnek fel, amikor az EIR-ek más rendszerekkel cserélnek információt, amelyek eltérő biztonsági követelményekkel és védelmi intézkedésekkel rendelkeznek. Ez magában foglalja a szervezeten belüli és a szervezeten kívüli rendszereket is.\nAz engedélyezésre jogosult felelősők meghatározzák az EIR információcseréjéhez kapcsolódó kockázatot és a megfelelő követelményeket a kockázatcsökkentéshez.\nA kiválasztott megállapodás-típusok olyan tényezőkön alapulnak, mint például a cserében érintett információ hatásszintje, az információt kicserélő szervezetek közötti kapcsolat (pl. kormányzat a kormányzat között, kormányzat a vállalkozások között, vállalkozás a vállalkozás között, kormányzat vagy vállalkozás a szolgáltató között, kormányzat vagy vállalkozás a magánszemély között), vagy a másik rendszer felhasználóinak a szervezeti EIR-hez való hozzáférési szintje. Ha az információt cserélő rendszereknek ugyanaz az engedélyezésre jogosult felelőse, a szervezetnek nem kell megállapodásokat kidolgoznia. Ehelyett a rendszerek közötti interfész jellemzőit (pl. hogyan történik az információcsere?, hogyan védik az információt?) a vonatkozó biztonsági tervekben írják le. A szervezet a megállapodással kapcsolatos információkat beépítheti a hivatalos szerződésekbe, különösen az állami és a nem állami szervezetek (beleértve a szolgáltatókat, vállalkozókat, rendszerfejlesztőket és rendszerintegrátorokat) között létrejött információcserék esetében. A kockázati megfontolások magukban foglalják az azonos hálózatokon osztozó rendszereket is.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek jóvá kell hagynia és szabályoznia kell az információcserét az EIR és más rendszerek között, összhangban a kapcsolódásokra és az információcserére vonatkozó biztonsági megállapodásokkal. Ezt figyelembe véve, a szervezetnek figyelembe kell vennie a szolgáltatási szintre, a felhasználókra és a titoktartásra vonatkozó, valamint a szervezet által meghatározott egyéb megállapodásokat.\n2. A szervezetnek minden egyes információcsere-megállapodás keretében dokumentálnia kell az EIR interfészeinek jellemzőit, biztonsági követelményeit, védelmi intézkedéseit és felelősségi körét. Ezen felül rögzítenie kell a megosztott információk hatásának szintjét is.\n3. A szervezetnek rendszeres időközönként felül kell vizsgálnia és frissítenie kell a megállapodásokat.\n4. A szervezetnek figyelembe kell vennie a kockázatot, amelyet az új vagy növekvő fenyegetések jelenthetnek, amikor az EIR információt cserél más rendszerekkel, amelyek eltérő biztonsági követelményekkel és védelmi intézkedésekkel rendelkezhetnek.\n5. Ha az információt cserélő EIR-eknek ugyanaz az engedélyező tisztviselője, akkor az érintett szervezetnek nem kell megállapodásokat készítenie. Ehelyett a rendszerek közötti interfész jellemzőit a megfelelő biztonsági tervekben kell leírni.\n6. A szervezetnek be kell építenie a megállapodás információit a hivatalos szerződésekbe, különösen az állami és nem állami szervezetek (beleértve a szolgáltatókat, rendszerfejlesztőket és rendszerintegrátorokat) között létrejött információcserék esetében.\n7.  A szervezetnek a kockázatok mérlegelése során figyelembe kell vennie azokat az EIR-eket is, amelyek ugyanabban a hálózatban találhatóak.",
+          "iso_27001_ref": "A.5.14; A.8.21",
+          "nist_sp_800_53_rev5_ref": "CA-3",
+          "requirement_family": "5",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "5.7"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "5.7 – Információcsere végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-075",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "5.7 – Információcsere: 1) A szervezetnek jóvá kell hagynia és szabályoznia kell az információcserét az EIR és más rendszerek között, összhangban a kapcsolódásokra és az információcserére vonatkozó biztonsági megállapodásokkal. 2) A szervezetnek minden egyes információcsere-megállapodás keretében dokumentálnia kell az EIR interfészeinek jellemzőit, biztonsági követelményeit, védelmi intézkedéseit és felelősségi körét. 3) A szervezetnek a kockázatok mérlegelése során figyelembe kell vennie azokat az EIR-eket is, amelyek ugyanabban a hálózatban találhatóak. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "5.12",
+          "control_title": "Engedélyezés",
+          "explanation": "Az engedélyezések hivatalos vezetői döntések, amelyeket a felső vezetők hoznak meg. Ennek során engedélyezhetik bizonyos EIR-ek működését, közös biztonsági követelmények átörökítését szervezeti EIR-ekre, emellett elfogadhatják a közös biztonsági követelmények implementációjával járó kockázatot a szervezeti működés és eszközök, az egyének és egyéb szervezetek vonatkozásában. Az engedélyezésért felelős személyek költségvetési felügyeletet biztosítanak az érintett szervezet EIR-jei és közös védelmi intézkedései számára, vagy felelősséget vállalnak az azok által támogatott szervezeti célok és üzleti funkciók megfelelő működéséért.  Az engedélyezésért felelős személyek felelősek, illetve elszámoltathatók a szervezet EIR-jeinek működésével és használatával kapcsolatos biztonsági kockázatokért.\nAz engedélyezésért felelős személyek folyamatosan adnak ki engedélyeket az EIR-ekkel kapcsolatban, a megvalósított folyamatos felügyeleti programokból származó bizonyítékok alapján. A robosztus folyamatos felügyeleti programok csökkentik a különálló újraengedélyezési folyamatok szükségességét. Az átfogó folyamatos felügyeleti folyamatok alkalmazásával az engedélyezési csomagokban (pl.: felmérésekről készült jelentések, intézkedési tervek és mérföldkövek) található információk folyamatosan frissülnek. Ez naprakész információval látja el az engedélyezésért felelős személyeket, a közös biztonsági követelmények kidolgozásáért felelős személyeket és rendszertulajdonosokat az EIR-jeik, a biztonsági követelményeik és működési környezetük biztonsági helyzetéről. Az újraengedélyezés költségeinek csökkentése érdekében az engedélyezésért felelős személyek a lehető legnagyobb mértékben kihasználhatják a folyamatos felügyeleti folyamatok eredményeit az újraengedélyezési döntések meghozatalához.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek gondoskodnia kell az olyan engedélyezési folyamattal kapcsolatos feladatok ellátásáról, mely az EIR-ért felel. A kijelölt személy a felelős az EIR működésének engedélyezéséért és a közös, más EIR-ekből áthozott (átörökített) biztonsági követelmények elfogadásáért.\n2. A szervezetnek gondoskodnia kell az olyan engedélyezési folyamattal kapcsolatos feladatok ellátásáról, mely a szervezeti EIR-ekre vonatkozó közös, más EIR-ekből áthozott (átörökített) biztonsági követelmények elfogadásáért felel.\n3. A szervezetnek biztosítania kell, hogy a kijelölt felelős az EIR használatbavételét megelőzően elfogadja a közös, más EIR-ekből áthozott (átörökített) biztonsági követelmények alkalmazását és engedélyezi az EIR működését.\n4. A szervezetnek biztosítania kell, hogy a közös biztonsági követelményekért felelős személy engedélyezze a közös, más EIR-ekből áthozott biztonsági követelmények használatát.\n5. A szervezetnek rendszeresen felül kell vizsgálnia az engedélyeket. Ez a lépés biztosítja, hogy az EIR-ek biztonsági állapota naprakész maradjon, és hogy a szervezet időben észlelje és kezelje a biztonsági kockázatokat.\n6. A szervezetnek nyilvántartást kell vezetnie a folyamatokról és az engedélyezési döntésekről, annak érdekében, hogy bizonyítékot tudjon szolgáltatni a folyamatos felügyeleti programokból származó eredményekről.",
+          "iso_27001_ref": "9.3.1; 9.3.3",
+          "nist_sp_800_53_rev5_ref": "CA-6",
+          "requirement_family": "5",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "5.12"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "5.12 – Engedélyezés végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-076",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "5.12 – Engedélyezés: 1) A szervezetnek gondoskodnia kell az olyan engedélyezési folyamattal kapcsolatos feladatok ellátásáról, mely az EIR-ért felel. 2) A szervezetnek gondoskodnia kell az olyan engedélyezési folyamattal kapcsolatos feladatok ellátásáról, mely a szervezeti EIR-ekre vonatkozó közös, más EIR-ekből áthozott (átörökített) biztonsági követelmények elfogadásáért felel. 3) A szervezetnek nyilvántartást kell vezetnie a folyamatokról és az engedélyezési döntésekről, annak érdekében, hogy bizonyítékot tudjon szolgáltatni a folyamatos felügyeleti programokból származó eredményekről. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "5.18",
+          "control_title": "Folyamatos felügyelet – Kockázatmonitorozás",
+          "explanation": "A kockázatmonitorozást az érintett szervezet által meghatározott kockázattűrő képesség határozza meg. A hatékonyság ellenőrzése meghatározza a megvalósított kockázatkezelési intézkedések folyamatos hatékonyságát. A megfelelés ellenőrzése vizsgálja, hogy a szükséges kockázatkezelési intézkedésekből mik azok amik megvalósultak. Továbbá azt is vizsgálja, hogy a biztonsági követelmények közül mi az ami teljesül. A változások nyomon követése azonosítja azokat a változásokat, amelyek az érintett szervezet EIR-jében és működési környezetében történnek, és amelyek befolyásolhatják a biztonsági kockázatokat.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia a szervezeti kockázattűrési szintjét, ami a kockázatmonitorozás szükséges bementi információja.\n2. A szervezetnek be kell vezetnie egy hatékonyság ellenőrzési rendszert, amely meghatározza a bevezetett kockázatkezelési válasz intézkedések folyamatos hatékonyságát.\n3. A szervezetnek megfelelés ellenőrzés kerebéen vizsgálnia kell, hogy a kockázatkezelési intézkedésekből mik azok amik megvalósultak. Emellett ennek keretében a szervezetnek azt is vizsgálnia kell, hogy mely biztonsági követelmények teljesülnek.\n4. A szervezetnek be kell vezetnie a változások nyomon követését, amely azonosítja az EIR és a működési környezet változásait, amelyek befolyásolhatják a biztonsági kockázatokat.\n5. A szervezetnek nyilvántartást kell vezetnie a fent említett lépések végrehajtásáról és az eredményekről, hogy biztosítsa a folyamatos felügyeletet és a kockázatkezelési stratégia hatékonyságának értékelését.",
+          "iso_27001_ref": "9.3.2",
+          "nist_sp_800_53_rev5_ref": "CA-7(4)",
+          "requirement_family": "5",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "5.18"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "5.18 – Folyamatos felügyelet – Kockázatmonitorozás végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-077",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "5.18 – Folyamatos felügyelet – Kockázatmonitorozás: 1) A szervezetnek meg kell határoznia a szervezeti kockázattűrési szintjét, ami a kockázatmonitorozás szükséges bementi információja. 2) A szervezetnek be kell vezetnie egy hatékonyság ellenőrzési rendszert, amely meghatározza a bevezetett kockázatkezelési válasz intézkedések folyamatos hatékonyságát. 3) A szervezetnek nyilvántartást kell vezetnie a fent említett lépések végrehajtásáról és az eredményekről, hogy biztosítsa a folyamatos felügyeletet és a kockázatkezelési stratégia hatékonyságának értékelését. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "5.25",
+          "control_title": "Belső rendszerkapcsolatok",
+          "explanation": "A belső rendszerkapcsolatok olyan kapcsolatok, melyek az adott szervezet rendszerelemei és egyéb, ugyanazon rendszer részét képező, de különálló rendszerelemek között állnak fenn, ideértve a fejlesztésére használt eszközöket is. Belső rendszerkapcsolatok részét képezhetik mobiltelefonok, notebookok és asztali számítógépek, tabletgépek, nyomtatók, másolók, faxgépek, szkennerek, szenzorok és szerverek. Az érintett szervezet a belső rendszerkapcsolatokat nem különálló esetenként hagyja jóvá, hanem közös jellemzőkkel és/vagy konfigurációval, valamint interfésszel rendelkező kategóriákkal dolgozik, beleérte a meghatározott feldolgozási, továbbítás és tárolási képességekkel rendelkező nyomtatókat, szkennereket és másolókat, vagy a specifikus alapkonfigurációval rendelkező okostelefonokat és táblagépeket. Egy belső rendszerkapcsolat szükségességét az érintett szervezet céljainak, vagy üzleti funkcióinak támogatásának szempontjából kell felülvizsgálni.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezet minden belső kapcsolat esetében dokumentálja az interfész jellemzőit, a biztonsági követelményeket, továbbá a kommunikációban részt vevő információ jellegét.\n2. A szervezet leltárt készít azon kategóriákból, melyekbe a belső rendszerkapcsolatok az egyedi jellemzőik alapján rendezhetőek.\n3. A szervezet meghatározza a különböző kategóriák által érintett belső rendszerkapcsolatok, valamint a kapcsolódó rendszerelemek felé támasztott biztonsági és funkcionális elvárásokat.\n4. A szervezet rendszeresen felülvizsgálja a különböző kategóriákat és szükség esetén módosítja a belső rendszerkapcsolat, valamint az érintett rendszerelemek felé támasztott elvárásokat, vagy eltávolítja azokat.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "CA-9",
+          "requirement_family": "5",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "5.25"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "5.25 – Belső rendszerkapcsolatok végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-078",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "5.25 – Belső rendszerkapcsolatok: 1) A szervezet minden belső kapcsolat esetében dokumentálja az interfész jellemzőit, a biztonsági követelményeket, továbbá a kommunikációban részt vevő információ jellegét. 2) A szervezet leltárt készít azon kategóriákból, melyekbe a belső rendszerkapcsolatok az egyedi jellemzőik alapján rendezhetőek. 3) A szervezet rendszeresen felülvizsgálja a különböző kategóriákat és szükség esetén módosítja a belső rendszerkapcsolat, valamint az érintett rendszerelemek felé támasztott elvárásokat, vagy eltávolítja azokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "6.15",
+          "control_title": "Biztonsági hatásvizsgálatok",
+          "explanation": "A biztonsági hatásvizsgálatokat végző felelősöknek rendelkezniük kell a szükséges készségekkel és technikai szaktudással az EIR-ben tervezett változások, valamint a biztonsági következmények elemzéséhez. A biztonsági hatásvizsgálatok magukban foglalják a biztonsági tervek, szabályzatok és eljárásrendek áttekintését a szabályozási követelmények megértése érdekében; az EIR tervezési dokumentációjának és működési eljárásainak áttekintését a szabályozási megvalósítás megértése és a specifikus EIR változások hatásának megértése érdekében; a változások hatásának áttekintését a szervezet ellátási láncában érintett partnereivel és az egyéb érdekelt felekkel. A hatásvizsgálatok magukban foglalják a kockázatok értékelését, mely által világossá válik a változások hatása és hogy szükség van-e további védelmi intézkedésekre.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek a megfelelően képzett felelősök bevonásával el kell végeznie a hatásvizsgálatot.\n2. A hatásvizsgálatoknak magukban kell foglalniuk a biztonsági tervek, szabályzatok és eljárások áttekintését a követelmények tisztázása végett, valamint az EIR tervezési dokumentációjának és üzemeltetési eljárásainak áttekintését.\n3. A szervezetnek meg kell határoznia, hogy a változások milyen hatással lesznek az érintett szervezet ellátási lánc partnereire és az egyéb érdekelt felekre, illetve hogy a változások az EIR-ben hogyan teremtenek új kockázatokat a megvalósított védelmi képességek vonatkozásában.\n4. A változások bevezetése előtt a szervezet felülvizsgálja a tervezett változásokat és elemzi azok kockázatait, illetve információbiztonsági hatásait. Ez segít abban, hogy a szervezet megfeleljen a kiberbiztonsági követelményeknek, és biztosítsa, hogy az EIR-ben tervezett változások ne jelentsenek kockázatot az információbiztonságra. Emellett segít a szervezetnek meghatározni, hogy a tervezett változások miatt szükséges-e további védelmi intézkedések bevezetése.",
+          "iso_27001_ref": "A.8.9",
+          "nist_sp_800_53_rev5_ref": "CM-4",
+          "requirement_family": "6",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "6.15"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "6.15 – Biztonsági hatásvizsgálatok végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-079",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "6.15 – Biztonsági hatásvizsgálatok: 1) A szervezetnek a megfelelően képzett felelősök bevonásával el kell végeznie a hatásvizsgálatot. 2) A hatásvizsgálatoknak magukban kell foglalniuk a biztonsági tervek, szabályzatok és eljárások áttekintését a követelmények tisztázása végett, valamint az EIR tervezési dokumentációjának és üzemeltetési eljárásainak áttekintését. 3) A változások bevezetése előtt a szervezet felülvizsgálja a tervezett változásokat és elemzi azok kockázatait, illetve információbiztonsági hatásait. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "6.18",
+          "control_title": "A változtatásokra vonatkozó hozzáférés korlátozások",
+          "explanation": "Az EIR-ek hardver-, szoftver- vagy firmware-elemeinek vagy az EIR-hez kapcsolódó üzemeltetési eljárásoknak a megváltoztatása jelentős hatással lehet az EIR-ek biztonságára. Ezért az érintett szervezet csak a meghatározott személyeknek engedélyezi az EIR-ekhez való hozzáférést a változtatások kezdeményezése céljából. A hozzáférési korlátozások közé tartoznak a fizikai és logikai hozzáférés-felügyeletek (az ezekre vonatkozó biztonsági követelmények a \"Hozzáférés-ellenőrzés érvényesítése\" és \"A fizikai belépés ellenőrzése\" kontrolloknál kerültek bővebben kifejtésre), a szoftverkönyvtárak, a munkafolyamatok automatizálása, az adathordozón található könyvtárak, az absztrakt rétegek (azaz a külső interfészekbe, nem pedig közvetlenül az EIR-ekbe implementált változtatások) és a változtatási időablakok (azaz a változtatások csak meghatározott időpontokban történnek).",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezet meghatározza azokat a fizikai és logikai hozzáférési korlátozásokat, amelyek az EIR változásaihoz kapcsolódnak. Ez magában foglalhatja a fizikai és logikai hozzáférési kontrollokat, szoftverkönyvtárakat, munkafolyamat-automatizálást, az adathordozókon található könyvtárakat, absztrakt rétegeket, és változtatási időablakokat (amikor a változások csak meghatározott időpontokban történnek).\n2. A szervezetnek dokumentálnia kell a korlátozásokat. A szervezetnek írásban kell rögzítenie az összes fizikai és logikai hozzáférési korlátozást, beleértve a hozzáférési szabályokat, a hozzáférési jogosultságokat és a hozzáférési eljárásokat.\n3. A szervezetnek jóvá kell hagynia a dokumentált korlátozásokat. Ez azt jelenti, hogy a jóváhagyásra jogosult felelősnek el kell fogadnia és jóvá kell hagynia a korlátozásokat, mielőtt azokat érvényesítenék.\n4. A szervezetnek érvényesítenie kell a jóváhagyott korlátozásokat. Ez azt jelenti, hogy a szervezetnek be kell vezetnie és alkalmaznia kell a korlátozásokat az EIR-ben, és naplóznia kell minden hozzáférési kísérletet, hogy nyomon követhető legyen, ki próbált hozzáférni az EIR-hez, mikor és milyen célból.\n5. A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a hozzáférési korlátozásokat, hogy biztosítsa azok relevanciáját és hatékonyságát. A naplókat is rendszeresen át kell nézni, hogy azonosítsák a szabálytalanságokat és a potenciális biztonsági réseket.",
+          "iso_27001_ref": "A.8.2; A.8.4; A.8.9; A.8.19; A.8.31; A.8.32",
+          "nist_sp_800_53_rev5_ref": "CM-5",
+          "requirement_family": "6",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "6.18"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "6.18 – A változtatásokra vonatkozó hozzáférés korlátozások végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-080",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "6.18 – A változtatásokra vonatkozó hozzáférés korlátozások: 1) A szervezet meghatározza azokat a fizikai és logikai hozzáférési korlátozásokat, amelyek az EIR változásaihoz kapcsolódnak. 2) A szervezetnek dokumentálnia kell a korlátozásokat. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a hozzáférési korlátozásokat, hogy biztosítsa azok relevanciáját és hatékonyságát. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "6.23",
+          "control_title": "Konfigurációs beállítások",
+          "explanation": "A konfigurációs beállítások olyan paraméterek, amelyeket a hardver, szoftver vagy firmware rendszerelemekben lehet módosítani, és amelyek befolyásolják az EIR biztonsági állapotát vagy funkcionalitását. Azon eszközök, amelyekhez konfigurációs beállításokat lehet meghatározni, lehetnek nagy teljesítményű számítógépek, szerverek, munkaállomások, operációs rendszerek, mobil eszközök, bemeneti/kimeneti eszközök, protokollok és alkalmazások. A következő paraméterek fejthetnek ki hatást az EIR biztonsági állapotára: rendszerleíró adatbázis (registry) beállításai; felhasználói fiók, fájl vagy könyvtár jogosultságok beállításai; a funkciókhoz, protokollokhoz, portokhoz, szolgálatásokhoz és távoli kapcsolatokhoz tartozó beállítások.\nA szervezet feladata, hogy meghatározza a szervezeti szintű konfigurációs elvárásokat, majd ezekből származtassa az EIR specifikus konfigurációs beállításokat. Az így meghatározott beállítások az EIR alapkonfigurációját képezik. A központilag előírt biztonsági konfigurációs beállítások (common secure configuration) (biztonsági konfigurációra vonatkozó ellenőrző lista, biztonsági útmutatók (hardening guide/security reference guide)) elismert, sztenderdizált és jól bevált referenciák, amelyek útmutatásul szolgálnak az EIR biztonságos konfigurálásához. Ezáltal az EIR-ek megfelelhetnek a működéssel kapcsolatos előírásoknak. Központilag előírt biztonsági konfigurációs beállításokat (common secure configurations) több szervezet is kidolgozhat, beleértve az EIR-ek fejlesztőit, gyártóit, viszonteladóit, állami szerveket, tudományos intézeteket, iparági szereplőket és egyéb köz- és versenyszférában tevékenykedő szervezeteket. A központilag előírt biztonsági konfigurációs beállítások (common secure configuration) implementációjával kapcsolatos elvárás megjelenhet szervezeti szinten, a szervezeti célok és üzleti folyamatok szintjén, az EIR szintjén vagy akár magasabb szinten is, egy hatóság által.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia a szervezeti szintű, egységes konfigurációs elvárásokat, melyeket dokumentálnia is kell. Ezeknek a beállításoknak a szükséges minimum elvét kell képviselniük, összhangban az üzemeltetési követelményekkel.\n2. A szervezetnek a szervezeti szinten meghatározott konfigurációs elvárásokból kell származtatnia az  elektronikus információs rendszerelemekben alkalmazott biztonsági konfigurációs beállításokat. Ezeknek a beállításoknak a szükséges minimum elvét kell képviselniük, összhangban az üzemeltetési követelményekkel.\n3. A szervezet a konfigurációs beállítások meghatározásához felhasználhatja a központilag előírt biztonsági konfigurációs beállításokat (common secure configuration), melyek elismert, sztenderdizált és jól bevált referenciák, illetve amelyek útmutatásul szolgálhatnak az EIR biztonságos konfigurálásához pl.: biztonsági útmutatók (hardening guide/security reference guide).\n4. A szervezetnek el kell végeznie a konfigurációs beállításokat az EIR összes elemében. Ez magában foglalja a hardver, szoftver és firmware rendszerelemek beállításait, amelyek befolyásolhatják az EIR biztonsági állapotát vagy funkcionalitását pl.: rendszerleíró adatbázis (registry) beállításokat, a fiók-, fájl- vagy könyvtár beállítások, valamint a funkciók, protokollok, portok, szolgáltatások és távoli kapcsolatok beállításai.\n5. A szervezetnek szükséges azonosítania, dokumentálnia, illetve el kell fogadnia a meghatározott rendszerelemek konfigurációs beállításaiban a működési követelmények által meghatározott konfigurációs beállításoktól való eltéréseket.\n4. A szervezet figyelemmel kíséri és ellenőrzi a konfigurációs beállítások változásait a szervezeti szabályzatokkal és eljárásokkal összhangban.",
+          "iso_27001_ref": "A.8.9",
+          "nist_sp_800_53_rev5_ref": "CM-6",
+          "requirement_family": "6",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "6.23"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "6.23 – Konfigurációs beállítások végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-081",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "6.23 – Konfigurációs beállítások: 1) A szervezetnek meg kell határoznia a szervezeti szintű, egységes konfigurációs elvárásokat, melyeket dokumentálnia is kell. 2) A szervezetnek a szervezeti szinten meghatározott konfigurációs elvárásokból kell származtatnia az elektronikus információs rendszerelemekben alkalmazott biztonsági konfigurációs beállításokat. 3) A szervezet figyelemmel kíséri és ellenőrzi a konfigurációs beállítások változásait a szervezeti szabályzatokkal és eljárásokkal összhangban. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "6.26",
+          "control_title": "Legszűkebb funkcionalitás",
+          "explanation": "Egy EIR számos funkciót és szolgáltatást nyújthat. Néhány, alapértelmezés szerint rendszeresen nyújtott funkció és szolgáltatás nem feltétlenül szükséges az érintett szervezet ügy- és üzletmenetének támogatásához. Ugyan kényelmes lehet egyetlen rendszerelemből több szolgáltatást nyújtani, de ez növeli a kockázatot. Amennyiben lehetséges, a szervezet  a rendszerelemek funkcióit egyetlen funkcióra korlátozza rendszerelemenként. A szervezet megfontolhatja a nem használt vagy felesleges szoftverek eltávolítását, valamint a nem használt vagy felesleges fizikai és logikai portok és protokollok letiltását, hogy megakadályozzák a rendszerelemek jogosulatlan csatlakoztatását és az információ kiszivárgását. A szervezet hálózati szkennelő eszközöket, behatolásjelző (intrusion detection system (IDS)) és behatolásmegelőző (intrusion prevention system (IPS)) rendszereket, valamint végpontvédelmi technológiákat alkalmazhatnak, mint például tűzfalakat és hoszt alapú behatolásjelző rendszereket (host-based intrusion detection system), hogy azonosítsák és megakadályozzák a tiltott funkciók, protokollok, portok és szolgáltatások használatát. A legszűkebb funkcionalitás elvét figyelembe kell venni az EIR tervezése és teljes fejlesztési életciklusa során (az ezzel kapcsolatos információk bővebben kifejtésre kerültek a \"Biztonságtervezési elvek\", a \"Rendszer és felhasználói funkciók szétválasztása\", valamint a \"Biztonsági funkciók elkülönítése\" kontrolloknál).",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek úgy kell konfigurálnia az EIR-t, hogy az csak az ügy- és üzletmenet szempontjából létfontosságú szolgáltatásokat nyújtsa.\n2. A szervezet határozza meg a tiltott vagy korlátozott funkciókat, portokat, protokollokat, szoftvereket és szolgáltatásokat. Ez azt jelenti, hogy az EIR-ben le kell tiltani vagy korlátozni kell azokat a funkciókat, portokat, protokollokat, szoftvereket és szolgáltatásokat, amelyek nem szükségesek az ügy- és üzletmenet szempontjából, vagy amelyek kockázatot jelenthetnek a szervezet számára.\n3. A szervezet alkalmazzon olyan megoldásokat, melyek képesek azonosítani és megakadályozni a a tiltott funkciók, protokollok, portok és szolgáltatások használatát pl.: hálózati szkennelő eszközök, behatolásjelző (intrusion detection system (IDS)) és behatolásmegelőző (intrusion prevention system (IPS)) rendszerek,  végpontvédelmi technológiák, mint például tűzfalak és hoszt alapú behatolásjelző rendszerek (host-based intrusion detection system).\n4. A szervezet vegye figyelembe a legszűkebb funkcionalitás elvét az EIR tervezése és teljes fejlesztési életciklusa során.\n5. A szervezetnek dokumentálnia kell az EIR konfigurációját és ebben szerepeltetnie kell a tiltott vagy korlátozott funkciókat, portokat, protokollokat, szoftvereket és szolgáltatásokat.",
+          "iso_27001_ref": "A.8.19",
+          "nist_sp_800_53_rev5_ref": "CM-7",
+          "requirement_family": "6",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "6.26"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "6.26 – Legszűkebb funkcionalitás végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-082",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "6.26 – Legszűkebb funkcionalitás: 1) A szervezetnek úgy kell konfigurálnia az EIR-t, hogy az csak az ügy- és üzletmenet szempontjából létfontosságú szolgáltatásokat nyújtsa. 2) A szervezet határozza meg a tiltott vagy korlátozott funkciókat, portokat, protokollokat, szoftvereket és szolgáltatásokat. 3) A szervezetnek dokumentálnia kell az EIR konfigurációját és ebben szerepeltetnie kell a tiltott vagy korlátozott funkciókat, portokat, protokollokat, szoftvereket és szolgáltatásokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "6.47",
+          "control_title": "A szoftverhasználat korlátozásai",
+          "explanation": "Az érintett szervezetnek gondoskodnia kell arról, hogy minden használt szoftver és dokumentáció megfeleljen a szerződésben meghatározott követelményeknek, beleértve a szerzői jogi és egyéb jogszabályi előírásokat is. Nyomon kell követni a mennyiségi licenc alá eső szoftverek és a kapcsolódó dokumentációk használatát, hogy ellenőrizze a szervezet a másolatok és megosztások számát. Ez a nyomon követés lehet manuális vagy automatizált, a szervezet igényeitől függően. A szerződési megállapodások például szoftverlicenc-megállapodásokat is tartalmazhatnak, melyeket központilag szükséges kezelni és periodikusan felül kell vizsgálni. A szervezetnek ellenőrzni és dokumentálni szükséges a megosztásokat, hogy meggyőződjön arról, hogy ezt a lehetőséget nem használják szerzői joggal védett művek, szoftverek jogosulatlan terjesztésére, megjelenítésére vagy sokszorosítására. Ez azt jelenti, hogy a szervezetnek naplót kell vezetnie minden EIR megosztásról, és rendszeresen ellenőriznie kell, hogy a megosztások megfelelnek-e a szerzői jogi és egyéb jogszabályi előírásoknak.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek biztosítania kell, hogy csak olyan szoftvereket és kapcsolódó dokumentációkat használjon, amelyek megfelelnek a szerződéses elvárásoknak és a szerzői jogi vagy más jogszabályi előírásoknak. Ez azt jelenti, hogy az érintett szervezetnek át kell néznie a szoftverek licencszerződéseit és a kapcsolódó dokumentációkat, hogy meggyőződjön arról, hogy megfelelnek-e a szerződéses követelményeknek.\n2. A szervezetnek nyomon kell követnie a mennyiségi licenc alá eső szoftverek és a kapcsolódó dokumentációk használatát. Ez azt jelenti, hogy a szervezetnek rendszeresen ellenőriznie kell hogy, mely szoftvereket használják, és milyen kihasználtsággal használják őket. Ezt meg lehet tenni manuálisan, de automatizált eszközök is léteznek, amelyek segíthetnek ebben a folyamatban.\n3. A szervezetnek ellenőriznie és dokumentálnia kell az állománymegosztásokat. Ez azt jelenti, hogy a szervezetnek naplót kell vezetnie arról, hogy mely fájlok vannak megosztva, és kikkel vannak megosztva. Ez segít meggyőződni arról, hogy a szerzői joggal védett műveket, szoftvereket nem terjesztik, jelenítik meg, vagy nem sokszorosítanak jogosulatlanul.\n4. A szervezetnek rendszeresen felül kell vizsgálnia ezeket a folyamatokat, hogy biztosítsa, hogy továbbra is megfelelnek a követelményeknek. Ez magában foglalja a szoftverlicenc-nyomon követési folyamatok, az állománymegosztás-ellenőrzési folyamatok és a naplózás felülvizsgálatát.",
+          "iso_27001_ref": "A.5.32",
+          "nist_sp_800_53_rev5_ref": "CM-10",
+          "requirement_family": "6",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "6.47"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "6.47 – A szoftverhasználat korlátozásai végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-083",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "6.47 – A szoftverhasználat korlátozásai: 1) A szervezetnek biztosítania kell, hogy csak olyan szoftvereket és kapcsolódó dokumentációkat használjon, amelyek megfelelnek a szerződéses elvárásoknak és a szerzői jogi vagy más jogszabályi előírásoknak. 2) A szervezetnek nyomon kell követnie a mennyiségi licenc alá eső szoftverek és a kapcsolódó dokumentációk használatát. 3) A szervezetnek rendszeresen felül kell vizsgálnia ezeket a folyamatokat, hogy biztosítsa, hogy továbbra is megfelelnek a követelményeknek. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "6.49",
+          "control_title": "Felhasználó által telepített szoftver",
+          "explanation": "Az érintett szervezetben a felhasználók, ha megfelelő jogosultságokkal rendelkeznek, telepíthetnek szoftvereket az EIR-ben. A telepített szoftverek felett tartott ellenőrzés érdekében az érintett szervezet meghatározza a szoftvertelepítéssel kapcsolatos engedélyezett és tiltott tevékenységeket. Az engedélyezett szoftvertelepítések közé tartozhatnak a meglévő szoftverek frissítései és biztonsági javításai, valamint az új alkalmazások letöltése az érintett szervezet által jóváhagyott alkalmazásboltokból. A tiltott szoftvertelepítések közé tartoznak az ismeretlen vagy gyanús eredetű szoftverek, vagy azok a szoftverek, amelyeket az érintett szervezet potenciálisan károsnak tart. A felhasználó által telepített szoftverekre vonatkozó szabályokat az érintett szervezet által kidolgozott vagy valamilyen külső entitás által biztosított szabályzat tartalmazza. A szabályok érvényesítési módszerei közé tartozhatnak az ellenőrző eljárások, valamint az automatizált eszközök.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia a szoftvertelepítéssel kapcsolatos szervezetre érvényes követelményeket, melyeknek tartalmaznia kell a felhasználók lehetőségeit a szoftvertelepítéssel kapcsolatban, valamint a szoftvertelepítéssel kapcsolatos engedélyezett és tiltott tevékenységeket.\n2. A szervezetnek figyelembe kell vennie a szoftvertelepítéssel kapcsolatos szervezetre érvényes követelmények kidolgozásakor, hogy a felhasználók privilegizált jogosultság nélkül is képesek lehetnek telepíteni hordozható (portable) programokat. A szervezetnek a hordozható (portable) programok futtatásának megakadályozására védelmi követelményeket kell kidolgoznia.\n3. A szervezetnek érvényesítenie kell a szoftvertelepítésre vonatkozó szabályokat az általa meghatározott módszerek szerint.\n4. A szervezetnek meghatározott gyakorisággal ellenőriznie kell a szabályok betartását.",
+          "iso_27001_ref": "A.8.19",
+          "nist_sp_800_53_rev5_ref": "CM-11",
+          "requirement_family": "6",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "6.49"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "6.49 – Felhasználó által telepített szoftver végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-084",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "6.49 – Felhasználó által telepített szoftver: 1) A szervezetnek meg kell határoznia a szoftvertelepítéssel kapcsolatos szervezetre érvényes követelményeket, melyeknek tartalmaznia kell a felhasználók lehetőségeit a szoftvertelepítéssel kapcsolatban, valamint a szoftvertelepítéssel kapcsolatos engedélyezett és tiltott tevékenységeket. 2) A szervezetnek figyelembe kell vennie a szoftvertelepítéssel kapcsolatos szervezetre érvényes követelmények kidolgozásakor, hogy a felhasználók privilegizált jogosultság nélkül is képesek lehetnek telepíteni hordozható (portable) programokat. 3) A szervezetnek meghatározott gyakorisággal ellenőriznie kell a szabályok betartását. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "7.1",
+          "control_title": "Szabályzat és eljárásrendek",
+          "explanation": "A szervezeti-, folyamat és rendszerszintű követelményeket tartalmazó üzletmenet-folytonossági szabályzat és üzletmenet-folytonossági eljárásrend megfelelő szintű kidolgozása alapvető fontosságú a szervezet és az EIR-ek üzletmenet-folytonosságának biztosítása érdekében. A két dokumentum - mint keretrendszer - tartalmazza a szervezet elvárásait az üzletmenet-folytonosságra vonatkozóan, melyek megállapításánál figyelembe szükséges venni az érdekelt felek által támasztott, üzletmenet-folytonosságra vonatkozó elvárásokat is. Fontos, hogy a dokumentumok összhangban legyenek a szervezet információbiztonsági környezetével, kockázatkezelési stratégiájával. A szabályokat be lehet illeszteni az általános biztonsági szabályzatokba, vagy több szabályzatban is megjelenhetnek (amennyiben a szervezet felépítése ezt indokolttá teszi), azonban javasolt külön kezelni őket. Az üzletmenet-folytonossági szabályzó dokumentumokat és eljárásokat javasolt a nemzetközi sztenderdekkel összhangban (pl.: ISO 22301) megalkotni. A megfelelő működés megteremtése és az elszámoltathatóság biztosítása érdekében kompetens személyek kijelölése szükséges a szabályzó dokumentumok megalkozásához és  karbantartásához.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell dolgoznia és dokumentálnia kell egy üzletmenet-folytonossági szabályzatot, amely tartalmazza a szervezeti-, folyamat és rendszerszintű követelményeket. Ez a szabályzat meghatározza a célkitűzéseket, a hatókört, a szerepköröket, a felelősségeket, a vezetői elkötelezettséget, az érintett szervezeten belüli együttműködés kereteit és a megfelelőségi kritériumokat.\n2. A szabályzatnak összhangban kell lennie a szervezetre vonatkozó, hatályos jogszabályokkal, irányelvekkel, szabályozásokkal, szabványokkal és ajánlásokkal.\n3. A szervezetnek ki kell dolgoznia egy üzletmenet-folytonossági eljárásrendet, amely segíti az üzletmenet-folytonossági szabályzatban foglaltak és az ahhoz kapcsolódó ellenőrzések megvalósítását.\n4. A szervezetnek ki kell jelölnie egy személyt, aki felelős az üzletmenet-folytonossági szabályzat és eljárások kidolgozásának, dokumentálásának, kiadásának és megismertetésének irányításáért.\n5. A szervezetnek felül kell vizsgálnia és frissítenie kell az aktuális üzletmenet-folytonossági szabályzatot és az üzletmenet-folytonossági eljárásokat és eljárásrendet a szervezet által meghatározott gyakorisággal és a szervezet által meghatározott események bekövetkezését követően.\n.",
+          "iso_27001_ref": "5.2; 5.3; 7.5.1; 7.5.2; 7.5.3; A.5.1; A.5.2; A.5.4; A.5.31; A.5.36; A.5.37",
+          "nist_sp_800_53_rev5_ref": "CP-1",
+          "requirement_family": "7",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "7.1"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "7.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott folytonossági eljárás, képzési vagy gyakorlatjegyzőkönyv, eredmény és javítási napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-085",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "7.1 – Szabályzat és eljárásrendek: 1) A szervezetnek ki kell dolgoznia és dokumentálnia kell egy üzletmenet-folytonossági szabályzatot, amely tartalmazza a szervezeti-, folyamat és rendszerszintű követelményeket. 2) A szabályzatnak összhangban kell lennie a szervezetre vonatkozó, hatályos jogszabályokkal, irányelvekkel, szabályozásokkal, szabványokkal és ajánlásokkal. 3) A szervezetnek felül kell vizsgálnia és frissítenie kell az aktuális üzletmenet-folytonossági szabályzatot és az üzletmenet-folytonossági eljárásokat és eljárásrendet a szervezet által meghatározott gyakorisággal és a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Üzletmenet-folytonosság és helyreállítás"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "7.10",
+          "control_title": "A folyamatos működésre felkészítő képzés",
+          "explanation": "A folyamatos működésre felkészítő képzést az érintett szervezet a személyzet szerepkörének és felelősségi körének megfelelően szervezi meg, hogy a képzés tartalma és részletessége megfelelő legyen. Például, néhány személynek csak azt kell tudnia, hogy mikor és hol jelentkezzenek munkavégzésre a folyamatos működés ideje alatt, és hogy a normál feladataikat érinti-e ez. Az EIR adminisztrátoroknak további képzésre lehet szükségük arra vonatkozóan, hogyan hozzanak létre rendszereket alternatív feldolgozási és tárolási helyeken, hogyan működtessék megfelelően a kijelölt rendszereket. A vészhelyzeti tervezésben érintett további munkavállalók, vezetők pedig részletesebb képzést kaphatnak arról, hogyan végezzék el a létfontosságú feladatokat kijelölt helyszíneken, és hogyan létesítsenek kommunikációt más szervezetekkel, külső felekkel a folyamatos működéssel kapcsolatos tevékenységek koordinálása érdekében. A képzések tartalmát rendszeresen, ill. a szervezet által meghatározott események mentén felül kell vizsgálni és aktualizálni szükséges.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek folyamatos működésre felkészítő képzést kell biztosítania az EIR felhasználói számára, amely képzés a felhasználók szerepkörének vagy felelősségi körének megfelelő.\n2. A képzést a szerepkörbe vagy felelősségbe kerülésüket követő meghatározott időn belül kell elvégezni.\n3. Amikor az EIR változásai ezt szükségessé teszik, a képzést frissíteni kell.\n4. A képzést az érintett szervezet által meghatározott gyakorisággal kell elvégezni.\n5. A szervezetnek meghatározott gyakorisággal vagy meghatározott eseményeket követően felül kell vizsgálnia és frissítenie a folyamatos működésre felkészítő képzés tartalmát.",
+          "iso_27001_ref": "A.6.3",
+          "nist_sp_800_53_rev5_ref": "CP-3",
+          "requirement_family": "7",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "7.10"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "7.10 – A folyamatos működésre felkészítő képzés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott folytonossági eljárás, képzési vagy gyakorlatjegyzőkönyv, eredmény és javítási napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-086",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "7.10 – A folyamatos működésre felkészítő képzés: 1) A szervezetnek folyamatos működésre felkészítő képzést kell biztosítania az EIR felhasználói számára, amely képzés a felhasználók szerepkörének vagy felelősségi körének megfelelő. 2) A képzést a szerepkörbe vagy felelősségbe kerülésüket követő meghatározott időn belül kell elvégezni. 3) A szervezetnek meghatározott gyakorisággal vagy meghatározott eseményeket követően felül kell vizsgálnia és frissítenie a folyamatos működésre felkészítő képzés tartalmát. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Üzletmenet-folytonosság és helyreállítás"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "8.7",
+          "control_title": "Azonosítás és hitelesítés (felhasználók) – Hozzáférés a fiókokhoz – Visszajátszás elleni védelem",
+          "explanation": "A szervezetnek biztosítania kell, hogy a hitelesítési mechanizmusokat alkalmazzák mind a privilegizált, mind a nem privilegizált fiókokhoz való hozzáféréshez. A privilegizált fiókok olyan fiókok, amelyeknek kiterjedt jogosultságaik vannak az EIR-hez, és képesek változtatni az EIR működését vagy beállításait. A nem privilegizált fiókok korlátozottabb hozzáféréssel rendelkeznek az EIR-hez.\nA visszajátszás elleni védelem biztosítása érdekében az érintett szervezetnek naplózásra és monitorozásra is szüksége van. A naplózás segít azonosítani a visszajátszásos támadásokat, míg a monitorozás lehetővé teszi az érintett szervezet számára, hogy észlelje a visszajátszásos támadásokat és azonnal reagáljon rájuk.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia, hogy mely fiókokat tekinti privilegizáltnak és melyeket nem.\n2. A szervezetnek implementálnia kell a visszajátszás elleni védelmet biztosító hitelesítési mechanizmusokat. Ez magában foglalhatja a protokollokat, amelyek ún. kihívásokat használnak, mint például időszinkron vagy kriptográfiai hitelesítők.\n3. A szervezetnek biztosítania kell, hogy ezek a hitelesítési mechanizmusok mind a privilegizált, mind a nem privilegizált fiókokhoz való hozzáféréshez alkalmazva legyenek.\n4. A szervezetnek tesztelnie kell a hitelesítési mechanizmusokat, hogy biztosítsa, hogy azok hatékonyan működnek a visszajátszás elleni védelem érdekében.\n5. A szervezetnek naplóznia kell a hitelesítési folyamatokat, hogy nyomon követhesse a hitelesítési kísérleteket és azonosíthassa a visszajátszásra utaló jeleket.\n6. A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a hitelesítési mechanizmusokat, hogy biztosítsa, hogy azok naprakészek és hatékonyak maradnak a visszajátszás elleni védekezésben.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "IA-2(8)",
+          "requirement_family": "8",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "8.7"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "8.7 – Azonosítás és hitelesítés (felhasználók) – Hozzáférés a fiókokhoz – Visszajátszás elleni védelem végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-087",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "8.7 – Azonosítás és hitelesítés (felhasználók) – Hozzáférés a fiókokhoz – Visszajátszás elleni védelem: 1) A szervezetnek meg kell határoznia, hogy mely fiókokat tekinti privilegizáltnak és melyeket nem. 2) A szervezetnek implementálnia kell a visszajátszás elleni védelmet biztosító hitelesítési mechanizmusokat. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a hitelesítési mechanizmusokat, hogy biztosítsa, hogy azok naprakészek és hatékonyak maradnak a visszajátszás elleni védekezésben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "8.14",
+          "control_title": "Azonosító kezelés",
+          "explanation": "A gyakran használt eszközazonosítók közé tartoznak például a MAC vagy az IP címek vagy az eszközök egyedi azonosítói. Megosztott, nem nevesített azonosítók nem alkalmazhatók egyéni azonosítóként. Az egyedi azonosítók általában azon felhasználónevek, melyek adott személyhez lettek rendelve. Ez a biztonsági követelmény azon egyedi azonosítókra is kiterjed, melyek nem feltétlen kapcsolódnak az EIR fiókokhoz. Az azonosítók újbóli felhasználásának megakadályozása azt jelenti, hogy a korábban használt egyén, csoport, szerepkör vagy eszköz azonosítók újbóli hozzárendelése nem megengedett különböző egyénekhez, csoportokhoz, szerepekhez vagy eszközökhöz. Ez azért fontos, mert az azonosító korábbi tulajdonosa, ismerője így nem tud visszaélni az információval, nem keletkezik elszámoltathatósági probléma.\n.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia azokat a személyeket vagy szerepköröket, akik jogosultak az egyéni, csoport, szerepkör vagy eszköz azonosítók kiosztására. Ez magában foglalhatja a kiberbiztonsági csapatot, az IT menedzsmentet vagy más releváns szerepköröket.\n2. A szervezetnek ki kell választania egy azonosítót, amely azonosítja az egyént, csoportot, szerepkört, szolgáltatást vagy eszközt. Ez lehet például MAC cím, IP cím, vagy eszköz-specifikus token.\n3. A szervezetnek hozzá kell rendelnie az azonosítót a kívánt egyénhez, csoporthoz, szerepkörhöz, szolgáltatáshoz vagy eszközhöz. Ez általában az EIR felhasználói fiókok felhasználóneveinek hozzárendelését jelenti az adott személyekhez.\n4. A szervezetnek meg kell akadályoznia az azonosítók újbóli felhasználását egy meghatározott időszakon belül. Ez azt jelenti, hogy meg kell akadályoznia, hogy a korábban használt egyéni, csoport, szerepkör, szolgáltatás, vagy eszköz azonosítókat más személyekhez, csoportokhoz, szerepkörökhöz, szolgáltatásokhoz vagy eszközökhöz rendeljék.\n5. A szervezetnek dokumentálnia kell az azonosítók kiosztását és használatát, hogy nyomon követhető legyen az azonosítók használata és a hozzájuk rendelt személyek, csoportok, szerepkörök, szolgáltatások és eszközök.",
+          "iso_27001_ref": "A.5.16",
+          "nist_sp_800_53_rev5_ref": "IA-4",
+          "requirement_family": "8",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "8.14"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "8.14 – Azonosító kezelés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-088",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "8.14 – Azonosító kezelés: 1) A szervezetnek meg kell határoznia azokat a személyeket vagy szerepköröket, akik jogosultak az egyéni, csoport, szerepkör vagy eszköz azonosítók kiosztására. 2) A szervezetnek ki kell választania egy azonosítót, amely azonosítja az egyént, csoportot, szerepkört, szolgáltatást vagy eszközt. 3) A szervezetnek dokumentálnia kell az azonosítók kiosztását és használatát, hogy nyomon követhető legyen az azonosítók használata és a hozzájuk rendelt személyek, csoportok, szerepkörök, szolgáltatások és eszközök. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "8.21",
+          "control_title": "A hitelesítésre szolgáló eszközök kezelése",
+          "explanation": "A hitelesítésre alkalmas mechanizmusok közé tartoznak a jelszavak, a kriptográfiai eszközök, a biometrikus adatok, a tanúsítványok, az egyszer használatos jelszó eszközök és az azonosító kártyák. Hitelesítő eszközök fejlesztői gyári alapértelmezett hitelesítési adatokkal szállíthatják az eszközeiket, hogy lehetővé tegyék a kezdeti telepítést és konfigurációt. Alapértelmezett adatnak hívjuk a hitelesítő eszköz tartalmát az inicializációs lépés után (pl. egy kezdeti jelszó \"password\" alapbeállítással). Az alapértelmezett hitelesítési adatok gyakran jól ismertek, könnyen felfedezhetők és jelentős kockázatot jelentenek. Ezzel szemben a hitelesítő eszköz tartalmának követelményei specifikus kritériumokat vagy jellemzőknek kell megfeleljenek (pl. a jelszó minimális hossza). Az érintett szervezetnek támogatnia kell a hitelesítő eszközök kezelését meghatározott beállításokkal és korlátozásokkal a különböző hitelesítő eszközök sajátos jellemzői alapján (pl. a jelszó minimális hossza, az időszinkron egy alkalommal használatos tokenek érvényesítési időablaka, és a biometrikus hitelesítés ellenőrzési szakaszában megengedett elutasítások száma). Lépéseket lehet tenni továbbá az egyéni hitelesítő eszközök védelme érdekében, beleértve a hitelesítő eszközök birtoklásának fenntartását, a hitelesítő eszközök másokkal való megosztásának elkerülését, és az elveszett, ellopott vagy kompromittált hitelesítő eszközök azonnali bejelentését. A hitelesítő eszközök kezelése magában foglalja a hitelesítő eszközök kiadását és visszavonását az ideiglenes hozzáféréshez, amikor már nincs rájuk szükség.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezet számba veszi és dokumentálja azon rendszereket, melyek elérése hitelesítő eszközhöz kötött.\n2. A szervezet számba veszi és dokumentálja azon egyének, csoportok, szerepkörök, szolgáltatások vagy eszközök identitását, akik hitelesítő eszközöket kaphatnak. Ez magában foglalhatja a személyazonosság igazolását, a szerepkörök ellenőrzését és a csoporttagság megerősítését.\n3. A szervezet meghatározza a hitelesítő eszközök tartalma és konfigurációja felé támasztott követelményeket, ezeket szabályzatba foglalja. Ebbe beleértendő a kezdeti tartalom definiálása és beállítása.\n4. A szervezet létrehozza a hitelesítő eszközök kezelésének szabályzatát. Ez magába foglalja a kiosztásra, használatra, a tartalom rendszeres, meghatározott gyakorisággal való frissítésére, elveszett, vagy kompromittált eszközök visszavonására, a tartalom védelmére és a követelmények betartásának nem teljesítése esetére vonatkozó intézkedések leírását.",
+          "iso_27001_ref": "A.5.16; A.5.17",
+          "nist_sp_800_53_rev5_ref": "IA-5",
+          "requirement_family": "8",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "8.21"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "8.21 – A hitelesítésre szolgáló eszközök kezelése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-089",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "8.21 – A hitelesítésre szolgáló eszközök kezelése: 1) A szervezet számba veszi és dokumentálja azon rendszereket, melyek elérése hitelesítő eszközhöz kötött. 2) A szervezet számba veszi és dokumentálja azon egyének, csoportok, szerepkörök, szolgáltatások vagy eszközök identitását, akik hitelesítő eszközöket kaphatnak. 3) A szervezet létrehozza a hitelesítő eszközök kezelésének szabályzatát. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "8.22",
+          "control_title": "A hitelesítésre szolgáló eszközök kezelése – Jelszó alapú hitelesítés",
+          "explanation": "Az érintett szervezet jelszóalapú hitelesítést alkalmaz a jelszavakra, függetlenül attól, hogy azokat egyszintű vagy többszintű hitelesítésben használja-e. A hosszú jelszavak vagy jelmondatok előnyösebbek a rövidebb jelszavaknál. A szervezet által meghatározott és betartatott jelszóösszetételi szabályok (bonyolultság - pl. kötelező speciális karakterek, számok stb.) nem jelentenek jelentős biztonsági előnyt, miközben csökkentik a használhatóságot. Az érintett szervezet bizonyos körülmények között dönthet úgy, hogy szabályokat állapít meg a jelszógeneráláshoz (pl. fiókvisszaállítás). A kriptográfiailag védett jelszavak magukban foglalják a jelszavak sózott egyirányú kriptográfiai hash-eit. A gyakran használt, kompromittált vagy várható jelszavak listája tartalmazza a korábbi adatszivárgásokból származó jelszavakat, szótári szavakat és ismétlődő vagy sorozatos karaktereket, valamint a kontextusspecifikus szavakat is, mint például az EIR neve, a felhasználónév és annak derivatívái.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezet fenntartja a gyakran használt, könnyen kitalálható vagy kompromittált jelszavak listáját, és ezt a listát a szervezet által meghatározott gyakorisággal frissíti.\n2. Ellenőrzi, hogy a felhasználók által létrehozott vagy módosított jelszavak szerepelnek-e a gyakran használt, könnyen kitalálható vagy kompromittált jelszavak listáján.\n3. A jelszavakat csak kriptográfiailag védett csatornákon keresztül továbbítja.\n4. A jelszavakat egy jóváhagyott, sózott kulcsszármaztatási funkcióval, lehetőleg egykulcsos hash-t használva tárolja.\n5. Megköveteli a jelszó azonnali megváltoztatását fiókvisszaállítás esetén.\n6. Engedélyezi a felhasználóknak hosszú jelszavak és jelmondatok kiválasztását, beleértve a szóközöket és a digitálisan megjeleníthető karaktereket.\n7. Automatizált eszközökkel támogatja a felhasználókat az erős jelszavak kiválasztásában.\n8. A jelszavakra az érintett szervezet által meghatározott összetételi és komplexitási szabályokat érvényesíti. Ez magában foglalhatja például a hosszú jelszavak minimális karakterhosszát.\n9. Dokumentálja és rendszeres időközönként felülvizsgálja a jelszókezelési folyamatokat, hogy biztosítsa a szabályok betartását és az esetleges szabálytalanságok azonnali észlelését.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "IA-5(1)",
+          "requirement_family": "8",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "8.22"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "8.22 – A hitelesítésre szolgáló eszközök kezelése – Jelszó alapú hitelesítés végrehajtási csomag: jóváhagyott EIR-scope, 9 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 9 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-090",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "8.22 – A hitelesítésre szolgáló eszközök kezelése – Jelszó alapú hitelesítés: 1) A szervezet fenntartja a gyakran használt, könnyen kitalálható vagy kompromittált jelszavak listáját, és ezt a listát a szervezet által meghatározott gyakorisággal frissíti. 2) Ellenőrzi, hogy a felhasználók által létrehozott vagy módosított jelszavak szerepelnek-e a gyakran használt, könnyen kitalálható vagy kompromittált jelszavak listáján. 3) Dokumentálja és rendszeres időközönként felülvizsgálja a jelszókezelési folyamatokat, hogy biztosítsa a szabályok betartását és az esetleges szabálytalanságok azonnali észlelését. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "8.36",
+          "control_title": "Hitelesítési információk visszajelzésének elrejtése",
+          "explanation": "Az EIR visszacsatolása nem szolgáltathat olyan információt, amely lehetővé tenné a jogosulatlan személyek számára a hitelesítési mechanizmusok kijátszását. Egyes típusú eszközöknél, mint például a viszonylag nagy monitorral rendelkező asztali számítógépek vagy notebookok, a fenyegetés jelentős lehet. Más típusú eszközöknél, mint például a kis kijelzővel rendelkező mobil eszközök, a fenyegetés kevésbé jelentős, és arányos a kis billentyűzetek miatti beviteli hibák megnövekedett valószínűségével, így a hitelesítési visszacsatolás elfedésének eszközét ennek megfelelően választhatja ki egy szervezet. A visszacsatolás elhomályosítása (obfuscation) magában foglalja a csillag karakterek megjelenítését, amikor a felhasználók jelszavakat írnak be a beviteli mezőkbe, vagy a visszacsatolás nagyon korlátozott ideig történő megjelenítését, mielőtt a rendszer elfedné azt.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek először meg kell határoznia, hogy mely eszközök esetében jelentős a jogosulatlan személyek általi hitelesítési információ felfedezésének és kihasználásának veszélye.\n2. A szervezetnek ki kell választania a megfelelő módszert a visszacsatolás elrejtésére.\n3. A szervezetnek implementálnia kell a kiválasztott módszert az EIR-ekben. Ez magában foglalhatja a szoftverfrissítéseket, a beállítások módosítását, vagy új hardverek beszerzését.\n4. A szervezetnek dokumentálnia kell a változtatásokat, hogy nyomon követhető legyen a folyamat, és bizonyítékot szolgáltathasson a megfelelőségről.\n5. A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a hitelesítési visszacsatolás elrejtésének módszerét, hogy biztosítsa a folyamatos védelmet a jogosulatlan hozzáférés ellen.",
+          "iso_27001_ref": "A.8.5",
+          "nist_sp_800_53_rev5_ref": "IA-6",
+          "requirement_family": "8",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "8.36"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "8.36 – Hitelesítési információk visszajelzésének elrejtése végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-091",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "8.36 – Hitelesítési információk visszajelzésének elrejtése: 1) A szervezetnek először meg kell határoznia, hogy mely eszközök esetében jelentős a jogosulatlan személyek általi hitelesítési információ felfedezésének és kihasználásának veszélye. 2) A szervezetnek ki kell választania a megfelelő módszert a visszacsatolás elrejtésére. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a hitelesítési visszacsatolás elrejtésének módszerét, hogy biztosítsa a folyamatos védelmet a jogosulatlan hozzáférés ellen. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "8.37",
+          "control_title": "Hitelesítés kriptográfiai modul esetén",
+          "explanation": "Az EIR kriptográfiai moduljában hitelesítési mechanizmusokra lehet szükség annak érdekében, hogy hitelesítse a modulhoz hozzáférő operátort, és ellenőrizze, hogy az operátor jogosult-e a kért szerep betöltésére és a szerephez tartozó szolgáltatások végrehajtására.\nAz EIR hitelesítési mechanizmusai a kriptográfiai modul hitelesítési útmutatójának, a hatályos törvényeknek, a végrehajtási utasításoknak, szabályzatoknak és szabványoknak megfelelően működnek. Ezek a mechanizmusok biztosítják, hogy csak a megfelelően hitelesített és jogosult felhasználók férjenek hozzá az EIR kriptográfiai moduljához, és végezzenek el műveleteket.\nAz EIR hitelesítési mechanizmusai közé tartozhatnak jelszavak, digitális aláírások, biometrikus adatok, hardveres kulcsok és más, a hitelesítési útmutatóban meghatározott eszközök. Ezek a mechanizmusok biztosítják, hogy az EIR kriptográfiai modulja csak a megfelelően hitelesített és jogosult felhasználók számára legyen hozzáférhető.\nAz érintett szervezetnek gondoskodnia kell arról, hogy az EIR hitelesítési mechanizmusai megfelelően működjenek, és naplózzák a hitelesítési eseményeket.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia, hogy milyen kriptográfiai modul hitelesítési mechanizmusokat kíván alkalmazni.\n2. A szervezetnek implementálnia kell ezeket a mechanizmusokat az EIR-en belül.\n3. A szervezetnek biztosítania kell, hogy az EIR képes legyen azonosítani és hitelesíteni azokat a felhasználókat, akik hozzáférnek a kriptográfiai modulhoz.\n4. A szervezetnek naplózni kell minden hozzáférési kísérletet és műveletet, amelyet a kriptográfiai modulon belül végeznek. Ez lehetővé teszi a szervezet számára, hogy nyomon kövesse és ellenőrizze a modul használatát, és azonosítsa az esetleges biztonsági problémákat.\n5. A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a kriptográfiai modul hitelesítési mechanizmusait, hogy biztosítsa azok hatékonyságát és megfelelőségét a jelenlegi biztonsági követelményeknek.\n6. A szervezetnek biztosítania kell, hogy a kriptográfiai modul hitelesítési mechanizmusai megfelelnek a hatályos törvényeknek, szabályzatoknak és szabványoknak.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "IA-7",
+          "requirement_family": "8",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "8.37"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "8.37 – Hitelesítés kriptográfiai modul esetén végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-092",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "8.37 – Hitelesítés kriptográfiai modul esetén: 1) A szervezetnek meg kell határoznia, hogy milyen kriptográfiai modul hitelesítési mechanizmusokat kíván alkalmazni. 2) A szervezetnek implementálnia kell ezeket a mechanizmusokat az EIR-en belül. 3) A szervezetnek biztosítania kell, hogy a kriptográfiai modul hitelesítési mechanizmusai megfelelnek a hatályos törvényeknek, szabályzatoknak és szabványoknak. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "8.38",
+          "control_title": "Azonosítás és hitelesítés (szervezeten kívüli felhasználók)",
+          "explanation": "A nem szervezeti felhasználók közé tartoznak azon felhasználók, akik a szervezeti felhasználóktól eltérnek, úgy, mint például szerződéses partnerek, külső projekt résztvevők stb. Ezeket a személyeket a szervezet egyedileg azonosítja és hitelesíti, kivéve a meghatározott és dokumentált hozzáférések esetében. A szervezet a kockázatértékelések alkalmazásával meghatározzák a hitelesítési igényeket. Ennek során az információs rendszerekhez történő egyszerű hozzáférés mellett figyelembe veszik a skálázhatóságot, hatékonyságot és biztonságot is, ezáltal garantálva a kockázatok csökkentését és a fenyegetések enyhítését.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia, kiket tekint nem szervezeti felhasználóknak.\n2. A szervezetnek biztosítania kell, hogy a nem szervezeti felhasználók egyedileg azonosíthatók és hitelesíthetők legyenek az EIR-ben.\n3. A szervezetnek meg kell fontolnia a nem szervezeti felhasználók egyedi azonosítását és hitelesítését, amikor az EIR-hez való hozzáférnek.\n4. A szervezetnek figyelembe kell vennie számos tényezőt - beleértve a biztonságot, az adatvédelmi követelményeket, melyek más jogszabályokból származhatnak, a skálázhatóságot és a használhatóságot - amikor mérlegeli a szervezeti információkhoz és az EIR-hez való hozzáférés könnyű használatának szükségességét a kockázatok megfelelő mérséklésének és védelmének szükségességével.\n5. A szervezetnek naplóznia kell a nem szervezeti felhasználók tevékenységét és az ő nevükben futó folyamatokat az EIR-ben. Ez segít azonosítani és nyomon követni a potenciális veszélyeket és kockázatokat.",
+          "iso_27001_ref": "A.5.16",
+          "nist_sp_800_53_rev5_ref": "IA-8",
+          "requirement_family": "8",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "8.38"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "8.38 – Azonosítás és hitelesítés (szervezeten kívüli felhasználók) végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-093",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "8.38 – Azonosítás és hitelesítés (szervezeten kívüli felhasználók): 1) A szervezetnek meg kell határoznia, kiket tekint nem szervezeti felhasználóknak. 2) A szervezetnek biztosítania kell, hogy a nem szervezeti felhasználók egyedileg azonosíthatók és hitelesíthetők legyenek az EIR-ben. 3) A szervezetnek naplóznia kell a nem szervezeti felhasználók tevékenységét és az ő nevükben futó folyamatokat az EIR-ben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "8.39",
+          "control_title": "Azonosítás és hitelesítés (szervezeten kívüli felhasználók) – Meghatározott azonosítási profilok használata",
+          "explanation": "Az érintett szervezet nyílt személyazonosság-kezelési szabványok alapján azonosítási profilokat határoz meg a személyazonosság-kezeléshez. Annak biztosítása érdekében, hogy a nyílt személyazonosság-kezelési szabványok a dokumentáltak szerint életképesek, szilárdak, megbízhatóak, fenntarthatóak és interoperábilisak legyenek, az arra feljogosított állami szervek értékelhetik a szabványokat és a technológiai megvalósításokat, és a vonatkozó törvények, végrehajtási rendeletek, irányelvek, szabályok, szabályzatok, szabványok és iránymutatások alapján vizsgálják azokat.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia az azonosítási profilokat, amelyeket az azonosítási folyamat során alkalmazni kíván.\n2. A szervezetnek biztosítania kell, hogy választott és használt nyílt személyazonosság-kezelési szabvány életképes, megbízható, fenntartható és interoperábilis más rendszerekkel, rendszerelemekkel.\n3. A szervezetnek értékelnie kell a szabványokat és a technológiai megvalósításokat az alkalmazandó törvények, rendeletek, irányelvek, szabályozások és irányelvek alapján.\n4. A szervezetnek be kell vezetnie az EIR-ben az azonosítási profilokat.\n5. A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a meghatározott azonosítási profilokat az EIR-ben, annak érdekében, hogy biztosítsa azok folyamatos megfelelőségét.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "IA-8(4)",
+          "requirement_family": "8",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "8.39"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "8.39 – Azonosítás és hitelesítés (szervezeten kívüli felhasználók) – Meghatározott azonosítási profilok használata végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-094",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "8.39 – Azonosítás és hitelesítés (szervezeten kívüli felhasználók) – Meghatározott azonosítási profilok használata: 1) A szervezetnek meg kell határoznia az azonosítási profilokat, amelyeket az azonosítási folyamat során alkalmazni kíván. 2) A szervezetnek biztosítania kell, hogy választott és használt nyílt személyazonosság-kezelési szabvány életképes, megbízható, fenntartható és interoperábilis más rendszerekkel, rendszerelemekkel. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a meghatározott azonosítási profilokat az EIR-ben, annak érdekében, hogy biztosítsa azok folyamatos megfelelőségét. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "8.43",
+          "control_title": "Újrahitelesítés",
+          "explanation": "Az eszközök zárolásával kapcsolatos újrahitelesítési követelményeken túl az érintett szervezet bizonyos helyzetekben megkövetelheti az egyének újrahitelesítését, beleértve, amikor a szerepkörök, hitelesítők vagy a hitelesítéssel kapcsolatos adatok megváltoznak. Emellett akkor is kérheti egy érintett szervezet az újrahitelesítést, amikor az EIR biztonsági osztálya megváltozik, illetve privilegizált funkciók futnak le egy meghatározott időszak után, vagy időszakosan.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia azokat a körülményeket vagy helyzeteket, amikor újrahitelesítést kér az egyénektől. Ilyen körülmény vagy helyzet lehet például szerepkört, hitelesítőt vagy hitelesítési adatokat érintő változás, az EIR biztonsági osztályának változása, privilegizált funkciók rendszeres vagy meghatározott időszak utáni végrehajtása.\n2. A szervezetnek szabályoznia kell az újrahitelesítést, melynek során meghatározza az újrahitelesítési eljárásokat és kritériumokat. Ez magában foglalhatja a hitelesítési adatok újbóli megadását, a biometrikus adatok használatát, vagy a többtényezős hitelesítést.\n3. A szervezetnek biztosítania kell, hogy az EIR képes legyen kezelni az újrahitelesítési kéréseket. Ez magában foglalhatja a szükséges hardver- és szoftverfrissítések végrehajtását, valamint a hitelesítési protokollok és mechanizmusok beállítását.\n4. A szervezetnek naplóznia kell az újrahitelesítési eseményeket. Ez lehetővé teszi az érintett szervezet számára, hogy nyomon kövesse és elemezze az újrahitelesítési tevékenységeket, és szükség esetén beavatkozzon.\n5. A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell az újrahitelesítésre vonatkozó szabályzatát és eljárásrendjeit annak érdekében, hogy biztosítsa azok hatékonyságát és aktualitását. Ez magában foglalhatja a a szabályzat és eljárásrendek felülvizsgálatát, a felhasználói visszajelzések és a naplóelemzések alapján történő módosításokat, valamint a legújabb biztonsági trendek és fenyegetések figyelembevételét.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "IA-11",
+          "requirement_family": "8",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "8.43"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "8.43 – Újrahitelesítés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-095",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "8.43 – Újrahitelesítés: 1) A szervezetnek meg kell határoznia azokat a körülményeket vagy helyzeteket, amikor újrahitelesítést kér az egyénektől. 2) A szervezetnek szabályoznia kell az újrahitelesítést, melynek során meghatározza az újrahitelesítési eljárásokat és kritériumokat. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell az újrahitelesítésre vonatkozó szabályzatát és eljárásrendjeit annak érdekében, hogy biztosítsa azok hatékonyságát és aktualitását. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "9.25",
+          "control_title": "A biztonsági események nyomonkövetése",
+          "explanation": "A biztonsági eseményeket kezelő automatizált rendszerek, melyek az események begyűjtését és elemzését végzik, a CSIRT-ek és egyéb rendelkezésre álló elektronikus adatbázisok és hálózati monitorozó eszközök adatait használják fel.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek létre kell hoznia egy eljárásrendet, amely meghatározza, hogyan kell nyomon követni és dokumentálni a biztonsági eseményeket. Ez az eljárásrend tartalmazza az eseményekről szóló jegyzőkönyvek karbantartását, az események állapotát és más, a digitális forenzikus vizsgálatokhoz és az események részleteinek, trendjeinek és kezelésének értékeléséhez szükséges információkat.\n2. A biztonsági eseményekkel kapcsolatos információk számos forrásból szerezheti be az érintett szervezet, beleértve a hálózat monitorozását, a biztonsági eseményekről készült jelentéseket, a biztonsági eseményeket kezelő csapatokat, a felhasználói panaszokat, a beszállítói partnereket, a naplók monitorozását, a fizikai hozzáférés monitorozását, valamint a felhasználói és adminisztrátori jelentéseket.\n3. Az érintett szervezetnek meg kell határoznia, mely biztonsági eseményeket kell nyomon követnie.\n4. A szervezetnek rendszeresen felül kell vizsgálnia és szükség esetén frissítenie kell az biztonsági események nyomon követését érintő eljárásrendet annak érdekében, hogy biztosítsa annak naprakészségét és hatékonyságát.\n5. A szervezetnek biztosítania kell, hogy a személyzet megfelelően képzett és felkészült, annak érdekében, hogy a biztonsági eseményeket nyomon követése és dokumentálása megfelelő legyen.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "IR-5",
+          "requirement_family": "9",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "9.25"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "9.25 – A biztonsági események nyomonkövetése végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott eljárás, eseményjegy, értesítési vagy eszkalációs nyom, gyakorlat és lessons-learned rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-096",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "9.25 – A biztonsági események nyomonkövetése: 1) A szervezetnek létre kell hoznia egy eljárásrendet, amely meghatározza, hogyan kell nyomon követni és dokumentálni a biztonsági eseményeket. 2) A biztonsági eseményekkel kapcsolatos információk számos forrásból szerezheti be az érintett szervezet, beleértve a hálózat monitorozását, a biztonsági eseményekről készült jelentéseket, a biztonsági eseményeket kezelő csapatokat, a felhasználói panaszokat, a beszállítói partnereket, a naplók monitorozását, a fizikai hozzáférés… 3) A szervezetnek biztosítania kell, hogy a személyzet megfelelően képzett és felkészült, annak érdekében, hogy a biztonsági eseményeket nyomon követése és dokumentálása megfelelő legyen. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági események kezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "9.27",
+          "control_title": "A biztonsági események jelentése",
+          "explanation": "A bejelentett biztonsági események típusainak, tartalmának és időszerűségének igazodnia kell a jogszabályban elvártakhoz, illetve azokat a jogszabályban meghatározott szervek felé kell az érintett szervezetnek bejelentenie. A biztonsági eseményekből nyert információk fontos bemeneti információként szolgálnak a kockázatelemzéshez, a beszerzések biztonsági szempontjainak meghatározásához, a technológiai termékek kiválasztásához, valamint a szervezeti védelmi intézkedések értékeléséhez.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek olyan szabályzatot kell alkotnia vagy meglévő szabályzatai valamelyikébe (pl. IBSZ) illesztenie, amely kötelezi a szervezethez köthető személyeket arra, hogy jelentsék a biztonsági esemény gyanúját vagy bekövetkeztét.\n2. A szervezetnek biztosítania kell, hogy a személyek megfelelő képzést kapjanak a biztonsági események felismerésére és jelentésére.\n3. A szervezetnek létre kell hoznia egy jelentéstételre vonatkozó eljárásrendet, amely érthetővé teszi a szervezethez köthető személyek számára, hogy jelentse a biztonsági eseményeket. Az eljárásrend lehetővé teszi a gyors és hatékony jelentéstételt, és biztosítja, hogy a jelentések megfelelően dokumentálva legyenek.\n4. A szervezetnek biztosítania kell, hogy a biztonsági eseményekről szóló információkat a jogszabályban meghatározottak szerint jelentik a jogszabályban meghatározott szervek felé. Ez magában foglalja a jelentéshez köthető eljárásrendet, a jelentendő információkat és a jelentés időben történő megtételével kapcsolatos előírásokat.\n5. A szervezetnek dokumentálnia kell a biztonsági eseményeket, beleértve a jelentett eseményeket, a megtett intézkedéseket és a következményeket. A dokumentálás segíthet az érintett szervezetnek a kockázatelemzésben, a biztonsági előírások hatékonyságának értékelésében, a biztonsági követelmények meghatározásában a beszerzésekhez és a technológiai termékek kiválasztási kritériumainak meghatározásában.",
+          "iso_27001_ref": "A.5.5; A.6.8",
+          "nist_sp_800_53_rev5_ref": "IR-6",
+          "requirement_family": "9",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "9.27"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "9.27 – A biztonsági események jelentése végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott eljárás, eseményjegy, értesítési vagy eszkalációs nyom, gyakorlat és lessons-learned rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-097",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "9.27 – A biztonsági események jelentése: 1) A szervezetnek olyan szabályzatot kell alkotnia vagy meglévő szabályzatai valamelyikébe (pl. 2) A szervezetnek biztosítania kell, hogy a személyek megfelelő képzést kapjanak a biztonsági események felismerésére és jelentésére. 3) A szervezetnek dokumentálnia kell a biztonsági eseményeket, beleértve a jelentett eseményeket, a megtett intézkedéseket és a következményeket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági események kezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "9.31",
+          "control_title": "Segítségnyújtás a biztonsági események kezeléséhez",
+          "explanation": "A biztonsági események kezelésében a általában szervezetek helpdesk szolgáltatói és támogatási csoportjai vesznek részt, amely folyamatok támogatására a szervezetek (automatizált) jegykezelő rendszereit használják. A jegykezelő rendszerek képesek létrehozni és kezelni a hibajegyeket és ezek segítségével nyomon követni a biztonsági eseményeket.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek létre kell hoznia egy helpdesk szolgáltatói és támogatási csoportot, amely támogatást nyújt az EIR felhasználóinak a biztonsági események kezelésében.\n2. A szervezetnek be kell vezetnie egy jegykezelő rendszert, amely lehetővé teszi a biztonsági események kezeléséhez köthető jegyek megnyitását és nyomon követését.\n3. A szervezetnek dokumentálnia kell az összes biztonsági eseményt, beleértve azokat, amelyeket az EIR felhasználói jelentettek.\n4. A szervezetnek meg kell bizonyosodnia arról, hogy az EIR felhasználói tisztában vannak azzal, hogyan jelenthetik a biztonsági eseményeket, és milyen támogatást kaphatnak az események kezelésében. Ez magában foglalhatja a képzéseket, útmutatókat, és a helpdesk szolgáltatói és támogatási csoport elérhetőségét.\n6. A szervezetnek folyamatosan felül kell vizsgálnia és szükség esetén frissítenie kell a biztonsági események kezelésére és jelentésére vonatkozó szabályzatait és eljárásrendjeit annak érdekében, hogy hatékony támogassa az EIR felhasználóit a biztonsági események bejelentésében.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "IR-7",
+          "requirement_family": "9",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "9.31"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "9.31 – Segítségnyújtás a biztonsági események kezeléséhez végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott eljárás, eseményjegy, értesítési vagy eszkalációs nyom, gyakorlat és lessons-learned rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-098",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "9.31 – Segítségnyújtás a biztonsági események kezeléséhez: 1) A szervezetnek létre kell hoznia egy helpdesk szolgáltatói és támogatási csoportot, amely támogatást nyújt az EIR felhasználóinak a biztonsági események kezelésében. 2) A szervezetnek be kell vezetnie egy jegykezelő rendszert, amely lehetővé teszi a biztonsági események kezeléséhez köthető jegyek megnyitását és nyomon követését. 3) A szervezetnek folyamatosan felül kell vizsgálnia és szükség esetén frissítenie kell a biztonsági események kezelésére és jelentésére vonatkozó szabályzatait és eljárásrendjeit annak érdekében, hogy hatékony támogassa az EIR felhasználóit a biztonsági események bejelentésében. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Biztonsági események kezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "10.2",
+          "control_title": "Szabályozott karbantartás",
+          "explanation": "A rendszeres karbantartás meghatározza az EIR karbantartási programját minden rendszerelem és minden karbantartási típus vonatkozásában függetlenül attól, hogy azt maga a szervezet vagy külső szolgáltató végzi (szerződéses, garanciális, házon belüli, szoftver-karbantartási megállapodás). A rendszer karbantartása magában foglalja azokat az elemeket is, amelyek nem vesznek közvetlenül részt az információ feldolgozásban és/vagy az adatok/információk megőrzésében, mint például a szkennerek, másolók és nyomtatók. Annak érdekében, hogy a karbantartási nyilvántartások hatékonyak legyenek, a jegyzőkönyveknek tartalmazniuk kell például a karbantartás dátumát és idejét, a karbantartást végző szervezet, valamint személyek nevét, amennyiben szükséges, úgy a felügyeletet biztosító kísérők nevét, a végrehajtott karbantartás leírását és az eltávolított vagy kicserélt rendszerelemek, alkatrészek meghatározását, leírását.\nAz EIR-ek biztonsági osztálya meghatározza a karbantartási bejegyzések részletességével kapcsolatos elvárásokat. A szervezetek figyelembe veszik az információs rendszerek tartalék alkatrészeinek beszerzésével kapcsolatos szemmpontokat is.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezet ütemezi, dokumentálja és felülvizsgálja a rendszerelemek karbantartásának, javításának és cseréjének nyilvántartásait a gyártó vagy szállító specifikációi és az érintett szervezet követelményei szerint.\n2. A szervezetnek jóvá kell hagyja és ellenőriznie kell az összes karbantartási tevékenységet, függetlenül attól, hogy azt a helyszínen vagy távolról végzik-e, és hogy az EIR-t vagy a rendszerelemeket a helyszínen szervizelik-e, vagy más helyszínre szállítják.\n3. A szervezetnek meg kell követelnie, hogy a meghatározott személyek vagy szerepkörök egyedileg jóváhagyják az EIR vagy a rendszerelemek szervezeti létesítményekből történő elszállítását külső karbantartás, javítás vagy csere céljából.\n4. A szervezetnek gondoskodnia kell arról, hogy biztonságosan törli a meghatározott besorolású információkat a hozzájuk kapcsolódó adathordozókról, mielőtt azokat szervezet létesítményeiből külső karbantartás, javítás vagy csere céljából elszállítanák.\n5. A szervezetnek ellenőriznie kell a biztonsági intézkedések megfelelő működését a karbantartás, javítás vagy csere után.\n6. A szervezetnek biztosítania kell, hogy rögzíti a meghatározott információkat a karbantartási jegyzőkönyvekbe.\n7. A szervezetnek a tulajdonában álló EIR-ek biztonsági osztálya alapján meg kell határoznia a karbantartási jegyzőkönyvek részletességével kapcsolatos elvárásokat.\n8. A szervezet figyelembe veszi az információs rendszerek tartalék alkatrészeinek beszerzésével kapcsolatos szempontokat is.",
+          "iso_27001_ref": "A.7.10; A.7.13; A.8.10",
+          "nist_sp_800_53_rev5_ref": "MA-2",
+          "requirement_family": "10",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "10.2"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "10.2 – Szabályozott karbantartás végrehajtási csomag: jóváhagyott EIR-scope, 8 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott karbantartási eljárás, munkajegy, hozzáférési napló, felügyeleti és lezárási ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 8 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-099",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "10.2 – Szabályozott karbantartás: 1) A szervezet ütemezi, dokumentálja és felülvizsgálja a rendszerelemek karbantartásának, javításának és cseréjének nyilvántartásait a gyártó vagy szállító specifikációi és az érintett szervezet követelményei szerint. 2) A szervezetnek jóvá kell hagyja és ellenőriznie kell az összes karbantartási tevékenységet, függetlenül attól, hogy azt a helyszínen vagy távolról végzik-e, és hogy az EIR-t vagy a rendszerelemeket a helyszínen szervizelik-e, vagy más helyszínre szállítják. 3) A szervezet figyelembe veszi az információs rendszerek tartalék alkatrészeinek beszerzésével kapcsolatos szempontokat is. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Karbantartás"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "10.11",
+          "control_title": "Távoli karbantartás",
+          "explanation": "Távoli karbantartásnak nevezzük azt, amikor egy személy hálózat segítségével végez karbantartási munkát, függetlenül attól, hogy az külső vagy belső hálózaton történik. Az egyének által hálózat igénybevétele nélkül, információs rendszer vagy rendszerelem mellett történő fizikai jelenlét során zajló tevékenységeket helyszíni karbantartásnak tekintjük. Az erős hitelesítési megoldások általában többfaktoros hitelesítést használnak és védelmet nyújtanak a visszajátszásos támadások ellen. Megfelelő hitelesítő eszköz lehet például a nyilvános kulcsú infrastruktúra (PKI), ahol a tanúsítványok egy token-en kerülnek tárolásra és jelszóval, jelmondattal vagy biometrikusan védettek.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezet jóváhagyja, nyomon követi és ellenőrzi a távoli karbantartási és diagnosztikai tevékenységeket. Ez azt jelenti, hogy az érintett szervezetnek rendszeresen ellenőriznie kell a távoli karbantartási és diagnosztikai tevékenységeket, és biztosítania kell, hogy ezek megfelelnek a szervezeti szabályoknak és a rendszerbiztonsági tervnek.\n2. A szervezet csak akkor engedélyezi a távoli karbantartási és diagnosztikai eszközök használatát, amennyiben az összhangban áll a szervezeti szabályokkal és az EIR rendszerbiztonsági tervében dokumentált.\n3. A szervezet erős hitelesítési eljárásokat alkalmaz a távoli karbantartási és diagnosztikai munkaszakaszok létrehozásakor. Ez azt jelenti, hogy az érintett szervezetnek biztosítania kell, hogy a távoli karbantartási és diagnosztikai munkaszakaszok létrehozása során erős hitelesítési eljárásokat alkalmaznak, például többtényezős hitelesítést vagy PKI-t, ahol a tanúsítványokat jelszóval, jelmondattal vagy biometrikus adatokkal védett token-en tárolják.\n4. A szervezet nyilvántartást vezet a távoli karbantartási és diagnosztikai tevékenységekről. Ez azt jelenti, hogy az érintett szervezetnek dokumentálnia kell a távoli karbantartási és diagnosztikai tevékenységeket annak érdekében, hogy nyomon követhető legyen milyen tevékenységek történtek és ki végezte azokat.\n5. A szervezet lezárja a munkaszakaszokat és a hálózati kapcsolatokat, amikor a távoli karbantartás befejeződik.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "MA-4",
+          "requirement_family": "10",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "10.11"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "10.11 – Távoli karbantartás végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott karbantartási eljárás, munkajegy, hozzáférési napló, felügyeleti és lezárási ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-100",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "10.11 – Távoli karbantartás: 1) A szervezet jóváhagyja, nyomon követi és ellenőrzi a távoli karbantartási és diagnosztikai tevékenységeket. 2) A szervezet csak akkor engedélyezi a távoli karbantartási és diagnosztikai eszközök használatát, amennyiben az összhangban áll a szervezeti szabályokkal és az EIR rendszerbiztonsági tervében dokumentált. 3) A szervezet lezárja a munkaszakaszokat és a hálózati kapcsolatokat, amikor a távoli karbantartás befejeződik. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Karbantartás"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "10.18",
+          "control_title": "Karbantartó személyek",
+          "explanation": "A karbantartó személyzet olyan személyekre utal, akik hardveres vagy szoftveres karbantartást végeznek az érintett szervezet EIR-jén. Azok a személyek, akiket korábban nem azonosítottak jogosult karbantartó személyzetként - mint például a gyártók, szolgáltatók, rendszerintegrátorok és tanácsadók - előfordulhat, hogy privilegizált hozzáférést igényelnek a szervezet EIR-jéhez. Ez például akkor fordulhat elő, amikor rövid határidővel vagy azonnal kell karbantartási tevékenységeket végezniük. A szervezet kockázatelemzése alapján ideiglenes hozzáférési jogosultságot adhat ezeknek a személyeknek. Az ideiglenes hozzáférési jogosultságok egyszeri használatra vagy korlátozott időszakra szólhatnak.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezet kialakít egy folyamatot a karbantartási munkákhoz szükséges hozzáférési jogosultságok kezelésére.\n2. A szervezet nyilvántartást vezet a hozzáférési jogosultsággal rendelkező karbantartó szervezetekről vagy személyekről.\n3. A szervezetnek ellenőrznie kell az EIR-en kíséret nélkül karbantartást végző személyek hozzáférési jogosultságait.\n4. A szervezet gondoskodik arról, hogy a szervezethez tartozó és a kívánt hozzáférési jogosultságokkal, valamint a megfelelő műszaki szakértelemmel rendelkező személyek felügyeljék a szükséges jogosultságokkal nem rendelkező személyek karbantartási tevékenységeit.\n5. A szervezet ideiglenes hozzáférési jogosultságot adhat a karbantartást végző személyeknek, azonban ennek kockázatát a kockázatelemzésben értékelnie kell. Az ideiglenes hozzáférési jogosultságok egyszeri használatra vagy korlátozott időszakra szólhatnak.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "MA-5",
+          "requirement_family": "10",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "10.18"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "10.18 – Karbantartó személyek végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott karbantartási eljárás, munkajegy, hozzáférési napló, felügyeleti és lezárási ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-101",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "10.18 – Karbantartó személyek: 1) A szervezet kialakít egy folyamatot a karbantartási munkákhoz szükséges hozzáférési jogosultságok kezelésére. 2) A szervezet nyilvántartást vezet a hozzáférési jogosultsággal rendelkező karbantartó szervezetekről vagy személyekről. 3) A szervezet ideiglenes hozzáférési jogosultságot adhat a karbantartást végző személyeknek, azonban ennek kockázatát a kockázatelemzésben értékelnie kell. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Karbantartás"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "12.37",
+          "control_title": "Környezeti védelmi intézkedések",
+          "explanation": "A környezeti feltételekhez kapcsolódó követelmények elsősorban a szervezet azon létesítményeire vonatkoznak, ahol koncentráltan találhatóak meg informatikai erőforrások. A környezeti feltételekhez kapcsolódó követelmények biztosítása elsősorban az érintett szervezet azon létesítményeire vonatkozik, amelyek egyszerre több rendszererőforrást tartalmaznak (pl.: adatközpontok, számítógéptermek, szerverszobák). A környezeti tényezők elégtelen felügyelete - különösen zord működési környezetben - negatívan befolyásolhatja a szervezet ügymeneti és üzleti funkcióinak ellátásához szükséges EIR-ek és rendszerelemek rendelkezésre állását. Az érintett szervezetnek gondoskodnia kell arról, hogy a környezeti tényezők ne lépjék túl a biztonságos határokat, mivel ebben az esetben károsíthatják a rendszererőforrásokat vagy veszélyeztethetik azok működését.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia a biztonságos szinteket (tartományokat) a környezeti feltételeket illetően .\n2. A szervezetnek be kell állítania a környezeti szabályozó rendszereket, hogy fenntartsa ezeket a biztonságos szinteket. Ez magában foglalhatja a klímaberendezések, páramentesítők, légnyomás szabályozók és sugárzásvédelmi eszközök használatát, illetve azok beállításait.\n3. A szervezetnek rendszeresen ellenőriznie kell a környezeti szabályozási szinteket. Ez magában foglalhatja a hőmérséklet, páratartalom, légnyomás és sugárzás mérését, valamint a mérési adatok dokumentálását.\n4. A szervezetnek be kell állítania automatikus riasztást, amely figyelmezteti a meghatározott személyzetet, ha a környezeti szabályozási szintek a biztonságos tartományon kívül esnek. Ez lehetővé teszi a gyors reagálást és a problémák korai megoldását.\n5. A szervezetnek rendszeresen felül kell vizsgálnia a környezeti szabályozási szinteket és a riasztási rendszert, hogy biztosítsa azok hatékonyságát és naprakészségét. Szükség esetén módosítania kell ezeket.",
+          "iso_27001_ref": "A.7.5; A.7.8; A.7.11",
+          "nist_sp_800_53_rev5_ref": "PE-14",
+          "requirement_family": "12",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "12.37"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "12.37 – Környezeti védelmi intézkedések végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott környezeti követelmény, mérési vagy szenzorrekord, riasztási próba és felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-102",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "12.37 – Környezeti védelmi intézkedések: 1) A szervezetnek meg kell határoznia a biztonságos szinteket (tartományokat) a környezeti feltételeket illetően . 2) A szervezetnek be kell állítania a környezeti szabályozó rendszereket, hogy fenntartsa ezeket a biztonságos szinteket. 3) A szervezetnek rendszeresen felül kell vizsgálnia a környezeti szabályozási szinteket és a riasztási rendszert, hogy biztosítsa azok hatékonyságát és naprakészségét. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Fizikai és környezeti védelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "16.16",
+          "control_title": "Biztonságtervezési elvek",
+          "explanation": "A biztonságtervezési elvek szorosan kapcsolódnak a rendszer fejlesztési életciklushoz és annak minden fázisában alkalmazandóak. A szervezetek a biztonságtervezési elveket alkalmazhatják új rendszerek fejlesztésekor vagy fejlesztés alatt álló rendszereken. Meglévő rendszerek esetén a szervezetek a biztonságtervezési elveket alkalmazzák a rendszer fejlesztései és módosításai során - amennyire ez lehetséges - figyelembe véve a rendszereken belüli hardver-, szoftver- és firmware-elemek jelenlegi állapotát. A biztonságtervezési elvek alkalmazása segíti az érintett szervezetet megbízható, biztonságos és ellenálló rendszerek fejlesztésében, csökkenti a zavarokkal, veszélyekkel, fenyegetésekkel szembeni érzékenységet. .\nA rendszerbiztonság-technikai elvekre példák: többszintű védelem kialakítása, a tervezés és fejlesztés alapjául szolgáló biztonsági irányelvek, architektúra és biztonsági intézkedések kialakítása, a biztonsági követelmények beépítése a rendszerfejlesztési életciklusba, a fizikai és logikai biztonsági határok kijelölése, annak biztosítása, hogy a fejlesztők képzést kapjanak a biztonságos szoftverek létrehozására, az ellenőrzések testre szabása a szervezeti igényeknek megfelelően, és fenyegetésmodellezés a felhasználási esetek, a fenyegető tényezők, a támadási vektorok és minták, a tervezési minták és a kockázat mérsékléséhez szükséges kompenzációs intézkedések azonosítása érdekében.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia a biztonságtervezési elveit, amelyeket az EIR fejlesztési életciklusa során alkalmazni fog.\n2. A szervezetnek alkalmaznia kell ezeket a biztonságtervezési elveket új EIR fejlesztésénél, vagy amikor az EIR frissítésre kerül. A meglévő EIR esetében az érintett szervezetnek a lehető legnagyobb mértékben alkalmaznia kell a biztonságtervezési elveket az EIR frissítésekor és módosításakor, figyelembe véve a hardver, szoftver és firmware elemek jelenlegi állapotát.\n3. A szervezetnek a biztonságtervezési elvek alkalmazásával olyan megbízható, biztonságos és ellenálló EIR-t kell kifejlesztenie, amely csökkenti a zavarok, veszélyek, fenyegetések valószínűségét.\n4. A szervezetnek például a következő biztonságtervezési elveket kell alkalmaznia: mélységi védelem kialakítása; biztonsági jógyakorlatok alkalmazása, biztonsági architektúra és követelmények létrehozása a tervezés és fejlesztés alapjául; a biztonsági követelmények beépítése az EIR fejlesztési életciklusába; fizikai és logikai biztonsági határok meghatározása; a fejlesztők képzése biztonságos szoftverek fejlesztésére; a védelmi intézkedések szervezeti igényekhez történő igazítása; fenyegetésmodellezés készítése a használati esetek, fenyegetést jelentő szereplők, támadási vektorok és minták, tervezési minták és a kockázat csökkentéséhez szükséges kiegészítő védelmi intézkedések azonosításához.\n5. A szervezetnek a biztonságtervezési elvek alkalmazásával elfogadható szintre kell csökkentenie a kockázatot, és tájékozott kockázatkezelési döntéseket kell hoznia.\n6. A szervezetnek a biztonságtervezési elveket a beszállítói lánc bizonyos kockázatainak kezelésére is alkalmaznia kell, beleértve a manipuláció ellen védett hardver beépítését a tervezésbe.\n7. A szervezetnek naplót kell vezetnie az EIR módosításairól és frissítéseiről, hogy nyomon követhető legyen a biztonságtervezési elvek alkalmazása.",
+          "iso_27001_ref": "A.8.27; A.8.28",
+          "nist_sp_800_53_rev5_ref": "SA-8",
+          "requirement_family": "16",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "16.16"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "16.16 – Biztonságtervezési elvek végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott követelmény- és értékelési checklist, szerződéses vagy tervi kontroll, eltérés- és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-103",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "16.16 – Biztonságtervezési elvek: 1) A szervezetnek meg kell határoznia a biztonságtervezési elveit, amelyeket az EIR fejlesztési életciklusa során alkalmazni fog. 2) A szervezetnek alkalmaznia kell ezeket a biztonságtervezési elveket új EIR fejlesztésénél, vagy amikor az EIR frissítésre kerül. 3) A szervezetnek naplót kell vezetnie az EIR módosításairól és frissítéseiről, hogy nyomon követhető legyen a biztonságtervezési elvek alkalmazása. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és szolgáltatásbeszerzés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "16.49",
+          "control_title": "Külső elektronikus információs rendszerek szolgáltatásai",
+          "explanation": "A külső EIR szolgáltatásokat külső szolgáltató nyújtja, az érintett szervezetnek nincs közvetlen kontrollja a szükséges intézkedések végrehajtásában, vagy az intézkedések hatékonyságának értékelésében. A szervezetek különféle módokon alakítanak ki kapcsolatokat külső szolgáltatókkal, többek között üzleti partnerségek, szerződések, szervezetek közötti megállapodások, üzletági megállapodások, licenszmegállapodások stb. révén. A külső rendszer szolgáltatások használatából eredő kockázatok kezelésének felelőssége továbbra is az azt jóváhagyó szerepkörnél marad.\nA szervezeteken kívüli szolgáltatások esetében a bizalmi lánc megköveteli, hogy a fogyasztó-szolgáltató vonatkozásában minden szolgáltató megfelelő védelmet alakítson ki és biztosítson a szolgáltatásnyújtás során. Ebben a bizalmi láncban a bizalom mértéke és jellege a szervezetek és a külső szolgáltatók közötti kapcsolatok függvényében változik. Az érintett szervezetek dokumentálják a külsős kapcsolataikat, melyek monitorozhatóak. A külső rendszerszolgáltatások dokumentációja tartalmazza a kormányzati, szolgáltatói, felhasználói biztonsági feladatokat és felelősségeket, valamint a szolgáltatási szintre vonatkozó megállapodásokat. A szolgáltatási szintre vonatkozó megállapodások meghatározzák az alkalmazott rendelkezésekkel kapcsolatos elvárásokat, leírják a mérhető eredményeket, és meghatározzák az eljárást valamelyik fél követelményeknek való nem megfelelésére.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. Az érintett szervezetnek szerződéses kötelezettségként meg kell követelnie, hogy az általa igénybe vett EIR-ek szolgáltatásai megfeleljenek az érintett szervezet elektronikus információbiztonsági követelményeinek. Ez azt jelenti, hogy a szolgáltatási szerződésben egyértelműen rögzíteni kell a biztonsági követelményeket és a szervezet által meghatározott védelmi intézkedéseket.\n2. Az érintett szervezetnek meg kell határoznia és dokumentálnia kell a szervezeti felügyelet és az érintett szervezet felhasználóinak feladatait és kötelezettségeit a külső EIR-ek szolgáltatásával kapcsolatban. Ez magában foglalja a felhasználói jogosultságok, a hozzáférési jogok és a biztonsági protokollok meghatározását.\n3. Az érintett szervezetnek külső és belső ellenőrzési eszközökkel kell ellenőriznie, hogy a külső EIR szolgáltatója megfelel-e az elvárt védelmi intézkedéseknek. Ez magában foglalja a biztonsági események naplózását, a rendszeres biztonsági ellenőrzéseket és a biztonsági protokollok betartásának ellenőrzését.\n4. Az érintett szervezetnek rendszeresen felül kell vizsgálnia és értékelnie kell a külső EIR szolgáltató teljesítményét, hogy biztosítsa a szerződésben meghatározott követelmények betartását. Ez magában foglalja a szolgáltatási szint-megállapodások felülvizsgálatát és a szolgáltató által biztosított biztonsági jelentések elemzését.\n5. Az érintett szervezetnek biztosítania kell, hogy a külső EIR szolgáltatóval való kapcsolatát szabályozó szerződés tartalmazza a biztonsági események kezelésére vonatkozó eljárásokat, beleértve a biztonsági események jelentését, a válaszidőt és a helyreállítási terveket.",
+          "iso_27001_ref": "A.5.2; A.5.4; A.5.8; A.5.14; A.5.22; A.5.23; A.8.21",
+          "nist_sp_800_53_rev5_ref": "SA-9",
+          "requirement_family": "16",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "16.49"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "16.49 – Külső elektronikus információs rendszerek szolgáltatásai végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott követelmény- és értékelési checklist, szerződéses vagy tervi kontroll, eltérés- és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-104",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "16.49 – Külső elektronikus információs rendszerek szolgáltatásai: 1) Az érintett szervezetnek szerződéses kötelezettségként meg kell követelnie, hogy az általa igénybe vett EIR-ek szolgáltatásai megfeleljenek az érintett szervezet elektronikus információbiztonsági követelményeinek. 2) Az érintett szervezetnek meg kell határoznia és dokumentálnia kell a szervezeti felügyelet és az érintett szervezet felhasználóinak feladatait és kötelezettségeit a külső EIR-ek szolgáltatásával kapcsolatban. 3) Az érintett szervezetnek biztosítania kell, hogy a külső EIR szolgáltatóval való kapcsolatát szabályozó szerződés tartalmazza a biztonsági események kezelésére vonatkozó eljárásokat, beleértve a biztonsági események jelentését, a válaszidőt és a helyreállítási terveket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és szolgáltatásbeszerzés"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "17.1",
+          "control_title": "Szabályzat és eljárásrendek",
+          "explanation": "A rendszer- és kommunikációvédelmi szabályzat és eljárások a rendszer- és kommunikációvédelem követelménycsoportba tartozó védelmi intézkedésekkel foglalkoznak, amelyek az EIR-ekben, illetve a szervezetekben bevezetésre kerülnek.\nA kockázatkezelési stratégia fontos tényező az ilyen típusú szabályzatok és eljárásrendek létrehozása során. A szabályzatok és eljárásrendek hozzájárulnak a biztonság garantálásához. Ezért fontos, hogy a szervezet információbiztonsági szabályozási környezete, a rendszer- és kommunikációvédelmi szabályzat és az ahhoz kapcsolódó eljárásrendek összhangban legyenek egymással. A szervezeti szintű biztonsági szabályzatok és eljárásrendek általában előnyösebbek, és szükségtelenné tehetik a szervezeti célok vagy rendszerek szintjén kialakítandó szabályzatokat és eljárásrendeket. A szabályok helyet kaphatnak egy általános biztonsági szabályzatban (pl.: Információbiztonsági Szabályzat (IBSZ)), illetve több szabályzatban is megjelenhetnek, attól függően, hogy az érintett szervezetnek milyen a felépítése. Amennyiben szükséges, létrehozhatók eljárásrendek az információbiztonsági irányítási rendszer, a szervezeti célok vagy üzleti folyamatok, illetve az EIR-ek támogatására. Az eljárásrendek leírják miként valósulnak meg a szabályok vagy a védelmi intézkedések, és azok hogyan érintik az eljárásrend tárgyát képező egyént vagy szerepkört. Az eljárásrendek képezhetik a rendszerbiztonsági terv részét, illetve egy vagy több külön dokumentumban is helyet kaphatnak. A rendszer- és kommunikációvédelmi szabályzat és eljárásrendek frissítését kiváltó események lehetnek értékelésből vagy (felül)vizsgálatból eredő megállapítások, biztonsági események, vagy változások a hatályos jogszabályokban, irányelvekben, szabályozásokban, szabványokban és ajánlásokban. Az elvárt védelmi intézkedések egyszerű újraközlése",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek gondoskodnia kell a rendszer- és kommunikációvédelmi szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról.\n2. A szervezetnek meg kell bizonyosodnia arról, hogy a rendszer- és kommunikációvédelmi szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak.\n3. A szervezetnek - a megfelelő szereplők bevonásával, dokumentált módon - ki kell dolgoznia a vonatkozó szabályzatot és a kapcsolódó eljárásrendeket, és gondoskodnia kell a szabályzat és az eljárásrendek megfelelő kihirdetéséről, valamint az érintett felekkel történő megismertetéséről.\n4. A szabályzat és a kapcsolódó eljárásrendek kidolgozásánál a szervezetnek figyelembe kell vennie a rá vonatkozó sajátosságokat. Az elvárt védelmi intézkedések szó szerinti átvétele nem minősül szervezeti szabályzatnak vagy eljárásrendnek.\n5. A szervezetnek a gyakorlatban is alkalmaznia kell a rendszer- és kommunikációvédelmi szabályzatban és az ahhoz kapcsolódó eljárásrendekben megfogalmazott elvárásokat, ezáltal biztosítva azok tényleges megvalósulását.\n6. A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális rendszer- és kommunikációvédelmi szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően.",
+          "iso_27001_ref": "5.2; 5.3; 7.5.1; 7.5.2; 7.5.3; A.5.1; A.5.2; A.5.4; A.5.31; A.5.36; A.5.37",
+          "nist_sp_800_53_rev5_ref": "SC-1",
+          "requirement_family": "17",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "17.1"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "17.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-105",
+      "owner": "Pásztor András",
+      "phase": "M3_3_6M",
+      "priority": "P2",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "17.1 – Szabályzat és eljárásrendek: 1) A szervezetnek gondoskodnia kell a rendszer- és kommunikációvédelmi szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról. 2) A szervezetnek meg kell bizonyosodnia arról, hogy a rendszer- és kommunikációvédelmi szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak. 3) A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális rendszer- és kommunikációvédelmi szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "17.12",
+          "control_title": "Szolgáltatásmegtagadással járó támadások elleni védelem",
+          "explanation": "A szolgáltatásmegtagadással járó események számos belső és külső ok miatt következhetnek be, például egy támadás vagy a szervezeti igények támogatására irányuló tervezés hiánya miatt a nem megfelelő szintű kapacitás és a sávszélesség miatt. Ilyen támadások a hálózati protokollok széles skáláján (pl. IPv4, IPv6. fordulhatnak elő. A szolgáltatásmegtagadással járó események keletkezésének és hatásainak korlátozására vagy kiküszöbölésére számos technológia áll rendelkezésre. A határvédelmi eszközök például képesek bizonyos típusú csomagok szűrésére, hogy megvédjék a belső hálózatok rendszerelemeit attól, hogy a szolgáltatásmegtagadással járó támadások közvetlenül érintsék őket, vagy ne legyenek a forrásuk. A megnövelt hálózati kapacitás és sávszélesség alkalmazása a szolgáltatás redundanciával kombinálva szintén csökkenti a szolgáltatásmegtagadással járó eseményekre való fogékonyságot.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek azonosítania kell a lehetséges belső és külső okokat, amelyek szolgáltatásmegtagadással járó eseményeket okozhatnak.\n2. A szervzezetnek elemzést kell végeznie a hálózati protokollok széles skáláján, hogy felderítse, melyik lehet a leginkább kitett a szolgáltatásmegtagadással járó támadásokkal szemben.\n3. A szervezetnek különböző technológiákat  kell alkalmaznia a szolgáltatásmegtagadással járó események eredetének vagy hatásainak korlátozására vagy megszüntetésére. Például a határvédelmi eszközök képesek szűrni bizonyos típusú csomagokat, hogy megvédjék a rendszerelemeit a belső hálózatokon a szolgáltatásmegtagadással járó támadások közvetlen hatásaitól vagy forrásaitól.\n4. A szervezetnek növelnie kell a hálózati kapacitást és sávszélességet, és szolgáltatás redundanciát kell alkalmaznia, hogy csökkentse az EIR sebezhetőségét a szolgáltatásmegtagadással járó eseményekkel szemben.\n5. A szervezetnek naplóznia kell a szolgáltatásmegtagadással járó támadásokat és a hozzájuk kapcsolódó védelmi intézkedéseket annak érdekében, hogy folyamatosan értékelje és javítsa a védelmi stratégiákat.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SC-5",
+          "requirement_family": "17",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "17.12"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "17.12 – Szolgáltatásmegtagadással járó támadások elleni védelem végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-106",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "17.12 – Szolgáltatásmegtagadással járó támadások elleni védelem: 1) A szervezetnek azonosítania kell a lehetséges belső és külső okokat, amelyek szolgáltatásmegtagadással járó eseményeket okozhatnak. 2) A szervzezetnek elemzést kell végeznie a hálózati protokollok széles skáláján, hogy felderítse, melyik lehet a leginkább kitett a szolgáltatásmegtagadással járó támadásokkal szemben. 3) A szervezetnek naplóznia kell a szolgáltatásmegtagadással járó támadásokat és a hozzájuk kapcsolódó védelmi intézkedéseket annak érdekében, hogy folyamatosan értékelje és javítsa a védelmi stratégiákat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "17.49",
+          "control_title": "Kriptográfiai kulcs előállítása és kezelése",
+          "explanation": "A kriptográfiai kulcsok kezelése és létrehozása manuális eljárásokkal támogatott automatizált mechanizmusokkal történhet. Az érintett szervezetek meghatározzák a kulcskezelési követelményeket a vonatkozó jogszabályi előírások, vezetői utasítások és előírások, belső szabályzatok, szabványok és iránymutatások figyelembevételével, meghatározva a megfelelő paramétereket. A szervezet egy bizalmi tárolót tart fenn, amelyben csak jóváhagyott megbízható elemek kerülnek tárolásra. Ez magában foglalja az EIR-ek belső műveletekhez kapcsolódó tanúsítványokat és az EIR-ek külső láthatóságú tanúsítványait.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezet először határozza meg a kriptográfiai kulcskezelési követelményeket, amelyek összhangban vannak az alkalmazandó törvényekkel, végrehajtási rendeletekkel, irányelvekkel, szabályozásokkal, szabályokkal, szabványokkal és útmutatókkal.\n2. Az érintett szervezetnek döntenie kell a megfelelő opciókról, paraméterekről és szintekről, amelyeket a kriptográfiai kulcskezelés során alkalmaznak.\n3. A szervezetnek kezelnie kell a bizalmi tárolókat, hogy biztosítsa, csak a jóváhagyott bizalmi ankerpontok legyenek része ezeknek a tárolóknak. Ez magában foglalja az EIR-en kívüli láthatósággal rendelkező tanúsítványokat, valamint az EIR belső működésével kapcsolatos tanúsítványokat.\n4. A szervezetnek elő kell állítania és kezelnie kell a kriptográfiai kulcsokat a szervezet által meghatározott előállítási, szétosztási, tárolási, hozzáférési és megsemmisítési követelményekkel összhangban.\n5. A szervezetnek dokumentálnia kell a kriptográfiai kulcskezelési és generálási folyamatokat, hogy nyomon követhető legyen a kulcsok életciklusa.",
+          "iso_27001_ref": "A.8.24",
+          "nist_sp_800_53_rev5_ref": "SC-12",
+          "requirement_family": "17",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "17.49"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "17.49 – Kriptográfiai kulcs előállítása és kezelése végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-107",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "17.49 – Kriptográfiai kulcs előállítása és kezelése: 1) A szervezet először határozza meg a kriptográfiai kulcskezelési követelményeket, amelyek összhangban vannak az alkalmazandó törvényekkel, végrehajtási rendeletekkel, irányelvekkel, szabályozásokkal, szabályokkal, szabványokkal és útmutatókkal. 2) Az érintett szervezetnek döntenie kell a megfelelő opciókról, paraméterekről és szintekről, amelyeket a kriptográfiai kulcskezelés során alkalmaznak. 3) A szervezetnek dokumentálnia kell a kriptográfiai kulcskezelési és generálási folyamatokat, hogy nyomon követhető legyen a kulcsok életciklusa. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "17.53",
+          "control_title": "Kriptográfiai védelem",
+          "explanation": "A kriptográfia számos biztonsági megoldás támogatására alkalmazható, beleértve a minősített és az ellenőrzött, nem minősített információk védelmét, a digitális aláírások biztosítását és végrehajtását, valamint az információk elkülönítésének érvényesítését, amikor a jogosult személyek rendelkeznek a szükséges engedélyekkel, de nincsenek meg a szükséges formális hozzáférési jóváhagyások. A kriptográfia a véletlenszám- és hash-generálás támogatására is használható. Az általánosan alkalmazandó kriptográfiai szabványok közé tartozik az NBSZ által jóváhagyott kriptográfia. Például azok a szervezetek, amelyeknek minősített információkat kell védeniük, előírhatják az NBSZ által jóváhagyott kriptográfia használatát. Azok a szervezetek, amelyeknek digitális aláírásokat kell biztosítaniuk és végrehajtaniuk, szabványos hitelesített kriptográfiát használhatnak. A kriptográfiát a vonatkozó törvényekkel, végrehajtási utasításokkal, irányelvekkel, szabályzatokkal, szabályokkal, szabványokkal és iránymutatásokkal összhangban hajtják végre.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. Az érintett szervezetnek először meg kell határoznia a kriptográfia felhasználási területeit az EIR-en belül. Ez magában foglalhatja a titkosított információk és az ellenőrzött nem titkosított információk védelmét, a digitális aláírások biztosítását és megvalósítását, valamint az információ szeparációjának érvényesítését, amikor a jogosult személyek rendelkeznek a szükséges engedélyekkel, de nincsenek meg a szükséges formális hozzáférési jóváhagyások.\n2. A szervezetnek meg kell valósítania a kriptográfiai megoldásokat az egyes kriptográfiai felhasználási területeken. Ez magában foglalhatja az NBSZ által jóváhagyott kriptográfiát.\n3. A szervezetnek a kriptográfiát az alkalmazható törvények, rendeletek, irányelvek, szabályozások, szabályok, szabványok és útmutatók szerint kell megvalósítania.\n4. A szervezetnek dokumentálnia kell a kriptográfiai megoldások implementációját és használatát, hogy biztosítsa a folyamatok átláthatóságát és a kriptográfiai követelményeknek való megfelelőséget.",
+          "iso_27001_ref": "A.8.24; A.8.26",
+          "nist_sp_800_53_rev5_ref": "SC-13",
+          "requirement_family": "17",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "17.53"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "17.53 – Kriptográfiai védelem végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-108",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "17.53 – Kriptográfiai védelem: 1) Az érintett szervezetnek először meg kell határoznia a kriptográfia felhasználási területeit az EIR-en belül. 2) A szervezetnek meg kell valósítania a kriptográfiai megoldásokat az egyes kriptográfiai felhasználási területeken. 3) A szervezetnek dokumentálnia kell a kriptográfiai megoldások implementációját és használatát, hogy biztosítsa a folyamatok átláthatóságát és a kriptográfiai követelményeknek való megfelelőséget. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "17.54",
+          "control_title": "Együttműködésen alapuló informatikai eszközök",
+          "explanation": "Az együttműködésen alapuló számítástechnikai eszközök közé tartoznak például a hálózatba kapcsolt kamerák és mikrofonok. A használat kifejezett jelzése magában foglalja például a felhasználók felé küldött jelzéseket az együttműködésen alapuló számítástechnikai eszközök bekapcsolásakor és használatakor.\n.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia azokat az eszközöket és alkalmazásokat, amelyek az együttműködésen alapuló számítástechnikai eszközök kategóriájába tartoznak. Ilyenek lehetnek például a távoli találkozók eszközei és alkalmazásai, kamerák és mikrofonok.\n2. A szervezetnek be kell állítania az EIR-t úgy, hogy tiltsa ezeknek az eszközöknek és alkalmazásoknak a távoli aktiválását, kivéve azokat az eseteket, amelyeket a szervezet kifejezetten meghatározott.\n3. A szervezetnek biztosítania kell, hogy az EIR egyértelmű visszajelzést adjon a felhasználóknak, amikor ezek az eszközök és alkalmazások aktiválódnak.\n4. A szervezetnek naplóznia kell az eszközök és alkalmazások aktiválását, hogy nyomon követhető legyen, mikor és milyen körülmények között történtek a távoli aktiválások.",
+          "iso_27001_ref": "A.5.14",
+          "nist_sp_800_53_rev5_ref": "SC-15",
+          "requirement_family": "17",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "17.54"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "17.54 – Együttműködésen alapuló informatikai eszközök végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-109",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "17.54 – Együttműködésen alapuló informatikai eszközök: 1) A szervezetnek meg kell határoznia azokat az eszközöket és alkalmazásokat, amelyek az együttműködésen alapuló számítástechnikai eszközök kategóriájába tartoznak. 2) A szervezetnek be kell állítania az EIR-t úgy, hogy tiltsa ezeknek az eszközöknek és alkalmazásoknak a távoli aktiválását, kivéve azokat az eseteket, amelyeket a szervezet kifejezetten meghatározott. 3) A szervezetnek naplóznia kell az eszközök és alkalmazások aktiválását, hogy nyomon követhető legyen, mikor és milyen körülmények között történtek a távoli aktiválások. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "17.69",
+          "control_title": "Biztonságos név/cím feloldási szolgáltatás (hiteles forrás)",
+          "explanation": "Ez az intézkedés lehetővé teszi, hogy a külső kliensek, beleértve például a távoli internetes klienseket, eredethitelesítéssel és integritás-ellenőrzéssel kapcsolatos biztos információt szerezzenek a hoszt/szolgáltatás név hálózati címre való feloldásával kapcsolatban. A név- és címfeloldási szolgáltatásokat nyújtó információs rendszerek közé tartoznak például a DNS-kiszolgálók. A további lehetőségek közé tartozik például a DNS biztonsági elektronikus aláírások (DNSSEC) és a kriptográfiai kulcsok. A DNS erőforrásrekord (resource record) példa a hiteles adatokra. A gyermektartomány (child zones) biztonsági állapotának jelzésére szolgáló eszközök közé tartozik például a delegáció-aláíró erőforrásrekordok (DS) használata a DNS-ben. Azon EIR-ek számára, amelyek nem DNS-t használnak a hoszt/szolgáltatás nevek hálózati címmel való összerendelésére, más eszközöket használnak a válaszadatok hitelességének és integritásának ellenőrzésére.\n.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. Az EIR-nek biztosítania kell a név- és címfeloldási kérésekhez hiteles névfeloldási adatokat, valamint az információ eredetére és a tartalom sértetlenségére vonatkozó kiegészítő adatokat. Ez lehetővé teszi a külső kliensek számára, beleértve a távoli internetes klienseket is, hogy eredet hitelesítéssel és integritás ellenőrzéssel kapcsolatos biztos információt szerezzenek a szolgáltatáson keresztül megszerzett név és hálózati cím feloldással kapcsolatban.\n2. Az EIR-nek, amennyiben egy elosztott, hierarchikus névtér részeként működik, vissza kell jeleznie a gyermektartományok biztonsági állapotával kapcsolatosan. Ezt a delegáció aláíró erőforrás rekordok használatával teheti meg a DNS-ben.\n3. Az EIR-nek lehetővé kell tennie a szülő- és gyermektartományok közötti bizalmi lánc ellenőrzését, amennyiben a gyermektartományok támogatják a biztonságos névfeloldási szolgáltatásokat.\n4. Az EIR-nek, amelyek olyan technológiákat használnak, amelyek nem a DNS-t használják a hoszt és szolgáltatás nevek és hálózati címek közötti leképezéshez, más eszközöket kell biztosítania a válaszadatok hitelességének és integritásának biztosítására.\n5. Az EIR-nek további eszközöket kell biztosítania, mint például a DNS Biztonsági Kiterjesztések digitális aláírások és kriptográfiai kulcsok.\n6. Az EIR-nek hiteles adatokat kell biztosítania, beleértve a DNS erőforrás rekordokat.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SC-20",
+          "requirement_family": "17",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "17.69"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "17.69 – Biztonságos név/cím feloldási szolgáltatás (hiteles forrás) végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-110",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "17.69 – Biztonságos név/cím feloldási szolgáltatás (hiteles forrás): 1) Az EIR-nek biztosítania kell a név- és címfeloldási kérésekhez hiteles névfeloldási adatokat, valamint az információ eredetére és a tartalom sértetlenségére vonatkozó kiegészítő adatokat. 2) Az EIR-nek, amennyiben egy elosztott, hierarchikus névtér részeként működik, vissza kell jeleznie a gyermektartományok biztonsági állapotával kapcsolatosan. 3) Az EIR-nek hiteles adatokat kell biztosítania, beleértve a DNS erőforrás rekordokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "17.71",
+          "control_title": "Biztonságos név/cím feloldó szolgáltatás (rekurzív vagy gyorsítótárat használó feloldás)",
+          "explanation": "A névfeloldási szolgáltatások minden kliense önállóan végzi el ezt az ellenőrzést, vagy hitelesített csatornákkal rendelkezik a megbízható hitelesítési szolgáltatók irányába. A helyi kliensek számára név- és címfeloldási szolgáltatásokat nyújtó információs rendszerek közé tartozik például a rekurzív feloldású vagy gyorsítótárazó domainnév szerverek. A DNS-kliens feloldók elvégzik a DNSSEC-aláírások validálását, vagy a kliensek hitelesített csatornákat használnak az ilyen validálásokat végrehajtó rekurzív feloldókhoz kapcsolódva. A DNS-től eltérő technológiákat használó információs rendszerek a hoszt/szolgáltatásnevek és a hálózati címek közötti összerendeléshez más eszközöket biztosítanak a kliensek számára a válaszadatok hitelességének és sértetlenségének ellenőrzésére.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek biztosítania kell, hogy minden név- és címfeloldó szolgáltatásokat igénybe vevő kliens önállóan végezze el ezt a hitelesítést, vagy hitelesített csatornákon keresztül kapcsolódjon a megbízható hitelesítési szolgáltatókhoz.\n2. A szervezetnek meg kell határoznia, hogy a DNS kliens feloldóknak vagy el kell végezniük a DNSSEC aláírások hitelesítését, vagy a klienseknek hitelesített csatornákon keresztül kell csatlakozniuk a rekurzív feloldókhoz, amelyek ilyen hitelesítéseket végeznek.\n3. Az EIR-nek, amelyek más technológiákat használnak a DNS-nél a host és szolgáltatásnevek és hálózati címek közötti leképezéshez, biztosítania kell valamilyen más módot a kliensek számára, hogy ellenőrizhessék a válaszadatok hitelességét és sértetlenségét.\n4. A szervezetnek naplóznia kell a hitelesítési folyamatokat és az adatok sértetlenségét, hogy nyomon követhesse és ellenőrizhesse azokat.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SC-21",
+          "requirement_family": "17",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "17.71"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "17.71 – Biztonságos név/cím feloldó szolgáltatás (rekurzív vagy gyorsítótárat használó feloldás) végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-111",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "17.71 – Biztonságos név/cím feloldó szolgáltatás (rekurzív vagy gyorsítótárat használó feloldás): 1) A szervezetnek biztosítania kell, hogy minden név- és címfeloldó szolgáltatásokat igénybe vevő kliens önállóan végezze el ezt a hitelesítést, vagy hitelesített csatornákon keresztül kapcsolódjon a megbízható hitelesítési szolgáltatókhoz. 2) A szervezetnek meg kell határoznia, hogy a DNS kliens feloldóknak vagy el kell végezniük a DNSSEC aláírások hitelesítését, vagy a klienseknek hitelesített csatornákon keresztül kell csatlakozniuk a rekurzív feloldókhoz, amelyek ilyen hitelesítéseket végeznek. 3) A szervezetnek naplóznia kell a hitelesítési folyamatokat és az adatok sértetlenségét, hogy nyomon követhesse és ellenőrizhesse azokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "17.72",
+          "control_title": "Architektúra és tartalékok név/cím feloldási szolgáltatás esetén",
+          "explanation": "A név- és címfeloldási szolgáltatásokat nyújtó információs rendszerek közé tartoznak például a DNS-kiszolgálók. A kritikus hibapontok (ún. single points of failure) kiküszöbölése és a redundancia fokozása érdekében a szervezetek legalább két hiteles tartománynév-kiszolgálót alkalmaznak, az egyiket elsődleges kiszolgálóként, a másik pedig másodlagos kiszolgálóként konfigurálva. Ezen túlmenően a szervezetek rendszerint két földrajzilag elkülönített alhálózaton (azaz nem ugyanabban a fizikai létesítményben) telepítik a szervereket. A szerepkör-szétválasztáshoz a belső szerepkörrel rendelkező DNS-kiszolgálók csak a szervezeten belüli (azaz belső kliensektől származó) név- és címfeloldási kérelmeket dolgoznak fel. A külső szerepekkel rendelkező DNS-kiszolgálók csak a szervezeteken kívüli kliensek név- és címfeloldási kéréseit kezelik (azaz külső hálózatokon, beleértve az internetet is). A szervezetek meghatározzák a klienseket, akik bizonyos szerepkörökben elérhetik a hiteles DNS-kiszolgálókat (pl. címtartományok, explicit listák).",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek biztosítania kell, hogy az EIR-ek, amelyek név- és címfeloldási szolgáltatást biztosítanak, hibatűrő képességgel rendelkeznek. Ez azt jelenti, hogy legalább két hiteles DNS kiszolgálót kell alkalmazni - az egyiket elsődleges szerverként, a másikat pedig másodlagos szerverként konfigurálva. A hibatűrés növelése érdekében a szervezetnek a kiszolgálókat két földrajzilag elválasztott alhálózatban kell telepítenie.\n2. A szervezetnek biztosítania kell, hogy a belső és külső szerepkörök szétválasztása érdekében a kiszolgálók, amelyek belső szerepkörrel rendelkeznek, csak a szervezeten belüli név- és címfeloldási kéréseket dolgozzák fel, míg azon kiszolgálók, amelyek külső szerepkörrel rendelkeznek, csak a szervezeten kívüli kliensektől érkező név- és címfeloldási információs kéréseket dolgozzák fel (pl. internet irányából).\n4. A szervezetnek meg kell határoznia azokat a klienseket, amelyek bizonyos szerepekkörökben elérhetnek a hiteles DNS szerverekhez (például címtartományok és explicit listák alapján).",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SC-22",
+          "requirement_family": "17",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "17.72"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "17.72 – Architektúra és tartalékok név/cím feloldási szolgáltatás esetén végrehajtási csomag: jóváhagyott EIR-scope, 3 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 3 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-112",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "17.72 – Architektúra és tartalékok név/cím feloldási szolgáltatás esetén: 1) A szervezetnek biztosítania kell, hogy az EIR-ek, amelyek név- és címfeloldási szolgáltatást biztosítanak, hibatűrő képességgel rendelkeznek. 2) A szervezetnek biztosítania kell, hogy a belső és külső szerepkörök szétválasztása érdekében a kiszolgálók, amelyek belső szerepkörrel rendelkeznek, csak a szervezeten belüli név- és címfeloldási kéréseket dolgozzák fel, míg azon kiszolgálók, amelyek külső szerepkörrel rendelkeznek, csak a szervezeten kívüli kliensektől érkező… 3) A szervezetnek meg kell határoznia azokat a klienseket, amelyek bizonyos szerepekkörökben elérhetnek a hiteles DNS szerverekhez (például címtartományok és explicit listák alapján). Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "17.108",
+          "control_title": "A folyamatok elkülönítése",
+          "explanation": "Az EIR-eknek minden végrehajtott folyamathoz külön végrehajtási tartományt javasolt fenntartaniuk, azzal, hogy minden egyes folyamatot külön címtartományban hajtanak végre. Mindegyik EIR folyamatnak egy külön címtartománya van, így a folyamatok közötti kommunikáció a biztonsági funkciók által ellenőrzött módon történhet, és az egyik folyamat nem tudja módosítani egy másik folyamat végrehajtó kódját. Az elkülönített végrehajtási tartományok fenntartása a folyamatok végrehajtásához például külön címterek kialakításával érhető el. A folyamat elszigetelési technológiák, beleértve a sandboxingot vagy a virtualizációt, logikailag elválasztják a szoftvert és a firmware-t más szoftverektől, firmware-től és adatoktól. A folyamat elszigetelés segít korlátozni a potenciálisan nem megbízható szoftverek hozzáférését más rendszererőforrásokhoz.Ez a lehetőség a legtöbb kereskedelmi operációs rendszerben elérhető, amely támogatja a többállapotú processzortechnológiákat.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek biztosítania kell, hogy az EIR-ek megfelelő folyamatai számára elkülönített végrehajtási tartományt tartson fenn. Ez azt jelenti, hogy minden ilyen folyamat esetén külön címtartományt kell alkalmazni.\n2. A szervezetnek gondoskodnia kell arról, hogy az EIR-ek folyamatai közötti kommunikáció a biztonsági funkciók által szabályozott módon történjen, és egy folyamat ne tudja módosítani egy másik folyamat végrehajtó kódját.\n3. A szervezetnek implementálnia kell az elkülönített címtartományokat, hogy biztosítsa a rendszerfolyamatok elkülönített végrehajtási tartományát.\n4. A szervezetnek alkalmaznia kell folyamat izolációs technológiákat, mint például a sandboxingot vagy a virtualizációt, hogy logikailag elválassza a szoftvereket és firmwareeket a többi szoftvertől, firmware-től és adattól.\n5. A szervezetnek biztosítania kell, hogy az EIR képes legyen fenntartani az elkülönített végrehajtási tartományokat. Ez a képesség rendelkezésre áll a kereskedelemben kapható operációs rendszerekben is.\n6. A szervezetnek dokumentálnia kell az általa meghatározott valamennyi végrehajtási tartományt és az azokhoz tartozó végrehajtó folyamatot, melyet rendszeres időnként felül kell vizsgálnia.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SC-39",
+          "requirement_family": "17",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "17.108"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "17.108 – A folyamatok elkülönítése végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-113",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "17.108 – A folyamatok elkülönítése: 1) A szervezetnek biztosítania kell, hogy az EIR-ek megfelelő folyamatai számára elkülönített végrehajtási tartományt tartson fenn. 2) A szervezetnek gondoskodnia kell arról, hogy az EIR-ek folyamatai közötti kommunikáció a biztonsági funkciók által szabályozott módon történjen, és egy folyamat ne tudja módosítani egy másik folyamat végrehajtó kódját. 3) A szervezetnek dokumentálnia kell az általa meghatározott valamennyi végrehajtási tartományt és az azokhoz tartozó végrehajtó folyamatot, melyet rendszeres időnként felül kell vizsgálnia. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "18.1",
+          "control_title": "Szabályzat és eljárásrendek",
+          "explanation": "A rendszer- és információsértetlenségi szabályzat és eljárások a Rendszer- és információsértetlenség követelménycsoportba tartozó védelmi intézkedésekkel foglalkoznak, amelyek az EIR-ben, illetve a szervezetekben bevezetésre kerülnek. A kockázatkezelési stratégia fontos tényező az ilyen szabályok és eljárások létrehozásában. A szabályok és eljárások hozzájárulnak a biztonság garantálásához. Ezért fontos, hogy a szervezet információbiztonsági szabályozási környezete és rendszer- és információsértetlenségi szabályzat és eljárások összhangban legyenek egymással. A szervezeti szintű biztonsági szabályzatok és eljárásrendek általában előnyösebbek, és szükségtelenné tehetik a működési célok vagy rendszerek szintjén kialakítandó szabályzatokat és eljárásokat. A szabályokat be lehet illeszteni az általános biztonsági szabályzatba, vagy több szabályzatban is megjelenhetnek, amelyek tükrözik az érintett szervezetek összetett természetét. Eljárásokat létre lehet hozni az információbiztonsági irányítási rendszer, a működési és üzleti célok, és az EIR-ek támogatására, amennyiben azok szükségesek. Az eljárások leírják, hogy hogyan valósulnak meg a szabályok vagy a védelmi intézkedések, és hogyan vonatkoznak az eljárás tárgyát képező egyénre vagy szerepkörre. Az eljárásokat dokumentálhatják a rendszerbiztonsági tervekben, vagy egy vagy több külön dokumentumban. A rendszer- és információsértetlenségi szabályzat és eljárások frissítését kiváltó események lehetnek értékelési vagy audit megállapítások, biztonsági események, vagy változások az alkalmazandó jogszabályokban, irányelvekben, szabályozásokban, szabványokban és ajánlásokban. Az elvárt védelmi intézkedések egyszerű újra közlése nem minősülhet szervezeti szabályzatnak vagy eljárásnak.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. Az érintett szervezet dolgozzon ki, dokumentáljon, adja ki és ismertesse meg a szervezet által meghatározott személyekkel szerepkörük szerint az rendszer- és kommunikációvédelmi szabályzatot, amely tartalmazza a szervezeti-, folyamat- és EIR-szintű követelményeket. Ez a szabályzat meghatározza a célkitűzéseket, a hatókört, a szerepköröket, a felelősségeket, a vezetői elkötelezettséget, az érintett szervezeten belüli együttműködés kereteit és a megfelelőségi kritériumokat.\n2. A szabályzatnak összhangban kell lennie az érintett szervezetre vonatkozó, hatályos jogszabályokkal, irányelvekkel, szabályozásokkal, szabványokkal és ajánlásokkal.\n3. Az érintett szervezet dolgozzon ki egy rendszer- és kommunikációvédelmi eljárásrendet, amely elősegíti a rendszer- és kommunikációvédelmi szabályok és az ahhoz kapcsolódó ellenőrzések megvalósítását.\n4. Az érintett szervezet jelöljön ki egy meghatározott személyt, aki felelős a rendszer- és kommunikációvédelmi szabályzat és eljárások kidolgozásának, dokumentálásának, kiadásának és megismertetésének irányításáért.",
+          "iso_27001_ref": "5.2; 5.3; 7.5.1; 7.5.2; 7.5.3; A.5.1; A.5.2; A.5.4; A.5.31; A.5.36; A.5.37",
+          "nist_sp_800_53_rev5_ref": "SI-1",
+          "requirement_family": "18",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "18.1"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "18.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-114",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "18.1 – Szabályzat és eljárásrendek: 1) Az érintett szervezet dolgozzon ki, dokumentáljon, adja ki és ismertesse meg a szervezet által meghatározott személyekkel szerepkörük szerint az rendszer- és kommunikációvédelmi szabályzatot, amely tartalmazza a szervezeti-, folyamat- és EIR-szintű követelményeket. 2) A szabályzatnak összhangban kell lennie az érintett szervezetre vonatkozó, hatályos jogszabályokkal, irányelvekkel, szabályozásokkal, szabványokkal és ajánlásokkal. 3) Az érintett szervezet jelöljön ki egy meghatározott személyt, aki felelős a rendszer- és kommunikációvédelmi szabályzat és eljárások kidolgozásának, dokumentálásának, kiadásának és megismertetésének irányításáért. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "18.8",
+          "control_title": "Kártékony kódok elleni védelem",
+          "explanation": "Az információs rendszerek be- és kilépési pontjai lehetnek például a tűzfalak, az elektronikus levelezőkiszolgálók, a webkiszolgálók, a proxy szerverek, a távoli hozzáférést biztosító kiszolgálók, a munkaállomások, notebook számítógépek és mobileszközök. Kártékony kód lehet például vírus, féreg, trójai vírus, vagy kémprogramok. Kártékony kód több formátumban kódolható, tárolható tömörített vagy rejtett fájlokban, vagy szteganográfiával elrejtett fájlokban. Kártékony kód különböző módokon is terjedhet, például webes hozzáférésen keresztül, elektronikus levélben, elektronikus levél csatolmányaként, hordozható tárolókon. A kártékony kód bejuttatása a rendszerbe az információs rendszer sérülékenységén keresztül is történhet. A kártékony kód elleni védelmi mechanizmusok lehetnek például az antivírus leírók és a heurisztikán alapuló rendszerek. Számos technológia és eljárás létezik a kártékony kódok hatásának csökkentésére vagy megszüntetésére. Átható konfigurációkezelés és átfogó szoftver integritási intézkedések hatékonyak lehetnek a jogosulatlan kód futásának megakadályozásában. A piacon elérhető szoftvereken felül kártékony kódot az egyedi fejlesztéssel készített szoftverek is tartalmazhatnak. Ilyenekre példa a logikai bombák, backdoorok és egyéb kibertámadási megoldások, amelyek a szervezet üzleti céljaira és funkcióira lehetnek hatással. A hagyományos kártékony kód elleni védelmi mechanizmusok nem mindig érzékelik ezeket a támadásokat. Ezekben a helyzetekben a szervezet más biztosítékra kell, hogy támaszkodjon, például biztonságos fejlesztési (kódolási) eljárások, konfiguráció kezelés, megbízható beszerzési eljárások, monitorozási gyakorlat segíthet abban, hogy a szoftver csak a kívánt funkciókat hajtsa végre. A szervezet dönthet úgy, hogy a kártékony kód észlelésére adott válasz eltérő tevékenységeket foglalhat magában. Például, a szervezet meghatározhat teendőket a rendszeresen futtatott ellenőrzésekkel talált kód esetére, a kártékony letöltésekkel kapcsolatban, vagy amikor futtatható állományok viselkedésében ismernek fel kártékony működést. Kártékony kód elleni védelmi mechanizmus használata esetén az érintett szervezetnek olyan megoldást javasolt választania, mely egyaránt képes blokkolni, valamint független környezetben vizsgálni a kártékony kódot, képes azt karanténba helyezni - a terjedését meggátolva. Kiemelten fontos a kártékony kód elleni védelemnél a frissítések (pl. vírusdefiníciós adatbázis) gyakorisága, valamint a rendszer általi átvizsgálások ütemezhetőségi és mélységi beállítási lehetőségei.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. Kártékony kódok elleni védelmi mechanizmusokat szükséges alkalmazni a rendszerek belépési és kilépési pontjain. Ezek a pontok magukban foglalhatják a tűzfalakat, távoli hozzáférési szervereket, munkaállomásokat, elektronikus levelező szervereket, web szervereket, proxy szervereket, notebook számítógépeket és mobil eszközöket.\n2. Automatikusan frissíteni szükséges a védelmi mechanizmusokat minden olyan esetben, amikor új verziók jelennek meg, összhangban a szervezet konfigurációkezelési szabályaival.\n3. Szükséges a megfelelő konfiguráció alkalmazása a kártékony kódok elleni védelmi mechanizmusok esetén, hogy meghatározott időközönként átvizsgálják a rendszereket, és valós időben ellenőrizzék a külső forrásokból származó fájlokat a végpontokon, a hálózati belépési vagy kilépési pontokon a biztonsági szabályzatnak megfelelően, amint a fájlokat letöltik, megnyitják vagy futtatják.\n4. Kártékony kód észlelésekor szükséges blokkolni vagy karanténba helyezni a kártékony kódokat, vagy a szervezet által meghatározott egyéb intézkedéseket végrehajtani; továbbá riasztást küldeni a szervezet által meghatározott személyeknek vagy szerepköröknek.\n5. Ellenőrizni szükséges a téves riasztásokat a kártékony kód észlelése és megsemmisítése során, valamint figyelembe kell venni ezek lehetséges kihatását a rendszerek rendelkezésre állására.\n6. Biztosítani szükséges további védelmi intézkedéseket, mint például biztonságos kódolási gyakorlatok, konfigurációkezelés és -ellenőrzés, megbízható beszerzési folyamatok és naplózás, hogy biztosítsa, hogy az EIR nem hajt végre más funkciókat, mint amelyeket szándékozott.",
+          "iso_27001_ref": "A.8.7",
+          "nist_sp_800_53_rev5_ref": "SI-3",
+          "requirement_family": "18",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "18.8"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "18.8 – Kártékony kódok elleni védelem végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-115",
+      "owner": "Pásztor András",
+      "phase": "M3_3_6M",
+      "priority": "P2",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "18.8 – Kártékony kódok elleni védelem: 1) Kártékony kódok elleni védelmi mechanizmusokat szükséges alkalmazni a rendszerek belépési és kilépési pontjain. 2) Automatikusan frissíteni szükséges a védelmi mechanizmusokat minden olyan esetben, amikor új verziók jelennek meg, összhangban a szervezet konfigurációkezelési szabályaival. 3) Biztosítani szükséges további védelmi intézkedéseket, mint például biztonságos kódolási gyakorlatok, konfigurációkezelés és -ellenőrzés, megbízható beszerzési folyamatok és naplózás, hogy biztosítsa, hogy az EIR nem hajt végre más funkciókat, mint amelyeket szándékozott. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "18.13",
+          "control_title": "Az EIR monitorozása",
+          "explanation": "A rendszerek monitorozása magában foglalja a külső és belső monitorozást. A külső monitorozás a rendszer külső interfészeinél bekövetkező események megfigyelését jelenti. A belső monitorozás a rendszeren belül bekövetkező események megfigyelését jelenti. Az érintett szervezetek monitorozzák a rendszereket a napló tevékenységek valós idejű megfigyelésével vagy más rendszeraspektusok, például hozzáférési minták, hozzáférési jellemzők és más műveletek megfigyelésével. A monitorozási lehetővé teszi a megfelelő döntések meghozatalát, az irányítást és az események észlelését. A rendszerek monitorozását számos eszköz és technika segítségével érik el, beleértve az behatolás észlelő és megelőző rendszereket, a kártékony kód elleni védelmi szoftvereket, a szkennelő eszközöket, a napló rekord monitorozó szoftvereket és a hálózat monitorozó szoftvereket.\nA biztonsági architektúrától függően a monitorozó eszközök elosztása és konfigurációja befolyásolhatja a kulcsfontosságú belső és külső határokon, valamint a hálózat más helyein a hálózati áteresztőkészség késleltetésének bevezetése miatt az áteresztőképességet. Ha szükséges az áteresztőképesség kezelése, az ilyen eszközöket olyan stratégiával helyezik el és telepítik, hogy a szervezet által meghatározott szervezeti szintű biztonsági architektúra részeként jelenjenek meg. A monitorozó eszközök stratégiailag megfontolt helyei közé tartoznak a kiválasztott hálózati határok és a kulcsfontosságú szerverek és szerverfarmok, amelyek kritikus alkalmazásokat támogatnak. Az összegyűjtött információ a szervezet monitorozási céljainak és a rendszerek képességeinek függvényében kerül összeállításra. A figyelembe vett tranzakciók különleges típusai közé tartozik a HTTP proxy-kat megkerülő HTTP forgalom. Az EIR monitorozása a szervezet folyamatos monitorozási és biztonsági eseményválasz programjainak szerves része, és az EIR monitorozásból származó kimenet bemenetként szolgál ezekhez a programokhoz.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. Szükséges az EIR monitorozása, hogy észlelésre kerüljenek a támadások és a potenciális támadásokra utaló jelek, összhangban a meghatározott szervezeti célokkal. Ez magában foglalja a külső és belső monitorozást is.\n2. Azonosítani szükséges a rendszerek jogosulatlan használatát a meghatározott technikák és módszerek alkalmazásával.\n3. Aktiválni szükséges az EIR belső felügyeleti képességeit vagy telepíteni a megfelelő felügyeleti eszközöket az egész EIR-re kiterjedően a szervezet által meghatározott információk gyűjtése érdekében; illetve az EIR-en belül ad-hoc módon meghatározott helyeken a szervezet által meghatározott információk gyűjtése érdekében.\n4. Elemezni szükséges az észlelt eseményeket és rendellenességeket.\n5. Módosítani szükséges az EIR felügyeleti tevékenység szintjét, amennyiben változik a szervezeti műveletekkel, az eszközökkel, az egyénekkel, a külső szervezetekkel kapcsolatos kockázati szintje.\n6. Jogi állásfoglalást szükséges kérni az EIR felügyeleti tevékenységeiről.\n7. Biztosítani szükséges a szervezet által meghatározott EIR felügyeleti információkat a meghatározott személyeknek vagy szerepköröknek a szervezet által meghatározott gyakorisággal.\n8. A naplózás fontos része az EIR felügyeletének, melynek során figyelemmel kell kísérni a rendszerben történő eseményeket és tevékenységeket.",
+          "iso_27001_ref": "A.8.16",
+          "nist_sp_800_53_rev5_ref": "SI-4",
+          "requirement_family": "18",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "18.13"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "18.13 – Az EIR monitorozása végrehajtási csomag: jóváhagyott EIR-scope, 8 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 8 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-116",
+      "owner": "Pásztor András",
+      "phase": "M3_3_6M",
+      "priority": "P2",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "18.13 – Az EIR monitorozása: 1) Szükséges az EIR monitorozása, hogy észlelésre kerüljenek a támadások és a potenciális támadásokra utaló jelek, összhangban a meghatározott szervezeti célokkal. 2) Azonosítani szükséges a rendszerek jogosulatlan használatát a meghatározott technikák és módszerek alkalmazásával. 3) A naplózás fontos része az EIR felügyeletének, melynek során figyelemmel kell kísérni a rendszerben történő eseményeket és tevékenységeket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "18.37",
+          "control_title": "Biztonsági riasztások és tájékoztatások",
+          "explanation": "A Kormányzati Eseménykezelő Központ biztonsági riasztásokat tesz közzé és tanácsokat ad a helyzetismeret elősegítése érdekében. A biztonsági irányelveket a BM vagy más kijelölt szervezetek adják ki, amelyeknek felelőssége és hatásköre az ilyen irányelvek kiadása. Az irányelvek betartása elengedhetetlen, mivel sok esetben kritikus jelentőségűek, és ha nem hajtják végre időben, az az érintett szervezet működésére és eszközeire, az egyénekre, más szervezetekre és az egész nemzetre nézve is káros hatással lehet. A külső szervezetek közé tartoznak a beszállítói lánc partnerei, külső missziós vagy üzleti partnerek, külső szolgáltatók és más, egyenrangú vagy támogató szervezetek.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek biztosítania kell, hogy folyamatosan fogadja a meghatározott külső szervezetektől a biztonsági figyelmeztetéseket, tanácsokat és iránymutatásokat. Ez magában foglalhatja a kapcsolattartást hivatalos szervezetekkel, melyek ilyen jellegű információkat szolgáltatnak.\n2. A szervezetnek alkalmaznia kell a biztonsági iránymutatásokat az azokban foglaltak szerint. Ez magában foglalhatja a biztonsági irányelvek és eljárások frissítését, valamint a biztonsági intézkedések végrehajtását és ellenőrzését az EIR-en.",
+          "iso_27001_ref": "A.5.6; A.8.8",
+          "nist_sp_800_53_rev5_ref": "SI-5",
+          "requirement_family": "18",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "18.37"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "18.37 – Biztonsági riasztások és tájékoztatások végrehajtási csomag: jóváhagyott EIR-scope, 2 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 2 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-117",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "18.37 – Biztonsági riasztások és tájékoztatások: 1) A szervezetnek biztosítania kell, hogy folyamatosan fogadja a meghatározott külső szervezetektől a biztonsági figyelmeztetéseket, tanácsokat és iránymutatásokat. 2) A szervezetnek alkalmaznia kell a biztonsági iránymutatásokat az azokban foglaltak szerint. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "18.67",
+          "control_title": "Információ kezelése és megőrzése",
+          "explanation": "Az információkezelési és megőrzési követelmények az információ teljes életciklusát lefedik, néhány esetben a rendszer megsemmisítésén túl is. A megőrzendő információk közé tartozhatnak az irányelvek, eljárások, tervek, jelentések, a követelménymegvalósításból származó adatkimenetek és egyéb adminisztratív információk. Ha a szervezetnek van iratkezelési részlege, érdemes lehet együttműködni az iratkezelési személyzettel.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": ". A szervezetnek meg kell határoznia és dokumentálnia a rendszerben lévő és onnan kikerülő információk kezelésének és megőrzésének szabályzatát, eljárásait és terveit a hatályos jogszabályok, irányelvek, szabályozások, szabványok és ajánlások, valamint a működési követelmények szerint.\n2. A szervezetnek alkalmaznia kell a meghatározott szabályzatokat és eljárásokat a rendszerből kikerülő információk kezelésének és megőrzésének során.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SI-12",
+          "requirement_family": "18",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "18.67"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "18.67 – Információ kezelése és megőrzése végrehajtási csomag: jóváhagyott EIR-scope, 2 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 2 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "id": "A-118",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "18.67 – Információ kezelése és megőrzése: 1) . 2) A szervezetnek alkalmaznia kell a meghatározott szabályzatokat és eljárásokat a rendszerből kikerülő információk kezelésének és megőrzésének során. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "19.2",
+          "control_title": "Ellátási láncra vonatkozó kockázatmenedzsment szabályzat",
+          "explanation": "Az érintett szervezet függősége a külső szolgáltatóktól származó termékektől, rendszerektől és szolgáltatásoktól, valamint a szolgáltatókkal való kapcsolatok jellege, növekvő kockázatot jelent. A tevékenységek, amelyek növelhetik a biztonsági vagy adatvédelmi kockázatokat, magukban foglalják a jogosulatlan gyártást, a hamisítványokra való cserét, vagy azok használatát, a módosításokat, a lopást, a rosszindulatú szoftverek és hardverek beillesztését, valamint a nem megfelelő gyártási és fejlesztési gyakorlatot az ellátási láncban. Az ellátási lánc kockázatai endémiásak vagy rendszerszintűek lehetnek egy rendszerelemben, egy EIR-en, egy szervezeten, egy ágazaton vagy a nemzeten belül. Az ellátási lánc kockázatkezelése összetett, többoldalú feladat, amely koordinált erőfeszítést igényel a szervezeten belül a bizalmi kapcsolatok kiépítéséhez és a belső és külső érdekeltekkel való kommunikációhoz. Az ellátási lánc kockázatkezelési tevékenységek (SCRM) magukban foglalják a kockázatok azonosítását és értékelését, a megfelelő kockázat válaszintézkedések meghatározását, a kockázatkezelési tervek kidolgozását a válaszintézkedések dokumentálására, és a teljesítmény ellenőrzését a tervekkel szemben. Az ellátási lánc kockázatkezelési (SCRM) terv (a rendszer szintjén) implementáció specifikus, biztosítja a szabályzatok végrehajtását, követelményeket, korlátozásokat és következményeket. Ez lehet önálló, vagy beépíthető a rendszer biztonsági és adatvédelmi terveibe. Az ellátási lánc kockázatkezelési terv kezeli a kockázatkezelési követelmények végrehajtását és nyomon követését, valamint a rendszerek fejlesztését/fenntartását a rendszerfejlesztési életcikluson (SDLC) keresztül az ügymeneti és üzleti funkciók támogatása érdekében.\nMivel az ellátási láncok jelentősen eltérhetnek a szervezeten belül és között, az ellátási lánc kockázatkezelési (SCRM) tervek az egyéni programokhoz, szervezeti és működési kontextusokhoz igazodnak. A testre szabott kockázatkezelési tervek azon meghatározás alapját képezik, hogy egy technológia, szolgáltatás, rendszerelem, vagy rendszer alkalmas-e a célra, és ennek megfelelően szükséges a követelmények testre szabása. A testre szabott kockázatkezelési tervek segítenek a szervezeteknek a legkritikusabb ügymeneti és üzleti funkciókra összpontosítani erőforrásaikat az ügymeneti és üzleti követelmények, valamint a kockázati környezet alapján.\nA kockázatkezelési tervek tartalmazzák a szervezet ellátási lánc kockázattűrésének értékeit, az elfogadható ellátási lánc kockázatcsökkentő stratégiákat vagy követelményeket, egy folyamatot az elfogadható kockázat kiértékelésére és nyomon követésére, a tervek alkalmazásáról, illetve az arról való tájékoztatás folyamatát, valamint egy összefoglalót a megtett intézkedések szükségességéről és az érintett személyekről és szerepkörökről.\nEzek mellett az ellátási lánc kockázatkezelési tervei a megbízható, biztonságos, aszemélyes adatokat védő és rugalmas rendszerelemek és -rendszerek fejlesztésére vonatkozó követelményekkel is foglalkoznak, beleértve az életciklus-alapú rendszerek biztonságtechnikai folyamatainak részeként megvalósított biztonsági tervezési elvek alkalmazását (lásd Rendszer- és szolgáltatásbeszerzés kontrollcsaládot).",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia azon rendszereket, rendszerelemeket vagy rendszerszolgáltatásokat, melyek ellátási láncával kapcsolatos kockázatokat kezelni kell.\n2. A szervezetnek meg kell határoznia egy szabályzatot a szükséges kockázatkezelési intézkedések elvégzésére a meghatározott rendszerek, rendszerelemek vagy rendszerszolgáltatások ellátási láncával kapcsolatosan.\n3. A szervezetnek meg kell határoznia a gyakoriságot, melyel a meghatározott kockázatkezelési szabályzatot felüvizsgálja.\n4. A szervezetnek alkalmaznia kell a meghatározott szabályzatot az érintett rendszerek, rendszerelemek vagy rendszerszolgáltatások ellátási láncának kockázatkezelésére.\n5. A szervezetnek biztosítania kell, hogy az ellátási lánc kockázatkezelési szabályzata tartalmazza a rendszerfejlesztési életciklus során fennálló kockázatok meghatározását és kezelését is.\n6. A szervezetnek felül kell vizsgálnia az ellátási lánc kockázatkezelési szabályzatot a meghatározott gyakorisággal.",
+          "iso_27001_ref": "A.5.19; A.5.20; A.5.21; A.8.30",
+          "nist_sp_800_53_rev5_ref": "SR-2",
+          "requirement_family": "19",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "19.2"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "19.2 – Ellátási láncra vonatkozó kockázatmenedzsment szabályzat végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-119",
+      "owner": "Pásztor András",
+      "phase": "M3_3_6M",
+      "priority": "P2",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "19.2 – Ellátási láncra vonatkozó kockázatmenedzsment szabályzat: 1) A szervezetnek meg kell határoznia azon rendszereket, rendszerelemeket vagy rendszerszolgáltatásokat, melyek ellátási láncával kapcsolatos kockázatokat kezelni kell. 2) A szervezetnek meg kell határoznia egy szabályzatot a szükséges kockázatkezelési intézkedések elvégzésére a meghatározott rendszerek, rendszerelemek vagy rendszerszolgáltatások ellátási láncával kapcsolatosan. 3) A szervezetnek felül kell vizsgálnia az ellátási lánc kockázatkezelési szabályzatot a meghatározott gyakorisággal. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "19.7",
+          "control_title": "Ellátási lánc ellenőrzések és folyamatok – Alvállalkozók",
+          "explanation": "Az ellátási lánc kockázatának hatékony és átfogó kezelése érdekében fontos, hogy az érintett szervezetek biztosítsák az ellátási lánc kockázatkezelési szabályainak beépítését az ellátási lánc összes szintjén. Ez magában foglalja azt is, hogy az 1. szintű vállalkozók megvalósították-e azokat a folyamatokat, amelyek lehetővé teszik az ellátási lánc kockázatkezelési szabályainak és intézkedéseinek továbbítását az alacsonyabb szintű alvállalkozók felé. Erről bővebb információt az Ellátási láncra vonatkozó követelmények és folyamatok című biztonsági követelményél találhat.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek fel kell mérnie a kiberbiztonsági kockázatokat, amelyek az EIR-rel összefüggő szerződésekben szerepelnek.\n2. A szervezetnek biztosítania kell, hogy a fővállalkozók tisztában vannak az EIR-rel összefüggő szerződésekben szereplő információbiztonsági követelményekkel.\n3. A szervezetnek meg kell követelnie, hogy a fővállalkozók biztosítsák, hogy az alvállalkozók szerződései is tartalmazzák az EIR-rel összefüggő szerződésekben szereplő információbiztonsági követelményeket.\n4. A szerveztnek rendszeresen felül kell vizsgálnia a fővállalkozóktól elvárt  az EIR-rel összefüggő szerződésekben szereplő információbiztonsági követelmények relevanicáját és ha szükséges módosítania kell azokat.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SR-3(3)",
+          "requirement_family": "19",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "19.7"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "19.7 – Ellátási lánc ellenőrzések és folyamatok – Alvállalkozók végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-120",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "19.7 – Ellátási lánc ellenőrzések és folyamatok – Alvállalkozók: 1) A szervezetnek fel kell mérnie a kiberbiztonsági kockázatokat, amelyek az EIR-rel összefüggő szerződésekben szerepelnek. 2) A szervezetnek biztosítania kell, hogy a fővállalkozók tisztában vannak az EIR-rel összefüggő szerződésekben szereplő információbiztonsági követelményekkel. 3) A szerveztnek rendszeresen felül kell vizsgálnia a fővállalkozóktól elvárt az EIR-rel összefüggő szerződésekben szereplő információbiztonsági követelmények relevanicáját és ha szükséges módosítania kell azokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "19.13",
+          "control_title": "Beszerzési stratégiák, eszközök és módszerek",
+          "explanation": "A beszerzési folyamat fontos eszköz lehet az ellátási lánc védelmében. Sok hasznos eszköz és technika áll rendelkezésre, beleértve az EIR és rendszerelemek végső felhasználásának elrejtését, vak vagy szűrt vásárlásokat, módosításoknak ellenálló csomagolás megkövetelését, vagy megbízható vagy ellenőrzött forgalmazás használatát. Az ellátási lánc kockázatértékeléséből származó eredmények szabhatják meg a leginkább alkalmazható stratégiákat, eszközöket és módszereket. Az eszközök és technikák védelmet nyújthatnak a jogosulatlan gyártás, lopás, manipuláció, hamisítványokra való csere, kártékony szoftverek vagy hátsó ajtók beállítása, valamint a rossz fejlesztési gyakorlatok ellen a fejlesztési életciklus során. Az érintett szervezetek azt is mérlegelhetik, hogy ösztönözzék azon szállítókat, amelyek ellenőrzéseket hajtanak végre, átláthatóságot biztosítanak folyamataikba és biztonsági és adatvédelmi gyakorlataikba, szerződést biztosítanak, amely megtiltja a hamisított elemek használatát, és korlátozzák a vásárlásokat megbízhatatlan szállítóktól. A szervezetek mérlegelik a személyzet számára a beszállítói lánccal kapcsolatos kockázatokról, a rendelkezésre álló védelmi stratégiákról és a programok alkalmazásának időpontjáról szóló képzési, oktatási és tudatosságnövelő programok biztosítását. A fejlesztési tervek, dokumentációk és bizonyítékok áttekintésére és védelmére szolgáló módszerek összemérhetőek az érintett szervezet biztonsági és adatvédelmi követelményeivel. A szerződések meghatározhatják a dokumentáció védelmi követelményeit.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek azonosítania kell az ellátási láncból eredő kockázatokat.\n2. A szervezetnek meg kell határoznia a beszerzési stratégiáit, amelyek segítenek kivédeni, azonosítani és csökkenteni az ellátási láncból eredő kockázatokat.\n3. A szervezetnek alkalmaznia kell az ellátási láncból eredő kockázatok kivédésére, azonosítására és csökkentésére szolgáló beszerzési stratégiát.\n4. A szervezetnek lehetősége van beszállítói lánccal kapcsolatos kockázatokról, a rendelkezésre álló védelmi stratégiákról  biztonságtudatosságot növelő képzést biztosíthat a személyzet számára.\n5. A szervezetnek dokumentálnia kell a beszerzési startégiát, az alkalmazott eszközöket és technikákat, melyeket rendszeresen felül kell vizsgálnia a változó fenyegetési környezet elleni eredményes védekezés érdekében.",
+          "iso_27001_ref": "A.5.20; A.5.21; A.5.23",
+          "nist_sp_800_53_rev5_ref": "SR-5",
+          "requirement_family": "19",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "19.13"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "19.13 – Beszerzési stratégiák, eszközök és módszerek végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-121",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "19.13 – Beszerzési stratégiák, eszközök és módszerek: 1) A szervezetnek azonosítania kell az ellátási láncból eredő kockázatokat. 2) A szervezetnek meg kell határoznia a beszerzési stratégiáit, amelyek segítenek kivédeni, azonosítani és csökkenteni az ellátási láncból eredő kockázatokat. 3) A szervezetnek dokumentálnia kell a beszerzési startégiát, az alkalmazott eszközöket és technikákat, melyeket rendszeresen felül kell vizsgálnia a változó fenyegetési környezet elleni eredményes védekezés érdekében. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "19.19",
+          "control_title": "Értesítési megállapodások",
+          "explanation": "Az egyezmények és eljárások létrehozása elősegíti a beszállítói láncban részt vevő szervezetek közötti kommunikációt. Az EIR, rendszerelemek vagy rendszerszolgáltatásokat negatívan befolyásoló vagy befolyásolható támadások és potenciális támadásokra figyelmeztető korai értesítése elengedhetetlen, hogy a szervezet hatékonyan reagálhasson az ilyen eseményekre. A felmérések vagy naplók eredményei tartalmazhatnak nyílt forrású információkat, amelyek hozzájárultak egy döntéshez vagy eredményhez, és segíthetnek a beszállítói láncban részt vevő szervezetnek megoldani egy problémát vagy javítani a folyamatait.\n.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia a beszállítói láncában részt vevő szervezeteket.\n2. A szervezetnek megállapodásokat kell kötnie a beszállítói láncában részt vevő szervezetekkel, amelyek meghatározzák a felelősségi köröket, a biztonsági követelményeket és a kommunikációs protokollokat.\n3. A szervezetnek rendszeresen naplót kell vezetnie a beszállítói láncának értékeléséről vagy auditálásáról.\n4. A szervezetnek biztosítania kell, hogy az EIR rendelkezik a rendszerelemeket vagy rendszerszolgálatásokat potenciálisan bekövetkező támadásokra való előrejelző figyelmeztetési képességgel.\n5. A szervezetnek lehetősége van a fenti eljárások és technikák segítségével javítania a beszállítói láncot ért biztonsági eseményekre való szervezeti reagálást.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SR-8",
+          "requirement_family": "19",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "19.19"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "19.19 – Értesítési megállapodások végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-122",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "19.19 – Értesítési megállapodások: 1) A szervezetnek meg kell határoznia a beszállítói láncában részt vevő szervezeteket. 2) A szervezetnek megállapodásokat kell kötnie a beszállítói láncában részt vevő szervezetekkel, amelyek meghatározzák a felelősségi köröket, a biztonsági követelményeket és a kommunikációs protokollokat. 3) A szervezetnek lehetősége van a fenti eljárások és technikák segítségével javítania a beszállítói láncot ért biztonsági eseményekre való szervezeti reagálást. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "19.22",
+          "control_title": "Rendszerek vagy rendszerelemek vizsgálata",
+          "explanation": "Az EIR-ek vagy rendszerelemek hamisítással kapcsolatos ellenállóképességének és felderítésének ellenőrzése a fizikai és logikai hamisítást érinti, mely az érintett szervezet által ellenőrzött területekről eltávolított EIR-ekre és rendszerelemekre vonatkozik. Az ellenőrzés szükségességére utaló jelek közé tartozik a csomagolás, a specifikációk, a gyár helyszínének vagy az alkatrész beszerzéséért felelős entitás változása, valamint amikor személyek magas kockázati besorolással rendelkező helyszínekről térnek vissza.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia mely rendszerelemeket szükséges ellenőrizni a hamisítás felderítésének érdekében.\n2. A szervezetnek szükség esetén meg kell határoznia milyen gyakorisággal ellenőrzi a meghatározott rendszerelemeket a hamisítás felderítésének érdekében.\n3. A szervezetnek alkalmaznia kell a meghatározott rendszerelemek vizsgálatát az általa meghatározott ellenőrzés szükségességére utaló jelek észlelése esetekben.\n4. A szervezetnek dokumentálnia kell a meghatározott ellenőrzés szükségességére utaló jeleket,  és valamennyi elvégzett ellenőrzést .",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SR-10",
+          "requirement_family": "19",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "19.22"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "19.22 – Rendszerek vagy rendszerelemek vizsgálata végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-123",
+      "owner": "Pásztor András",
+      "phase": "M3_3_6M",
+      "priority": "P2",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "19.22 – Rendszerek vagy rendszerelemek vizsgálata: 1) A szervezetnek meg kell határoznia mely rendszerelemeket szükséges ellenőrizni a hamisítás felderítésének érdekében. 2) A szervezetnek szükség esetén meg kell határoznia milyen gyakorisággal ellenőrzi a meghatározott rendszerelemeket a hamisítás felderítésének érdekében. 3) A szervezetnek dokumentálnia kell a meghatározott ellenőrzés szükségességére utaló jeleket, és valamennyi elvégzett ellenőrzést . Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "19.23",
+          "control_title": "Rendszerelem hitelessége",
+          "explanation": "Hamisított alkatrészek érkezhetnek gyártóktól, fejlesztőktől, szállítóktól és szerződéses partnerektől. A hamisítás elleni szabályok és eljárások támogatják a hamisítás elleni védelmet, valamint további védelmet biztosítanak a kártékony kódok ellen is.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek ki kell alakítania a hamisítás elleni szabályokat és eljárásokat.\n2. A szervezetnek jelentenie kell a hamisított rendszerelemeket és azok forrását a szervezet által meghatározott személyeknek vagy szerepköröknek.\n3. A szervezetnek dokumentálnia kell, amennyiben hamisított rendszerelemeket vagy alkatrészeket fedez fel és fel kel vennie a kapcsolatot a hamisított alkatrész forrásával, vagy az illetékes hatósággal.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SR-11",
+          "requirement_family": "19",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "19.23"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "19.23 – Rendszerelem hitelessége végrehajtási csomag: jóváhagyott EIR-scope, 3 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 3 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-124",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "19.23 – Rendszerelem hitelessége: 1) A szervezetnek ki kell alakítania a hamisítás elleni szabályokat és eljárásokat. 2) A szervezetnek jelentenie kell a hamisított rendszerelemeket és azok forrását a szervezet által meghatározott személyeknek vagy szerepköröknek. 3) A szervezetnek dokumentálnia kell, amennyiben hamisított rendszerelemeket vagy alkatrészeket fedez fel és fel kel vennie a kapcsolatot a hamisított alkatrész forrásával, vagy az illetékes hatósággal. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "19.24",
+          "control_title": "Rendszerelem hitelessége – Hamisítás elleni képzés",
+          "explanation": "Az érintett szervezetnek meg kell határozni a rendszerek felügyeletéért felelős szerepköröket, majd ezen szerepkörök részére olyan képzési programokat kell kialakítania és végrehajtania, amelyek segítenek megérteni és felismerni a hamisított rendszerelemeket. A képzésnek magában kell foglalnia a hamisított hardverek, szoftverek és firmware-ek felismerésének módszereit és technikáit. A képzésnek részletesnek kell lennie, és magában kell foglalnia a hamisított EIR-ekkel kapcsolatos legújabb trendeket és fenyegetéseket.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia, mely személyek vagy szerepkörök felelősek az rendszerek felügyeletéért és kezeléséért.\n2. A szervezetnek ki kell dolgoznia egy képzési programot, amely részletesen bemutatja, hogyan lehet felismerni a hamisított hardvert, szoftvert és firmware-t.\n3. A szervezetnek implementálnia kell a képzési programot, és biztosítania kell, hogy a meghatározott személyek vagy szerepkörök részt vesznek a képzésen.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SR-11(1)",
+          "requirement_family": "19",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "19.24"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "19.24 – Rendszerelem hitelessége – Hamisítás elleni képzés végrehajtási csomag: jóváhagyott EIR-scope, 3 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 3 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-125",
+      "owner": "Pásztor András",
+      "phase": "M2_31_90D",
+      "priority": "P1",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "19.24 – Rendszerelem hitelessége – Hamisítás elleni képzés: 1) A szervezetnek meg kell határoznia, mely személyek vagy szerepkörök felelősek az rendszerek felügyeletéért és kezeléséért. 2) A szervezetnek ki kell dolgoznia egy képzési programot, amely részletesen bemutatja, hogyan lehet felismerni a hamisított hardvert, szoftvert és firmware-t. 3) A szervezetnek implementálnia kell a képzési programot, és biztosítania kell, hogy a meghatározott személyek vagy szerepkörök részt vesznek a képzésen. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "19.25",
+          "control_title": "Rendszerelem hitelessége – Konfigurációfelügyelet",
+          "explanation": "A konfigurációfelügyelet magában foglalja a változások naplózását, amelyeket a rendszerelemen végeznek, beleértve a szervizelést és a javítást is. A naplózás lehetővé teszi az érintett szervezet számára, hogy nyomon követhesse a rendszerelem teljes élettartamát, és biztosítsa, hogy minden változást megfelelően dokumentálnak és ellenőriznek.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek nyilvántartást kell vezetnie a rendszerelemekről, amelyek szervizelésre vagy javításra várnak, vagy amelyeket már szervizeltek vagy javítottak, és arra várnak, hogy újból üzembe állítsák őket\n2. A szervezetnek ki kell dolgoznia egy konfiguráció felügyeleti rendszert, mely lehetővé teszi a konfiguráció felügyeletét a meghatározott rendszerelemekre.\n3. A szervezetnek alkalmaznia kell a meghatározott felügyeleti rendszert a meghatározott rendszerelemekre.\n4. A szervezetnek minden egyes rendszerelemen elvégzett módosítást naplóznia kell, hogy nyomon követhetőek legyenek a változások a rendszerelem teljes életciklusa alatt.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SR-11(2)",
+          "requirement_family": "19",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "19.25"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "19.25 – Rendszerelem hitelessége – Konfigurációfelügyelet végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-126",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "19.25 – Rendszerelem hitelessége – Konfigurációfelügyelet: 1) A szervezetnek nyilvántartást kell vezetnie a rendszerelemekről, amelyek szervizelésre vagy javításra várnak, vagy amelyeket már szervizeltek vagy javítottak, és arra várnak, hogy újból üzembe állítsák őket 2) A szervezetnek ki kell dolgoznia egy konfiguráció felügyeleti rendszert, mely lehetővé teszi a konfiguráció felügyeletét a meghatározott rendszerelemekre. 3) A szervezetnek minden egyes rendszerelemen elvégzett módosítást naplóznia kell, hogy nyomon követhetőek legyenek a változások a rendszerelem teljes életciklusa alatt. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "ai_eligibility": "partial",
+      "ai_role": "remediation_planner",
+      "approver": "Lángi Zoltán",
+      "control_details": [
+        {
+          "basic_applicability": "X",
+          "control_ref": "19.27",
+          "control_title": "Rendszerelem selejtezése, megsemmisítése",
+          "explanation": "Az adatok, dokumentációk, eszközök vagy rendszerelemek bármikor selejtezhetők a rendszerfejlesztési életciklus során. Például a selejtezés megtörténhet a kutatás és fejlesztés, tervezés, prototípus készítés vagy üzemeltetés/karbantartás során és magában foglalhat olyan módszereket, mint a lemez tisztítása, a kriptográfiai kulcsok eltávolítása, az alkatrészek részleges újrafelhasználása. A selejtezés során bekövetkezett esetleges kompromittálódás érinti a fizikai és logikai adatokat, beleértve a papíralapú vagy digitális formában meglévő rendszerdokumentációt; a szállítással és kézbesítéssel kapcsolatos dokumentációt; a szoftverkóddal rendelkező memóriakártyákat; illetve routereket vagy szervereket, amelyek állandó adathordozóval rendelkeznek és bizalmas, vagy védett információkat tartalmazhatnak. Emellett az rendszerelemek megfelelő selejtezése segít megakadályozni, hogy az említett elemekkel kétes eredetű árukat forgalmazó piactereken kereskedjenek.",
+          "high_applicability": "X",
+          "human_review_status": "PROPOSED",
+          "implementation_steps": "1. A szervezetnek meg kell határoznia, mely adatokat, dokumentációkat, eszközöket és rendszerelemeket kell selejteznie.\n2. A szervezetnek ki kell dolgoznia egy módszertant és technikákat a selejtezésre.\n3. A szervezetnek alkalmaznia kell a kidolgozott selejtezési módszertant a selejtezére szorú rendszerelemekre.\n4. A szervezetnek dokumentálnia kell a selejtezést és annak tárgyát képező rendszerelemet, alkatrészt vagy adatot, valamint gondoskodnia kell az érintett elemek kivezetéséről rendszerelem leltárból.",
+          "iso_27001_ref": "Nincs vonatkozó referencia.",
+          "nist_sp_800_53_rev5_ref": "SR-12",
+          "requirement_family": "19",
+          "significant_applicability": "X",
+          "source_confidence": "unverified_internal",
+          "source_ref": "SRC-009"
+        }
+      ],
+      "control_refs": [
+        "19.27"
+      ],
+      "cost_band": "B0",
+      "days_to_target": null,
+      "deadline_bucket": "DATE_REQUIRED",
+      "deliverable": "19.27 – Rendszerelem selejtezése, megsemmisítése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
+      "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
+      "external_submission": "no",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "id": "A-127",
+      "owner": "Pásztor András",
+      "phase": "M1_0_30D",
+      "priority": "P0",
+      "source_confidence": "machine_unvalidated",
+      "source_ref": "SRC-008",
+      "status": "NEW",
+      "target_date": "Emberi ütemezés szükséges",
+      "task": "19.27 – Rendszerelem selejtezése, megsemmisítése: 1) A szervezetnek meg kell határoznia, mely adatokat, dokumentációkat, eszközöket és rendszerelemeket kell selejteznie. 2) A szervezetnek ki kell dolgoznia egy módszertant és technikákat a selejtezésre. 3) A szervezetnek dokumentálnia kell a selejtezést és annak tárgyát képező rendszerelemet, alkatrészt vagy adatot, valamint gondoskodnia kell az érintett elemek kivezetéséről rendszerelem leltárból. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
+      "title": "Ellátási lánc kockázatkezelése"
     }
   ],
   "agent_pilot": {
@@ -2907,6 +6784,806 @@ window.NIS2_DEMO_DATA = {
       "title": "Műszaki stabilizálás"
     },
     {
+      "action_id": "A-043",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-045",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-046",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-047",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-048",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-049",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-050",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-051",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-052",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-053",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-054",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-056",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-058",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-059",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-060",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-062",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-064",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-065",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "action_id": "A-066",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "action_id": "A-067",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "action_id": "A-069",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Naplózás és elszámoltathatóság"
+    },
+    {
+      "action_id": "A-071",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Naplózás és elszámoltathatóság"
+    },
+    {
+      "action_id": "A-074",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-075",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-076",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-077",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-078",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-079",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "action_id": "A-080",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "action_id": "A-081",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "action_id": "A-083",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "action_id": "A-086",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Üzletmenet-folytonosság és helyreállítás"
+    },
+    {
+      "action_id": "A-087",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "action_id": "A-088",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "action_id": "A-089",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "action_id": "A-090",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "action_id": "A-091",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "action_id": "A-092",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "action_id": "A-093",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "action_id": "A-096",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági események kezelése"
+    },
+    {
+      "action_id": "A-097",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági események kezelése"
+    },
+    {
+      "action_id": "A-098",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági események kezelése"
+    },
+    {
+      "action_id": "A-099",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Karbantartás"
+    },
+    {
+      "action_id": "A-100",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Karbantartás"
+    },
+    {
+      "action_id": "A-101",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Karbantartás"
+    },
+    {
+      "action_id": "A-103",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és szolgáltatásbeszerzés"
+    },
+    {
+      "action_id": "A-104",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és szolgáltatásbeszerzés"
+    },
+    {
+      "action_id": "A-107",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "action_id": "A-109",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "action_id": "A-110",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "action_id": "A-111",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "action_id": "A-112",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "action_id": "A-113",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "action_id": "A-118",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "action_id": "A-120",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-121",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-124",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-126",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-127",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
       "action_id": "A-032",
       "approver": "Lángi Zoltán",
       "gates": [
@@ -3176,6 +7853,268 @@ window.NIS2_DEMO_DATA = {
       "title": "Folyamatos auditfelkészültség"
     },
     {
+      "action_id": "A-044",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-055",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-057",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-063",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-068",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Naplózás és elszámoltathatóság"
+    },
+    {
+      "action_id": "A-070",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Naplózás és elszámoltathatóság"
+    },
+    {
+      "action_id": "A-072",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-082",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "action_id": "A-084",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Konfigurációkezelés"
+    },
+    {
+      "action_id": "A-085",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Üzletmenet-folytonosság és helyreállítás"
+    },
+    {
+      "action_id": "A-094",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "action_id": "A-095",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Azonosítás és hitelesítés"
+    },
+    {
+      "action_id": "A-102",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Fizikai és környezeti védelem"
+    },
+    {
+      "action_id": "A-106",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "action_id": "A-108",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "action_id": "A-114",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "action_id": "A-117",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "action_id": "A-122",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-125",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
       "action_id": "A-034",
       "approver": "Lángi Zoltán",
       "gates": [
@@ -3210,6 +8149,101 @@ window.NIS2_DEMO_DATA = {
       "status": "EMBERI DÖNTÉSRE VÁR",
       "target_date": "Emberi ütemezés szükséges",
       "title": "AD/DHCP konszolidáció"
+    },
+    {
+      "action_id": "A-061",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Hozzáférés-felügyelet"
+    },
+    {
+      "action_id": "A-073",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-105",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és kommunikációvédelem"
+    },
+    {
+      "action_id": "A-115",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "action_id": "A-116",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL",
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Rendszer- és információsértetlenség"
+    },
+    {
+      "action_id": "A-119",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-123",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "Emberi ütemezés szükséges",
+      "title": "Ellátási lánc kockázatkezelése"
     }
   ],
   "catalog_review": {
@@ -3804,6 +8838,26 @@ window.NIS2_DEMO_DATA = {
       "related": "16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
       "required": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.",
       "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+      "gate": "Bármely nem loopback használat, többfelhasználós pilot, valós bejelentkezés, SharePoint-feltöltés vagy szervertelepítés előtt.",
+      "id": "DEF-038",
+      "owner": "Pásztor András; kijelölendő portálüzemeltető",
+      "process_state": "Elkészült a többfelhasználós pilot tranzakciós SQLite-tárolása, párhuzamos állapotvédelme, csatolmány- és hash-kezelése, korábbi JSONL-adatok egyszeri átvétele, ellenőrzött mentése, fail-closed konfigurációja, indító/mentő segédje és UAT-terve. A hálózati publikálás, hitelesítés, szerepkör-kikényszerítés és SharePoint-írás kikapcsolt.",
+      "related": "D-029; D-032; D-033; D-034; config/multiuser_pilot.json; MULTIUSER_PILOT_DEPLOYMENT.md; PILOT_UAT_CHECKLIST.md",
+      "required": "Belső Windows szerver, üzemeltető, DNS, hálózati zóna, HTTPS gateway és tanúsítvány; Entra tenant/client/redirect adatok és támogatott auth-könyvtár; Entra object ID alapú, jóváhagyott szerepkiosztás; kiválasztott hatókörű Graph/site/folder grant; secret-store és naplóretention; G1/G2/G3 jóváhagyás; a 16 pontos UAT, mentési és elkülönített visszaállítási próba valós reviewerrel és védett evidenciával.",
+      "status": "OPEN_DEFERRED"
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; érintett G1/G3/G4 reviewer",
+      "gate": "A cselekvési terv végleges aláírása, a javasolt dátumok kanonikus átvezetése, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.",
+      "id": "DEF-039",
+      "owner": "Pásztor András; javasolt kontrollgazdák",
+      "process_state": "Mind a 85 lefedettségpótló akcióhoz elkészült a kontrollspecifikus végrehajtási checklist, mérhető elfogadási feltétel, evidenciaelvárás, javasolt kontrollgazda/közreműködő és proposal-only ütemezés. A kanonikus céldátumok és jóváhagyási státuszok nem változtak.",
+      "related": "A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md",
+      "required": "A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a javasolt 2026-09-11-i G1 review és 2027-01-31/2027-04-30/2027-06-30 teljesítési hullámok G2/G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.",
+      "status": "OPEN_DEFERRED"
     }
   ],
   "gate_legend": [
@@ -4028,7 +9082,7 @@ window.NIS2_DEMO_DATA = {
     ]
   },
   "meta": {
-    "as_of": "2026-07-30",
+    "as_of": "2026-08-19",
     "auth_status": "NOT_CONFIGURED",
     "disclaimer": "A felület helyi MVP. A review-tervezet nem jóváhagyás, nem evidencia, nem módosít akcióstátuszt és a portál nem hajt végre jóváhagyást.",
     "mode": "LOCAL_MVP",
@@ -4054,15 +9108,15 @@ window.NIS2_DEMO_DATA = {
   "reconciliation_drafts": [],
   "review_drafts": [],
   "sharepoint_integration": {
-    "captured_at": "2026-07-27T20:43:00+02:00",
+    "captured_at": "2026-08-19T09:30:00+02:00",
     "formal_effect": false,
-    "linked_task_count": 37,
+    "linked_task_count": 39,
     "list_url": "https://metalcom.sharepoint.com/sites/NIS2/Lists/NIS2%20emberi%20feladatok/AllItems.aspx",
     "mode": "READ_ONLY_CONNECTOR_SNAPSHOT",
     "network_allowed": false,
     "site_url": "https://metalcom.sharepoint.com/sites/NIS2",
     "status": "READ_ONLY_SNAPSHOT_ACTIVE",
-    "task_count": 37,
+    "task_count": 39,
     "unlinked_task_count": 0,
     "write_back_allowed": false
   },
@@ -4675,6 +9729,38 @@ window.NIS2_DEMO_DATA = {
       "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
       "status": "OPEN_DEFERRED",
       "write_back_allowed": false
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+      "evidence_label": "Többfelhasználós portálpilot műszaki és UAT evidenciáinak célmappája",
+      "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/04_TECHNICAL",
+      "formal_effect": false,
+      "gate": "Bármely nem loopback használat, többfelhasználós pilot, valós bejelentkezés, SharePoint-feltöltés vagy szervertelepítés előtt.",
+      "id": "DEF-038",
+      "owner": "Pásztor András; kijelölendő portálüzemeltető",
+      "process_state": "Elkészült a többfelhasználós pilot tranzakciós SQLite-tárolása, párhuzamos állapotvédelme, csatolmány- és hash-kezelése, korábbi JSONL-adatok egyszeri átvétele, ellenőrzött mentése, fail-closed konfigurációja, indító/mentő segédje és UAT-terve. A hálózati publikálás, hitelesítés, szerepkör-kikényszerítés és SharePoint-írás kikapcsolt.",
+      "related": "D-029; D-032; D-033; D-034; config/multiuser_pilot.json; MULTIUSER_PILOT_DEPLOYMENT.md; PILOT_UAT_CHECKLIST.md",
+      "required": "Belső Windows szerver, üzemeltető, DNS, hálózati zóna, HTTPS gateway és tanúsítvány; Entra tenant/client/redirect adatok és támogatott auth-könyvtár; Entra object ID alapú, jóváhagyott szerepkiosztás; kiválasztott hatókörű Graph/site/folder grant; secret-store és naplóretention; G1/G2/G3 jóváhagyás; a 16 pontos UAT, mentési és elkülönített visszaállítási próba valós reviewerrel és védett evidenciával.",
+      "sharepoint_status": "Nyitott",
+      "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
+      "status": "OPEN_DEFERRED",
+      "write_back_allowed": false
+    },
+    {
+      "approver": "Lángi Zoltán; Dr. Berta Brigitta; érintett G1/G3/G4 reviewer",
+      "evidence_label": "A-043–A-127 szakmai és határidő-jóváhagyásának célmappája",
+      "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE",
+      "formal_effect": false,
+      "gate": "A cselekvési terv végleges aláírása, a javasolt dátumok kanonikus átvezetése, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.",
+      "id": "DEF-039",
+      "owner": "Pásztor András; javasolt kontrollgazdák",
+      "process_state": "Mind a 85 lefedettségpótló akcióhoz elkészült a kontrollspecifikus végrehajtási checklist, mérhető elfogadási feltétel, evidenciaelvárás, javasolt kontrollgazda/közreműködő és proposal-only ütemezés. A kanonikus céldátumok és jóváhagyási státuszok nem változtak.",
+      "related": "A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md",
+      "required": "A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a javasolt 2026-09-11-i G1 review és 2027-01-31/2027-04-30/2027-06-30 teljesítési hullámok G2/G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.",
+      "sharepoint_status": "Nyitott",
+      "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
+      "status": "OPEN_DEFERRED",
+      "write_back_allowed": false
     }
   ],
   "summary": {
@@ -4684,38 +9770,38 @@ window.NIS2_DEMO_DATA = {
     "catalog_pending_checks": 6,
     "catalog_pending_eir_classifications": 5,
     "catalog_review_status": "PENDING_G1_REVIEW",
-    "days_to_deadline": 56,
+    "days_to_deadline": 36,
     "deadline_reconciliation_pending": 16,
-    "due_within_30_days": 9,
-    "due_within_7_days": 0,
+    "due_within_30_days": 3,
+    "due_within_7_days": 6,
     "gate_counts": {
-      "G1": 12,
-      "G2": 14,
-      "G3": 11,
+      "G1": 97,
+      "G2": 99,
+      "G3": 63,
       "G4": 4,
       "G5": 6
     },
     "human_task_pilot_count": 5,
     "human_task_ready_for_review": 0,
     "in_progress": 7,
-    "linked_human_tasks": 37,
-    "new_actions": 34,
-    "open_human_tasks": 35,
-    "overdue_actions": 16,
-    "p0_actions": 17,
+    "linked_human_tasks": 39,
+    "new_actions": 119,
+    "open_human_tasks": 37,
+    "overdue_actions": 19,
+    "p0_actions": 76,
     "priority_counts": {
-      "P0": 17,
-      "P1": 22,
-      "P2": 3
+      "P0": 76,
+      "P1": 41,
+      "P2": 10
     },
     "repeat_audit_target": "2027-09-30",
     "status_counts": {
       "DONE": 1,
       "IN_PROGRESS": 7,
-      "NEW": 34
+      "NEW": 119
     },
-    "total_actions": 42,
-    "undated_actions": 9,
+    "total_actions": 127,
+    "undated_actions": 94,
     "unlinked_human_tasks": 0
   }
 };

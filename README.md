@@ -56,7 +56,7 @@ python -m unittest discover -s tests -v
 
 ### Helyi portál-MVP
 
-A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 37 emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. A D-032 szerinti „Az én munkám” nézet öt valós W1 feladatot közérthető cél, ellenőrzőlista, felelős/reviewer és egyértelmű következő lépés mentén vezet végig. A munkalépések append-only, hash-láncolt helyi naplóba kerülnek. A review-, munkafolyamat- és lejártakció-egyeztetési rekordok hitelesített belépésig tervezetek: nem formális jóváhagyások vagy evidenciák, és nem módosítanak kanonikus státuszt vagy céldátumot.
+A D-028 célállapot első működő, dependency-free MVP-je a `portal_demo/` felület és a Python standard library alapú helyi kiszolgáló. A portál élőben olvassa a repository nem érzékeny akció-, határidő-, evidenciahiány- és A-042 pilot-metaadatait. A 38 nyilvántartott emberi feladathoz ellenőrzött, helyi pillanatképből SharePoint-dokumentumhivatkozást mutat; ez még nem élő Graph-szinkron és nem ír vissza a SharePointba. A D-032 szerinti „Az én munkám” nézet öt valós W1 feladatot közérthető cél, ellenőrzőlista, felelős/reviewer és egyértelmű következő lépés mentén vezet végig. A munkalépések append-only, hash-láncolt helyi naplóba kerülnek. A review-, munkafolyamat- és lejártakció-egyeztetési rekordok hitelesített belépésig tervezetek: nem formális jóváhagyások vagy evidenciák, és nem módosítanak kanonikus státuszt vagy céldátumot.
 
 A `daily-execution-brief` parancs egy megadott állapotdátumra, determinisztikusan
 elkészíti a résztvevők napi munkasorrendjét. Külön mutatja a lejárt, 7 napon
@@ -115,9 +115,9 @@ akciórekord preflight előtti és várt utáni hash-éhez méri az aktuális
 állapotot külön jelzi; bármely más eltérésnél leáll. Az ellenőrzés az
 evidencia-review-t szándékosan külön, emberi kapun hagyja.
 
-A 36 nyitott tétel egyetlen, hét végrehajtási hullámra rendezett emberi
+A 37 nyitott tétel egyetlen, hét végrehajtási hullámra rendezett emberi
 munkacsomagja a [HUMAN_EXECUTION_PACKAGE_2026-07-29.md](HUMAN_EXECUTION_PACKAGE_2026-07-29.md),
-gépileg feldolgozható párja a `data/human_execution_package.json`. Mind a 36
+gépileg feldolgozható párja a `data/human_execution_package.json`. Mind a 37
 `OPEN_DEFERRED` tételhez külön nyomtatható és kézzel aláírható Word-munkalap
 készült a `portal_materials/` könyvtárban. A teljes fájljegyzék és a SHA-256
 értékek a `data/human_decision_document_manifest.json`, az átadócsomag a
@@ -256,7 +256,7 @@ A D-028 szerinti végfelhasználói célfelület egy helyi hálózaton, böngés
 A D-032/D-033 szerinti helyi emberifeladat-pilot az **Az én munkám**
 nézetben öt valós feladathoz közvetlenül letölthető Word-munkalapot, helyi
 csatolmány-előkészítést és automatikus SHA-256 számítást biztosít. A
-teljes, 36 feladatos nyomtatható csomag ettől függetlenül elkészült; a további
+teljes, 37 nyitott feladatos nyomtatható csomag ettől függetlenül elkészült; a további
 lapok portálkártyákhoz kötése külön felületbővítés. A
 kitöltött munkapéldányok a Gitből kizárt `portal_runtime/attachments/`
 területre kerülnek. A végleges fájlt továbbra is ember tölti fel a védett
@@ -298,7 +298,7 @@ Az A-037–A-041 szabályozási baseline-ok a [POLICY_BASELINE_WORK_PACKAGES.md]
 
 Az A-042 fájlalapú, local-first pilotja a [CONTINUOUS_ASSURANCE_AGENT_PILOT.md](CONTINUOUS_ASSURANCE_AGENT_PILOT.md) szerint futtatható. Csak allowlistelt szintetikus metaadatot dolgoz fel, proposalokat, approval queue-t és auditlogot készít; minden automatikus elfogadó, lezáró, külső, fizetős vagy éles művelet tiltott.
 
-Az előkészítési állapot összesítése: [PREPARATION_COVERAGE_REPORT_2026-07-17.md](PREPARATION_COVERAGE_REPORT_2026-07-17.md). Mind a 42 akcióhoz van completion report; a következő szakasz emberi evidenciagyűjtés és kapus végrehajtás a [NEXT_EXECUTION_QUEUE_2026-07-16.md](NEXT_EXECUTION_QUEUE_2026-07-16.md) szerint.
+Az eredeti 42 akció előkészítési állapotát a [PREPARATION_COVERAGE_REPORT_2026-07-17.md](PREPARATION_COVERAGE_REPORT_2026-07-17.md) foglalja össze. A 2026-08-18-i lefedettségpótlás további 85, kontrollszintű javaslatot hozott létre (A-043–A-127), így mind a 156 eltéréssel érintett követelménycsoporthoz tartozik közvetlen intézkedés. A 2026-08-19-i érlelési kör mindegyik új tételhez kontrollspecifikus végrehajtási checklistet, mérhető elfogadási feltételt, evidenciaelvárást, javasolt kontrollgazdát/közreműködőt és proposal-only ütemezést adott. A részletes gépi regiszter a [data/action_execution_details.csv](data/action_execution_details.csv), az emberi döntési munkalap a [COVERAGE_MATURATION_REVIEW_2026-08-19.md](COVERAGE_MATURATION_REVIEW_2026-08-19.md). G1/G2/G3/G4 jóváhagyás továbbra is szükséges.
 
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
@@ -332,6 +332,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Mind a 42 akció előkészítő csomagja elkészült. A D-028 portál helyi MVP-je élő repository-nézettel, review- és lejártakció-egyeztetési tervezet auditnyommal, valamint A-042 pilotmegjelenítéssel rendelkezik; belső hálózati pilotja a DEF-015/DEF-020/DEF-032 emberi kapui mögött marad. A következő szakasz az emberi evidenciagyűjtés, review, aláírás és kontrollált végrehajtás.
+Az eredeti 42 akció előkészítő csomagja elkészült; a nyilvántartás a lefedettségpótlás után 127 intézkedést tartalmaz. Az A-043–A-127 kontrollspecifikus végrehajtási terve elkészült, de `PROPOSAL` státuszú: a programfelelős mellett külön javasolt kontrollgazdát, közreműködőket, részletes lépéseket, acceptance criteriát és három teljesítési hullámot tartalmaz. Emberi G1/G2 review, a TBD belső kontrollgazdák kijelölése, az 52 technikai tétel G3 review-ja és a dátumok G4 jóváhagyása után válhat végrehajtási baseline-ná. A D-028 portál helyi MVP-je élő repository-nézettel, review- és lejártakció-egyeztetési tervezet auditnyommal, valamint A-042 pilotmegjelenítéssel rendelkezik; belső hálózati pilotja a DEF-015/DEF-020/DEF-032 emberi kapui mögött marad. A következő szakasz az emberi review, az elfogadott szerepek és dátumok átvezetése, majd az evidenciagyűjtés és kontrollált végrehajtás.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 local-only fixture pilot elindult; valós adatforrásra vagy ütemezett működésre a DEF-033 emberi kapui előtt nem bővíthető.

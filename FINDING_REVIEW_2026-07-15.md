@@ -11,8 +11,8 @@
   "confidence": "medium",
   "proposed_changes": [
     "328 rekordos finding-regiszter emberi mintavétele",
-    "104 soros control-action-evidence mapping owner review-ja",
-    "hiányzó pontos kontrollkapcsolatokhoz új vagy pontosított akciók"
+    "189 soros control-action-evidence mapping owner review-ja",
+    "85 lefedettségpótló kontrollszintű akció szakmai, felelősi és határidő-review-ja"
   ],
   "required_human_gate": "G1_DOMAIN_REVIEW",
   "forbidden_automatic_actions": ["close_action", "accept_evidence", "submit_external", "change_production"]
@@ -52,13 +52,15 @@ Rekordonként ellenőrizendő: `section_ref`, környezet, kontroll, cím, érté
 
 | Kapcsolat | Finding | Jelentés |
 |---|---:|---|
-| `DIRECT` | 121 | Legalább egy akció pontos `control_ref` értékkel kapcsolódik. Ez sem jelent automatikus lezárást. |
-| `FAMILY_ONLY` | 43 | Csak követelménycsalád-szintű kapcsolat; szakmai pontosítás szükséges. |
-| `UNMAPPED` | 164 | Nincs kompatibilis pontos vagy családszintű akciókapcsolat. |
+| `DIRECT` | 310 | Mind a 310 eltéréshez legalább egy pontos `control_ref` alapú akciójavaslat kapcsolódik. Ez nem jelent megvalósítást vagy lezárást. |
+| `FAMILY_ONLY` | 5 | Mind az öt rekord `Megfelelt`; családszintű projektkapcsolatuk megmaradt. |
+| `UNMAPPED` | 13 | Mind a tizenhárom rekord `Megfelelt`; javító akció nem szükséges pusztán a mapping teljességéért. |
 
-A mapping 104 sort és mind a 42 akcióhoz legalább egy javasolt sort tartalmaz. Tizenegy mapping-sorhoz nem tartozik finding, mert az akció hatóköre (`Infrastruktúra`, illetve `Hálózat-kommunikációs;Biztonsági`) nem azonos a jelentés négy auditált környezetnevével. Ezek: `M-0048`–`M-0054`, `M-0061`, `M-0062`, `M-0070`, `M-0071`. Ez nem adatvesztés, hanem explicit scope-illesztési hiány.
+A 2026-08-18-i lefedettségpótlás 85 új, kontrollszintű `NEW/PROPOSAL` akciót (`A-043`–`A-127`) és 85 pontos mapping-sort adott hozzá. A mapping így 189 sort és mind a 127 akcióhoz legalább egy javasolt sort tartalmaz. A korábbi 85 kontrollszintű és 189 finding-szintű közvetlen hiány gépileg megszűnt. A részletes emberi review-csomag a `COVERAGE_EXPANSION_G1_REVIEW_2026-08-18.md` fájlban található.
 
-Duplikált `mapping_id` nincs. Egy akció több családhoz vagy kontrollhoz tartozhat, ezért az ismétlődő `action_id` elvárt. A `PROPOSED` mapping csak Lángi Zoltán G1 owner sign-offja után minősíthető jóváhagyottnak.
+Tizenegy korábbi mapping-sorhoz továbbra sem tartozik finding, mert az akció hatóköre (`Infrastruktúra`, illetve `Hálózat-kommunikációs;Biztonsági`) nem azonos a jelentés négy auditált környezetnevével. Ezek: `M-0048`–`M-0054`, `M-0061`, `M-0062`, `M-0070`, `M-0071`. Ez nem adatvesztés, hanem explicit scope-illesztési hiány.
+
+Duplikált `mapping_id` nincs. Egy akció több családhoz vagy kontrollhoz tartozhat, ezért az ismétlődő `action_id` elvárt. A 189 `PROPOSED` mapping-sor csak Lángi Zoltán G1/G2 owner sign-offja után minősíthető jóváhagyottnak. Az új akciók konkrét céldátuma és tényleges kontrollgazdája szintén emberi döntésre vár.
 
 ## Jóváhagyási blokk
 

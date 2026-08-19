@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "status": "PRINTABLE_DRAFTS_READY_FOR_HUMAN_EXECUTION",
-  "as_of": "2026-07-30",
+  "as_of": "2026-08-19",
   "formal_effect": false,
   "source_ref": "data/human_execution_package.json",
-  "source_sha256": "9b0fe479cadf7c06b4cef9664ccccd2c3ebcfd12191c9c5226241e2b8c1ab2ce",
-  "document_count": 36,
+  "source_sha256": "ca54b5d336700d699fb936391fa7fdb8678b520e463f3350c05b42c0fb13758a",
+  "document_count": 37,
   "index": {
     "path": "portal_materials/NIS2_emberi_dontesi_dokumentumjegyzek.docx",
-    "sha256": "3c6f5a78aac8c27c8fe85c206eda58e8be1b78788664588ecbc28619b55c181b"
+    "sha256": "6431f6b129b9714c5433fb447b500716e53c8644c4a61c0e5d2255682f843333"
   },
   "documents": [
     {
@@ -261,6 +261,13 @@
       "title": "Többfelhasználós portálpilot indítási döntése",
       "path": "portal_materials/DEF-038_tobbfelhasznalos_portalpilot_inditasi_dontese.docx",
       "sha256": "f11e97c5c04a0195de00f062e53acba41315e3a64732062d78fc5b1420393d19",
+      "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
+    },
+    {
+      "task_id": "DEF-039",
+      "title": "Lefedettségpótló akciók szakmai és határidő-jóváhagyása",
+      "path": "portal_materials/DEF-039_lefedettsegpotlo_akciok_szakmai_es_hatarido_jovahagyasa.docx",
+      "sha256": "1c3d4b4fcad382773b582f80b64ae5b51f0395a2561772d79ea5394273918861",
       "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
     }
   ],

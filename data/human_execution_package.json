@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
   "status": "HUMAN_EXECUTION_REQUIRED",
-  "as_of": "2026-07-30",
+  "as_of": "2026-07-29",
   "source_ref": "DEFERRED_EVIDENCE_LOG.md",
-  "source_sha256": "1f2f333b8419fdbd5581772265f0a2de56c4c864d19b716640ae946818f944a0",
+  "source_sha256": "f68c3120c673b3e0409124c9293ab2fae9fa86c57d8885079c27c5277e22017a",
   "formal_effect": false,
   "summary": {
-    "task_count": 37,
-    "open_deferred_count": 36,
+    "task_count": 38,
+    "open_deferred_count": 37,
     "accepted_risk_count": 1,
     "closed_accepted_count": 1,
     "wave_count": 7,
@@ -26,6 +26,7 @@
       "Pásztor András; Kóczán Mónika": 1,
       "Pásztor András; Kóczán Mónika; Koncz Erika; Kollár Csaba; kijelölendő belső kontroll-/alkalmazásgazdák": 1,
       "Pásztor András; Német Péter": 1,
+      "Pásztor András; javasolt kontrollgazdák": 1,
       "Pásztor András; kijelölendő SharePoint-/backup-owner": 1,
       "Pásztor András; kijelölendő agent-/portálüzemeltető és forrásgazdák": 1,
       "Pásztor András; kijelölendő agent-üzemeltető és forrásgazdák": 1,
@@ -47,13 +48,14 @@
     "DEF-023",
     "DEF-029",
     "DEF-037",
-    "DEF-038"
+    "DEF-038",
+    "DEF-039"
   ],
   "waves": [
     {
       "wave_id": "W1",
       "title": "Irányítás, határidők és döntési alapok",
-      "task_count": 12,
+      "task_count": 13,
       "tasks": [
         {
           "task_id": "DEF-002",
@@ -273,6 +275,25 @@
           "must_be_completed_before": "Bármely nem loopback használat, többfelhasználós pilot, valós bejelentkezés, SharePoint-feltöltés vagy szervertelepítés előtt.",
           "owner": "Pásztor András; kijelölendő portálüzemeltető",
           "approver": "Lángi Zoltán; Dr. Berta Brigitta; jogosult G3 approver",
+          "completion_requirements": [
+            "actual_artifact_or_decision_created",
+            "protected_nis2_sharepoint_uri_recorded",
+            "sha256_recorded",
+            "named_reviewer_recorded",
+            "timezone_aware_review_time_recorded",
+            "decision_reference_recorded"
+          ],
+          "automatic_completion_allowed": false
+        },
+        {
+          "task_id": "DEF-039",
+          "status": "OPEN_DEFERRED",
+          "related": "A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md",
+          "current_process_state": "Mind a 85 lefedettségpótló akcióhoz elkészült a kontrollspecifikus végrehajtási checklist, mérhető elfogadási feltétel, evidenciaelvárás, javasolt kontrollgazda/közreműködő és proposal-only ütemezés. A kanonikus céldátumok és jóváhagyási státuszok nem változtak.",
+          "required_result": "A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a javasolt 2026-09-11-i G1 review és 2027-01-31/2027-04-30/2027-06-30 teljesítési hullámok G2/G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.",
+          "must_be_completed_before": "A cselekvési terv végleges aláírása, a javasolt dátumok kanonikus átvezetése, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.",
+          "owner": "Pásztor András; javasolt kontrollgazdák",
+          "approver": "Lángi Zoltán; Dr. Berta Brigitta; érintett G1/G3/G4 reviewer",
           "completion_requirements": [
             "actual_artifact_or_decision_created",
             "protected_nis2_sharepoint_uri_recorded",

@@ -128,7 +128,7 @@ class PortalMvpTests(unittest.TestCase):
                 reconciliation_store,
                 task_workflow_store,
             )
-        self.assertEqual(42, snapshot["summary"]["total_actions"])
+        self.assertEqual(127, snapshot["summary"]["total_actions"])
         self.assertEqual(66, snapshot["summary"]["days_to_deadline"])
         self.assertGreater(snapshot["summary"]["overdue_actions"], 0)
         self.assertIn("due_within_7_days", snapshot["summary"])
@@ -169,8 +169,8 @@ class PortalMvpTests(unittest.TestCase):
         self.assertLess(action["days_to_target"], 0)
         self.assertEqual(["1.2"], action["control_refs"])
         self.assertEqual("SRC-009", action["control_details"][0]["source_ref"])
-        self.assertEqual(38, len(snapshot["sharepoint_tasks"]))
-        self.assertEqual(38, snapshot["summary"]["linked_human_tasks"])
+        self.assertEqual(39, len(snapshot["sharepoint_tasks"]))
+        self.assertEqual(39, snapshot["summary"]["linked_human_tasks"])
         self.assertEqual(0, snapshot["summary"]["unlinked_human_tasks"])
         self.assertEqual("READ_ONLY_SNAPSHOT_ACTIVE", snapshot["sharepoint_integration"]["status"])
         self.assertFalse(snapshot["sharepoint_integration"]["network_allowed"])
@@ -234,7 +234,7 @@ class PortalMvpTests(unittest.TestCase):
                 response = connection.getresponse()
                 snapshot = json.loads(response.read())
                 self.assertEqual(200, response.status)
-                self.assertEqual(42, snapshot["summary"]["total_actions"])
+                self.assertEqual(127, snapshot["summary"]["total_actions"])
                 self.assertIn("frame-ancestors 'none'", response.getheader("Content-Security-Policy"))
                 body = json.dumps(self.valid_payload, ensure_ascii=False).encode("utf-8")
                 connection.request("POST", "/api/review-drafts", body=body, headers={"Content-Type": "application/json"})

@@ -27,13 +27,13 @@ class HumanDecisionDocumentTests(unittest.TestCase):
     def test_every_open_deferred_task_has_one_document_spec(self) -> None:
         tasks = load_open_tasks(ROOT / "data" / "human_execution_package.json")
         specs = build_specs(tasks, CURATED)
-        self.assertEqual(len(tasks), 36)
-        self.assertEqual(len(specs), 36)
+        self.assertEqual(len(tasks), 37)
+        self.assertEqual(len(specs), 37)
         self.assertEqual(
             {str(task["task_id"]) for task in tasks},
             {str(spec["task_id"]) for spec in specs},
         )
-        self.assertEqual(len({str(spec["filename"]) for spec in specs}), 36)
+        self.assertEqual(len({str(spec["filename"]) for spec in specs}), 37)
 
     def test_all_specs_are_signable_and_evidence_aware(self) -> None:
         tasks = load_open_tasks(ROOT / "data" / "human_execution_package.json")

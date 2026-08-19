@@ -221,7 +221,7 @@ def build_index(
         paragraph = doc.add_paragraph()
         style_run(paragraph.add_run(f"{spec['task_id']}: "), bold=True)
         style_run(paragraph.add_run(f"{filename} · SHA-256: {hashes[filename]}"), size=8)
-    fixed = datetime(2026, 7, 30, 12, 0, tzinfo=timezone.utc)
+    fixed = datetime(2026, 8, 19, 12, 0, tzinfo=timezone.utc)
     doc.core_properties.created = fixed
     doc.core_properties.modified = fixed
     doc.core_properties.author = ""
@@ -235,8 +235,8 @@ def build_index(
 def main() -> None:
     tasks = load_domain_open_tasks(PACKAGE_PATH)
     specs = build_domain_specs(tasks, DOCUMENTS)
-    if len(tasks) != 36 or len(specs) != 36:
-        raise ValueError("Pontosan 36 OPEN_DEFERRED dokumentum szükséges.")
+    if len(tasks) != 37 or len(specs) != 37:
+        raise ValueError("Pontosan 37 OPEN_DEFERRED dokumentum szükséges.")
     outputs: list[Path] = []
     for spec in specs:
         output = build_document(spec)
@@ -250,7 +250,7 @@ def main() -> None:
     manifest = {
         "schema_version": 1,
         "status": "PRINTABLE_DRAFTS_READY_FOR_HUMAN_EXECUTION",
-        "as_of": "2026-07-30",
+        "as_of": "2026-08-19",
         "formal_effect": False,
         "source_ref": "data/human_execution_package.json",
         "source_sha256": hashlib.sha256(PACKAGE_PATH.read_bytes()).hexdigest(),

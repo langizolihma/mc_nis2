@@ -1,8 +1,8 @@
 # Egységes emberi végrehajtási csomag
 
-- Állapot dátuma: `2026-07-30`
-- Összes emberi tétel: **37**
-- Nyitott pótlandó tétel: **36**
+- Állapot dátuma: `2026-07-29`
+- Összes emberi tétel: **38**
+- Nyitott pótlandó tétel: **37**
 - Elfogadott, de továbbra is nyilvántartott kockázat: **1**
 - Lezárt és elfogadott tétel: **1**
 - Automatikus lezárás: **tiltott**
@@ -11,7 +11,7 @@ A hullámokat sorrendben kell feldolgozni. Egy tétel lezárásához tényleges 
 
 ## W1 – Irányítás, határidők és döntési alapok
 
-Tételek száma: **12**
+Tételek száma: **13**
 
 ### DEF-002 – OPEN_DEFERRED
 
@@ -196,6 +196,22 @@ Lezárási ellenőrzőlista:
 - Kapcsolódó elem: D-029; D-032; D-033; D-034; config/multiuser_pilot.json; MULTIUSER_PILOT_DEPLOYMENT.md; PILOT_UAT_CHECKLIST.md
 - Elkészítendő: Belső Windows szerver, üzemeltető, DNS, hálózati zóna, HTTPS gateway és tanúsítvány; Entra tenant/client/redirect adatok és támogatott auth-könyvtár; Entra object ID alapú, jóváhagyott szerepkiosztás; kiválasztott hatókörű Graph/site/folder grant; secret-store és naplóretention; G1/G2/G3 jóváhagyás; a 16 pontos UAT, mentési és elkülönített visszaállítási próba valós reviewerrel és védett evidenciával.
 - Legkésőbbi kapu: Bármely nem loopback használat, többfelhasználós pilot, valós bejelentkezés, SharePoint-feltöltés vagy szervertelepítés előtt.
+
+Lezárási ellenőrzőlista:
+
+- [ ] A tényleges dokumentum vagy döntés elkészült.
+- [ ] A védett NIS2 SharePoint URI rögzítve.
+- [ ] Az SHA-256 hash rögzítve.
+- [ ] A reviewer és az időzónás review-idő rögzítve.
+- [ ] A döntési hivatkozás rögzítve.
+
+### DEF-039 – OPEN_DEFERRED
+
+- Felelős: Pásztor András; javasolt kontrollgazdák
+- Jóváhagyó: Lángi Zoltán; Dr. Berta Brigitta; érintett G1/G3/G4 reviewer
+- Kapcsolódó elem: A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md
+- Elkészítendő: A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a javasolt 2026-09-11-i G1 review és 2027-01-31/2027-04-30/2027-06-30 teljesítési hullámok G2/G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.
+- Legkésőbbi kapu: A cselekvési terv végleges aláírása, a javasolt dátumok kanonikus átvezetése, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.
 
 Lezárási ellenőrzőlista:
 

@@ -18,7 +18,7 @@ class PortalDemoTests(unittest.TestCase):
         deferred = load_deferred(ROOT / "DEFERRED_EVIDENCE_LOG.md")
         dates = json.loads((ROOT / "data" / "project_dates.json").read_text(encoding="utf-8"))
         result = build_snapshot(actions, deferred, dates, date(2026, 7, 17))
-        self.assertEqual(42, result["summary"]["total_actions"])
+        self.assertEqual(127, result["summary"]["total_actions"])
         self.assertEqual(len(deferred), len(result["deferred_tasks"]))
         self.assertEqual(69, result["summary"]["days_to_deadline"])
 

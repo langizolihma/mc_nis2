@@ -40,6 +40,7 @@ TITLES = {
     "DEF-036": "Kontrollkatalógus G1 és EIR-besorolási döntés",
     "DEF-037": "Lejárt akciók státusz- és határidő-egyeztetése",
     "DEF-038": "Többfelhasználós portálpilot indítási döntése",
+    "DEF-039": "Lefedettségpótló akciók szakmai és határidő-jóváhagyása",
 }
 
 
