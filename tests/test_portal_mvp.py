@@ -47,6 +47,12 @@ class PortalMvpTests(unittest.TestCase):
             "evidence_uri": "",
             "evidence_sha256": "",
         }
+        self.reconciliation_known = {
+            "A-001": {
+                "action_id": "A-001",
+                "registered_target_date": "2026-07-01",
+            }
+        }
 
     def test_review_draft_is_valid_but_not_formal(self) -> None:
         self.assertEqual([], validate_review_draft(self.valid_payload, self.actions))
@@ -67,16 +73,10 @@ class PortalMvpTests(unittest.TestCase):
         self.assertGreaterEqual(len(errors), 2)
 
     def test_reconciliation_draft_is_append_only_and_not_formal(self) -> None:
-        source = json.loads(
-            (ROOT / "data" / "deadline_reconciliation.json").read_text(
-                encoding="utf-8"
-            )
-        )
-        known = {item["action_id"]: item for item in source["records"]}
         errors = validate_reconciliation_draft(
             self.valid_reconciliation_payload,
-            known,
-            date.fromisoformat(source["as_of"]),
+            self.reconciliation_known,
+            date(2026, 7, 29),
         )
         self.assertEqual([], errors)
         with tempfile.TemporaryDirectory() as temp:
@@ -93,12 +93,6 @@ class PortalMvpTests(unittest.TestCase):
             self.assertEqual([record], store.load())
 
     def test_reconciliation_draft_rejects_unsafe_claims(self) -> None:
-        source = json.loads(
-            (ROOT / "data" / "deadline_reconciliation.json").read_text(
-                encoding="utf-8"
-            )
-        )
-        known = {item["action_id"]: item for item in source["records"]}
         payload = dict(
             self.valid_reconciliation_payload,
             outcome="COMPLETED_READY_FOR_REVIEW",
@@ -107,8 +101,8 @@ class PortalMvpTests(unittest.TestCase):
         )
         errors = validate_reconciliation_draft(
             payload,
-            known,
-            date.fromisoformat(source["as_of"]),
+            self.reconciliation_known,
+            date(2026, 7, 29),
         )
         self.assertGreaterEqual(len(errors), 3)
 
@@ -130,17 +124,17 @@ class PortalMvpTests(unittest.TestCase):
             )
         self.assertEqual(127, snapshot["summary"]["total_actions"])
         self.assertEqual(66, snapshot["summary"]["days_to_deadline"])
-        self.assertGreater(snapshot["summary"]["overdue_actions"], 0)
+        self.assertEqual(0, snapshot["summary"]["overdue_actions"])
         self.assertIn("due_within_7_days", snapshot["summary"])
         self.assertIn("undated_actions", snapshot["summary"])
         self.assertEqual(
-            16, snapshot["summary"]["deadline_reconciliation_pending"]
+            0, snapshot["summary"]["deadline_reconciliation_pending"]
         )
         self.assertEqual(
             "PROPOSAL_PENDING_HUMAN_RECONCILIATION",
             snapshot["deadline_reconciliation"]["status"],
         )
-        self.assertEqual(16, snapshot["deadline_reconciliation"]["record_count"])
+        self.assertEqual(0, snapshot["deadline_reconciliation"]["record_count"])
         self.assertFalse(snapshot["deadline_reconciliation"]["formal_effect"])
         self.assertEqual([], snapshot["reconciliation_drafts"])
         self.assertEqual(len(load_deferred(ROOT / "DEFERRED_EVIDENCE_LOG.md")), len(snapshot["deferred_tasks"]))
@@ -165,8 +159,8 @@ class PortalMvpTests(unittest.TestCase):
         self.assertEqual(7, snapshot["catalog_review"]["text_review_required_count"])
         self.assertEqual(["5.3", "5.4"], snapshot["catalog_review"]["amended_controls"])
         action = next(item for item in snapshot["actions"] if item["id"] == "A-001")
-        self.assertEqual("OVERDUE", action["deadline_bucket"])
-        self.assertLess(action["days_to_target"], 0)
+        self.assertEqual("LATER", action["deadline_bucket"])
+        self.assertGreater(action["days_to_target"], 0)
         self.assertEqual(["1.2"], action["control_refs"])
         self.assertEqual("SRC-009", action["control_details"][0]["source_ref"])
         self.assertEqual(39, len(snapshot["sharepoint_tasks"]))
@@ -255,9 +249,9 @@ class PortalMvpTests(unittest.TestCase):
                 )
                 response = connection.getresponse()
                 result = json.loads(response.read())
-                self.assertEqual(201, response.status)
-                self.assertFalse(result["record"]["formal_effect"])
-                self.assertEqual(1, len(reconciliation_store.load()))
+                self.assertEqual(400, response.status)
+                self.assertEqual("VALIDATION_FAILED", result["error"])
+                self.assertEqual(0, len(reconciliation_store.load()))
                 work_payload = {
                     "task_id": "DEF-002",
                     "actor_display": "Pásztor András",

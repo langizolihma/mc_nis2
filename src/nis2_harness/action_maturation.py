@@ -203,11 +203,22 @@ def build_maturation(
             "scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; "
             "védett URI, SHA-256 és reviewer-döntés."
         )
+        completion_date = action.get("target_date") or proposed_completion_date(action["priority"])
+        schedule_status = (
+            "MANAGEMENT_BASELINE_D035_PENDING_FINAL_G4"
+            if action.get("target_date")
+            else "PROPOSED_PENDING_G2_G4"
+        )
+        date_note = (
+            "A céldátum a D-035 menedzsment baseline szerint rögzített; a végső G4 jóváhagyás még szükséges. "
+            if action.get("target_date")
+            else "A kanonikus target_date G2/G4 döntésig üres marad. "
+        )
         action["notes"] = (
             f"Lefedettségpótló AI-javaslat – részletesítve {as_of.isoformat()}. "
             f"Javasolt kontrollgazda: {role.owner}. Közreműködők: {role.contributors}. "
-            f"Javasolt G1 review: 2026-09-11; javasolt teljesítés: {proposed_completion_date(action['priority'])}. "
-            "A dátumok, szerepek, EIR-hatókör és technikai lépések nem jóváhagyottak; a kanonikus target_date ezért üres marad. "
+            f"Javasolt G1 review: 2026-09-11; célteljesítés: {completion_date}. "
+            f"{date_note}A szerepek, EIR-hatókör és technikai lépések G1/G3 review-ra várnak. "
             f"Részletes rekord: data/action_execution_details.csv. {catalog_note}"
         )
         detail = {field: "" for field in DETAIL_FIELDS}
@@ -223,8 +234,8 @@ def build_maturation(
                 "program_responsible": action["human_owner"],
                 "approver": action["human_approver"],
                 "proposed_g1_review_date": "2026-09-11",
-                "proposed_completion_date": proposed_completion_date(action["priority"]),
-                "schedule_status": "PROPOSED_PENDING_G2_G4",
+                "proposed_completion_date": completion_date,
+                "schedule_status": schedule_status,
                 "implementation_steps": raw_steps,
                 "acceptance_criteria": criteria,
                 "evidence_required": action["evidence_required"],
@@ -260,12 +271,15 @@ def write_csv(path: Path, fieldnames: Sequence[str], rows: Iterable[Mapping[str,
 def render_review_markdown(details: Sequence[Mapping[str, str]]) -> str:
     family_counts = Counter(row["requirement_family"] for row in details)
     schedule_counts = Counter(row["proposed_completion_date"] for row in details)
+    baseline_date_count = sum(
+        row["schedule_status"].startswith("MANAGEMENT_BASELINE_D035") for row in details
+    )
     tbd_owner_count = sum(row["proposed_control_owner"].startswith("TBD") for row in details)
     candidate_count = sum(bool(row["existing_evidence_candidates"]) for row in details)
     lines = [
         "# A-043–A-127 végrehajtási és G1/G2/G3 review-csomag – 2026-08-19",
         "",
-        "> **PROPOSAL.** A részletesítés nem jóváhagyás, nem igazol megvalósítást, és nem módosítja a kanonikus céldátumokat.",
+        "> **PROPOSAL tartalom, D-035 menedzsment-határidők.** A részletesítés nem igazol megvalósítást vagy evidenciaelfogadást; a szakmai tartalom G1/G3, a végleges terv G4 review-ra vár.",
         "",
         "```json",
         "{",
@@ -287,24 +301,27 @@ def render_review_markdown(details: Sequence[Mapping[str, str]]) -> str:
         "- Javasolt kontrollgazda és közreműködők: **85/85**.",
         f"- Belső kontrollgazda még név szerint kijelölendő: **{tbd_owner_count}**.",
         f"- Helyi evidenciajelölttel rendelkező kontroll: **{candidate_count}**; ezek még nem elfogadott evidenciák.",
-        "- Kanonikus target_date automatikus módosítása: **0**.",
+        f"- D-035 menedzsment-baseline szerint rögzített céldátum: **{baseline_date_count}**.",
         "",
-        "## Javasolt ütemezési hullámok",
+        "## D-035 ütemezési hullámok",
         "",
-        "| Javasolt teljesítés | Tételek | Értelmezés |",
+        "| Belső célteljesítés | Tételek | Értelmezés |",
         "|---|---:|---|",
     ]
     for target, count in sorted(schedule_counts.items()):
         interpretation = {
-            "2027-01-31": "P0 – kiemelt eltérések első végrehajtási hulláma",
-            "2027-04-30": "P1 – kis mértékű eltérések második hulláma",
-            "2027-06-30": "P2 – elhanyagolható eltérések harmadik hulláma",
-        }.get(target, "emberi jóváhagyásra váró javaslat")
+            "2026-10-30": "gyors, B0 dokumentációs és szervezési feladatok",
+            "2026-12-15": "egyszerű kontrollbevezetés és gyors javítás",
+            "2027-02-26": "közepes összetettségű működési feladatok",
+            "2027-04-30": "összetett előkészítés vagy P0 műszaki feladatok",
+            "2027-06-30": "összetett technikai megvalósítás és teszt",
+            "2027-07-30": "beszerzési kapus vagy végső transzformációs feladatok",
+        }.get(target, "D-035 szerinti belső céldátum")
         lines.append(f"| {target} | {count} | {interpretation} |")
     lines.extend(
         [
             "",
-            "A javasolt G1 tartalmi review dátuma minden új tételnél **2026-09-11**. A dátumok csak döntés-előkészítő értékek; G2/G4 elfogadásig az `actions.csv` kanonikus `target_date` mezője üres marad.",
+            "A G1 tartalmi review célja minden új tételnél **2026-09-11**. A céldátumok a D-035 szerinti menedzsment-baseline részei; a végleges hatósági terv G4 jóváhagyása továbbra is kötelező.",
             "",
             "## Követelménycsaládok",
             "",

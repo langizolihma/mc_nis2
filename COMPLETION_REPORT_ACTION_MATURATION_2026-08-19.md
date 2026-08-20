@@ -1,5 +1,7 @@
 # Completion report – A-043–A-127 végrehajtási részletezés
 
+> **D-035 kiegészítés:** a jelentés korábbi proposal-only dátumait a teljes, 127 tételes `ACTION_SCHEDULE_2026-08-19.md` és `data/action_schedule.csv` felülírja. A 2027-09-30-i repeat-audit előtti 60. nap 2027-08-01; a legkésőbbi operatív céldátum 2027-07-30.
+
 Dátum: 2026-08-19  
 Státusz: **PROPOSAL – gépi előkészítés kész, emberi kapudöntések függőben**
 
@@ -20,7 +22,7 @@ Státusz: **PROPOSAL – gépi előkészítés kész, emberi kapudöntések füg
 
 - Az A-043–A-127 mind a 85 tétele kontrollspecifikus feladatot, számozott végrehajtási checklistet, mérhető elfogadási feltételt és evidenciaelvárást kapott.
 - Mind a 85 tételhez elkészült a javasolt kontrollgazda, közreműködői kör, reviewer-út és ütemezés. A 61 még nem ismert belső kontrollgazda `TBD` maradt; nem került kitalált személy a nyilvántartásba.
-- Javasolt teljesítési hullámok: 59 P0 tétel 2027-01-31-ig, 19 P1 tétel 2027-04-30-ig, 7 P2 tétel 2027-06-30-ig. Ezek nem kanonikus határidők; az `actions.csv` `target_date` mezője G2/G4 döntésig üres maradt.
+- Történeti állapot: eredetileg három proposal-only teljesítési hullám készült, üres `target_date` mezőkkel. Ezt a D-035 felülírta: mind a 127 akció kanonikus belső céldátumot és W0–W8 hullámot kapott; a végleges beadási G4 kapu továbbra is nyitott.
 - Az 52 technikai tétel G3 felülvizsgálati igénye és az SRC-009 alkalmazhatósági döntése a DEF-039 emberi feladatba került.
 - Elkészült a DEF-039 négyoldalas, nyomtatható és kézzel aláírható munkalap; bekerült a 37 nyitott feladat Word- és ZIP-csomagjába.
 - A DEF-039 SharePoint-célmappája a helyi, csak olvasható pillanatképben rögzítve; a portál mind a 39 DEF-re hivatkozást mutat.

@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "status": "HUMAN_EXECUTION_REQUIRED",
-  "as_of": "2026-07-29",
+  "as_of": "2026-08-19",
   "source_ref": "DEFERRED_EVIDENCE_LOG.md",
-  "source_sha256": "f68c3120c673b3e0409124c9293ab2fae9fa86c57d8885079c27c5277e22017a",
+  "source_sha256": "7c183512f460ce9b266d88cab2214ecf59042cd34f0a0a79a653f1430e516520",
   "formal_effect": false,
   "summary": {
     "task_count": 38,
@@ -250,10 +250,10 @@
         {
           "task_id": "DEF-037",
           "status": "OPEN_DEFERRED",
-          "related": "16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
-          "current_process_state": "Az A-002 D-031/EV-GOV-001 szerinti lezárása után a 2026-07-29-i állapot szerint 16 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. A helyi portál append-only, hitelesítetlen rögzítői státusztervezetet tud fogadni; a hash-ellenőrzött review-, döntési-, változásjavaslati, stale-safe preflight- és pre/post hash utóellenőrzési lánc elkészült. A baseline még 0 tervezetet tartalmaz. Státusz vagy céldátum nem változott.",
-          "required_result": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.",
-          "must_be_completed_before": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
+          "related": "D-035; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
+          "current_process_state": "Történeti megjegyzés: a D-035 előtt a 2026-07-29-i állapotra 16 lejárt, nem terminális akció szerepelt az egyeztetési körben. A D-035 jóváhagyott ütemezési baseline átvezetése után ugyanezen állapotnapra a nyilvántartás újragenerálva 0 rekordos és valid. Ez nem változtatott akcióstátuszt, nem fogadott el evidenciát és nem igazolt tényleges teljesítést.",
+          "required_result": "A tényleges előrehaladást továbbra is akciónként kell rögzíteni; elkészült tételnél védett evidencia URI/SHA-256, reviewer és döntési hivatkozás szükséges. A jövőben lejáró, nem terminális akciókat az aktuális állapotnapra új egyeztetési körbe kell venni.",
+          "must_be_completed_before": "Bármely akció evidenciaelfogadása vagy lezárása, illetve a D-035 céldátumainak újabb módosítása előtt.",
           "owner": "Pásztor András",
           "approver": "Lángi Zoltán; az akció szerinti G1–G5 reviewer",
           "completion_requirements": [
@@ -288,10 +288,10 @@
         {
           "task_id": "DEF-039",
           "status": "OPEN_DEFERRED",
-          "related": "A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md",
-          "current_process_state": "Mind a 85 lefedettségpótló akcióhoz elkészült a kontrollspecifikus végrehajtási checklist, mérhető elfogadási feltétel, evidenciaelvárás, javasolt kontrollgazda/közreműködő és proposal-only ütemezés. A kanonikus céldátumok és jóváhagyási státuszok nem változtak.",
-          "required_result": "A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a javasolt 2026-09-11-i G1 review és 2027-01-31/2027-04-30/2027-06-30 teljesítési hullámok G2/G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.",
-          "must_be_completed_before": "A cselekvési terv végleges aláírása, a javasolt dátumok kanonikus átvezetése, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.",
+          "related": "A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md; ACTION_SCHEDULE_2026-08-19.md",
+          "current_process_state": "Mind a 85 lefedettségpótló akcióhoz elkészült a kontrollspecifikus végrehajtási checklist, mérhető elfogadási feltétel és evidenciaelvárás. A D-035 szerint mind a 127 akcióhoz rögzített belső céldátum tartozik; a legkésőbbi operatív dátum 2027-07-30.",
+          "required_result": "A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a teljes cselekvési terv G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.",
+          "must_be_completed_before": "A cselekvési terv végleges aláírása, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.",
           "owner": "Pásztor András; javasolt kontrollgazdák",
           "approver": "Lángi Zoltán; Dr. Berta Brigitta; érintett G1/G3/G4 reviewer",
           "completion_requirements": [

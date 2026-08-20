@@ -49,6 +49,7 @@ updated: "2026-07-30"
 | D-030 | APPROVED_BASELINE | Az SRC-009 kontrollkatalógus proposal-only referenciaforrásként bekerül a registrybe és a portálba; megfelelőséget nem igazol, automatikus EIR-kontrollkiválasztás csak igazolt biztonsági osztály és G1 review után engedhető. |
 | D-031 | APPROVED_BASELINE | A kézzel aláírt, beszkennelt dokumentum teljes értékű evidencia; elektronikus aláírás hiánya nem warning. A G2/G4 rekord elfogadott, a DEF-001 és az A-002 lezárható. |
 | D-032 | APPROVED_BASELINE | Az emberi feladatok első használható portálfolyamata öt valós W1 tételes, vezetett pilot; hitelesített belépésig minden esemény nem formális, append-only munkatervezet. |
+| D-035 | APPROVED_BASELINE | Minden akció belső céldátuma legkésőbb a 2027.09.30-i repeat-audit előtti 60. naptári nap; az egyszerű B0 feladatok előre, az összetett és G5/beszerzési kapus feladatok későbbre kerülnek. |
 
 # Részletes döntések
 
@@ -442,6 +443,30 @@ mentés és elkülönített visszaállítási próba.
 publikálás, valós Entra-hitelesítés, szerepkör-hozzárendelés és
 SharePoint-visszaírás a G1 funkcionális, G2 biztonsági/jogi és G3
 változtatási jóváhagyásig kikapcsolva marad.
+
+## D-035 – Minden akció határidő-ütemezési alapja
+
+**Státusz:** `APPROVED_BASELINE`
+
+**Rögzítés dátuma:** 2026-08-19
+
+**Döntés:** a D-021 szerint jóváhagyott 2027-09-30-i belső
+repeat-audit célból 60 naptári napot kell levonni. A számított
+véghatár 2027-08-01; mivel ez vasárnap, az operatív utolsó
+munkanap 2027-07-30.
+
+Az ütemezés sorrendje:
+
+1. hatósági és irányítási előfeltételek;
+2. egyszerű, költségmentes dokumentációs és gyorsjavítási feladatok;
+3. közepes összetettségű működési feladatok;
+4. összetett technikai feladatok;
+5. igazolt beszerzési igényű vagy G5 kapus feladatok.
+
+Az explicit hatósági határidő korábbi marad, a lezárt tétel
+történeti dátuma nem írható át. A céldátum rögzítése nem
+jelent megvalósítást, evidenciaelfogadást vagy akciólezárást; a
+G1–G5 kapuk változatlanok.
 
 # Nyitott döntési sablon
 

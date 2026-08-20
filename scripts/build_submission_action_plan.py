@@ -285,7 +285,7 @@ def pending_notes(action: dict[str, str], action_by_id: dict[str, dict[str, str]
     if target and action["status"] not in {"DONE", "CLOSED", "CANCELLED"}:
         if date.fromisoformat(target) < AS_OF:
             notes.append(("red", f"LEJÁRT BELSŐ CÉLDÁTUM – az eredeti {target} dátumhoz státusz- vagy újraütemezési döntés kell."))
-    if action_id in FIXED_DATE_REQUIRED:
+    if action_id in FIXED_DATE_REQUIRED and not target:
         notes.append(("gold", "FÜGGŐ – a relatív/eseményalapú határidőhöz konkrét dátum vagy írásban jóváhagyott indoklás szükséges."))
     if action_id in UNVERIFIED_SOURCE_ACTIONS or action.get("source_confidence") == "unverified_internal":
         notes.append(("gold", "FÜGGŐ – az SRC-004 belső állítás read-only validációig csak feltételes információ, nem auditált tény."))
@@ -365,7 +365,10 @@ def add_action_cell_text(cell, action: dict[str, str], notes: list[tuple[str, st
         r = p.add_run(action["status"])
         r.bold = True
         r.font.size = Pt(7.5)
-        p = cell.add_paragraph(action["deadline_basis"])
+        deadline_basis = action["deadline_basis"]
+        if deadline_basis == "D-035_repeat_audit_minus_60_complexity_schedule":
+            deadline_basis = "D-035 ütemezési baseline"
+        p = cell.add_paragraph(deadline_basis)
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         p.paragraph_format.space_after = Pt(0)
         for run in p.runs:
@@ -714,9 +717,9 @@ def build() -> Path:
     add_banner(doc, "A következő pontok teljesítése nélkül a terv státusza nem lehet FINAL / APPROVED.", PALE_RED, RED)
     blockers = [
         ("B-01", "A-004", "Finding-regiszter G1 mintavétel és név szerinti reviewer sign-off."),
-        ("B-02", "A-005 / A-043–A-127", "A 85 új kontrollszintű intézkedés és mapping G1 owner review-ja; felelősök és végrehajtási dátumok jóváhagyása."),
+        ("B-02", "A-005 / A-043–A-127", "A 85 új kontrollszintű intézkedés és mapping G1 owner review-ja; a hiányzó kontrollgazdák kijelölése."),
         ("B-03", "A-036", "Aláírt RACI, formális IBF-kijelölés, vezetői szponzor és belső infrastruktúra-/incidenskontroll-gazda."),
-        ("B-04", "Több akció", "A relatív/eseményalapú határidők konkrét dátuma vagy jóváhagyott indoklása."),
+        ("B-04", "Mind a 127 akció", "A D-035 határidő-ütemezés teljes tervre vonatkozó G4 ellenőrzése."),
         ("B-05", "A-022/A-024/A-026/A-027/A-028", "Az SRC-004 állítások read-only validációja vagy kifejezett feltételes minősítése."),
         ("B-06", "A-006/A-007", "G1 szakmai, G2 biztonsági-jogi és G4 vezetői beadási jóváhagyás."),
         ("B-07", "Végleges csomag", "Aláírt végleges fájl, verzió, védett SharePoint URI és SHA-256."),
@@ -748,9 +751,9 @@ def build() -> Path:
                 r.bold = True
                 r.font.color.rgb = RGBColor.from_string(RED)
 
-    doc.add_heading("5. Lejárt belső céldátumok egyeztetése", level=1)
+    doc.add_heading("5. Belső céldátumok ütemezési ellenőrzése", level=1)
     p = doc.add_paragraph(
-        "A következő nyilvántartási dátumok nem írhatók át automatikusan. Akciónként tényleges állapot, indokolt új dátum, reviewer és döntési hivatkozás szükséges."
+        "A D-035 mind a 127 akcióhoz belső céldátumot rögzít. A 2027-09-30-i repeat-audit előtti 60. nap 2027-08-01; az operatív utolsó munkanap 2027-07-30."
     )
     table = doc.add_table(rows=1, cols=4)
     table.style = "Table Grid"
@@ -820,7 +823,7 @@ def build() -> Path:
     doc.add_heading("7. Részletes intézkedési terv", level=1)
     p = doc.add_paragraph(
         f"Az alábbi mátrix a data/actions.csv kanonikus nyilvántartás teljes, {action_count} tételes tartalmát foglalja össze. "
-        "A színezés az állapotot és a beadás előtti emberi teendőket mutatja; a dátumok módosítása külön jóváhagyott döntési rekordot igényel."
+        "A színezés az állapotot és a beadás előtti emberi teendőket mutatja; a dátumokat a D-035 jóváhagyott ütemezési szabálya rögzíti."
     )
     p.paragraph_format.space_after = Pt(8)
     add_family_coverage(doc, actions)
@@ -836,7 +839,7 @@ def build() -> Path:
     doc.add_heading("8. Beadás előtti ellenőrzőlista", level=1)
     checklist = [
         f"A {action_count} intézkedés szakmai tartalma, felelőse, határideje, eredménye és evidenciája G1 review-n megfelelt.",
-        "A függő konkrét dátumok és a 16 lejárt belső céldátum egyeztetése dokumentált.",
+        "A D-035 szerinti 127 belső céldátum és a 60 napos repeat-audit puffer ellenőrzése dokumentált.",
         "Az SRC-004 feltételes állítások validáltak vagy egyértelműen feltételesek maradtak.",
         "Az aláírt RACI, formális szerepkijelölések, vezetői szponzor és belső technikai kontrollgazda rendelkezésre áll.",
         "A jogi, adatvédelmi és információbiztonsági G2 review döntési rekordja rendelkezésre áll.",

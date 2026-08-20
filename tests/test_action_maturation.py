@@ -23,12 +23,15 @@ class ActionMaturationTests(unittest.TestCase):
         self.assertTrue(all(row["implementation_steps"] for row in details))
         self.assertTrue(all(row["acceptance_criteria"] for row in details))
 
-    def test_canonical_dates_stay_unmodified(self) -> None:
+    def test_canonical_dates_are_preserved_from_d035_schedule(self) -> None:
         updated, details = build_maturation(self.actions, self.catalog, as_of=date(2026, 8, 19))
         new_actions = [row for row in updated if 43 <= int(row["action_id"][2:]) <= 127]
-        self.assertTrue(all(row["target_date"] == "" for row in new_actions))
+        original = {row["action_id"]: row["target_date"] for row in self.actions}
+        self.assertTrue(all(row["target_date"] == original[row["action_id"]] for row in new_actions))
         self.assertTrue(all(row["proposed_completion_date"] for row in details))
-        self.assertTrue(all(row["schedule_status"] == "PROPOSED_PENDING_G2_G4" for row in details))
+        self.assertTrue(
+            all(row["schedule_status"] == "MANAGEMENT_BASELINE_D035_PENDING_FINAL_G4" for row in details)
+        )
 
     def test_tasks_are_control_specific_and_reviewable(self) -> None:
         updated, details = build_maturation(self.actions, self.catalog, as_of=date(2026, 8, 19))

@@ -1,12 +1,14 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from dataclasses import replace
+from datetime import date, datetime, timezone
 import json
 from pathlib import Path
 import tempfile
 import unittest
 
 from nis2_harness.cli import main
+from nis2_harness.deadline_reconciliation import build_deadline_reconciliation
 from nis2_harness.portal import ReconciliationDraftStore
 from nis2_harness.reconciliation_review import (
     build_reconciliation_review_package,
@@ -21,11 +23,19 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class ReconciliationReviewTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.actions = load_actions(ROOT / "data" / "actions.csv")
-        self.register = json.loads(
-            (ROOT / "data" / "deadline_reconciliation.json").read_text(
-                encoding="utf-8"
-            )
+        repository_actions = load_actions(ROOT / "data" / "actions.csv")
+        selected = {
+            item.action_id: item
+            for item in repository_actions
+            if item.action_id in {"A-001", "A-003"}
+        }
+        self.actions = [
+            replace(selected["A-001"], status="NEW", target_date="2026-07-01"),
+            replace(selected["A-003"], status="NEW", target_date="2026-07-02"),
+        ]
+        self.register = build_deadline_reconciliation(
+            self.actions,
+            date(2026, 7, 29),
         )
         self.known = {
             item["action_id"]: item for item in self.register["records"]
@@ -68,7 +78,7 @@ class ReconciliationReviewTests(unittest.TestCase):
             drafts,
         )
         self.assertEqual(0, package["summary"]["draft_count"])
-        self.assertEqual(16, package["summary"]["actions_without_draft"])
+        self.assertEqual(2, package["summary"]["actions_without_draft"])
         self.assertFalse(package["formal_effect"])
 
     def test_valid_draft_is_loaded_and_projected_for_human_review(self) -> None:

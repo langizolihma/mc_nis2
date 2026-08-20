@@ -25,8 +25,8 @@ window.NIS2_DEMO_DATA = {
         "1.2"
       ],
       "cost_band": "B0",
-      "days_to_target": -49,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 12,
+      "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Aláírt kinevezés, munkaköri leírás, RACI és szervezeti ábra.",
       "evidence": "Aláírt dokumentumok, kihirdetési nyom, vezetői jóváhagyás.",
       "external_submission": "no",
@@ -40,7 +40,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "IN_PROGRESS",
-      "target_date": "2026-07-01",
+      "target_date": "2026-08-31",
       "task": "Formálisan jelölje ki az elektronikus információs rendszerek biztonságáért felelős személyt, biztosítson hatáskört, erőforrást és helyettesítést.",
       "title": "Irányítás"
     },
@@ -77,8 +77,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -51,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 72,
+      "deadline_bucket": "LATER",
       "deliverable": "Működő repository- és evidenciatár-struktúra.",
       "evidence": "Repository access list, evidenciatár-struktúra export/képernyőkép, naming convention, jóváhagyás.",
       "external_submission": "no",
@@ -92,7 +92,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008:p7|DERIVED",
       "status": "IN_PROGRESS",
-      "target_date": "2026-06-29",
+      "target_date": "2026-10-30",
       "task": "Hozza létre a privát Git workspace-t, az védett evidenciatár taxonomiáját, elnevezési szabályt és hozzáférési csoportokat.",
       "title": "Evidencia és repository"
     },
@@ -103,8 +103,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -44,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 12,
+      "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Emberileg ellenőrzött audit finding-regiszter és parser-hibajegy.",
       "evidence": "Mintavételi jegyzőkönyv, exception log, human_validated mező, reviewer sign-off.",
       "external_submission": "no",
@@ -118,7 +118,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008:p19–380|MACHINE_EXTRACT",
       "status": "IN_PROGRESS",
-      "target_date": "2026-07-06",
+      "target_date": "2026-08-31",
       "task": "Validálja az audit finding-regisztert mintavétellel és kivétellistával; jelölje az emberileg ellenőrzött rekordokat.",
       "title": "Auditfeldolgozás"
     },
@@ -129,8 +129,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -39,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 12,
+      "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Jóváhagyott control-action-evidence mapping.",
       "evidence": "Mapping review log, hiány- és duplikációlista, owner sign-off.",
       "external_submission": "no",
@@ -144,7 +144,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "authority",
       "source_ref": "SRC-001:p2|SRC-008:p9–10",
       "status": "IN_PROGRESS",
-      "target_date": "2026-07-11",
+      "target_date": "2026-08-31",
       "task": "Térképezze a findingokat követelménycsaládhoz, kontrollhoz, EIR-hez, akcióhoz, emberi gazdához és evidenciatípushoz.",
       "title": "Kontrolltérkép"
     },
@@ -173,8 +173,8 @@ window.NIS2_DEMO_DATA = {
         "1.4"
       ],
       "cost_band": "B0",
-      "days_to_target": -24,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 23,
+      "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Cselekvési terv tervezet.",
       "evidence": "Minden tételhez követelménycsalád, feladat, név szerinti felelős, dátum, deliverable, evidencia és forrás.",
       "external_submission": "yes",
@@ -188,7 +188,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "authority",
       "source_ref": "SRC-001",
       "status": "NEW",
-      "target_date": "2026-07-26",
+      "target_date": "2026-09-11",
       "task": "Készítse el a teljes hatósági cselekvési terv első tervezetét a 19 követelménycsalád szerint.",
       "title": "Hatósági cselekvési terv"
     },
@@ -261,8 +261,8 @@ window.NIS2_DEMO_DATA = {
         "1.4"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 118,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott riportnaptár és beszámolósablon.",
       "evidence": "Naptárbejegyzés, adatcut-off szabály, sablon, dry run és jóváhagyás.",
       "external_submission": "yes",
@@ -276,7 +276,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "authority",
       "source_ref": "SRC-001",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2026-12-15",
       "task": "Hozza létre a beszámolási naptár, adatvágás, sablon, felelős és jóváhagyási workflow tervezetét.",
       "title": "Negyedéves beszámoló"
     },
@@ -305,8 +305,8 @@ window.NIS2_DEMO_DATA = {
         "1.1"
       ],
       "cost_band": "B0",
-      "days_to_target": -24,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 72,
+      "deadline_bucket": "LATER",
       "deliverable": "Szabályzat-életciklus eljárás.",
       "evidence": "Review log, verziótörténet, jóváhagyás, kihirdetés és megismerési nyom.",
       "external_submission": "no",
@@ -320,7 +320,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-07-26",
+      "target_date": "2026-10-30",
       "task": "Alakítson ki szabályzatgazdát, review naptárt, esemény-triggerlistát, változásnaplót és kihirdetési evidenciát.",
       "title": "Szabályzat-életciklus"
     },
@@ -349,8 +349,8 @@ window.NIS2_DEMO_DATA = {
         "1.3"
       ],
       "cost_band": "B0",
-      "days_to_target": -24,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 72,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott erőforrásterv és exception log.",
       "evidence": "Budget extract, kapacitásterv, döntési napló, halasztási kockázat.",
       "external_submission": "no",
@@ -364,7 +364,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-07-26",
+      "target_date": "2026-10-30",
       "task": "Hozzon létre éves erőforrás- és költségtervet, kivétel-/halasztási naplót és purchase trigger folyamatot.",
       "title": "Erőforrás és költség"
     },
@@ -409,8 +409,8 @@ window.NIS2_DEMO_DATA = {
         "6.36"
       ],
       "cost_band": "B0",
-      "days_to_target": -34,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 72,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott EIR/asset/dependency register.",
       "evidence": "Read-only exportok, tulajdonosi jóváhagyás, adatfolyam- és függőségi lista.",
       "external_submission": "no",
@@ -424,7 +424,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-07-16",
+      "target_date": "2026-10-30",
       "task": "Frissítse az EIR-, eszköz-, adat-, tulajdonos-, helyszín- és függőségi leltárt.",
       "title": "EIR- és eszközleltár"
     },
@@ -435,8 +435,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -40,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 118,
+      "deadline_bucket": "LATER",
       "deliverable": "Működő evidence register és review workflow.",
       "evidence": "védett belső URI-k, hash manifest, review log, visszautasítási okok.",
       "external_submission": "no",
@@ -450,7 +450,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "IN_PROGRESS",
-      "target_date": "2026-07-10",
+      "target_date": "2026-12-15",
       "task": "Vezesse be az evidence manifestet és acceptance workflow-t: forrás, dátum, EIR, kontroll, hash, készítő, reviewer, státusz.",
       "title": "Evidenciakezelés"
     },
@@ -527,8 +527,8 @@ window.NIS2_DEMO_DATA = {
         "9.34"
       ],
       "cost_band": "B0",
-      "days_to_target": 6,
-      "deadline_bucket": "DUE_7_DAYS",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "Incidenskezelési terv és gyakorlatjegyzőkönyv.",
       "evidence": "Kontaktlista, ticket/timeline, döntések, lessons learned, javító akciók és résztvevői nyom.",
       "external_submission": "no",
@@ -542,7 +542,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-08-25",
+      "target_date": "2027-06-30",
       "task": "Formalizálja az incidens-életciklust, kontaktpontot, szerepköröket, playbookokat és hajtson végre tabletop gyakorlatot.",
       "title": "Incidenskezelés"
     },
@@ -587,8 +587,8 @@ window.NIS2_DEMO_DATA = {
         "3.13"
       ],
       "cost_band": "B0",
-      "days_to_target": 6,
-      "deadline_bucket": "DUE_7_DAYS",
+      "days_to_target": 118,
+      "deadline_bucket": "LATER",
       "deliverable": "Képzési terv, anyag, teszt és nyilvántartás.",
       "evidence": "Jelenlét/átvétel, teszteredmény, anyagverzió, utánkövetés.",
       "external_submission": "no",
@@ -602,7 +602,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-08-25",
+      "target_date": "2026-12-15",
       "task": "Készítsen minimum szerepkör-alapú képzési programot, tudásellenőrzést és bizonyítható nyilvántartást.",
       "title": "Tudatosság és képzés"
     },
@@ -663,8 +663,8 @@ window.NIS2_DEMO_DATA = {
         "8.2"
       ],
       "cost_band": "B0",
-      "days_to_target": -9,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "Access review csomag és jóváhagyott életciklus-eljárás.",
       "evidence": "Read-only export, alkalmazásgazdai döntések, change ticket és visszaellenőrzés.",
       "external_submission": "no",
@@ -678,7 +678,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008:p116,205,295|SRC-003:p3",
       "status": "NEW",
-      "target_date": "2026-08-10",
+      "target_date": "2027-06-30",
       "task": "Készítsen read-only stale/duplicate account és kritikus hozzáférési review-t, majd onboarding/offboarding eljárást.",
       "title": "Identitás és hozzáférés"
     },
@@ -707,8 +707,8 @@ window.NIS2_DEMO_DATA = {
         "8.3"
       ],
       "cost_band": "B0",
-      "days_to_target": 6,
-      "deadline_bucket": "DUE_7_DAYS",
+      "days_to_target": 345,
+      "deadline_bucket": "LATER",
       "deliverable": "MFA gap analysis és pilot report.",
       "evidence": "Licencmátrix, pilot scope, siker/hiba napló, rollback és jóváhagyás.",
       "external_submission": "no",
@@ -723,7 +723,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008:p167,257,346|SRC-003:p3",
       "status": "NEW",
-      "target_date": "2026-08-25",
+      "target_date": "2027-07-30",
       "task": "Végezzen licenc- és technikai gap analysis-t, majd meglévő entitlementtel kockázatarányos privilegizált MFA pilotot.",
       "title": "MFA"
     },
@@ -784,8 +784,8 @@ window.NIS2_DEMO_DATA = {
         "7.43"
       ],
       "cost_band": "B0",
-      "days_to_target": -24,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "Backup matrix és restore test report.",
       "evidence": "Job log, helyreállított objektum/rendszer, időtartam, hiba, RPO/RTO összevetés és jóváhagyás.",
       "external_submission": "no",
@@ -799,7 +799,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-07-26",
+      "target_date": "2027-04-30",
       "task": "Határozza meg a backup scope/RPO/RTO mátrixot és hajtson végre dokumentált restore tesztet kritikus EIR mintán.",
       "title": "Mentés és helyreállítás"
     },
@@ -908,8 +908,8 @@ window.NIS2_DEMO_DATA = {
         "5.15"
       ],
       "cost_band": "B0",
-      "days_to_target": 21,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "Log source matrix, retention és review log.",
       "evidence": "Mintalog, alert teszt, review ticket, retention proof, exception log.",
       "external_submission": "no",
@@ -923,7 +923,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-09-09",
+      "target_date": "2027-06-30",
       "task": "Hozzon létre minimum log source matrixot, retentiont, hibariasztást és napi/heti review eljárást meglévő eszközökkel.",
       "title": "Naplózás és felügyelet"
     },
@@ -1000,8 +1000,8 @@ window.NIS2_DEMO_DATA = {
         "18.2"
       ],
       "cost_band": "B0",
-      "days_to_target": -9,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott maintenance/patch/change workflow.",
       "evidence": "Baseline export, patch report, change ticket, exception, rollback proof.",
       "external_submission": "no",
@@ -1015,7 +1015,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-08-10",
+      "target_date": "2027-06-30",
       "task": "Vezessen be baseline-, patch-, karbantartási- és változásnaptárt bizonyítékokkal, kivétel- és rollback-kezeléssel.",
       "title": "Konfiguráció, patch, karbantartás"
     },
@@ -1172,8 +1172,8 @@ window.NIS2_DEMO_DATA = {
         "12.42"
       ],
       "cost_band": "B0",
-      "days_to_target": -24,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 72,
+      "deadline_bucket": "LATER",
       "deliverable": "Fizikai gap register és evidence csomag.",
       "evidence": "Checklist, dátumozott fotó, belépési lista, tesztjegyzőkönyv, intézkedési terv.",
       "external_submission": "no",
@@ -1187,7 +1187,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-07-26",
+      "target_date": "2026-10-30",
       "task": "Végezzen dokumentált helyszíni bejárást, rögzítse a költségmentes gyorsjavításokat, és készítsen kockázatalapú fizikai javítási tervet.",
       "title": "Fizikai védelem"
     },
@@ -1232,8 +1232,8 @@ window.NIS2_DEMO_DATA = {
         "19.4"
       ],
       "cost_band": "B0",
-      "days_to_target": 21,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": 118,
+      "deadline_bucket": "LATER",
       "deliverable": "Supplier risk register és review terv.",
       "evidence": "Szerződéslista, kérdőív, kockázati döntés, hiánylista és review proof.",
       "external_submission": "no",
@@ -1247,7 +1247,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008:p101–112|SRC-003:p2",
       "status": "NEW",
-      "target_date": "2026-09-09",
+      "target_date": "2026-12-15",
       "task": "Készítsen beszállítói leltárt, kritikalitást, szerződéses kontroll-gapet és felülvizsgálati naptárt.",
       "title": "Ellátási lánc"
     },
@@ -1258,8 +1258,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "Aláírt technikai health snapshot és eltéréslista.",
       "evidence": "Időbélyeges read-only export, RAID log, kapacitás, VM-lista, backup status és reviewer.",
       "external_submission": "no",
@@ -1273,7 +1273,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "unverified_internal",
       "source_ref": "SRC-004",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "Read-only módszerrel azonnal validálja a hivatkozott hostok, VM-ek, lemezek, RAID és backup állapotát; semmit ne módosítson.",
       "title": "Műszaki validáció"
     },
@@ -1284,8 +1284,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott emergency change plan vagy dokumentált no-action döntés.",
       "evidence": "Pre/post metrika, backup proof, törlési/áthelyezési jóváhagyás, rollback.",
       "external_submission": "no",
@@ -1299,7 +1299,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "conditional",
       "source_ref": "SRC-004|A-022",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "Készítsen freespace/backup-protection emergency change tervet; törlés vagy áthelyezés csak tulajdonosi jóváhagyással.",
       "title": "Műszaki stabilizálás"
     },
@@ -1310,8 +1310,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 345,
+      "deadline_bucket": "LATER",
       "deliverable": "Migration/containment decision package.",
       "evidence": "Kapacitásmodell, dependency map, test, rollback, licenc review és kockázatelfogadás.",
       "external_submission": "no",
@@ -1326,7 +1326,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "unverified_internal",
       "source_ref": "SRC-004|A-022|A-029",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-07-30",
       "task": "Készítsen VM dependency-, placement-, capacity-, backup- és licence-tervet; végrehajtás nélkül.",
       "title": "Kapacitás és VM-elhelyezés"
     },
@@ -1337,8 +1337,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "Exchange dependency register és tesztterv.",
       "evidence": "SMTP log minta, eszköz-/alkalmazásgazda sign-off, teszteredmény és rollback.",
       "external_submission": "no",
@@ -1352,7 +1352,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "strategy_input",
       "source_ref": "SRC-003:p1,3,7|SRC-004",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "Készítsen teljes SMTP relay/client dependency leltárt és teszttervet minden migrációs döntés előtt.",
       "title": "Exchange függőség"
     },
@@ -1363,8 +1363,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott retention/migration decision.",
       "evidence": "Jogi állásfoglalás, adatlista, export/restore/read test, owner approval.",
       "external_submission": "no",
@@ -1378,7 +1378,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "unverified_internal",
       "source_ref": "SRC-004",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "Készítsen jogi megőrzési, adat-, alkalmazás-, export-, restore/read-test és migrációs döntési csomagot.",
       "title": "Legacy megőrzés"
     },
@@ -1389,8 +1389,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "RDS decision record.",
       "evidence": "User/CAL mátrix, secret/key scope, teljesítményadat, kockázati sign-off.",
       "external_submission": "no",
@@ -1404,7 +1404,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "unverified_internal",
       "source_ref": "SRC-004",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "Tartsa fenn a szeparációt, amíg licenc-, banki/könyvelési kulcs-, workload- és kockázatelemzés nem igazolja az összevonást.",
       "title": "RDS szeparáció"
     },
@@ -1415,8 +1415,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "AD/DHCP consolidation assessment.",
       "evidence": "Current role export, failure scenario, test plan, licenc- és rollback-hatás.",
       "external_submission": "no",
@@ -1430,7 +1430,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "unverified_internal",
       "source_ref": "SRC-004",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "Csak assessmentet készítsen szerepkör, HA, site, DNS/DHCP, backup, licenc és rollback vizsgálattal.",
       "title": "AD/DHCP konszolidáció"
     },
@@ -1475,8 +1475,8 @@ window.NIS2_DEMO_DATA = {
         "16.99"
       ],
       "cost_band": "B0",
-      "days_to_target": -24,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 345,
+      "deadline_bucket": "LATER",
       "deliverable": "License entitlement and support matrix.",
       "evidence": "Szerződés/SAM export, host/core/VM/user mapping, support lifecycle és reviewer sign-off.",
       "external_submission": "no",
@@ -1490,7 +1490,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008:p182,185,271,274,361,364|SRC-004",
       "status": "NEW",
-      "target_date": "2026-07-26",
+      "target_date": "2027-07-30",
       "task": "Végezzen Windows Server, RDS, M365, Defender, virtualizáció és releváns alkalmazások entitlement/támogatási auditját.",
       "title": "Licenc és támogatás"
     },
@@ -1501,7 +1501,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": 407,
+      "days_to_target": 72,
       "deadline_bucket": "LATER",
       "deliverable": "Repeat-audit roadmap.",
       "evidence": "Jóváhagyott target, mock audit naptár, javítási buffer és auditor-procurement gate.",
@@ -1516,7 +1516,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "authority",
       "source_ref": "SRC-001",
       "status": "NEW",
-      "target_date": "2027-09-30",
+      "target_date": "2026-10-30",
       "task": "Készítse el a jóváhagyott 2027.09.30-i belső céldátumhoz tartozó negyedéves readiness gate-eket és legalább egy mock audit ütemezését.",
       "title": "Repeat audit"
     },
@@ -1527,8 +1527,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -47,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott AI usage rule és felhasználói visszaigazolás.",
       "evidence": "Policy note, acknowledgement, minta redakció, környezetengedély.",
       "external_submission": "no",
@@ -1542,7 +1542,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "derived",
       "source_ref": "DERIVED_FROM_PROJECT_RISK",
       "status": "NEW",
-      "target_date": "2026-07-03",
+      "target_date": "2027-02-26",
       "task": "Hirdesse ki az AI-adatminősítési, redakciós, forráshierarchia-, prompt-injection- és proposal-only szabályt.",
       "title": "AI-irányítás"
     },
@@ -1553,8 +1553,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -33,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 118,
+      "deadline_bucket": "LATER",
       "deliverable": "Eval baseline, gold cases és defect log.",
       "evidence": "Tesztfutás, reviewed examples, trace/output, hibajegy és javítási kör.",
       "external_submission": "no",
@@ -1568,7 +1568,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "derived",
       "source_ref": "DERIVED_FROM_PROJECT_RISK",
       "status": "NEW",
-      "target_date": "2026-07-17",
+      "target_date": "2026-12-15",
       "task": "Hozzon létre helyi eval-harness-t és legalább 10 emberileg jóváhagyott gold case-t.",
       "title": "Agent QA és eval"
     },
@@ -1613,7 +1613,7 @@ window.NIS2_DEMO_DATA = {
         "18.2"
       ],
       "cost_band": "B0",
-      "days_to_target": 36,
+      "days_to_target": 345,
       "deadline_bucket": "LATER",
       "deliverable": "Vulnerability assessment and remediation plan.",
       "evidence": "Scope, G3 approval, scan log, finding register, remediation ticket és retest.",
@@ -1629,7 +1629,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-09-24",
+      "target_date": "2027-07-30",
       "task": "Definiálja a scope-ot, credentialed/non-intrusive módot, javítási SLA-t és használja először a meglévő eszközöket.",
       "title": "Sérülékenységkezelés"
     },
@@ -1640,7 +1640,7 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": 36,
+      "days_to_target": 254,
       "deadline_bucket": "LATER",
       "deliverable": "EIR scope and readiness record.",
       "evidence": "EIR definition, owner sign-off, asset/dependency list és döntési napló.",
@@ -1655,7 +1655,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-09-24",
+      "target_date": "2027-04-30",
       "task": "Dokumentálja a két EIR scope-ját, tulajdonosát, assetjeit, függőségeit és következő audit/readiness tervét.",
       "title": "EIR scope"
     },
@@ -1666,8 +1666,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -51,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 72,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott canonical source record.",
       "evidence": "SRC-008 fájl, SHA-256, védett tárhivatkozás, aláírásstruktúra-metaadat, összehasonlítási jegyzőkönyv, D-025 és reviewer.",
       "external_submission": "no",
@@ -1681,7 +1681,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-001|SRC-008",
       "status": "IN_PROGRESS",
-      "target_date": "2026-06-29",
+      "target_date": "2026-10-30",
       "task": "Rögzítse a D-025 szerinti G2 emberi review elfogadását.",
       "title": "Forrásverzió-kezelés"
     },
@@ -1692,8 +1692,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": -49,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 12,
+      "deadline_bucket": "DUE_30_DAYS",
       "deliverable": "Jóváhagyott projekt-RACI és kitöltött P0 owner/approver mezők.",
       "evidence": "Aláírt RACI, vezetői döntés, actions.csv review log.",
       "external_submission": "no",
@@ -1707,7 +1707,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "authority",
       "source_ref": "DERIVED|SRC-001:p2",
       "status": "IN_PROGRESS",
-      "target_date": "2026-07-01",
+      "target_date": "2026-08-31",
       "task": "Jelölje ki a vezetői szponzort, projektvezetőt, IBF-et, jogi reviewert, kontrollgazdákat és minden P0 akció felelősét/jóváhagyóját.",
       "title": "Projektirányítás"
     },
@@ -1784,8 +1784,8 @@ window.NIS2_DEMO_DATA = {
         "11.14"
       ],
       "cost_band": "B0",
-      "days_to_target": 6,
-      "deadline_bucket": "DUE_7_DAYS",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "Adathordozó-védelmi eljárás és nyilvántartás.",
       "evidence": "Médialeltár, jóváhagyott törlési módszer, hozzáférési lista, mintajegyzőkönyv és megsemmisítési/újrahasználati bizonyíték.",
       "external_submission": "no",
@@ -1799,7 +1799,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-08-25",
+      "target_date": "2027-06-30",
       "task": "Készítsen adathordozó-leltárt, felelősségi rendet, hozzáférési, törlési, szállítási és újrahasználati minimumeljárást.",
       "title": "Adathordozók védelme"
     },
@@ -1956,8 +1956,8 @@ window.NIS2_DEMO_DATA = {
         "14.13"
       ],
       "cost_band": "B0",
-      "days_to_target": 6,
-      "deadline_bucket": "DUE_7_DAYS",
+      "days_to_target": 345,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott personnel security és joiner-mover-leaver csomag.",
       "evidence": "Munkakör-besorolás, ellenőrzési szabály, checklist, hozzáférés-visszavonási SLA, nyilatkozat és mintafolyamat-evidencia.",
       "external_submission": "no",
@@ -1971,7 +1971,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-08-25",
+      "target_date": "2027-07-30",
       "task": "Alakítson ki szerepkör-alapú személyi biztonsági folyamatot a belépéstől a kilépésig, HR/IT/jogi felelősségekkel és határidőkkel.",
       "title": "Személyi biztonság"
     },
@@ -2064,8 +2064,8 @@ window.NIS2_DEMO_DATA = {
         "15.20"
       ],
       "cost_band": "B0",
-      "days_to_target": -9,
-      "deadline_bucket": "OVERDUE",
+      "days_to_target": 118,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott risk methodology, risk register és treatment workflow.",
       "evidence": "Kockázati skála, elfogadási hatáskör, mintakockázatok, kezelési döntések, review log és vezetői jóváhagyás.",
       "external_submission": "no",
@@ -2079,7 +2079,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-08-10",
+      "target_date": "2026-12-15",
       "task": "Egységesítse a kockázati módszertant, kockázati étvágyat, nyilvántartást, gazdákat, kezelési döntéseket és felülvizsgálati ciklust.",
       "title": "Kockázatkezelés"
     },
@@ -2172,8 +2172,8 @@ window.NIS2_DEMO_DATA = {
         "13.11"
       ],
       "cost_band": "B0",
-      "days_to_target": 6,
-      "deadline_bucket": "DUE_7_DAYS",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "Három jóváhagyott rendszerbiztonsági terv és közös sablon.",
       "evidence": "Verziózott tervek, EIR-owner és IBF jóváhagyás, dependency/threat mapping, változásnapló és megismertetési nyom.",
       "external_submission": "no",
@@ -2187,7 +2187,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-08-25",
+      "target_date": "2027-02-26",
       "task": "Frissítse a három auditált EIR rendszerbiztonsági tervét egységes sablon szerint, függőségekkel, fenyegetésekkel, kontrolltestreszabással és review-ciklussal.",
       "title": "Biztonságtervezés"
     },
@@ -2312,8 +2312,8 @@ window.NIS2_DEMO_DATA = {
         "16.99"
       ],
       "cost_band": "B0",
-      "days_to_target": 21,
-      "deadline_bucket": "DUE_30_DAYS",
+      "days_to_target": 345,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott beszerzési biztonsági checklist és szerződéses követelményminta.",
       "evidence": "Kitöltött mintachecklist, szerződéses klauzulák, support/EOL döntés, kivétel és jóváhagyás.",
       "external_submission": "no",
@@ -2327,7 +2327,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "audited",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "2026-09-09",
+      "target_date": "2027-07-30",
       "task": "Vezessen be security-by-procurement minimumkövetelményt, szerződéses checklistet, lifecycle/support gate-et és kivételkezelést.",
       "title": "Biztonságos beszerzés és életciklus"
     },
@@ -2338,8 +2338,8 @@ window.NIS2_DEMO_DATA = {
       "control_details": [],
       "control_refs": [],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "Jóváhagyott agent-architektúra, fájlalapú pilot, runbook, approval queue és mérési riport.",
       "evidence": "Forrás- és jogosultságlista, futási auditlog, source_ref/confidence/review nyom, gold case és negatív teszt, téves riasztási és emberimunka-csökkentési metrika, kill switch próba.",
       "external_submission": "no",
@@ -2355,7 +2355,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "derived",
       "source_ref": "DECISIONS.md:D-024|DERIVED",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "Tervezzen, pilotoljon és fokozatosan vezessen be local-first folyamatos auditfelkészültségi ügynököt, amely jóváhagyott read-only forrásokat értelmez, karbantartja a nyilvántartásokat, jegyzőkönyv- és intézkedéstervezeteket készít, határidőt figyel és kivételt terjeszt ember elé.",
       "title": "Folyamatos auditfelkészültség"
     },
@@ -2384,8 +2384,8 @@ window.NIS2_DEMO_DATA = {
         "1.6"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "1.6 – Biztonsági teljesítmény mérése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2400,7 +2400,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "1.6 – Biztonsági teljesítmény mérése: 1) A szervezetnek ki kell fejlesztenie az EIR-re vonatkozó biztonsági mérésének rendszerét. 2) A szervezetnek folyamatosan monitoroznia kell az általa meghatározott teljesítménymutatókat. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell az EIR biztonsági mérési rendszerét, hogy biztosítsa annak relevanciáját és hatékonyságát a változó kiberbiztonsági környezetben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2429,8 +2429,8 @@ window.NIS2_DEMO_DATA = {
         "1.10"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.10 – Kockázatmenedzsment stratégia végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2445,7 +2445,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.10 – Kockázatmenedzsment stratégia: 1) A szervezetnek ki kell dolgoznia egy átfogó kockázatkezelési stratégiát, amely tartalmazza a szervezet kockázattűrését, a kockázatok csökkentésének stratégiáit, az elfogadható kockázatértékelési módszertanokat, egy folyamatot a biztonsági kockázatok értékelésére az egész szervezeten belül, valamint a szervezet kockázattűrésével… 2) A kockázatkezelésért felelős személy összehangolja az információbiztonsági irányítási folyamatokat a stratégiai, operatív és költségvetési tervezési folyamatokkal. 3) Az érintett szervezet által meghatározott gyakorisággal és esetekben felülvizsgálja és frissíti a kockázatkezelési stratégiát, hogy meg tudjon felelni a szervezeti változásoknak. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2474,8 +2474,8 @@ window.NIS2_DEMO_DATA = {
         "1.11"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.11 – Engedélyezési folyamatok meghatározása végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2490,7 +2490,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.11 – Engedélyezési folyamatok meghatározása: 1) A szervezetnek engedélyezési folyamatokat kell létrehoznia az EIR-ek és azok működési környezetének biztonsági állapotának kezelésére. 2) A szervezetnek be kell illesztenie az engedélyezési folyamatokat a szervezet egészét átfogó kockázatkezelési keretrendszerbe. 3) A szervezetnek dokumentálnia kell az engedélyezési folyamatokat, hogy nyomon követhesse és ellenőrizhesse a folyamatokat és az esetleges biztonsági eseményeket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2519,8 +2519,8 @@ window.NIS2_DEMO_DATA = {
         "1.12"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.12 – Szervezeti működés és üzleti folyamatok meghatározása végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2535,7 +2535,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.12 – Szervezeti működés és üzleti folyamatok meghatározása: 1) A szervezetnek meg kell határoznia a szervezeti célokat és az alapfunkciókat, figyelembe véve az információbiztonságot és a szervezeti működésre, EIR-re, személyekre, más szervezetekre gyakorolt kockázatokat. 2) A szervezetnek meg kell határoznia a szervezeti célokból és alapfunkciókból adódó információvédelmi igényeket. 3) A szervezetnek meghatározott gyakorisággal felül kell vizsgálnia és módosítania a szervezeti célokat és az alapfunkciókat, hogy biztosítsa azok relevanciáját és hatékonyságát a változó környezeti és üzleti körülmények között. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2564,8 +2564,8 @@ window.NIS2_DEMO_DATA = {
         "1.14"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.14 – Biztonsági személyzet képzése végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2580,7 +2580,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.14 – Biztonsági személyzet képzése: 1) A szervezetnek meg kell határoznia azt a tudást, készségeket és képességeket, amelyekre szükség van a biztonsággal kapcsolatos feladatok elvégzéséhez. 2) A szervezetnek szerepkör-alapú képzési programokat kell kifejlesztenie azok számára, akik biztonsági szerep- és felelősségi köröket látnak el. 3) A szervezetnek dokumentálnia kell a programban részt vevők előrehaladásáról és fejlődéséről, hogy biztosítsa a program hatékonyságát és folyamatos fejlesztését. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2609,8 +2609,8 @@ window.NIS2_DEMO_DATA = {
         "1.15"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.15 – Tesztelés, képzés és felügyelet végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2625,7 +2625,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.15 – Tesztelés, képzés és felügyelet: 1) A szervezetnek be kell vezetnie egy folyamatot, amely biztosítja, hogy az EIR-ekhez kapcsolódó biztonsági tesztelések, képzések és felügyeleti tevékenységek folyamatosan végrehajtásra kerüljenek. 2) A szervezetnek gondoskodnia kell arról, hogy ezek a tevékenységek összehangoltak legyenek. 3) A szervezetnek dokumentálnia kell a tesztelési, képzési és felügyeleti tevékenységeket, hogy biztosítsa a folyamatok átláthatóságát és a felelősséget. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2654,8 +2654,8 @@ window.NIS2_DEMO_DATA = {
         "1.16"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.16 – Szakmai csoportokkal és közösségekkel való kapcsolattartás végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2670,7 +2670,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.16 – Szakmai csoportokkal és közösségekkel való kapcsolattartás: 1) A szervezetnek ki kell választania azokat a szakmai csoportokat és közösségeket, amelyekkel kapcsolatot kíván létrehozni. 2) Miután kiválasztotta a megfelelő csoportokat, a szervezetnek kapcsolatot kell létesítenie ezekkel a csoportokkal, és aktívan részt kell vennie a közösségek és csoportok tevékenységeiben. 3) A szervezetnek dokumentálnia kell a biztonsági eseményeket, és rendszeresen felül kell vizsgálnia a naplót, hogy azonosítsa a potenciális problémákat és javítási lehetőségeket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2699,8 +2699,8 @@ window.NIS2_DEMO_DATA = {
         "1.17"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.17 – Fenyegetettség tudatosító program végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2715,7 +2715,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.17 – Fenyegetettség tudatosító program: 1) A szervezetnek először létre kell hoznia egy fenyegetettség tudatosító programot. 2) A szervezetnek ki kell dolgoznia egy stratégiát a fenyegetések felderítésére. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a fenyegetettség tudatosító programját, hogy biztosítsa annak relevanciáját és hatékonyságát a folyamatosan változó fenyegetési környezetben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2744,8 +2744,8 @@ window.NIS2_DEMO_DATA = {
         "1.19"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "1.19 – Kockázatmenedzsment keretrendszer végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2760,7 +2760,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "1.19 – Kockázatmenedzsment keretrendszer: 1) A szervezetnek azonosítania és dokumentálnia kell a kockázatelemzést, kockázatkezelést és a kockázatok felügyeletét érintő feltételezéseit. 2) A szervezetnek meg kell osztania a kockázatkezelési tevékenység eredményeit a szervezet által meghatározott személyekkel. 3) A naplózás során az érintett szervezetnek figyelemmel kell kísérnie és dokumentálnia kell a kockázatkezelési tevékenységeket, beleértve a kockázatok azonosítását, értékelését, kezelését és felügyeletét. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2789,8 +2789,8 @@ window.NIS2_DEMO_DATA = {
         "1.20"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.20 – Kockázatkezelésért felelős szerepkörök végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2805,7 +2805,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.20 – Kockázatkezelésért felelős szerepkörök: 1) A szervezetnek ki kell jelölnie egy kockázatkezelésért felelős személyt. 2) A szervezetnek ki kell jelölnie egy kockázati vezetőt. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a kockázatkezelési folyamatokat, hogy biztosítsa azok hatékonyságát és relevanciáját a változó kockázati környezetben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2834,8 +2834,8 @@ window.NIS2_DEMO_DATA = {
         "1.21"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.21 – Ellátási lánc kockázatmenedzsment stratégiája végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2850,7 +2850,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.21 – Ellátási lánc kockázatmenedzsment stratégiája: 1) A szervezet kidolgoz egy, az egész szervezetre kiterjedő ellátási láncra vonatkozó kockázatkezelési stratégiát. 2) A szervezetnek meg kell fontolnia, hogy az ellátási láncra vonatkozó kockázatkezelési stratégiát beépíti a szervezeti kockázatkezelési stratégiájába. 3) A szervezet rendszeresen felülvizsgálja és frissíti az ellátási lánc kockázatkezelési stratégiáját a változások nyomon követése érdekében az általa meghatározott gyakorisággal. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2879,8 +2879,8 @@ window.NIS2_DEMO_DATA = {
         "1.23"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "1.23 – Folyamatos felügyeleti stratégia végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott szabályozás, szerep- és felelősségi rekord, mérési vagy felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2895,7 +2895,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "1.23 – Folyamatos felügyeleti stratégia: 1) A szervezetnek ki kell dolgoznia egy stratégiát, amely meghatározza a felügyeleti tevékenységek gyakoriságát és módszereit, valamint a mérőszámokat, amelyek alapján a felügyeleti tevékenységek hatékonyságát értékelik. 2) A szervezetnek fen kell tartania kell egy programot, amely a felügyeleti stratégia szerint folyamatosan figyelemmel kíséri a mérőszámokat. 3) A szervezetnek dokumentálnia kell a folyamatos felügyeleti tevékenységeket, hogy nyomon követhető legyen a felügyeleti tevékenységek hatékonysága és a védelmi intézkedések hatékonysága. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Irányítás és programmenedzsment"
     },
@@ -2924,8 +2924,8 @@ window.NIS2_DEMO_DATA = {
         "2.1"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "2.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2941,7 +2941,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "2.1 – Szabályzat és eljárásrendek: 1) A szervezetnek gondoskodnia kell a hozzáférés-felügyeleti szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról. 2) A szervezetnek meg kell bizonyosodnia arról, hogy a hozzáférés-felügyeleti szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak. 3) A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális hozzáférés-felügyeleti szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -2970,8 +2970,8 @@ window.NIS2_DEMO_DATA = {
         "2.15"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "2.15 – Hozzáférési szabályok érvényesítése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -2987,7 +2987,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "2.15 – Hozzáférési szabályok érvényesítése: 1) A szervezetnek meg kell határoznia és dokumentálnia a logikai hozzáférési jogosultságokat az EIR-hez. 2) A szervezetnek létre kell hoznia egy szabályzatot, amely meghatározza, hogyan kell kezelni és érvényesíteni a logikai hozzáférési jogosultságokat az EIR-ben. 3) A szervezetnek naplóznia kell a logikai hozzáférési jogosultságok használatát az EIR-ben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -3016,8 +3016,8 @@ window.NIS2_DEMO_DATA = {
         "2.71"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "2.71 – Sikertelen bejelentkezési kísérletek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3033,7 +3033,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "2.71 – Sikertelen bejelentkezési kísérletek: 1) A szervezetnek meghatározott esetszám korlátot kell alkalmaznia a felhasználló meghatározott időtartamon belül egymást követő sikertelen bejelentkezési kísérleteire. 2) A szervezetnek implementálnia kell egy olyan megoldást, amely képes nyomon követni és naplózni a sikertelen bejelentkezési kísérleteket. 3) A szervezetnek meghatározott időközönként, rendszeresen felül kell vizsgálnia és szükség esetén frissítenie kell a bejelentkezési kísérletekkel kapcsolatos intézkedéseket, így biztosítva azok hatékonyságát és naprakészségét. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -3062,8 +3062,8 @@ window.NIS2_DEMO_DATA = {
         "2.75"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "2.75 – A rendszerhasználat jelzése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3079,7 +3079,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "2.75 – A rendszerhasználat jelzése: 1) Határozza meg az EIR-ek belépési felületén megjelenítendő, jogilag és információbiztonságilag jóváhagyott rendszerhasználati figyelmeztetés tartalmát. 2) Állítsa be a jóváhagyott figyelmeztetés megjelenítését minden alkalmazandó interaktív belépési ponton, még a hitelesítés vagy a hozzáférés engedélyezése előtt. 3) Dokumentálja a szövegváltozatot, a konfigurációt, a képernyőképes vagy konfigurációexport-alapú próbaeredményt és a felülvizsgálati ciklust. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -3108,8 +3108,8 @@ window.NIS2_DEMO_DATA = {
         "2.88"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "2.88 – Azonosítás vagy hitelesítés nélkül engedélyezett tevékenységek végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3125,7 +3125,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "2.88 – Azonosítás vagy hitelesítés nélkül engedélyezett tevékenységek: 1) A szervezetnek azonosítania kell azokat a felhasználói tevékenységeket, amelyeket az EIR-ben azonosítás vagy hitelesítés nélkül is végrehajthatnak. 2) A szervezetnek meg kell határoznia azokat a tevékenységeket, amelyek normál esetben azonosítást vagy hitelesítést igényelnek, de bizonyos körülmények között lehetővé teszik az azonosítási vagy hitelesítési mechanizmusok megkerülését. 3) A szervezetnek rendszeresen felül kell vizsgálnia ezeket az azonosítást és hitelesítést nem igénylő felhasználói tevékenységeket, és amennyiben azok már nincsenek összhangban a szervezeti célokkal és az üzleti funkciókkal, meg kell szüntetnie azokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -3154,8 +3154,8 @@ window.NIS2_DEMO_DATA = {
         "2.100"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "2.100 – Távoli hozzáférés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3171,7 +3171,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "2.100 – Távoli hozzáférés: 1) A szervezetnek ki kell dolgoznia és dokumentálnia kell az engedélyezett távoli hozzáférés minden egyes típusára vonatkozó használati korlátozásokat, a konfigurációs vagy csatlakozási követelményeket és az alkalmazási útmutatókat. 2) A szervezetnek titkosított magánhálózatokat (VPN-eket) kell használnia a távoli kapcsolatok bizalmasságának és integritásának megőrzése érdekében. 3) A szervezetnek dokumentálnia kell, hogy mely felhasználók részére került engedélyezésre a távoli hozzáférés. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -3200,8 +3200,8 @@ window.NIS2_DEMO_DATA = {
         "2.108"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "2.108 – Vezeték nélküli hozzáférés végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3217,7 +3217,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "2.108 – Vezeték nélküli hozzáférés: 1) A szervezetnek konfigurációs követelményeket, kapcsolódási követelményeket és alkalmazási útmutatót kell kidolgoznia minden egyes vezeték nélküli hozzáférési típusra. 2) A szervezetnek engedélyezési eljárást kell lefolytatnia az EIR-hez való vezeték nélküli hozzáférés minden egyes típusára, mielőtt lehetővé tenné ezeket a kapcsolatokat. 3) A szervezetnek biztosítania kell, hogy a vezeték nélküli hozzáféréshez kapcsolódó biztonsági elvárásokat minden releváns személy megismerje és azokat be is tartsa. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -3246,8 +3246,8 @@ window.NIS2_DEMO_DATA = {
         "2.113"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "2.113 – Mobil eszközök hozzáférés-ellenőrzése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3263,7 +3263,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "2.113 – Mobil eszközök hozzáférés-ellenőrzése: 1) A szervezetnek ki kell alakítania a konfigurációs követelményeket, kapcsolódási követelményeket és alkalmazási útmutatót a mobil eszközök számára, különös tekintettel azokra az esetekre, amikor a mobil eszközök az érintett szervezet által ellenőrzött területen kívül helyezkednek el. 2) A szervezetnek engedélykötelessé kell tennie a mobil eszközökkel történő kapcsolódást az EIR-hez. 3) A szervezetnek rendszeresen felül kell vizsgálnia a kiadott engedélyeket, és a már nem szükséges engedélyeket vissza kell vonnia. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -3292,8 +3292,8 @@ window.NIS2_DEMO_DATA = {
         "2.115"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "2.115 – Külső elektronikus információs rendszerek használata végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3309,7 +3309,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "2.115 – Külső elektronikus információs rendszerek használata: 1) A szervezetnek meg kell határoznia a felhasználási feltételeket a külső rendszerekkel kapcsolatban. 2) A szervezetnek bizalmi kapcsolatokat kell létrehoznia a külső rendszereket birtokló, üzemeltető vagy karbantartó szervezetekkel. 3) Ha a felhasználási feltételeket nem lehet meghatározni a külső rendszerek tulajdonosaival, a szervezet korlátozásokat vezethet be azokkal a személyekkel szemben, akik ezeket a külső rendszereket használják. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -3338,8 +3338,8 @@ window.NIS2_DEMO_DATA = {
         "2.124"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "2.124 – Nyilvánosan elérhető tartalom végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott hozzáférési szabály, konfigurációexport, jogosultsági vagy hozzáférési teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3355,7 +3355,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "2.124 – Nyilvánosan elérhető tartalom: 1) A szervezetnek gondoskodnia kell a nyilvános információk közzétételével kapcsolatos feladatok ellátásról. 2) A szervezetnek tájékoztatást kell nyújtania a jogosult személyeknek annak érdekében, hogy képesek legyenek annak a megállapítására, hogy mely információk tehetők nyilvánosan elérhetővé. 3) A szervezetnek meghatározott gyakorisággal át kell tekintenie a nyilvánosan elérhető tartalmakat, hogy azok tartalmaznak-e nem nyilvános információkat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Hozzáférés-felügyelet"
     },
@@ -3384,8 +3384,8 @@ window.NIS2_DEMO_DATA = {
         "3.2"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "3.2 – Biztonságtudatossági képzés végrehajtási csomag: jóváhagyott EIR-scope, 10 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott képzési terv és anyag, résztvevői nyilvántartás, tudásellenőrzés és felülvizsgálati rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 10 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3400,7 +3400,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "3.2 – Biztonságtudatossági képzés: 1) A szervezetnek ki kell dolgoznia egy alap- és haladó szintű biztonságtudatossági képzést és azokat meg kell tartania a felhasználók számára, mely magában foglalja a felhasználók tudásszintjének mérését is. 2) A szervezetnek a biztonságtudatossági képzés tartalmát a szervezeti követelmények, a felhasználók által elérhető rendszerek, és a munkakörnyezet alapján (pl.: távmunka) kell meghatároznia. 3) A szervezetnek dokumentálnia kell a biztonságtudatossági képzések lebonyolítását pl.: jelenléti ívek használata, automatikusan generált részvételi igazolás. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Tudatosság és képzés"
     },
@@ -3429,8 +3429,8 @@ window.NIS2_DEMO_DATA = {
         "3.4"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "3.4 – Biztonságtudatossági képzés – Belső fenyegetés végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott képzési terv és anyag, résztvevői nyilvántartás, tudásellenőrzés és felülvizsgálati rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3445,7 +3445,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "3.4 – Biztonságtudatossági képzés – Belső fenyegetés: 1) A szervezetnek tisztában kell lennie azzal, hogy mi a belső fenyegetés és mik lehetnek annak potenciális jelei. 2) A szervezetnek törekednie kell a belső fenyegetések potenciális jeleinek felismerésére és meg kell tennie a szükséges intézkedéseket, melyekkel igyekszik csökkenteni a fenyegetés mértékét vagy megszüntetni azt. 3) A szervezet a belső fenyegetéssel kapcsolatos tudnivalók oktatását megvalósíthatja személyre szabottan is, az érintettek szerepköre szerint. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Tudatosság és képzés"
     },
@@ -3474,8 +3474,8 @@ window.NIS2_DEMO_DATA = {
         "3.9"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "3.9 – Szerepkör alapú biztonsági képzés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott képzési terv és anyag, résztvevői nyilvántartás, tudásellenőrzés és felülvizsgálati rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3490,7 +3490,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "3.9 – Szerepkör alapú biztonsági képzés: 1) A szervezetnek szerepkör alapú biztonsági képzést kell biztosítania a felhasználóknak. 2) A kezdeti képzést követően a szervezetnek a vonatkozó hatályos jogszabályok, irányelvek, szabályozások, szabványok és ajánlások alapján meghatározott minimális gyakorisággal kell lefolytatnia a biztonságtudatossági képzéseket. 3) A szervezetnek be kell építenie a belső vagy külső biztonsági eseményekből levont tanulságokat a szerepköralapú biztonsági képzésekbe. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Tudatosság és képzés"
     },
@@ -3519,8 +3519,8 @@ window.NIS2_DEMO_DATA = {
         "4.1"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "4.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "naplózási szabály, read-only konfigurációexport, mintanapló, megőrzési és hozzáférési ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3536,7 +3536,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "4.1 – Szabályzat és eljárásrendek: 1) A szervezetnek gondoskodnia kell a naplózást és elszámoltathatóságot magában foglaló szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról. 2) A szervezetnek meg kell bizonyosodnia arról, hogy a naplózást és elszámoltathatóságot magában foglaló szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak. 3) A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális naplózást és elszámoltathatóságot magában foglaló szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Naplózás és elszámoltathatóság"
     },
@@ -3565,8 +3565,8 @@ window.NIS2_DEMO_DATA = {
         "4.25"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "4.25 – Naplóinformációk védelme végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "naplózási szabály, read-only konfigurációexport, mintanapló, megőrzési és hozzáférési ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3582,7 +3582,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "4.25 – Naplóinformációk védelme: 1) A szervezetnek biztosítania kell, hogy az EIR-ben végrehajtott tevékenységek sikeres ellenőrzéséhez szükséges összes információ rendelkezésre álljon pl.: naplóbejegyzések, naplófájlok beállításai, a vizsgálati jelentéseket és a személyazonosításra alkalmas információk. 2) A szervezetnek kiemelt figyelmet kell fordítania a naplóinformációk technikai védelmére. 3) A szervezetnek úgy kell beállítania az EIR-t, hogy amennyiben jogosulatlan hozzáférést, módosítást vagy a naplóinformációk törlését észleli, képes legyen értesítést küldeni a meghatározott személyeknek vagy szerepköröknek. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Naplózás és elszámoltathatóság"
     },
@@ -3611,8 +3611,8 @@ window.NIS2_DEMO_DATA = {
         "4.38"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "4.38 – A naplóbejegyzések megőrzése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "naplózási szabály, read-only konfigurációexport, mintanapló, megőrzési és hozzáférési ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3628,7 +3628,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "4.38 – A naplóbejegyzések megőrzése: 1) A szervezetnek meg kell határoznia a naplóbejegyzések megőrzésének időtartamát, figyelembe véve az adminisztratív, jogi, naplózási és egyéb működési szempontokat. 2) A szervezetnek biztosítania kell a naplóbejegyzések elérhetőségét az esetleges hatósági megkeresések esetére. 3) A szervezetnek standard válaszadási folyamatokat kell kidolgoznia a hatósági keresések kezelésére. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Naplózás és elszámoltathatóság"
     },
@@ -3657,8 +3657,8 @@ window.NIS2_DEMO_DATA = {
         "4.40"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "4.40 – Naplóbejegyzések létrehozása végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "naplózási szabály, read-only konfigurációexport, mintanapló, megőrzési és hozzáférési ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3674,7 +3674,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "4.40 – Naplóbejegyzések létrehozása: 1) Az EIR-nek képesnek kell lennie naplóbejegyzések generálni a \"Naplózható események\" pontban meghatározott előírásoknak megfelelően. 2) Az EIR-nek lehetővé kell tennie meghatározott személyeknek vagy szerepköröknek, hogy kiválasszák, mely naplózható események legyenek naplózva az EIR egyes elemei által. 3) Az érintett szervezetnek biztosítania kell, hogy az EIR működése megfeleljen a fenti követelményeknek. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Naplózás és elszámoltathatóság"
     },
@@ -3703,8 +3703,8 @@ window.NIS2_DEMO_DATA = {
         "5.1"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "5.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3719,7 +3719,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "5.1 – Szabályzat és eljárásrendek: 1) A szervezetnek gondoskodnia kell a biztonságértékelési szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról. 2) A szervezetnek meg kell bizonyosodnia arról, hogy a biztonságértékelési szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak. 3) A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális biztonságértékelési szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági értékelés és engedélyezés"
     },
@@ -3748,8 +3748,8 @@ window.NIS2_DEMO_DATA = {
         "5.2"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "5.2 – Biztonsági értékelések végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3764,7 +3764,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "5.2 – Biztonsági értékelések: 1) A szervezetnek biztosítania kell, hogy a védelmi intézkedések értékelői rendelkezzenek a szükséges készségekkel és technikai szaktudással a hatékony értékelési tervek kialakításához és a rendszerspecifikus, hibrid, közös és programkezelési kontrollok értékeléséhez, amennyiben ez szükséges. 2) A szervezetnek értékelnie kell az EIR, illetve az EIR működési környezetét érintő védelmi intézkedéseket, beleértve az elsődleges és folyamatos engedélyezés, a folyamatos felügyelet, az éves értékelések, a rendszertervezés és fejlesztés, a rendszerbiztonsági tervezés és az rendszerfejlesztési életciklus részét. 3) A szervezetnek gondoskodnia kell az értékelések során feltárt kockázatok kezeléséről. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági értékelés és engedélyezés"
     },
@@ -3793,8 +3793,8 @@ window.NIS2_DEMO_DATA = {
         "5.4"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "5.4 – Biztonsági értékelések – Kiberbiztonsági audit végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3809,7 +3809,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "5.4 – Biztonsági értékelések – Kiberbiztonsági audit: 1) Az SRC-010 hatályos követelménye és a hatósági/auditori feltételek alapján rögzítse az audit hatókörét, az érintett EIR-eket és az auditütemezést. 2) Ellenőrizze és dokumentálja az auditor jogosultságát, függetlenségét, szerződéses kereteit és a szükséges információátadást. 3) Őrizze meg a jóváhagyott auditjelentést, a javítási evidenciákat és a lezáró vezetői döntést védett tárban. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági értékelés és engedélyezés"
     },
@@ -3838,8 +3838,8 @@ window.NIS2_DEMO_DATA = {
         "5.7"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "5.7 – Információcsere végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3854,7 +3854,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "5.7 – Információcsere: 1) A szervezetnek jóvá kell hagynia és szabályoznia kell az információcserét az EIR és más rendszerek között, összhangban a kapcsolódásokra és az információcserére vonatkozó biztonsági megállapodásokkal. 2) A szervezetnek minden egyes információcsere-megállapodás keretében dokumentálnia kell az EIR interfészeinek jellemzőit, biztonsági követelményeit, védelmi intézkedéseit és felelősségi körét. 3) A szervezetnek a kockázatok mérlegelése során figyelembe kell vennie azokat az EIR-eket is, amelyek ugyanabban a hálózatban találhatóak. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági értékelés és engedélyezés"
     },
@@ -3883,8 +3883,8 @@ window.NIS2_DEMO_DATA = {
         "5.12"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "5.12 – Engedélyezés végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3899,7 +3899,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "5.12 – Engedélyezés: 1) A szervezetnek gondoskodnia kell az olyan engedélyezési folyamattal kapcsolatos feladatok ellátásáról, mely az EIR-ért felel. 2) A szervezetnek gondoskodnia kell az olyan engedélyezési folyamattal kapcsolatos feladatok ellátásáról, mely a szervezeti EIR-ekre vonatkozó közös, más EIR-ekből áthozott (átörökített) biztonsági követelmények elfogadásáért felel. 3) A szervezetnek nyilvántartást kell vezetnie a folyamatokról és az engedélyezési döntésekről, annak érdekében, hogy bizonyítékot tudjon szolgáltatni a folyamatos felügyeleti programokból származó eredményekről. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági értékelés és engedélyezés"
     },
@@ -3928,8 +3928,8 @@ window.NIS2_DEMO_DATA = {
         "5.18"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "5.18 – Folyamatos felügyelet – Kockázatmonitorozás végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3944,7 +3944,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "5.18 – Folyamatos felügyelet – Kockázatmonitorozás: 1) A szervezetnek meg kell határoznia a szervezeti kockázattűrési szintjét, ami a kockázatmonitorozás szükséges bementi információja. 2) A szervezetnek be kell vezetnie egy hatékonyság ellenőrzési rendszert, amely meghatározza a bevezetett kockázatkezelési válasz intézkedések folyamatos hatékonyságát. 3) A szervezetnek nyilvántartást kell vezetnie a fent említett lépések végrehajtásáról és az eredményekről, hogy biztosítsa a folyamatos felügyeletet és a kockázatkezelési stratégia hatékonyságának értékelését. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági értékelés és engedélyezés"
     },
@@ -3973,8 +3973,8 @@ window.NIS2_DEMO_DATA = {
         "5.25"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "5.25 – Belső rendszerkapcsolatok végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott értékelési terv, vizsgálati jegyzőkönyv, engedélyezési döntés és nyomonkövetési rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -3989,7 +3989,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "5.25 – Belső rendszerkapcsolatok: 1) A szervezet minden belső kapcsolat esetében dokumentálja az interfész jellemzőit, a biztonsági követelményeket, továbbá a kommunikációban részt vevő információ jellegét. 2) A szervezet leltárt készít azon kategóriákból, melyekbe a belső rendszerkapcsolatok az egyedi jellemzőik alapján rendezhetőek. 3) A szervezet rendszeresen felülvizsgálja a különböző kategóriákat és szükség esetén módosítja a belső rendszerkapcsolat, valamint az érintett rendszerelemek felé támasztott elvárásokat, vagy eltávolítja azokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági értékelés és engedélyezés"
     },
@@ -4018,8 +4018,8 @@ window.NIS2_DEMO_DATA = {
         "6.15"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "6.15 – Biztonsági hatásvizsgálatok végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4035,7 +4035,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "6.15 – Biztonsági hatásvizsgálatok: 1) A szervezetnek a megfelelően képzett felelősök bevonásával el kell végeznie a hatásvizsgálatot. 2) A hatásvizsgálatoknak magukban kell foglalniuk a biztonsági tervek, szabályzatok és eljárások áttekintését a követelmények tisztázása végett, valamint az EIR tervezési dokumentációjának és üzemeltetési eljárásainak áttekintését. 3) A változások bevezetése előtt a szervezet felülvizsgálja a tervezett változásokat és elemzi azok kockázatait, illetve információbiztonsági hatásait. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Konfigurációkezelés"
     },
@@ -4064,8 +4064,8 @@ window.NIS2_DEMO_DATA = {
         "6.18"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "6.18 – A változtatásokra vonatkozó hozzáférés korlátozások végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4081,7 +4081,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "6.18 – A változtatásokra vonatkozó hozzáférés korlátozások: 1) A szervezet meghatározza azokat a fizikai és logikai hozzáférési korlátozásokat, amelyek az EIR változásaihoz kapcsolódnak. 2) A szervezetnek dokumentálnia kell a korlátozásokat. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a hozzáférési korlátozásokat, hogy biztosítsa azok relevanciáját és hatékonyságát. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Konfigurációkezelés"
     },
@@ -4110,8 +4110,8 @@ window.NIS2_DEMO_DATA = {
         "6.23"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "6.23 – Konfigurációs beállítások végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4127,7 +4127,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "6.23 – Konfigurációs beállítások: 1) A szervezetnek meg kell határoznia a szervezeti szintű, egységes konfigurációs elvárásokat, melyeket dokumentálnia is kell. 2) A szervezetnek a szervezeti szinten meghatározott konfigurációs elvárásokból kell származtatnia az elektronikus információs rendszerelemekben alkalmazott biztonsági konfigurációs beállításokat. 3) A szervezet figyelemmel kíséri és ellenőrzi a konfigurációs beállítások változásait a szervezeti szabályzatokkal és eljárásokkal összhangban. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Konfigurációkezelés"
     },
@@ -4156,8 +4156,8 @@ window.NIS2_DEMO_DATA = {
         "6.26"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "6.26 – Legszűkebb funkcionalitás végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4173,7 +4173,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "6.26 – Legszűkebb funkcionalitás: 1) A szervezetnek úgy kell konfigurálnia az EIR-t, hogy az csak az ügy- és üzletmenet szempontjából létfontosságú szolgáltatásokat nyújtsa. 2) A szervezet határozza meg a tiltott vagy korlátozott funkciókat, portokat, protokollokat, szoftvereket és szolgáltatásokat. 3) A szervezetnek dokumentálnia kell az EIR konfigurációját és ebben szerepeltetnie kell a tiltott vagy korlátozott funkciókat, portokat, protokollokat, szoftvereket és szolgáltatásokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Konfigurációkezelés"
     },
@@ -4202,8 +4202,8 @@ window.NIS2_DEMO_DATA = {
         "6.47"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "6.47 – A szoftverhasználat korlátozásai végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4219,7 +4219,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "6.47 – A szoftverhasználat korlátozásai: 1) A szervezetnek biztosítania kell, hogy csak olyan szoftvereket és kapcsolódó dokumentációkat használjon, amelyek megfelelnek a szerződéses elvárásoknak és a szerzői jogi vagy más jogszabályi előírásoknak. 2) A szervezetnek nyomon kell követnie a mennyiségi licenc alá eső szoftverek és a kapcsolódó dokumentációk használatát. 3) A szervezetnek rendszeresen felül kell vizsgálnia ezeket a folyamatokat, hogy biztosítsa, hogy továbbra is megfelelnek a követelményeknek. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Konfigurációkezelés"
     },
@@ -4248,8 +4248,8 @@ window.NIS2_DEMO_DATA = {
         "6.49"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "6.49 – Felhasználó által telepített szoftver végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott baseline, read-only konfigurációexport, változásjegy, teszt és rollback- vagy kivételrekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4265,7 +4265,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "6.49 – Felhasználó által telepített szoftver: 1) A szervezetnek meg kell határoznia a szoftvertelepítéssel kapcsolatos szervezetre érvényes követelményeket, melyeknek tartalmaznia kell a felhasználók lehetőségeit a szoftvertelepítéssel kapcsolatban, valamint a szoftvertelepítéssel kapcsolatos engedélyezett és tiltott tevékenységeket. 2) A szervezetnek figyelembe kell vennie a szoftvertelepítéssel kapcsolatos szervezetre érvényes követelmények kidolgozásakor, hogy a felhasználók privilegizált jogosultság nélkül is képesek lehetnek telepíteni hordozható (portable) programokat. 3) A szervezetnek meghatározott gyakorisággal ellenőriznie kell a szabályok betartását. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Konfigurációkezelés"
     },
@@ -4294,8 +4294,8 @@ window.NIS2_DEMO_DATA = {
         "7.1"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "7.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott folytonossági eljárás, képzési vagy gyakorlatjegyzőkönyv, eredmény és javítási napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4311,7 +4311,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "7.1 – Szabályzat és eljárásrendek: 1) A szervezetnek ki kell dolgoznia és dokumentálnia kell egy üzletmenet-folytonossági szabályzatot, amely tartalmazza a szervezeti-, folyamat és rendszerszintű követelményeket. 2) A szabályzatnak összhangban kell lennie a szervezetre vonatkozó, hatályos jogszabályokkal, irányelvekkel, szabályozásokkal, szabványokkal és ajánlásokkal. 3) A szervezetnek felül kell vizsgálnia és frissítenie kell az aktuális üzletmenet-folytonossági szabályzatot és az üzletmenet-folytonossági eljárásokat és eljárásrendet a szervezet által meghatározott gyakorisággal és a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Üzletmenet-folytonosság és helyreállítás"
     },
@@ -4340,8 +4340,8 @@ window.NIS2_DEMO_DATA = {
         "7.10"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "7.10 – A folyamatos működésre felkészítő képzés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott folytonossági eljárás, képzési vagy gyakorlatjegyzőkönyv, eredmény és javítási napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4357,7 +4357,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "7.10 – A folyamatos működésre felkészítő képzés: 1) A szervezetnek folyamatos működésre felkészítő képzést kell biztosítania az EIR felhasználói számára, amely képzés a felhasználók szerepkörének vagy felelősségi körének megfelelő. 2) A képzést a szerepkörbe vagy felelősségbe kerülésüket követő meghatározott időn belül kell elvégezni. 3) A szervezetnek meghatározott gyakorisággal vagy meghatározott eseményeket követően felül kell vizsgálnia és frissítenie a folyamatos működésre felkészítő képzés tartalmát. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Üzletmenet-folytonosság és helyreállítás"
     },
@@ -4386,8 +4386,8 @@ window.NIS2_DEMO_DATA = {
         "8.7"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "8.7 – Azonosítás és hitelesítés (felhasználók) – Hozzáférés a fiókokhoz – Visszajátszás elleni védelem végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4403,7 +4403,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "8.7 – Azonosítás és hitelesítés (felhasználók) – Hozzáférés a fiókokhoz – Visszajátszás elleni védelem: 1) A szervezetnek meg kell határoznia, hogy mely fiókokat tekinti privilegizáltnak és melyeket nem. 2) A szervezetnek implementálnia kell a visszajátszás elleni védelmet biztosító hitelesítési mechanizmusokat. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a hitelesítési mechanizmusokat, hogy biztosítsa, hogy azok naprakészek és hatékonyak maradnak a visszajátszás elleni védekezésben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Azonosítás és hitelesítés"
     },
@@ -4432,8 +4432,8 @@ window.NIS2_DEMO_DATA = {
         "8.14"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "8.14 – Azonosító kezelés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4449,7 +4449,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "8.14 – Azonosító kezelés: 1) A szervezetnek meg kell határoznia azokat a személyeket vagy szerepköröket, akik jogosultak az egyéni, csoport, szerepkör vagy eszköz azonosítók kiosztására. 2) A szervezetnek ki kell választania egy azonosítót, amely azonosítja az egyént, csoportot, szerepkört, szolgáltatást vagy eszközt. 3) A szervezetnek dokumentálnia kell az azonosítók kiosztását és használatát, hogy nyomon követhető legyen az azonosítók használata és a hozzájuk rendelt személyek, csoportok, szerepkörök, szolgáltatások és eszközök. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Azonosítás és hitelesítés"
     },
@@ -4478,8 +4478,8 @@ window.NIS2_DEMO_DATA = {
         "8.21"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "8.21 – A hitelesítésre szolgáló eszközök kezelése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4495,7 +4495,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "8.21 – A hitelesítésre szolgáló eszközök kezelése: 1) A szervezet számba veszi és dokumentálja azon rendszereket, melyek elérése hitelesítő eszközhöz kötött. 2) A szervezet számba veszi és dokumentálja azon egyének, csoportok, szerepkörök, szolgáltatások vagy eszközök identitását, akik hitelesítő eszközöket kaphatnak. 3) A szervezet létrehozza a hitelesítő eszközök kezelésének szabályzatát. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Azonosítás és hitelesítés"
     },
@@ -4524,8 +4524,8 @@ window.NIS2_DEMO_DATA = {
         "8.22"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "8.22 – A hitelesítésre szolgáló eszközök kezelése – Jelszó alapú hitelesítés végrehajtási csomag: jóváhagyott EIR-scope, 9 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 9 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4541,7 +4541,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "8.22 – A hitelesítésre szolgáló eszközök kezelése – Jelszó alapú hitelesítés: 1) A szervezet fenntartja a gyakran használt, könnyen kitalálható vagy kompromittált jelszavak listáját, és ezt a listát a szervezet által meghatározott gyakorisággal frissíti. 2) Ellenőrzi, hogy a felhasználók által létrehozott vagy módosított jelszavak szerepelnek-e a gyakran használt, könnyen kitalálható vagy kompromittált jelszavak listáján. 3) Dokumentálja és rendszeres időközönként felülvizsgálja a jelszókezelési folyamatokat, hogy biztosítsa a szabályok betartását és az esetleges szabálytalanságok azonnali észlelését. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Azonosítás és hitelesítés"
     },
@@ -4570,8 +4570,8 @@ window.NIS2_DEMO_DATA = {
         "8.36"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "8.36 – Hitelesítési információk visszajelzésének elrejtése végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4587,7 +4587,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "8.36 – Hitelesítési információk visszajelzésének elrejtése: 1) A szervezetnek először meg kell határoznia, hogy mely eszközök esetében jelentős a jogosulatlan személyek általi hitelesítési információ felfedezésének és kihasználásának veszélye. 2) A szervezetnek ki kell választania a megfelelő módszert a visszacsatolás elrejtésére. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a hitelesítési visszacsatolás elrejtésének módszerét, hogy biztosítsa a folyamatos védelmet a jogosulatlan hozzáférés ellen. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Azonosítás és hitelesítés"
     },
@@ -4616,8 +4616,8 @@ window.NIS2_DEMO_DATA = {
         "8.37"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "8.37 – Hitelesítés kriptográfiai modul esetén végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4633,7 +4633,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "8.37 – Hitelesítés kriptográfiai modul esetén: 1) A szervezetnek meg kell határoznia, hogy milyen kriptográfiai modul hitelesítési mechanizmusokat kíván alkalmazni. 2) A szervezetnek implementálnia kell ezeket a mechanizmusokat az EIR-en belül. 3) A szervezetnek biztosítania kell, hogy a kriptográfiai modul hitelesítési mechanizmusai megfelelnek a hatályos törvényeknek, szabályzatoknak és szabványoknak. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Azonosítás és hitelesítés"
     },
@@ -4662,8 +4662,8 @@ window.NIS2_DEMO_DATA = {
         "8.38"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "8.38 – Azonosítás és hitelesítés (szervezeten kívüli felhasználók) végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4679,7 +4679,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "8.38 – Azonosítás és hitelesítés (szervezeten kívüli felhasználók): 1) A szervezetnek meg kell határoznia, kiket tekint nem szervezeti felhasználóknak. 2) A szervezetnek biztosítania kell, hogy a nem szervezeti felhasználók egyedileg azonosíthatók és hitelesíthetők legyenek az EIR-ben. 3) A szervezetnek naplóznia kell a nem szervezeti felhasználók tevékenységét és az ő nevükben futó folyamatokat az EIR-ben. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Azonosítás és hitelesítés"
     },
@@ -4708,8 +4708,8 @@ window.NIS2_DEMO_DATA = {
         "8.39"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "8.39 – Azonosítás és hitelesítés (szervezeten kívüli felhasználók) – Meghatározott azonosítási profilok használata végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4725,7 +4725,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "8.39 – Azonosítás és hitelesítés (szervezeten kívüli felhasználók) – Meghatározott azonosítási profilok használata: 1) A szervezetnek meg kell határoznia az azonosítási profilokat, amelyeket az azonosítási folyamat során alkalmazni kíván. 2) A szervezetnek biztosítania kell, hogy választott és használt nyílt személyazonosság-kezelési szabvány életképes, megbízható, fenntartható és interoperábilis más rendszerekkel, rendszerelemekkel. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell a meghatározott azonosítási profilokat az EIR-ben, annak érdekében, hogy biztosítsa azok folyamatos megfelelőségét. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Azonosítás és hitelesítés"
     },
@@ -4754,8 +4754,8 @@ window.NIS2_DEMO_DATA = {
         "8.43"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "8.43 – Újrahitelesítés végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott IAM-szabály, read-only beállításexport, hitelesítési teszt, kivétel- és felülvizsgálati napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4771,7 +4771,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "8.43 – Újrahitelesítés: 1) A szervezetnek meg kell határoznia azokat a körülményeket vagy helyzeteket, amikor újrahitelesítést kér az egyénektől. 2) A szervezetnek szabályoznia kell az újrahitelesítést, melynek során meghatározza az újrahitelesítési eljárásokat és kritériumokat. 3) A szervezetnek rendszeresen felül kell vizsgálnia és frissítenie kell az újrahitelesítésre vonatkozó szabályzatát és eljárásrendjeit annak érdekében, hogy biztosítsa azok hatékonyságát és aktualitását. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Azonosítás és hitelesítés"
     },
@@ -4800,8 +4800,8 @@ window.NIS2_DEMO_DATA = {
         "9.25"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "9.25 – A biztonsági események nyomonkövetése végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott eljárás, eseményjegy, értesítési vagy eszkalációs nyom, gyakorlat és lessons-learned rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4817,7 +4817,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "9.25 – A biztonsági események nyomonkövetése: 1) A szervezetnek létre kell hoznia egy eljárásrendet, amely meghatározza, hogyan kell nyomon követni és dokumentálni a biztonsági eseményeket. 2) A biztonsági eseményekkel kapcsolatos információk számos forrásból szerezheti be az érintett szervezet, beleértve a hálózat monitorozását, a biztonsági eseményekről készült jelentéseket, a biztonsági eseményeket kezelő csapatokat, a felhasználói panaszokat, a beszállítói partnereket, a naplók monitorozását, a fizikai hozzáférés… 3) A szervezetnek biztosítania kell, hogy a személyzet megfelelően képzett és felkészült, annak érdekében, hogy a biztonsági eseményeket nyomon követése és dokumentálása megfelelő legyen. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági események kezelése"
     },
@@ -4846,8 +4846,8 @@ window.NIS2_DEMO_DATA = {
         "9.27"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "9.27 – A biztonsági események jelentése végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott eljárás, eseményjegy, értesítési vagy eszkalációs nyom, gyakorlat és lessons-learned rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4863,7 +4863,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "9.27 – A biztonsági események jelentése: 1) A szervezetnek olyan szabályzatot kell alkotnia vagy meglévő szabályzatai valamelyikébe (pl. 2) A szervezetnek biztosítania kell, hogy a személyek megfelelő képzést kapjanak a biztonsági események felismerésére és jelentésére. 3) A szervezetnek dokumentálnia kell a biztonsági eseményeket, beleértve a jelentett eseményeket, a megtett intézkedéseket és a következményeket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági események kezelése"
     },
@@ -4892,8 +4892,8 @@ window.NIS2_DEMO_DATA = {
         "9.31"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "9.31 – Segítségnyújtás a biztonsági események kezeléséhez végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott eljárás, eseményjegy, értesítési vagy eszkalációs nyom, gyakorlat és lessons-learned rekord, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4909,7 +4909,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "9.31 – Segítségnyújtás a biztonsági események kezeléséhez: 1) A szervezetnek létre kell hoznia egy helpdesk szolgáltatói és támogatási csoportot, amely támogatást nyújt az EIR felhasználóinak a biztonsági események kezelésében. 2) A szervezetnek be kell vezetnie egy jegykezelő rendszert, amely lehetővé teszi a biztonsági események kezeléséhez köthető jegyek megnyitását és nyomon követését. 3) A szervezetnek folyamatosan felül kell vizsgálnia és szükség esetén frissítenie kell a biztonsági események kezelésére és jelentésére vonatkozó szabályzatait és eljárásrendjeit annak érdekében, hogy hatékony támogassa az EIR felhasználóit a biztonsági események bejelentésében. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Biztonsági események kezelése"
     },
@@ -4938,8 +4938,8 @@ window.NIS2_DEMO_DATA = {
         "10.2"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "10.2 – Szabályozott karbantartás végrehajtási csomag: jóváhagyott EIR-scope, 8 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott karbantartási eljárás, munkajegy, hozzáférési napló, felügyeleti és lezárási ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 8 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -4955,7 +4955,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "10.2 – Szabályozott karbantartás: 1) A szervezet ütemezi, dokumentálja és felülvizsgálja a rendszerelemek karbantartásának, javításának és cseréjének nyilvántartásait a gyártó vagy szállító specifikációi és az érintett szervezet követelményei szerint. 2) A szervezetnek jóvá kell hagyja és ellenőriznie kell az összes karbantartási tevékenységet, függetlenül attól, hogy azt a helyszínen vagy távolról végzik-e, és hogy az EIR-t vagy a rendszerelemeket a helyszínen szervizelik-e, vagy más helyszínre szállítják. 3) A szervezet figyelembe veszi az információs rendszerek tartalék alkatrészeinek beszerzésével kapcsolatos szempontokat is. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Karbantartás"
     },
@@ -4984,8 +4984,8 @@ window.NIS2_DEMO_DATA = {
         "10.11"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "10.11 – Távoli karbantartás végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott karbantartási eljárás, munkajegy, hozzáférési napló, felügyeleti és lezárási ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5001,7 +5001,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "10.11 – Távoli karbantartás: 1) A szervezet jóváhagyja, nyomon követi és ellenőrzi a távoli karbantartási és diagnosztikai tevékenységeket. 2) A szervezet csak akkor engedélyezi a távoli karbantartási és diagnosztikai eszközök használatát, amennyiben az összhangban áll a szervezeti szabályokkal és az EIR rendszerbiztonsági tervében dokumentált. 3) A szervezet lezárja a munkaszakaszokat és a hálózati kapcsolatokat, amikor a távoli karbantartás befejeződik. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Karbantartás"
     },
@@ -5030,8 +5030,8 @@ window.NIS2_DEMO_DATA = {
         "10.18"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "10.18 – Karbantartó személyek végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott karbantartási eljárás, munkajegy, hozzáférési napló, felügyeleti és lezárási ellenőrzés, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5047,7 +5047,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "10.18 – Karbantartó személyek: 1) A szervezet kialakít egy folyamatot a karbantartási munkákhoz szükséges hozzáférési jogosultságok kezelésére. 2) A szervezet nyilvántartást vezet a hozzáférési jogosultsággal rendelkező karbantartó szervezetekről vagy személyekről. 3) A szervezet ideiglenes hozzáférési jogosultságot adhat a karbantartást végző személyeknek, azonban ennek kockázatát a kockázatelemzésben értékelnie kell. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Karbantartás"
     },
@@ -5076,8 +5076,8 @@ window.NIS2_DEMO_DATA = {
         "12.37"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "12.37 – Környezeti védelmi intézkedések végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott környezeti követelmény, mérési vagy szenzorrekord, riasztási próba és felülvizsgálati jegyzőkönyv, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5093,7 +5093,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "12.37 – Környezeti védelmi intézkedések: 1) A szervezetnek meg kell határoznia a biztonságos szinteket (tartományokat) a környezeti feltételeket illetően . 2) A szervezetnek be kell állítania a környezeti szabályozó rendszereket, hogy fenntartsa ezeket a biztonságos szinteket. 3) A szervezetnek rendszeresen felül kell vizsgálnia a környezeti szabályozási szinteket és a riasztási rendszert, hogy biztosítsa azok hatékonyságát és naprakészségét. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Fizikai és környezeti védelem"
     },
@@ -5122,8 +5122,8 @@ window.NIS2_DEMO_DATA = {
         "16.16"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "16.16 – Biztonságtervezési elvek végrehajtási csomag: jóváhagyott EIR-scope, 7 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott követelmény- és értékelési checklist, szerződéses vagy tervi kontroll, eltérés- és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 7 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5138,7 +5138,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "16.16 – Biztonságtervezési elvek: 1) A szervezetnek meg kell határoznia a biztonságtervezési elveit, amelyeket az EIR fejlesztési életciklusa során alkalmazni fog. 2) A szervezetnek alkalmaznia kell ezeket a biztonságtervezési elveket új EIR fejlesztésénél, vagy amikor az EIR frissítésre kerül. 3) A szervezetnek naplót kell vezetnie az EIR módosításairól és frissítéseiről, hogy nyomon követhető legyen a biztonságtervezési elvek alkalmazása. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és szolgáltatásbeszerzés"
     },
@@ -5167,8 +5167,8 @@ window.NIS2_DEMO_DATA = {
         "16.49"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "16.49 – Külső elektronikus információs rendszerek szolgáltatásai végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott követelmény- és értékelési checklist, szerződéses vagy tervi kontroll, eltérés- és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5183,7 +5183,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "16.49 – Külső elektronikus információs rendszerek szolgáltatásai: 1) Az érintett szervezetnek szerződéses kötelezettségként meg kell követelnie, hogy az általa igénybe vett EIR-ek szolgáltatásai megfeleljenek az érintett szervezet elektronikus információbiztonsági követelményeinek. 2) Az érintett szervezetnek meg kell határoznia és dokumentálnia kell a szervezeti felügyelet és az érintett szervezet felhasználóinak feladatait és kötelezettségeit a külső EIR-ek szolgáltatásával kapcsolatban. 3) Az érintett szervezetnek biztosítania kell, hogy a külső EIR szolgáltatóval való kapcsolatát szabályozó szerződés tartalmazza a biztonsági események kezelésére vonatkozó eljárásokat, beleértve a biztonsági események jelentését, a válaszidőt és a helyreállítási terveket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és szolgáltatásbeszerzés"
     },
@@ -5212,8 +5212,8 @@ window.NIS2_DEMO_DATA = {
         "17.1"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "17.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5229,7 +5229,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "17.1 – Szabályzat és eljárásrendek: 1) A szervezetnek gondoskodnia kell a rendszer- és kommunikációvédelmi szabályzat és eljárásrendek kidolgozásával, dokumentálásával, jóváhagyásával, kiadásával és megismertetésével kapcsolatos feladatok ellátásáról. 2) A szervezetnek meg kell bizonyosodnia arról, hogy a rendszer- és kommunikációvédelmi szabályzatban foglaltak megfelelnek a szervezetre vonatkozó hatályos jogszabályoknak, irányelveknek, szabályozásoknak, szabványoknak és ajánlásoknak. 3) A szervezetnek felül kell vizsgálnia és szükség esetén frissítenie kell az aktuális rendszer- és kommunikációvédelmi szabályzatot/szabályokat, illetve a kapcsolódó eljárásrendeket a szervezet által meghatározott gyakorisággal, valamint a szervezet által meghatározott események bekövetkezését követően. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és kommunikációvédelem"
     },
@@ -5258,8 +5258,8 @@ window.NIS2_DEMO_DATA = {
         "17.12"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "17.12 – Szolgáltatásmegtagadással járó támadások elleni védelem végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5275,7 +5275,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "17.12 – Szolgáltatásmegtagadással járó támadások elleni védelem: 1) A szervezetnek azonosítania kell a lehetséges belső és külső okokat, amelyek szolgáltatásmegtagadással járó eseményeket okozhatnak. 2) A szervzezetnek elemzést kell végeznie a hálózati protokollok széles skáláján, hogy felderítse, melyik lehet a leginkább kitett a szolgáltatásmegtagadással járó támadásokkal szemben. 3) A szervezetnek naplóznia kell a szolgáltatásmegtagadással járó támadásokat és a hozzájuk kapcsolódó védelmi intézkedéseket annak érdekében, hogy folyamatosan értékelje és javítsa a védelmi stratégiákat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és kommunikációvédelem"
     },
@@ -5304,8 +5304,8 @@ window.NIS2_DEMO_DATA = {
         "17.49"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "17.49 – Kriptográfiai kulcs előállítása és kezelése végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5321,7 +5321,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "17.49 – Kriptográfiai kulcs előállítása és kezelése: 1) A szervezet először határozza meg a kriptográfiai kulcskezelési követelményeket, amelyek összhangban vannak az alkalmazandó törvényekkel, végrehajtási rendeletekkel, irányelvekkel, szabályozásokkal, szabályokkal, szabványokkal és útmutatókkal. 2) Az érintett szervezetnek döntenie kell a megfelelő opciókról, paraméterekről és szintekről, amelyeket a kriptográfiai kulcskezelés során alkalmaznak. 3) A szervezetnek dokumentálnia kell a kriptográfiai kulcskezelési és generálási folyamatokat, hogy nyomon követhető legyen a kulcsok életciklusa. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és kommunikációvédelem"
     },
@@ -5350,8 +5350,8 @@ window.NIS2_DEMO_DATA = {
         "17.53"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "17.53 – Kriptográfiai védelem végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5367,7 +5367,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "17.53 – Kriptográfiai védelem: 1) Az érintett szervezetnek először meg kell határoznia a kriptográfia felhasználási területeit az EIR-en belül. 2) A szervezetnek meg kell valósítania a kriptográfiai megoldásokat az egyes kriptográfiai felhasználási területeken. 3) A szervezetnek dokumentálnia kell a kriptográfiai megoldások implementációját és használatát, hogy biztosítsa a folyamatok átláthatóságát és a kriptográfiai követelményeknek való megfelelőséget. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és kommunikációvédelem"
     },
@@ -5396,8 +5396,8 @@ window.NIS2_DEMO_DATA = {
         "17.54"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "17.54 – Együttműködésen alapuló informatikai eszközök végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5413,7 +5413,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "17.54 – Együttműködésen alapuló informatikai eszközök: 1) A szervezetnek meg kell határoznia azokat az eszközöket és alkalmazásokat, amelyek az együttműködésen alapuló számítástechnikai eszközök kategóriájába tartoznak. 2) A szervezetnek be kell állítania az EIR-t úgy, hogy tiltsa ezeknek az eszközöknek és alkalmazásoknak a távoli aktiválását, kivéve azokat az eseteket, amelyeket a szervezet kifejezetten meghatározott. 3) A szervezetnek naplóznia kell az eszközök és alkalmazások aktiválását, hogy nyomon követhető legyen, mikor és milyen körülmények között történtek a távoli aktiválások. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és kommunikációvédelem"
     },
@@ -5442,8 +5442,8 @@ window.NIS2_DEMO_DATA = {
         "17.69"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "17.69 – Biztonságos név/cím feloldási szolgáltatás (hiteles forrás) végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5459,7 +5459,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "17.69 – Biztonságos név/cím feloldási szolgáltatás (hiteles forrás): 1) Az EIR-nek biztosítania kell a név- és címfeloldási kérésekhez hiteles névfeloldási adatokat, valamint az információ eredetére és a tartalom sértetlenségére vonatkozó kiegészítő adatokat. 2) Az EIR-nek, amennyiben egy elosztott, hierarchikus névtér részeként működik, vissza kell jeleznie a gyermektartományok biztonsági állapotával kapcsolatosan. 3) Az EIR-nek hiteles adatokat kell biztosítania, beleértve a DNS erőforrás rekordokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és kommunikációvédelem"
     },
@@ -5488,8 +5488,8 @@ window.NIS2_DEMO_DATA = {
         "17.71"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "17.71 – Biztonságos név/cím feloldó szolgáltatás (rekurzív vagy gyorsítótárat használó feloldás) végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5505,7 +5505,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "17.71 – Biztonságos név/cím feloldó szolgáltatás (rekurzív vagy gyorsítótárat használó feloldás): 1) A szervezetnek biztosítania kell, hogy minden név- és címfeloldó szolgáltatásokat igénybe vevő kliens önállóan végezze el ezt a hitelesítést, vagy hitelesített csatornákon keresztül kapcsolódjon a megbízható hitelesítési szolgáltatókhoz. 2) A szervezetnek meg kell határoznia, hogy a DNS kliens feloldóknak vagy el kell végezniük a DNSSEC aláírások hitelesítését, vagy a klienseknek hitelesített csatornákon keresztül kell csatlakozniuk a rekurzív feloldókhoz, amelyek ilyen hitelesítéseket végeznek. 3) A szervezetnek naplóznia kell a hitelesítési folyamatokat és az adatok sértetlenségét, hogy nyomon követhesse és ellenőrizhesse azokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és kommunikációvédelem"
     },
@@ -5534,8 +5534,8 @@ window.NIS2_DEMO_DATA = {
         "17.72"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "17.72 – Architektúra és tartalékok név/cím feloldási szolgáltatás esetén végrehajtási csomag: jóváhagyott EIR-scope, 3 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 3 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5551,7 +5551,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "17.72 – Architektúra és tartalékok név/cím feloldási szolgáltatás esetén: 1) A szervezetnek biztosítania kell, hogy az EIR-ek, amelyek név- és címfeloldási szolgáltatást biztosítanak, hibatűrő képességgel rendelkeznek. 2) A szervezetnek biztosítania kell, hogy a belső és külső szerepkörök szétválasztása érdekében a kiszolgálók, amelyek belső szerepkörrel rendelkeznek, csak a szervezeten belüli név- és címfeloldási kéréseket dolgozzák fel, míg azon kiszolgálók, amelyek külső szerepkörrel rendelkeznek, csak a szervezeten kívüli kliensektől érkező… 3) A szervezetnek meg kell határoznia azokat a klienseket, amelyek bizonyos szerepekkörökben elérhetnek a hiteles DNS szerverekhez (például címtartományok és explicit listák alapján). Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és kommunikációvédelem"
     },
@@ -5580,8 +5580,8 @@ window.NIS2_DEMO_DATA = {
         "17.108"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "17.108 – A folyamatok elkülönítése végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott műszaki baseline, read-only konfigurációexport, kulcs- vagy névfeloldási nyilvántartás, teszt és kivételnapló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5597,7 +5597,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "17.108 – A folyamatok elkülönítése: 1) A szervezetnek biztosítania kell, hogy az EIR-ek megfelelő folyamatai számára elkülönített végrehajtási tartományt tartson fenn. 2) A szervezetnek gondoskodnia kell arról, hogy az EIR-ek folyamatai közötti kommunikáció a biztonsági funkciók által szabályozott módon történjen, és egy folyamat ne tudja módosítani egy másik folyamat végrehajtó kódját. 3) A szervezetnek dokumentálnia kell az általa meghatározott valamennyi végrehajtási tartományt és az azokhoz tartozó végrehajtó folyamatot, melyet rendszeres időnként felül kell vizsgálnia. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és kommunikációvédelem"
     },
@@ -5626,8 +5626,8 @@ window.NIS2_DEMO_DATA = {
         "18.1"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "18.1 – Szabályzat és eljárásrendek végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5643,7 +5643,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "18.1 – Szabályzat és eljárásrendek: 1) Az érintett szervezet dolgozzon ki, dokumentáljon, adja ki és ismertesse meg a szervezet által meghatározott személyekkel szerepkörük szerint az rendszer- és kommunikációvédelmi szabályzatot, amely tartalmazza a szervezeti-, folyamat- és EIR-szintű követelményeket. 2) A szabályzatnak összhangban kell lennie az érintett szervezetre vonatkozó, hatályos jogszabályokkal, irányelvekkel, szabályozásokkal, szabványokkal és ajánlásokkal. 3) Az érintett szervezet jelöljön ki egy meghatározott személyt, aki felelős a rendszer- és kommunikációvédelmi szabályzat és eljárások kidolgozásának, dokumentálásának, kiadásának és megismertetésének irányításáért. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és információsértetlenség"
     },
@@ -5672,8 +5672,8 @@ window.NIS2_DEMO_DATA = {
         "18.8"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "18.8 – Kártékony kódok elleni védelem végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5689,7 +5689,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "18.8 – Kártékony kódok elleni védelem: 1) Kártékony kódok elleni védelmi mechanizmusokat szükséges alkalmazni a rendszerek belépési és kilépési pontjain. 2) Automatikusan frissíteni szükséges a védelmi mechanizmusokat minden olyan esetben, amikor új verziók jelennek meg, összhangban a szervezet konfigurációkezelési szabályaival. 3) Biztosítani szükséges további védelmi intézkedéseket, mint például biztonságos kódolási gyakorlatok, konfigurációkezelés és -ellenőrzés, megbízható beszerzési folyamatok és naplózás, hogy biztosítsa, hogy az EIR nem hajt végre más funkciókat, mint amelyeket szándékozott. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és információsértetlenség"
     },
@@ -5718,8 +5718,8 @@ window.NIS2_DEMO_DATA = {
         "18.13"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "18.13 – Az EIR monitorozása végrehajtási csomag: jóváhagyott EIR-scope, 8 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 8 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5735,7 +5735,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "18.13 – Az EIR monitorozása: 1) Szükséges az EIR monitorozása, hogy észlelésre kerüljenek a támadások és a potenciális támadásokra utaló jelek, összhangban a meghatározott szervezeti célokkal. 2) Azonosítani szükséges a rendszerek jogosulatlan használatát a meghatározott technikák és módszerek alkalmazásával. 3) A naplózás fontos része az EIR felügyeletének, melynek során figyelemmel kell kísérni a rendszerben történő eseményeket és tevékenységeket. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és információsértetlenség"
     },
@@ -5764,8 +5764,8 @@ window.NIS2_DEMO_DATA = {
         "18.37"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 315,
+      "deadline_bucket": "LATER",
       "deliverable": "18.37 – Biztonsági riasztások és tájékoztatások végrehajtási csomag: jóváhagyott EIR-scope, 2 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 2 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5781,7 +5781,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "task": "18.37 – Biztonsági riasztások és tájékoztatások: 1) A szervezetnek biztosítania kell, hogy folyamatosan fogadja a meghatározott külső szervezetektől a biztonsági figyelmeztetéseket, tanácsokat és iránymutatásokat. 2) A szervezetnek alkalmaznia kell a biztonsági iránymutatásokat az azokban foglaltak szerint. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és információsértetlenség"
     },
@@ -5810,8 +5810,8 @@ window.NIS2_DEMO_DATA = {
         "18.67"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "18.67 – Információ kezelése és megőrzése végrehajtási csomag: jóváhagyott EIR-scope, 2 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott védelmi és megőrzési szabály, read-only állapotexport, riasztási vagy észlelési teszt és review-napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 2 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5827,7 +5827,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "18.67 – Információ kezelése és megőrzése: 1) . 2) A szervezetnek alkalmaznia kell a meghatározott szabályzatokat és eljárásokat a rendszerből kikerülő információk kezelésének és megőrzésének során. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Rendszer- és információsértetlenség"
     },
@@ -5856,8 +5856,8 @@ window.NIS2_DEMO_DATA = {
         "19.2"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "19.2 – Ellátási láncra vonatkozó kockázatmenedzsment szabályzat végrehajtási csomag: jóváhagyott EIR-scope, 6 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 6 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5872,7 +5872,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "19.2 – Ellátási láncra vonatkozó kockázatmenedzsment szabályzat: 1) A szervezetnek meg kell határoznia azon rendszereket, rendszerelemeket vagy rendszerszolgáltatásokat, melyek ellátási láncával kapcsolatos kockázatokat kezelni kell. 2) A szervezetnek meg kell határoznia egy szabályzatot a szükséges kockázatkezelési intézkedések elvégzésére a meghatározott rendszerek, rendszerelemek vagy rendszerszolgáltatások ellátási láncával kapcsolatosan. 3) A szervezetnek felül kell vizsgálnia az ellátási lánc kockázatkezelési szabályzatot a meghatározott gyakorisággal. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Ellátási lánc kockázatkezelése"
     },
@@ -5901,8 +5901,8 @@ window.NIS2_DEMO_DATA = {
         "19.7"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "19.7 – Ellátási lánc ellenőrzések és folyamatok – Alvállalkozók végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5917,7 +5917,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "19.7 – Ellátási lánc ellenőrzések és folyamatok – Alvállalkozók: 1) A szervezetnek fel kell mérnie a kiberbiztonsági kockázatokat, amelyek az EIR-rel összefüggő szerződésekben szerepelnek. 2) A szervezetnek biztosítania kell, hogy a fővállalkozók tisztában vannak az EIR-rel összefüggő szerződésekben szereplő információbiztonsági követelményekkel. 3) A szerveztnek rendszeresen felül kell vizsgálnia a fővállalkozóktól elvárt az EIR-rel összefüggő szerződésekben szereplő információbiztonsági követelmények relevanicáját és ha szükséges módosítania kell azokat. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Ellátási lánc kockázatkezelése"
     },
@@ -5946,8 +5946,8 @@ window.NIS2_DEMO_DATA = {
         "19.13"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "19.13 – Beszerzési stratégiák, eszközök és módszerek végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -5962,7 +5962,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "19.13 – Beszerzési stratégiák, eszközök és módszerek: 1) A szervezetnek azonosítania kell az ellátási láncból eredő kockázatokat. 2) A szervezetnek meg kell határoznia a beszerzési stratégiáit, amelyek segítenek kivédeni, azonosítani és csökkenteni az ellátási láncból eredő kockázatokat. 3) A szervezetnek dokumentálnia kell a beszerzési startégiát, az alkalmazott eszközöket és technikákat, melyeket rendszeresen felül kell vizsgálnia a változó fenyegetési környezet elleni eredményes védekezés érdekében. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Ellátási lánc kockázatkezelése"
     },
@@ -5991,8 +5991,8 @@ window.NIS2_DEMO_DATA = {
         "19.19"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "19.19 – Értesítési megállapodások végrehajtási csomag: jóváhagyott EIR-scope, 5 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 5 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -6007,7 +6007,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "19.19 – Értesítési megállapodások: 1) A szervezetnek meg kell határoznia a beszállítói láncában részt vevő szervezeteket. 2) A szervezetnek megállapodásokat kell kötnie a beszállítói láncában részt vevő szervezetekkel, amelyek meghatározzák a felelősségi köröket, a biztonsági követelményeket és a kommunikációs protokollokat. 3) A szervezetnek lehetősége van a fenti eljárások és technikák segítségével javítania a beszállítói láncot ért biztonsági eseményekre való szervezeti reagálást. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Ellátási lánc kockázatkezelése"
     },
@@ -6036,8 +6036,8 @@ window.NIS2_DEMO_DATA = {
         "19.22"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "19.22 – Rendszerek vagy rendszerelemek vizsgálata végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -6052,7 +6052,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "19.22 – Rendszerek vagy rendszerelemek vizsgálata: 1) A szervezetnek meg kell határoznia mely rendszerelemeket szükséges ellenőrizni a hamisítás felderítésének érdekében. 2) A szervezetnek szükség esetén meg kell határoznia milyen gyakorisággal ellenőrzi a meghatározott rendszerelemeket a hamisítás felderítésének érdekében. 3) A szervezetnek dokumentálnia kell a meghatározott ellenőrzés szükségességére utaló jeleket, és valamennyi elvégzett ellenőrzést . Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Ellátási lánc kockázatkezelése"
     },
@@ -6081,8 +6081,8 @@ window.NIS2_DEMO_DATA = {
         "19.23"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "19.23 – Rendszerelem hitelessége végrehajtási csomag: jóváhagyott EIR-scope, 3 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 3 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -6097,7 +6097,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "19.23 – Rendszerelem hitelessége: 1) A szervezetnek ki kell alakítania a hamisítás elleni szabályokat és eljárásokat. 2) A szervezetnek jelentenie kell a hamisított rendszerelemeket és azok forrását a szervezet által meghatározott személyeknek vagy szerepköröknek. 3) A szervezetnek dokumentálnia kell, amennyiben hamisított rendszerelemeket vagy alkatrészeket fedez fel és fel kel vennie a kapcsolatot a hamisított alkatrész forrásával, vagy az illetékes hatósággal. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Ellátási lánc kockázatkezelése"
     },
@@ -6126,8 +6126,8 @@ window.NIS2_DEMO_DATA = {
         "19.24"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "19.24 – Rendszerelem hitelessége – Hamisítás elleni képzés végrehajtási csomag: jóváhagyott EIR-scope, 3 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 3 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -6142,7 +6142,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "19.24 – Rendszerelem hitelessége – Hamisítás elleni képzés: 1) A szervezetnek meg kell határoznia, mely személyek vagy szerepkörök felelősek az rendszerek felügyeletéért és kezeléséért. 2) A szervezetnek ki kell dolgoznia egy képzési programot, amely részletesen bemutatja, hogyan lehet felismerni a hamisított hardvert, szoftvert és firmware-t. 3) A szervezetnek implementálnia kell a képzési programot, és biztosítania kell, hogy a meghatározott személyek vagy szerepkörök részt vesznek a képzésen. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Ellátási lánc kockázatkezelése"
     },
@@ -6171,8 +6171,8 @@ window.NIS2_DEMO_DATA = {
         "19.25"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 254,
+      "deadline_bucket": "LATER",
       "deliverable": "19.25 – Rendszerelem hitelessége – Konfigurációfelügyelet végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -6187,7 +6187,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "task": "19.25 – Rendszerelem hitelessége – Konfigurációfelügyelet: 1) A szervezetnek nyilvántartást kell vezetnie a rendszerelemekről, amelyek szervizelésre vagy javításra várnak, vagy amelyeket már szervizeltek vagy javítottak, és arra várnak, hogy újból üzembe állítsák őket 2) A szervezetnek ki kell dolgoznia egy konfiguráció felügyeleti rendszert, mely lehetővé teszi a konfiguráció felügyeletét a meghatározott rendszerelemekre. 3) A szervezetnek minden egyes rendszerelemen elvégzett módosítást naplóznia kell, hogy nyomon követhetőek legyenek a változások a rendszerelem teljes életciklusa alatt. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Ellátási lánc kockázatkezelése"
     },
@@ -6216,8 +6216,8 @@ window.NIS2_DEMO_DATA = {
         "19.27"
       ],
       "cost_band": "B0",
-      "days_to_target": null,
-      "deadline_bucket": "DATE_REQUIRED",
+      "days_to_target": 191,
+      "deadline_bucket": "LATER",
       "deliverable": "19.27 – Rendszerelem selejtezése, megsemmisítése végrehajtási csomag: jóváhagyott EIR-scope, 4 pontos státuszchecklist, kontrollbeállítás vagy eljárás, kivételjegyzék és próbaeredmény.",
       "evidence": "jóváhagyott ellátásilánc-szabály, beszállítói vagy rendszerelem-ellenőrzés, szerződéses rekord és döntési napló, kontrollgazdai és G1 reviewer sign-off. Továbbá: 4 pontos végrehajtási checklist; scope- és kontrollgazda-jóváhagyás; teszt- vagy működési mintarekord; kivétellista; védett URI, SHA-256 és reviewer-döntés.",
       "external_submission": "no",
@@ -6232,7 +6232,7 @@ window.NIS2_DEMO_DATA = {
       "source_confidence": "machine_unvalidated",
       "source_ref": "SRC-008",
       "status": "NEW",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "task": "19.27 – Rendszerelem selejtezése, megsemmisítése: 1) A szervezetnek meg kell határoznia, mely adatokat, dokumentációkat, eszközöket és rendszerelemeket kell selejteznie. 2) A szervezetnek ki kell dolgoznia egy módszertant és technikákat a selejtezésre. 3) A szervezetnek dokumentálnia kell a selejtezést és annak tárgyát képező rendszerelemet, alkatrészt vagy adatot, valamint gondoskodnia kell az érintett elemek kivezetéséről rendszerelem leltárból. Az alkalmazhatóságot és a végrehajtást érintett EIR-enként rögzítse; az eltérésekhez nevezzen meg felelőst, céldátumot és kompenzáló kontrollt.",
       "title": "Ellátási lánc kockázatkezelése"
     }
@@ -6592,30 +6592,6 @@ window.NIS2_DEMO_DATA = {
   ],
   "approval_queue": [
     {
-      "action_id": "A-003",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-06-29",
-      "title": "Evidencia és repository"
-    },
-    {
-      "action_id": "A-035",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-06-29",
-      "title": "Forrásverzió-kezelés"
-    },
-    {
       "action_id": "A-001",
       "approver": "Lángi Zoltán",
       "gates": [
@@ -6624,32 +6600,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-01",
+      "target_date": "2026-08-31",
       "title": "Irányítás"
-    },
-    {
-      "action_id": "A-036",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-01",
-      "title": "Projektirányítás"
-    },
-    {
-      "action_id": "A-031",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-03",
-      "title": "AI-irányítás"
     },
     {
       "action_id": "A-004",
@@ -6660,20 +6612,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-06",
+      "target_date": "2026-08-31",
       "title": "Auditfeldolgozás"
-    },
-    {
-      "action_id": "A-012",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-10",
-      "title": "Evidenciakezelés"
     },
     {
       "action_id": "A-005",
@@ -6684,20 +6624,20 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-11",
+      "target_date": "2026-08-31",
       "title": "Kontrolltérkép"
     },
     {
-      "action_id": "A-011",
+      "action_id": "A-036",
       "approver": "Lángi Zoltán",
       "gates": [
-        "G1_DOMAIN_REVIEW"
+        "G2_SECURITY_LEGAL"
       ],
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-16",
-      "title": "EIR- és eszközleltár"
+      "target_date": "2026-08-31",
+      "title": "Projektirányítás"
     },
     {
       "action_id": "A-006",
@@ -6708,32 +6648,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-26",
+      "target_date": "2026-09-11",
       "title": "Hatósági cselekvési terv"
-    },
-    {
-      "action_id": "A-017",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G3_PRODUCTION_CHANGE"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-26",
-      "title": "Mentés és helyreállítás"
-    },
-    {
-      "action_id": "A-020",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-26",
-      "title": "Fizikai védelem"
     },
     {
       "action_id": "A-007",
@@ -6748,6 +6664,54 @@ window.NIS2_DEMO_DATA = {
       "title": "Hatósági cselekvési terv"
     },
     {
+      "action_id": "A-003",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2026-10-30",
+      "title": "Evidencia és repository"
+    },
+    {
+      "action_id": "A-011",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2026-10-30",
+      "title": "EIR- és eszközleltár"
+    },
+    {
+      "action_id": "A-020",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2026-10-30",
+      "title": "Fizikai védelem"
+    },
+    {
+      "action_id": "A-035",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2026-10-30",
+      "title": "Forrásverzió-kezelés"
+    },
+    {
       "action_id": "A-008",
       "approver": "Lángi Zoltán",
       "gates": [
@@ -6756,45 +6720,32 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2026-12-15",
       "title": "Negyedéves beszámoló"
     },
     {
-      "action_id": "A-022",
+      "action_id": "A-012",
       "approver": "Lángi Zoltán",
       "gates": [
-        "G3_PRODUCTION_CHANGE"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Műszaki validáció"
-    },
-    {
-      "action_id": "A-023",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G3_PRODUCTION_CHANGE"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Műszaki stabilizálás"
-    },
-    {
-      "action_id": "A-043",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
         "G2_SECURITY_LEGAL"
       ],
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Irányítás és programmenedzsment"
+      "target_date": "2026-12-15",
+      "title": "Evidenciakezelés"
+    },
+    {
+      "action_id": "A-031",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "AI-irányítás"
     },
     {
       "action_id": "A-045",
@@ -6806,7 +6757,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "title": "Irányítás és programmenedzsment"
     },
     {
@@ -6819,7 +6770,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "title": "Irányítás és programmenedzsment"
     },
     {
@@ -6832,7 +6783,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "title": "Irányítás és programmenedzsment"
     },
     {
@@ -6845,7 +6796,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "title": "Irányítás és programmenedzsment"
     },
     {
@@ -6858,7 +6809,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "title": "Irányítás és programmenedzsment"
     },
     {
@@ -6871,20 +6822,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Irányítás és programmenedzsment"
-    },
-    {
-      "action_id": "A-051",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "title": "Irányítás és programmenedzsment"
     },
     {
@@ -6897,7 +6835,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "title": "Irányítás és programmenedzsment"
     },
     {
@@ -6910,7 +6848,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
       "title": "Irányítás és programmenedzsment"
     },
     {
@@ -6923,7 +6861,213 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-02-26",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-065",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "action_id": "A-066",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "action_id": "A-067",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "action_id": "A-074",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-076",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-078",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-103",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Rendszer- és szolgáltatásbeszerzés"
+    },
+    {
+      "action_id": "A-104",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Rendszer- és szolgáltatásbeszerzés"
+    },
+    {
+      "action_id": "A-120",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-121",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-124",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-127",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-017",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-04-30",
+      "title": "Mentés és helyreállítás"
+    },
+    {
+      "action_id": "A-022",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-04-30",
+      "title": "Műszaki validáció"
+    },
+    {
+      "action_id": "A-043",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-04-30",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-051",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P0",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-04-30",
       "title": "Irányítás és programmenedzsment"
     },
     {
@@ -6937,7 +7081,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Hozzáférés-felügyelet"
     },
     {
@@ -6951,7 +7095,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Hozzáférés-felügyelet"
     },
     {
@@ -6965,7 +7109,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Hozzáférés-felügyelet"
     },
     {
@@ -6979,7 +7123,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Hozzáférés-felügyelet"
     },
     {
@@ -6993,7 +7137,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Hozzáférés-felügyelet"
     },
     {
@@ -7007,47 +7151,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Hozzáférés-felügyelet"
-    },
-    {
-      "action_id": "A-065",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Tudatosság és képzés"
-    },
-    {
-      "action_id": "A-066",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Tudatosság és képzés"
-    },
-    {
-      "action_id": "A-067",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Tudatosság és képzés"
     },
     {
       "action_id": "A-069",
@@ -7060,7 +7165,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Naplózás és elszámoltathatóság"
     },
     {
@@ -7074,21 +7179,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Naplózás és elszámoltathatóság"
-    },
-    {
-      "action_id": "A-074",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Biztonsági értékelés és engedélyezés"
     },
     {
       "action_id": "A-075",
@@ -7100,20 +7192,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Biztonsági értékelés és engedélyezés"
-    },
-    {
-      "action_id": "A-076",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Biztonsági értékelés és engedélyezés"
     },
     {
@@ -7126,20 +7205,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Biztonsági értékelés és engedélyezés"
-    },
-    {
-      "action_id": "A-078",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Biztonsági értékelés és engedélyezés"
     },
     {
@@ -7153,7 +7219,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Konfigurációkezelés"
     },
     {
@@ -7167,7 +7233,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Konfigurációkezelés"
     },
     {
@@ -7181,7 +7247,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Konfigurációkezelés"
     },
     {
@@ -7195,7 +7261,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Konfigurációkezelés"
     },
     {
@@ -7209,7 +7275,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Üzletmenet-folytonosság és helyreállítás"
     },
     {
@@ -7223,7 +7289,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Azonosítás és hitelesítés"
     },
     {
@@ -7237,7 +7303,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Azonosítás és hitelesítés"
     },
     {
@@ -7251,7 +7317,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Azonosítás és hitelesítés"
     },
     {
@@ -7265,7 +7331,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Azonosítás és hitelesítés"
     },
     {
@@ -7279,7 +7345,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Azonosítás és hitelesítés"
     },
     {
@@ -7293,7 +7359,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Azonosítás és hitelesítés"
     },
     {
@@ -7307,7 +7373,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Azonosítás és hitelesítés"
     },
     {
@@ -7321,7 +7387,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Biztonsági események kezelése"
     },
     {
@@ -7335,7 +7401,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Biztonsági események kezelése"
     },
     {
@@ -7349,7 +7415,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Biztonsági események kezelése"
     },
     {
@@ -7363,7 +7429,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Karbantartás"
     },
     {
@@ -7377,7 +7443,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Karbantartás"
     },
     {
@@ -7391,34 +7457,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Karbantartás"
-    },
-    {
-      "action_id": "A-103",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Rendszer- és szolgáltatásbeszerzés"
-    },
-    {
-      "action_id": "A-104",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Rendszer- és szolgáltatásbeszerzés"
     },
     {
       "action_id": "A-107",
@@ -7431,7 +7471,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Rendszer- és kommunikációvédelem"
     },
     {
@@ -7445,7 +7485,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Rendszer- és kommunikációvédelem"
     },
     {
@@ -7459,7 +7499,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Rendszer- és kommunikációvédelem"
     },
     {
@@ -7473,7 +7513,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Rendszer- és kommunikációvédelem"
     },
     {
@@ -7487,7 +7527,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Rendszer- és kommunikációvédelem"
     },
     {
@@ -7501,7 +7541,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Rendszer- és kommunikációvédelem"
     },
     {
@@ -7515,47 +7555,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Rendszer- és információsértetlenség"
-    },
-    {
-      "action_id": "A-120",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Ellátási lánc kockázatkezelése"
-    },
-    {
-      "action_id": "A-121",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Ellátási lánc kockázatkezelése"
-    },
-    {
-      "action_id": "A-124",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P0",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Ellátási lánc kockázatkezelése"
     },
     {
       "action_id": "A-126",
@@ -7567,33 +7568,20 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-04-30",
       "title": "Ellátási lánc kockázatkezelése"
     },
     {
-      "action_id": "A-127",
+      "action_id": "A-023",
       "approver": "Lángi Zoltán",
       "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
+        "G3_PRODUCTION_CHANGE"
       ],
       "owner": "Pásztor András",
       "priority": "P0",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Ellátási lánc kockázatkezelése"
-    },
-    {
-      "action_id": "A-032",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-17",
-      "title": "Agent QA és eval"
+      "target_date": "2027-06-30",
+      "title": "Műszaki stabilizálás"
     },
     {
       "action_id": "A-009",
@@ -7604,7 +7592,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-26",
+      "target_date": "2026-10-30",
       "title": "Szabályzat-életciklus"
     },
     {
@@ -7616,178 +7604,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-26",
+      "target_date": "2026-10-30",
       "title": "Erőforrás és költség"
-    },
-    {
-      "action_id": "A-029",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G5_PURCHASE"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-07-26",
-      "title": "Licenc és támogatás"
-    },
-    {
-      "action_id": "A-015",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G3_PRODUCTION_CHANGE"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-08-10",
-      "title": "Identitás és hozzáférés"
-    },
-    {
-      "action_id": "A-019",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G3_PRODUCTION_CHANGE"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-08-10",
-      "title": "Konfiguráció, patch, karbantartás"
-    },
-    {
-      "action_id": "A-039",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-08-10",
-      "title": "Kockázatkezelés"
-    },
-    {
-      "action_id": "A-013",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-08-25",
-      "title": "Incidenskezelés"
-    },
-    {
-      "action_id": "A-014",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-08-25",
-      "title": "Tudatosság és képzés"
-    },
-    {
-      "action_id": "A-016",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G3_PRODUCTION_CHANGE",
-        "G5_PURCHASE"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-08-25",
-      "title": "MFA"
-    },
-    {
-      "action_id": "A-037",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-08-25",
-      "title": "Adathordozók védelme"
-    },
-    {
-      "action_id": "A-038",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-08-25",
-      "title": "Személyi biztonság"
-    },
-    {
-      "action_id": "A-040",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-08-25",
-      "title": "Biztonságtervezés"
-    },
-    {
-      "action_id": "A-018",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-09-09",
-      "title": "Naplózás és felügyelet"
-    },
-    {
-      "action_id": "A-021",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-09-09",
-      "title": "Ellátási lánc"
-    },
-    {
-      "action_id": "A-041",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G5_PURCHASE"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-09-09",
-      "title": "Biztonságos beszerzés és életciklus"
-    },
-    {
-      "action_id": "A-033",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G3_PRODUCTION_CHANGE",
-        "G5_PURCHASE"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-09-24",
-      "title": "Sérülékenységkezelés"
     },
     {
       "action_id": "A-030",
@@ -7798,21 +7616,168 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2027-09-30",
+      "target_date": "2026-10-30",
       "title": "Repeat audit"
     },
     {
-      "action_id": "A-024",
+      "action_id": "A-014",
       "approver": "Lángi Zoltán",
       "gates": [
-        "G3_PRODUCTION_CHANGE",
-        "G5_PURCHASE"
+        "G1_DOMAIN_REVIEW"
       ],
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Kapacitás és VM-elhelyezés"
+      "target_date": "2026-12-15",
+      "title": "Tudatosság és képzés"
+    },
+    {
+      "action_id": "A-021",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2026-12-15",
+      "title": "Ellátási lánc"
+    },
+    {
+      "action_id": "A-032",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2026-12-15",
+      "title": "Agent QA és eval"
+    },
+    {
+      "action_id": "A-039",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2026-12-15",
+      "title": "Kockázatkezelés"
+    },
+    {
+      "action_id": "A-040",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Biztonságtervezés"
+    },
+    {
+      "action_id": "A-044",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Irányítás és programmenedzsment"
+    },
+    {
+      "action_id": "A-072",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-122",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-125",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-02-26",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-013",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-06-30",
+      "title": "Incidenskezelés"
+    },
+    {
+      "action_id": "A-015",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-06-30",
+      "title": "Identitás és hozzáférés"
+    },
+    {
+      "action_id": "A-018",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-06-30",
+      "title": "Naplózás és felügyelet"
+    },
+    {
+      "action_id": "A-019",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G3_PRODUCTION_CHANGE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-06-30",
+      "title": "Konfiguráció, patch, karbantartás"
     },
     {
       "action_id": "A-025",
@@ -7823,7 +7788,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Exchange függőség"
     },
     {
@@ -7835,8 +7800,20 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Legacy megőrzés"
+    },
+    {
+      "action_id": "A-037",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-06-30",
+      "title": "Adathordozók védelme"
     },
     {
       "action_id": "A-042",
@@ -7849,21 +7826,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Folyamatos auditfelkészültség"
-    },
-    {
-      "action_id": "A-044",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Irányítás és programmenedzsment"
     },
     {
       "action_id": "A-055",
@@ -7876,7 +7840,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Hozzáférés-felügyelet"
     },
     {
@@ -7890,7 +7854,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Hozzáférés-felügyelet"
     },
     {
@@ -7904,7 +7868,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Hozzáférés-felügyelet"
     },
     {
@@ -7918,7 +7882,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Naplózás és elszámoltathatóság"
     },
     {
@@ -7932,21 +7896,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Naplózás és elszámoltathatóság"
-    },
-    {
-      "action_id": "A-072",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P1",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Biztonsági értékelés és engedélyezés"
     },
     {
       "action_id": "A-082",
@@ -7959,7 +7910,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Konfigurációkezelés"
     },
     {
@@ -7973,7 +7924,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Konfigurációkezelés"
     },
     {
@@ -7987,7 +7938,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Üzletmenet-folytonosság és helyreállítás"
     },
     {
@@ -8001,7 +7952,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Azonosítás és hitelesítés"
     },
     {
@@ -8015,7 +7966,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Azonosítás és hitelesítés"
     },
     {
@@ -8029,7 +7980,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Fizikai és környezeti védelem"
     },
     {
@@ -8043,7 +7994,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Rendszer- és kommunikációvédelem"
     },
     {
@@ -8057,7 +8008,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Rendszer- és kommunikációvédelem"
     },
     {
@@ -8071,7 +8022,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Rendszer- és információsértetlenség"
     },
     {
@@ -8085,34 +8036,83 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Rendszer- és információsértetlenség"
     },
     {
-      "action_id": "A-122",
+      "action_id": "A-016",
       "approver": "Lángi Zoltán",
       "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
+        "G3_PRODUCTION_CHANGE",
+        "G5_PURCHASE"
       ],
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Ellátási lánc kockázatkezelése"
+      "target_date": "2027-07-30",
+      "title": "MFA"
     },
     {
-      "action_id": "A-125",
+      "action_id": "A-024",
       "approver": "Lángi Zoltán",
       "gates": [
-        "G1_DOMAIN_REVIEW",
+        "G3_PRODUCTION_CHANGE",
+        "G5_PURCHASE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-07-30",
+      "title": "Kapacitás és VM-elhelyezés"
+    },
+    {
+      "action_id": "A-029",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G5_PURCHASE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-07-30",
+      "title": "Licenc és támogatás"
+    },
+    {
+      "action_id": "A-033",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G3_PRODUCTION_CHANGE",
+        "G5_PURCHASE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-07-30",
+      "title": "Sérülékenységkezelés"
+    },
+    {
+      "action_id": "A-038",
+      "approver": "Lángi Zoltán",
+      "gates": [
         "G2_SECURITY_LEGAL"
       ],
       "owner": "Pásztor András",
       "priority": "P1",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Ellátási lánc kockázatkezelése"
+      "target_date": "2027-07-30",
+      "title": "Személyi biztonság"
+    },
+    {
+      "action_id": "A-041",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G5_PURCHASE"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P1",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-07-30",
+      "title": "Biztonságos beszerzés és életciklus"
     },
     {
       "action_id": "A-034",
@@ -8123,8 +8123,47 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P2",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "2026-09-24",
+      "target_date": "2027-04-30",
       "title": "EIR scope"
+    },
+    {
+      "action_id": "A-073",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-04-30",
+      "title": "Biztonsági értékelés és engedélyezés"
+    },
+    {
+      "action_id": "A-119",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-04-30",
+      "title": "Ellátási lánc kockázatkezelése"
+    },
+    {
+      "action_id": "A-123",
+      "approver": "Lángi Zoltán",
+      "gates": [
+        "G1_DOMAIN_REVIEW",
+        "G2_SECURITY_LEGAL"
+      ],
+      "owner": "Pásztor András",
+      "priority": "P2",
+      "status": "EMBERI DÖNTÉSRE VÁR",
+      "target_date": "2027-04-30",
+      "title": "Ellátási lánc kockázatkezelése"
     },
     {
       "action_id": "A-027",
@@ -8135,7 +8174,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P2",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "RDS szeparáció"
     },
     {
@@ -8147,7 +8186,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P2",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "AD/DHCP konszolidáció"
     },
     {
@@ -8161,21 +8200,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P2",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Hozzáférés-felügyelet"
-    },
-    {
-      "action_id": "A-073",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P2",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Biztonsági értékelés és engedélyezés"
     },
     {
       "action_id": "A-105",
@@ -8188,7 +8214,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P2",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Rendszer- és kommunikációvédelem"
     },
     {
@@ -8202,7 +8228,7 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P2",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Rendszer- és információsértetlenség"
     },
     {
@@ -8216,34 +8242,8 @@ window.NIS2_DEMO_DATA = {
       "owner": "Pásztor András",
       "priority": "P2",
       "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
+      "target_date": "2027-06-30",
       "title": "Rendszer- és információsértetlenség"
-    },
-    {
-      "action_id": "A-119",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P2",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Ellátási lánc kockázatkezelése"
-    },
-    {
-      "action_id": "A-123",
-      "approver": "Lángi Zoltán",
-      "gates": [
-        "G1_DOMAIN_REVIEW",
-        "G2_SECURITY_LEGAL"
-      ],
-      "owner": "Pásztor András",
-      "priority": "P2",
-      "status": "EMBERI DÖNTÉSRE VÁR",
-      "target_date": "Emberi ütemezés szükséges",
-      "title": "Ellátási lánc kockázatkezelése"
     }
   ],
   "catalog_review": {
@@ -8270,202 +8270,9 @@ window.NIS2_DEMO_DATA = {
   "deadline_reconciliation": {
     "as_of": "2026-07-29",
     "formal_effect": false,
-    "pending_count": 16,
-    "record_count": 16,
-    "records": [
-      {
-        "action_id": "A-003",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 30,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "IN_PROGRESS",
-        "registered_target_date": "2026-06-29",
-        "required_gates": [
-          "G2_SECURITY_LEGAL"
-        ]
-      },
-      {
-        "action_id": "A-035",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 30,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "IN_PROGRESS",
-        "registered_target_date": "2026-06-29",
-        "required_gates": [
-          "G2_SECURITY_LEGAL"
-        ]
-      },
-      {
-        "action_id": "A-001",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 28,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "IN_PROGRESS",
-        "registered_target_date": "2026-07-01",
-        "required_gates": [
-          "G2_SECURITY_LEGAL"
-        ]
-      },
-      {
-        "action_id": "A-036",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 28,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "IN_PROGRESS",
-        "registered_target_date": "2026-07-01",
-        "required_gates": [
-          "G2_SECURITY_LEGAL"
-        ]
-      },
-      {
-        "action_id": "A-031",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 26,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "NEW",
-        "registered_target_date": "2026-07-03",
-        "required_gates": [
-          "G2_SECURITY_LEGAL"
-        ]
-      },
-      {
-        "action_id": "A-004",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 23,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "IN_PROGRESS",
-        "registered_target_date": "2026-07-06",
-        "required_gates": [
-          "G1_DOMAIN_REVIEW"
-        ]
-      },
-      {
-        "action_id": "A-012",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 19,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "IN_PROGRESS",
-        "registered_target_date": "2026-07-10",
-        "required_gates": [
-          "G2_SECURITY_LEGAL"
-        ]
-      },
-      {
-        "action_id": "A-005",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 18,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "IN_PROGRESS",
-        "registered_target_date": "2026-07-11",
-        "required_gates": [
-          "G1_DOMAIN_REVIEW"
-        ]
-      },
-      {
-        "action_id": "A-011",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 13,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "NEW",
-        "registered_target_date": "2026-07-16",
-        "required_gates": [
-          "G1_DOMAIN_REVIEW"
-        ]
-      },
-      {
-        "action_id": "A-006",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 3,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "NEW",
-        "registered_target_date": "2026-07-26",
-        "required_gates": [
-          "G4_EXTERNAL_SUBMISSION"
-        ]
-      },
-      {
-        "action_id": "A-017",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 3,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "NEW",
-        "registered_target_date": "2026-07-26",
-        "required_gates": [
-          "G3_PRODUCTION_CHANGE"
-        ]
-      },
-      {
-        "action_id": "A-020",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 3,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "NEW",
-        "registered_target_date": "2026-07-26",
-        "required_gates": [
-          "G2_SECURITY_LEGAL"
-        ]
-      },
-      {
-        "action_id": "A-032",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 12,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "NEW",
-        "registered_target_date": "2026-07-17",
-        "required_gates": [
-          "G1_DOMAIN_REVIEW"
-        ]
-      },
-      {
-        "action_id": "A-009",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 3,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "NEW",
-        "registered_target_date": "2026-07-26",
-        "required_gates": [
-          "G1_DOMAIN_REVIEW"
-        ]
-      },
-      {
-        "action_id": "A-010",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 3,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "NEW",
-        "registered_target_date": "2026-07-26",
-        "required_gates": [
-          "G5_PURCHASE"
-        ]
-      },
-      {
-        "action_id": "A-029",
-        "approver": "Lángi Zoltán",
-        "days_overdue": 3,
-        "outcome": "PENDING_HUMAN",
-        "owner": "Pásztor András",
-        "registered_status": "NEW",
-        "registered_target_date": "2026-07-26",
-        "required_gates": [
-          "G5_PURCHASE"
-        ]
-      }
-    ],
+    "pending_count": 0,
+    "record_count": 0,
+    "records": [],
     "status": "PROPOSAL_PENDING_HUMAN_RECONCILIATION"
   },
   "deferred_tasks": [
@@ -8831,12 +8638,12 @@ window.NIS2_DEMO_DATA = {
     },
     {
       "approver": "Lángi Zoltán; az akció szerinti G1–G5 reviewer",
-      "gate": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
+      "gate": "Bármely akció evidenciaelfogadása vagy lezárása, illetve a D-035 céldátumainak újabb módosítása előtt.",
       "id": "DEF-037",
       "owner": "Pásztor András",
-      "process_state": "Az A-002 D-031/EV-GOV-001 szerinti lezárása után a 2026-07-29-i állapot szerint 16 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. A helyi portál append-only, hitelesítetlen rögzítői státusztervezetet tud fogadni; a hash-ellenőrzött review-, döntési-, változásjavaslati, stale-safe preflight- és pre/post hash utóellenőrzési lánc elkészült. A baseline még 0 tervezetet tartalmaz. Státusz vagy céldátum nem változott.",
-      "related": "16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
-      "required": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.",
+      "process_state": "Történeti megjegyzés: a D-035 előtt a 2026-07-29-i állapotra 16 lejárt, nem terminális akció szerepelt az egyeztetési körben. A D-035 jóváhagyott ütemezési baseline átvezetése után ugyanezen állapotnapra a nyilvántartás újragenerálva 0 rekordos és valid. Ez nem változtatott akcióstátuszt, nem fogadott el evidenciát és nem igazolt tényleges teljesítést.",
+      "related": "D-035; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
+      "required": "A tényleges előrehaladást továbbra is akciónként kell rögzíteni; elkészült tételnél védett evidencia URI/SHA-256, reviewer és döntési hivatkozás szükséges. A jövőben lejáró, nem terminális akciókat az aktuális állapotnapra új egyeztetési körbe kell venni.",
       "status": "OPEN_DEFERRED"
     },
     {
@@ -8851,12 +8658,12 @@ window.NIS2_DEMO_DATA = {
     },
     {
       "approver": "Lángi Zoltán; Dr. Berta Brigitta; érintett G1/G3/G4 reviewer",
-      "gate": "A cselekvési terv végleges aláírása, a javasolt dátumok kanonikus átvezetése, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.",
+      "gate": "A cselekvési terv végleges aláírása, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.",
       "id": "DEF-039",
       "owner": "Pásztor András; javasolt kontrollgazdák",
-      "process_state": "Mind a 85 lefedettségpótló akcióhoz elkészült a kontrollspecifikus végrehajtási checklist, mérhető elfogadási feltétel, evidenciaelvárás, javasolt kontrollgazda/közreműködő és proposal-only ütemezés. A kanonikus céldátumok és jóváhagyási státuszok nem változtak.",
-      "related": "A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md",
-      "required": "A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a javasolt 2026-09-11-i G1 review és 2027-01-31/2027-04-30/2027-06-30 teljesítési hullámok G2/G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.",
+      "process_state": "Mind a 85 lefedettségpótló akcióhoz elkészült a kontrollspecifikus végrehajtási checklist, mérhető elfogadási feltétel és evidenciaelvárás. A D-035 szerint mind a 127 akcióhoz rögzített belső céldátum tartozik; a legkésőbbi operatív dátum 2027-07-30.",
+      "related": "A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md; ACTION_SCHEDULE_2026-08-19.md",
+      "required": "A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a teljes cselekvési terv G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.",
       "status": "OPEN_DEFERRED"
     }
   ],
@@ -9719,12 +9526,12 @@ window.NIS2_DEMO_DATA = {
       "evidence_label": "Lejárt akciók státusz- és határidő-egyeztetésének célmappája",
       "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE",
       "formal_effect": false,
-      "gate": "Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.",
+      "gate": "Bármely akció evidenciaelfogadása vagy lezárása, illetve a D-035 céldátumainak újabb módosítása előtt.",
       "id": "DEF-037",
       "owner": "Pásztor András",
-      "process_state": "Az A-002 D-031/EV-GOV-001 szerinti lezárása után a 2026-07-29-i állapot szerint 16 nem terminális akció nyilvántartott céldátuma lejárt. Elkészült a snapshot-mezőket védő, proposal-only egyeztetési nyilvántartás és emberi munkalap; minden rekord PENDING_HUMAN. A helyi portál append-only, hitelesítetlen rögzítői státusztervezetet tud fogadni; a hash-ellenőrzött review-, döntési-, változásjavaslati, stale-safe preflight- és pre/post hash utóellenőrzési lánc elkészült. A baseline még 0 tervezetet tartalmaz. Státusz vagy céldátum nem változott.",
-      "related": "16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
-      "required": "Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.",
+      "process_state": "Történeti megjegyzés: a D-035 előtt a 2026-07-29-i állapotra 16 lejárt, nem terminális akció szerepelt az egyeztetési körben. A D-035 jóváhagyott ütemezési baseline átvezetése után ugyanezen állapotnapra a nyilvántartás újragenerálva 0 rekordos és valid. Ez nem változtatott akcióstátuszt, nem fogadott el evidenciát és nem igazolt tényleges teljesítést.",
+      "related": "D-035; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md",
+      "required": "A tényleges előrehaladást továbbra is akciónként kell rögzíteni; elkészült tételnél védett evidencia URI/SHA-256, reviewer és döntési hivatkozás szükséges. A jövőben lejáró, nem terminális akciókat az aktuális állapotnapra új egyeztetési körbe kell venni.",
       "sharepoint_status": "Nyitott",
       "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
       "status": "OPEN_DEFERRED",
@@ -9751,12 +9558,12 @@ window.NIS2_DEMO_DATA = {
       "evidence_label": "A-043–A-127 szakmai és határidő-jóváhagyásának célmappája",
       "evidence_url": "https://metalcom.sharepoint.com/sites/NIS2/Megosztott%20dokumentumok/NIS2_EVIDENCE/02_GOVERNANCE",
       "formal_effect": false,
-      "gate": "A cselekvési terv végleges aláírása, a javasolt dátumok kanonikus átvezetése, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.",
+      "gate": "A cselekvési terv végleges aláírása, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.",
       "id": "DEF-039",
       "owner": "Pásztor András; javasolt kontrollgazdák",
-      "process_state": "Mind a 85 lefedettségpótló akcióhoz elkészült a kontrollspecifikus végrehajtási checklist, mérhető elfogadási feltétel, evidenciaelvárás, javasolt kontrollgazda/közreműködő és proposal-only ütemezés. A kanonikus céldátumok és jóváhagyási státuszok nem változtak.",
-      "related": "A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md",
-      "required": "A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a javasolt 2026-09-11-i G1 review és 2027-01-31/2027-04-30/2027-06-30 teljesítési hullámok G2/G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.",
+      "process_state": "Mind a 85 lefedettségpótló akcióhoz elkészült a kontrollspecifikus végrehajtási checklist, mérhető elfogadási feltétel és evidenciaelvárás. A D-035 szerint mind a 127 akcióhoz rögzített belső céldátum tartozik; a legkésőbbi operatív dátum 2027-07-30.",
+      "related": "A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md; ACTION_SCHEDULE_2026-08-19.md",
+      "required": "A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a teljes cselekvési terv G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.",
       "sharepoint_status": "Nyitott",
       "source": "SHAREPOINT_CONNECTOR_SNAPSHOT",
       "status": "OPEN_DEFERRED",
@@ -9771,9 +9578,9 @@ window.NIS2_DEMO_DATA = {
     "catalog_pending_eir_classifications": 5,
     "catalog_review_status": "PENDING_G1_REVIEW",
     "days_to_deadline": 36,
-    "deadline_reconciliation_pending": 16,
-    "due_within_30_days": 3,
-    "due_within_7_days": 6,
+    "deadline_reconciliation_pending": 0,
+    "due_within_30_days": 5,
+    "due_within_7_days": 0,
     "gate_counts": {
       "G1": 97,
       "G2": 99,
@@ -9787,7 +9594,7 @@ window.NIS2_DEMO_DATA = {
     "linked_human_tasks": 39,
     "new_actions": 119,
     "open_human_tasks": 37,
-    "overdue_actions": 19,
+    "overdue_actions": 0,
     "p0_actions": 76,
     "priority_counts": {
       "P0": 76,
@@ -9801,7 +9608,7 @@ window.NIS2_DEMO_DATA = {
       "NEW": 119
     },
     "total_actions": 127,
-    "undated_actions": 94,
+    "undated_actions": 0,
     "unlinked_human_tasks": 0
   }
 };

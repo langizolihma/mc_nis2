@@ -1,6 +1,6 @@
 # Egységes emberi végrehajtási csomag
 
-- Állapot dátuma: `2026-07-29`
+- Állapot dátuma: `2026-08-19`
 - Összes emberi tétel: **38**
 - Nyitott pótlandó tétel: **37**
 - Elfogadott, de továbbra is nyilvántartott kockázat: **1**
@@ -177,9 +177,9 @@ Lezárási ellenőrzőlista:
 
 - Felelős: Pásztor András
 - Jóváhagyó: Lángi Zoltán; az akció szerinti G1–G5 reviewer
-- Kapcsolódó elem: 16 lejárt akció; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md
-- Elkészítendő: Akciónként tényleges állapotleírás és outcome; reviewer, időzónás review-idő és védett döntési hivatkozás; elkészült tételnél védett evidencia URI/SHA-256 és külön evidencia-review; újraütemezésnél indokolt, jövőbeli céldátum és jogosult jóváhagyás; az elfogadott döntések kézi, preflighttal és utóellenőrzéssel kontrollált átvezetése az actions.csv fájlba.
-- Legkésőbbi kapu: Bármely érintett akció státuszának vagy céldátumának módosítása, evidenciaelfogadása vagy lezárása előtt.
+- Kapcsolódó elem: D-035; data/deadline_reconciliation.json; DEADLINE_RECONCILIATION_FORM_2026-07-29.md
+- Elkészítendő: A tényleges előrehaladást továbbra is akciónként kell rögzíteni; elkészült tételnél védett evidencia URI/SHA-256, reviewer és döntési hivatkozás szükséges. A jövőben lejáró, nem terminális akciókat az aktuális állapotnapra új egyeztetési körbe kell venni.
+- Legkésőbbi kapu: Bármely akció evidenciaelfogadása vagy lezárása, illetve a D-035 céldátumainak újabb módosítása előtt.
 
 Lezárási ellenőrzőlista:
 
@@ -209,9 +209,9 @@ Lezárási ellenőrzőlista:
 
 - Felelős: Pásztor András; javasolt kontrollgazdák
 - Jóváhagyó: Lángi Zoltán; Dr. Berta Brigitta; érintett G1/G3/G4 reviewer
-- Kapcsolódó elem: A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md
-- Elkészítendő: A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a javasolt 2026-09-11-i G1 review és 2027-01-31/2027-04-30/2027-06-30 teljesítési hullámok G2/G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.
-- Legkésőbbi kapu: A cselekvési terv végleges aláírása, a javasolt dátumok kanonikus átvezetése, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.
+- Kapcsolódó elem: A-043–A-127; data/action_execution_details.csv; COVERAGE_MATURATION_REVIEW_2026-08-19.md; ACTION_SCHEDULE_2026-08-19.md
+- Elkészítendő: A 85 tétel forrásoldalas G1 szakmai review-ja; a TBD belső kontrollgazdák név szerinti kijelölése; az SRC-009 támpontok alkalmazhatósági döntése; a teljes cselekvési terv G4 jóváhagyása; az 52 technikai tétel G3 review-ja; helyi evidenciajelöltek regisztrálása, védett URI/SHA-256 és reviewer-döntés; akciónként tényleges végrehajtás és elfogadott evidencia.
+- Legkésőbbi kapu: A cselekvési terv végleges aláírása, bármely éles változtatás vagy az A-043–A-127 akciók DONE állapota előtt.
 
 Lezárási ellenőrzőlista:
 

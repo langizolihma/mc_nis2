@@ -4,11 +4,11 @@
   "as_of": "2026-08-19",
   "formal_effect": false,
   "source_ref": "data/human_execution_package.json",
-  "source_sha256": "ca54b5d336700d699fb936391fa7fdb8678b520e463f3350c05b42c0fb13758a",
+  "source_sha256": "ec2a554fc266a42852f296fa943f9fc7d99dfd321133a72587f9b3a17a608df3",
   "document_count": 37,
   "index": {
     "path": "portal_materials/NIS2_emberi_dontesi_dokumentumjegyzek.docx",
-    "sha256": "6431f6b129b9714c5433fb447b500716e53c8644c4a61c0e5d2255682f843333"
+    "sha256": "b10903d4f499011f0348ac441d41f2b0469ae0d8c77e4705b6df04cf020d3ef0"
   },
   "documents": [
     {
@@ -253,7 +253,7 @@
       "task_id": "DEF-037",
       "title": "Lejárt akciók státusz- és határidő-egyeztetése",
       "path": "portal_materials/DEF-037_lejart_akciok_statusz_es_hatarido_egyeztetese.docx",
-      "sha256": "96e889dd78dcab7f83bcec1d78dd48c3023eb6cec3d3e8902889c69817f0a76a",
+      "sha256": "2ddb15e9186cda826902b840d86e81ef73c699db0b99f50257ca42719e3605a2",
       "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
     },
     {
@@ -267,7 +267,7 @@
       "task_id": "DEF-039",
       "title": "Lefedettségpótló akciók szakmai és határidő-jóváhagyása",
       "path": "portal_materials/DEF-039_lefedettsegpotlo_akciok_szakmai_es_hatarido_jovahagyasa.docx",
-      "sha256": "1c3d4b4fcad382773b582f80b64ae5b51f0395a2561772d79ea5394273918861",
+      "sha256": "d46a4268aad94a5ad77e59d78043c48fc13dfb95f57b8c833258f0393819a685",
       "status": "DRAFT_REQUIRES_HUMAN_EXECUTION_AND_SIGNATURE"
     }
   ],

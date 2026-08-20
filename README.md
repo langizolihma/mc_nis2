@@ -26,6 +26,8 @@ python -m nis2_harness validate --actions data/actions.csv
 python -m nis2_harness status --actions data/actions.csv
 python -m nis2_harness deadlines --received 2026-06-26
 python -m nis2_harness draft-action-plan --actions data/actions.csv --output generated/action_plan.md
+python scripts/schedule_all_actions.py          # dry-run: D-035 ütemezés ellenőrzése
+python scripts/schedule_all_actions.py --apply  # az ütemezés és riportok újragenerálása
 python -m nis2_harness daily-execution-brief --actions data/actions.csv --project-dates data/project_dates.json --as-of 2026-07-29 --output generated/daily_execution_brief_2026-07-29.md
 python -m nis2_harness build-deadline-reconciliation --actions data/actions.csv --project-dates data/project_dates.json --as-of 2026-07-29 --json-output data/deadline_reconciliation.json --markdown-output DEADLINE_RECONCILIATION_FORM_2026-07-29.md
 python -m nis2_harness validate-deadline-reconciliation --actions data/actions.csv --register data/deadline_reconciliation.json
@@ -64,18 +66,20 @@ belüli, 30 napon belüli és még konkrét dátumot igénylő akciókat, valami
 elvárt eredményt, bizonyítékot, emberi kaput és függőséget. A lejárt jelölés
 figyelmeztetés, nem automatikus nemteljesítési döntés.
 
-A 2026-07-29-i lejárt akciók emberi státusz-egyeztetési nyilvántartása a
+A 2026-07-29-i státusz-egyeztetési nyilvántartás a
 `data/deadline_reconciliation.json`, kitölthető munkalapja a
-`DEADLINE_RECONCILIATION_FORM_2026-07-29.md`. Az öt válaszlehetőség
+`DEADLINE_RECONCILIATION_FORM_2026-07-29.md`. A D-035 ütemezési baseline
+alkalmazása után ezen az állapotnapon nincs lejárt, nem terminális akció, ezért
+a nyilvántartás jelenleg 0 rekordos. Az öt válaszlehetőség
 megkülönbözteti a nem kezdett, folyamatban lévő, evidenciahiányosan elkészült,
 review-ra kész és újraütemezendő tételeket. A nyilvántartás csak proposal:
 nem írja át az `actions.csv` státuszát vagy céldátumát. A
-`validate-deadline-reconciliation` ellenőrzi a 16 elemű kört, a snapshot
+`validate-deadline-reconciliation` ellenőrzi az aktuális rekordkört, a snapshot
 mezőket, a reviewer-adatokat, az időzónás időpontot, az új céldátumot és a
 review-ra kész tétel védett SharePoint URI/SHA-256 párosát.
 
-A helyi portál Jóváhagyások nézetében ugyanez a 16 tétel külön kártyákon
-egyeztethető. A szerver az outcome-ot, az indoklást, az új céldátumot és a
+A helyi portál Jóváhagyások nézetében az aktuálisan lejárt tételek külön kártyákon
+egyeztethetők; a D-035 baseline mellett a 2026-07-29-i kör üres. A szerver az outcome-ot, az indoklást, az új céldátumot és a
 review-ra kész evidencia URI/SHA-256 párját is ellenőrzi, majd a választ a
 Gitből kizárt `portal_runtime/deadline_reconciliation_drafts.jsonl` fájlba
 fűzi. A rögzítő neve ebben az MVP-ben hitelesítetlen állítás; a tervezet nem
@@ -85,8 +89,8 @@ A `build-reconciliation-review-package` a helyi tervezetnapló minden sorának
 hash-ét és szerkezetét fail-closed módon ellenőrzi, akciónként kiválasztja a
 legfrissebb tervezetet, és külön megjelöli az eltérő javaslatokat. Konfliktus
 esetén nem dönt automatikusan. A létrejövő JSON és Markdown csak emberi
-review-előterjesztés; az üres baseline jelenleg 0 tervezetet és 17 még adatot
-igénylő akciót mutat. Hiányzó naplófájl alapértelmezetten hiba; az
+review-előterjesztés; az üres baseline jelenleg 0 tervezetet és 0 lejárt,
+adatot igénylő akciót mutat. Hiányzó naplófájl alapértelmezetten hiba; az
 `--allow-missing-drafts` kizárólag dokumentált üres baseline készítésére való.
 A review-kimenetek a `generated/` szabály szerint helyben maradnak és
 alapértelmezetten nem kerülnek Gitbe, mert később emberi megjegyzést és védett
@@ -298,7 +302,7 @@ Az A-037–A-041 szabályozási baseline-ok a [POLICY_BASELINE_WORK_PACKAGES.md]
 
 Az A-042 fájlalapú, local-first pilotja a [CONTINUOUS_ASSURANCE_AGENT_PILOT.md](CONTINUOUS_ASSURANCE_AGENT_PILOT.md) szerint futtatható. Csak allowlistelt szintetikus metaadatot dolgoz fel, proposalokat, approval queue-t és auditlogot készít; minden automatikus elfogadó, lezáró, külső, fizetős vagy éles művelet tiltott.
 
-Az eredeti 42 akció előkészítési állapotát a [PREPARATION_COVERAGE_REPORT_2026-07-17.md](PREPARATION_COVERAGE_REPORT_2026-07-17.md) foglalja össze. A 2026-08-18-i lefedettségpótlás további 85, kontrollszintű javaslatot hozott létre (A-043–A-127), így mind a 156 eltéréssel érintett követelménycsoporthoz tartozik közvetlen intézkedés. A 2026-08-19-i érlelési kör mindegyik új tételhez kontrollspecifikus végrehajtási checklistet, mérhető elfogadási feltételt, evidenciaelvárást, javasolt kontrollgazdát/közreműködőt és proposal-only ütemezést adott. A részletes gépi regiszter a [data/action_execution_details.csv](data/action_execution_details.csv), az emberi döntési munkalap a [COVERAGE_MATURATION_REVIEW_2026-08-19.md](COVERAGE_MATURATION_REVIEW_2026-08-19.md). G1/G2/G3/G4 jóváhagyás továbbra is szükséges.
+Az eredeti 42 akció előkészítési állapotát a [PREPARATION_COVERAGE_REPORT_2026-07-17.md](PREPARATION_COVERAGE_REPORT_2026-07-17.md) foglalja össze. A 2026-08-18-i lefedettségpótlás további 85, kontrollszintű javaslatot hozott létre (A-043–A-127), így mind a 156 eltéréssel érintett követelménycsoporthoz tartozik közvetlen intézkedés. A 2026-08-19-i érlelési kör mindegyik új tételhez kontrollspecifikus végrehajtási checklistet, mérhető elfogadási feltételt és evidenciaelvárást adott. A D-035 alapján mind a 127 akcióhoz rögzített belső céldátum tartozik: a 2027-09-30-i repeat-audit előtti 60. nap 2027-08-01, az operatív utolsó munkanap 2027-07-30. A részletes regiszterek a [data/action_execution_details.csv](data/action_execution_details.csv) és a [data/action_schedule.csv](data/action_schedule.csv); az emberi review-csomagok a [COVERAGE_MATURATION_REVIEW_2026-08-19.md](COVERAGE_MATURATION_REVIEW_2026-08-19.md) és az [ACTION_SCHEDULE_2026-08-19.md](ACTION_SCHEDULE_2026-08-19.md). A szakmai G1/G3 és a végleges G4 jóváhagyás továbbra is szükséges.
 
 Az éles változtatás igénye nem következtethető biztonságosan szabad szövegből. Új vagy szintetikus regiszterben az opcionális `production_change=yes` mező explicit módon aktiválja a G3-validációt. A meglévő regiszterben a jóváhagyott `human_gate` metaadat marad a kanonikus jelölés.
 
@@ -332,6 +336,6 @@ Az aláírt kijelölések, az IBF besorolási jogcím szerinti alkalmassági evi
 
 ## Következő munkacsomag és célállapot
 
-Az eredeti 42 akció előkészítő csomagja elkészült; a nyilvántartás a lefedettségpótlás után 127 intézkedést tartalmaz. Az A-043–A-127 kontrollspecifikus végrehajtási terve elkészült, de `PROPOSAL` státuszú: a programfelelős mellett külön javasolt kontrollgazdát, közreműködőket, részletes lépéseket, acceptance criteriát és három teljesítési hullámot tartalmaz. Emberi G1/G2 review, a TBD belső kontrollgazdák kijelölése, az 52 technikai tétel G3 review-ja és a dátumok G4 jóváhagyása után válhat végrehajtási baseline-ná. A D-028 portál helyi MVP-je élő repository-nézettel, review- és lejártakció-egyeztetési tervezet auditnyommal, valamint A-042 pilotmegjelenítéssel rendelkezik; belső hálózati pilotja a DEF-015/DEF-020/DEF-032 emberi kapui mögött marad. A következő szakasz az emberi review, az elfogadott szerepek és dátumok átvezetése, majd az evidenciagyűjtés és kontrollált végrehajtás.
+Az eredeti 42 akció előkészítő csomagja elkészült; a nyilvántartás a lefedettségpótlás után 127 intézkedést tartalmaz. Az A-043–A-127 kontrollspecifikus szakmai tartalma `PROPOSAL`, de a D-035 szerint mind a 127 tétel belső céldátuma rögzített. Az egyszerű B0 feladatok 2026 őszére, a közepes feladatok 2027 elejére, az összetett technikai és G5/beszerzési kapus feladatok 2027 tavaszára–nyarára kerültek; a legkésőbbi operatív dátum 2027-07-30. Emberi G1 review, a TBD belső kontrollgazdák kijelölése, az 52 technikai tétel G3 review-ja és a teljes terv G4 jóváhagyása továbbra is szükséges. A D-028 portál helyi MVP-je élő repository-nézettel, review- és lejártakció-egyeztetési tervezet auditnyommal, valamint A-042 pilotmegjelenítéssel rendelkezik; belső hálózati pilotja a DEF-015/DEF-020/DEF-032 emberi kapui mögött marad. A következő szakasz az emberi szakmai review, a hiányzó szerepek kijelölése, majd az evidenciagyűjtés és kontrollált végrehajtás.
 
 A cél a rutinszerű emberi munka mérhető minimalizálása. Az ügynök azonban nem fogadhat el evidenciát, nem zárhat le feladatot, nem nyújthat be külső dokumentumot, nem költhet és nem módosíthat éles rendszert emberi jóváhagyás nélkül. A H-002 local-only fixture pilot elindult; valós adatforrásra vagy ütemezett működésre a DEF-033 emberi kapui előtt nem bővíthető.

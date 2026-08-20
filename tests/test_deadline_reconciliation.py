@@ -123,7 +123,7 @@ class DeadlineReconciliationTests(unittest.TestCase):
             ])
             self.assertEqual(0, build_exit)
             self.assertEqual(
-                16,
+                0,
                 json.loads(json_output.read_text(encoding="utf-8"))["record_count"],
             )
             validate_exit = main([
